@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class HomeController extends Controller
 {
@@ -33,9 +34,54 @@ class HomeController extends Controller
         return view('customers.history',compact('users'));
     }
 
-    public function customerEdit()
+    public function customerEdit($id)
     {
-        return view('customers.edit');
+        $user = User::where('id',decrypt($id))->first();
+        return view('customers.edit', compact('user'));
+    }
+
+    public function customerDelete($id){
+        try {
+            User::where('id',decrypt($id))->first()->delete();
+            return redirect()->route('customers.history')->with('success','Customer Deleted Successfully!');
+        }catch (\Exception $exception){
+            return redirect()->route('customers.history')->with('danger','Something went wrong');
+        }
+    }
+
+    public function customerSave(Request $request){
+        try {
+            $request->validate([
+                'name' => ['required', 'string', 'max:255'],
+                'email' => ['required', 'string', 'email', 'max:255'],
+                'password' => ['required', 'string', 'min:8', 'confirmed'],
+            ]);
+            User::create($request->except('_token'));
+            return redirect()->route('customers.history')->with('success','Customer Added Successfully!');
+        }catch (\Exception $exception){
+            return redirect()->route('customers.history')->with('danger','Something went wrong');
+        }
+    }
+
+    public function customerUpdate(Request $request,$id)
+    {
+        $request->validate([
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255'],
+        ]);
+        if(isset($request->password)){
+            $request->validate([
+                'password' => ['required', 'string', 'min:8', 'confirmed'],
+            ]);
+            unset($request['password_confirmation'],$request['_token']);
+            $request['password'] = Hash::make($request['password']);
+            User::where('id',decrypt($id))->update($request->all());
+        }
+        else{
+            unset($request['password'],$request['password_confirmation'],$request['_token']);
+            User::where('id',decrypt($id))->update($request->all());
+        }
+        return $this->customerHistory();
     }
 
     public function usersIndex()

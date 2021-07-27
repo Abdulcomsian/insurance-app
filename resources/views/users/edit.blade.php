@@ -39,8 +39,7 @@
                                             <div class="col-lg-6">
                                                 <label class="form-label fs-6 fw-bolder text-gray-700 mb-3">Company Name</label>
                                                 <!--begin::Input group-->
-                                                <div class="mb-5">
-                                                    <input type="text" class="form-control form-control-solid" placeholder="Company Name" />
+                                                <div class="mb-5">value="{{$user->company_name ?: ''}}" class="form-control form-control-solid" placeholder="Company Name" />
                                                 </div>
                                                 <!--end::Input group-->
                                             </div>
