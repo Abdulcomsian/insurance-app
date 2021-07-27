@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -28,7 +29,8 @@ class HomeController extends Controller
 
     public function customerHistory()
     {
-        return view('customers.history');
+        $users = User::orderby('id','desc')->paginate(20);
+        return view('customers.history',compact('users'));
     }
 
     public function customerEdit()
