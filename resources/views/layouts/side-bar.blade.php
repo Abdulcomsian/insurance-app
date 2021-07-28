@@ -83,7 +83,7 @@
                     </a>
                 </div>
                 <div class="menu-item">
-                    <a class="menu-link" href="{{route('users.index')}}">
+                    <a class="menu-link" href="{{route('countries.index')}}">
 										<span class="menu-icon">
 											<!--begin::Svg Icon | path: icons/duotone/Design/Sketch.svg-->
 											<span class="svg-icon svg-icon-2">
@@ -95,7 +95,7 @@
 											</span>
                                             <!--end::Svg Icon-->
 										</span>
-                        <span class="menu-title">Customer Management</span>
+                        <span class="menu-title">Countries Management</span>
                     </a>
                 </div>
                 <div class="menu-item">

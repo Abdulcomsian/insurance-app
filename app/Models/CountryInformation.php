@@ -11,7 +11,7 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class CountryInformation
- * 
+ *
  * @property int $id
  * @property string $created_by
  * @property Carbon|null $created_date
@@ -54,6 +54,7 @@ class CountryInformation extends Model
 		'reg_authority',
 		'reg_authority_web_link',
 		'latitude',
-		'longitude'
+		'longitude',
+        'rate_in_dollar'
 	];
 }

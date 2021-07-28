@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 //    return view('welcome');
 //});
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 
 //By Assad Yaqoob
 //Home
@@ -45,4 +45,9 @@ Route::get('payment-transactions-edit', 'HomeController@paymentTransactionsEdit'
 //Rate Management
 Route::get('rates', 'HomeController@ratesIndex')->name('rates.index');
 Route::get('rates-edit', 'HomeController@ratesEdit')->name('rates.edit');
+
+//Countries Management
+Route::get('countries', 'HomeController@countriesIndex')->name('countries.index');
+Route::get('countries-edit', 'HomeController@countriesEdit')->name('countries.edit');
+Route::post('countries-update/{id}', 'HomeController@countriesUpdate')->name('countries.update');
 

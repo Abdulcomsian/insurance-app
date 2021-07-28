@@ -26,6 +26,7 @@ class CreateCountryInformationTable extends Migration
             $table->string('reg_authority_web_link')->nullable();
             $table->string('latitude')->nullable();
             $table->string('longitude')->nullable();
+            $table->string('rate_in_dollar')->nullable();
             $table->timestamps();
         });
     }
