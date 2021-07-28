@@ -10,7 +10,8 @@
                 <div class="card">
                     <!--begin::Card header-->
                     <div class="card-header border-0 pt-6">
-                        <!--begin::Card title-->
+                    @include('layouts.flash-message')
+                    <!--begin::Card title-->
                         <div class="card-title">
                             <!--begin::Search-->
                             <div class="d-flex align-items-center position-relative my-1">
@@ -184,7 +185,11 @@
                                         <!--begin::Modal body-->
                                         <div class="modal-body scroll-y mx-5 mx-xl-15 my-7">
                                             <!--begin::Form-->
-                                            <form id="kt_modal_add_user_form" class="form" action="#">
+                                            <form id="kt_modal_add_user_form" class="form" action="{{route('customers.save')}}" method="post">
+                                                @csrf
+                                                @if($errors->any())
+                                                    {!!  implode('', $errors->all('<div class="alter alert-danger form-control">:message</div>'))  !!}
+                                                @endif
                                                 <!--begin::Scroll-->
                                                 <div class="d-flex flex-column scroll-y me-n7 pe-7" id="kt_modal_add_user_scroll" data-kt-scroll="true" data-kt-scroll-activate="{default: false, lg: true}" data-kt-scroll-max-height="auto" data-kt-scroll-dependencies="#kt_modal_add_user_header" data-kt-scroll-wrappers="#kt_modal_add_user_scroll" data-kt-scroll-offset="300px">
                                                     <div class="fv-row mb-7">
@@ -192,7 +197,7 @@
                                                         <label class="required fw-bold fs-6 mb-2">Company Name</label>
                                                         <!--end::Label-->
                                                         <!--begin::Input-->
-                                                        <input type="text" name="user_name" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Full name" value="Emma Smith" />
+                                                        <input type="text" name="company_name" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Company name" />
                                                         <!--end::Input-->
                                                     </div>
 
@@ -202,7 +207,7 @@
                                                         <label class="required fw-bold fs-6 mb-2">Full Name</label>
                                                         <!--end::Label-->
                                                         <!--begin::Input-->
-                                                        <input type="text" name="user_name" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Full name" value="Emma Smith" />
+                                                        <input type="text" name="name" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Full name" />
                                                         <!--end::Input-->
                                                     </div>
                                                     <!--end::Input group-->
@@ -212,7 +217,7 @@
                                                         <label class="required fw-bold fs-6 mb-2">Email</label>
                                                         <!--end::Label-->
                                                         <!--begin::Input-->
-                                                        <input type="email" name="user_email" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="example@domain.com" value="e.smith@kpmg.com.au" />
+                                                        <input type="email" name="email" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="example@domain.com" />
                                                         <!--end::Input-->
                                                     </div>
                                                     <div class="fv-row mb-7">
@@ -220,23 +225,28 @@
                                                         <label class="required fw-bold fs-6 mb-2">Address</label>
                                                         <!--end::Label-->
                                                         <!--begin::Input-->
-                                                        <input type="email" name="user_email" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="example@domain.com" value="e.smith@kpmg.com.au" />
+                                                        <input type="text" name="address" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Street 1, House no 4, Rawalpindi, Islamabad" />
                                                         <!--end::Input-->
                                                     </div>
                                                     <div class="fv-row mb-7">
-                                                        <!--begin::Label-->
-                                                        <label class="required fw-bold fs-6 mb-2">Country</label>
-                                                        <!--end::Label-->
-                                                        <!--begin::Input-->
-                                                        <input type="email" name="user_email" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="example@domain.com" value="e.smith@kpmg.com.au" />
-                                                        <!--end::Input-->
+                                                        <label class="form-label fs-6 fw-bolder text-gray-700 mb-3">Country</label>
+                                                        <!--begin::Input group-->
+                                                        <div class="mb-5">
+                                                            <select name="country_id" data-control="select2" data-placeholder="Select a country" data-hide-search="true" class="form-select form-select-solid fw-bolder">
+                                                                <option></option>
+                                                                @foreach(\Illuminate\Support\Facades\DB::table('countries')->get() as $item)--}}
+                                                                <option value="{{$item->id ?: ''}}" >{{$item->country_name ?: ''}}</option>
+                                                                @endforeach
+                                                            </select>
+                                                        </div>
+                                                            <!--end::Input group-->
                                                     </div>
                                                     <div class="fv-row mb-7">
                                                         <!--begin::Label-->
                                                         <label class="required fw-bold fs-6 mb-2">Mobile Number</label>
                                                         <!--end::Label-->
                                                         <!--begin::Input-->
-                                                        <inpuCOMPANY NAME	t type="email" name="user_email" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="example@domain.com" value="e.smith@kpmg.com.au" />
+                                                        <input type="number" name="mobile_number" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="13412315341" />
                                                         <!--end::Input-->
                                                     </div>
                                                     <div class="fv-row mb-7">
@@ -244,7 +254,23 @@
                                                         <label class="required fw-bold fs-6 mb-2">Office Number</label>
                                                         <!--end::Label-->
                                                         <!--begin::Input-->
-                                                        <input type="email" name="user_email" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="example@domain.com" value="e.smith@kpmg.com.au" />
+                                                        <input type="number" name="office_number" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="13412315341" />
+                                                        <!--end::Input-->
+                                                    </div>
+                                                    <div class="fv-row mb-7">
+                                                        <!--begin::Label-->
+                                                        <label class="required fw-bold fs-6 mb-2">Password</label>
+                                                        <!--end::Label-->
+                                                        <!--begin::Input-->
+                                                        <input type="password" name="password" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="password" />
+                                                        <!--end::Input-->
+                                                    </div>
+                                                    <div class="fv-row mb-7">
+                                                        <!--begin::Label-->
+                                                        <label class="required fw-bold fs-6 mb-2">Confirm Password</label>
+                                                        <!--end::Label-->
+                                                        <!--begin::Input-->
+                                                        <input type="password" name="password_confirmation" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="confirm password" />
                                                         <!--end::Input-->
                                                     </div>
                                                     <!--end::Input group-->
@@ -286,7 +312,7 @@
                                 <th class="min-w-100px">First Name</th>
                                 <th class="min-w-100px">Eamil</th>
                                 <th class="min-w-100px">Address</th>
-                                <th class="min-w-100px">Country</th>
+                                <th class="min-w-100px">Office Number</th>
                                 <th class="min-w-100px">Mobile Number</th>
                                 <th class="text-end min-w-100px">Actions</th>
                             </tr>
@@ -299,18 +325,18 @@
                             @foreach($users as $item)
                                 <tr>
                                     <td>
-                                        Accural Group
+                                        {{$item->company_name ?: '-'}}
                                     </td>
                                     <td>{{$item->name ?: '-'}}</td>
                                     <td>
                                         {{$item->email ?: '-'}}
                                     </td>
-                                    <td>Silk Center, Rawalpindi</td>
-                                    <td>Pakistan</td>
-                                    <td>090078601</td>
-                                    <td class="text-end">
+                                    <td>{{$item->address ?: '-'}}</td>
+                                    <td>{{$item->office_number ?: '-'}}</td>
+                                    <td>{{$item->mobile_number ?: '-'}}</td>
+                                    <td class="text-end d-flex">
 
-                                        <a href="{{route('customers.edit')}}" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
+                                        <a href="{{route('customers.edit',encrypt($item->id))}}" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
                                             <!--begin::Svg Icon | path: icons/duotone/Communication/Write.svg-->
                                             <span class="svg-icon svg-icon-3">
                                                                     <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
@@ -320,7 +346,10 @@
                                                                 </span>
                                             <!--end::Svg Icon-->
                                         </a>
-                                        <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm">
+                                        <form method="POST" action="{{route('customers.delete',encrypt($item->id))}}">
+                                            {{ csrf_field() }}
+                                            {{ method_field('DELETE') }}
+                                        <button type="submit" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm">
                                             <!--begin::Svg Icon | path: icons/duotone/General/Trash.svg-->
                                             <span class="svg-icon svg-icon-3">
                                                                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
@@ -332,7 +361,9 @@
                                                                     </svg>
                                                                 </span>
                                             <!--end::Svg Icon-->
-                                        </a>
+                                        </button>
+                                        </form>
+
                                     </td>
                                 </tr>
                             @endforeach
