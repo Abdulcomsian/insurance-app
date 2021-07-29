@@ -7,6 +7,7 @@ use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use function Symfony\Component\Translation\t;
 
 class HomeController extends Controller
 {
@@ -123,7 +124,13 @@ class HomeController extends Controller
 
     public function insuranceCompaniesIndex()
     {
-        return view('insurance_companies.index');
+        try {
+            $companies = DB::table('company_detail')->orderBy('id','desc')->paginate(15);
+            return view('insurance_companies.index' ,compact('companies'));
+        }catch (\Exception $exception){
+            return 'Something went wrong';
+        }
+
     }
 
     public function insuranceCompaniesEdit()
@@ -133,7 +140,20 @@ class HomeController extends Controller
 
     public function paymentTransactionsIndex()
     {
-        return view('payment_transactions.index');
+        try {
+            $transactions = DB::table('transaction')
+                ->join('users','transaction.user_id','=','users.id')
+                ->join('packages','transaction.package_id','=','packages.id')
+                ->orderBy('transaction.id','desc')
+                ->select(
+                    'transaction.*',
+                    'users.name as user_name',
+                    'packages.name as package_name')
+                ->get();
+            return view('payment_transactions.index',compact('transactions'));
+        } catch (\Exception $exception){
+            return 'Something went wrong';
+        }
     }
 
     public function paymentTransactionsEdit()
