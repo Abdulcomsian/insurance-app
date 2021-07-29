@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\CountryInformation;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
 class HomeController extends Controller
@@ -15,7 +17,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+     $this->middleware(['auth','verified']);
     }
 
     /**
@@ -83,6 +85,31 @@ class HomeController extends Controller
         }
         return $this->customerHistory();
     }
+
+    public function countriesIndex()
+    {
+        $countries = DB::table('country_information')->orderby('country_name','asc')->get();
+        return view('countries.history',compact('countries'));
+    }
+
+    public function countriesUpdate(Request $request,$id)
+    {
+        try {
+            DB::table('country_information')
+                ->where('id',$id)
+                ->update($request->except('_token'));
+            return redirect()->route('countries.index');
+        }catch (\Exception $exception){
+            return 'Something went wrong';
+        }
+
+    }
+
+    public function countriesEdit()
+    {
+        return view('countries.edit');
+    }
+
 
     public function usersIndex()
     {
