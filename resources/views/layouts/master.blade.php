@@ -101,9 +101,7 @@ License: For each use you must have a valid license purchased only from above li
 <script>
     $(document).ready(function () {
         // $('#datatable').DataTable();
-        $('#datatable').dataTable( {
-            "searching": true
-        } );
+        $('#datatable').DataTable();
     });
 </script>
 
