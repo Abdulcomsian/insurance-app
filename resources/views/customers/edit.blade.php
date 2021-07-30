@@ -86,7 +86,7 @@
                                                 <!--begin::Input group-->
                                                 <div class="mb-5">
                                                     <select name="country_id" data-control="select2" data-placeholder="Select a country" data-hide-search="true" class="form-select form-select-solid fw-bolder">
-                                                        <option></option>
+                                                        <option value="">Select Country</option>
                                                         @foreach(\Illuminate\Support\Facades\DB::table('countries')->get() as $item)--}}
                                                             <option value="{{$item->id ?: ''}}" @if($item->id == $user->country_id) selected @endif>{{$item->country_name ?: ''}}</option>
                                                         @endforeach
@@ -111,6 +111,17 @@
                                                 <!--begin::Input group-->
                                                 <div class="mb-5">
                                                     <input type="text" name="office_number" value="{{$user->office_number ?: ''}}" class="form-control form-control-solid" placeholder="Office Number" />
+                                                </div>
+                                                <!--end::Input group-->
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <label class="form-label fs-6 fw-bolder text-gray-700 mb-3">Status</label>
+                                                <!--begin::Input group-->
+                                                <div class="mb-5">
+                                                    <select name="status" data-control="select2" data-placeholder="Select a country" data-hide-search="true" class="form-select form-select-solid fw-bolder">
+                                                        <option value="{{\App\Utils\UserStatus::ACTIVE}}" @if($user->status == \App\Utils\UserStatus::ACTIVE) selected @endif>{{\App\Utils\UserStatus::ACTIVE}}</option>
+                                                        <option value="{{\App\Utils\UserStatus::INACTIVE}}" @if($user->status == \App\Utils\UserStatus::INACTIVE) selected @endif>{{\App\Utils\UserStatus::INACTIVE}}</option>
+                                                    </select>
                                                 </div>
                                                 <!--end::Input group-->
                                             </div>

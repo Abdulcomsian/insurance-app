@@ -79,7 +79,7 @@
 											</span>
                                             <!--end::Svg Icon-->
 										</span>
-                        <span class="menu-title">View History Customer</span>
+                        <span class="menu-title">Customer</span>
                     </a>
                 </div>
                 <div class="menu-item">
@@ -95,7 +95,7 @@
 											</span>
                                             <!--end::Svg Icon-->
 										</span>
-                        <span class="menu-title">Countries Management</span>
+                        <span class="menu-title">Currency Rate Management</span>
                     </a>
                 </div>
                 <div class="menu-item">
@@ -127,7 +127,7 @@
 											</span>
                                             <!--end::Svg Icon-->
 										</span>
-                        <span class="menu-title">Insurance Companies Management</span>
+                        <span class="menu-title">Insurance Companies</span>
                     </a>
                 </div>
                 <div class="menu-item">
@@ -143,7 +143,7 @@
 											</span>
                                             <!--end::Svg Icon-->
 										</span>
-                        <span class="menu-title">Rate Management</span>
+                        <span class="menu-title">Packages</span>
                     </a>
                 </div>
             </div>

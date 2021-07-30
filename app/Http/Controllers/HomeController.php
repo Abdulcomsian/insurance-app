@@ -46,7 +46,8 @@ class HomeController extends Controller
     public function customerDelete($id){
         try {
             User::where('id',decrypt($id))->first()->delete();
-            return redirect()->route('customers.history')->with('success','Customer Deleted Successfully!');
+            toastr()->success('Customer Deleted Successfully!');
+            return redirect()->route('customers.history');
         }catch (\Exception $exception){
             return redirect()->route('customers.history')->with('danger','Something went wrong');
         }
@@ -80,11 +81,12 @@ class HomeController extends Controller
             $request['password'] = Hash::make($request['password']);
             User::where('id',decrypt($id))->update($request->all());
         }
-        else{
-            unset($request['password'],$request['password_confirmation'],$request['_token']);
-            User::where('id',decrypt($id))->update($request->all());
+        else {
+            unset($request['password'], $request['password_confirmation'], $request['_token']);
+            User::where('id', decrypt($id))->update($request->all());
         }
-        return $this->customerHistory();
+        toastr()->success('Customer Updated Successfully!');
+        return redirect()->route('customers.history');
     }
 
     public function countriesIndex()
@@ -99,11 +101,12 @@ class HomeController extends Controller
             DB::table('country_information')
                 ->where('id',$id)
                 ->update($request->except('_token'));
+            toastr()->success('Dollar Rate Updated Successfully!');
             return redirect()->route('countries.index');
         }catch (\Exception $exception){
-            return 'Something went wrong';
+            toastr()->error('Something went wrong!');
+            return back();
         }
-
     }
 
     public function countriesEdit()

@@ -31,8 +31,11 @@ License: For each use you must have a valid license purchased only from above li
     <link href="{{asset('assets/plugins/global/plugins.bundle.css')}}" rel="stylesheet" type="text/css" />
     <link href="{{asset('assets/css/style.bundle.css')}}" rel="stylesheet" type="text/css" />
     <link href="{{asset('assets/css/style.css')}}" rel="stylesheet" type="text/css" />
-    <!--end::Global Stylesheets Bundle-->
+{{--    <link href="{{asset('assets/plugins/custom/datatables/datatables.bundle.css')}}" rel="stylesheet" type="text/css" />--}}
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.25/datatables.min.css"/>
 
+    <!--end::Global Stylesheets Bundle-->
+    @toastr_css
     {{-- Page Specific Styles        --}}
     @yield('css')
 
@@ -84,6 +87,7 @@ License: For each use you must have a valid license purchased only from above li
 <!--begin::Javascript-->
 <!--begin::Global Javascript Bundle(used by all pages)-->
 <script src="{{asset('assets/plugins/global/plugins.bundle.js')}}"></script>
+@jquery
 <script src="{{asset('assets/js/scripts.bundle.js')}}"></script>
 <!--end::Global Javascript Bundle-->
 <!--begin::Page Custom Javascript(used by this page)-->
@@ -91,6 +95,20 @@ License: For each use you must have a valid license purchased only from above li
 <script src="{{asset('assets/js/custom/apps/chat/chat.js')}}"></script>
 <script src="{{asset('assets/js/custom/modals/create-app.js')}}"></script>
 <script src="{{asset('assets/js/custom/modals/upgrade-plan.js')}}"></script>
+{{--<script src="{{asset('assets/plugins/custom/datatables/datatables.bundle.js')}}"></script>--}}
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.js"></script>
+
+<script>
+    $(document).ready(function () {
+        // $('#datatable').DataTable();
+        $('#datatable').dataTable( {
+            "searching": true
+        } );
+    });
+</script>
+
+@toastr_js
+@toastr_render
 <!--end::Page Custom Javascript-->
 @yield('script')
 <!--end::Javascript-->
