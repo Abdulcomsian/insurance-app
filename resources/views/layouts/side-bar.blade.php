@@ -79,7 +79,7 @@
 											</span>
                                             <!--end::Svg Icon-->
 										</span>
-                        <span class="menu-title">Customer</span>
+                        <span class="menu-title">Customers</span>
                     </a>
                 </div>
                 <div class="menu-item">
@@ -95,7 +95,7 @@
 											</span>
                                             <!--end::Svg Icon-->
 										</span>
-                        <span class="menu-title">Currencies & Exchange Rates</span>
+                        <span class="menu-title">Countries & Exchange Rates</span>
                     </a>
                 </div>
                 <div class="menu-item">
