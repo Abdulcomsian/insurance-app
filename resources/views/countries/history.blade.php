@@ -308,7 +308,7 @@
                             <thead>
                             <!--begin::Table row-->
                             <tr class="text-start text-gray-400 fw-bolder fs-7 text-uppercase gs-0">
-                                <th class="min-w-100px">S.No</th>
+                                <th class="">S.No</th>
                                 <th class="min-w-100px">Country Name</th>
                                 <th class="min-w-100px">Dollar Rate</th>
                                 <th class="text-end min-w-100px">Actions</th>

@@ -365,7 +365,7 @@
                             <thead>
                             <!--begin::Table row-->
                             <tr class="text-start text-gray-400 fw-bolder fs-7 text-uppercase gs-0">
-                                <th class="min-w-125px">S.No</th>
+                                <th class="">S.No</th>
                                 <th class="min-w-125px">Customer Name</th>
                                 <th class="min-w-125px">Package Name</th>
                                 <th class="min-w-125px">Amount</th>
