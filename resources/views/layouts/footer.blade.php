@@ -4,7 +4,7 @@
         <!--begin::Copyright-->
          <div class="text-dark order-2 order-md-1">
              <span class="text-muted fw-bold me-1">2021©</span>
-             <a href="#" target="_blank" class="text-gray-800 text-hover-primary">2021 Callidus Mena IT Team</a>
+             <a href="#" target="_blank" class="text-gray-800 text-hover-primary">Callidus Mena IT Team</a>
         </div>
         <!--end::Copyright-->
     </div>
