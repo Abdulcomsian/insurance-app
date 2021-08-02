@@ -7,6 +7,7 @@ use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Psy\Util\Str;
 use function Symfony\Component\Translation\t;
 
 class HomeController extends Controller
@@ -128,12 +129,49 @@ class HomeController extends Controller
     public function insuranceCompaniesIndex()
     {
         try {
-            $companies = DB::table('company_detail')->orderBy('id','desc')->paginate(15);
+            $companies = DB::table('company_detail')->orderBy('id','desc')->get();
             return view('insurance_companies.index' ,compact('companies'));
         }catch (\Exception $exception){
-            return 'Something went wrong';
+            toastr()->error('Server is busy,try again');
+            return back();
         }
+    }
 
+    public function insuranceCompaniesCreate()
+    {
+        try {
+            $countries = DB::table('country_information')
+                ->orderby('country_name','asc')
+                ->get();
+            return view('insurance_companies.create',compact('countries'));
+        }catch (\Exception $exception){
+            toastr()->info('Server is busy,try again');
+            return back();
+        }
+    }
+    public function insuranceCompaniesSave(Request $request){
+        try {
+            $basic_info = [];
+//            foreach ($request as $field => $value){
+//              if($item.str_contains('basic_info_')){
+//                  $basic_info
+//              }
+//            }
+//
+//            foreach ($all_fields as $field=>$value){
+//                if (substr($field, 0, 8 ) === $key_word){
+//                    $field = str_replace($key_word,"",$field);
+//                    unset($all_fields[$key_word.$field]);
+//                    $features[$field] = $value;
+//                }
+//            }
+
+//            acc_
+//            m_s_
+//            b_o_d
+        }catch (\Exception $exception){
+            toastr()->info('Server is busy,try again');
+        }
     }
 
     public function insuranceCompaniesEdit()

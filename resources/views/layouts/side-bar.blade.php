@@ -95,7 +95,7 @@
 											</span>
                                             <!--end::Svg Icon-->
 										</span>
-                        <span class="menu-title">Currency Rate Management</span>
+                        <span class="menu-title">Currencies & Exchange Rates</span>
                     </a>
                 </div>
                 <div class="menu-item">

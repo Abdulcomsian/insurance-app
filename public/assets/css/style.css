@@ -13,7 +13,7 @@
 }
 .aside-dark .menu .menu-item .menu-link.active {
     background-color: transparent !important;
-    
+
     border-right: 6px solid #2e953e;
 }
 .aside-dark .menu .menu-item .menu-link.active span{
@@ -78,6 +78,13 @@ element.style {
 {
     .aside .aside-logo {
         height: 100px !important;
-        
+
     }
+}
+#kt_content_container{
+    margin-bottom: 30px;
+}
+#kt_invoice_form button.updateBtn{
+    margin-top: 0px !important;
+    display: block;
 }

@@ -336,7 +336,6 @@
                                         <div class="badge {{$item->status == \App\Utils\UserStatus::ACTIVE ? 'badge-success': 'badge-danger'}} fw-bolder">{{$item->status ?: '-'}}</div>
                                     </td>
                                     <td class="text-end d-flex">
-
                                         <a href="{{route('customers.edit',encrypt($item->id))}}" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
                                             <!--begin::Svg Icon | path: icons/duotone/Communication/Write.svg-->
                                             <span class="svg-icon svg-icon-3">
