@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\CountryInformation;
 use App\User;
+use App\Utils\UserType;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
@@ -34,7 +35,9 @@ class HomeController extends Controller
 
     public function customerHistory()
     {
-        $users = User::orderby('id','desc')->paginate(20);
+        $users = User::orderby('id','desc')
+            ->where('type','<>',UserType::ADMIN)
+            ->get();
         return view('customers.history',compact('users'));
     }
 
