@@ -17,8 +17,11 @@ use Illuminate\Support\Facades\Route;
 //    return view('welcome');
 //});
 
-Auth::routes(['verify' => true]);
-
+Auth::routes([
+    'register' => false, // Registration Routes...
+    'reset' => false, // Password Reset Routes...
+    'verify' => false, // Email Verification Routes...
+]);
 //By Assad Yaqoob
 //Home
 Route::get('/', 'HomeController@index')->name('home');
