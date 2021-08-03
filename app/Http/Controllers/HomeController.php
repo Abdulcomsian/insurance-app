@@ -154,7 +154,6 @@ class HomeController extends Controller
     }
     public function insuranceCompaniesSave(Request $request){
         try {
-//            $basic_info = [];
             foreach ($request->all() as $field => $value){
               if(str_contains($field,'basic_info_')){
                   $field = str_replace('basic_info_',"",$field);
@@ -182,6 +181,8 @@ class HomeController extends Controller
 
             }
             $id = DB::table('company_detail')->insert($basic_info);
+            dump($id);
+            dd('here');
 //            dump($id);
 //            dd($basic_info);
 //            dump($acc_info);
