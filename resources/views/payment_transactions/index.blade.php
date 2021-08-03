@@ -20,17 +20,22 @@
                     <!--begin::Card body-->
                     <div class="card-body pt-0">
                         <!--begin::Table-->
-                        <table  id="datatable" class="table align-middle table-row-dashed fs-6 gy-5" id="kt_table_users">
+                        <table  id="datatable" class="table  align-middle table-row-dashed fs-6 gy-5" id="kt_table_users">
                             <!--begin::Table head-->
                             <thead>
                             <!--begin::Table row-->
                             <tr class="text-start text-gray-400 fw-bolder fs-7 text-uppercase gs-0">
-                                <th class="min-w-125px">S.No</th>
-                                <th class="min-w-125px">Customer Name</th>
-                                <th class="min-w-125px">Package Name</th>
-                                <th class="min-w-125px">Amount</th>
-                                <th class="min-w-125px">Date</th>
-                                <th class="min-w-125px">Status</th>
+                                <th>S.No</th>
+                                <th>Id</th>
+                                <th>Customer Name</th>
+                                <th>Package Name</th>
+                                <th>Billing Name</th>
+                                <th>Billing Email</th>
+                                <th>Amount</th>
+                                <th>Card First 6</th>
+                                <th>Card Last 4</th>
+                                <th>Date</th>
+                                <th>Status</th>
                             </tr>
                             <!--end::Table row-->
                             </thead>
@@ -38,25 +43,30 @@
                             <!--begin::Table body-->
                             <tbody class="text-gray-600 fw-bold">
                             <!--begin::Table row-->
-                            @if(isset($transactions))
-                                @foreach($transactions as $item)
+                                @if(isset($transactions))
+                                    @foreach($transactions as $item)
+                                        <tr>
+                                            <!--begin::User=-->
+                                            <td>{{$loop->iteration}}</td>
+                                            <td>{{$item->cart_id ?: '-'}}</td>
+                                            <td>{{$item->user_name ?: '-'}}</td>
+                                            <td>{{$item->package_name ?: '-'}}</td>
+                                            <td>{{$item->billing_fname.' '.$item->billing_sname }}</td>
+                                            <td>{{$item->billing_email ?: '-'}}</td>
+                                            <td>{{$item->amount ?: '-'}}</td>
+                                            <td>{{$item->card_first6 ?: '-'}}</td>
+                                            <td>{{$item->card_last4 ?: '-'}}</td>
+                                            <td>{{$item->created_at ?: '-'}}</td>
+                                            <td>
+                                                <div class="badge badge-light fw-bolder">{{$item->status ?: '-'}}</div>
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                @else
                                     <tr>
-                                        <!--begin::User=-->
-                                        <td>{{$loop->iteration}}</td>
-                                        <td>{{$item->user_name ?: '-'}}</td>
-                                        <td>{{$item->package_name ?: '-'}}</td>
-                                        <td>{{$item->amount ?: '-'}}</td>
-                                        <td>{{$item->created_at ?: '-'}}</td>
-                                        <td>
-                                            <div class="badge badge-light fw-bolder">{{$item->status ?: '-'}}</div>
-                                        </td>
+                                        <td>No Record Found</td>
                                     </tr>
-                                @endforeach
-                            @else
-                                <tr>
-                                    <td>No Record Found</td>
-                                </tr>
-                            @endif
+                                @endif
                             </tbody>
                             <!--end::Table body-->
                         </table>
