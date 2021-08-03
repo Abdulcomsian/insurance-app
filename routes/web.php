@@ -45,8 +45,8 @@ Route::get('payment-transactions', 'HomeController@paymentTransactionsIndex')->n
 Route::get('payment-transactions-edit', 'HomeController@paymentTransactionsEdit')->name('payment_transactions.edit');
 
 //Rate Management
-Route::get('rates', 'HomeController@ratesIndex')->name('rates.index');
-Route::get('rates-edit', 'HomeController@ratesEdit')->name('rates.edit');
+Route::get('packages', 'HomeController@ratesIndex')->name('rates.index');
+Route::post('package-update', 'HomeController@ratesEdit')->name('rates.update');
 
 //Countries Management
 Route::get('countries', 'HomeController@countriesIndex')->name('countries.index');

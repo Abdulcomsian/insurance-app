@@ -220,11 +220,17 @@ class HomeController extends Controller
 
     public function ratesIndex()
     {
-        return view('rates.index');
+        $packages = DB::table('packages')->orderBy('id','asc')->get();
+        return view('rates.index',compact('packages'));
     }
 
-    public function ratesEdit()
+    public function ratesEdit(Request $request)
     {
-        return view('rates.edit');
+        $request['updated_at'] = now();
+        $packages = DB::table('packages')
+            ->where('id',$request->id)
+            ->update($request->except('_token','id'));
+        toastr()->success('Package updated successfully!');
+        return back();
     }
 }
