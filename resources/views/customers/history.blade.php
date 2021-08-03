@@ -1,4 +1,4 @@
-@extends('layouts.master', ["page_title"=>"Customers"])
+@extends('layouts.master', ["page_title"=>"Customers","columns"=>"[ 0, 1, 2, 3 ,4 ,5 , 6]"])
 @section('content')
     <!--begin::Content-->
     <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
@@ -307,14 +307,14 @@
                             <thead>
                             <!--begin::Table row-->
                             <tr class="text-start text-gray-400 fw-bolder fs-7 text-uppercase gs-0">
-                                <th class="min-w-10px">S.No</th>
-                                <th class="min-w-80px">Full Name</th>
-                                <th class="min-w-80px">Account</th>
-                                <th class="min-w-80px">Last Login</th>
-                                <th class="min-w-80px">Reg Date</th>
-                                <th class="min-w-80px">Contact#</th>
-                                <th class="min-w-50px">Status</th>
-                                <th class="min-w-50px">Actions</th>
+                                <th class="">S.No</th>
+                                <th class="">Name</th>
+                                <th class="">Account</th>
+                                <th class="">Last Login</th>
+                                <th class="">Reg Date</th>
+                                <th class="">Contact#</th>
+                                <th class="">Status</th>
+                                <th class="">Actions</th>
                             </tr>
                             <!--end::Table row-->
                             </thead>

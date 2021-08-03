@@ -31,8 +31,8 @@ License: For each use you must have a valid license purchased only from above li
     <link href="{{asset('assets/plugins/global/plugins.bundle.css')}}" rel="stylesheet" type="text/css" />
     <link href="{{asset('assets/css/style.bundle.css')}}" rel="stylesheet" type="text/css" />
     <link href="{{asset('assets/css/style.css')}}" rel="stylesheet" type="text/css" />
-{{--    <link href="{{asset('assets/plugins/custom/datatables/datatables.bundle.css')}}" rel="stylesheet" type="text/css" />--}}
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.25/datatables.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.7.1/css/buttons.dataTables.min.css"/>
 
     <!--end::Global Stylesheets Bundle-->
     @toastr_css
@@ -95,14 +95,45 @@ License: For each use you must have a valid license purchased only from above li
 <script src="{{asset('assets/js/custom/apps/chat/chat.js')}}"></script>
 <script src="{{asset('assets/js/custom/modals/create-app.js')}}"></script>
 <script src="{{asset('assets/js/custom/modals/upgrade-plan.js')}}"></script>
-{{--<script src="{{asset('assets/plugins/custom/datatables/datatables.bundle.js')}}"></script>--}}
-<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.js"></script>
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/1.7.1/js/dataTables.buttons.min.js"></script>
+<script type="text/javascript" charset="utf8" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+<script type="text/javascript" charset="utf8" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+<script type="text/javascript" charset="utf8" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/1.7.1/js/buttons.html5.min.js"></script>
 
 <script>
-    $(document).ready(function () {
-        // $('#datatable').DataTable();
-        $('#datatable').DataTable();
-    });
+    $(document).ready(function() {
+        $('#datatable').DataTable( {
+            dom: 'Bfrtip',
+            // buttons: [
+            //     'copy', 'csv', 'excel', 'pdf'
+            // ]
+            buttons: [
+                {
+                    extend: 'csvHtml5',
+                    exportOptions: {
+                        columns: @if(isset($columns)) {{$columns}} @else [ 0, ':visible' ] @endif
+                    }
+                },
+                {
+                    extend: 'excelHtml5',
+                    exportOptions: {
+                        columns: @if(isset($columns)) {{$columns}} @else [ 0, ':visible' ] @endif
+                    }
+                },
+                {{--{--}}
+                {{--    extend: 'pdfHtml5',--}}
+                {{--    exportOptions: {--}}
+                {{--        columns: {{$columns}}--}}
+
+                {{--        --}}{{--columns: @if(isset($columns)) $columns @else [ 0, ':visible' ] @endif--}}
+                {{--    }--}}
+                {{--}--}}
+            ]
+        } );
+    } );
+
 </script>
 
 @toastr_js

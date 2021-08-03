@@ -129,7 +129,7 @@ class HomeController extends Controller
     public function insuranceCompaniesIndex()
     {
         try {
-            $companies = DB::table('company_detail')->orderBy('id','desc')->get();
+            $companies = DB::table('company_detail')->orderBy('id','desc')->paginate(20);
             return view('insurance_companies.index' ,compact('companies'));
         }catch (\Exception $exception){
             toastr()->error('Server is busy,try again');
