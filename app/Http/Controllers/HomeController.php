@@ -151,24 +151,40 @@ class HomeController extends Controller
     }
     public function insuranceCompaniesSave(Request $request){
         try {
-            $basic_info = [];
-//            foreach ($request as $field => $value){
-//              if($item.str_contains('basic_info_')){
-//                  $basic_info
-//              }
-//            }
-//
-//            foreach ($all_fields as $field=>$value){
-//                if (substr($field, 0, 8 ) === $key_word){
-//                    $field = str_replace($key_word,"",$field);
-//                    unset($all_fields[$key_word.$field]);
-//                    $features[$field] = $value;
-//                }
-//            }
+//            $basic_info = [];
+            foreach ($request->all() as $field => $value){
+              if(str_contains($field,'basic_info_')){
+                  $field = str_replace('basic_info_',"",$field);
+                  unset($request['basic_info_'.$field]);
+                  $basic_info[$field] = $value;
+              }
 
-//            acc_
-//            m_s_
-//            b_o_d
+              if(str_contains($field,'acc_')){
+                  $field = str_replace('acc_',"",$field);
+                  unset($request['acc_'.$field]);
+                  $acc_info[$field] = $value;
+              }
+
+              if(str_contains($field,'m_s_')){
+                  $field = str_replace('m_s_',"",$field);
+                  unset($request['m_s_'.$field]);
+                  $marked_share_info[$field] = $value;
+              }
+
+              if(str_contains($field,'b_o_d_')){
+                  $field = str_replace('b_o_d_',"",$field);
+                  unset($request['b_o_d_'.$field]);
+                  $board_of_director[$field] = $value;
+              }
+
+            }
+            $id = DB::table('company_detail')->insert($basic_info);
+//            dump($id);
+//            dd($basic_info);
+//            dump($acc_info);
+//            dump($marked_share_info);
+//            dd($board_of_director);
+
         }catch (\Exception $exception){
             toastr()->info('Server is busy,try again');
         }
