@@ -8,6 +8,7 @@
         <div class="post flex-column-fluid" id="kt_post">
             <!--begin::Container-->
             <form action="{{route('insurance_companies.save')}}" method="post" id="kt_invoice_form">
+                @csrf
                 <div id="kt_content_container" class="container">
                     <!--begin::Layout-->
                     <div class="d-flex flex-column flex-lg-row">
