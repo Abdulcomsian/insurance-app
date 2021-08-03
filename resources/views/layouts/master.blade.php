@@ -106,9 +106,9 @@ License: For each use you must have a valid license purchased only from above li
     $(document).ready(function() {
         $('#datatable').DataTable( {
             dom: 'Bfrtip',
-            // buttons: [
-            //     'copy', 'csv', 'excel', 'pdf'
-            // ]
+            "processing": true,
+            responsive: true,
+            oLanguage: {sProcessing: "<div id='loader'></div>"},
             buttons: [
                 {
                     extend: 'csvHtml5',

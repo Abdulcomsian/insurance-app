@@ -67,7 +67,7 @@
                                                     <!--begin::Input group-->
                                                     <div class="fv-row mb-7">
                                                         <!--begin::Label-->
-                                                        <label class="required fw-bold fs-6 mb-2">Amount</label>
+                                                        <label class="required fw-bold fs-6 mb-2">Amount(AED)</label>
                                                         <!--end::Label-->
                                                         <!--begin::Input-->
                                                         <input type="number" required name="price" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Amount" />
@@ -120,7 +120,7 @@
                             <tr class="text-start text-gray-400 fw-bolder fs-7 text-uppercase gs-0">
                                 <th>S.No</th>
                                 <th>Package Name</th>
-                                <th>Amount</th>
+                                <th>Amount(AED)</th>
                                 <th>Count Sanctions</th>
                                 <th>Created Date</th>
                                 <th>Last Updated Date</th>
