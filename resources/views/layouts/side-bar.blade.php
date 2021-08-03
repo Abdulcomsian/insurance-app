@@ -47,7 +47,7 @@
                 class="menu menu-column menu-title-gray-800 menu-state-title-primary menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-500"
                 id="#kt_aside_menu" data-kt-menu="true">
                 <div class="menu-item">
-                    <a class="menu-link active" href="/">
+                    <a class="menu-link {{Request::is('/') ? 'active' : ''}}" href="/">
 										<span class="menu-icon">
 											<!--begin::Svg Icon | path: icons/duotone/Design/PenAndRuller.svg-->
 											<span class="svg-icon svg-icon-2">
@@ -67,7 +67,7 @@
                     </a>
                 </div>
                 <div class="menu-item">
-                    <a class="menu-link" href="{{route('customers.history')}}">
+                    <a class="menu-link  {{Request::is('customer*') ? 'active' : ''}}" href="{{route('customers.history')}}">
 										<span class="menu-icon">
 											<!--begin::Svg Icon | path: icons/duotone/Design/Sketch.svg-->
 											<span class="svg-icon svg-icon-2">
@@ -83,7 +83,7 @@
                     </a>
                 </div>
                 <div class="menu-item">
-                    <a class="menu-link" href="{{route('countries.index')}}">
+                    <a class="menu-link {{Request::is('countries*') ? 'active' : ''}}" href="{{route('countries.index')}}">
 										<span class="menu-icon">
 											<!--begin::Svg Icon | path: icons/duotone/Design/Sketch.svg-->
 											<span class="svg-icon svg-icon-2">
@@ -99,7 +99,7 @@
                     </a>
                 </div>
                 <div class="menu-item">
-                    <a class="menu-link" href="{{route('payment_transactions.index')}}">
+                    <a class="menu-link  {{Request::is('payment*') ? 'active' : ''}}" href="{{route('payment_transactions.index')}}">
 										<span class="menu-icon">
 											<!--begin::Svg Icon | path: icons/duotone/Design/Sketch.svg-->
 											<span class="svg-icon svg-icon-2">
@@ -115,7 +115,7 @@
                     </a>
                 </div>
                 <div class="menu-item">
-                    <a class="menu-link" href="{{route('insurance_companies.index')}}">
+                    <a class="menu-link  {{Request::is('insurance*') ? 'active' : ''}}" href="{{route('insurance_companies.index')}}">
 										<span class="menu-icon">
 											<!--begin::Svg Icon | path: icons/duotone/Design/Sketch.svg-->
 											<span class="svg-icon svg-icon-2">
@@ -131,7 +131,7 @@
                     </a>
                 </div>
                 <div class="menu-item">
-                    <a class="menu-link" href="{{route('rates.index')}}">
+                    <a class="menu-link {{Request::is('packages*') ? 'active' : ''}}" href="{{route('rates.index')}}">
 										<span class="menu-icon">
 											<!--begin::Svg Icon | path: icons/duotone/Design/Sketch.svg-->
 											<span class="svg-icon svg-icon-2">

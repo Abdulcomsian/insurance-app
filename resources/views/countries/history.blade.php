@@ -1,4 +1,4 @@
-@extends('layouts.master', ["page_title"=>"Countries"])
+@extends('layouts.master', ["page_title"=>"Countries","columns"=>"[ 0, 1, 2, 3 ]"])
 @section('content')
     <!--begin::Content-->
     <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
@@ -311,6 +311,7 @@
                                 <th class="">Country</th>
                                 <th class="">Last Updated</th>
                                 <th class="">Exchange Rate in Dollar USD</th>
+                                <th class="d-none">Exchange Rate in Dollar USD</th>
                                 <th class="">Actions</th>
                             </tr>
                             <!--end::Table row-->
@@ -327,6 +328,9 @@
                                     </td>
                                     <td>
                                         {{$item->updated_at ?: '-'}}
+                                    </td>
+                                    <td class="d-none">
+                                        {{$item->rate_in_dollar ?: '' }}
                                     </td>
                                     <form action="{{route('countries.update',$item->id)}}" method="post">
                                         @csrf

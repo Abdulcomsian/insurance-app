@@ -88,3 +88,6 @@ element.style {
     margin-top: 0px !important;
     display: block;
 }
+#datatable_wrapper{
+    overflow: scroll;
+}
