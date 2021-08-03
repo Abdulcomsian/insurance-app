@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layouts.master', ["page_title"=>"Countries"])
 @section('content')
     <!--begin::Content-->
     <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
@@ -307,11 +307,11 @@
                             <thead>
                             <!--begin::Table row-->
                             <tr class="text-start text-gray-400 fw-bolder fs-7 text-uppercase gs-0">
-                                <th class="min-w-100px">S.No</th>
-                                <th class="min-w-100px">Country</th>
-                                <th class="min-w-100px">Last Updated</th>
-                                <th class="min-w-100px">Exchange Rate in Dollar USD</th>
-                                <th class="min-w-100px">Actions</th>
+                                <th class="">S.No</th>
+                                <th class="">Country</th>
+                                <th class="">Last Updated</th>
+                                <th class="">Exchange Rate in Dollar USD</th>
+                                <th class="">Actions</th>
                             </tr>
                             <!--end::Table row-->
                             </thead>
