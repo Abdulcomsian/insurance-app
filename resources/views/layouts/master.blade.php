@@ -103,36 +103,25 @@ License: For each use you must have a valid license purchased only from above li
 <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/1.7.1/js/buttons.html5.min.js"></script>
 
 <script>
-    $(document).ready(function() {
-        $('#datatable').DataTable( {
-            dom: 'Bfrtip',
-            "processing": true,
-            responsive: true,
-            oLanguage: {sProcessing: "<div id='loader'></div>"},
-            buttons: [
-                {
-                    extend: 'csvHtml5',
-                    exportOptions: {
-                        columns: @if(isset($columns)) {{$columns}} @else [ 0, ':visible' ] @endif
-                    }
-                },
-                {
-                    extend: 'excelHtml5',
-                    exportOptions: {
-                        columns: @if(isset($columns)) {{$columns}} @else [ 0, ':visible' ] @endif
-                    }
-                },
-                {{--{--}}
-                {{--    extend: 'pdfHtml5',--}}
-                {{--    exportOptions: {--}}
-                {{--        columns: {{$columns}}--}}
-
-                {{--        --}}{{--columns: @if(isset($columns)) $columns @else [ 0, ':visible' ] @endif--}}
-                {{--    }--}}
-                {{--}--}}
-            ]
-        } );
-    } );
+    {{--$(document).ready(function() {--}}
+    {{--    $('#datatable').DataTable( {--}}
+    {{--        dom: 'lBfrtip',--}}
+    {{--        buttons: [--}}
+    {{--            {--}}
+    {{--                extend: 'csvHtml5',--}}
+    {{--                exportOptions: {--}}
+    {{--                    columns: @if(isset($columns)) {{$columns}} @else [ 0, ':visible' ] @endif--}}
+    {{--                }--}}
+    {{--            },--}}
+    {{--            {--}}
+    {{--                extend: 'excelHtml5',--}}
+    {{--                exportOptions: {--}}
+    {{--                    columns: @if(isset($columns)) {{$columns}} @else [ 0, ':visible' ] @endif--}}
+    {{--                }--}}
+    {{--            },--}}
+    {{--        ]--}}
+    {{--    } );--}}
+    {{--} );--}}
 
 </script>
 
