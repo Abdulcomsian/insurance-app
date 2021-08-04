@@ -1,17 +1,5 @@
 @extends('layouts.master', ["page_title"=>"Insurance Companies"])
 @section('css')
-    <style>
-        .loader{
-            position: fixed;
-            left: 0px;
-            top: 0px;
-            width: 100%;
-            height: 100%;
-            z-index: 9999;
-            background: url('//upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Phi_fenomeni.gif/50px-Phi_fenomeni.gif')
-            50% 50% no-repeat rgb(249,249,249);
-        }
-    </style>
 @endsection
 @section('content')
     <!--begin::Content-->
@@ -61,8 +49,8 @@
 <!--end::Card toolbar-->
                     <div class="card-body pt-0">
                         <!--begin::Table-->
-                        <div class="loader"></div>
-                        <table class="table align-middle table-row-dashed fs-6 gy-5" id="datatable">
+{{--                        <table class="table align-middle table-row-dashed fs-6 gy-5" id="datatable">--}}
+                        <table class="table align-middle table-row-dashed fs-6 gy-5">
                             <!--begin::Table head-->
                             <thead>
                             <!--begin::Table row-->
@@ -116,9 +104,7 @@
                                                     <!--end::Svg Icon-->
                                                 </button>
                                             </form>
-
                                         </td>
-
                                     </tr>
                                 @endforeach
                             @else
@@ -129,6 +115,7 @@
                             </tbody>
                             <!--end::Table body-->
                         </table>
+                        {{$companies->links()}}
                         <!--end::Table-->
                     </div>
                     <!--end::Card body-->
@@ -142,9 +129,4 @@
     <!--end::Content-->
 @endsection
 @section('script')
-    <script>
-        $(document).ready(function () {
-            $('.loader').hide();
-        });
-    </script>
 @endsection

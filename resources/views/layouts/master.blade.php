@@ -105,10 +105,7 @@ License: For each use you must have a valid license purchased only from above li
 <script>
     $(document).ready(function() {
         $('#datatable').DataTable( {
-            dom: 'Bfrtip',
-            "processing": true,
-            responsive: true,
-            oLanguage: {sProcessing: "<div id='loader'></div>"},
+            dom: 'lBfrtip',
             buttons: [
                 {
                     extend: 'csvHtml5',
@@ -122,14 +119,6 @@ License: For each use you must have a valid license purchased only from above li
                         columns: @if(isset($columns)) {{$columns}} @else [ 0, ':visible' ] @endif
                     }
                 },
-                {{--{--}}
-                {{--    extend: 'pdfHtml5',--}}
-                {{--    exportOptions: {--}}
-                {{--        columns: {{$columns}}--}}
-
-                {{--        --}}{{--columns: @if(isset($columns)) $columns @else [ 0, ':visible' ] @endif--}}
-                {{--    }--}}
-                {{--}--}}
             ]
         } );
     } );
