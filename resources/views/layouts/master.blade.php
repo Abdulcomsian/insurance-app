@@ -95,33 +95,38 @@ License: For each use you must have a valid license purchased only from above li
 <script src="{{asset('assets/js/custom/apps/chat/chat.js')}}"></script>
 <script src="{{asset('assets/js/custom/modals/create-app.js')}}"></script>
 <script src="{{asset('assets/js/custom/modals/upgrade-plan.js')}}"></script>
-<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
-<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/1.7.1/js/dataTables.buttons.min.js"></script>
-<script type="text/javascript" charset="utf8" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
-<script type="text/javascript" charset="utf8" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
-<script type="text/javascript" charset="utf8" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
-<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/1.7.1/js/buttons.html5.min.js"></script>
-
+{{--<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>--}}
+{{--<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/1.7.1/js/dataTables.buttons.min.js"></script>--}}
+{{--<script type="text/javascript" charset="utf8" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>--}}
+{{--<script type="text/javascript" charset="utf8" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>--}}
+{{--<script type="text/javascript" charset="utf8" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>--}}
+{{--<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/1.7.1/js/buttons.html5.min.js"></script>--}}
+<script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.6.2/js/dataTables.buttons.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.6.2/js/buttons.html5.min.js"></script>
 <script>
-    $(document).ready(function() {
-        $('#datatable').DataTable( {
-            dom: 'lBfrtip',
-            buttons: [
-                {
-                    extend: 'csvHtml5',
-                    exportOptions: {
-                        columns: @if(isset($columns)) {{$columns}} @else [ 0, ':visible' ] @endif
-                    }
-                },
-                {
-                    extend: 'excelHtml5',
-                    exportOptions: {
-                        columns: @if(isset($columns)) {{$columns}} @else [ 0, ':visible' ] @endif
-                    }
-                },
-            ]
-        } );
-    } );
+    {{--$(document).ready(function() {--}}
+    {{--    $('#datatable').DataTable( {--}}
+    {{--        dom: 'lBfrtip',--}}
+    {{--        buttons: [--}}
+    {{--            {--}}
+    {{--                extend: 'csvHtml5',--}}
+    {{--                exportOptions: {--}}
+    {{--                    columns: @if(isset($columns)) {{$columns}} @else [ 0, ':visible' ] @endif--}}
+    {{--                }--}}
+    {{--            },--}}
+    {{--            {--}}
+    {{--                extend: 'excelHtml5',--}}
+    {{--                exportOptions: {--}}
+    {{--                    columns: @if(isset($columns)) {{$columns}} @else [ 0, ':visible' ] @endif--}}
+    {{--                }--}}
+    {{--            },--}}
+    {{--        ]--}}
+    {{--    } );--}}
+    {{--} );--}}
 
 </script>
 
