@@ -288,13 +288,25 @@ class HomeController extends Controller
     public function ratesEdit(Request $request)
     {
         try {
-            $request['updated_at'] = now();
-            $packages = DB::table('packages')
-                ->where('id',$request->id)
-                ->update($request->except('_token','id'));
-            toastr()->success('Package updated successfully!');
+            if ($request->has('id')){
+                $request['updated_at'] = now();
+                $packages = DB::table('packages')
+                    ->where('id',$request->id)
+                    ->update($request->except('_token','id'));
+                toastr()->success('Package updated successfully!');
+            }else{
+                $request->request->add(
+                    ['created_at'=> now(),
+                    'updated_at' =>now()]);
+                DB::table('packages')->insert(
+                    $request->except('_token')
+                );
+                toastr()->success('Package added successfully!');
+            }
+
             return back();
         }catch (\Exception $exception){
+            dd($exception->getMessage());
             toastr()->error('Server is busy,try again');
             return back();
         }

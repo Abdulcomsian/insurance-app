@@ -309,11 +309,11 @@
                             <tr class="text-start text-gray-400 fw-bolder fs-7 text-uppercase gs-0">
                                 <th class="">S.No</th>
                                 <th class="">Name</th>
-                                <th class="">Account</th>
                                 <th class="">Last Login</th>
                                 <th class="">Reg Date</th>
                                 <th class="">Contact#</th>
-                                <th class="">Status</th>
+                                <th class="">Email Verified</th>
+                                <th class="">Account Status</th>
                                 <th class="">Actions</th>
                             </tr>
                             <!--end::Table row-->
@@ -326,12 +326,12 @@
                                 <tr>
                                     <td>{{$loop->iteration}}</td>
                                     <td>{{$item->name ?: '-'}}</td>
-                                    <td>
-                                        <div class="badge {{$item->email_verified_at ? 'badge-success': 'badge-danger'}} fw-bolder">{{$item->email_verified_at ? 'Verified' : 'Not Verified'}}</div>
-                                    </td>
                                     <td>{{$item->last_login_at ?: '-'}}</td>
                                     <td>{{$item->created_at ?: '-'}}</td>
                                     <td>{{$item->mobile_number ?: '-'}}</td>
+                                    <td>
+                                        <div class="badge {{$item->email_verified_at ? 'badge-success': 'badge-danger'}} fw-bolder">{{$item->email_verified_at ? 'Verified' : 'Unverified'}}</div>
+                                    </td>
                                     <td>
                                         <div class="badge {{$item->status == \App\Utils\UserStatus::ACTIVE ? 'badge-success': 'badge-danger'}} fw-bolder">{{$item->status ?: '-'}}</div>
                                     </td>
