@@ -193,7 +193,7 @@ class HomeController extends Controller
                 ->get();
             return view('insurance_companies.create',compact('countries'));
         }catch (\Exception $exception){
-            toastr()->info('Server is busy,try again');
+            toastr()->error('Server is busy,try again');
             return back();
         }
     }
@@ -235,13 +235,25 @@ class HomeController extends Controller
 //            dd($board_of_director);
 
         }catch (\Exception $exception){
-            toastr()->info('Server is busy,try again');
+            toastr()->error('Server is busy,try again');
+            return back();
         }
     }
 
-    public function insuranceCompaniesEdit()
+    public function insuranceCompaniesEdit($id)
     {
-        return view('insurance_companies.edit');
+        try {
+            $company = DB::table('company_detail')
+                ->where('company_detail.id','=',$id)
+                ->join('board_of_director','company_detail.id','=','board_of_director.company_id')
+                ->first();
+            dd($company);
+            return view('insurance_companies.edit');
+        }catch (\Exception $exception){
+            dd($exception->getMessage());
+            toastr()->error('Server is busy,try again');
+            return back();
+        }
     }
 
     public function paymentTransactionsIndex()
@@ -275,11 +287,17 @@ class HomeController extends Controller
 
     public function ratesEdit(Request $request)
     {
-        $request['updated_at'] = now();
-        $packages = DB::table('packages')
-            ->where('id',$request->id)
-            ->update($request->except('_token','id'));
-        toastr()->success('Package updated successfully!');
-        return back();
+        try {
+            $request['updated_at'] = now();
+            $packages = DB::table('packages')
+                ->where('id',$request->id)
+                ->update($request->except('_token','id'));
+            toastr()->success('Package updated successfully!');
+            return back();
+        }catch (\Exception $exception){
+            toastr()->error('Server is busy,try again');
+            return back();
+        }
+
     }
 }
