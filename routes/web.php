@@ -48,7 +48,7 @@ Route::get('insurance-company-create', 'HomeController@insuranceCompaniesCreate'
 Route::post('insurance-company-save', 'HomeController@insuranceCompaniesSave')->name('insurance_companies.save');
 
 //Payment Transactions
-Route::get('payment-transactions', 'HomeController@paymentTransactionsIndex')->name('payment_transactions.index');
+Route::match(['get','post'],'payment-transactions', 'HomeController@paymentTransactionsIndex')->name('payment_transactions.index');
 Route::get('payment-transactions-edit', 'HomeController@paymentTransactionsEdit')->name('payment_transactions.edit');
 
 //Rate Management
