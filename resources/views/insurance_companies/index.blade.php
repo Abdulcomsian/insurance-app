@@ -9,8 +9,10 @@ div.dataTables_filter input{
     background-position: 0px 3px !important;
     padding-left: 27px !important;
 }
-
-
+.table td:last-child{
+    display:flex !important;
+}
+table.dataTable>thead .sorting:after, table.dataTable>thead .sorting:before, table.dataTable>thead .sorting_asc:after, table.dataTable>thead .sorting_asc:before, table.dataTable>thead .sorting_desc:after, table.dataTable>thead .sorting_desc:before{display:none !important;}
     </style>
 @endsection
 
@@ -54,8 +56,8 @@ div.dataTables_filter input{
                     <div class="card-body pt-0">
                         <!--begin::Table-->
                         <table class="table align-middle table-bordered  fs-6 gy-5  data-table">
-                        <!-- <div class="table-responsive">
-                            <table class="table table-bordered data-table" > -->
+                        <!-- <div class="table-responsive"> -->
+                            <!-- <table class="table table-bordered data-table" >  -->
                             <thead>
                             <tr class="text-start text-gray-400 fw-bolder fs-7 text-uppercase gs-0" role="row">
                                 <th>S.No</th>
@@ -63,7 +65,7 @@ div.dataTables_filter input{
                                 <th>Country</th>
                                 <th>Contact#</th>
                                 <th>Type</th>
-                                <th>Actions</th>
+                                <th >Actions</th>
                             </tr>
                             </thead>
                             <tbody fw-bold text-gray-600>
