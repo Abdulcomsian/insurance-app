@@ -245,17 +245,6 @@ class HomeController extends Controller
         return view('insurance_companies.index');
     }
 
-//    public function insuranceCompaniesIndex()
-//    {
-//        try {
-//            $companies = DB::table('company_detail')->orderBy('company_name','asc')->paginate(50);
-//            return view('insurance_companies.index' ,compact('companies'));
-//        }catch (\Exception $exception){
-//            toastr()->error('Server is busy,try again');
-//            return back();
-//        }
-//    }
-
     public function insuranceCompaniesCreate()
     {
         try {
@@ -327,21 +316,39 @@ class HomeController extends Controller
         }
     }
 
-    public function paymentTransactionsIndex()
+    public function paymentTransactionsIndex(Request $request)
     {
+        $data = DB::table('transaction')
+            ->join('users','transaction.user_id','=','users.id')
+            ->join('packages','transaction.package_id','=','packages.id')
+            ->orderBy('transaction.id','desc')
+            ->select(
+                'transaction.*',
+                'users.name as user_name',
+                'packages.name as package_name')
+            ->get();
         try {
-            $transactions = DB::table('transaction')
-                ->join('users','transaction.user_id','=','users.id')
-                ->join('packages','transaction.package_id','=','packages.id')
-                ->orderBy('transaction.id','desc')
-                ->select(
-                    'transaction.*',
-                    'users.name as user_name',
-                    'packages.name as package_name')
-                ->get();
-            return view('payment_transactions.index',compact('transactions'));
+            if ($request->ajax()) {
+                $data = DB::table('transaction')
+                    ->join('users','transaction.user_id','=','users.id')
+                    ->join('packages','transaction.package_id','=','packages.id')
+                    ->orderBy('transaction.id','desc')
+                    ->select(
+                        'transaction.*',
+                        'users.name as user_name',
+                        'packages.name as package_name')
+                    ->get();
+                return Datatables::of($data)
+                    ->addColumn('billing_name',function ($data){
+                        return $data->billing_fname. ' ' . $data->billing_sname;
+                    })
+                    ->rawColumns(['billing_name'])
+                    ->make(true);
+            }
+            return view('payment_transactions.index');
         } catch (\Exception $exception){
-            return 'Something went wrong';
+            toastr()->error('Server is busy,try again');
+            return back();
         }
     }
 
