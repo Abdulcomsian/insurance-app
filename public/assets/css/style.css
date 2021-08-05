@@ -91,3 +91,39 @@ element.style {
 #datatable_wrapper{
     overflow: scroll;
 }
+.dt-buttons button:nth-child(1),
+.dt-buttons button:nth-child(4),
+.dataTables_info{
+    display: none;
+}
+#DataTables_Table_0_filter{
+    position: absolute;
+    top: -52px;
+}
+.dataTables_length{
+    position: absolute;
+    bottom: 0;
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button.current, .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover{
+    background: #009ef7 !important;
+    border: none;
+    border-radius: .475rem;
+    color: #fff !important;
+}
+.dt-buttons{
+    position: absolute !important;
+    top: -54px;
+    right: 210px;
+}
+
+.dt-buttons button {
+    border: 0 !important;
+    padding: calc(.75rem + 1px) calc(1.5rem + 1px) !important;
+    color: #009ef7 !important;
+    border-color: #ecf8ff !important;
+    background-color: #ecf8ff !important;
+    background: #ecf8ff !important;
+    font-weight: 700 !important;
+    font-size: 1.1rem !important;
+    border-radius: .475rem !important;
+}
