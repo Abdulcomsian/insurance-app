@@ -3,7 +3,7 @@
 <head>
     <title></title>
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    @include('layouts.datatables')
+    @include('layouts.datatables_js')
 </head>
 <body>
 

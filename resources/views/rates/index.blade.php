@@ -9,18 +9,25 @@
                 <!--begin::Card-->
                 <div class="card">
                     <!--begin::Card header-->
-                    <div class="card-header border-0 pt-6">
-
+                    <div class="border-0 pt-6">
+                        <!--begin::Toolbar-->
+                        <div class="d-flex justify-content-end" data-kt-user-table-toolbar="base">
+                            <!--end::Filter-->
+                            <!--begin::Add user-->
+                                <button type="button" class="add_btn btn btn-primary" value="Add" style="margin-right: 30px !important;" data-bs-toggle="modal" data-bs-target="#kt_modal_add_user">
+                                    <!--begin::Svg Icon | path: icons/duotone/Navigation/Plus.svg-->
+                                    <span class="svg-icon svg-icon-2">
+													<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+														<rect fill="#000000" x="4" y="11" width="16" height="2" rx="1" />
+														<rect fill="#000000" opacity="0.5" transform="translate(12.000000, 12.000000) rotate(-270.000000) translate(-12.000000, -12.000000)" x="4" y="11" width="16" height="2" rx="1" />
+													</svg>
+												</span>
+                                    <!--end::Svg Icon-->Add New Package</button>
+                            <!--end::Add user-->
+                        </div>
+                        <!--end::Toolbar-->
                         <!--begin::Card toolbar-->
                         <div class="card-toolbar">
-                            <!--begin::Group actions-->
-                            <div class="d-flex justify-content-end align-items-center d-none" data-kt-user-table-toolbar="selected">
-                                <div class="fw-bolder me-5">
-                                    <span class="me-2" data-kt-user-table-select="selected_count"></span>Selected</div>
-                                <button type="button" class="btn btn-danger" data-kt-user-table-select="delete_selected">Delete Selected</button>
-                            </div>
-                            <!--end::Group actions-->
-                            <!--end::Modal - New Card-->
                             <!--begin::Modal - Add task-->
                             <div class="modal fade" id="kt_modal_add_user" tabindex="-1" aria-hidden="true">
                                 <!--begin::Modal dialog-->
@@ -30,7 +37,7 @@
                                         <!--begin::Modal header-->
                                         <div class="modal-header" id="kt_modal_add_user_header">
                                             <!--begin::Modal title-->
-                                            <h2 class="fw-bolder">Edit Package</h2>
+                                            <h2 class="fw-bolder" id="title">Edit Package</h2>
                                             <!--end::Modal title-->
                                             <!--begin::Close-->
                                             <div onclick=" $('.modal').modal('hide');" class="btn btn-icon btn-sm btn-active-icon-primary" data-kt-users-modal-action="close">
@@ -77,18 +84,34 @@
                                                     <!--begin::Input group-->
                                                     <div class="fv-row mb-7">
                                                         <!--begin::Label-->
-                                                        <label class="required fw-bold fs-6 mb-2">COUNT SANCTIONS</label>
+                                                        <label class="required fw-bold fs-6 mb-2">Count Sanctions</label>
                                                         <!--end::Label-->
                                                         <!--begin::Input-->
                                                         <input type="number" required name="sanctions" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Count Sanctions" />
                                                         <!--end::Input-->
                                                     </div>
+                                                    <div class="fv-row mb-7">
+                                                        <!--begin::Label-->
+                                                        <label class="required fw-bold fs-6 mb-2">Start Date</label>
+                                                        <!--end::Label-->
+                                                        <!--begin::Input-->
+                                                        <input type="date" required name="start_date" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Count Sanctions" />
+                                                        <!--end::Input-->
+                                                    </div>
+                                                    <div class="fv-row mb-7">
+                                                        <!--begin::Label-->
+                                                        <label class="required fw-bold fs-6 mb-2">End Date</label>
+                                                        <!--end::Label-->
+                                                        <!--begin::Input-->
+                                                        <input type="date" required name="end_date" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Count Sanctions" />
+                                                        <!--end::Input-->
+                                                    </div>
                                                 </div>
-                                                <input type="hidden" name="id">
                                                 <!--end::Scroll-->
                                                 <!--begin::Actions-->
                                                 <div class="text-center pt-15">
-                                                    <button type="reset" class="btn btn-white me-3" data-kt-users-modal-action="cancel">Discard</button>
+                                                    <button type="button" class="btn btn-white me-3" data-bs-dismiss="modal">Close</button>
+{{--                                                    <button type="reset" class="btn btn-white me-3" data-kt-users-modal-action="cancel">Discard</button>--}}
                                                     <button type="submit" class="btn btn-primary" data-kt-users-modal-action="submit">
                                                         <span class="indicator-label">Submit</span>
                                                         <span class="indicator-progress">Please wait...
@@ -122,8 +145,10 @@
                                 <th>Package Name</th>
                                 <th>Amount(AED)</th>
                                 <th>Count Sanctions</th>
-                                <th>Created Date</th>
+                                <th>Start Date</th>
+                                <th>End Date</th>
                                 <th>Last Updated Date</th>
+                                <th>Status</th>
                                 <th>Actions</th>
                             </tr>
                             <!--end::Table row-->
@@ -138,11 +163,13 @@
                                     <td class="name_{{$item->id}}">{{$item->name}}</td>
                                     <td class="price_{{$item->id}}">{{$item->price}}</td>
                                     <td class="sanctions_{{$item->id}}">{{$item->sanctions}}</td>
-                                    <td>{{$item->created_at}}</td>
+                                    <td class="start_date_{{$item->id}}">{{$item->start_date ?: ''}}</td>
+                                    <td class="end_date_{{$item->id}}">{{$item->end_date ?: ''}}</td>
                                     <td>{{$item->updated_at}}</td>
+                                    <td>{{$item->status}}</td>
                                     <td>
 {{--                                        <a href="{{route('rates.edit',encrypt($item->id))}}" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1"  data-bs-toggle="modal" data-bs-target="#kt_modal_add_user">--}}
-                                        <button id="{{$item->id}}" class="edit_btn btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1"  data-bs-toggle="modal" data-bs-target="#kt_modal_add_user">
+                                        <button id="{{$item->id}}" value="Edit" class="edit_btn btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1"  data-bs-toggle="modal" data-bs-target="#kt_modal_add_user">
                                             <!--begin::Svg Icon | path: icons/duotone/Communication/Write.svg-->
                                             <span class="svg-icon svg-icon-3">
                                                                     <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
@@ -173,12 +200,25 @@
 @section('script')
     <script>
         $(document).ready(function () {
-            $('.edit_btn').click(function () {
-                let id = $(this).attr('id')
-                $('input[name="id"]').val(id);
-                $('input[name="name"]').val($('.name_'+id).text());
-                $('input[name="price"]').val($('.price_'+id).text());
-                $('input[name="sanctions"]').val($('.sanctions_'+id).text());
+            $('.edit_btn, .add_btn').click(function () {
+                console.log('Here in function');
+                console.log($(this).val());
+                let btn_value = $(this).val();
+                if (btn_value == 'Add'){
+                    $('.form')[0].reset();
+                    $('input[name="id"]').remove();
+                    $('#title').text('Add Package');
+                }else {
+                    $('input[name="id"]').remove();
+                    $('#title').text('Edit Package');
+                    let id = $(this).attr('id')
+                    $('.form').append(`<input type="hidden" name="id" value="${id}">`);
+                    $('input[name="name"]').val($('.name_'+id).text());
+                    $('input[name="price"]').val($('.price_'+id).text());
+                    $('input[name="sanctions"]').val($('.sanctions_'+id).text());
+                    $('input[name="start_date"]').val($('.start_date_'+id).text());
+                    $('input[name="end_date"]').val($('.end_date_'+id).text());
+                }
             });
         });
     </script>

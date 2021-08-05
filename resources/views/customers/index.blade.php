@@ -1,4 +1,4 @@
-@extends('layouts.master', ["page_title"=>"Countries"])
+@extends('layouts.master', ["page_title"=>"Customers"])
 @section('css')
     @include('layouts.datatables_css')
 @endsection
@@ -24,12 +24,14 @@
                             <!--begin::Table row-->
                             <tr class="text-start text-gray-400 fw-bolder fs-7 text-uppercase gs-0">
                                 <th class="">ID</th>
-                                <th class="">Country</th>
-                                <th class="">Last Updated</th>
-                                <th class="dollar_rate">Dollar Rate</th>
-                                <th class="">Exchange Rate in Dollar USD</th>
-{{--                                <th class="d-none">Exchange Rate in Dollar USD</th>--}}
-{{--                                <th class="">Actions</th>--}}
+                                <th class="">Name</th>
+                                <th class="">Last Login</th>
+                                <th class="">Reg Date</th>
+                                <th class="">Contact#</th>
+                                <th>Email</th>
+                                <th class="">Email Status</th>
+                                <th class="">Account Status</th>
+                                <th class="">Actions</th>
                             </tr>
                             <!--end::Table row-->
                             </thead>
@@ -41,6 +43,7 @@
                             </tbody>
                             <!--end::Table body-->
                         </table>
+
                         <!--end::Table-->
                     </div>
                     <!--end::Card body-->
@@ -61,52 +64,50 @@
                 processing: true,
                 serverSide: true,
                 dom: 'lBfrtip',
-                "columnDefs": [
-                    {
-                        "targets": [ 3 ],
-                        "visible": false,
-                    },
-                    ],
                 buttons: [
                     {
                         extend: 'copyHtml5',
                         exportOptions: {
-                            columns: [ 0,1,2,3 ]
+                            columns: [0, 1, 2,3, 4, 5, 6, 7]
                         },
 
                     },
                     {
                         extend: 'excelHtml5',
                         exportOptions: {
-                            columns: [ 0,1,2,3]
+                           columns: [0, 1, 2,3, 4, 5, 6, 7]
                         },
 
                     },
                     {
                         extend: 'csvHtml5',
                         exportOptions: {
-                            columns: [ 0,1,2,3 ]
+                           columns: [0, 1, 2,3, 4, 5, 6, 7]
                         },
 
                     },
                     {
                         extend: 'pdfHtml5',
                         exportOptions: {
-                            columns: [ 0,1,2,3]
+                           columns: [0, 1, 2,3, 4, 5, 6, 7]
                         }
                     },
                 ],
 
-                ajax: "{{ route('countries.index') }}",
+                ajax: "{{ route('customers.history') }}",
                 columns: [
-                    {data: 'id', name: 'id',defaultContent: ''},
-                    {data: 'country_name', name: 'country_name',defaultContent: ''},
-                    {data: 'updated_at', name: 'updated_at',defaultContent: ''},
-                    {data: 'dollar_rate', name: 'dollar_rate',defaultContent: ''},
-                    {data: 'rate_in_dollar', name: 'rate_in_dollar',defaultContent: ''},
+                    {data: 'id', name: 'id', defaultContent: '-'},
+                    {data: 'name', name: 'company_name',defaultContent: '-'},
+                    {data: 'last_login_at', name: 'country',defaultContent: '-'},
+                    {data: 'created_at', name: 'contact_number',defaultContent: '-'},
+                    {data: 'mobile_number', name: 'company_type',defaultContent: '-'},
+                    {data: 'email', name: 'company_type',defaultContent: '-'},
+                    {data: 'email_verified_at', name: 'company_type',defaultContent: '-'},
+                    {data: 'status', name: 'company_type',defaultContent: '-'},
+                    {data: 'action', name: 'action', orderable: false, searchable: false},
                 ],
                 language: {
-                    searchPlaceholder: "Search Country",
+                    searchPlaceholder: "Search Companies",
                     search: ""
                 }
             });
@@ -114,7 +115,6 @@
         });
         $( document ).ready(function() {
             $('div.dataTables_filter input').addClass('form-control form-control-solid w-250px ps-15');
-            // $('.dollar_rate').addClass('d-none');
         });
     </script>
 @endsection
