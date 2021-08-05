@@ -115,12 +115,24 @@
                                                 <!--end::Input group-->
                                             </div>
                                             <div class="col-lg-6">
-                                                <label class="form-label fs-6 fw-bolder text-gray-700 mb-3">Status</label>
+                                                <label class="form-label fs-6 fw-bolder text-gray-700 mb-3">Account Status</label>
                                                 <!--begin::Input group-->
                                                 <div class="mb-5">
                                                     <select name="status" data-control="select2" data-placeholder="Select a country" data-hide-search="true" class="form-select form-select-solid fw-bolder">
                                                         <option value="{{\App\Utils\UserStatus::ACTIVE}}" @if($user->status == \App\Utils\UserStatus::ACTIVE) selected @endif>{{\App\Utils\UserStatus::ACTIVE}}</option>
                                                         <option value="{{\App\Utils\UserStatus::INACTIVE}}" @if($user->status == \App\Utils\UserStatus::INACTIVE) selected @endif>{{\App\Utils\UserStatus::INACTIVE}}</option>
+                                                    </select>
+                                                </div>
+                                                <!--end::Input group-->
+                                            </div>
+{{--                                            {{dd($user)}}--}}
+                                            <div class="col-lg-6">
+                                                <label class="form-label fs-6 fw-bolder text-gray-700 mb-3">Email Status</label>
+                                                <!--begin::Input group-->
+                                                <div class="mb-5">
+                                                    <select name="email_verified_at" data-control="select2" data-placeholder="Select a country" data-hide-search="true" class="form-select form-select-solid fw-bolder">
+                                                        <option value="{{null}}" @if($user->status == null) selected @endif>{{\App\Utils\EmailStatus::Unverified}}</option>
+                                                        <option value="{{now()}}" @if(isset($user->email_verified_at)) selected @endif>{{\App\Utils\EmailStatus::Verified}}</option>
                                                     </select>
                                                 </div>
                                                 <!--end::Input group-->

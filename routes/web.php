@@ -30,7 +30,7 @@ Auth::routes([
 Route::get('/', 'HomeController@index')->name('home');
 
 //Customer History
-Route::get('customers-history', 'HomeController@customerHistory')->name('customers.history');
+Route::match(['get','post'],'customers-history', 'HomeController@customerHistory')->name('customers.history');
 Route::get('customer-edit/{id}', 'HomeController@customerEdit')->name('customers.edit');
 Route::post('customer-update/{id}', 'HomeController@customerUpdate')->name('customers.update');
 Route::delete('customer-delete/{id}', 'HomeController@customerDelete')->name('customers.delete');
