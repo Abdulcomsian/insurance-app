@@ -33,8 +33,10 @@
 						<!--begin::Wrapper-->
 						<div class="w-lg-500px p-10 p-lg-15 mx-auto">
 							<!--begin::Form-->
-							<form class="form w-100" novalidate="novalidate" id="kt_sign_in_form" action="#">
-								<!--begin::Heading-->
+							<form method="POST" action="{{ route('login') }}" class="form w-100" novalidate="novalidate" id="kt_sign_in_form" action="#">
+                            @csrf
+
+                            <!--begin::Heading-->
 								<div class="text-center mb-10">
 									<!--begin::Title-->
 									<h1 class="text-dark mb-3">Mena Insurance Admin Panel</h1>
@@ -46,31 +48,47 @@
 								</div>
 								<!--begin::Heading-->
 								<!--begin::Input group-->
-								<div class="fv-row mb-10">
-									<!--begin::Label-->
-									<label class="form-label fs-6 fw-bolder text-dark">Email</label>
-									<!--end::Label-->
-									<!--begin::Input-->
-									<input class="form-control form-control-lg form-control-solid" type="text" name="email" autocomplete="off" />
-									<!--end::Input-->
-								</div>
-								<!--end::Input group-->
-								<!--begin::Input group-->
-								<div class="fv-row mb-10">
-									<!--begin::Wrapper-->
-									<div class="d-flex flex-stack mb-2">
-										<!--begin::Label-->
-										<label class="form-label fw-bolder text-dark fs-6 mb-0">Password</label>
-										<!--end::Label-->
-										<!--begin::Link-->
-										<!-- <a href="authentication/flows/aside/password-reset.html" class="link-primary fs-6 fw-bolder">Forgot Password ?</a> -->
-										<!--end::Link-->
-									</div>
-									<!--end::Wrapper-->
-									<!--begin::Input-->
-									<input class="form-control form-control-lg form-control-solid" type="password" name="password" autocomplete="off" />
-									<!--end::Input-->
-								</div>
+                                    <div class="fv-row mb-10">
+                                        <!--begin::Label-->
+                                        <label class="form-label fs-6 fw-bolder text-dark">Email</label>
+                                        <!--end::Label-->
+                                        <!--begin::Input-->
+                                        <input class="form-control form-control-lg form-control-solid @error('email') is-invalid @enderror" required type="text" name="email" autocomplete="off" />
+                                        <!--end::Input-->
+                                        @error('email')
+                                        <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                        @enderror
+
+                                        @if ($message = Session::get('error'))
+                                            <span class="invalid-feedback d-flex" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                        @endif
+                                    </div>
+                                    <!--end::Input group-->
+                                    <!--begin::Input group-->
+                                    <div class="fv-row mb-10">
+                                        <!--begin::Wrapper-->
+                                        <div class="d-flex flex-stack mb-2">
+                                            <!--begin::Label-->
+                                            <label class="form-label fw-bolder text-dark fs-6 mb-0">Password</label>
+                                            <!--end::Label-->
+                                            <!--begin::Link-->
+                                            <!-- <a href="authentication/flows/aside/password-reset.html" class="link-primary fs-6 fw-bolder">Forgot Password ?</a> -->
+                                            <!--end::Link-->
+                                        </div>
+                                        <!--end::Wrapper-->
+                                        <!--begin::Input-->
+                                        <input class="form-control form-control-lg form-control-solid @error('password') is-invalid @enderror" type="password"  required name="password" autocomplete="off" />
+                                        <!--end::Input-->
+                                        @error('password')
+                                        <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                        @enderror
+                                    </div>
 								<!--end::Input group-->
 								<!--begin::Actions-->
 								<div class="text-center">
@@ -85,10 +103,10 @@
 									<!-- <div class="text-center text-muted text-uppercase fw-bolder mb-5">or</div> -->
 									<!--end::Separator-->
 									<!--begin::Google link-->
-									
+
 									<!--end::Google link-->
 								</div>
-								<!--end::Actions-->
+                                <!--end::Actions-->
 							</form>
 							<!--end::Form-->
 						</div>
