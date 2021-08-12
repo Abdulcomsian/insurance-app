@@ -50,6 +50,7 @@ Route::post('insurance-company-save', 'HomeController@insuranceCompaniesSave')->
 //Payment Transactions
 Route::match(['get','post'],'payment-transactions', 'HomeController@paymentTransactionsIndex')->name('payment_transactions.index');
 Route::get('payment-transaction-show/{id}', 'HomeController@paymentTransactionsShow')->name('payment_transactions.show');
+Route::get('payment-transaction-resend-email/{id}', 'HomeController@paymentTransactionsResendEmail')->name('payment_transactions.resend_email');
 
 //Rate Management
 Route::get('packages', 'HomeController@ratesIndex')->name('rates.index');
