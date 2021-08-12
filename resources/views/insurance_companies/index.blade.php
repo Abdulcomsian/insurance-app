@@ -1,6 +1,12 @@
 @extends('layouts.master', ["page_title"=>"Insurance Companies"])
 @section('css')
     @include('layouts.datatables_css')
+    <style>
+    .dt-buttons{
+
+    right: 240px !important; 
+    }
+    </style>
 @endsection
 
 @section('content')
