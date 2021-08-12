@@ -35,11 +35,12 @@
                                 <th>Billing Name</th>
                                 <th>Billing Email</th>
                                 <th>Amount</th>
-                                <th>Card First 6</th>
-                                <th>Card Last 4</th>
-                                <th>Card Type</th>
+{{--                                <th>Card First 6</th>--}}
+{{--                                <th>Card Last 4</th>--}}
+{{--                                <th>Card Type</th>--}}
                                 <th>Date</th>
                                 <th>Status</th>
+                                <th>Action</th>
                             </tr>
                             <!--end::Table row-->
                             </thead>
@@ -103,17 +104,19 @@
                 ajax: "{{ route('payment_transactions.index') }}",
                 columns: [
                     {data: 'id', name: 'id',defaultContent: ''},
-                    {data: 'cart_id', name: 'cart_id',defaultContent: ''},
-                    {data: 'user_name', name: 'user_name',defaultContent: ''},
-                    {data: 'package_name', name: 'package_name',defaultContent: ''},
-                    {data: 'billing_name', name: 'billing_name',defaultContent: ''},
-                    {data: 'billing_email', name: 'billing_email',defaultContent: ''},
-                    {data: 'amount', name: 'amount',defaultContent: ''},
-                    {data: 'card_first6', name: 'card_first6',defaultContent: ''},
-                    {data: 'card_last4', name: 'card_last4',defaultContent: ''},
-                    {data: 'card_type', name: 'card_type',defaultContent: ''},
-                    {data: 'created_at', name: 'created_at',defaultContent: ''},
-                    {data: 'status', name: 'status',defaultContent: ''},
+                    {data: 'cart_id', name: 'cart_id',defaultContent: '-'},
+                    {data: 'user_name', name: 'user_name',defaultContent: '-'},
+                    {data: 'package_name', name: 'package_name',defaultContent: '-'},
+                    {data: 'billing_name', name: 'billing_name',defaultContent: '-'},
+                    {data: 'billing_email', name: 'billing_email',defaultContent: '-'},
+                    {data: 'amount', name: 'amount',defaultContent: '-'},
+                    // {data: 'card_first6', name: 'card_first6',defaultContent: '-'},
+                    // {data: 'card_last4', name: 'card_last4',defaultContent: '-'},
+                    // {data: 'card_type', name: 'card_type',defaultContent: '-'},
+                    {data: 'created_at', name: 'created_at',defaultContent: '-'},
+                    {data: 'status', name: 'status',defaultContent: '-'},
+                    {data: 'action', name: 'action',defaultContent: '-', orderable: false, searchable: false},
+
                 ],
                 language: {
                     searchPlaceholder: "Search Transaction",

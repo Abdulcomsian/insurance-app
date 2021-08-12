@@ -31,7 +31,7 @@
                                 <th>Email</th>
                                 <th class="">Email Status</th>
                                 <th class="">Account Status</th>
-                                <th class="">Actions</th>
+                                <th class="">Action</th>
                             </tr>
                             <!--end::Table row-->
                             </thead>
