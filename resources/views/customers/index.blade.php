@@ -61,9 +61,12 @@
     <script>
         $(document).on("click",".deleteBtn",function(event) {
             event.preventDefault();
+            let form_id = $(this).attr('value');
+            let form = '#form_'+form_id;
+
             swal({
 				title: "Are you sure?",
-				text: "You will not be able to recover this imaginary file!",
+				text: "You will not be able to recover this record!",
 				type: "warning",
 				showCancelButton: true,
 				confirmButtonColor: '#DD6B55',
@@ -73,7 +76,10 @@
 			},
 			function(){
 				swal("Deleted!", "Your imaginary file has been deleted!", "success");
-			});
+				console.log(form);
+                $(form).submit();
+
+            });
         });
         $(function () {
             var table = $('.data-table').DataTable({
@@ -133,5 +139,5 @@
             $('div.dataTables_filter input').addClass('form-control form-control-solid w-250px ps-15');
         });
     </script>
-    
+
 @endsection
