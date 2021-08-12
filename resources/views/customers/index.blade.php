@@ -59,6 +59,22 @@
 @section('script')
     @include('layouts.datatables_js')
     <script>
+        $(document).on("click",".deleteBtn",function(event) {
+            event.preventDefault();
+            swal({
+				title: "Are you sure?",
+				text: "You will not be able to recover this imaginary file!",
+				type: "warning",
+				showCancelButton: true,
+				confirmButtonColor: '#DD6B55',
+				confirmButtonText: 'Yes, delete it!',
+				closeOnConfirm: false,
+				//closeOnCancel: false
+			},
+			function(){
+				swal("Deleted!", "Your imaginary file has been deleted!", "success");
+			});
+        });
         $(function () {
             var table = $('.data-table').DataTable({
                 processing: true,
@@ -117,4 +133,5 @@
             $('div.dataTables_filter input').addClass('form-control form-control-solid w-250px ps-15');
         });
     </script>
+    
 @endsection

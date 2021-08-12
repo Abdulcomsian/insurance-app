@@ -12,18 +12,13 @@
                 <!--begin::Card-->
                 <div class="card">
                     <!--begin::Card header-->
-                    <div class="card-header border-0 pt-6">
-
-                        <!--begin::Card toolbar-->
-                        <div class="card-toolbar">
-                        </div>
-                        <!--end::Card toolbar-->
-                    </div>
+               
                     <!--end::Card header-->
                     <!--begin::Card body-->
-                    <div class="card-body pt-0">
+                    <div class="card-body pt-0 table-responsive">
                         <!--begin::Table-->
-                        <table class="table align-middle table-bordered  fs-6 gy-5  data-table">
+                        <div class="table"></div>
+                        <table style="margin-top: 80px;" class="table align-middle table-bordered  fs-6 gy-5  data-table">
                             <!--begin::Table head-->
                             <thead>
                             <!--begin::Table row-->
