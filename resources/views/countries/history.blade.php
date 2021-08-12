@@ -1,4 +1,4 @@
-@extends('layouts.master', ["page_title"=>"Countries"])
+@extends('layouts.master', ["page_title"=>"Countries & Exchange Rates"])
 @section('css')
     @include('layouts.datatables_css')
 @endsection
@@ -27,7 +27,7 @@
                                 <th class="">Country</th>
                                 <th class="">Last Updated</th>
                                 <th class="dollar_rate">Dollar Rate</th>
-                                <th class="">Exchange Rate (USD)</th>
+                                <th class="">Dollar (USD)</th>
 {{--                                <th class="d-none">Exchange Rate in Dollar USD</th>--}}
 {{--                                <th class="">Actions</th>--}}
                             </tr>

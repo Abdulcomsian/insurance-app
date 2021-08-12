@@ -113,7 +113,7 @@ element.style {
 .dt-buttons{
     position: absolute !important;
     top: -54px;
-    right: 210px;
+    right: 0px;
 }
 
 .dt-buttons button {
@@ -128,3 +128,32 @@ element.style {
     border-radius: .475rem !important;
 }
 
+.dataTables_wrapper .dataTables_paginate .paginate_button.current, .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover{
+    color: #fff !important;
+    border: 1px solid #009ef7;
+}
+.sweet-alert .confirm{
+    background-color: #2e953e !important;
+    color: #fff !important;
+}
+.viewPayment .card{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    padding: 20px;
+}
+.viewPayment .card .panel-heading{
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+.viewPayment .card .panel-body p{
+    padding: 5px 0px;
+}
+.viewPayment{
+    background: #f3f6f9;
+}

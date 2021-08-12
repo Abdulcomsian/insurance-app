@@ -121,7 +121,7 @@ class HomeController extends Controller
                             </a>
                             <form method="POST" action="'.route('customers.delete',encrypt($data->id)).'">
                             '.method_field('Delete'). csrf_field().'
-                            <button type="submit"  onclick="return confirm(\'Are you sure you want to delete?\');" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm">
+                            <button type="submit" class="deleteBtn btn btn-icon btn-bg-light btn-active-color-primary btn-sm">
                                     <!--begin::Svg Icon | path: icons/duotone/General/Trash.svg-->
                                     <span class="svg-icon svg-icon-3">
                                                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
@@ -508,3 +508,4 @@ class HomeController extends Controller
 
     }
 }
+
