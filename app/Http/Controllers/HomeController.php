@@ -253,7 +253,7 @@ class HomeController extends Controller
                 ->get();
             return view('insurance_companies.create',compact('countries'));
         }catch (\Exception $exception){
-            toastr()->error('Server is busy,try again');
+            toastr()->error('Something went wrong, try again');
             return back();
         }
     }
@@ -295,7 +295,7 @@ class HomeController extends Controller
 //            dd($board_of_director);
 
         }catch (\Exception $exception){
-            toastr()->error('Server is busy,try again');
+            toastr()->error('Something went wrong, try again');
             return back();
         }
     }
@@ -311,7 +311,7 @@ class HomeController extends Controller
             return view('insurance_companies.edit');
         }catch (\Exception $exception){
             dd($exception->getMessage());
-            toastr()->error('Server is busy,try again');
+            toastr()->error('Something went wrong, try again');
             return back();
         }
     }
@@ -338,7 +338,7 @@ class HomeController extends Controller
             }
             return view('payment_transactions.index');
         } catch (\Exception $exception){
-            toastr()->error('Server is busy,try again');
+            toastr()->error('Something went wrong, try again');
             return back();
         }
     }
@@ -354,8 +354,11 @@ class HomeController extends Controller
             if ($request->ajax()) {
                 $data = DB::table('packages')->orderBy('id','asc')->get();
                 return Datatables::of($data)
+                    ->setRowData([
+                        'name' => 'test',
+                    ])
                     ->addColumn('action',function ($data){
-                        return '<button id="'.$data->id.'" value="Edit" class="edit_btn btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1"  data-bs-toggle="modal" data-bs-target="#kt_modal_add_user">
+                        return '<button id="'.$data->id.'" value="Edit" class="action btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1"  data-bs-toggle="modal" data-bs-target="#kt_modal_add_user">
                                     <span class="svg-icon svg-icon-3">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
                                             <path d="M12.2674799,18.2323597 L12.0084872,5.45852451 C12.0004303,5.06114792 12.1504154,4.6768183 12.4255037,4.38993949 L15.0030167,1.70195304 L17.5910752,4.40093695 C17.8599071,4.6812911 18.0095067,5.05499603 18.0083938,5.44341307 L17.9718262,18.2062508 C17.9694575,19.0329966 17.2985816,19.701953 16.4718324,19.701953 L13.7671717,19.701953 C12.9505952,19.701953 12.2840328,19.0487684 12.2674799,18.2323597 Z" fill="#000000" fill-rule="nonzero" transform="translate(14.701953, 10.701953) rotate(-135.000000) translate(-14.701953, -10.701953)" />
@@ -369,7 +372,7 @@ class HomeController extends Controller
             }
             return view('rates.index');
         } catch (\Exception $exception){
-            toastr()->error('Server is busy,try again');
+            toastr()->error('Something went wrong, try again');
             return back();
         }
         return view('rates.index');
@@ -396,8 +399,7 @@ class HomeController extends Controller
 
             return back();
         }catch (\Exception $exception){
-            dd($exception->getMessage());
-            toastr()->error('Server is busy,try again');
+            toastr()->error('Something went wrong, try again');
             return back();
         }
 
