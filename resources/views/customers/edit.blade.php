@@ -25,7 +25,7 @@
 
                                         <!--begin::Input group-->
                                         <div class="d-flex flex-center flex-equal fw-row text-nowrap order-1 order-xxl-2 me-4" data-bs-toggle="tooltip" data-bs-trigger="hover" title="Enter invoice number">
-                                            <span class="fs-2x fw-bolder text-gray-800">Edit User</span>
+                                            <span class="fs-2x fw-bolder text-gray-800">Edit Customer</span>
                                         </div>
                                         <!--end::Input group-->
                                     </div>

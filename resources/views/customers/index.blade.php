@@ -13,6 +13,22 @@
                 <div class="card">
                     <!--begin::Card header-->
                     <div class="card-header border-0 pt-6">
+                        <div class="d-flex justify-content-end" data-kt-user-table-toolbar="base">
+                            <!--end::Filter-->
+                            <!--begin::Add user-->
+                            <a href="{{route('customers.create')}}">
+                            <button type="button" class="action btn btn-primary" value="Add" style="margin-right: 30px !important;" data-bs-toggle="modal" data-bs-target="#kt_modal_add_user">
+                                <!--begin::Svg Icon | path: icons/duotone/Navigation/Plus.svg-->
+                                <span class="svg-icon svg-icon-2">
+													<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+														<rect fill="#000000" x="4" y="11" width="16" height="2" rx="1"></rect>
+														<rect fill="#000000" opacity="0.5" transform="translate(12.000000, 12.000000) rotate(-270.000000) translate(-12.000000, -12.000000)" x="4" y="11" width="16" height="2" rx="1"></rect>
+													</svg>
+												</span>
+                                <!--end::Svg Icon-->Add New Customer</button>
+                            <!--end::Add user-->
+                            </a>
+                        </div>
                     </div>
                     <!--end::Card header-->
                     <!--begin::Card body-->

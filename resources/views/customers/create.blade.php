@@ -26,7 +26,7 @@
 
                                         <!--begin::Input group-->
                                         <div class="d-flex flex-center flex-equal fw-row text-nowrap order-1 order-xxl-2 me-4" data-bs-toggle="tooltip" data-bs-trigger="hover" title="Enter invoice number">
-                                            <span class="fs-2x fw-bolder text-gray-800">Add New User</span>
+                                            <span class="fs-2x fw-bolder text-gray-800">Add New Customer</span>
                                         </div>
                                         <!--end::Input group-->
                                     </div>
@@ -230,7 +230,7 @@
                                             </div>
                                             <!--end::Col-->
                                             <button type="submit" class="btn btn-primary updateBtn">
-                                                Update User Details
+                                                Update Customer Details
                                             </button>
                                         </div>
                                         <!--end::Row-->
