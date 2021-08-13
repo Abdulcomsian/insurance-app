@@ -14,6 +14,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Validation\Rule;
 use Psy\Util\Str;
 use Yajra\DataTables\Facades\DataTables;
 use Yajra\DataTables\Html\Button;
@@ -161,24 +162,48 @@ class HomeController extends Controller
     }
 
     public function customerSave(Request $request){
+        $request->validate([
+            'address' => ['required', 'max:255'],
+            'status' => ['required', 'max:255'],
+            'company_name' => ['required', 'max:255'],
+            'office_number' => ['required', 'max:255'],
+            'mobile_number' => ['required', 'string', 'max:255'],
+            'country_id' => ['required', 'max:255'],
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users', ],
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
+        ],[
+            'country_id.required' => 'The country field is required',
+            'status.required' => 'The account status field is required',
+        ]);
         try {
-            $request->validate([
-                'name' => ['required', 'string', 'max:255'],
-                'email' => ['required', 'string', 'email', 'max:255'],
-                'password' => ['required', 'string', 'min:8', 'confirmed'],
-            ]);
+            $request['password'] = Hash::make($request['password']);
             User::create($request->except('_token'));
-            return redirect()->route('customers.history')->with('success','Customer Added Successfully!');
+           toastSuccess('Customer Added Successfully!');
+            return redirect()->route('customers.history');
         }catch (\Exception $exception){
-            return redirect()->route('customers.history')->with('danger','Something went wrong');
+            toastr()->error('error','Something went wrong!');
+            return redirect()->route('customers.history');
         }
     }
 
     public function customerUpdate(Request $request,$id)
     {
+        $decrypt_id = decrypt($id);
         $request->validate([
+            'address' => ['required', 'max:255'],
+            'status' => ['required', 'max:255'],
+            'company_name' => ['required', 'max:255'],
+            'office_number' => ['required', 'max:255'],
+            'mobile_number' => ['required', 'string', 'max:255'],
+            'country_id' => ['required', 'max:255'],
             'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', Rule::unique('users')->ignore($decrypt_id)],
+
+
+        ],[
+            'country_id.required' => 'The country field is required',
+            'status.required' => 'The account status field is required',
         ]);
         if(isset($request->password)){
             $request->validate([
