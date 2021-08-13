@@ -37,6 +37,7 @@ Route::get('/', 'HomeController@index')->name('home');
 //Customer History
 Route::match(['get','post'],'customers-history', 'HomeController@customerHistory')->name('customers.history');
 Route::get('customer-edit/{id}', 'HomeController@customerEdit')->name('customers.edit');
+Route::view('customer-create','customers.create')->name('customers.create');
 Route::post('customer-update/{id}', 'HomeController@customerUpdate')->name('customers.update');
 Route::delete('customer-delete/{id}', 'HomeController@customerDelete')->name('customers.delete');
 Route::post('customer-save', 'HomeController@customerSave')->name('customers.save');

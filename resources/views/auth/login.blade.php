@@ -53,7 +53,7 @@
                         <label class="form-label fs-6 fw-bolder text-dark">Email</label>
                         <!--end::Label-->
                         <!--begin::Input-->
-                        <input class="form-control form-control-lg form-control-solid @error('email') is-invalid @enderror" required type="text" name="email" autocomplete="off" />
+                        <input required class="form-control form-control-lg form-control-solid @error('email') is-invalid @enderror" required type="text" name="email" autocomplete="off" />
                         <!--end::Input-->
                         @error('email')
                         <span class="invalid-feedback" role="alert">
@@ -81,7 +81,7 @@
                         </div>
                         <!--end::Wrapper-->
                         <!--begin::Input-->
-                        <input class="form-control form-control-lg form-control-solid @error('password') is-invalid @enderror" type="password"  required name="password" autocomplete="off" />
+                        <input required class="form-control form-control-lg form-control-solid @error('password') is-invalid @enderror" type="password"  required name="password" autocomplete="off" />
                         <!--end::Input-->
                         @error('password')
                         <span class="invalid-feedback" role="alert">
