@@ -20,6 +20,10 @@ Route::get('sign-in', function () {
     return view('sign-in');
 })->name('sign-in');
 
+Route::get('sanction-request', function () {
+    return view('sanction-request.sanction-request');
+})->name('sanction-request');
+
 Auth::routes([
     'register' => false, // Registration Routes...
     'reset' => false, // Password Reset Routes...
@@ -28,6 +32,7 @@ Auth::routes([
 //By Assad Yaqoob
 //Home
 Route::get('/', 'HomeController@index')->name('home');
+
 
 //Customer History
 Route::match(['get','post'],'customers-history', 'HomeController@customerHistory')->name('customers.history');

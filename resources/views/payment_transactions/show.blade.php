@@ -16,7 +16,7 @@
                     <div class="card panel panel-default height">
                         <div class="panel-heading">Package Information</div>
                         <div class="panel-body">
-                            <p><strong>Name: </strong> {{$transaction->package_name}}<br></p>
+                            <p><strong>Package: </strong> {{$transaction->package_name}}<br></p>
                             <p><strong>Sanctions: </strong> {{$transaction->package_sanctions}}<br></p>
                             <p><strong>Price: </strong> {{$transaction->package_price}}<br></p>
                         </div>
@@ -26,7 +26,7 @@
                     <div class="card panel panel-default height">
                         <div class="panel-heading">User Information</div>
                         <div class="panel-body">
-                            <p><strong>Id: </strong>{{$transaction->user_id}}<br></p>
+                            <p><strong>Customer Id: </strong>{{$transaction->user_id}}<br></p>
                             <p><strong>Name: </strong>{{$transaction->username}}<br></p>
                             <p><strong>Email: </strong> {{$transaction->email}}<br></p>
                             <p><strong>Reg Date: </strong> {{$transaction->reg_date}}<br></p>
@@ -59,8 +59,7 @@
                             <p><strong>Status: </strong> <span class=" badge @if($transaction->status == "Paid")badge-success @else badge-danger @endif">{{$transaction->status ?: '-'}}</span> <br></p>
                             <p><strong>Amount: </strong> {{$transaction->amount ?: '-'}} <br></p>
                             <p><strong>Description: </strong> {{$transaction->description ?: '-'}} <br></p>
-                            <p><strong>Card First6: </strong> {{$transaction->card_first6 ?: '-'}} <br></p>
-                            <p><strong>Card Last4: </strong> {{$transaction->card_last4 ?: '-'}} <br></p>
+                            <p><strong>Card: </strong> {{$transaction->card_first6 ?: '-'}} <span>****</span> {{$transaction->card_last4 ?: '-'}}<br></p>
                             <p><strong>Card Type: </strong> {{$transaction->card_type ?: '-'}} <br></p>
                             <p><strong>Date: </strong> {{$transaction->created_at ?: '-'}} <br></p>
                         </div>

@@ -57,6 +57,7 @@
                                 <th>Company Name</th>
                                 <th>Country</th>
                                 <th>Contact#</th>
+                                <th>Status</th>
                                 <th>Type</th>
                                 <th >Actions</th>
                             </tr>
@@ -120,6 +121,7 @@
                     {data: 'company_name', name: 'company_name',defaultContent: ''},
                     {data: 'country', name: 'country',defaultContent: ''},
                     {data: 'contact_number', name: 'contact_number',defaultContent: ''},
+                    {data: 'status', name: 'status',defaultContent: ''},
                     {data: 'company_type', name: 'company_type',defaultContent: ''},
                     {data: 'action', name: 'action', orderable: false, searchable: false},
                 ],

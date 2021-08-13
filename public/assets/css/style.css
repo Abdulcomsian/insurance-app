@@ -157,3 +157,86 @@ element.style {
 .viewPayment{
     background: #f3f6f9;
 }
+.packagesDiv .dt-buttons {
+    position: absolute !important;
+    top: -44px !important;
+    right: 240px !important;
+}
+.viewPayment{
+    padding: 30px 0px;
+}
+.attachmentTable{
+    width: 100%;
+}
+.addAttachmentBtn{
+    color: #fff;
+    border-color: #2e953e !important;
+    background-color: #2e953e !important;
+    border: 0;
+    padding: calc(.75rem + 1px) calc(1.5rem + 1px);
+    position:absolute;
+    right: 10px;
+    border-radius: .475rem;
+}
+.formSantionButton button{
+    color: #fff;
+    border-color: #2e953e !important;
+    background-color: #2e953e !important;
+    border: 0;
+    padding: calc(.75rem + 1px) calc(1.5rem + 1px);
+    border-radius: .475rem;
+    width: 20%;
+    margin: 0px 10px;
+}
+.formSantionButton{
+    justify-content: flex-end;
+    flex-direction: row !important;
+}
+.attachmentTable{
+    border-collapse: collapse;
+}
+table.attachmentTable, table.attachmentTable td, table.attachmentTable th {
+    border: 1px solid #d7d8d9;
+    padding: 10px;
+    border-radius: 8px;
+  }
+.attachmentTable tr td button{
+    background-color: transparent;
+    border: none;
+}
+.panel-body textarea{
+    width: 100%;
+    border: 1px solid #d7d8d9;
+    padding: 10px;
+    border-radius: 8px;
+}
+@media only screen and (max-width: 768px) {
+    div.dt-buttons,.packagesDiv .dt-buttons {
+      position: initial !important;
+      top: initial !important;
+      right: initial !important;
+    }
+  }
+  .btn i{
+      font-size: 16px;
+  }
+  .svg-icon.svg-icon-3 svg {
+    height: 20px !important;
+    width: 20px !important;
+}
+.nextBtn,
+.nextBtn:hover{
+    float: right;
+    margin: 0px 50px;
+    background: #2e953e;
+    padding: 10px 60px;
+    font-size: 18px;
+    border-radius: 8px;
+    color: #fff;
+    cursor: pointer;
+}
+.accounting,
+.market-share,
+.board-of-diector{
+    display: none;
+}

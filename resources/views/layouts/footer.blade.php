@@ -10,3 +10,23 @@
     </div>
     <!--end::Container-->
 </div>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script>
+     $(".addAttachmentBtn").click(function(){  
+         $(".attachmentTable tbody").append("<tr> <td> <input type='file' name='' id=''></td><td><button>View</button></td> </tr>") 
+        });
+
+    $(".nextBtn").click(function(){
+        if($(".basicInfo").css("display")=="block"){
+            $(".basicInfo").css("display","none")
+            $(".board-of-diector").css("display","block")
+        } else if($(".board-of-diector").css("display")=="block"){
+            $(".board-of-diector").css("display","none")
+            $(".accounting").css("display","block")
+        } else if($(".accounting").css("display")=="block"){
+            $(".accounting").css("display","none")
+            $(".market-share").css("display","block")
+            $(".nextBtn").css("display","none")
+        }
+    })
+</script>
