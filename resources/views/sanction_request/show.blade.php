@@ -15,9 +15,7 @@
                     <div class="card panel panel-default height">
                         <div class="panel-heading">Comments</div>
                         <div class="panel-body">
-                            <p><strong>Abdul Basit </strong><br> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. <br></p>
-                            <p><strong>Areeb </strong><br> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. <br></p>
-                            
+                            <p><strong>{{$sanction_request->user_name}} </strong><br>{{$sanction_request->comments ?: 'No Comments'}}<br></p>
                         </div>
                     </div>
                 </div>
@@ -25,10 +23,31 @@
                     <div class="card panel panel-default height">
                         <div class="panel-heading">Which type Of Sanction</div>
                         <div class="panel-body">
-                            <p><strong>Id: </strong><br></p>
-                            <p><strong>Name: </strong><br></p>
-                            <p><strong>Email: </strong> <br></p>
-                            <p><strong>Reg Date: </strong> <br></p>
+                            <p><strong>Company Name: </strong>{{$sanction_request->company_name ?: '-'}}<br></p>
+                            <p><strong>Customer Name: </strong>{{$sanction_request->user_name ?: '-'}}<br></p>
+                            @if($sanction_request->sanctions_type == \App\Utils\SanctionsType::Searchcompany)
+                                <p><strong>Sanction Search Type: </strong>{{$sanction_request->sanctions_type ?: '-'}} <br></p>
+                            @else
+                                <p><strong>Sanction Search Type: </strong>{{$sanction_request->sanctions_type ?: '-'}} <br></p>
+                                @php
+                                $b_o_d = DB::table('board_of_director')->whereIn('id',json_decode($sanction_request->board_of_directors))
+                                    ->select('name','designation')
+                                    ->get();
+                                @endphp
+                                <p style="margin-left: 15px;">
+                                    @foreach($b_o_d as $item)
+                                        {{$item->name .' - '. $item->designation}}
+                                        <br>
+                                    @endforeach
+                                </p>
+                            @endif
+
+                            @if($sanction_request->status == \App\Utils\SanctionRequestStatus::Completed)
+                                <p><strong>Status: </strong><span class="badge badge-success">{{$sanction_request->status ?: '-'}}</span> <br></p>
+                            @else
+                                <p><strong>Status: </strong><span class="badge badge-danger">{{$sanction_request->status ?: '-'}}</span> <br></p>
+                            @endif
+                            <p><strong>Date: </strong>{{$sanction_request->created_at ?: '-'}} <br></p>
                         </div>
                     </div>
                 </div>

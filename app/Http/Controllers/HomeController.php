@@ -541,7 +541,7 @@ class HomeController extends Controller
                 $data = DB::table('req_for_sanc_status')
                     ->join('users','req_for_sanc_status.user_id','=','users.id')
                     ->join('company_detail','req_for_sanc_status.company_id','=','company_detail.id')
-                    ->orderBy('req_for_sanc_status.id','desc')
+                    ->orderBy('id','desc')
                     ->select(
                         'req_for_sanc_status.*',
                         'users.id as user_id',
@@ -574,12 +574,12 @@ class HomeController extends Controller
                 ->where('req_for_sanc_status.id','=',decrypt($id))
                 ->join('users','req_for_sanc_status.user_id','=','users.id')
                 ->join('company_detail','req_for_sanc_status.company_id','=','company_detail.id')
-                ->orderBy('req_for_sanc_status.id','desc')
                 ->select(
                     'req_for_sanc_status.*',
                     'users.id as user_id',
                     'users.name as user_name',
                     'company_detail.company_name as company_name')
+                ->orderBy('req_for_sanc_status.id','desc')
                 ->first();
             return view('sanction_request.show',compact('sanction_request'));
 
