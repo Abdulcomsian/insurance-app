@@ -1,6 +1,17 @@
 @extends('layouts.master', ["page_title"=>"Customers"])
 @section('css')
     @include('layouts.datatables_css')
+    <style>
+        .customer-history .card>.card-header{
+            display: block !important;
+        }
+        .customer-history .dt-buttons{
+            right: 240px !important;
+        }
+        .customer-history  .card>.card-header{
+            padding: 0px !important;
+        }
+    </style>
 @endsection
 @section('content')
     <!--begin::Content-->
@@ -8,7 +19,7 @@
         <!--begin::Post-->
         <div class="post d-flex flex-column-fluid" id="kt_post">
             <!--begin::Container-->
-            <div id="kt_content_container" class="container">
+            <div id="kt_content_container" class="container customer-history">
                 <!--begin::Card-->
                 <div class="card">
                     <!--begin::Card header-->
@@ -17,7 +28,7 @@
                             <!--end::Filter-->
                             <!--begin::Add user-->
                             <a href="{{route('customers.create')}}">
-                            <button type="button" class="action btn btn-primary" value="Add" style="margin-right: 30px !important;" data-bs-toggle="modal" data-bs-target="#kt_modal_add_user">
+                            <button type="button" class="action btn btn-primary" value="Add" style="margin: 13px 30px;" data-bs-toggle="modal" data-bs-target="#kt_modal_add_user">
                                 <!--begin::Svg Icon | path: icons/duotone/Navigation/Plus.svg-->
                                 <span class="svg-icon svg-icon-2">
 													<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">

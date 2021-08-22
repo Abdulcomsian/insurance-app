@@ -387,6 +387,7 @@ class HomeController extends Controller
         }
     }
 
+    //Transactions
     public function paymentTransactionsIndex(Request $request)
     {
         try {
@@ -479,6 +480,7 @@ class HomeController extends Controller
         }
     }
 
+    //Packages
     public function ratesIndex(Request $request)
     {
         try {
@@ -530,7 +532,61 @@ class HomeController extends Controller
             toastr()->error('Something went wrong, try again');
             return back();
         }
+    }
 
+    //Sanctions Request
+    public function sanctionRequestIndex(Request $request){
+        try {
+            if ($request->ajax()) {
+                $data = DB::table('req_for_sanc_status')
+                    ->join('users','req_for_sanc_status.user_id','=','users.id')
+                    ->join('company_detail','req_for_sanc_status.company_id','=','company_detail.id')
+                    ->orderBy('req_for_sanc_status.id','desc')
+                    ->select(
+                        'req_for_sanc_status.*',
+                        'users.id as user_id',
+                        'users.name as user_name',
+                        'company_detail.company_name as company_name')
+                    ->get();
+                return Datatables::of($data)
+//                    ->addColumn('billing_name',function ($data){
+//                        return $data->billing_fname. ' ' . $data->billing_sname;
+//                    })
+                    ->addColumn('action',function ($data){
+                        $action = '<a href="'.route('sanction_request.show',encrypt($data->id)).'" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
+                        <i class="fa fa-eye" title="View" aria-hidden="true"></i>
+                        </a>';
+                        return $action;
+                    })
+                    ->rawColumns(['action'])
+                    ->make(true);
+            }
+            return view('sanction_request.index');
+        } catch (\Exception $exception){
+            toastr()->error('Something went wrong, try again');
+            return back();
+        }
+    }
+
+    public function sanctionRequestShow($id){
+        try {
+            $sanction_request = DB::table('req_for_sanc_status')
+                ->where('req_for_sanc_status.id','=',decrypt($id))
+                ->join('users','req_for_sanc_status.user_id','=','users.id')
+                ->join('company_detail','req_for_sanc_status.company_id','=','company_detail.id')
+                ->orderBy('req_for_sanc_status.id','desc')
+                ->select(
+                    'req_for_sanc_status.*',
+                    'users.id as user_id',
+                    'users.name as user_name',
+                    'company_detail.company_name as company_name')
+                ->first();
+            return view('sanction_request.show',compact('sanction_request'));
+
+        }catch (\Exception $exception){
+            toastr()->error('Something went wrong, try again');
+            return back();
+        }
     }
 }
 

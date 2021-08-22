@@ -20,9 +20,9 @@ Route::get('sign-in', function () {
     return view('sign-in');
 })->name('sign-in');
 
-Route::get('sanction-request', function () {
-    return view('sanction-request.sanction-request');
-})->name('sanction-request');
+Route::get('sanction_request', function () {
+    return view('sanction_request.sanction_request');
+})->name('sanction_request');
 
 Auth::routes([
     'register' => false, // Registration Routes...
@@ -66,4 +66,8 @@ Route::post('package-update', 'HomeController@ratesEdit')->name('rates.update');
 Route::get('countries', 'HomeController@countriesIndex')->name('countries.index');
 Route::get('countries-edit', 'HomeController@countriesEdit')->name('countries.edit');
 Route::post('countries-update/{id}', 'HomeController@countriesUpdate')->name('countries.update');
+
+//Payment Transactions
+Route::match(['get','post'],'sanction-request', 'HomeController@sanctionRequestIndex')->name('sanction_request.index');
+Route::get('sanction-request-show/{id}', 'HomeController@sanctionRequestShow')->name('sanction_request.show');
 

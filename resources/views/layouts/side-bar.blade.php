@@ -147,7 +147,7 @@
                     </a>
                 </div>
                 <div class="menu-item">
-                    <a class="menu-link {{Request::is('sanction*') ? 'active' : ''}}" href="{{route('rates.index')}}">
+                    <a class="menu-link {{Request::is('sanction*') ? 'active' : ''}}" href="{{route('sanction_request.index')}}">
 										<span class="menu-icon">
 											<!--begin::Svg Icon | path: icons/duotone/Design/Sketch.svg-->
 											<span class="svg-icon svg-icon-2">

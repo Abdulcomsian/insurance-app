@@ -45,7 +45,7 @@
                             <p><strong>Address 1: </strong>{{$transaction->billing_address_1 ?: '-'}}<br></p>
                             <p><strong>Address 2: </strong>{{$transaction->billing_address_2 ?: '-'}}<br></p>
                             <p><strong>City: </strong>{{$transaction->billing_city ?: '-'}}<br></p>
-                            <p><strong>Country: </strong>@isset($transaction->billing_country) {{\App\Utils\TransactionCountries::List[strtolower($transaction->billing_country)]}} @endisset<br></p>
+                            <p><strong>Country: </strong>@isset($transaction->billing_country) {{\Illuminate\Support\Facades\DB::table('countries')->where('country_code',$transaction->billing_country)->first()->country_name}} @endisset<br></p>
                             <p><strong>Region: </strong>{{$transaction->billing_region ?: '-'}}<br></p>
                             <p><strong>Zip Code: </strong>{{$transaction->billing_zip ?: '-'}}<br></p>
                         </div>
