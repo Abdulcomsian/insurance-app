@@ -4,7 +4,7 @@
     <style>
     .dt-buttons{
 
-    right: 240px !important; 
+    right: 240px !important;
     }
     </style>
 @endsection
