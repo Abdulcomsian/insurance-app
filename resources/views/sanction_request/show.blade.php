@@ -53,12 +53,14 @@
                 </div>
             </div>
             <hr>
-            <form action="">
+            <form action="{{route('sanc-save-attachment')}}" method="post" enctype="multipart/form-data">
+                @csrf
+                <input type="hidden" name="sanc_id" value="{{$sanction_request->id}}">
             <div class="row">
                 <div class="col-xs-12 col-md-12 col-lg-12 pull-left">
                     <div class="card panel panel-default height">
                         <div class="panel-heading">Attachment</div>
-                        <button class="addAttachmentBtn">Add Attachment</button>
+                        <button type="button" class="addAttachmentBtn">Add Attachment</button>
                         <div class="panel-body">
                             <table class="attachmentTable">
                                 <thead>
@@ -78,7 +80,7 @@
                     <div class="card panel panel-default height">
                         <div class="panel-heading">Additional Comment By Admin</div>
                         <div class="panel-body">
-                            <textarea name="" id="" cols="30" rows="10" placeholder="Admin Comments"></textarea>
+                            <textarea name="comment" id="" cols="30" rows="10" placeholder="Admin Comments"></textarea>
                         </div>
                     </div>
                 </div>
@@ -98,4 +100,11 @@
 </div>
 </div>
 
+@endsection
+@section('script')
+<script type="text/javascript">
+    $(".addAttachmentBtn").click(function(){  
+         $(".attachmentTable tbody").append("<tr> <td> <input type='file' name='images[]' id='' required='required'></td><td><button>View</button></td> </tr>") 
+        });
+</script>
 @endsection

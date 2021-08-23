@@ -70,4 +70,5 @@ Route::post('countries-update/{id}', 'HomeController@countriesUpdate')->name('co
 //Payment Transactions
 Route::match(['get','post'],'sanction-request', 'HomeController@sanctionRequestIndex')->name('sanction_request.index');
 Route::get('sanction-request-show/{id}', 'HomeController@sanctionRequestShow')->name('sanction_request.show');
+Route::post('sanc-save-attachment','HomeController@sanc_save_attachment')->name('sanc-save-attachment');
 
