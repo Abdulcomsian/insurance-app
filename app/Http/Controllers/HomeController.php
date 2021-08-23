@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\DataTables\CompanyDetailsDataTable;
 use App\Models\CountryInformation;
 use App\Notifications\TransactionEmail;
+use App\Models\SancImages;
 use App\User;
 use App\Utils\EmailStatus;
 use App\Utils\UserStatus;
@@ -587,6 +588,28 @@ class HomeController extends Controller
             toastr()->error('Something went wrong, try again');
             return back();
         }
+    }
+
+    //save sacnctum images
+    public function sanc_save_attachment(Request $request)
+    {  
+         $images=array();
+        if($files=$request->file('images')){
+            foreach($files as $file){
+                $name=$file->getClientOriginalName();
+                $file->move('images',$name);
+                $images[]=$name;
+                /*Insert your data*/
+                SancImages::insert( [
+                    'image_name'=>  $name,
+                    'comment' =>$request->input('comment'),
+                    //you can put other insertion here
+                ]);
+            }
+        }
+        
+        toastr()->success('Attachemet Saved Successfully!');
+            return back();
     }
 }
 
