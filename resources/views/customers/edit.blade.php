@@ -213,7 +213,7 @@
                                                 <label class="form-label fs-6 fw-bolder text-gray-700 mb-3">Password</label>
                                                 <!--begin::Input group-->
                                                 <div class="mb-5">
-                                                    <input required type="password" name="password" class="form-control @error('password') is-invalid @else form-control-solid  @enderror" placeholder="Password" />
+                                                    <input type="password" name="password" class="form-control @error('password') is-invalid @else form-control-solid  @enderror" placeholder="Password" />
                                                     @error('password')
                                                     <span class="invalid-feedback" role="alert">
                                                         <strong>{{ $message }}</strong>
@@ -228,7 +228,7 @@
                                                 <label class="form-label fs-6 fw-bolder text-gray-700 mb-3">Confrim Password</label>
                                                 <!--begin::Input group-->
                                                 <div class="mb-5">
-                                                    <input required type="password" name="password_confirmation" class="form-control form-control-solid" placeholder="Confrim Password" />
+                                                    <input type="password" name="password_confirmation" class="form-control form-control-solid" placeholder="Confrim Password" />
                                                 </div>
                                                 <!--end::Input group-->
                                             </div>
