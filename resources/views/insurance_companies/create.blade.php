@@ -244,7 +244,7 @@ select.list-dt:focus {
                         <!--begin::Content-->
                         <div class="flex-lg-row-fluid mb-10 mb-lg-0">
             <div class="card">
-            <form id="msform">
+            <div id="msform">
                             <!-- progressbar -->
                             <ul id="progressbar">
                             <li class="active" id="detail"><span>1</span><strong>Company Detail</strong></li>
@@ -257,7 +257,8 @@ select.list-dt:focus {
                                                 <li id="holder"><span>8</span><strong>ShareHolder</strong></li>
                             </ul> <!-- fieldsets -->
                             <fieldset>
-                                <div class="form-card">
+                               <form action="">
+                               <div class="form-card">
                                     <h2 class="fs-title">Compnay Details</h2> 
                                     <div class="row">
                                         <div class="col-lg-6">
@@ -393,10 +394,13 @@ select.list-dt:focus {
                                                     <!--end::Col-->
                                     </div>
                                     
-                                </div> 
+                                </div>
+                               </form>
+                                
                                 <input type="button" name="next" class="next action-button" value="Next Step" />
                             </fieldset>
                             <fieldset>
+                                <form action="">
                                 <div class="form-card">
                                     <h2 class="fs-title">Board Of Directors</h2> 
                                     <div class="separator separator-dashed my-10"></div>
@@ -438,9 +442,12 @@ select.list-dt:focus {
                                                 </div>
                                                 <!--end::Row-->
                                 </div> 
+                                </form>
+                             
                                 <input type="button" name="previous" class="previous action-button-previous" value="Previous" /> <input type="button" name="next" class="next action-button" value="Next Step" />
                             </fieldset>
                             <fieldset>
+                                <form action="">
                                 <div class="form-card">
                                     <h2 class="fs-title">Accounting</h2>
                                     <div class="separator separator-dashed my-10"></div>
@@ -525,10 +532,13 @@ select.list-dt:focus {
                                                     </div>
                                                 </div>
                                                 <!--end::Row-->
-                                </div> <input type="button" name="previous" class="previous action-button-previous" value="Previous" /> <input type="button" name="make_payment" class="next action-button" value="Next" />
+                                </div>
+                                </form>
+                                 <input type="button" name="previous" class="previous action-button-previous" value="Previous" /> <input type="button" name="make_payment" class="next action-button" value="Next" />
                             </fieldset>
                                <fieldset>
-                                <div class="form-card">
+                                   <form action="">
+                                   <div class="form-card">
                                     <h2 class="fs-title">Income Statement</h2> 
                                     <div class="separator separator-dashed my-10"></div>
                                     <div class="row">
@@ -555,10 +565,13 @@ select.list-dt:focus {
                                         </div>
                                     </div>
                                 </div> 
+                                   </form>
+                               
                                 <input type="button" name="previous" class="previous action-button-previous" value="Previous" /> <input type="button" name="next" class="next action-button" value="Next Step" />
                             </fieldset>
                             <fieldset>
-                               <div class="form-card">
+                                <form action="">
+                                <div class="form-card">
                                     <h2 class="fs-title">Investment</h2> 
                                     <div class="separator separator-dashed my-10"></div>
                                     <div class="row">
@@ -585,10 +598,13 @@ select.list-dt:focus {
                                         </div>
                                     </div>
                                 </div> 
+                                </form>
+                              
                                  <input type="button" name="previous" class="previous action-button-previous" value="Previous" /> <input type="button" name="next" class="next action-button" value="Next Step" />
                             </fieldset>                         
                             <fieldset>
-                                 <div class="form-card">
+                                <form action="">
+                                <div class="form-card">
                                     <h2 class="fs-title">Subsidiary</h2> 
                                     <div class="separator separator-dashed my-10"></div>
                                     <div class="row">
@@ -601,10 +617,13 @@ select.list-dt:focus {
                                         </div>
                                     </div>
                                 </div>
+                                </form>
+                                
                                 <input type="button" name="previous" class="previous action-button-previous" value="Previous" /> <input type="button" name="next" class="next action-button" value="Next Step" />
                             </fieldset>
                             <fieldset>
-                                 <div class="form-card">
+                                <form action="">
+                                <div class="form-card">
                                     <h2 class="fs-title">Market Share</h2> 
                                     <div class="separator separator-dashed my-10"></div>
                                     <div class="row">
@@ -645,9 +664,12 @@ select.list-dt:focus {
                                         </div>
                                     </div>
                                 </div>
+                                </form>
+                                 
                                 <input type="button" name="previous" class="previous action-button-previous" value="Previous" /> <input type="button" name="next" class="next action-button" value="Next Step" />
                             </fieldset>
                             <fieldset>
+                                <form action="">
                                 <div class="form-card">
                                     <h2 class="fs-title">ShareHolder</h2> 
                                     <div class="separator separator-dashed my-10"></div>
@@ -682,9 +704,11 @@ select.list-dt:focus {
                                                 </div>
                                                 <!--end::Row-->
                                 </div> 
+                                </form>
+                               
                                 <input type="button" name="previous" class="previous action-button-previous" value="Previous" /> <input type="button" name="next" class="next action-button" value="Next Step" />
                             </fieldset>
-                        </form>
+                        </div>
 </div>
 </div>
 </div>
