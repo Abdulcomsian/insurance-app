@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\DataTables\CompanyDetailsDataTable;
 use App\Models\CountryInformation;
 use App\Notifications\TransactionEmail;
+use App\Notifications\SendAttachment;
 use App\Models\SancImages;
 use App\User;
 use App\Utils\EmailStatus;
@@ -582,7 +583,8 @@ class HomeController extends Controller
                     'company_detail.company_name as company_name')
                 ->orderBy('req_for_sanc_status.id','desc')
                 ->first();
-            return view('sanction_request.show',compact('sanction_request'));
+            $sanc_save_attachment=SancImages::where('sanc_req_id',decrypt($id))->get();
+            return view('sanction_request.show',compact('sanction_request','sanc_save_attachment'));
 
         }catch (\Exception $exception){
             toastr()->error('Something went wrong, try again');
@@ -593,23 +595,105 @@ class HomeController extends Controller
     //save sacnctum images
     public function sanc_save_attachment(Request $request)
     {  
-         $images=array();
-        if($files=$request->file('images')){
-            foreach($files as $file){
-                $name=$file->getClientOriginalName();
-                $file->move('images',$name);
-                $images[]=$name;
-                /*Insert your data*/
-                SancImages::insert( [
-                    'image_name'=>  $name,
-                    'comment' =>$request->input('comment'),
-                    //you can put other insertion here
-                ]);
+        try 
+      {
+             $images=array();
+            if($files=$request->file('images'))
+            {
+                foreach($files as $file){
+                    $name=$file->getClientOriginalName();
+                    $file->move('images',$name);
+                    $images[]=$name;
+                    /*Insert your data*/
+                    SancImages::insert( [
+                        'file'=>  $name,
+                        'sanc_req_id'=>$request->input('sanc_id'),
+                        //you can put other insertion here
+                    ]);
+                   
+                  }
+                   //update commetns 
+                     DB::table('req_for_sanc_status')
+                     ->where('id',$request->input('sanc_id'))
+                     ->update(['admin_comments' => $request->input('comment')]);
             }
+            else
+            {
+                 /*Update your Comments*/
+                 DB::table('req_for_sanc_status')
+                ->where('id',$request->input('sanc_id'))
+                ->update(['admin_comments' => $request->input('comment')]);
+            }
+            
+            toastr()->success('Attachmet Saved Successfully!');
+                return back();
+      }
+      catch (\Exception $exception){
+            toastr()->error('Something went wrong, try again');
+            return back();
+        }
+    }
+
+    public function sanc_send_attachment(Request $request)
+    {
+      try 
+      {
+           $sanc_attachment_result=SancImages::where('sanc_req_id',$request->sanc_id)->get();
+           if(count($sanc_attachment_result)>0)
+           {
+                 $userdata=DB::table('req_for_sanc_status')->where('id',$request->sanc_id)->first();
+                 $user = User::find($userdata->user_id)->first();
+                 $user->email="obaidkust@gmail.com";
+                 $user->notify(new SendAttachment($user,$sanc_attachment_result));
+                 //update status of sacntuem
+                 DB::table('req_for_sanc_status')
+                 ->where('id',$request->input('sanc_id'))
+                 ->update(['status' => "Completed"]);
+                 toastr()->success('Attachment Send Successfully');
+                 return back();
+           }
+           else
+           {
+             toastr()->error('Attachment Not Found!');
+                return back();
+           }
+      }
+      catch (\Exception $exception){
+            toastr()->error('Something went wrong, try again');
+            return back();
+        }
+    }
+    //delete attachmetns
+    public function delete_attachements($id)
+    {
+        try
+        {
+            $res=SancImages::where('id',$id)->delete();
+            toastr()->success('Attachment Deleted Successfully!');
+            return back();
+        }
+        catch (\Exception $exception){
+            toastr()->error('Something went wrong, try again');
+            return back();
         }
         
-        toastr()->success('Attachemet Saved Successfully!');
+    }
+    //cancel request code
+    public function cancel_request(Request $request)
+    {
+        try
+        {
+             DB::table('req_for_sanc_status')
+             ->where('id',$request->input('sanc_id'))
+             ->update(['status' => "Canceled"]);
+             toastr()->success('Request Canceled Successfully');
+             return back();
+        }
+        catch (\Exception $exception){
+            toastr()->error('Something went wrong, try again');
             return back();
+        }
+        
     }
 }
 
