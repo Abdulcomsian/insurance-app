@@ -55,7 +55,7 @@
             <hr>
             <form action="{{route('sanc-save-attachment')}}" method="post" enctype="multipart/form-data">
                 @csrf
-                <input type="hidden" name="sanc_id" value="{{$sanction_request->id}}">
+                <input type="hidden" name="sanc_id" id="sanc_id" value="{{$sanction_request->id}}">
             <div class="row">
                 <div class="col-xs-12 col-md-12 col-lg-12 pull-left">
                     <div class="card panel panel-default height">
@@ -68,6 +68,14 @@
                                     <th>Action</th>
                                 </thead>
                                 <tbody>
+                                    @foreach($sanc_save_attachment as $attach)
+                                    <tr>
+                                        <td>@if($attach->image_name){{$attach->image_name}}@else{{"No Attachement"}}@endif</td>
+                                        @if($attach->image_name)
+                                        <td><a href="{{asset('images/').'/'.$attach->image_name}}" target="_blank"><span class="fa fa-eye"></span></a></td>
+                                        @endif
+                                    </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>
@@ -80,7 +88,7 @@
                     <div class="card panel panel-default height">
                         <div class="panel-heading">Additional Comment By Admin</div>
                         <div class="panel-body">
-                            <textarea name="comment" id="" cols="30" rows="10" placeholder="Admin Comments"></textarea>
+                            <textarea name="comment" id="" cols="30" rows="10" placeholder="Admin Comments" required="required">{{$sanction_request->admin_comments}}</textarea>
                         </div>
                     </div>
                 </div>
@@ -90,7 +98,7 @@
                 <div class="col-xs-12 col-md-12 col-lg-12 pull-left">
                     <div class="card panel panel-default height formSantionButton">
                         <button>Save</button>
-                        <button>Send Email</button>
+                        <button type="submit" formaction="{{route('sanc-send-attachment')}}" id="sendattach">Send Email</button>
                     </div>
                 </div>
             </div>
@@ -104,7 +112,11 @@
 @section('script')
 <script type="text/javascript">
     $(".addAttachmentBtn").click(function(){  
-         $(".attachmentTable tbody").append("<tr> <td> <input type='file' name='images[]' id='' required='required'></td><td><button>View</button></td> </tr>") 
+         $(".attachmentTable tbody").append("<tr> <td> <input type='file' name='images[]' id='' required='required'></td><td><button class='deleteattach' type='button'><span class='fa fa-trash '></span></button></td> </tr>") 
         });
+    $(document).on('click',".deleteattach",function(){
+        $(this).parent().parent().remove();
+    });
 </script>
 @endsection
+
