@@ -12,9 +12,7 @@
 </div>
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script>
-     $(".addAttachmentBtn").click(function(){  
-         $(".attachmentTable tbody").append("<tr> <td> <input type='file' name='' id=''></td><td><button>View</button></td> </tr>") 
-        });
+     
 
     $(".nextBtn").click(function(){
         if($(".basicInfo").css("display")=="block"){
