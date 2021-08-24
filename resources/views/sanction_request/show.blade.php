@@ -70,8 +70,8 @@
                                 <tbody>
                                     @foreach($sanc_save_attachment as $attach)
                                     <tr>
-                                        <td>@if($attach->image_name){{$attach->image_name}}@else{{"No Attachement"}}@endif</td>
-                                        @if($attach->image_name)
+                                        <td>@if($attach->image_name){{$attach->file}}@else{{"No Attachement"}}@endif</td>
+                                        @if($attach->file)
                                         <td><a href="{{asset('images/').'/'.$attach->image_name}}" target="_blank"><span class="fa fa-eye"></span></a></td>
                                         @endif
                                     </tr>

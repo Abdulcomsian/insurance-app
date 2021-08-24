@@ -48,7 +48,7 @@ class SendAttachment extends Notification
         $email=new MailMessage();
         $email->line($this->user->name .$message);
         foreach ($this->attachments  as $filePath) {
-            $email->attach(public_path('images/'.$filePath->image_name));
+            $email->attach(public_path('images/'.$filePath->file));
         }
         $email->line('Thank you for using our application!');
         return $email;

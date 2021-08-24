@@ -606,7 +606,7 @@ class HomeController extends Controller
                     $images[]=$name;
                     /*Insert your data*/
                     SancImages::insert( [
-                        'image_name'=>  $name,
+                        'file'=>  $name,
                         'sanc_req_id'=>$request->input('sanc_id'),
                         //you can put other insertion here
                     ]);
