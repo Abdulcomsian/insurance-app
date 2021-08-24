@@ -79,18 +79,20 @@
                                         <th>Action</th>
                                     </thead>
                                     <tbody>
-                                        @foreach($sanc_save_attachment as $attach)
-                                        <tr>
-                                            <td>@if($attach->file){{$attach->file}}@else{{"No Attachement"}}@endif</td>
-                                            @if($attach->file)
-                                            <td>
-                                                <a href="{{asset('images/').'/'.$attach->file}}" target="_blank"><span class="fa fa-eye"></span></a>
-                                                &nbsp;&nbsp;
-                                                <a href="{{route('delete-attachements',$attach->id)}}"><span class="fa fa-trash"></span></a>
-                                            </td>
-                                            @endif
-                                        </tr>
-                                        @endforeach
+                                        @if($sanc_save_attachment)
+                                            @foreach($sanc_save_attachment as $attach)
+                                            <tr>
+                                                <td>@if($attach->file){{$attach->file}}@else{{"No Attachement"}}@endif</td>
+                                                @if($attach->file)
+                                                <td>
+                                                    <a href="{{asset('images/').'/'.$attach->file}}" target="_blank"><span class="fa fa-eye"></span></a>
+                                                    &nbsp;&nbsp;
+                                                    <a href="{{route('delete-attachements',$attach->id)}}"><span class="fa fa-trash"></span></a>
+                                                </td>
+                                                @endif
+                                            </tr>
+                                            @endforeach
+                                        @endif
                                     </tbody>
                                 </table>
                             </div>
