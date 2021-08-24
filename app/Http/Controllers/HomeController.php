@@ -631,6 +631,7 @@ class HomeController extends Controller
                 return back();
       }
       catch (\Exception $exception){
+          dd($exception->getMessage());
             toastr()->error('Something went wrong, try again');
             return back();
         }
