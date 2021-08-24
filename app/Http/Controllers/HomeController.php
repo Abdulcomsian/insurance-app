@@ -625,7 +625,7 @@ class HomeController extends Controller
                 ->update(['admin_comments' => $request->input('comment')]);
             }
             
-            toastr()->success('Attachemet Saved Successfully!');
+            toastr()->success('Attachmet Saved Successfully!');
                 return back();
       }
       catch (\Exception $exception){
@@ -645,6 +645,10 @@ class HomeController extends Controller
                  $user = User::find($userdata->user_id)->first();
                  $user->email="obaidkust@gmail.com";
                  $user->notify(new SendAttachment($user,$sanc_attachment_result));
+                 //update status of sacntuem
+                 DB::table('req_for_sanc_status')
+                 ->where('id',$request->input('sanc_id'))
+                 ->update(['status' => "Completed"]);
                  toastr()->success('Attachment Send Successfully');
                  return back();
            }
@@ -658,6 +662,38 @@ class HomeController extends Controller
             toastr()->error('Something went wrong, try again');
             return back();
         }
-   }
+    }
+    //delete attachmetns
+    public function delete_attachements($id)
+    {
+        try
+        {
+            $res=SancImages::where('id',$id)->delete();
+            toastr()->success('Attachment Deleted Successfully!');
+            return back();
+        }
+        catch (\Exception $exception){
+            toastr()->error('Something went wrong, try again');
+            return back();
+        }
+        
+    }
+    //cancel request code
+    public function cancel_request(Request $request)
+    {
+        try
+        {
+             DB::table('req_for_sanc_status')
+             ->where('id',$request->input('sanc_id'))
+             ->update(['status' => "Canceled"]);
+             toastr()->success('Request Canceled Successfully');
+             return back();
+        }
+        catch (\Exception $exception){
+            toastr()->error('Something went wrong, try again');
+            return back();
+        }
+        
+    }
 }
 

@@ -72,4 +72,6 @@ Route::match(['get','post'],'sanction-request', 'HomeController@sanctionRequestI
 Route::get('sanction-request-show/{id}', 'HomeController@sanctionRequestShow')->name('sanction_request.show');
 Route::post('sanc-save-attachment','HomeController@sanc_save_attachment')->name('sanc-save-attachment');
 Route::post('sanc-send-attachment','HomeController@sanc_send_attachment')->name('sanc-send-attachment');
+Route::get('delete-attachements/{id}','HomeController@delete_attachements')->name('delete-attachements');
+Route::post('cancel-request','HomeController@cancel_request')->name('cancel-request');
 
