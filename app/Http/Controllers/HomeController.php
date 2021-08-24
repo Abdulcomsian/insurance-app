@@ -583,8 +583,9 @@ class HomeController extends Controller
                     'company_detail.company_name as company_name')
                 ->orderBy('req_for_sanc_status.id','desc')
                 ->first();
-                dd($sanction_request);exit;
+                
             $sanc_save_attachment=SancImages::where('sanc_req_id',decrypt($id))->get();
+            dd($sanc_save_attachment);exit;
             return view('sanction_request.show',compact('sanction_request','sanc_save_attachment'));
 
         }catch (\Exception $exception){
