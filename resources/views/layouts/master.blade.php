@@ -24,6 +24,7 @@ License: For each use you must have a valid license purchased only from above li
     <link rel="canonical" href="Https://preview.keenthemes.com/metronic8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="shortcut icon" href="{{asset('assets/media/logos/favicon.ico')}}" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/t4t5/sweetalert/v0.2.0/lib/sweet-alert.css">
     <!--begin::Fonts-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
     <!--end::Fonts-->
@@ -31,8 +32,9 @@ License: For each use you must have a valid license purchased only from above li
     <link href="{{asset('assets/plugins/global/plugins.bundle.css')}}" rel="stylesheet" type="text/css" />
     <link href="{{asset('assets/css/style.bundle.css')}}" rel="stylesheet" type="text/css" />
     <link href="{{asset('assets/css/style.css')}}" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css">
     <!--end::Global Stylesheets Bundle-->
-
+    @toastr_css
     {{-- Page Specific Styles        --}}
     @yield('css')
 
@@ -84,6 +86,7 @@ License: For each use you must have a valid license purchased only from above li
 <!--begin::Javascript-->
 <!--begin::Global Javascript Bundle(used by all pages)-->
 <script src="{{asset('assets/plugins/global/plugins.bundle.js')}}"></script>
+@jquery
 <script src="{{asset('assets/js/scripts.bundle.js')}}"></script>
 <!--end::Global Javascript Bundle-->
 <!--begin::Page Custom Javascript(used by this page)-->
@@ -91,6 +94,48 @@ License: For each use you must have a valid license purchased only from above li
 <script src="{{asset('assets/js/custom/apps/chat/chat.js')}}"></script>
 <script src="{{asset('assets/js/custom/modals/create-app.js')}}"></script>
 <script src="{{asset('assets/js/custom/modals/upgrade-plan.js')}}"></script>
+<script type="text/javascript" src="https://cdn.rawgit.com/t4t5/sweetalert/v0.2.0/lib/sweet-alert.min.js"></script>
+<script>
+// document.getElementByClassName('deleteBtn').onclick = function(){
+//     swal({
+//         title: "Are you sure?",
+//         text: "You will not be able to recover this imaginary file!",
+//         type: "warning",
+//         showCancelButton: true,
+//         confirmButtonColor: '#DD6B55',
+//         confirmButtonText: 'Yes, delete it!',
+//         closeOnConfirm: false,
+//         //closeOnCancel: false
+//     },
+//     function(){
+//         swal("Deleted!", "Your imaginary file has been deleted!", "success");
+//     });
+//</script>
+<script>
+    {{--$(document).ready(function() {--}}
+    {{--    $('#datatable').DataTable( {--}}
+    {{--        dom: 'lBfrtip',--}}
+    {{--        buttons: [--}}
+    {{--            {--}}
+    {{--                extend: 'csvHtml5',--}}
+    {{--                exportOptions: {--}}
+    {{--                    columns: @if(isset($columns)) {{$columns}} @else [ 0, ':visible' ] @endif--}}
+    {{--                }--}}
+    {{--            },--}}
+    {{--            {--}}
+    {{--                extend: 'excelHtml5',--}}
+    {{--                exportOptions: {--}}
+    {{--                    columns: @if(isset($columns)) {{$columns}} @else [ 0, ':visible' ] @endif--}}
+    {{--                }--}}
+    {{--            },--}}
+    {{--        ]--}}
+    {{--    } );--}}
+    {{--} );--}}
+
+</script>
+
+@toastr_js
+@toastr_render
 <!--end::Page Custom Javascript-->
 @yield('script')
 <!--end::Javascript-->

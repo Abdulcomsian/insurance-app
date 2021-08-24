@@ -16,16 +16,28 @@ use Illuminate\Support\Facades\Route;
 //Route::get('/', function () {
 //    return view('welcome');
 //});
+Route::get('sign-in', function () {
+    return view('sign-in');
+})->name('sign-in');
 
-Auth::routes(['verify' => true]);
+Route::get('sanction_request', function () {
+    return view('sanction_request.sanction_request');
+})->name('sanction_request');
 
+Auth::routes([
+    'register' => false, // Registration Routes...
+    'reset' => false, // Password Reset Routes...
+    'verify' => false, // Email Verification Routes...
+]);
 //By Assad Yaqoob
 //Home
 Route::get('/', 'HomeController@index')->name('home');
 
+
 //Customer History
-Route::get('customers-history', 'HomeController@customerHistory')->name('customers.history');
+Route::match(['get','post'],'customers-history', 'HomeController@customerHistory')->name('customers.history');
 Route::get('customer-edit/{id}', 'HomeController@customerEdit')->name('customers.edit');
+Route::view('customer-create','customers.create')->name('customers.create');
 Route::post('customer-update/{id}', 'HomeController@customerUpdate')->name('customers.update');
 Route::delete('customer-delete/{id}', 'HomeController@customerDelete')->name('customers.delete');
 Route::post('customer-save', 'HomeController@customerSave')->name('customers.save');
@@ -35,19 +47,28 @@ Route::get('users', 'HomeController@usersIndex')->name('users.index');
 Route::get('user-edit', 'HomeController@usersEdit')->name('users.edit');
 
 //Insurance Companies Management
-Route::get('insurance-companies', 'HomeController@insuranceCompaniesIndex')->name('insurance_companies.index');
-Route::get('insurance-companies-edit', 'HomeController@insuranceCompaniesEdit')->name('insurance_companies.edit');
+Route::match(['get','post'],'insurance-companies', 'HomeController@indexWithDatatable')->name('insurance_companies.index');
+//Route::match(['get','post'],'insurance-companies', 'HomeController@insuranceCompaniesIndex')->name('insurance_companies.index');
+Route::get('insurance-companies-edit/{id}', 'HomeController@insuranceCompaniesEdit')->name('insurance_companies.edit');
+Route::get('insurance-company-create', 'HomeController@insuranceCompaniesCreate')->name('insurance_companies.create');
+Route::post('insurance-company-save', 'HomeController@insuranceCompaniesSave')->name('insurance_companies.save');
 
 //Payment Transactions
-Route::get('payment-transactions', 'HomeController@paymentTransactionsIndex')->name('payment_transactions.index');
-Route::get('payment-transactions-edit', 'HomeController@paymentTransactionsEdit')->name('payment_transactions.edit');
+Route::match(['get','post'],'payment-transactions', 'HomeController@paymentTransactionsIndex')->name('payment_transactions.index');
+Route::get('payment-transaction-show/{id}', 'HomeController@paymentTransactionsShow')->name('payment_transactions.show');
+Route::get('payment-transaction-resend-email/{id}', 'HomeController@paymentTransactionsResendEmail')->name('payment_transactions.resend_email');
 
 //Rate Management
-Route::get('rates', 'HomeController@ratesIndex')->name('rates.index');
-Route::get('rates-edit', 'HomeController@ratesEdit')->name('rates.edit');
+Route::get('packages', 'HomeController@ratesIndex')->name('rates.index');
+Route::post('package-update', 'HomeController@ratesEdit')->name('rates.update');
 
 //Countries Management
 Route::get('countries', 'HomeController@countriesIndex')->name('countries.index');
 Route::get('countries-edit', 'HomeController@countriesEdit')->name('countries.edit');
 Route::post('countries-update/{id}', 'HomeController@countriesUpdate')->name('countries.update');
+
+//Payment Transactions
+Route::match(['get','post'],'sanction-request', 'HomeController@sanctionRequestIndex')->name('sanction_request.index');
+Route::get('sanction-request-show/{id}', 'HomeController@sanctionRequestShow')->name('sanction_request.show');
+Route::post('sanc-save-attachment','HomeController@sanc_save_attachment')->name('sanc-save-attachment');
 

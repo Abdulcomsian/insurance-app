@@ -20,6 +20,8 @@ class CreatePackagesTable extends Migration
             $table->float('price',20);
             $table->integer('sanctions');
             $table->string('status',10)->default('active');
+            $table->date('start_date')->nullable();
+            $table->date('end_date')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

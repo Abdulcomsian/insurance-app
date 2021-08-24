@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layouts.master', ["page_title"=>"Customers"])
 @section('content')
     <!--begin::Content-->
     <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
@@ -25,11 +25,8 @@
 
                                         <!--begin::Input group-->
                                         <div class="d-flex flex-center flex-equal fw-row text-nowrap order-1 order-xxl-2 me-4" data-bs-toggle="tooltip" data-bs-trigger="hover" title="Enter invoice number">
-                                            <span class="fs-2x fw-bolder text-gray-800">Edit User</span>
+                                            <span class="fs-2x fw-bolder text-gray-800">Edit Customer</span>
                                         </div>
-                                        @if($errors->any())
-                                            {!!  implode('', $errors->all('<div class="alter alert-danger form-control">:message</div>'))  !!}
-                                        @endif
                                         <!--end::Input group-->
                                     </div>
                                     <!--end::Top-->
@@ -45,7 +42,12 @@
                                                 <label class="form-label fs-6 fw-bolder text-gray-700 mb-3">Company Name</label>
                                                 <!--begin::Input group-->
                                                 <div class="mb-5">
-                                                    <input type="text" name="company_name" value="{{$user->company_name ?: ''}}" class="form-control form-control-solid" placeholder="Company Name" />
+                                                    <input required type="text" name="company_name" value="{{$user->company_name ?: ''}}" class="form-control @error('company_name') is-invalid @else form-control-solid  @enderror" placeholder="Company Name" />
+                                                    @error('company_name')
+                                                    <span class="invalid-feedback" role="alert">
+                                                        <strong>{{ $message }}</strong>
+                                                    </span>
+                                                    @enderror
                                                 </div>
                                                 <!--end::Input group-->
                                             </div>
@@ -55,7 +57,12 @@
                                                 <label class="form-label fs-6 fw-bolder text-gray-700 mb-3">Full Name</label>
                                                 <!--begin::Input group-->
                                                 <div class="mb-5">
-                                                    <input type="text" name="name" value="{{$user->name ?: ''}}"  class="form-control form-control-solid" placeholder="Full Name" />
+                                                    <input required type="text" name="name" value="{{$user->name ?: ''}}"  class="form-control @error('name') is-invalid @else form-control-solid  @enderror" placeholder="Full Name" />
+                                                    @error('name')
+                                                    <span class="invalid-feedback" role="alert">
+                                                        <strong>{{ $message }}</strong>
+                                                    </span>
+                                                    @enderror
                                                 </div>
                                                 <!--end::Input group-->
                                             </div>
@@ -65,7 +72,12 @@
                                                 <label class="form-label fs-6 fw-bolder text-gray-700 mb-3">Email</label>
                                                 <!--begin::Input group-->
                                                 <div class="mb-5">
-                                                    <input type="text" name="email" value="{{$user->email ?: ''}}"  class="form-control form-control-solid" placeholder="Email" />
+                                                    <input required type="text" name="email" value="{{$user->email ?: ''}}"  class="form-control @error('email') is-invalid @else form-control-solid  @enderror" placeholder="Email" />
+                                                    @error('email')
+                                                    <span class="invalid-feedback" role="alert">
+                                                        <strong>{{ $message }}</strong>
+                                                    </span>
+                                                    @enderror
                                                 </div>
                                                 <!--end::Input group-->
                                             </div>
@@ -75,7 +87,12 @@
                                                 <label class="form-label fs-6 fw-bolder text-gray-700 mb-3">Address</label>
                                                 <!--begin::Input group-->
                                                 <div class="mb-5">
-                                                    <input type="text" name="address" value="{{$user->address ?: ''}}" class="form-control form-control-solid" placeholder="Address" />
+                                                    <input required type="text" name="address" value="{{$user->address ?: ''}}" class="form-control @error('address') is-invalid @else form-control-solid  @enderror" placeholder="Address" />
+                                                    @error('address')
+                                                    <span class="invalid-feedback" role="alert">
+                                                        <strong>{{ $message }}</strong>
+                                                    </span>
+                                                    @enderror
                                                 </div>
                                                 <!--end::Input group-->
                                             </div>
@@ -85,12 +102,17 @@
                                                 <label class="form-label fs-6 fw-bolder text-gray-700 mb-3">Country</label>
                                                 <!--begin::Input group-->
                                                 <div class="mb-5">
-                                                    <select name="country_id" data-control="select2" data-placeholder="Select a country" data-hide-search="true" class="form-select form-select-solid fw-bolder">
-                                                        <option></option>
+                                                    <select required name="country_id" data-control="select2" data-placeholder="Select a country" data-hide-search="true" class="form-select fw-bolder @error('country_id') is-invalid @else form-control-solid  @enderror">
+                                                        <option value="">Select Country</option>
                                                         @foreach(\Illuminate\Support\Facades\DB::table('countries')->get() as $item)--}}
                                                             <option value="{{$item->id ?: ''}}" @if($item->id == $user->country_id) selected @endif>{{$item->country_name ?: ''}}</option>
                                                         @endforeach
                                                     </select>
+                                                    @error('country_id')
+                                                    <span class="invalid-feedback" role="alert">
+                                                        <strong>{{ $message }}</strong>
+                                                    </span>
+                                                    @enderror
                                                 </div>
                                                 <!--end::Input group-->
                                             </div>
@@ -100,7 +122,12 @@
                                                 <label class="form-label fs-6 fw-bolder text-gray-700 mb-3">Mobile Number</label>
                                                 <!--begin::Input group-->
                                                 <div class="mb-5">
-                                                    <input type="text" name="mobile_number" value="{{$user->mobile_number ?: ''}}" class="form-control form-control-solid" placeholder="Mobile Number" />
+                                                    <input required type="text" name="mobile_number" value="{{$user->mobile_number ?: ''}}" class="form-control @error('mobile_number') is-invalid @else form-control-solid  @enderror" placeholder="Mobile Number" />
+                                                    @error('mobile_number')
+                                                    <span class="invalid-feedback" role="alert">
+                                                        <strong>{{ $message }}</strong>
+                                                    </span>
+                                                    @enderror
                                                 </div>
                                                 <!--end::Input group-->
                                             </div>
@@ -110,7 +137,45 @@
                                                 <label class="form-label fs-6 fw-bolder text-gray-700 mb-3">Office Number</label>
                                                 <!--begin::Input group-->
                                                 <div class="mb-5">
-                                                    <input type="text" name="office_number" value="{{$user->office_number ?: ''}}" class="form-control form-control-solid" placeholder="Office Number" />
+                                                    <input required type="text" name="office_number" value="{{$user->office_number ?: ''}}" class="form-control @error('office_number') is-invalid @else form-control-solid  @enderror" placeholder="Office Number" />
+                                                    @error('office_number')
+                                                    <span class="invalid-feedback" role="alert">
+                                                        <strong>{{ $message }}</strong>
+                                                    </span>
+                                                    @enderror
+                                                </div>
+                                                <!--end::Input group-->
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <label class="form-label fs-6 fw-bolder text-gray-700 mb-3">Account Status</label>
+                                                <!--begin::Input group-->
+                                                <div class="mb-5">
+                                                    <select required name="status" data-control="select2" data-placeholder="Select a country" data-hide-search="true" class="form-select fw-bolder @error('status') is-invalid @else form-control-solid  @enderror">
+                                                        <option value="{{\App\Utils\UserStatus::ACTIVE}}" @if($user->status == \App\Utils\UserStatus::ACTIVE) selected @endif>{{\App\Utils\UserStatus::ACTIVE}}</option>
+                                                        <option value="{{\App\Utils\UserStatus::INACTIVE}}" @if($user->status == \App\Utils\UserStatus::INACTIVE) selected @endif>{{\App\Utils\UserStatus::INACTIVE}}</option>
+                                                    </select>
+                                                    @error('status')
+                                                    <span class="invalid-feedback" role="alert">
+                                                        <strong>{{ $message }}</strong>
+                                                    </span>
+                                                    @enderror
+                                                </div>
+                                                <!--end::Input group-->
+                                            </div>
+{{--                                            {{dd($user)}}--}}
+                                            <div class="col-lg-6">
+                                                <label class="form-label fs-6 fw-bolder text-gray-700 mb-3">Email Status</label>
+                                                <!--begin::Input group-->
+                                                <div class="mb-5">
+                                                    <select name="email_verified_at" data-control="select2" data-placeholder="Select a Email Status" data-hide-search="true" class="form-select fw-bolder @error('email_verified_at') is-invalid @else form-control-solid  @enderror">
+                                                        <option value="{{null}}" @if($user->status == null) selected @endif>{{\App\Utils\EmailStatus::Unverified}}</option>
+                                                        <option value="{{now()}}" @if(isset($user->email_verified_at)) selected @endif>{{\App\Utils\EmailStatus::Verified}}</option>
+                                                    </select>
+                                                    @error('email_verified_at')
+                                                    <span class="invalid-feedback" role="alert">
+                                                        <strong>{{ $message }}</strong>
+                                                    </span>
+                                                    @enderror
                                                 </div>
                                                 <!--end::Input group-->
                                             </div>
@@ -148,7 +213,12 @@
                                                 <label class="form-label fs-6 fw-bolder text-gray-700 mb-3">Password</label>
                                                 <!--begin::Input group-->
                                                 <div class="mb-5">
-                                                    <input type="text" name="password" class="form-control form-control-solid" placeholder="Password" />
+                                                    <input type="password" name="password" class="form-control @error('password') is-invalid @else form-control-solid  @enderror" placeholder="Password" />
+                                                    @error('password')
+                                                    <span class="invalid-feedback" role="alert">
+                                                        <strong>{{ $message }}</strong>
+                                                    </span>
+                                                    @enderror
                                                 </div>
                                                 <!--end::Input group-->
                                             </div>
@@ -158,7 +228,7 @@
                                                 <label class="form-label fs-6 fw-bolder text-gray-700 mb-3">Confrim Password</label>
                                                 <!--begin::Input group-->
                                                 <div class="mb-5">
-                                                    <input type="text" name="password_confirmation" class="form-control form-control-solid" placeholder="Confrim Password" />
+                                                    <input type="password" name="password_confirmation" class="form-control form-control-solid" placeholder="Confrim Password" />
                                                 </div>
                                                 <!--end::Input group-->
                                             </div>
