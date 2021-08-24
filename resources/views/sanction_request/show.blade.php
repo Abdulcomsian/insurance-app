@@ -79,7 +79,7 @@
                                         <th>Action</th>
                                     </thead>
                                     <tbody>
-                                        @if($sanc_save_attachment)
+                                       <!--  @if($sanc_save_attachment)
                                             @foreach($sanc_save_attachment as $attach)
                                             <tr>
                                                 <td>@if($attach->file){{$attach->file}}@else{{"No Attachement"}}@endif</td>
@@ -92,7 +92,7 @@
                                                 @endif
                                             </tr>
                                             @endforeach
-                                        @endif
+                                        @endif -->
                                     </tbody>
                                 </table>
                             </div>
@@ -105,7 +105,7 @@
                     <div class="card panel panel-default height">
                         <div class="panel-heading">Additional Comment By Admin</div>
                         <div class="panel-body">
-                            <textarea name="comment" id="" cols="30" rows="10" placeholder="Admin Comments" required="required">{{$sanction_request->admin_comments}}</textarea>
+                            <textarea name="comment" id="" cols="30" rows="10" placeholder="Admin Comments" required="required"><!-- {{$sanction_request->admin_comments}} --></textarea>
                         </div>
                     </div>
                 </div>

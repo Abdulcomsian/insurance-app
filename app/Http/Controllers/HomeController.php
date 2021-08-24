@@ -585,7 +585,6 @@ class HomeController extends Controller
                 ->first();
                 
             $sanc_save_attachment=SancImages::where('sanc_req_id',decrypt($id))->get();
-            dd($sanc_save_attachment);exit;
             return view('sanction_request.show',compact('sanction_request','sanc_save_attachment'));
 
         }catch (\Exception $exception){
