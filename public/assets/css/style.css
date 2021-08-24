@@ -73,7 +73,17 @@ element.style {
 .scrolltop{
     background-color: #2e953e !important;
 }
-
+@media (max-width: 992px)
+{
+    #progressbar li:before{
+        width: 25px !important;
+        height: 25px !important;
+        margin: 13px auto 10px auto !important;
+    }
+    #progressbar li strong{
+        font-size: 8px;
+    }
+}
 @media (min-width: 992px)
 {
     .aside .aside-logo {
@@ -239,4 +249,84 @@ table.attachmentTable, table.attachmentTable td, table.attachmentTable th {
 .market-share,
 .board-of-diector{
     display: none;
+}
+
+
+#progressbar {
+    overflow: hidden;
+    color: lightgrey;
+    padding: 50px 0px 0px;
+}
+
+#progressbar .active {
+    color: #000000
+}
+
+#progressbar li {
+    list-style-type: none;
+    font-size: 12px;
+    width: 12.5%;
+    float: left;
+    position: relative;
+    text-align: center;
+}
+
+#progressbar #account:before {
+    font-family: FontAwesome;
+    content: "\f023"
+}
+
+#progressbar #personal:before {
+    font-family: FontAwesome;
+    content: "\f007"
+}
+
+#progressbar #payment:before {
+    font-family: FontAwesome;
+    content: "\f09d"
+}
+
+#progressbar #confirm:before {
+    font-family: FontAwesome;
+    content: "\f00c"
+}
+#progressbar li:before {
+    content: '';
+    width: 50px;
+    height: 50px;
+    line-height: 45px;
+    display: block;
+    font-size: 18px;
+    color: #ffffff;
+    background: lightgray;
+    border-radius: 50%;
+    margin: 0 auto 10px auto;
+    padding: 2px;
+    z-index: 999999999;
+    position: relative;
+}
+
+#progressbar li:after {
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: lightgray;
+    position: absolute;
+    left: 0;
+    top: 25px;
+    z-index: 2
+}
+
+#progressbar li.active:before,
+#progressbar li.active:after {
+    background: #2e953e
+}
+#progressbar li span{
+    position: absolute;
+    top: 11px;
+    left: 46%;
+    color: #fff;
+    z-index: 999999999999;
+    font-size: 18px;
+    font-weight: 700;
 }
