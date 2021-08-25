@@ -79,7 +79,7 @@
                                         <th>Action</th>
                                     </thead>
                                     <tbody>
-                                       
+
                                             @foreach($sanc_save_attachment as $attach)
                                             <tr>
                                                 <td>@if($attach->file){{$attach->file}}@else{{"No Attachement"}}@endif</td>
@@ -87,12 +87,12 @@
                                                 <td>
                                                     <a href="{{asset('images/').'/'.$attach->file}}" target="_blank"><span class="fa fa-eye"></span></a>
                                                     &nbsp;&nbsp;
-                                                    <a href="{{route('delete-attachements',$attach->id)}}"><span class="fa fa-trash"></span></a>
+                                                    <a href="{{route('delete-attachements',$attach->id)}}"><span class="fa fa-trash-o"></span></a>
                                                 </td>
                                                 @endif
                                             </tr>
                                             @endforeach
-                                       
+
                                     </tbody>
                                 </table>
                             </div>
@@ -129,8 +129,8 @@
 @endsection
 @section('script')
 <script type="text/javascript">
-    $(".addAttachmentBtn").click(function(){  
-         $(".attachmentTable tbody").append("<tr> <td> <input type='file' accept='.doc,.docx,.jpg,.jpeg,.png,.pdf' name='images[]' id='' required='required'></td><td><button class='deleteattach' type='button'><span class='fa fa-trash '></span></button></td> </tr>") 
+    $(".addAttachmentBtn").click(function(){
+         $(".attachmentTable tbody").append("<tr> <td> <input type='file' accept='.doc,.docx,.jpg,.jpeg,.png,.pdf' name='images[]' id='' required='required'></td><td><a class='deleteattach' type='button'><span class='fa fa-trash-o '></span></a></td> </tr>")
         });
     $(document).on('click',".deleteattach",function(){
         $(this).parent().parent().remove();
@@ -142,8 +142,8 @@
             let form = '#'+form_id;
 
             swal({
-                title: "Are you sure?",
-                text: "You will not be able to recover this record!",
+                title: "Are you sure you want to cancel this request?",
+                // text: "You will not be able to recover this record!",
                 type: "warning",
                 showCancelButton: true,
                 confirmButtonColor: '#DD6B55',

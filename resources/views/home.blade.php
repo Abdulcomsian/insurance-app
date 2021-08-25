@@ -390,8 +390,8 @@
                                                                             </svg>
                                                                         </span>
                                                     <!--end::Svg Icon-->
-                                                    <div class="text-inverse-dark fw-bolder fs-2 mb-2 mt-5">{{$total_subscriptions}}</div>
-                                                    <div class="text-inverse-success fw-bolder fs-3 mb-2 mt-5">Total Subscriptions</div>
+                                                    <div class="text-inverse-dark fw-bolder fs-2 mb-2 mt-5">{{$total_transactions}}</div>
+                                                    <div class="text-inverse-success fw-bolder fs-3 mb-2 mt-5">Total Transactions</div>
                                                 </div>
                                                 <!--end::Body-->
                                             </a>

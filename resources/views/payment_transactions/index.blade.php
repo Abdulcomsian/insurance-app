@@ -1,6 +1,11 @@
 @extends('layouts.master', ["page_title"=>"Payment Transactions"])
 @section('css')
     @include('layouts.datatables_css')
+    <style>
+        .fa{
+            font-family: "Font Awesome 5 Free" !important;
+        }
+    </style>
 @endsection
 @section('content')
     <!--begin::Content-->
@@ -12,7 +17,7 @@
                 <!--begin::Card-->
                 <div class="card">
                     <!--begin::Card header-->
-               
+
                     <!--end::Card header-->
                     <!--begin::Card body-->
                     <div class="card-body pt-0 table-responsive">
@@ -24,15 +29,14 @@
                             <!--begin::Table row-->
                             <tr class="text-start text-gray-400 fw-bolder fs-7 text-uppercase gs-0">
                                 <th>Id</th>
-                                <th>Cart Id</th>
+                                <th>Invoice Id</th>
                                 <th>Customer Name</th>
                                 <th>Package Name</th>
                                 <th>Billing Name</th>
                                 <th>Billing Email</th>
-                                <th>Amount</th>
-{{--                                <th>Card First 6</th>--}}
-{{--                                <th>Card Last 4</th>--}}
-{{--                                <th>Card Type</th>--}}
+                                <th>VAT</th>
+                                <th>Package Amount</th>
+                                <th>Total Amount</th>
                                 <th>Date</th>
                                 <th>Status</th>
                                 <th>Action</th>
@@ -70,28 +74,28 @@
                     {
                         extend: 'copyHtml5',
                         exportOptions: {
-                            columns: [  0, ':visible'  ]
+                            columns: [  0,1,2,3,4,5,6,7,8,9,10  ]
                         },
 
                     },
                     {
                         extend: 'excelHtml5',
                         exportOptions: {
-                            columns: [  0, ':visible'  ]
+                            columns: [  0,1,2,3,4,5,6,7,8,9,10  ]
                         },
 
                     },
                     {
                         extend: 'csvHtml5',
                         exportOptions: {
-                            columns: [  0, ':visible'  ]
+                            columns: [  0,1,2,3,4,5,6,7,8,9,10  ]
                         },
 
                     },
                     {
                         extend: 'pdfHtml5',
                         exportOptions: {
-                            columns: [  0, ':visible'  ]
+                            columns: [  0,1,2,3,4,5,6,7,8,9,10  ]
                         }
                     },
                 ],
@@ -99,12 +103,24 @@
                 ajax: "{{ route('payment_transactions.index') }}",
                 columns: [
                     {data: 'id', name: 'id',defaultContent: ''},
-                    {data: 'cart_id', name: 'cart_id',defaultContent: '-'},
+                    {data: 'invoice_id', name: 'invoice_id',defaultContent: '-'},
                     {data: 'user_name', name: 'user_name',defaultContent: '-'},
                     {data: 'package_name', name: 'package_name',defaultContent: '-'},
                     {data: 'billing_name', name: 'billing_name',defaultContent: '-'},
                     {data: 'billing_email', name: 'billing_email',defaultContent: '-'},
-                    {data: 'amount', name: 'amount',defaultContent: '-'},
+                    {data: 'vat_amount', name: 'vat_amount',defaultContent: '-',
+                        render: function (data, type, row, meta) {
+                        return data + ' AED';
+                        }
+                    },
+                    {data: 'package_amount', name: 'package_amount',defaultContent: '-',
+                        render: function (data, type, row, meta) {
+                            return data + ' AED';
+                        }},
+                    {data: 'total_amount', name: 'total_amount',defaultContent: '-',
+                        render: function (data, type, row, meta) {
+                            return parseFloat(data) + ' AED';
+                        }},
                     // {data: 'card_first6', name: 'card_first6',defaultContent: '-'},
                     // {data: 'card_last4', name: 'card_last4',defaultContent: '-'},
                     // {data: 'card_type', name: 'card_type',defaultContent: '-'},

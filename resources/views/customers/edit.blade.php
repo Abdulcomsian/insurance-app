@@ -147,6 +147,19 @@
                                                 <!--end::Input group-->
                                             </div>
                                             <div class="col-lg-6">
+                                                <label class="form-label fs-6 fw-bolder text-gray-700 mb-3">VAT Number</label>
+                                                <!--begin::Input group-->
+                                                <div class="mb-5">
+                                                    <input type="text" name="vat_number" value="{{$user->vat_number ?: ''}}" class="form-control @error('vat_number') is-invalid @else form-control-solid  @enderror" placeholder="VAT Number" />
+                                                    @error('vat_number')
+                                                    <span class="invalid-feedback" role="alert">
+                                                        <strong>{{ $message }}</strong>
+                                                    </span>
+                                                    @enderror
+                                                </div>
+                                                <!--end::Input group-->
+                                            </div>
+                                            <div class="col-lg-6">
                                                 <label class="form-label fs-6 fw-bolder text-gray-700 mb-3">Account Status</label>
                                                 <!--begin::Input group-->
                                                 <div class="mb-5">
