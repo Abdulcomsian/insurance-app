@@ -1,6 +1,11 @@
 @extends('layouts.master', ["page_title"=>"Payment Transactions"])
 @section('css')
     @include('layouts.datatables_css')
+    <style>
+        .fa{
+            font-family: "Font Awesome 5 Free" !important;
+        }
+    </style>
 @endsection
 @section('content')
     <!--begin::Content-->
