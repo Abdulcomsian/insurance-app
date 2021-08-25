@@ -59,7 +59,7 @@ class HomeController extends Controller
             $total_companies = DB::table('company_detail')->count();
             $total_users = DB::table('users')->where('type','<>','Admin')->count();
             $total_packages = DB::table('packages')->count();
-            $total_subscriptions = DB::table('subscriptions')->count();
+            $total_transactions = DB::table('transaction')->count();
 
             return view('home',compact(
                 'transactions_today',
@@ -73,7 +73,7 @@ class HomeController extends Controller
                 'total_companies',
                 'total_users',
                 'total_packages',
-                'total_subscriptions'
+                'total_transactions'
 
             ));
         }catch (\Exception $exception){
