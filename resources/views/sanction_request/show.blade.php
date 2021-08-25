@@ -55,6 +55,8 @@
                             <form style="float:right" id="cancel-request-form" action="{{route('cancel-request')}}" method="post">
                                 @csrf
                                 <input type="hidden" name="sanc_id" value="{{$sanction_request->id}}">
+                                <input type="hidden" name="user_id" value="{{encrypt($sanction_request->user_id)}}">
+                                <input type="hidden" name="sanctions" value="{{encrypt(count($b_o_d) + 1)}}">
                                  <button type="submit" value="cancel-request-form" class="btn btn-danger deleterequest">Cancel Request</button>
                              </form>
                             @endif

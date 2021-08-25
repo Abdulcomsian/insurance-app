@@ -659,7 +659,7 @@ class HomeController extends Controller
                  //update status of sacntuem
                  DB::table('req_for_sanc_status')
                  ->where('id',$request->input('sanc_id'))
-                 ->update(['status' => "Completed"]);
+                 ->update(['status' => SanctionRequestStatus::Completed]);
                  toastr()->success('Attachment Send Successfully');
                  return back();
            }
@@ -696,7 +696,18 @@ class HomeController extends Controller
         {
              DB::table('req_for_sanc_status')
              ->where('id',$request->input('sanc_id'))
-             ->update(['status' => "Canceled"]);
+             ->update(['status' => SanctionRequestStatus::Cancelled]);
+             $sub = DB::table('subscriptions')
+                 ->where('user_id',decrypt($request->user_id))
+                 ->first();
+            DB::table('subscriptions')
+                ->where('user_id',decrypt($request->user_id))
+                ->update([
+                    'remaining_sanctions' => $sub->remaining_sanctions + decrypt($request->sanctions),
+                    'used_sanctions' => $sub->used_sanctions - decrypt($request->sanctions),
+                    'updated_at' =>  Carbon::now(),
+                ]);
+
              toastr()->success('Request Canceled Successfully');
              return back();
         }
