@@ -9,7 +9,10 @@
         padding-left: 27px !important;
     }
     .table td:last-child{
-        display:flex !important;
+        display: flex !important;
     }
     table.dataTable>thead .sorting:after, table.dataTable>thead .sorting:before, table.dataTable>thead .sorting_asc:after, table.dataTable>thead .sorting_asc:before, table.dataTable>thead .sorting_desc:after, table.dataTable>thead .sorting_desc:before{display:none !important;}
+    table.dataTable td.dataTables_empty {
+        text-align: center;
+    }
 </style>

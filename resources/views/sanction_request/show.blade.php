@@ -105,7 +105,7 @@
                     <div class="card panel panel-default height">
                         <div class="panel-heading">Additional Comment By Admin</div>
                         <div class="panel-body">
-                            <textarea name="comment" id="" cols="30" rows="10" placeholder="Admin Comments" required="required"><!-- {{$sanction_request->admin_comments}} --></textarea>
+                            <textarea name="comment" id="" cols="30" rows="10" placeholder="Admin Comments" required="required">{{$sanction_request->admin_comments}}</textarea>
                         </div>
                     </div>
                 </div>
@@ -129,8 +129,8 @@
 @endsection
 @section('script')
 <script type="text/javascript">
-    $(".addAttachmentBtn").click(function(){  
-         $(".attachmentTable tbody").append("<tr> <td> <input type='file' accept='.doc,.docx,.jpg,.jpeg,.png,.pdf' name='images[]' id='' required='required'></td><td><button class='deleteattach' type='button'><span class='fa fa-trash '></span></button></td> </tr>") 
+    $(".addAttachmentBtn").click(function(){
+         $(".attachmentTable tbody").append("<tr> <td> <input type='file' accept='.doc,.docx,.jpg,.jpeg,.png,.pdf' name='images[]' id='' required='required'></td><td><button class='deleteattach' type='button'><span class='fa fa-trash '></span></button></td> </tr>")
         });
     $(document).on('click',".deleteattach",function(){
         $(this).parent().parent().remove();
@@ -142,8 +142,8 @@
             let form = '#'+form_id;
 
             swal({
-                title: "Are you sure?",
-                text: "You will not be able to recover this record!",
+                title: "Are you sure you want to cancel this request?",
+                // text: "You will not be able to recover this record!",
                 type: "warning",
                 showCancelButton: true,
                 confirmButtonColor: '#DD6B55',

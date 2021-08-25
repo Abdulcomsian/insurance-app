@@ -9,6 +9,7 @@ use App\Notifications\SendAttachment;
 use App\Models\SancImages;
 use App\User;
 use App\Utils\EmailStatus;
+use App\Utils\SanctionRequestStatus;
 use App\Utils\UserStatus;
 use App\Utils\UserType;
 use Carbon\Carbon;
@@ -76,8 +77,8 @@ class HomeController extends Controller
 
             ));
         }catch (\Exception $exception){
-            dd($exception->getMessage());
             toastr()->error('Something went wrong, try again');
+            return back();
         }
     }
 
@@ -201,8 +202,7 @@ class HomeController extends Controller
             'country_id' => ['required', 'max:255'],
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', Rule::unique('users')->ignore($decrypt_id)],
-
-
+            'vat_number' => ['nullable','numeric'],
         ],[
             'country_id.required' => 'The country field is required',
             'status.required' => 'The account status field is required',
@@ -266,23 +266,19 @@ class HomeController extends Controller
         return view('countries.edit');
     }
 
-
-    public function usersIndex()
-    {
-        return view('users.index');
-    }
-
-    public function usersEdit()
-    {
-        return view('users.edit');
-    }
-
     public function indexWithDatatable(Request $request)
     {
         if ($request->ajax()) {
             $data = DB::table('company_detail')->orderBy('company_name','asc')->get();
             return Datatables::of($data)
                 ->addIndexColumn()
+                ->editColumn('status',function ($data){
+                    if ($data->status == UserStatus::ACTIVE){
+                        return '<div class="badge badge-success" fw-bolder">'.$data->status.'</div>';
+                    }else{
+                        return '<div class="badge badge-danger" fw-bolder">'.$data->status.'</div>';
+                    }
+                })
                 ->addColumn('action', function($row){
 
                     $btn = '        <a href="" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
@@ -312,7 +308,7 @@ class HomeController extends Controller
                                             </form>';
                     return $btn;
                 })
-                ->rawColumns(['action'])
+                ->rawColumns(['status','action'])
                 ->make(true);
         }
 
@@ -396,16 +392,21 @@ class HomeController extends Controller
             if ($request->ajax()) {
                 $data = DB::table('transaction')
                     ->join('users','transaction.user_id','=','users.id')
-                    ->join('packages','transaction.package_id','=','packages.id')
                     ->orderBy('transaction.id','desc')
                     ->select(
                         'transaction.*',
-                        'users.name as user_name',
-                        'packages.name as package_name')
+                        'users.name as user_name')
                     ->get();
                 return Datatables::of($data)
                     ->addColumn('billing_name',function ($data){
                         return $data->billing_fname. ' ' . $data->billing_sname;
+                    })
+                    ->editColumn('status',function ($data){
+                        if ($data->status == "Paid"){
+                            return '<div class="badge badge-success" fw-bolder">'.$data->status.'</div>';
+                        }else{
+                            return '<div class="badge badge-danger" fw-bolder">'.$data->status.'</div>';
+                        }
                     })
                     ->addColumn('action',function ($data){
                         $action = '<a href="'.route('payment_transactions.show',encrypt($data->id)).'" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
@@ -421,7 +422,7 @@ class HomeController extends Controller
                             }
                             return $action;
                     })
-                    ->rawColumns(['billing_name','action'])
+                    ->rawColumns(['status','billing_name','action'])
                     ->make(true);
             }
             return view('payment_transactions.index');
@@ -452,7 +453,6 @@ class HomeController extends Controller
             toastr()->success('Transaction email sent succesfully to '. $user->name);
             return back();
         }catch (\Exception $exception) {
-            dd($exception->getMessage());
             toastr()->error('Something went wrong, try again');
             return back();
         }
@@ -467,11 +467,10 @@ class HomeController extends Controller
                 ->select(
                     'transaction.*',
                     'users.name as username',
+                    'users.company_name as company_name',
+                    'users.address as address',
                     'users.email as email',
-                    'users.created_at as reg_date',
-                    'packages.name as package_name',
-                    'packages.price as package_price',
-                    'packages.sanctions as package_sanctions'
+                    'users.created_at as reg_date'
                 )
                 ->first();
             return view('payment_transactions.show',compact('transaction'));
@@ -489,6 +488,13 @@ class HomeController extends Controller
             if ($request->ajax()) {
                 $data = DB::table('packages')->orderBy('id','asc')->get();
                 return Datatables::of($data)
+                    ->editColumn('status',function ($data){
+                        if ($data->status == UserStatus::ACTIVE){
+                            return '<div class="badge badge-success" fw-bolder">'.$data->status.'</div>';
+                        }else{
+                            return '<div class="badge badge-danger" fw-bolder">'.$data->status.'</div>';
+                        }
+                    })
                    ->addColumn('action',function ($data){
                         return '<button id="'.$data->id.'" value="Edit" class="action btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1"  data-bs-toggle="modal" data-bs-target="#kt_modal_add_user">
                                     <span class="svg-icon svg-icon-3">
@@ -499,7 +505,7 @@ class HomeController extends Controller
                                     </span>
                                 </button>';
                     })
-                    ->rawColumns(['action'])
+                    ->rawColumns(['status','action'])
                     ->make(true);
             }
             return view('rates.index');
@@ -551,16 +557,20 @@ class HomeController extends Controller
                         'company_detail.company_name as company_name')
                     ->get();
                 return Datatables::of($data)
-//                    ->addColumn('billing_name',function ($data){
-//                        return $data->billing_fname. ' ' . $data->billing_sname;
-//                    })
+                    ->editColumn('status',function ($data){
+                        if ($data->status == SanctionRequestStatus::Completed){
+                            return '<div class="badge badge-success" fw-bolder">'.$data->status.'</div>';
+                        }else{
+                            return '<div class="badge badge-danger" fw-bolder">'.$data->status.'</div>';
+                        }
+                    })
                     ->addColumn('action',function ($data){
                         $action = '<a href="'.route('sanction_request.show',encrypt($data->id)).'" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
                         <i class="fa fa-eye" title="View" aria-hidden="true"></i>
                         </a>';
                         return $action;
                     })
-                    ->rawColumns(['action'])
+                    ->rawColumns(['status','action'])
                     ->make(true);
             }
             return view('sanction_request.index');
@@ -583,12 +593,11 @@ class HomeController extends Controller
                     'company_detail.company_name as company_name')
                 ->orderBy('req_for_sanc_status.id','desc')
                 ->first();
-                
+
             $sanc_save_attachment=SancImages::where('sanc_req_id',decrypt($id))->get();
             return view('sanction_request.show',compact('sanction_request','sanc_save_attachment'));
 
         }catch (\Exception $exception){
-            dd($exception->getMessage());
             toastr()->error('Something went wrong, try again');
             return back();
         }
@@ -596,8 +605,8 @@ class HomeController extends Controller
 
     //save sacnctum images
     public function sanc_save_attachment(Request $request)
-    {  
-        try 
+    {
+        try
       {
              $images=array();
             if($files=$request->file('images'))
@@ -612,9 +621,9 @@ class HomeController extends Controller
                         'sanc_req_id'=>$request->input('sanc_id'),
                         //you can put other insertion here
                     ]);
-                   
+
                   }
-                   //update commetns 
+                   //update commetns
                      DB::table('req_for_sanc_status')
                      ->where('id',$request->input('sanc_id'))
                      ->update(['admin_comments' => $request->input('comment')]);
@@ -626,7 +635,7 @@ class HomeController extends Controller
                 ->where('id',$request->input('sanc_id'))
                 ->update(['admin_comments' => $request->input('comment')]);
             }
-            
+
             toastr()->success('Attachmet Saved Successfully!');
                 return back();
       }
@@ -638,7 +647,7 @@ class HomeController extends Controller
 
     public function sanc_send_attachment(Request $request)
     {
-      try 
+      try
       {
            $sanc_attachment_result=SancImages::where('sanc_req_id',$request->sanc_id)->get();
            if(count($sanc_attachment_result)>0)
@@ -678,7 +687,7 @@ class HomeController extends Controller
             toastr()->error('Something went wrong, try again');
             return back();
         }
-        
+
     }
     //cancel request code
     public function cancel_request(Request $request)
@@ -695,7 +704,7 @@ class HomeController extends Controller
             toastr()->error('Something went wrong, try again');
             return back();
         }
-        
+
     }
 }
 
