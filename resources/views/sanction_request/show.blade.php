@@ -79,7 +79,7 @@
                                         <th>Action</th>
                                     </thead>
                                     <tbody>
-                                       <!--  @if($sanc_save_attachment)
+                                       
                                             @foreach($sanc_save_attachment as $attach)
                                             <tr>
                                                 <td>@if($attach->file){{$attach->file}}@else{{"No Attachement"}}@endif</td>
@@ -92,7 +92,7 @@
                                                 @endif
                                             </tr>
                                             @endforeach
-                                        @endif -->
+                                       
                                     </tbody>
                                 </table>
                             </div>

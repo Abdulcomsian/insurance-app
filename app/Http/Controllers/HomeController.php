@@ -640,6 +640,7 @@ class HomeController extends Controller
                 return back();
       }
       catch (\Exception $exception){
+          dd($exception->getMessage());
             toastr()->error('Something went wrong, try again');
             return back();
         }
@@ -654,7 +655,6 @@ class HomeController extends Controller
            {
                  $userdata=DB::table('req_for_sanc_status')->where('id',$request->sanc_id)->first();
                  $user = User::find($userdata->user_id)->first();
-                 $user->email="obaidkust@gmail.com";
                  $user->notify(new SendAttachment($user,$sanc_attachment_result));
                  //update status of sacntuem
                  DB::table('req_for_sanc_status')
