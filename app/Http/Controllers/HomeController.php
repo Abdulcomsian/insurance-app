@@ -390,6 +390,33 @@ class HomeController extends Controller
     }
 
     //Transactions
+    public function paymentTransactionsCancel(Request $request){
+        try {
+            DB::table('transaction')
+                ->where('id',decrypt($request->id))
+                ->update([
+                    'status' =>  'Cancelled',
+                    'cancelled_at' =>  Carbon::now()
+                ]);
+            $sub = DB::table('subscriptions')
+                ->where('user_id',decrypt($request->user_id))
+                ->first();
+
+            DB::table('subscriptions')
+                ->where('user_id',decrypt($request->user_id))
+                ->update([
+                    'remaining_sanctions' => $sub->remaining_sanctions - decrypt($request->package_sanctions),
+                    'total_sanctions' => $sub->total_sanctions - decrypt($request->package_sanctions),
+                    'updated_at' =>  Carbon::now(),
+                ]);
+            toastSuccess('Payment has been cancelled successfully!');
+            return redirect()->back();
+        }catch (\Exception $exception){
+            toastError('Something went wrong, try again');
+            return redirect()->back();
+        }
+    }
+
     public function paymentTransactionsIndex(Request $request)
     {
         try {

@@ -48,7 +48,6 @@ Route::get('user-edit', 'HomeController@usersEdit')->name('users.edit');
 
 //Insurance Companies Management
 Route::match(['get','post'],'insurance-companies', 'HomeController@indexWithDatatable')->name('insurance_companies.index');
-//Route::match(['get','post'],'insurance-companies', 'HomeController@insuranceCompaniesIndex')->name('insurance_companies.index');
 Route::get('insurance-companies-edit/{id}', 'HomeController@insuranceCompaniesEdit')->name('insurance_companies.edit');
 Route::get('insurance-company-create', 'HomeController@insuranceCompaniesCreate')->name('insurance_companies.create');
 Route::post('insurance-company-save', 'HomeController@insuranceCompaniesSave')->name('insurance_companies.save');
@@ -56,6 +55,7 @@ Route::post('insurance-company-save', 'HomeController@insuranceCompaniesSave')->
 //Payment Transactions
 Route::match(['get','post'],'payment-transactions', 'HomeController@paymentTransactionsIndex')->name('payment_transactions.index');
 Route::get('payment-transaction-show/{id}', 'HomeController@paymentTransactionsShow')->name('payment_transactions.show');
+Route::post('payment-cancel', 'HomeController@paymentTransactionsCancel')->name('payment_transactions.cancel');
 Route::get('payment-transaction-resend-email/{id}', 'HomeController@paymentTransactionsResendEmail')->name('payment_transactions.resend_email');
 
 //Rate Management
