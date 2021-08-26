@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\DataTables\CompanyDetailsDataTable;
 use App\Models\CountryInformation;
+use App\Notifications\SanctionRequestCancel;
 use App\Notifications\TransactionEmail;
 use App\Notifications\SendAttachment;
 use App\Models\SancImages;
@@ -21,6 +22,7 @@ use Illuminate\Validation\Rule;
 use Psy\Util\Str;
 use Yajra\DataTables\Facades\DataTables;
 use Yajra\DataTables\Html\Button;
+use function Symfony\Component\String\u;
 use function Symfony\Component\Translation\t;
 
 class HomeController extends Controller
@@ -291,8 +293,10 @@ class HomeController extends Controller
                                                                 </span>
                                                 <!--end::Svg Icon-->
                                             </a>
-                                            <form method="POST" action="">
-                                            <button type="submit"  onclick="return confirm(\'Are you sure you want to delete?\');" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm">
+                                            <form method="POST" action=""  id="form_'.$row->id.'" >
+                                            '.method_field('Delete'). csrf_field().'
+
+                                            <button type="submit" class="deleteBtn btn btn-icon btn-bg-light btn-active-color-primary btn-sm">
                                                     <!--begin::Svg Icon | path: icons/duotone/General/Trash.svg-->
                                                     <span class="svg-icon svg-icon-3">
                                                                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
@@ -707,7 +711,16 @@ class HomeController extends Controller
                     'used_sanctions' => $sub->used_sanctions - decrypt($request->sanctions),
                     'updated_at' =>  Carbon::now(),
                 ]);
-
+            $sanction_details = DB::table('req_for_sanc_status')
+                ->join('company_detail','req_for_sanc_status.company_id','=','company_detail.id')
+                ->where('req_for_sanc_status.id',$request->sanc_id)
+                ->where('req_for_sanc_status.user_id',decrypt($request->user_id))
+                ->select(
+                    'company_detail.company_name as company_name',
+                    'company_detail.country as country'
+                )->first();
+            $user = User::where('id',decrypt($request->user_id))->first();
+            $user->notify(new SanctionRequestCancel($sanction_details));
              toastr()->success('Request Canceled Successfully');
              return back();
         }
