@@ -650,6 +650,36 @@ class HomeController extends Controller
     {
       try
       {
+           //first save Attachments
+            $images=array();
+            if($files=$request->file('images'))
+            {
+                foreach($files as $file){
+                    $name=$file->getClientOriginalName();
+                    $file->move('images',$name);
+                    $images[]=$name;
+                    /*Insert your data*/
+                    SancImages::insert( [
+                        'file'=>  $name,
+                        'sanc_req_id'=>$request->input('sanc_id'),
+                        //you can put other insertion here
+                    ]);
+
+                  }
+                   //update commetns
+                     DB::table('req_for_sanc_status')
+                     ->where('id',$request->input('sanc_id'))
+                     ->update(['admin_comments' => $request->input('comment')]);
+            }
+            else
+            {
+                 /*Update your Comments*/
+                 DB::table('req_for_sanc_status')
+                ->where('id',$request->input('sanc_id'))
+                ->update(['admin_comments' => $request->input('comment')]);
+            }
+            //end of save attachments
+            //send attachmets in emails
            $sanc_attachment_result=SancImages::where('sanc_req_id',$request->sanc_id)->get();
            if(count($sanc_attachment_result)>0)
            {

@@ -1,10 +1,34 @@
 @extends('layouts.master', ["page_title"=>"Sanction Request"])
 @section('css')
+<style type="text/css">
+#pageloader
+{
+  background: rgba( 255, 255, 255, 0.8 );
+  display: none;
+  height: 100%;
+  position: fixed;
+  width: 100%;
+  z-index: 9999;
+}
+
+#pageloader img
+{
+  left: 28%;
+  margin-left: -32px;
+  margin-top: -32px;
+  position: absolute;
+  top: 30%;
+}
+</style>
 @endsection
 @section('content')
+<div id="pageloader">
+ <img src="http://cdnjs.cloudflare.com/ajax/libs/semantic-ui/0.16.1/images/loader-large.gif" alt="processing..." />
+</div>
 <div class="viewPayment">
 <div class="container">
     <div class="row">
+
         <div class="col-xs-12">
             <div class="text-center">
                 <h2>Sanction Request Details</h2>
@@ -66,7 +90,8 @@
             </div>
             <hr>
             @if($sanction_request->status!="Canceled")
-            <form action="{{route('sanc-save-attachment')}}" method="post" enctype="multipart/form-data">
+            
+            <form id="attachmetform" action="{{route('sanc-save-attachment')}}" method="post" enctype="multipart/form-data">
                 @csrf
                 <input type="hidden" name="sanc_id" id="sanc_id" value="{{$sanction_request->id}}">
                 <div class="row">
@@ -130,6 +155,12 @@
 
 @endsection
 @section('script')
+<script type="text/javascript">
+     $('#attachmetform').submit(function() {
+       $("#pageloader").fadeIn('slow'); 
+       return true;
+     });
+ </script>
 <script type="text/javascript">
     $(".addAttachmentBtn").click(function(){
          $(".attachmentTable tbody").append("<tr> <td> <input type='file' accept='.doc,.docx,.jpg,.jpeg,.png,.pdf' name='images[]' id='' required='required'></td><td><a class='deleteattach' type='button'><span class='fa fa-trash-o '></span></a></td> </tr>")

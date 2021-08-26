@@ -41,8 +41,6 @@ use Illuminate\Database\Eloquent\Model;
 class CompanyAccounting extends Model
 {
 	protected $table = 'company_accounting';
-	public $incrementing = false;
-	public $timestamps = false;
 
 	protected $casts = [
 		'id' => 'int',
