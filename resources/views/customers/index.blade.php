@@ -102,7 +102,7 @@
 				//closeOnCancel: false
 			},
 			function(){
-				swal("Deleted!", "Your imaginary file has been deleted!", "success");
+                swal("Deleted!", "Record has been deleted!", "success");
 				console.log(form);
                 $(form).submit();
 

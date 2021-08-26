@@ -80,6 +80,30 @@
 @section('script')
     @include('layouts.datatables_js')
     <script>
+        $(document).on("click",".deleteBtn",function(event) {
+            event.preventDefault();
+            let form_id = $(this).attr('value');
+            let form = '#form_'+form_id;
+
+            swal({
+                    title: "Are you sure?",
+                    text: "You will not be able to recover this record!",
+                    type: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: '#DD6B55',
+                    confirmButtonText: 'Yes, delete it!',
+                    closeOnConfirm: false,
+                    //closeOnCancel: false
+                },
+                function(){
+                    swal("Deleted!", "Record has been deleted!", "success");
+                    console.log(form);
+                    $(form).submit();
+
+                });
+        });
+    </script>
+    <script>
         $(function () {
             var table = $('.data-table').DataTable({
                 processing: true,
