@@ -1,14 +1,38 @@
 @extends('layouts.master', ["page_title"=>"Payment Transactions"])
 @section('css')
+    <style>
+        .btn-right{
+            position: absolute !important;
+            float: right !important;
+            right: 36px !important;
+            margin-top: -12px;
+        }
+
+    </style>
 @endsection
 @section('content')
 <div class="viewPayment">
 <div class="container">
     <div class="row">
         <div class="col-xs-12">
-            <div class="text-center">
-{{--                <i class="fa fa-search-plus pull-left icon"></i>--}}
-                <h2>Transaction #{{$transaction->invoice_id}}</h2>
+            <div class="text-center" style="display: flex">
+                <div>
+                    <h2>Transaction #{{$transaction->invoice_id}}</h2>
+                </div>
+                <div>
+                    @if($transaction->status == "Paid")
+                        <form action="{{route('payment_transactions.cancel')}}" method="post">
+                        @csrf
+                        <input type="hidden" name="id" value="{{encrypt($transaction->id)}}">
+                        <input type="hidden" name="user_id" value="{{encrypt($transaction->user_id)}}">
+                        <input type="hidden" name="package_sanctions" value="{{encrypt($transaction->package_sanctions)}}">
+                        <button class="btn-primary btn btn-right"> Cancel Payment</button>
+                    </form>
+                    @else
+                        <button class="btn-danger btn btn-right">Cancelled Date {{$transaction->cancelled_at}}</button>
+                    @endif
+
+                </div>
             </div>
             <hr>
             <div class="row">
