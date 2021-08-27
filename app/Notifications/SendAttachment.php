@@ -46,7 +46,7 @@ class SendAttachment extends Notification
     {
         $message = 'Your sanction request report has been successfully generated. Please find attached repot documents.';
         $email=new MailMessage();
-        $email->line($this->user->name .$message);
+        $email->line($message);
         foreach ($this->attachments  as $filePath) {
             $email->attach(public_path('images/'.$filePath->file));
         }
