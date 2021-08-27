@@ -142,7 +142,6 @@
                         }
                     },
                 ],
-
                 ajax: "{{ route('customers.history') }}",
                 columns: [
                     {data: 'id', name: 'id', defaultContent: '-'},
@@ -160,7 +159,6 @@
                     search: ""
                 }
             });
-
         });
         $( document ).ready(function() {
             $('div.dataTables_filter input').addClass('form-control form-control-solid w-250px ps-15');

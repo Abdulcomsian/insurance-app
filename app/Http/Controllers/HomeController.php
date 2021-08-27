@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\DataTables\CompanyDetailsDataTable;
 use App\Models\CountryInformation;
+use App\Notifications\PaymentCancelled;
 use App\Notifications\SanctionRequestCancel;
 use App\Notifications\TransactionEmail;
 use App\Notifications\SendAttachment;
@@ -14,6 +15,7 @@ use App\Utils\SanctionRequestStatus;
 use App\Utils\UserStatus;
 use App\Utils\UserType;
 use Carbon\Carbon;
+use Faker\Provider\Payment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -183,6 +185,7 @@ class HomeController extends Controller
         ]);
         try {
             $request['password'] = Hash::make($request['password']);
+            $request['unique_id'] = uniqid(time());
             User::create($request->except('_token'));
            toastSuccess('Customer Added Successfully!');
             return redirect()->route('customers.history');
@@ -392,26 +395,43 @@ class HomeController extends Controller
     //Transactions
     public function paymentTransactionsCancel(Request $request){
         try {
+            $user_id = decrypt($request->user_id);
+            $transaction_id = decrypt($request->id);
             DB::table('transaction')
-                ->where('id',decrypt($request->id))
+                ->where('id',$transaction_id)
                 ->update([
                     'status' =>  'Cancelled',
                     'cancelled_at' =>  Carbon::now()
                 ]);
+
+            $transaction =  DB::table('transaction')
+                ->where('transaction.id',$transaction_id)
+                ->join('users','transaction.user_id','=','users.id')
+                ->select(
+                    'transaction.invoice_id as invoice_id',
+                    'transaction.package_name as package_name',
+                    'transaction.created_at as created_at',
+                    'users.name as name'
+                )->first();
+
+
             $sub = DB::table('subscriptions')
-                ->where('user_id',decrypt($request->user_id))
+                ->where('user_id',$user_id)
                 ->first();
 
             DB::table('subscriptions')
-                ->where('user_id',decrypt($request->user_id))
+                ->where('user_id',$user_id)
                 ->update([
                     'remaining_sanctions' => $sub->remaining_sanctions - decrypt($request->package_sanctions),
                     'total_sanctions' => $sub->total_sanctions - decrypt($request->package_sanctions),
                     'updated_at' =>  Carbon::now(),
                 ]);
+            $user = User::where('id',$user_id)->first();
+            $user->notify(new PaymentCancelled($transaction));
             toastSuccess('Payment has been cancelled successfully!');
             return redirect()->back();
         }catch (\Exception $exception){
+//            dd($exception->getMessage());
             toastError('Something went wrong, try again');
             return redirect()->back();
         }

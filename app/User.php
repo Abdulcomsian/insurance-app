@@ -3,6 +3,7 @@
 namespace App;
 
 use App\Models\Country;
+use App\Models\Subscription;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -11,15 +12,14 @@ use Illuminate\Notifications\Notifiable;
 class User extends Authenticatable implements MustVerifyEmail
 {
     use Notifiable;
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
+
     protected $fillable = [
         'name',
+        'type',
+        'status',
         'email',
         'email_verified_at',
+        'last_login_at',
         'password',
         'remember_token',
         'office_number',
@@ -27,8 +27,8 @@ class User extends Authenticatable implements MustVerifyEmail
         'mobile_number',
         'address',
         'country_id',
-        'type',
-        'status',
+        'vat_number',
+        'unique_id',
     ];
 
     /**
@@ -48,4 +48,13 @@ class User extends Authenticatable implements MustVerifyEmail
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+
+    public function country(){
+        return $this->belongsTo(Country::class);
+    }
+
+    public function subscription(){
+        return $this->hasOne(Subscription::class);
+    }
 }
