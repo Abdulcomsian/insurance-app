@@ -72,7 +72,7 @@
                                 <p><strong>Status: </strong><span class="badge badge-danger">{{$sanction_request->status ?: '-'}}</span> <br></p>
                             @endif
                             <p><strong>Date: </strong>{{$sanction_request->created_at ?: '-'}} <br></p>
-                            <br>
+                            <p><strong>Credits Consumed: </strong>{{$sanction_request->sanctions ?: '-'}} <br></p>
                             <div class="panel-heading">Comments</div>
                             <p><strong>{{$sanction_request->user_name}} </strong><br>{{$sanction_request->comments ?: 'No Comments'}}<br></p>
                             @if($sanction_request->status=="Pending")
@@ -80,7 +80,11 @@
                                 @csrf
                                 <input type="hidden" name="sanc_id" value="{{$sanction_request->id}}">
                                 <input type="hidden" name="user_id" value="{{encrypt($sanction_request->user_id)}}">
-                                <input type="hidden" name="sanctions" value="{{encrypt(count($b_o_d) + 1)}}">
+                                @if($sanction_request->sanctions_type == \App\Utils\SanctionsType::Searchcompany)
+                                    <input type="hidden" name="sanctions" value="{{encrypt(1)}}">
+                                @else
+                                    <input type="hidden" name="sanctions" value="{{encrypt(count($b_o_d) + 1)}}">
+                                @endif
                                  <button type="submit" value="cancel-request-form" class="btn btn-danger deleterequest">Cancel Request</button>
                              </form>
                             @endif
@@ -89,9 +93,14 @@
                 </div>
             </div>
             <hr>
+<<<<<<< HEAD
             @if($sanction_request->status!="Canceled")
             
             <form id="attachmetform" action="{{route('sanc-save-attachment')}}" method="post" enctype="multipart/form-data">
+=======
+            @if($sanction_request->status!= \App\Utils\SanctionRequestStatus::Cancelled)
+            <form action="{{route('sanc-save-attachment')}}" method="post" enctype="multipart/form-data">
+>>>>>>> e4f40b38f6dc0b884b304e168f136bd7452488aa
                 @csrf
                 <input type="hidden" name="sanc_id" id="sanc_id" value="{{$sanction_request->id}}">
                 <div class="row">

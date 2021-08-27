@@ -214,6 +214,7 @@ table.attachmentTable, table.attachmentTable td, table.attachmentTable th {
     background-color: transparent;
     border: none;
 }
+
 .panel-body textarea{
     width: 100%;
     border: 1px solid #d7d8d9;
