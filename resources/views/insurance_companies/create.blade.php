@@ -259,7 +259,7 @@ select.list-dt:focus {
                             <fieldset>
                                <form action="">
                                <div class="form-card">
-                                    <h2 class="fs-title">Compnay Details</h2> 
+                                    <h2 class="fs-title">Company Details</h2> 
                                     <div class="row">
                                         <div class="col-lg-6">
                                         <label class="form-label fs-6 fw-bolder text-gray-700 mb-3">Company Name</label>
