@@ -28,9 +28,6 @@ use Illuminate\Database\Eloquent\Model;
 class Shareholder extends Model
 {
 	protected $table = 'shareholder';
-	public $incrementing = false;
-	public $timestamps = false;
-
 	protected $casts = [
 		'id' => 'int',
 		'share_percentage' => 'float',

@@ -33,9 +33,6 @@ use Illuminate\Database\Eloquent\Model;
 class MarketShare extends Model
 {
 	protected $table = 'market_share';
-	public $incrementing = false;
-	public $timestamps = false;
-
 	protected $casts = [
 		'id' => 'int',
 		'authorized_shares' => 'float',
