@@ -29,9 +29,7 @@ use Illuminate\Database\Eloquent\Model;
 class Investment extends Model
 {
 	protected $table = 'investment';
-	public $incrementing = false;
-	public $timestamps = false;
-
+	
 	protected $casts = [
 		'id' => 'int',
 		'value' => 'float',

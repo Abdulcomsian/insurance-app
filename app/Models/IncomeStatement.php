@@ -29,9 +29,6 @@ use Illuminate\Database\Eloquent\Model;
 class IncomeStatement extends Model
 {
 	protected $table = 'income_statement';
-	public $incrementing = false;
-	public $timestamps = false;
-
 	protected $casts = [
 		'id' => 'int',
 		'value' => 'float',
