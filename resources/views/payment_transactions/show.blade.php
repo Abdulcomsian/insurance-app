@@ -21,12 +21,12 @@
                 </div>
                 <div>
                     @if($transaction->status == "Paid")
-                        <form action="{{route('payment_transactions.cancel')}}" method="post">
+                        <form action="{{route('payment_transactions.cancel')}}" method="post" id="cancel_form">
                         @csrf
                         <input type="hidden" name="id" value="{{encrypt($transaction->id)}}">
                         <input type="hidden" name="user_id" value="{{encrypt($transaction->user_id)}}">
                         <input type="hidden" name="package_sanctions" value="{{encrypt($transaction->package_sanctions)}}">
-                        <button class="btn-primary btn btn-right"> Cancel Payment</button>
+                        <button class="btn-primary btn btn-right cancel_btn"> Cancel Payment</button>
                     </form>
                     @else
                         <button class="btn-danger btn btn-right">Cancelled Date {{$transaction->cancelled_at}}</button>
@@ -99,4 +99,27 @@
 </div>
 </div>
 
+@endsection
+@section('script')
+    <script>
+        $(document).on("click",".cancel_btn",function(event) {
+            event.preventDefault();
+
+            swal({
+                    title: "Are you sure?",
+                    text: "You will not be able to reverse this record!",
+                    type: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: '#DD6B55',
+                    confirmButtonText: 'Yes, cancel it!',
+                    closeOnConfirm: false,
+                    //closeOnCancel: false
+                },
+                function(){
+                    swal("Cacelled!", "Payment has been cancelled successfully!", "success");
+                    $("#cancel_form").submit();
+
+                });
+        });
+    </script>
 @endsection
