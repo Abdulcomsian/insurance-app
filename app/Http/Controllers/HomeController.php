@@ -717,7 +717,6 @@ class HomeController extends Controller
            {
                  $userdata=DB::table('req_for_sanc_status')->where('id',$request->sanc_id)->first();
                  $user = User::where('id',$userdata->user_id)->first();
-                 dd($user);
                  $user->notify(new SendAttachment($user,$sanc_attachment_result));
                  //update status of sacntuem
                  DB::table('req_for_sanc_status')
