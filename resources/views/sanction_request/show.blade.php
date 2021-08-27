@@ -93,6 +93,7 @@
                 </div>
             </div>
             <hr>
+
             @if($sanction_request->status!= \App\Utils\SanctionRequestStatus::Cancelled)
             <form  id="attachmetform" action="{{route('sanc-save-attachment')}}" method="post" enctype="multipart/form-data">
             <!-- @if($sanction_request->status!="Canceled")
