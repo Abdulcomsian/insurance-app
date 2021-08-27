@@ -97,6 +97,7 @@
             @if($sanction_request->status!= \App\Utils\SanctionRequestStatus::Cancelled)
             <form  id="attachmetform" action="{{route('sanc-save-attachment')}}" method="post" enctype="multipart/form-data">
                 @csrf
+                {{$sanction_request->id." and email is ".$sanction_request->user_email}}
                 <input type="hidden" name="sanc_id" id="sanc_id" value="{{$sanction_request->id}}">
                 <div class="row">
                     <div class="col-xs-12 col-md-12 col-lg-12 pull-left">

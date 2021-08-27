@@ -641,6 +641,7 @@ class HomeController extends Controller
                     'req_for_sanc_status.*',
                     'users.id as user_id',
                     'users.name as user_name',
+                    'users.email as user_email', 
                     'company_detail.company_name as company_name')
                 ->orderBy('req_for_sanc_status.id','desc')
                 ->first();
