@@ -76,6 +76,7 @@ class CompanyDetailsController extends Controller
             ]);
              try
              {
+                //update record==================
                if(isset($request->edit))
                {
                  CompanyDetail::where('id',$request->company_id)->update([
@@ -86,12 +87,14 @@ class CompanyDetailsController extends Controller
                        'contact_number'=>$request->contact_number,
                        'corporate_details'=>$request->corporate_details,
                        'auditor'=>$request->auditor,
-                       'about'=>$request->about
+                       'about'=>$request->about,
+                       'employee_count'=>$request->employee_count
                  ]);
                  $company_id=$request->company_id;
                  toastr()->success('Company details Updated successfully!');
-                 return back()->with('company_id',$company_id)->with('step',$request->nextstep);
+                 return back()->with('company_id',$company_id)->with('step',$request->nextstep)->with('edit','edit');
                }
+               //insert record================
                else
                {
                    $input['created_by']=Auth::user()->name;
@@ -295,11 +298,12 @@ class CompanyDetailsController extends Controller
     {
          try {
             $company_details=CompanyDetail::find($id);
+            //echo"<pre>";print_r($company_details);exit;
             $edit="edit";
             $countries = DB::table('country_information')
                 ->orderby('country_name','asc')
                 ->get();
-            return view('insurance_companies.create',compact('countries','company_details'))->with('edit',$edit);
+            return view('insurance_companies.create',compact('countries','company_details','edit'));
         }catch (\Exception $exception){
             toastr()->error('Something went wrong, try again');
             return back();

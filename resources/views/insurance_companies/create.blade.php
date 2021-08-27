@@ -308,13 +308,12 @@ select.list-dt:focus {
                                <form action="{{route('company-details.store')}}" method="post">
                                 @csrf
                                 <!-- hidden input for edit record -->
-                                @if(session()->get('edit'))
+                                @if(isset($edit))
                                 <input type="hidden" name="edit"  value="edit">
                                 <input type="hidden" name="company_id" value="{{isset($company_details->id) ? $company_details->id : '' }}">
                                 @endif
                                 <!-- end -->
                                <div class="form-card">
-                                {{session()->get('edit')}}
                                     <h2 class="fs-title">Company Details</h2> 
                                     <div class="row">
                                         <div class="col-lg-6">
@@ -506,6 +505,9 @@ select.list-dt:focus {
                             <fieldset style="@if(isset($dirstyle)){{$dirstyle}}@else{{'display:none;'}}@endif">
                                 <form action="{{route('company-details.store')}}" method="post">
                                     @csrf
+                                    @if(session()->get('edit'))
+                                    <input type="hidden" name="edit" value="edit">
+                                    @endif
                                     <div class="form-card">
                                         <h2 class="fs-title">Board Of Directors</h2> 
                                         <div class="separator separator-dashed my-10"></div>
