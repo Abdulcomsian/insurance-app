@@ -117,7 +117,7 @@ class HomeController extends Controller
                     }
                 })
                 ->addColumn('action', function($data){
-                    $btn = '<a href="'.route('customers.edit',encrypt($data->id)).'" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
+                    $btn = '<a href="'.route("customers.edit",encrypt($data->id)).'" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
                             <!--begin::Svg Icon | path: icons/duotone/Communication/Write.svg-->
                             <span class="svg-icon svg-icon-3">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
@@ -286,7 +286,7 @@ class HomeController extends Controller
                 })
                 ->addColumn('action', function($row){
 
-                    $btn = '        <a href="" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
+                    $btn = '<a href="'.route('company-details.edit',''.$row->id.'').'" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
                                                 <!--begin::Svg Icon | path: icons/duotone/Communication/Write.svg-->
                                                 <span class="svg-icon svg-icon-3">
                                                                     <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
