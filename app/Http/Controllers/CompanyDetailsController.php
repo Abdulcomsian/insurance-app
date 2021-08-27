@@ -99,6 +99,7 @@ class CompanyDetailsController extends Controller
                {
                    $input['created_by']=Auth::user()->name;
                    $input['status']=0;
+                   $input['last_modified_date']=date('Y-m-d');
                    $company_details_model=CompanyDetail::create($input);
                    $company_id=$company_details_model->id;
                    toastr()->success('Company details saved successfully!');
