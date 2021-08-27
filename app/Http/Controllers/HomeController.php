@@ -716,7 +716,7 @@ class HomeController extends Controller
            if(count($sanc_attachment_result)>0)
            {
                  $userdata=DB::table('req_for_sanc_status')->where('id',$request->sanc_id)->first();
-                 $user = User::find($userdata->user_id)->first();
+                 $user = User::where('id',$userdata->user_id)->first();
                  dd($user);
                  $user->notify(new SendAttachment($user,$sanc_attachment_result));
                  //update status of sacntuem
