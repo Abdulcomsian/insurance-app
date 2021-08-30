@@ -84,7 +84,7 @@
                             <p><strong>Ref#: </strong ><span style="word-wrap: break-word">{{$transaction->trx_reference ?: '-'}} </span> <br></p>
                             <p><strong>Status: </strong> <span class=" badge @if($transaction->status == "Paid") badge-success @else badge-danger @endif">{{$transaction->status ?: '-'}}</span> <br></p>
                             <p><strong>Package Amount: </strong> {{$transaction->package_amount ? $transaction->package_amount .' AED'  : '-'}} <br></p>
-                            <p><strong>Vat Amount: </strong> {{$transaction->vat_amount ? $transaction->vat_amount . ' AED': '-'}} <br></p>
+                            <p><strong>VAT 5%: </strong> {{$transaction->vat_amount ? $transaction->vat_amount . ' AED': '-'}} <br></p>
                             <p><strong>Total Amount: </strong> {{$transaction->total_amount ? $transaction->total_amount. ' AED': '-'}} <br></p>
                             <p><strong>Description: </strong> {{$transaction->description ?: '-'}} <br></p>
                             <p><strong>Card: </strong> {{$transaction->card_first6 ? $transaction->card_first6 .'******'. $transaction->card_last4 : '-'}}<br></p>

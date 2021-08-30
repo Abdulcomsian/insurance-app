@@ -99,12 +99,12 @@
                     {data: 'created_at', name: 'created_at',defaultContent: '-'},
                     {data: 'status', name: 'status',defaultContent: '-'},
                     {data: 'action', name: 'action',defaultContent: '-', orderable: false, searchable: false},
-
                 ],
                 language: {
                     searchPlaceholder: "Search Sanctions",
                     search: ""
-                }
+                },
+                lengthMenu: [ [10, 25, 50, -1], [10, 25, 50, "All"] ]
             });
 
         });

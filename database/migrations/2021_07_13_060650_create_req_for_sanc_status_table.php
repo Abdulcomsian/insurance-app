@@ -22,7 +22,9 @@ class CreateReqForSancStatusTable extends Migration
             $table->string('reason')->nullable();
             $table->bigInteger('user_id')->nullable();
             $table->string('name');
-             $table->longText('admin_comments')->nullable();
+            $table->longText('admin_comments')->nullable();
+            $table->timestamp('cancel_date')->nullable();
+            $table->timestamp('result_date')->nullable();
             $table->timestamps();
 
         });

@@ -463,7 +463,7 @@ class HomeController extends Controller
                         $action = '<a href="'.route('payment_transactions.show',encrypt($data->id)).'" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
                             <i class="fa fa-eye" title="View" aria-hidden="true"></i>
                             </a>
-                            <a onclick="return confirm(\'Are you sure you want to resend email to customer?\');" " href="'.route('payment_transactions.resend_email',encrypt($data->id)).'" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
+                            <a href="'.route('payment_transactions.resend_email',encrypt($data->id)).'" class="resend_email btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
                                 <i class="fa fa-envelope" title="Resend Email" aria-hidden="true"></i>
                             </a>';
                             if (isset($data->pdf)){
@@ -720,14 +720,20 @@ class HomeController extends Controller
                    //update commetns
                      DB::table('req_for_sanc_status')
                      ->where('id',$request->input('sanc_id'))
-                     ->update(['admin_comments' => $request->input('comment')]);
+                     ->update([
+                         'admin_comments' => $request->input('comment'),
+                         'result_date' => Carbon::now()
+                     ]);
             }
             else
             {
                  /*Update your Comments*/
                  DB::table('req_for_sanc_status')
                 ->where('id',$request->input('sanc_id'))
-                ->update(['admin_comments' => $request->input('comment')]);
+                ->update([
+                    'admin_comments' => $request->input('comment'),
+                    'result_date' => Carbon::now()
+                ]);
             }
             //end of save attachments
             //send attachmets in emails
@@ -777,7 +783,10 @@ class HomeController extends Controller
         {
              DB::table('req_for_sanc_status')
              ->where('id',$request->input('sanc_id'))
-             ->update(['status' => SanctionRequestStatus::Cancelled]);
+             ->update([
+                 'status' => SanctionRequestStatus::Cancelled,
+                 'cancel_date' => Carbon::now()
+             ]);
              $sub = DB::table('subscriptions')
                  ->where('user_id',decrypt($request->user_id))
                  ->first();

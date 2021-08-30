@@ -71,7 +71,13 @@
                             @else
                                 <p><strong>Status: </strong><span class="badge badge-danger">{{$sanction_request->status ?: '-'}}</span> <br></p>
                             @endif
-                            <p><strong>Date: </strong>{{$sanction_request->created_at ?: '-'}} <br></p>
+                            <p><strong>Request Date: </strong>{{$sanction_request->created_at ?: '-'}} <br></p>
+                            @isset($sanction_request->result_date)
+                                <p><strong>Released Date: </strong>{{$sanction_request->result_date ?: '-'}} <br></p>
+                            @endisset
+                            @isset($sanction_request->cancel_date)
+                                <p><strong>Cancelled Date: </strong>{{$sanction_request->cancel_date ?: '-'}} <br></p>
+                            @endisset
                             <p><strong>Credits Consumed: </strong>{{$sanction_request->sanctions ?: '-'}} <br></p>
                             <div class="panel-heading">Comments</div>
                             <p><strong>{{$sanction_request->user_name}} </strong><br>{{$sanction_request->comments ?: 'No Comments'}}<br></p>
@@ -96,9 +102,8 @@
 
             @if($sanction_request->status!= \App\Utils\SanctionRequestStatus::Cancelled)
             <form  id="attachmetform" action="{{route('sanc-save-attachment')}}" method="post" enctype="multipart/form-data">
-            <!-- @if($sanction_request->status!="Canceled")
-            
-            <form id="attachmetform" action="{{route('sanc-save-attachment')}}" method="post" enctype="multipart/form-data"> -->
+
+            <form id="attachmetform" action="{{route('sanc-save-attachment')}}" method="post" enctype="multipart/form-data">
                 @csrf
                 <input type="hidden" name="sanc_id" id="sanc_id" value="{{$sanction_request->id}}">
                 <div class="row">
@@ -164,7 +169,7 @@
 @section('script')
 <script type="text/javascript">
      $('#attachmetform').submit(function() {
-       $("#pageloader").fadeIn('slow'); 
+       $("#pageloader").fadeIn('slow');
        return true;
      });
  </script>
@@ -192,7 +197,7 @@
                 //closeOnCancel: false
             },
             function(){
-                swal("Deleted!", "Your imaginary file has been deleted!", "success");
+                swal("Cancelled!", "Request has been cancelled!", "success");
                 console.log(form);
                 $(form).submit();
 

@@ -113,28 +113,28 @@
                 {
                     extend: 'copyHtml5',
                     exportOptions: {
-                        columns: @if(isset($columns)) {{$columns}} @else [ 0,1,2,3, 4 ] @endif
+                        columns: [ 0,1,2,3,4 ]
                     },
 
                 },
                 {
                     extend: 'excelHtml5',
                     exportOptions: {
-                        columns: @if(isset($columns)) {{$columns}} @else [ 0,1,2,3, 4 ] @endif
+                        columns: [ 0,1,2,3, 4 ]
                     },
 
                 },
                 {
                     extend: 'csvHtml5',
                     exportOptions: {
-                        columns: @if(isset($columns)) {{$columns}} @else [ 0,1,2,3, 4 ] @endif
+                        columns: [ 0,1,2,3, 4 ]
                     },
 
                 },
                 {
                    extend: 'pdfHtml5',
                     exportOptions: {
-                    columns: @if(isset($columns)) {{$columns}} @else [ 0,1,2,3, 4 ] @endif
+                    columns: [ 0,1,2,3, 4 ]
                     }
                 },
                 ],
@@ -152,7 +152,9 @@
                 language: {
                     searchPlaceholder: "Search Companies",
                     search: ""
-                }
+                },
+                lengthMenu: [ [10, 25, 50, -1], [10, 25, 50, "All"] ]
+
             });
 
         });
