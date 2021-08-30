@@ -60,6 +60,18 @@
                                 <th>Status</th>
                                 <th>Type</th>
                                 <th >Actions</th>
+                                <th>About</th>
+                                <th>Auditor</th>
+                                <th>Company Email</th>
+                                <th>Company Website</th>
+                                <th>Corporate Details</th>
+                                <th>Employee Count</th>
+                                <th>Fax Detail</th>
+                                <th>Financial Report</th>
+                                <th>Location</th>
+                                <th>Toll Free Number</th>
+                                <th>Trade Name</th>
+                                <th>Alternative Names</th>
                             </tr>
                             </thead>
                             <tbody fw-bold text-gray-600>
@@ -109,32 +121,38 @@
                 processing: true,
                 serverSide: true,
                 dom: 'lBfrtip',
+                "columnDefs": [
+                    {
+                        "targets": [ 7,8,9,10,11,12,13,14,15,16,17,18 ],
+                        "visible": false,
+                    },
+                ],
                 buttons: [
                 {
                     extend: 'copyHtml5',
                     exportOptions: {
-                        columns: [ 0,1,2,3,4 ]
+                        columns: [ 0,1,2,3,4,5,7,8,9,10,11,12,13,14,15,16,17,18 ]
                     },
 
                 },
                 {
                     extend: 'excelHtml5',
                     exportOptions: {
-                        columns: [ 0,1,2,3, 4 ]
+                        columns: [ 0,1,2,3,4,5,7,8,9,10,11,12,13,14,15,16,17,18 ]
                     },
 
                 },
                 {
                     extend: 'csvHtml5',
                     exportOptions: {
-                        columns: [ 0,1,2,3, 4 ]
+                        columns: [ 0,1,2,3, 4,5,7,8,9,10,11,12,13,14,15,16,17,18 ]
                     },
 
                 },
                 {
                    extend: 'pdfHtml5',
                     exportOptions: {
-                    columns: [ 0,1,2,3, 4 ]
+                    columns: [ 0,1,2,3, 4,5,7,8,9,10,11,12,13,14,15,16,17,18 ]
                     }
                 },
                 ],
@@ -148,6 +166,18 @@
                     {data: 'status', name: 'status',defaultContent: ''},
                     {data: 'company_type', name: 'company_type',defaultContent: ''},
                     {data: 'action', name: 'action', orderable: false, searchable: false},
+                    {data: 'about', name: 'about',defaultContent: ''},
+                    {data: 'auditor', name: 'auditor',defaultContent: ''},
+                    {data: 'company_email_id', name: 'company_email_id',defaultContent: ''},
+                    {data: 'company_website', name: 'company_website',defaultContent: ''},
+                    {data: 'corporate_details', name: 'corporate_details',defaultContent: ''},
+                    {data: 'employee_count', name: 'employee_count',defaultContent: ''},
+                    {data: 'fax_detail', name: 'fax_detail',defaultContent: ''},
+                    {data: 'financial_report', name: 'financial_report',defaultContent: ''},
+                    {data: 'location', name: 'location',defaultContent: ''},
+                    {data: 'toll_free_number', name: 'toll_free_number',defaultContent: ''},
+                    {data: 'trade_name', name: 'trade_name',defaultContent: ''},
+                    {data: 'alternative_names', name: 'alternative_names',defaultContent: ''},
                 ],
                 language: {
                     searchPlaceholder: "Search Companies",
