@@ -52,52 +52,61 @@ class CompanyDetailsController extends Controller
     public function store(Request $request)
     {
         //
+       
         if($request->input('currstep')=="detail")//company details
         {
             //validate input fields
+            $input = $request->all();
             $request->validate([
             'company_name' => ['required', 'max:255'],
-            'basic_info_country' => ['required', 'max:255'],
-            'basic_info_company_type' => ['required', 'max:255'],
-            'basic_info_company_email_id' => ['required', 'string', 'email', 'max:255',],
-            'basic_info_contact_number' => ['required', 'string', 'max:255'],
-            'basic_info_corporate_details' => ['required', 'max:255'],
-            'basic_info_auditor' => ['required', 'string', 'max:255'],
-            'basic_info_about' => ['required'],
-            'basic_info_employeee_count' => ['required'],
-            'basic_info_financial_report' => ['required'],
-            'basic_info_incorporated' => ['required'],
-            'basic_info_incorporated_year' => ['required'],
-            'basic_info_toll_free_number' => ['required'],
-            'basic_info_trade_name' => ['required'],
-            'basic_info_alternative_names' => ['required'],
+            'country' => ['required', 'max:255'],
+            'company_type' => ['required', 'max:255'],
+            'company_email_id' => ['required', 'string', 'email', 'max:255',],
+            'contact_number' => ['required', 'string', 'max:255'],
+            'corporate_details' => ['required', 'max:255'],
+            'auditor' => ['required', 'string', 'max:255'],
+            'about' => ['required'],
+            'employee_count' => ['required'],
+            'financial_report' => ['required'],
+            'incorporated' => ['required'],
+            'incorporated_year' => ['required'],
+            'toll_free_number' => ['required'],
+            'trade_name' => ['required'],
+            'alternative_names' => ['required'],
             ]);
              try
              {
-               $company_details_model = new CompanyDetail();
-               $company_details_model->created_by        =Auth::user()->name;
-               $company_details_model->about             =$request->basic_info_about;
-               $company_details_model->auditor           =$request->basic_info_auditor;
-               $company_details_model->company_email_id  =$request->basic_info_company_email_id;
-               $company_details_model->company_name      =$request->company_name;
-               $company_details_model->company_type      =$request->basic_info_company_type;
-               $company_details_model->contact_number    =$request->basic_info_contact_number;
-               $company_details_model->corporate_details =$request->basic_info_corporate_details;
-               $company_details_model->country           =$request->basic_info_country;
-               $company_details_model->employee_count    =$request->basic_info_employeee_count;
-               $company_details_model->financial_report  =$request->basic_info_financial_report;
-               $company_details_model->incorporated      =$request->basic_info_incorporated;
-               $company_details_model->incorporated_year =$request->basic_info_incorporated_year;
-               $company_details_model->toll_free_number  =$request->basic_info_toll_free_number;
-               $company_details_model->trade_name        =$request->basic_info_trade_name;
-               $company_details_model->alternative_names =$request->basic_info_alternative_names;
-               $company_details_model->status            =0;
-               if($company_details_model->save())
+                //update record==================
+               if(isset($request->edit))
                {
-                 $company_id=$company_details_model->id;
-                 toastr()->success('Company details saved successfully!');
-                 return back()->with('company_id',$company_id)->with('step',$request->nextstep);
+                 CompanyDetail::where('id',$request->company_id)->update([
+                       'company_name'=>$request->company_name,
+                       'country'=>$request->country,
+                       'company_type'=>$request->company_type,
+                       'company_email_id'=>$request->company_email_id,
+                       'contact_number'=>$request->contact_number,
+                       'corporate_details'=>$request->corporate_details,
+                       'auditor'=>$request->auditor,
+                       'about'=>$request->about,
+                       'employee_count'=>$request->employee_count
+                 ]);
+                 $company_id=$request->company_id;
+                 toastr()->success('Company details Updated successfully!');
+                 return back()->with('company_id',$company_id)->with('step',$request->nextstep)->with('edit','edit');
                }
+               //insert record================
+               else
+               {
+                   $input['created_by']=Auth::user()->name;
+                   $input['status']=0;
+                   $input['last_modified_date']=date('Y-m-d');
+                   $company_details_model=CompanyDetail::create($input);
+                   $company_id=$company_details_model->id;
+                   toastr()->success('Company details saved successfully!');
+                   return back()->with('company_id',$company_id)->with('step',$request->nextstep);
+               }
+               
+              
             }
             catch (\Exception $exception){
                 toastr()->error('Something went wrong, try again');
@@ -107,19 +116,14 @@ class CompanyDetailsController extends Controller
         //director
         elseif($request->input('currstep')=="director")//director form submit
         {
-             $request->validate([
-                'b_o_d_name*' => ['required', 'max:255'],
-                'b_o_d_designation*' => ['required', 'max:255'],
-             ]);
              try
-             {
-                    
-                    for($i=0;$i<count($request->b_o_d_name);$i++)
+             { 
+                    for($i=0;$i<count($request->name);$i++)
                     {
                       $boardofdirectormodel = new BoardOfDirector();
                       $boardofdirectormodel->created_by=Auth::user()->name;
-                      $boardofdirectormodel->name=$request->b_o_d_name[$i];
-                      $boardofdirectormodel->designation=$request->b_o_d_designation[$i];
+                      $boardofdirectormodel->name=$request->name[$i];
+                      $boardofdirectormodel->designation=$request->designation[$i];
                       $boardofdirectormodel->company_id=$request->company_id;
                       $boardofdirectormodel->save(); 
                     }
@@ -130,7 +134,7 @@ class CompanyDetailsController extends Controller
             catch (\Exception $exception)
             {
                 toastr()->error('Something went wrong, try again');
-                return back()->with('step',$request->currstep);
+                return back()->with('step',$request->currstep)->with('company_id',$request->company_id);
             }
         }
         //accounting 
@@ -138,36 +142,24 @@ class CompanyDetailsController extends Controller
         {
           try
           {
-              $companyaccountingmodel = new CompanyAccounting();
-              $companyaccountingmodel->financial_strength_rating=$request->acc_financial_strength_rating;
-              $companyaccountingmodel->gross_written_premium=$request->acc_gross_written_premium;
-              $companyaccountingmodel->gross_written_premium_year=$request->acc_gross_written_premium_year;
-              $companyaccountingmodel->issue_credit_rating=$request->acc_issue_credit_rating;
-              $companyaccountingmodel->moody_rating=$request->acc_moody_rating;
-              $companyaccountingmodel->other_rating=$request->acc_other_rating;
-              $companyaccountingmodel->s_andprating=$request->acc_s_andprating;
-              $companyaccountingmodel->public_listed_company=$request->acc_public_listed_company;
-              $companyaccountingmodel->regulatory_authority=$request->acc_regulatory_authority;
-              $companyaccountingmodel->company_id=$request->company_id;
-              $companyaccountingmodel->created_by=Auth::user()->name;
-              if($companyaccountingmodel->save())
-              {
-                $company_accountid=$companyaccountingmodel->id;
-                toastr()->success('Compayny Accounting saved successfully!');
-                return back()->with('company_id',$request->company_id)->with('caccountid',$company_accountid)->with('step',$request->nextstep);
-
-              }
+              $input['created_by']=Auth::user()->name;
+              $input['company_id']=$request->company_id;
+              $companyaccountingmodel = CompanyAccounting::create($input);
+              $company_accountid=$companyaccountingmodel->id;
+              toastr()->success('Compayny Accounting saved successfully!');
+              return back()->with('company_id',$request->company_id)->with('caccountid',$company_accountid)->with('step',$request->nextstep);   
           }
           catch (\Exception $exception)
             {
                 toastr()->error('Something went wrong, try again');
-                return back()->with('step',$request->currstep);
+                return back()->with('step',$request->currstep)->with('company_id',$request->company_id)->with('caccountid',$company_accountid);
             }
         }
         //statement
         elseif($request->input('currstep')=="statement")
         {
           try{
+
                 $incomestmodel= new IncomeStatement();
                 $incomestmodel->created_by=Auth::user()->name;
                 $incomestmodel->name=$request->name;
@@ -184,7 +176,7 @@ class CompanyDetailsController extends Controller
             catch (\Exception $exception)
             {
                 toastr()->error('Something went wrong, try again');
-                return back()->with('step',$request->currstep);
+                return back()->with('step',$request->currstep)->with('company_id',$request->company_id)->with('caccountid',$request->company_accountid);
             }
         }
         //investement
@@ -208,7 +200,7 @@ class CompanyDetailsController extends Controller
           catch (\Exception $exception)
             {
                 toastr()->error('Something went wrong, try again');
-                return back()->with('step',$request->currstep);
+                return back()->with('step',$request->currstep)->with('company_id',$request->company_id)->with('caccountid',$request->company_accountid);
             }
 
         }
@@ -231,7 +223,7 @@ class CompanyDetailsController extends Controller
            catch (\Exception $exception)
             {
                 toastr()->error('Something went wrong, try again');
-                return back()->with('step',$request->currstep);
+                return back()->with('step',$request->currstep)->with('company_id',$request->company_id)->with('caccountid',$request->company_accountid);
             }
         }
         //share
@@ -256,7 +248,7 @@ class CompanyDetailsController extends Controller
            catch (\Exception $exception)
             {
                 toastr()->error('Something went wrong, try again');
-                return back()->with('step',$request->currstep);
+                return back()->with('step',$request->currstep)->with('company_id',$request->company_id)->with('MarketShare_id',$MarketShare_id);
             }
 
         }
@@ -305,7 +297,18 @@ class CompanyDetailsController extends Controller
      */
     public function edit($id)
     {
-        //
+         try {
+            $company_details=CompanyDetail::find($id);
+            //echo"<pre>";print_r($company_details);exit;
+            $edit="edit";
+            $countries = DB::table('country_information')
+                ->orderby('country_name','asc')
+                ->get();
+            return view('insurance_companies.create',compact('countries','company_details','edit'));
+        }catch (\Exception $exception){
+            toastr()->error('Something went wrong, try again');
+            return back();
+        }
     }
 
     /**

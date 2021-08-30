@@ -117,7 +117,7 @@ class HomeController extends Controller
                     }
                 })
                 ->addColumn('action', function($data){
-                    $btn = '<a href="'.route('customers.edit',encrypt($data->id)).'" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
+                    $btn = '<a href="'.route("customers.edit",encrypt($data->id)).'" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
                             <!--begin::Svg Icon | path: icons/duotone/Communication/Write.svg-->
                             <span class="svg-icon svg-icon-3">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
@@ -286,7 +286,7 @@ class HomeController extends Controller
                 })
                 ->addColumn('action', function($row){
 
-                    $btn = '        <a href="" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
+                    $btn = '<a href="'.route('company-details.edit',''.$row->id.'').'" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
                                                 <!--begin::Svg Icon | path: icons/duotone/Communication/Write.svg-->
                                                 <span class="svg-icon svg-icon-3">
                                                                     <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
@@ -641,6 +641,7 @@ class HomeController extends Controller
                     'req_for_sanc_status.*',
                     'users.id as user_id',
                     'users.name as user_name',
+                    'users.email as user_email', 
                     'company_detail.company_name as company_name')
                 ->orderBy('req_for_sanc_status.id','desc')
                 ->first();
@@ -741,7 +742,7 @@ class HomeController extends Controller
            if(count($sanc_attachment_result)>0)
            {
                  $userdata=DB::table('req_for_sanc_status')->where('id',$request->sanc_id)->first();
-                 $user = User::find($userdata->user_id)->first();
+                 $user = User::where('id',$userdata->user_id)->first();
                  $user->notify(new SendAttachment($user,$sanc_attachment_result));
                  //update status of sacntuem
                  DB::table('req_for_sanc_status')

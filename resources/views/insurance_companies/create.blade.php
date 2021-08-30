@@ -307,6 +307,12 @@ select.list-dt:focus {
                             <fieldset style="{{$detailstyle}}">
                                <form action="{{route('company-details.store')}}" method="post">
                                 @csrf
+                                <!-- hidden input for edit record -->
+                                @if(isset($edit))
+                                <input type="hidden" name="edit"  value="edit">
+                                <input type="hidden" name="company_id" value="{{isset($company_details->id) ? $company_details->id : '' }}">
+                                @endif
+                                <!-- end -->
                                <div class="form-card">
                                     <h2 class="fs-title">Company Details</h2> 
                                     <div class="row">
@@ -314,7 +320,7 @@ select.list-dt:focus {
                                         <label class="form-label fs-6 fw-bolder text-gray-700 mb-3">Company Name</label>
                                         <!--begin::Input group-->
                                         <div class="mb-5">
-                                            <input type="text" name="company_name" class="form-control form-control-solid" placeholder="Company Name" / required="required">
+                                            <input type="text" name="company_name" class="form-control form-control-solid" placeholder="Company Name"   value="{{isset($company_details->company_name) ? $company_details->company_name : '' }}" required="required">
                                             @if($errors->has('company_name'))
                                                 <div class="error text-danger">{{ $errors->first('company_name') }}</div>
                                             @endif
@@ -325,15 +331,15 @@ select.list-dt:focus {
                                         <!--begin::Input group-->
                                         <div class="mb-5" style="position: relative;">
                                             <!--begin::Input-->
-                                            <select name="basic_info_country" required="required" style="position: absolute;" onmousedown="if(this.options.length>8){this.size=8;}"  onchange='this.size=0;' onblur="this.size=0;" data-control="select2" data-placeholder="Select a role" data-hide-search="true" class="form-select form-select-solid fw-bolder">
+                                            <select name="country" required="required" style="position: absolute;" onmousedown="if(this.options.length>8){this.size=8;}"  onchange='this.size=0;' onblur="this.size=0;" data-control="select2" data-placeholder="Select a role" data-hide-search="true" class="form-select form-select-solid fw-bolder">
                                                 <option value="">Select Country</option>
                                                 @foreach($countries as $item)
                                                     <option value="{{$item->country_name ?: null}}">{{$item->country_name ?: 'Not Set'}}</option>
                                                 @endforeach
                                             </select>
                                         </div>
-                                        @if($errors->has('basic_info_country'))
-                                                <div class="error text-danger" style="position:absolute;top: 76px;">{{ $errors->first('basic_info_country') }}</div>
+                                        @if($errors->has('country'))
+                                                <div class="error text-danger" style="position:absolute;top: 76px;">{{ $errors->first('country') }}</div>
                                         @endif
                                         <!--end::Input group-->
                                         </div>
@@ -341,9 +347,9 @@ select.list-dt:focus {
                                             <label class="form-label fs-6 fw-bolder text-gray-700 mb-3">Company Type</label>
                                             <!--begin::Input group-->
                                             <div class="mb-5">
-                                                <input type="text" name="basic_info_company_type" class="form-control form-control-solid" placeholder="Company Type" required="required" />
-                                                 @if($errors->has('basic_info_company_type'))
-                                                <div class="error text-danger">{{ $errors->first('basic_info_company_type') }}</div>
+                                                <input type="text" name="company_type" class="form-control form-control-solid" placeholder="Company Type" value="{{isset($company_details->company_type) ? $company_details->company_type : '' }}" required="required" />
+                                                 @if($errors->has('company_type'))
+                                                <div class="error text-danger">{{ $errors->first('company_type') }}</div>
                                                 @endif
                                             </div>
                                             <!--end::Input group-->
@@ -352,9 +358,9 @@ select.list-dt:focus {
                                             <label class="form-label fs-6 fw-bolder text-gray-700 mb-3">Email</label>
                                             <!--begin::Input group-->
                                             <div class="mb-5">
-                                                <input type="text" name="basic_info_company_email_id" class="form-control form-control-solid" placeholder="Email" required="required" />
-                                                 @if($errors->has('basic_info_company_email_id'))
-                                                <div class="error text-danger">{{ $errors->first('basic_info_company_email_id') }}</div>
+                                                <input type="text" name="company_email_id" class="form-control form-control-solid" placeholder="Email" value="{{isset($company_details->company_email_id) ? $company_details->company_email_id : '' }}" required="required" />
+                                                 @if($errors->has('company_email_id'))
+                                                <div class="error text-danger">{{ $errors->first('company_email_id') }}</div>
                                                 @endif
                                             </div>
                                             <!--end::Input group-->
@@ -363,9 +369,9 @@ select.list-dt:focus {
                                             <label class="form-label fs-6 fw-bolder text-gray-700 mb-3">Contact#</label>
                                             <!--begin::Input group-->
                                             <div class="mb-5">
-                                                <input type="text" name="basic_info_contact_number" class="form-control form-control-solid" placeholder="e.g 0123456789" required="required" />
-                                                @if($errors->has('basic_info_contact_number'))
-                                                <div class="error text-danger">{{ $errors->first('basic_info_contact_number') }}</div>
+                                                <input type="text" name="contact_number" class="form-control form-control-solid" placeholder="e.g 0123456789"  value="{{isset($company_details->contact_number) ? $company_details->contact_number : '' }}" required="required" />
+                                                @if($errors->has('contact_number'))
+                                                <div class="error text-danger">{{ $errors->first('contact_number') }}</div>
                                                 @endif
                                             </div>
                                             <!--end::Input group-->
@@ -374,9 +380,9 @@ select.list-dt:focus {
                                             <label class="form-label fs-6 fw-bolder text-gray-700 mb-3">Corporate Details</label>
                                             <!--begin::Input group-->
                                             <div class="mb-5">
-                                                <input type="text" class="form-control form-control-solid" name="basic_info_corporate_details" placeholder="Corporate Details" required="required" />
-                                                 @if($errors->has('basic_info_corporate_details'))
-                                                <div class="error text-danger">{{ $errors->first('basic_info_corporate_details') }}</div>
+                                                <input type="text" class="form-control form-control-solid" name="corporate_details" placeholder="Corporate Details" required="required" value="{{isset($company_details->corporate_details) ? $company_details->corporate_details : '' }}"/>
+                                                 @if($errors->has('corporate_details'))
+                                                <div class="error text-danger">{{ $errors->first('corporate_details') }}</div>
                                                 @endif
                                             </div>
                                             <!--end::Input group-->
@@ -385,9 +391,9 @@ select.list-dt:focus {
                                             <label class="form-label fs-6 fw-bolder text-gray-700 mb-3">Auditor</label>
                                             <!--begin::Input group-->
                                             <div class="mb-5">
-                                                <input type="text" class="form-control form-control-solid" name="basic_info_auditor" placeholder="Auditor" required="required" />
-                                                @if($errors->has('basic_info_auditor'))
-                                                <div class="error text-danger">{{ $errors->first('basic_info_auditor') }}</div>
+                                                <input type="text" class="form-control form-control-solid" name="auditor" placeholder="Auditor" required="required" value="{{isset($company_details->auditor) ? $company_details->auditor : '' }}"/>
+                                                @if($errors->has('auditor'))
+                                                <div class="error text-danger">{{ $errors->first('auditor') }}</div>
                                                 @endif
                                             </div>
                                             <!--end::Input group-->
@@ -396,9 +402,9 @@ select.list-dt:focus {
                                             <label class="form-label fs-6 fw-bolder text-gray-700 mb-3">About</label>
                                             <!--begin::Input group-->
                                             <div class="mb-5">
-                                                <input type="text" class="form-control form-control-solid" name="basic_info_about" placeholder="About" required="required" />
-                                                @if($errors->has('basic_info_about'))
-                                                <div class="error text-danger">{{ $errors->first('basic_info_about') }}</div>
+                                                <input type="text" class="form-control form-control-solid" name="about" placeholder="About" required="required" value="{{isset($company_details->about) ? $company_details->about : '' }}"/>
+                                                @if($errors->has('about'))
+                                                <div class="error text-danger">{{ $errors->first('about') }}</div>
                                                 @endif
                                             </div>
                                             <!--end::Input group-->
@@ -407,9 +413,9 @@ select.list-dt:focus {
                                             <label class="form-label fs-6 fw-bolder text-gray-700 mb-3">Total Employees</label>
                                             <!--begin::Input group-->
                                             <div class="mb-5">
-                                                <input type="text" class="form-control form-control-solid"  name="basic_info_employeee_count" placeholder="e.g 123" required="required" />
-                                                @if($errors->has('basic_info_employeee_count'))
-                                                <div class="error text-danger">{{ $errors->first('basic_info_employeee_count') }}</div>
+                                                <input type="number" class="form-control form-control-solid"  name="employee_count" placeholder="e.g 123" required="required" value="{{isset($company_details->employee_count) ? $company_details->employee_count : '' }}"/>
+                                                @if($errors->has('employee_count'))
+                                                <div class="error text-danger">{{ $errors->first('employee_count') }}</div>
                                                 @endif
                                             </div>
                                             <!--end::Input group-->
@@ -418,9 +424,9 @@ select.list-dt:focus {
                                             <label class="form-label fs-6 fw-bolder text-gray-700 mb-3">Financial Report Url</label>
                                             <!--begin::Input group-->
                                             <div class="mb-5">
-                                                <input type="text" class="form-control form-control-solid" name="basic_info_financial_report" placeholder="Financial Report Url" required="required" />
-                                                @if($errors->has('basic_info_financial_report'))
-                                                <div class="error text-danger">{{ $errors->first('basic_info_financial_report') }}</div>
+                                                <input type="text" class="form-control form-control-solid" name="financial_report" placeholder="Financial Report Url" required="required" value="{{isset($company_details->financial_report) ? $company_details->financial_report : '' }}"/>
+                                                @if($errors->has('financial_report'))
+                                                <div class="error text-danger">{{ $errors->first('financial_report') }}</div>
                                                 @endif
                                             </div>
                                             <!--end::Input group-->
@@ -429,9 +435,9 @@ select.list-dt:focus {
                                             <label class="form-label fs-6 fw-bolder text-gray-700 mb-3">Incorporated</label>
                                             <!--begin::Input group-->
                                             <div class="mb-5">
-                                                <input type="text" name="basic_info_incorporated" class="form-control form-control-solid" placeholder="e.g YEMEN" required="required" />
-                                                @if($errors->has('basic_info_incorporated'))
-                                                <div class="error text-danger">{{ $errors->first('basic_info_incorporated') }}</div>
+                                                <input type="text" name="incorporated" class="form-control form-control-solid" placeholder="e.g YEMEN" required="required" value="{{isset($company_details->incorporated) ? $company_details->incorporated : '' }}"/>
+                                                @if($errors->has('incorporated'))
+                                                <div class="error text-danger">{{ $errors->first('incorporated') }}</div>
                                                 @endif
                                             </div>
                                             <!--end::Input group-->
@@ -440,9 +446,9 @@ select.list-dt:focus {
                                             <label class="form-label fs-6 fw-bolder text-gray-700 mb-3">Incorporated Year</label>
                                             <!--begin::Input group-->
                                             <div class="mb-5">
-                                                <input type="text" name="basic_info_incorporated_year" class="form-control form-control-solid" placeholder="e.g 1999" required="required" />
-                                                @if($errors->has('basic_info_incorporated_year'))
-                                                <div class="error text-danger">{{ $errors->first('basic_info_incorporated_year') }}</div>
+                                                <input type="text" name="incorporated_year" class="form-control form-control-solid" placeholder="e.g 1999" required="required" value="{{isset($company_details->incorporated_year) ? $company_details->incorporated_year : '' }}"/>
+                                                @if($errors->has('incorporated_year'))
+                                                <div class="error text-danger">{{ $errors->first('incorporated_year') }}</div>
                                                 @endif
                                             </div>
                                             <!--end::Input group-->
@@ -451,9 +457,9 @@ select.list-dt:focus {
                                             <label class="form-label fs-6 fw-bolder text-gray-700 mb-3">Toll Free Number</label>
                                             <!--begin::Input group-->
                                             <div class="mb-5">
-                                                <input type="text" class="form-control form-control-solid" name="basic_info_toll_free_number" placeholder="e.g 3245564" required="required" />
-                                                @if($errors->has('basic_info_toll_free_number'))
-                                                <div class="error text-danger">{{ $errors->first('basic_info_toll_free_number') }}</div>
+                                                <input type="text" class="form-control form-control-solid" name="toll_free_number" placeholder="e.g 3245564" required="required" value="{{isset($company_details->toll_free_number) ? $company_details->toll_free_number : '' }}"/>
+                                                @if($errors->has('toll_free_number'))
+                                                <div class="error text-danger">{{ $errors->first('toll_free_number') }}</div>
                                                 @endif
                                             </div>
                                             <!--end::Input group-->
@@ -462,9 +468,9 @@ select.list-dt:focus {
                                             <label class="form-label fs-6 fw-bolder text-gray-700 mb-3">Trade Name</label>
                                             <!--begin::Input group-->
                                             <div class="mb-5">
-                                                <input type="text" class="form-control form-control-solid" name="basic_info_trade_name" placeholder="Trade Name" required="required" />
-                                                @if($errors->has('basic_info_trade_name'))
-                                                <div class="error text-danger">{{ $errors->first('basic_info_trade_name') }}</div>
+                                                <input type="text" class="form-control form-control-solid" name="trade_name" placeholder="Trade Name" required="required" value="{{isset($company_details->trade_name) ? $company_details->trade_name : '' }}"/>
+                                                @if($errors->has('trade_name'))
+                                                <div class="error text-danger">{{ $errors->first('trade_name') }}</div>
                                                 @endif
                                             </div>
                                             <!--end::Input group-->
@@ -473,9 +479,9 @@ select.list-dt:focus {
                                             <label class="form-label fs-6 fw-bolder text-gray-700 mb-3">Alternative Names</label>
                                             <!--begin::Input group-->
                                             <div class="mb-5">
-                                                <input type="text" class="form-control form-control-solid" name="basic_info_alternative_names" placeholder="Alternative Names" required="required" />
-                                                 @if($errors->has('basic_info_alternative_names'))
-                                                <div class="error text-danger">{{ $errors->first('basic_info_alternative_names') }}</div>
+                                                <input type="text" class="form-control form-control-solid" name="alternative_names" placeholder="Alternative Names" required="required" value="{{isset($company_details->alternative_names) ? $company_details->alternative_names : '' }}"/>
+                                                 @if($errors->has('alternative_names'))
+                                                <div class="error text-danger">{{ $errors->first('alternative_names') }}</div>
                                                 @endif
                                             </div>
                                             <!--end::Input group-->
@@ -499,6 +505,9 @@ select.list-dt:focus {
                             <fieldset style="@if(isset($dirstyle)){{$dirstyle}}@else{{'display:none;'}}@endif">
                                 <form action="{{route('company-details.store')}}" method="post">
                                     @csrf
+                                    @if(session()->get('edit'))
+                                    <input type="hidden" name="edit" value="edit">
+                                    @endif
                                     <div class="form-card">
                                         <h2 class="fs-title">Board Of Directors</h2> 
                                         <div class="separator separator-dashed my-10"></div>
@@ -509,7 +518,7 @@ select.list-dt:focus {
                                                 <label class="form-label fs-6 fw-bolder text-gray-700 mb-3">Name</label>
                                                 <!--begin::Input group-->
                                                 <div class="mb-5">
-                                                    <input type="text" class="form-control form-control-solid" name="b_o_d_name[]" placeholder="Name" required="required" />
+                                                    <input type="text" class="form-control form-control-solid" name="name[]" placeholder="Name" required="required" />
                                                 </div>
                                                 <!--end::Input group-->
                                             </div>
@@ -519,7 +528,7 @@ select.list-dt:focus {
                                                 <label class="form-label fs-6 fw-bolder text-gray-700 mb-3">Designation</label>
                                                 <!--begin::Input group-->
                                                 <div class="mb-5">
-                                                    <input type="text" name="b_o_d_designation[]" class="form-control form-control-solid" placeholder="Designation" required="required" />
+                                                    <input type="text" name="designation[]" class="form-control form-control-solid" placeholder="Designation" required="required" />
                                                 </div>
                                                 <!--end::Input group-->
                                             </div>
@@ -560,7 +569,7 @@ select.list-dt:focus {
                                         <label class="form-label fs-6 fw-bolder text-gray-700 mb-3">Financial Strength Rating</label>
                                         <!--begin::Input group-->
                                         <div class="mb-5">
-                                            <input type="text" class="form-control form-control-solid" name="acc_financial_strength_rating" placeholder="e.g A-" required="required" />
+                                            <input type="text" class="form-control form-control-solid" name="financial_strength_rating" placeholder="e.g A-" required="required" />
                                         </div>
                                         <!--end::Input group-->
                                     </div>
@@ -569,7 +578,7 @@ select.list-dt:focus {
                                         <label class="form-label fs-6 fw-bolder text-gray-700 mb-3">Gross Written Premium</label>
                                         <!--begin::Input group-->
                                         <div class="mb-5">
-                                            <input type="text" class="form-control form-control-solid" name="acc_gross_written_premium" placeholder="e.g YR 1,234,56" required="required" />
+                                            <input type="text" class="form-control form-control-solid" name="gross_written_premium" placeholder="e.g YR 1,234,56" required="required" />
                                         </div>
                                         <!--end::Input group-->
                                     </div>
@@ -579,7 +588,7 @@ select.list-dt:focus {
                                         <label class="form-label fs-6 fw-bolder text-gray-700 mb-3">Gross Written Premium Year</label>
                                         <!--begin::Input group-->
                                         <div class="mb-5">
-                                            <input type="text" class="form-control form-control-solid" name="acc_gross_written_premium_year" placeholder="e.g 2010" required="required" />
+                                            <input type="text" class="form-control form-control-solid" name="gross_written_premium_year" placeholder="e.g 2010" required="required" />
                                         </div>
                                         <!--end::Input group-->
                                     </div>
@@ -587,7 +596,7 @@ select.list-dt:focus {
                                         <label class="form-label fs-6 fw-bolder text-gray-700 mb-3">Issue Credit Rating</label>
                                         <!--begin::Input group-->
                                         <div class="mb-5">
-                                            <input type="text" class="form-control form-control-solid" name="acc_issue_credit_rating" placeholder="e.g bbb-" required="required" />
+                                            <input type="text" class="form-control form-control-solid" name="issue_credit_rating" placeholder="e.g bbb-" required="required" />
                                         </div>
                                         <!--end::Input group-->
                                     </div>
@@ -595,7 +604,7 @@ select.list-dt:focus {
                                         <label class="form-label fs-6 fw-bolder text-gray-700 mb-3">Moody Rating</label>
                                         <!--begin::Input group-->
                                         <div class="mb-5">
-                                            <input type="text" class="form-control form-control-solid" name="acc_moody_rating" placeholder="e.g Aa3/Stable" required="required" />
+                                            <input type="text" class="form-control form-control-solid" name="moody_rating" placeholder="e.g Aa3/Stable" required="required" />
                                         </div>
                                         <!--end::Input group-->
                                     </div>
@@ -603,7 +612,7 @@ select.list-dt:focus {
                                         <label class="form-label fs-6 fw-bolder text-gray-700 mb-3">S&P Rating</label>
                                         <!--begin::Input group-->
                                         <div class="mb-5">
-                                            <input type="text" class="form-control form-control-solid" name="acc_s_andprating" placeholder="e.g AA-" required="required" />
+                                            <input type="text" class="form-control form-control-solid" name="s_andprating" placeholder="e.g AA-" required="required" />
                                         </div>
                                         <!--end::Input group-->
                                     </div>
@@ -611,7 +620,7 @@ select.list-dt:focus {
                                         <label class="form-label fs-6 fw-bolder text-gray-700 mb-3">Other Rating</label>
                                         <!--begin::Input group-->
                                         <div class="mb-5">
-                                            <input type="text" class="form-control form-control-solid" name="acc_other_rating" placeholder="e.g BBB-' (Good) (FITCH RATINGS)" required="required" />
+                                            <input type="text" class="form-control form-control-solid" name="other_rating" placeholder="e.g BBB-' (Good) (FITCH RATINGS)" required="required" />
                                         </div>
                                         <!--end::Input group-->
                                     </div>
@@ -620,7 +629,7 @@ select.list-dt:focus {
                                         <label class="form-label fs-6 fw-bolder text-gray-700 mb-3">Public Listed Company</label>
                                         <!--begin::Input group-->
                                         <div class="mb-5">
-                                            <input type="text" class="form-control form-control-solid" name="acc_public_listed_company" placeholder="e.g Palestine Securities Exchange (PSE)" required="required" />
+                                            <input type="text" class="form-control form-control-solid" name="public_listed_company" placeholder="e.g Palestine Securities Exchange (PSE)" required="required" />
                                         </div>
                                         <!--end::Input group-->
                                     </div>
@@ -628,7 +637,7 @@ select.list-dt:focus {
                                         <label class="form-label fs-6 fw-bolder text-gray-700 mb-3">Regulatory Authority</label>
                                         <!--begin::Input group-->
                                         <div class="mb-5">
-                                            <input type="text" class="form-control form-control-solid" name="acc_regulatory_authority" placeholder="e.g UAE Insurance Authority" required="required" />
+                                            <input type="text" class="form-control form-control-solid" name="regulatory_authority" placeholder="e.g UAE Insurance Authority" required="required" />
                                         </div>
                                         <!--end::Input group-->
                                     </div>
@@ -661,7 +670,7 @@ select.list-dt:focus {
                                         <label class="form-label fs-6 fw-bolder text-gray-700 mb-3">Value</label>
                                             <!--begin::Input group-->
                                             <div class="mb-5">
-                                                <input type="text" name="value" class="form-control form-control-solid" placeholder="Value" required="required" />
+                                                <input type="number" name="value" class="form-control form-control-solid" placeholder="Value" required="required" />
                                             </div>
                                         </div>
                                         <div class="col-lg-6">
@@ -700,7 +709,7 @@ select.list-dt:focus {
                                         <label class="form-label fs-6 fw-bolder text-gray-700 mb-3">Value</label>
                                             <!--begin::Input group-->
                                             <div class="mb-5">
-                                                <input type="text" name="value" class="form-control form-control-solid" placeholder="Value" required="required" />
+                                                <input type="number" name="value" class="form-control form-control-solid" placeholder="Value" required="required" />
                                             </div>
                                         </div>
                                         <div class="col-lg-6">
@@ -759,7 +768,7 @@ select.list-dt:focus {
                                             </label>
                                             <!--begin::Input group-->
                                             <div class="mb-5">
-                                                <input type="text" name="auth_share" class="form-control form-control-solid" placeholder="Authorized Share" required="required" />
+                                                <input type="number" name="auth_share" class="form-control form-control-solid" placeholder="Authorized Share" required="required" />
                                             </div>
                                         </div>
                                         <div class="col-lg-6">
@@ -767,7 +776,7 @@ select.list-dt:focus {
                                             </label>
                                             <!--begin::Input group-->
                                             <div class="mb-5">
-                                                <input type="text" name="issue_share" class="form-control form-control-solid" placeholder="Issued Share" required="required" />
+                                                <input type="number" name="issue_share" class="form-control form-control-solid" placeholder="Issued Share" required="required" />
                                             </div>
                                         </div>
                                         <div class="col-lg-6">
@@ -775,7 +784,7 @@ select.list-dt:focus {
                                             </label>
                                             <!--begin::Input group-->
                                             <div class="mb-5">
-                                                <input type="text" name="no_share" class="form-control form-control-solid" placeholder="No of Share" required="required" />
+                                                <input type="number" name="no_share" class="form-control form-control-solid" placeholder="No of Share" required="required" />
                                             </div>
                                         </div>
                                         <div class="col-lg-6">
@@ -783,7 +792,7 @@ select.list-dt:focus {
                                             </label>
                                             <!--begin::Input group-->
                                             <div class="mb-5">
-                                                <input type="text" name="paid_up_share" class="form-control form-control-solid" placeholder="Paid up Share" required="required" />
+                                                <input type="number" name="paid_up_share" class="form-control form-control-solid" placeholder="Paid up Share" required="required" />
                                             </div>
                                         </div>
                                         <div class="col-lg-6">
@@ -791,7 +800,7 @@ select.list-dt:focus {
                                             </label>
                                             <!--begin::Input group-->
                                             <div class="mb-5">
-                                                <input type="text" name="total_share" class="form-control form-control-solid" placeholder="Total Share" required="required" />
+                                                <input type="number" name="total_share" class="form-control form-control-solid" placeholder="Total Share" required="required" />
                                             </div>
                                         </div>
                                     </div>
@@ -806,6 +815,7 @@ select.list-dt:focus {
                             </fieldset>
                             <fieldset style="@if(isset($holstyle)){{$holstyle}}@endif">
                                 <form action="{{route('company-details.store')}}" method="post">
+                                    @csrf
                                 <div class="form-card">
                                     <h2 class="fs-title">ShareHolder</h2> 
                                     <div class="separator separator-dashed my-10"></div>
@@ -823,7 +833,7 @@ select.list-dt:focus {
                                             </label>
                                             <!--begin::Input group-->
                                             <div class="mb-5">
-                                                <input type="text" name="percentage" class="form-control form-control-solid" placeholder="Share Percentage" required="required" />
+                                                <input type="number" name="percentage" class="form-control form-control-solid" placeholder="Share Percentage" required="required" />
                                             </div>
                                         </div>
                                         <!--begin::Col-->
@@ -955,12 +965,12 @@ return false;
             i++
             $('#director_btn_div').before(`<div class="col-lg-5 div${i}">
                                 <div class="mb-5">
-                                    <input type="text" class="form-control form-control-solid" name="b_o_d_name[]" placeholder="Name" />
+                                    <input type="text" class="form-control form-control-solid" name="name[]" placeholder="Name" />
                                 </div>
                             </div>
                             <div class="col-lg-5 div${i}">
                                 <div class="mb-5">
-                                    <input type="text" name="b_o_d_designation[]" class="form-control form-control-solid" placeholder="Designation" />
+                                    <input type="text" name="designation[]" class="form-control form-control-solid" placeholder="Designation" />
                                 </div>
                             </div>
                             <div class="col-lg-2 div${i}">

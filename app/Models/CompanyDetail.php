@@ -52,7 +52,6 @@ class CompanyDetail extends Model
 	protected $casts = [
 		'id' => 'int',
 		'employee_count' => 'int',
-//		'financial_report' => 'boolean'
 	];
 
 	protected $dates = [
