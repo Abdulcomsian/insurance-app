@@ -14,7 +14,7 @@ class CreateBoardOfDirectorTable extends Migration
     public function up()
     {
         Schema::create('board_of_director', function (Blueprint $table) {
-            $table->bigInteger('id')->primary();
+            $table->id();
             $table->string('created_by', 50);
             $table->dateTime('created_date', 6)->nullable();
             $table->string('last_modified_by', 50)->nullable();
@@ -22,8 +22,8 @@ class CreateBoardOfDirectorTable extends Migration
             $table->string('designation')->nullable();
             $table->longText('image_url')->nullable();
             $table->string('name')->nullable();
-            $table->bigInteger('company_id')->nullable();
-            $table->foreign('company_id', 'FK4t9gsrw98wbqdy7eghib7t677')->references('id')->on('company_detail');
+            $table->bigInteger('company_id')->unsigned();
+            $table->foreign('company_id')->references('id')->on('company_detail');
             $table->timestamps();
         });
     }

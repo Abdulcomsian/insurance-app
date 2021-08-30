@@ -14,7 +14,7 @@ class CreateMarketShareTable extends Migration
     public function up()
     {
         Schema::create('market_share', function (Blueprint $table) {
-            $table->bigInteger('id')->primary();
+            $table->id();
             $table->string('created_by', 50);
             $table->dateTime('created_date', 6)->nullable();
             $table->string('last_modified_by', 50)->nullable();
@@ -24,8 +24,8 @@ class CreateMarketShareTable extends Migration
             $table->decimal('no_of_shares', 19, 2)->nullable();
             $table->string('paid_up_shares')->nullable();
             $table->decimal('total_share', 19, 2)->nullable();
-            $table->bigInteger('company_id')->nullable();
-            $table->foreign('company_id', 'FKq763po2ua2vrlteqabkxisgpp')->references('id')->on('company_detail');
+            $table->bigInteger('company_id')->unsigned();
+            $table->foreign('company_id')->references('id')->on('company_detail');
             $table->timestamps();
         });
     }

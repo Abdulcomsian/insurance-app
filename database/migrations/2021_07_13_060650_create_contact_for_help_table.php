@@ -14,7 +14,7 @@ class CreateContactForHelpTable extends Migration
     public function up()
     {
         Schema::create('contact_for_help', function (Blueprint $table) {
-            $table->bigInteger('id')->primary();
+            $table->id();
             $table->longText('comment')->nullable();
             $table->string('email_id');
             $table->string('mobile_number')->nullable();

@@ -14,17 +14,22 @@ class CreateReqForSancStatusTable extends Migration
     public function up()
     {
         Schema::create('req_for_sanc_status', function (Blueprint $table) {
-            $table->bigInteger('id')->primary();
-            $table->longText('comment')->nullable();
-            $table->bigInteger('company_id');
-            $table->string('email_id');
-            $table->string('mobile_number');
-            $table->string('reason')->nullable();
-            $table->bigInteger('user_id')->nullable();
-            $table->string('name');
+            $table->id();
+            $table->longText('comments')->nullable();
+
+            $table->bigInteger('company_id')->unsigned();
+            $table->foreign('company_id')->references('id')->on('company_detail');
+
+            $table->bigInteger('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users');
+
+            $table->string('sanctions_type');
+            $table->string('status');
+            $table->string('board_of_directors')->nullable();
+            $table->string('sanctions')->nullable();
             $table->longText('admin_comments')->nullable();
-            $table->timestamp('cancel_date')->nullable();
             $table->timestamp('result_date')->nullable();
+            $table->timestamp('cancel_date')->nullable();
             $table->timestamps();
 
         });

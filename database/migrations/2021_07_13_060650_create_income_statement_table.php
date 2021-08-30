@@ -14,7 +14,7 @@ class CreateIncomeStatementTable extends Migration
     public function up()
     {
         Schema::create('income_statement', function (Blueprint $table) {
-            $table->bigInteger('id')->primary();
+            $table->id();
             $table->string('created_by', 50);
             $table->dateTime('created_date', 6)->nullable();
             $table->string('last_modified_by', 50)->nullable();
@@ -22,8 +22,8 @@ class CreateIncomeStatementTable extends Migration
             $table->string('name')->nullable();
             $table->decimal('value', 19, 2)->nullable();
             $table->integer('year')->nullable();
-            $table->bigInteger('company_accounting_id')->nullable();
-            $table->foreign('company_accounting_id', 'FKf9rqfsswhp949mlx4oyw5w7q6')->references('id')->on('company_accounting');
+            $table->bigInteger('company_accounting_id')->unsigned();
+            $table->foreign('company_accounting_id')->references('id')->on('company_accounting');
             $table->timestamps();
         });
     }

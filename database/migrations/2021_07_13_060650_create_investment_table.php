@@ -14,7 +14,7 @@ class CreateInvestmentTable extends Migration
     public function up()
     {
         Schema::create('investment', function (Blueprint $table) {
-            $table->bigInteger('id')->primary();
+            $table->id();
             $table->string('created_by', 50);
             $table->dateTime('created_date', 6)->nullable();
             $table->string('last_modified_by', 50)->nullable();
@@ -22,8 +22,8 @@ class CreateInvestmentTable extends Migration
             $table->string('name')->nullable();
             $table->decimal('value', 19, 2)->nullable();
             $table->integer('year')->nullable();
-            $table->bigInteger('company_accounting_id')->nullable();
-            $table->foreign('company_accounting_id', 'FKpr81ge2p91rlcoakh9jnay11k')->references('id')->on('company_accounting');
+            $table->bigInteger('company_accounting_id')->unsigned();
+            $table->foreign('company_accounting_id')->references('id')->on('company_accounting');
             $table->timestamps();
         });
     }
