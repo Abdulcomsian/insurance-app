@@ -15,15 +15,18 @@ class CreateTelrTransactionsTable extends Migration
     {
         Schema::create('transaction', function (Blueprint $table) {
             $table->id();
-            $table->string('cart_id')->unique()->comment = 'The unique cart id to be submit for telr transaction';
+            $table->string('invoice_id')->unique()->comment = 'The unique cart id to be submit for telr transaction';
             $table->string('order_id')->unique()->comment = 'Order id ';
-//            $table->integer('store_id')->comment = 'Map to ivp_store';
             $table->boolean('test_mode')->nullable();
-            $table->decimal('amount')->nullable()->comment = 'Map to ivp_amount the total or purchase';
+            $table->string('total_amount')->nullable()->comment = 'Map to ivp_amount the total or purchase';
+            $table->string('package_name')->nullable()->comment = 'Package name';
+            $table->string('package_sanctions')->nullable()->comment = 'Sanctions in package';
+            $table->string('vat_amount')->nullable()->comment = 'VAT Amount is 5 % in AED';
+            $table->string('package_amount')->nullable()->comment = 'Package amount';
             $table->string('description')->nullable()->comment = 'Description should be limit to 64';
-//            $table->string('success_url')->comment = 'The success URL';
-//            $table->string('canceled_url')->comment = 'The canceled URL';
-//            $table->string('declined_url')->comment = 'The declined URL';
+            $table->string('card_last4')->nullable()->comment = 'Billing first name';
+            $table->string('card_first6')->nullable()->comment = 'Billing first name';
+            $table->string('card_type')->nullable()->comment = 'Billing first name';
             $table->string('billing_fname')->nullable()->comment = 'Billing first name';
             $table->string('billing_sname')->nullable()->comment = 'Billing sur name';
             $table->string('billing_address_1')->nullable()->comment = 'Billing address 1';
@@ -37,7 +40,15 @@ class CreateTelrTransactionsTable extends Migration
             $table->string('trx_reference')->nullable()->comment = 'The transaction reference';
             $table->boolean('approved')->nullable()->comment = 'The transaction status is approved or failed';
             $table->json('response')->nullable()->comment = 'The transaction response';
-            $table->string('status',10)->comment = 'The transaction status is updated or not';
+            $table->string('status',10)->nullable()->comment = 'The transaction status is updated or not';
+            $table->string('pdf')->nullable()->comment = 'The transaction status is updated or not';
+
+            $table->bigInteger('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users');
+
+            $table->bigInteger('package_id')->unsigned();
+            $table->foreign('package_id')->references('id')->on('packages');
+            $table->timestamp('cancelled_at')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

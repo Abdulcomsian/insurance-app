@@ -16,10 +16,10 @@ class CreatePackagesTable extends Migration
         Schema::create('packages', function (Blueprint $table) {
             $table->id();
             $table->string('name',20);
-            $table->text('description');
-            $table->float('price',20);
-            $table->integer('sanctions');
-            $table->string('status',10)->default('active');
+            $table->text('description')->nullable();
+            $table->float('price',20)->nullable();
+            $table->integer('sanctions')->nullable();
+            $table->string('status',10)->nullable();
             $table->date('start_date')->nullable();
             $table->date('end_date')->nullable();
             $table->softDeletes();

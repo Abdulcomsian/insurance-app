@@ -14,7 +14,7 @@ class CreateSubsidiaryTable extends Migration
     public function up()
     {
         Schema::create('subsidiary', function (Blueprint $table) {
-            $table->bigInteger('id')->primary();
+            $table->id();
             $table->string('created_by', 50);
             $table->dateTime('created_date', 6)->nullable();
             $table->string('last_modified_by', 50)->nullable();
@@ -22,8 +22,8 @@ class CreateSubsidiaryTable extends Migration
             $table->string('designation')->nullable();
             $table->longText('image_url')->nullable();
             $table->string('name')->nullable();
-            $table->bigInteger('company_accounting_id')->nullable();
-            $table->foreign('company_accounting_id', 'FKq4ebnpur9k2ad1jvjr0yru96j')->references('id')->on('company_accounting');
+            $table->bigInteger('company_accounting_id')->unsigned();
+            $table->foreign('company_accounting_id')->references('id')->on('company_accounting');
             $table->timestamps();
         });
     }

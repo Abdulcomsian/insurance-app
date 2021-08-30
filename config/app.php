@@ -164,7 +164,7 @@ return [
         Yoeunes\Toastr\ToastrServiceProvider::class,
         Yajra\DataTables\DataTablesServiceProvider::class,
         Yajra\DataTables\ButtonsServiceProvider::class,
-
+        jeremykenedy\LaravelLogger\LaravelLoggerServiceProvider::class,
         /*
          * Package Service Providers...
          */

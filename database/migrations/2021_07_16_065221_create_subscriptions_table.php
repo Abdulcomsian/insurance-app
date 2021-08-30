@@ -17,7 +17,9 @@ class CreateSubscriptionsTable extends Migration
             $table->id();
             $table->string('package_name',20)->nullable();
             $table->float('price',20)->nullable();
-            $table->integer('sanctions_balance')->nullable();
+            $table->integer('total_sanctions')->nullable();
+            $table->integer('remaining_sanctions')->nullable();
+            $table->integer('used_sanctions')->nullable();
             $table->string('status',20)->nullable();
 
             $table->bigInteger('package_id')->unsigned();

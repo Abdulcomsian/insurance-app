@@ -14,10 +14,10 @@ class CreateSanctionStatusTable extends Migration
     public function up()
     {
         Schema::create('sanction_status', function (Blueprint $table) {
-            $table->bigInteger('id')->primary();
+            $table->id();
             $table->string('status')->nullable();
-            $table->bigInteger('company_id')->nullable();
-            $table->foreign('company_id', 'FKlpcqdfmbdssc5h1am4srpqulk')->references('id')->on('company_detail');
+            $table->bigInteger('company_id')->unsigned();
+            $table->foreign('company_id')->references('id')->on('company_detail');
             $table->timestamps();
         });
     }

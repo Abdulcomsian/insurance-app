@@ -14,7 +14,7 @@ class CreateCompanyAccountingTable extends Migration
     public function up()
     {
         Schema::create('company_accounting', function (Blueprint $table) {
-            $table->bigInteger('id')->primary();
+            $table->id();
             $table->string('created_by', 50);
             $table->dateTime('created_date', 6)->nullable();
             $table->string('last_modified_by', 50)->nullable();
@@ -29,8 +29,8 @@ class CreateCompanyAccountingTable extends Migration
             $table->string('public_listed_company')->nullable();
             $table->string('regulatory_authority')->nullable();
             $table->string('s_andprating')->nullable();
-            $table->bigInteger('company_id')->nullable();
-            $table->foreign('company_id', 'FK8rjr9xrvmdpyg9lt4r4eq1cch')->references('id')->on('company_detail');
+            $table->bigInteger('company_id')->unsigned();
+            $table->foreign('company_id')->references('id')->on('company_detail');
             $table->timestamps();
         });
     }
