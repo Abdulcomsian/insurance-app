@@ -157,7 +157,8 @@
                 language: {
                     searchPlaceholder: "Search Companies",
                     search: ""
-                }
+                },
+                lengthMenu: [ [10, 25, 50, -1], [10, 25, 50, "All"] ]
             });
         });
         $( document ).ready(function() {

@@ -65,6 +65,28 @@
 @section('script')
     @include('layouts.datatables_js')
     <script>
+        $(document).on("click",".resend_email",function(event) {
+            event.preventDefault();
+            let url = $(this).attr('href');
+
+            swal({
+                    title: "Are you sure?",
+                    text: "You will not be able to reverse this action!",
+                    type: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: '#DD6B55',
+                    confirmButtonText: 'Yes, submit it!',
+                    closeOnConfirm: false,
+                    //closeOnCancel: false
+                },
+
+                function(){
+                    window.location = url;
+                    swal("Submitted!", "Email has been sent!", "success");
+                });
+        });
+    </script>
+    <script>
         $(function () {
             var table = $('.data-table').DataTable({
                 processing: true,
@@ -132,7 +154,8 @@
                 language: {
                     searchPlaceholder: "Search Transaction",
                     search: ""
-                }
+                },
+                lengthMenu: [ [10, 25, 50, -1], [10, 25, 50, "All"] ]
             });
 
         });

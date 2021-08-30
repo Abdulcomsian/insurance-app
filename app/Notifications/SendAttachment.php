@@ -44,13 +44,13 @@ class SendAttachment extends Notification
      */
     public function toMail($notifiable)
     {
-        $message = 'Your sanction request report has been successfully generated. Please find attached repot documents.';
+        $message = ' your sanction request report has been successfully generated. Please find attached repot documents.';
         $email=new MailMessage();
         $email->line($message);
         foreach ($this->attachments  as $filePath) {
             $email->attach(public_path('images/'.$filePath->file));
         }
-        $email->line('Thanks Mena Insurance KYC');
+        $email->line('Thank you for using our application!');
         return $email;
     }
 
