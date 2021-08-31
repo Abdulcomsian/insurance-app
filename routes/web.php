@@ -13,24 +13,21 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-//Route::get('/', function () {
-//    return view('welcome');
-//});
-Route::get('sign-in', function () {return view('sign-in');})->name('sign-in');
 
-Route::get('sanction_request', function () {return view('sanction_request.sanction_request');
-})->name('sanction_request');
-
-Auth::routes([
-    'register' => false, // Registration Routes...
-    'reset' => false, // Password Reset Routes...
-    'verify' => false, // Email Verification Routes...
-]);
-//By Assad Yaqoob
-//Home
-Route::get('/', 'HomeController@index')->name('home');
 
 Route::group(['middleware' => ['web', 'activity']], function () {
+    Route::get('sign-in', function () {return view('sign-in');})->name('sign-in');
+    Route::get('sanction_request', function () {return view('sanction_request.sanction_request');})->name('sanction_request');
+
+    Auth::routes([
+        'register' => false, // Registration Routes...
+        'reset' => false, // Password Reset Routes...
+        'verify' => false, // Email Verification Routes...
+    ]);
+
+    //By Assad Yaqoob
+    //Home
+    Route::get('/', 'HomeController@index')->name('home');
     //Customer History
     Route::match(['get', 'post'], 'customers-history', 'HomeController@customerHistory')->name('customers.history');
     Route::get('customer-edit/{id}', 'HomeController@customerEdit')->name('customers.edit');
@@ -73,3 +70,5 @@ Route::group(['middleware' => ['web', 'activity']], function () {
     Route::post('cancel-request','HomeController@cancel_request')->name('cancel-request');
     Route::resource('company-details','CompanyDetailsController');
 });
+
+
