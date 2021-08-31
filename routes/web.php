@@ -71,5 +71,8 @@ Route::group(['middleware' => ['web', 'activity']], function () {
     Route::post('sanc-send-attachment','HomeController@sanc_send_attachment')->name('sanc-send-attachment');
     Route::get('delete-attachements/{id}','HomeController@delete_attachements')->name('delete-attachements');
     Route::post('cancel-request','HomeController@cancel_request')->name('cancel-request');
-    Route::resource('company-details','CompanyDetailsController');
+    Route::post('company-details-save','CompanyDetailsController@store')->name('company-details.store');
+    Route::post('company-details-update','CompanyDetailsController@update')->name('company-details.update');
+    Route::get('company-details/{id}','CompanyDetailsController@edit')->name('company-details.edit');
+    Route::get('director-delete','CompanyDetailsController@dir_delete')->name('director-delete');
 });

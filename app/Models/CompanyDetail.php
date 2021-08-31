@@ -48,12 +48,6 @@ use Illuminate\Database\Eloquent\Model;
 class CompanyDetail extends Model
 {
 	protected $table = 'company_detail';
-
-	protected $casts = [
-		'id' => 'int',
-		'employee_count' => 'int',
-	];
-
 	protected $dates = [
 		'created_date',
 		'last_modified_date'
@@ -82,7 +76,8 @@ class CompanyDetail extends Model
 		'location',
 		'toll_free_number',
 		'trade_name',
-		'alternative_names'
+		'alternative_names',
+        'status',
 	];
 
 	public function board_of_directors()
