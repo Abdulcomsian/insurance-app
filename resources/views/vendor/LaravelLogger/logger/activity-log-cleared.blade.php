@@ -1,40 +1,8 @@
-@extends(config('LaravelLogger.loggerBladeExtended'))
+@extends(config('LaravelLogger.loggerBladeExtended'),["page_title"=>"Activity Log"])
 
-@if(config('LaravelLogger.bladePlacement') == 'yield')
-    @section(config('LaravelLogger.bladePlacementCss'))
-@elseif (config('LaravelLogger.bladePlacement') == 'stack')
-    @push(config('LaravelLogger.bladePlacementCss'))
-@endif
-
-        @include('LaravelLogger::partials.styles')
-
-@if(config('LaravelLogger.bladePlacement') == 'yield')
-    @endsection
-@elseif (config('LaravelLogger.bladePlacement') == 'stack')
-    @endpush
-@endif
-
-@if(config('LaravelLogger.bladePlacement') == 'yield')
-    @section(config('LaravelLogger.bladePlacementJs'))
-@elseif (config('LaravelLogger.bladePlacement') == 'stack')
-    @push(config('LaravelLogger.bladePlacementJs'))
-@endif
-
-        @include('LaravelLogger::partials.scripts', ['activities' => $activities])
-        @include('LaravelLogger::scripts.confirm-modal', ['formTrigger' => '#confirmDelete'])
-        @include('LaravelLogger::scripts.confirm-modal', ['formTrigger' => '#confirmRestore'])
-
-        @if(config('LaravelLogger.enableDrillDown'))
-            @include('LaravelLogger::scripts.clickable-row')
-            @include('LaravelLogger::scripts.tooltip')
-        @endif
-
-@if(config('LaravelLogger.bladePlacement') == 'yield')
-    @endsection
-@elseif (config('LaravelLogger.bladePlacement') == 'stack')
-    @endpush
-@endif
-
+@section('css')
+    @include('LaravelLogger::partials.styles')
+@endsection
 
 @section('template_title')
     {{ trans('LaravelLogger::laravel-logger.dashboardCleared.title') }}
@@ -76,14 +44,14 @@
                                 </sup>
                             </span>
                             <div class="btn-group pull-right btn-group-xs">
-                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <button type="button" class="btn btn-default dropdown-toggle logsBtn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <i class="fa fa-ellipsis-v fa-fw" aria-hidden="true"></i>
                                     <span class="sr-only">
                                         {!! trans('LaravelLogger::laravel-logger.dashboard.menu.alt') !!}
                                     </span>
                                 </button>
                                 @if(config('LaravelLogger.bootstapVersion') == '4')
-                                    <div class="dropdown-menu dropdown-menu-right">
+                                    <div class="dropdown-menu dropdown-menu-right logsDropDown">
                                         <a href="{{route('activity')}}" class="dropdown-item">
                                             <span class="text-primary">
                                                 <i class="fa fa-fw fa-mail-reply" aria-hidden="true"></i>
@@ -129,4 +97,24 @@
     @include('LaravelLogger::modals.confirm-modal', ['formTrigger' => 'confirmDelete', 'modalClass' => 'danger', 'actionBtnIcon' => 'fa-trash-o'])
     @include('LaravelLogger::modals.confirm-modal', ['formTrigger' => 'confirmRestore', 'modalClass' => 'success', 'actionBtnIcon' => 'fa-check'])
 
+@endsection
+@section('script')
+    @include('LaravelLogger::partials.scripts', ['activities' => $activities])
+    @include('LaravelLogger::scripts.confirm-modal', ['formTrigger' => '#confirmDelete'])
+    @include('LaravelLogger::scripts.confirm-modal', ['formTrigger' => '#confirmRestore'])
+
+    @if(config('LaravelLogger.enableDrillDown'))
+        @include('LaravelLogger::scripts.clickable-row')
+        @include('LaravelLogger::scripts.tooltip')
+    @endif
+
+    <script>
+        $(".logsBtn").click(function (e) {
+            e.preventDefault();
+            if($(".logsDropDown").css("display")=="none"){
+                $(".logsDropDown").css("display","block")
+            } else
+                $(".logsDropDown").css("display","none")
+        })
+    </script>
 @endsection

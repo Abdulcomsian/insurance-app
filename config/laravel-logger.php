@@ -47,7 +47,7 @@ return [
     | Laravel Logger Search Enable/Disable
     |--------------------------------------------------------------------------
     */
-    'enableSearch'      => env('LARAVEL_LOGGER_ENABLE_SEARCH', true),
+    'enableSearch'      => env('LARAVEL_LOGGER_ENABLE_SEARCH', false),
 
     /*
     |--------------------------------------------------------------------------
@@ -91,7 +91,7 @@ return [
     |--------------------------------------------------------------------------
     */
     'loggerPaginationEnabled' => env('LARAVEL_LOGGER_PAGINATION_ENABLED', true),
-    'loggerPaginationPerPage' => env('LARAVEL_LOGGER_PAGINATION_PER_PAGE', 25),
+    'loggerPaginationPerPage' => env('LARAVEL_LOGGER_PAGINATION_PER_PAGE', 10),
 
     /*
     |--------------------------------------------------------------------------
@@ -136,7 +136,7 @@ return [
     */
 
     // The parent Blade file
-    'loggerBladeExtended'       => env('LARAVEL_LOGGER_LAYOUT', 'layouts.app'),
+    'loggerBladeExtended'       => env('LARAVEL_LOGGER_LAYOUT', 'layouts.master'),
 
     // Switch Between bootstrap 3 `panel` and bootstrap 4 `card` classes
     'bootstapVersion'           => env('LARAVEL_LOGGER_BOOTSTRAP_VERSION', '4'),
@@ -148,8 +148,8 @@ return [
 
     // Blade Extension Placement
     'bladePlacement'            => env('LARAVEL_LOGGER_BLADE_PLACEMENT', 'yield'),
-    'bladePlacementCss'         => env('LARAVEL_LOGGER_BLADE_PLACEMENT_CSS', 'template_linked_css'),
-    'bladePlacementJs'          => env('LARAVEL_LOGGER_BLADE_PLACEMENT_JS', 'footer_scripts'),
+    'bladePlacementCss'         => env('LARAVEL_LOGGER_BLADE_PLACEMENT_CSS', 'css'),
+    'bladePlacementJs'          => env('LARAVEL_LOGGER_BLADE_PLACEMENT_JS', 'script'),
 
     /*
     |--------------------------------------------------------------------------

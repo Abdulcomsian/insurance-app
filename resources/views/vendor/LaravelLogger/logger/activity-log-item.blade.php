@@ -2,35 +2,18 @@
     $userIdField = config('LaravelLogger.defaultUserIDField')
 @endphp
 
-@extends(config('LaravelLogger.loggerBladeExtended'))
+@extends(config('LaravelLogger.loggerBladeExtended'),["page_title"=>"Activity Log"])
 
-@if(config('LaravelLogger.bladePlacement') == 'yield')
-    @section(config('LaravelLogger.bladePlacementCss'))
-@elseif (config('LaravelLogger.bladePlacement') == 'stack')
-    @push(config('LaravelLogger.bladePlacementCss'))
-@endif
+@section('css')
+    @include('LaravelLogger::partials.styles')
+    <style>
+        .card .card-header{
+            min-height: 0px !important; ;
+            padding: 10px 2.25rem;
+        }
 
-@include('LaravelLogger::partials.styles')
-
-@if(config('LaravelLogger.bladePlacement') == 'yield')
-    @endsection
-@elseif (config('LaravelLogger.bladePlacement') == 'stack')
-    @endpush
-@endif
-
-@if(config('LaravelLogger.bladePlacement') == 'yield')
-    @section(config('LaravelLogger.bladePlacementJs'))
-@elseif (config('LaravelLogger.bladePlacement') == 'stack')
-    @push(config('LaravelLogger.bladePlacementJs'))
-@endif
-
-@include('LaravelLogger::partials.scripts', ['activities' => $userActivities])
-
-@if(config('LaravelLogger.bladePlacement') == 'yield')
-    @endsection
-@elseif (config('LaravelLogger.bladePlacement') == 'stack')
-    @endpush
-@endif
+    </style>
+@endsection
 
 @section('template_title')
     {{ trans('LaravelLogger::laravel-logger.drilldown.title', ['id' => $activity->id]) }}
@@ -355,4 +338,21 @@
         </div>
     </div>
   </div>
+@endsection
+        @section('script')
+            @include('LaravelLogger::partials.scripts', ['activities' => $userActivities])
+            @include('LaravelLogger::scripts.confirm-modal', ['formTrigger' => '#confirmDelete'])
+            @if(config('LaravelLogger.enableDrillDown'))
+                @include('LaravelLogger::scripts.clickable-row')
+                @include('LaravelLogger::scripts.tooltip')
+            @endif
+            <script>
+                $(".logsBtn").click(function (e) {
+                    e.preventDefault();
+                    if($(".logsDropDown").css("display")=="none"){
+                        $(".logsDropDown").css("display","block")
+                    } else
+                        $(".logsDropDown").css("display","none")
+                })
+            </script>
 @endsection
