@@ -42,11 +42,6 @@ class CompanyAccounting extends Model
 {
 	protected $table = 'company_accounting';
 
-	protected $casts = [
-		'id' => 'int',
-		'company_id' => 'int'
-	];
-
 	protected $dates = [
 		'created_date',
 		'last_modified_date'
