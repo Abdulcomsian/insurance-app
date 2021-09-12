@@ -72,6 +72,7 @@
                                 <th>Toll Free Number</th>
                                 <th>Trade Name</th>
                                 <th>Alternative Names</th>
+                                <th>Board Of Directors</th>
                             </tr>
                             </thead>
                             <tbody fw-bold text-gray-600>
@@ -123,7 +124,7 @@
                 dom: 'lBfrtip',
                 "columnDefs": [
                     {
-                        "targets": [ 7,8,9,10,11,12,13,14,15,16,17,18 ],
+                        "targets": [ 7,8,9,10,11,12,13,14,15,16,17,18,19 ],
                         "visible": false,
                     },
                 ],
@@ -131,28 +132,28 @@
                 {
                     extend: 'copyHtml5',
                     exportOptions: {
-                        columns: [ 0,1,2,3,4,5,7,8,9,10,11,12,13,14,15,16,17,18 ]
+                        columns: [ 0,1,2,3,4,5,7,8,9,10,11,12,13,14,15,16,17,18,19 ]
                     },
 
                 },
                 {
                     extend: 'excelHtml5',
                     exportOptions: {
-                        columns: [ 0,1,2,3,4,5,7,8,9,10,11,12,13,14,15,16,17,18 ]
+                        columns: [ 0,1,2,3,4,5,7,8,9,10,11,12,13,14,15,16,17,18,19 ]
                     },
 
                 },
                 {
                     extend: 'csvHtml5',
                     exportOptions: {
-                        columns: [ 0,1,2,3, 4,5,7,8,9,10,11,12,13,14,15,16,17,18 ]
+                        columns: [ 0,1,2,3, 4,5,7,8,9,10,11,12,13,14,15,16,17,18,19 ]
                     },
 
                 },
                 {
                    extend: 'pdfHtml5',
                     exportOptions: {
-                    columns: [ 0,1,2,3, 4,5,7,8,9,10,11,12,13,14,15,16,17,18 ]
+                    columns: [ 0,1,2,3, 4,5,7,8,9,10,11,12,13,14,15,16,17,18,19 ]
                     }
                 },
                 ],
@@ -178,6 +179,17 @@
                     {data: 'toll_free_number', name: 'toll_free_number',defaultContent: ''},
                     {data: 'trade_name', name: 'trade_name',defaultContent: ''},
                     {data: 'alternative_names', name: 'alternative_names',defaultContent: ''},
+                    {
+                        data: 'board_of_directors',
+                        render: function(data) {
+                            let result = '';
+                            data.map(item =>{
+                                result += item.name +' ('+ item.designation +'), '  ;
+                            })
+                            return result;
+                        }
+                    },
+
                 ],
                 language: {
                     searchPlaceholder: "Search Companies",

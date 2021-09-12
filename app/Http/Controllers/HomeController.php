@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\DataTables\CompanyDetailsDataTable;
+use App\Models\CompanyDetail;
 use App\Models\CountryInformation;
 use App\Notifications\PaymentCancelled;
 use App\Notifications\SanctionRequestCancel;
@@ -274,7 +275,13 @@ class HomeController extends Controller
     public function indexWithDatatable(Request $request)
     {
         if ($request->ajax()) {
-            $data = DB::table('company_detail')->orderBy('company_name','asc')->get();
+            ini_set('memory_limit',-1);
+            $data = CompanyDetail::with(['board_of_directors' => function($bod){
+                $bod->select('id','company_id','name','designation');
+                }])
+                ->orderBy('company_name','asc')
+                ->get();
+
             return Datatables::of($data)
                 ->addIndexColumn()
                 ->editColumn('status',function ($data){
@@ -284,8 +291,16 @@ class HomeController extends Controller
                         return '<div class="badge badge-danger" fw-bolder">'.$data->status.'</div>';
                     }
                 })
+//                ->editColumn('board_of_directors',function ($data){
+//                    $result = '';
+//                    if(count($data->board_of_directors) > 0 ){
+//                        foreach ($data->board_of_directors as $item){
+//                            $result .= $result. $item->name .'('.$item->designation .'),' ;
+//                        }
+//                    }
+//                    return $result;
+//                })
                 ->addColumn('action', function($row){
-
                     $btn = '<a href="'.route('company-details.edit',''.$row->id.'').'" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
                                                 <!--begin::Svg Icon | path: icons/duotone/Communication/Write.svg-->
                                                 <span class="svg-icon svg-icon-3">
@@ -315,7 +330,7 @@ class HomeController extends Controller
                                             </form>';
                     return $btn;
                 })
-                ->rawColumns(['status','action'])
+                ->rawColumns(['status','action','board_of_directors'])
                 ->make(true);
         }
 
@@ -329,48 +344,6 @@ class HomeController extends Controller
                 ->orderby('country_name','asc')
                 ->get();
             return view('insurance_companies.create',compact('countries'));
-        }catch (\Exception $exception){
-            toastr()->error('Something went wrong, try again');
-            return back();
-        }
-    }
-    public function insuranceCompaniesSave(Request $request){
-        try {
-            foreach ($request->all() as $field => $value){
-              if(str_contains($field,'basic_info_')){
-                  $field = str_replace('basic_info_',"",$field);
-                  unset($request['basic_info_'.$field]);
-                  $basic_info[$field] = $value;
-              }
-
-              if(str_contains($field,'acc_')){
-                  $field = str_replace('acc_',"",$field);
-                  unset($request['acc_'.$field]);
-                  $acc_info[$field] = $value;
-              }
-
-              if(str_contains($field,'m_s_')){
-                  $field = str_replace('m_s_',"",$field);
-                  unset($request['m_s_'.$field]);
-                  $marked_share_info[$field] = $value;
-              }
-
-              if(str_contains($field,'b_o_d_')){
-                  $field = str_replace('b_o_d_',"",$field);
-                  unset($request['b_o_d_'.$field]);
-                  $board_of_director[$field] = $value;
-              }
-
-            }
-            $id = DB::table('company_detail')->insert($basic_info);
-            dump($id);
-            dd('here');
-//            dump($id);
-//            dd($basic_info);
-//            dump($acc_info);
-//            dump($marked_share_info);
-//            dd($board_of_director);
-
         }catch (\Exception $exception){
             toastr()->error('Something went wrong, try again');
             return back();
@@ -641,7 +614,7 @@ class HomeController extends Controller
                     'req_for_sanc_status.*',
                     'users.id as user_id',
                     'users.name as user_name',
-                    'users.email as user_email', 
+                    'users.email as user_email',
                     'company_detail.company_name as company_name')
                 ->orderBy('req_for_sanc_status.id','desc')
                 ->first();
