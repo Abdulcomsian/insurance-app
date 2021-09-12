@@ -179,7 +179,17 @@
                     {data: 'toll_free_number', name: 'toll_free_number',defaultContent: ''},
                     {data: 'trade_name', name: 'trade_name',defaultContent: ''},
                     {data: 'alternative_names', name: 'alternative_names',defaultContent: ''},
-                    {data: 'board_of_directors', name: 'board_of_directors',defaultContent: ''},
+                    {
+                        data: 'board_of_directors',
+                        render: function(data) {
+                            let result = '';
+                            data.map(item =>{
+                                result += item.name +' ('+ item.designation +'), '  ;
+                            })
+                            return result;
+                        }
+                    },
+
                 ],
                 language: {
                     searchPlaceholder: "Search Companies",

@@ -29,8 +29,6 @@ use Illuminate\Database\Eloquent\Model;
 class BoardOfDirector extends Model
 {
 	protected $table = 'board_of_director';
-	public $incrementing = false;
-	public $timestamps = false;
 
 	protected $casts = [
 		'id' => 'int',

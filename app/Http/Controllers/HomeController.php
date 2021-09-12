@@ -275,7 +275,10 @@ class HomeController extends Controller
     public function indexWithDatatable(Request $request)
     {
         if ($request->ajax()) {
-            $data = CompanyDetail::with('board_of_directors')
+            ini_set('memory_limit',-1);
+            $data = CompanyDetail::with(['board_of_directors' => function($bod){
+                $bod->select('id','company_id','name','designation');
+                }])
                 ->orderBy('company_name','asc')
                 ->get();
 
@@ -288,15 +291,15 @@ class HomeController extends Controller
                         return '<div class="badge badge-danger" fw-bolder">'.$data->status.'</div>';
                     }
                 })
-                ->editColumn('board_of_directors',function ($data){
-                    $result = '';
-                    if(!empty($data)){
-                        foreach ($data->board_of_directors as $item){
-                            $result .= $result. $item->name .'('.$item->designation .'),' ;
-                        }
-                    }
-                    return $result;
-                })
+//                ->editColumn('board_of_directors',function ($data){
+//                    $result = '';
+//                    if(count($data->board_of_directors) > 0 ){
+//                        foreach ($data->board_of_directors as $item){
+//                            $result .= $result. $item->name .'('.$item->designation .'),' ;
+//                        }
+//                    }
+//                    return $result;
+//                })
                 ->addColumn('action', function($row){
                     $btn = '<a href="'.route('company-details.edit',''.$row->id.'').'" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
                                                 <!--begin::Svg Icon | path: icons/duotone/Communication/Write.svg-->
