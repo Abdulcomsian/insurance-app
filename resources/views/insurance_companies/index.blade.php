@@ -90,6 +90,7 @@
                                 <th>No Of Shares</th>
                                 <th>Paid Up Shares</th>
                                 <th>Total Share</th>
+                                <th>Share Holders</th>
                             </tr>
                             </thead>
                             <tbody fw-bold text-gray-600>
@@ -141,7 +142,7 @@
                 dom: 'lBfrtip',
                 "columnDefs": [
                     {
-                        "targets": [ 7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36 ],
+                        "targets": [ 7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37 ],
                         "visible": false,
                     },
                 ],
@@ -149,29 +150,32 @@
                 {
                     extend: 'copyHtml5',
                     exportOptions: {
-                        columns: [ 0,1,2,3,4,5,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36 ]
+                        columns: [ 0,1,2,3,4,5,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37 ]
                     },
-
+                    title: 'Insurance Companies'
                 },
                 {
                     extend: 'excelHtml5',
                     exportOptions: {
-                        columns: [ 0,1,2,3,4,5,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36 ]
+                        columns: [ 0,1,2,3,4,5,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37 ]
                     },
+                    title: 'Insurance Companies'
 
                 },
                 {
                     extend: 'csvHtml5',
                     exportOptions: {
-                        columns: [ 0,1,2,3, 4,5,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36 ]
+                        columns: [ 0,1,2,3, 4,5,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37 ]
                     },
+                    title: 'Insurance Companies'
 
                 },
                 {
                    extend: 'pdfHtml5',
                     exportOptions: {
-                    columns: [ 0,1,2,3, 4,5,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36 ]
-                    }
+                    columns: [ 0,1,2,3, 4,5,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37 ]
+                    },
+                    title: 'Insurance Companies'
                 },
                 ],
  ajax: {
@@ -228,6 +232,16 @@
                     {data: "market_share.no_of_shares", defaultContent: ''},
                     {data: "market_share.paid_up_shares", defaultContent: ''},
                     {data: "market_share.total_share", defaultContent: ''},
+                    {
+                        data: 'market_share.shareholders',
+                        render: function(data) {
+                            let result = '';
+                            data.map(item =>{
+                                result += item.name +' ('+ item.share_percentage +'%), '  ;
+                            })
+                            return result;
+                        }
+                    },
                 ],
                 language: {
                     searchPlaceholder: "Search Companies",
