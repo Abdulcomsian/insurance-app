@@ -176,6 +176,7 @@
                 ],
 
                 ajax: "{{ route('insurance_companies.index') }}",
+                type:"post",
                 columns: [
                     {data: 'id', name: 'id',defaultContent: ''},
                     {data: 'company_name', name: 'company_name',defaultContent: ''},
