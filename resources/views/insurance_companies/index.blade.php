@@ -176,7 +176,8 @@
                 ],
  ajax: {
             "url": "{{ route('insurance_companies.index') }}",
-            "type": "POST"
+            "type": "POST",
+            "data": _token:"{{ csrf() }}"
         },
                 // ajax: "{{ route('insurance_companies.index') }}",
                 // type:"post",
