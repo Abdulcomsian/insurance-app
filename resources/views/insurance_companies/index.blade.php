@@ -65,6 +65,8 @@
                                 <th>Company Email</th>
                                 <th>Company Website</th>
                                 <th>Corporate Details</th>
+                                <th>Incorporated</th>
+                                <th>Incorporated Year</th>
                                 <th>Employee Count</th>
                                 <th>Fax Detail</th>
                                 <th>Financial Report</th>
@@ -73,6 +75,21 @@
                                 <th>Trade Name</th>
                                 <th>Alternative Names</th>
                                 <th>Board Of Directors</th>
+                                <th>Currency</th>
+                                <th>Financial Strength Rating</th>
+                                <th>Gross Written Premium</th>
+                                <th>Gross Written Premium year</th>
+                                <th>Issue Credit Rating</th>
+                                <th>Moody Rating</th>
+                                <th>Other Rating</th>
+                                <th>Public Listed Company</th>
+                                <th>Regulatory Authority</th>
+                                <th>S and P Rating</th>
+                                <th>Authorized Shares</th>
+                                <th>Issued Shares</th>
+                                <th>No Of Shares</th>
+                                <th>Paid Up Shares</th>
+                                <th>Total Share</th>
                             </tr>
                             </thead>
                             <tbody fw-bold text-gray-600>
@@ -124,7 +141,7 @@
                 dom: 'lBfrtip',
                 "columnDefs": [
                     {
-                        "targets": [ 7,8,9,10,11,12,13,14,15,16,17,18,19 ],
+                        "targets": [ 7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36 ],
                         "visible": false,
                     },
                 ],
@@ -132,28 +149,28 @@
                 {
                     extend: 'copyHtml5',
                     exportOptions: {
-                        columns: [ 0,1,2,3,4,5,7,8,9,10,11,12,13,14,15,16,17,18,19 ]
+                        columns: [ 0,1,2,3,4,5,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36 ]
                     },
 
                 },
                 {
                     extend: 'excelHtml5',
                     exportOptions: {
-                        columns: [ 0,1,2,3,4,5,7,8,9,10,11,12,13,14,15,16,17,18,19 ]
+                        columns: [ 0,1,2,3,4,5,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36 ]
                     },
 
                 },
                 {
                     extend: 'csvHtml5',
                     exportOptions: {
-                        columns: [ 0,1,2,3, 4,5,7,8,9,10,11,12,13,14,15,16,17,18,19 ]
+                        columns: [ 0,1,2,3, 4,5,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36 ]
                     },
 
                 },
                 {
                    extend: 'pdfHtml5',
                     exportOptions: {
-                    columns: [ 0,1,2,3, 4,5,7,8,9,10,11,12,13,14,15,16,17,18,19 ]
+                    columns: [ 0,1,2,3, 4,5,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36 ]
                     }
                 },
                 ],
@@ -172,6 +189,8 @@
                     {data: 'company_email_id', name: 'company_email_id',defaultContent: ''},
                     {data: 'company_website', name: 'company_website',defaultContent: ''},
                     {data: 'corporate_details', name: 'corporate_details',defaultContent: ''},
+                    {data: 'incorporated', name: 'incorporated',defaultContent: ''},
+                    {data: 'incorporated_year', name: 'incorporated_year',defaultContent: ''},
                     {data: 'employee_count', name: 'employee_count',defaultContent: ''},
                     {data: 'fax_detail', name: 'fax_detail',defaultContent: ''},
                     {data: 'financial_report', name: 'financial_report',defaultContent: ''},
@@ -189,7 +208,21 @@
                             return result;
                         }
                     },
-
+                    {data: "company_accounting.currency", defaultContent: ''},
+                    {data: "company_accounting.financial_strength_rating", defaultContent: ''},
+                    {data: "company_accounting.gross_written_premium", defaultContent: ''},
+                    {data: "company_accounting.gross_written_premium_year", defaultContent: ''},
+                    {data: "company_accounting.issue_credit_rating", defaultContent: ''},
+                    {data: "company_accounting.moody_rating", defaultContent: ''},
+                    {data: "company_accounting.other_rating", defaultContent: ''},
+                    {data: "company_accounting.public_listed_company", defaultContent: ''},
+                    {data: "company_accounting.regulatory_authority", defaultContent: ''},
+                    {data: "company_accounting.s_andprating", defaultContent: ''},
+                    {data: "market_share.authorized_shares", defaultContent: ''},
+                    {data: "market_share.issued_shares", defaultContent: ''},
+                    {data: "market_share.no_of_shares", defaultContent: ''},
+                    {data: "market_share.paid_up_shares", defaultContent: ''},
+                    {data: "market_share.total_share", defaultContent: ''},
                 ],
                 language: {
                     searchPlaceholder: "Search Companies",
@@ -205,3 +238,5 @@
         });
     </script>
 @endsection
+        git add . app/Http/Controllers/HomeController.php
+        git add . resources/views/insurance_companies/index.blade.php
