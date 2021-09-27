@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Imports\CompaniesImport;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
@@ -14,6 +15,7 @@ use App\Models\Investment;
 use App\Models\Subsidiary;
 use App\Models\MarketShare;
 use App\Models\Shareholder;
+use Maatwebsite\Excel\Facades\Excel;
 
 class CompanyDetailsController extends Controller
 {
@@ -28,9 +30,20 @@ class CompanyDetailsController extends Controller
     }
 
 
+    public function importView()
+    {
+        return view('insurance_companies.import-excel');
+    }
+
+    public function import(Request $request)
+    {
+        Excel::import(new CompaniesImport(), request()->file('file'));
+        dd($request->all());
+    }
+
     public function index()
     {
-        
+
     }
 
     /**
@@ -52,7 +65,7 @@ class CompanyDetailsController extends Controller
     public function store(Request $request)
     {
         //
-       
+
         if($request->input('currstep')=="detail")//company details
         {
             //validate input fields
@@ -76,16 +89,16 @@ class CompanyDetailsController extends Controller
             ]);
              try
              {
-                
+
                    $input['created_by']=Auth::user()->name;
                    $input['last_modified_date']=date('Y-m-d');
                    $company_details_model=CompanyDetail::create($input);
                    $company_id=$company_details_model->id;
                    toastr()->success('Company details saved successfully!');
                    return back()->with('company_id',$company_id)->with('step',$request->nextstep);
-               
-               
-              
+
+
+
             }
             catch (\Exception $exception){
                 toastr()->error('Something went wrong, try again');
@@ -96,7 +109,7 @@ class CompanyDetailsController extends Controller
         elseif($request->input('currstep')=="director")//director form submit
         {
              try
-             { 
+             {
                     for($i=0;$i<count($request->name);$i++)
                     {
                       $boardofdirectormodel = new BoardOfDirector();
@@ -104,7 +117,7 @@ class CompanyDetailsController extends Controller
                       $boardofdirectormodel->name=$request->name[$i];
                       $boardofdirectormodel->designation=$request->designation[$i];
                       $boardofdirectormodel->company_id=$request->company_id;
-                      $boardofdirectormodel->save(); 
+                      $boardofdirectormodel->save();
                     }
                     toastr()->success('Board Of director saved successfully!');
                      return back()->with('company_id',$request->company_id)->with('step',$request->nextstep);
@@ -116,7 +129,7 @@ class CompanyDetailsController extends Controller
                 return back()->with('step',$request->currstep)->with('company_id',$request->company_id);
             }
         }
-        //accounting 
+        //accounting
         elseif($request->input('currstep')=="accounting")//accounting form submit
         {
           try
@@ -126,7 +139,7 @@ class CompanyDetailsController extends Controller
               $companyaccountingmodel = CompanyAccounting::create($input);
               $company_accountid=$companyaccountingmodel->id;
               toastr()->success('Compayny Accounting saved successfully!');
-              return back()->with('company_id',$request->company_id)->with('caccountid',$company_accountid)->with('step',$request->nextstep);   
+              return back()->with('company_id',$request->company_id)->with('caccountid',$company_accountid)->with('step',$request->nextstep);
           }
           catch (\Exception $exception)
             {
@@ -254,7 +267,7 @@ class CompanyDetailsController extends Controller
                 return back()->with('step',$request->currstep);
             }
         }
-        
+
     }
 
     /**
@@ -276,7 +289,7 @@ class CompanyDetailsController extends Controller
      */
     public function edit($id)
     {
-         try 
+         try
          {
             $company_details=CompanyDetail::find($id);
             $edit="edit";
@@ -330,7 +343,7 @@ class CompanyDetailsController extends Controller
                    //get board of director record
                    $data = DB::table('board_of_director')->where('company_id',$company_id)->get();
                    toastr()->success('Company details saved successfully!');
-                   return back()->with('company_id',$company_id)->with('step',$request->nextstep)->with('b_o_director',$data); 
+                   return back()->with('company_id',$company_id)->with('step',$request->nextstep)->with('b_o_director',$data);
             }
             catch (\Exception $exception){
                 toastr()->error('Something went wrong, try again');
@@ -342,7 +355,7 @@ class CompanyDetailsController extends Controller
         {
             //dd($input);
              try
-             { 
+             {
                     for($i=0;$i<count($request->name);$i++)
                     {
                       $boardofdirectormodel = new BoardOfDirector();
@@ -350,7 +363,7 @@ class CompanyDetailsController extends Controller
                       $boardofdirectormodel->name=$request->name[$i];
                       $boardofdirectormodel->designation=$request->designation[$i];
                       $boardofdirectormodel->company_id=$request->company_id;
-                      $boardofdirectormodel->save(); 
+                      $boardofdirectormodel->save();
                     }
                     $data = DB::table('company_accounting')->where('company_id',$request->company_id)->first();
                     toastr()->success('Board Of director Updated successfully!');
@@ -363,7 +376,7 @@ class CompanyDetailsController extends Controller
                 return back()->with('step',$request->currstep)->with('company_id',$request->company_id);
             }
         }
-        //accounting 
+        //accounting
         elseif($request->input('currstep')=="accounting")//accounting form submit
         {
           try
@@ -382,7 +395,7 @@ class CompanyDetailsController extends Controller
               $company_accountid=$companyaccountingmodel->id;
               $data = DB::table('income_statement')->where('company_accounting_id',$company_accountid)->first();
               toastr()->success('Compayny Accounting Updated successfully!');
-              return back()->with('company_id',$request->company_id)->with('caccountid',$company_accountid)->with('step',$request->nextstep)->with('inc_st',$data);   
+              return back()->with('company_id',$request->company_id)->with('caccountid',$company_accountid)->with('step',$request->nextstep)->with('inc_st',$data);
           }
           catch (\Exception $exception)
             {
@@ -501,7 +514,7 @@ class CompanyDetailsController extends Controller
                     $MarketShareModel->paid_up_shares=$request->paid_up_share;
                     $MarketShareModel->total_share=$request->total_share;
                     $MarketShareModel->company_id=$request->company_id;
-                    $MarketShareModel->save(); 
+                    $MarketShareModel->save();
                   }
                    $MarketShare_id=$MarketShareModel->id;
                   $data=DB::table('market_share')->where('company_id',$request->company_id)->first();
@@ -532,7 +545,7 @@ class CompanyDetailsController extends Controller
                     $ShareholderModel->name=$request->name;
                     $ShareholderModel->share_percentage= $request->percentage;
                     $ShareholderModel->market_share_id=$request->market_share_id;
-                    
+
                }
                 toastr()->success('Record Updated successfully');
                         return redirect('/insurance-companies');

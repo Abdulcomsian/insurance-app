@@ -75,3 +75,7 @@ Route::group(['middleware' => ['web', 'activity']], function () {
 });
 
 
+/*Excel import export*/
+Route::get('export', 'CompanyDetailsController@export')->name('export');
+Route::get('import-from-excel', 'CompanyDetailsController@importView');
+Route::post('import', 'CompanyDetailsController@import')->name('import');
