@@ -236,9 +236,12 @@
                         data: 'market_share.shareholders',
                         render: function(data) {
                             let result = '';
-                            data.map(item =>{
-                                result += item.name +' ('+ item.share_percentage +'%), '  ;
-                            })
+                            console.log(data);
+                            if (data != undefined){
+                                data.map(item =>{
+                                    result += item.name +' ('+ item.share_percentage +'%), '  ;
+                                })
+                            }
                             return result;
                         }
                     },
@@ -257,5 +260,3 @@
         });
     </script>
 @endsection
-        git add . app/Http/Controllers/HomeController.php
-        git add . resources/views/insurance_companies/index.blade.php

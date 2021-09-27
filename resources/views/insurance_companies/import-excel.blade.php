@@ -14,6 +14,9 @@
             <form action="{{ route('import') }}" method="POST" enctype="multipart/form-data">
                 {{ csrf_field() }}
                 <input type="file" name="file" class="form-control" required>
+                @if($errors->has('file'))
+                    <div class="error text-danger">{{ $errors->first('file') }}</div>
+                @endif
                 <br>
                 <button class="btn btn-success">Import Bulk Data</button>
             </form>

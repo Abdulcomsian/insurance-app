@@ -16,6 +16,8 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::group(['middleware' => ['web', 'activity']], function () {
+    Route::get('/', 'HomeController@index')->name('home');
+
     Route::get('sign-in', function () {return view('sign-in');})->name('sign-in');
     Route::get('sanction_request', function () {return view('sanction_request.sanction_request');})->name('sanction_request');
 
@@ -27,7 +29,6 @@ Route::group(['middleware' => ['web', 'activity']], function () {
 
     //By Assad Yaqoob
     //Home
-    Route::get('/', 'HomeController@index')->name('home');
     //Customer History
     Route::match(['get', 'post'], 'customers-history', 'HomeController@customerHistory')->name('customers.history');
     Route::get('customer-edit/{id}', 'HomeController@customerEdit')->name('customers.edit');
