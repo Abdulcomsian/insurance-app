@@ -19,9 +19,9 @@ class CreateBoardOfDirectorTable extends Migration
             $table->dateTime('created_date', 6)->nullable();
             $table->string('last_modified_by', 50)->nullable();
             $table->dateTime('last_modified_date', 6)->nullable();
-            $table->string('designation')->nullable();
+            $table->longText('designation')->nullable();
             $table->longText('image_url')->nullable();
-            $table->string('name')->nullable();
+            $table->longText('name')->nullable();
             $table->bigInteger('company_id')->unsigned();
             $table->foreign('company_id')->references('id')->on('company_detail');
             $table->timestamps();

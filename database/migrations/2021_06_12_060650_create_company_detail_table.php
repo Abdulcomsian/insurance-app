@@ -28,7 +28,7 @@ class CreateCompanyDetailTable extends Migration
             $table->string('contact_number')->nullable();
             $table->string('corporate_details')->nullable();
             $table->string('country')->nullable();
-            $table->bigInteger('employee_count');
+            $table->string('employee_count')->default(0);
             $table->string('fax_detail')->nullable();
             $table->binary('financial_report')->nullable();
             $table->longText('image_url')->nullable();

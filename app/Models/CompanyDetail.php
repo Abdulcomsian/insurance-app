@@ -52,7 +52,6 @@ class CompanyDetail extends Model
 		'created_date',
 		'last_modified_date'
 	];
-
 	protected $fillable = [
 		'created_by',
 		'created_date',
