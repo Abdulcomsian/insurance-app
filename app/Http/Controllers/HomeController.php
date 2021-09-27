@@ -274,44 +274,7 @@ class HomeController extends Controller
 
     public function indexWithDatatable(Request $request)
     {
-//        $data = CompanyDetail::with(['company_accounting'=>function($company_accounting){
-//            $company_accounting->select(
-//            "id",
-//            "currency",
-//            "financial_strength_rating",
-//            "gross_written_premium",
-//            "gross_written_premium_year",
-//            "issue_credit_rating",
-//            "moody_rating",
-//            "other_rating",
-//            "public_listed_company",
-//            "regulatory_authority",
-//            "s_andprating",
-//            "company_id"
-//        );},'market_share'=> function($marked_share){
-//            $marked_share->select(
-//                "id",
-//                "authorized_shares",
-//                "issued_shares",
-//                "no_of_shares",
-//                "paid_up_shares",
-//                "total_share",
-//                "company_id"
-//                )->with(['shareholders'=>function($shareholder){
-//                    $shareholder->select(
-//                        "id",
-//                        "name",
-//                        "share_percentage",
-//                        "market_share_id");}]);
-//        },'board_of_directors' => function($bod){
-//            $bod->select('id','company_id','name','designation');
-//        }])
-//            ->orderBy('company_name','asc')
-//            ->limit(5)
-//            ->get();
-//        dd($data);
         if ($request->ajax()) {
-            ini_set('memory_limit',-1);
             $data = CompanyDetail::with(['company_accounting'=>function($company_accounting){
                 $company_accounting->select(
                     "id",

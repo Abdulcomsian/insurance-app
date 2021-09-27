@@ -37,8 +37,17 @@ class CompanyDetailsController extends Controller
 
     public function import(Request $request)
     {
-        Excel::import(new CompaniesImport(), request()->file('file'));
-        dd($request->all());
+        $request->validate([
+            'file' => ['required','mimes:xls,xlsx'],
+        ]);
+        try {
+            Excel::import(new CompaniesImport(), request()->file('file'));
+            toastSuccess('Successfully imported excel file to database');
+            return redirect()->route('insurance_companies.index');
+
+        }catch (\Exception $exception){
+            return $exception->getMessage();
+        }
     }
 
     public function index()

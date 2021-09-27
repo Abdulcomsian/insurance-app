@@ -11,7 +11,7 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class Shareholder
- * 
+ *
  * @property int $id
  * @property string $created_by
  * @property Carbon|null $created_date
@@ -20,7 +20,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property string|null $name
  * @property float|null $share_percentage
  * @property int|null $market_share_id
- * 
+ *
  * @property MarketShare|null $market_share
  *
  * @package App\Models
@@ -31,7 +31,6 @@ class Shareholder extends Model
 	protected $casts = [
 		'id' => 'int',
 		'share_percentage' => 'float',
-		'market_share_id' => 'int'
 	];
 
 	protected $dates = [
