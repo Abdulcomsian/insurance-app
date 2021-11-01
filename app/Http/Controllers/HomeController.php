@@ -332,7 +332,7 @@ class HomeController extends Controller
                     $btn = '<a href="'.route('company-details.edit',''.$row->id.'').'" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
                                                 <!--begin::Svg Icon | path: icons/duotone/Communication/Write.svg-->
                                                 <span class="svg-icon svg-icon-3">
-                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                                                                    <svg xmlns="we" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
                                                                         <path d="M12.2674799,18.2323597 L12.0084872,5.45852451 C12.0004303,5.06114792 12.1504154,4.6768183 12.4255037,4.38993949 L15.0030167,1.70195304 L17.5910752,4.40093695 C17.8599071,4.6812911 18.0095067,5.05499603 18.0083938,5.44341307 L17.9718262,18.2062508 C17.9694575,19.0329966 17.2985816,19.701953 16.4718324,19.701953 L13.7671717,19.701953 C12.9505952,19.701953 12.2840328,19.0487684 12.2674799,18.2323597 Z" fill="#000000" fill-rule="nonzero" transform="translate(14.701953, 10.701953) rotate(-135.000000) translate(-14.701953, -10.701953)" />
                                                                         <path d="M12.9,2 C13.4522847,2 13.9,2.44771525 13.9,3 C13.9,3.55228475 13.4522847,4 12.9,4 L6,4 C4.8954305,4 4,4.8954305 4,6 L4,18 C4,19.1045695 4.8954305,20 6,20 L18,20 C19.1045695,20 20,19.1045695 20,18 L20,13 C20,12.4477153 20.4477153,12 21,12 C21.5522847,12 22,12.4477153 22,13 L22,18 C22,20.209139 20.209139,22 18,22 L6,22 C3.790861,22 2,20.209139 2,18 L2,6 C2,3.790861 3.790861,2 6,2 L12.9,2 Z" fill="#000000" fill-rule="nonzero" opacity="0.3" />
                                                                     </svg>
@@ -655,6 +655,624 @@ class HomeController extends Controller
             return back();
         }
     }
+    private function curlRequest($name){
+        $curl = curl_init();
+
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => 'https://api.sanctionssearch.com/v2/json/reply/AddSearch',
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => '',
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => 'POST',
+            CURLOPT_POSTFIELDS =>'{
+                "request": {
+                    "Name": '. $name .',
+                    "Type": "entity",
+                    "SelectedLists" : [
+                            "ALL"
+                        ]
+                },
+                "authentication": {
+                    "apiUserId": "api_malikasif",
+                    "apiUserKey": "Bw4XvkW2JCdFyhXQvMZwrIGVb4kMNspZbkS6NpPhoko5Q6kEbvvuQMa31hWCakoqnnDnz2cf8ShguLffTQKr86izkZfGDmge78RDB7ejspw9E4IocRTtJ7tsfedKWGMVLdjx5MNWLB0RIj6qr1EVCWEaOyxx4ExWNKxBUkuAd8Si8MT6jWs6b1sYJjSFoq4hdmd9WDGgGdRFevdcPCoglBUWsJ2LCYmXdKeVIVjPqmz9jXTnfQ1VbX6MBr"
+                }
+            }',
+            CURLOPT_HTTPHEADER => array(
+                'Accept: application/json',
+                'Content-Type: application/json',
+                'Authorization: Basic Og=='
+            ),
+        ));
+
+//        $response = curl_exec($curl);
+//
+//        curl_close($curl);
+//        dump($response);
+//        dd(json_decode($response));
+
+        //Dummy pdf
+        $data = '{
+    "data": {
+        "searchRecord": {
+            "id": 0,
+            "searchType": "String",
+            "dateSearched": "\/Date(-62135596800000-0000)\/",
+            "dateUpdated": "\/Date(-62135596800000-0000)\/",
+            "dateArchived": "\/Date(-62135596800000-0000)\/",
+            "isArchived": false,
+            "numOfResults": 0,
+            "clientInResults": false,
+            "clientNotInResults": false,
+            "affectedByUpdate": false,
+            "searchCriteria": {
+                "name": "String",
+                "address": "String",
+                "country": "String",
+                "dateOfBirth": "String",
+                "nationality": "String",
+                "reference": "String"
+            },
+            "searchResults": {
+                "euResults": [
+                    {
+                        "resultStrength": 0,
+                        "resultSimilarity": 0,
+                        "resultResolved": false,
+                        "resultType": "String",
+                        "dateUpdated": "\/Date(-62135596800000-0000)\/",
+                        "addresses": [
+                            {
+                                "street": "String",
+                                "city": "String",
+                                "country": "String",
+                                "postCode": "String",
+                                "other": "String"
+                            }
+                        ],
+                        "births": [
+                            {
+                                "date": "String",
+                                "place": "String",
+                                "country": "String"
+                            }
+                        ],
+                        "citizenships": [
+                            {
+                                "country": "String"
+                            }
+                        ],
+                        "names": [
+                            {
+                                "fullName": "String",
+                                "gender": "String"
+                            }
+                        ],
+                        "passports": [
+                            {
+                                "number": "String",
+                                "country": "String"
+                            }
+                        ]
+                    }
+                ],
+                "hmtResults": [
+                    {
+                        "resultStrength": 0,
+                        "resultSimilarity": 0,
+                        "resultResolved": false,
+                        "resultType": "String",
+                        "dateListed": "\/Date(-62135596800000-0000)\/",
+                        "dateUpdated": "\/Date(-62135596800000-0000)\/",
+                        "name1": "String",
+                        "name2": "String",
+                        "name3": "String",
+                        "name4": "String",
+                        "name5": "String",
+                        "name6": "String",
+                        "dateOfBirth": "String",
+                        "countryOfBirth": "String",
+                        "nationality": "String",
+                        "address1": "String",
+                        "address2": "String",
+                        "address3": "String",
+                        "address4": "String",
+                        "address5": "String",
+                        "address6": "String",
+                        "postCode": "String",
+                        "country": "String"
+                    }
+                ],
+                "hmtUkraineResults": [
+                    {
+                        "resultStrength": 0,
+                        "resultSimilarity": 0,
+                        "resultResolved": false,
+                        "resultType": "String",
+                        "dateListed": "\/Date(-62135596800000-0000)\/",
+                        "dateUpdated": "\/Date(-62135596800000-0000)\/",
+                        "name1": "String",
+                        "name2": "String",
+                        "name3": "String",
+                        "name4": "String",
+                        "name5": "String",
+                        "name6": "String",
+                        "dateOfBirth": "String",
+                        "countryOfBirth": "String",
+                        "nationality": "String",
+                        "address1": "String",
+                        "address2": "String",
+                        "address3": "String",
+                        "address4": "String",
+                        "address5": "String",
+                        "address6": "String",
+                        "postCode": "String",
+                        "country": "String"
+                    }
+                ],
+                "ofacResults": [
+                    {
+                        "resultStrength": 0,
+                        "resultSimilarity": 0,
+                        "resultResolved": false,
+                        "resultType": "String",
+                        "dateUpdated": "\/Date(-62135596800000-0000)\/",
+                        "firstName": "String",
+                        "lastName": "String",
+                        "addresses": [
+                            {
+                                "address1": "String",
+                                "address2": "String",
+                                "address3": "String",
+                                "city": "String",
+                                "state": "String",
+                                "postCode": "String",
+                                "country": "String"
+                            }
+                        ],
+                        "akas": [
+                            {
+                                "firstName": "String",
+                                "lastName": "String",
+                                "type": "String",
+                                "strength": "String"
+                            }
+                        ],
+                        "dateOfBirths": [
+                            {
+                                "dateOfBirth": "String"
+                            }
+                        ],
+                        "nationalities": [
+                            {
+                                "country": "String"
+                            }
+                        ],
+                        "placeOfBirths": [
+                            {
+                                "placeOfBirth": "String"
+                            }
+                        ]
+                    }
+                ],
+                "ofacConsolidatedResults": [
+                    {
+                        "resultStrength": 0,
+                        "resultSimilarity": 0,
+                        "resultResolved": false,
+                        "resultType": "String",
+                        "dateUpdated": "\/Date(-62135596800000-0000)\/",
+                        "firstName": "String",
+                        "lastName": "String",
+                        "addresses": [
+                            {
+                                "address1": "String",
+                                "address2": "String",
+                                "address3": "String",
+                                "city": "String",
+                                "state": "String",
+                                "postCode": "String",
+                                "country": "String"
+                            }
+                        ],
+                        "akas": [
+                            {
+                                "firstName": "String",
+                                "lastName": "String",
+                                "type": "String",
+                                "strength": "String"
+                            }
+                        ],
+                        "dateOfBirths": [
+                            {
+                                "dateOfBirth": "String"
+                            }
+                        ],
+                        "nationalities": [
+                            {
+                                "country": "String"
+                            }
+                        ],
+                        "placeOfBirths": [
+                            {
+                                "placeOfBirth": "String"
+                            }
+                        ]
+                    }
+                ],
+                "dfatResults": [
+                    {
+                        "resultStrength": 0,
+                        "resultSimilarity": 0,
+                        "resultResolved": false,
+                        "resultType": "String",
+                        "dateUpdated": "\/Date(-62135596800000-0000)\/",
+                        "fullName": "String",
+                        "address": "String",
+                        "dateOfBirth": "String",
+                        "placeOfBirth": "String",
+                        "nationality": "String"
+                    }
+                ],
+                "osfiResults": [
+                    {
+                        "resultStrength": 0,
+                        "resultSimilarity": 0,
+                        "resultResolved": false,
+                        "resultType": "String",
+                        "dateUpdated": "\/Date(-62135596800000-0000)\/",
+                        "fullName": "String",
+                        "address": "String",
+                        "dateOfBirth": "String",
+                        "placeOfBirth": "String",
+                        "nationality": "String"
+                    }
+                ],
+                "canadianJusticeResults": [
+                    {
+                        "resultStrength": 0,
+                        "resultSimilarity": 0,
+                        "resultResolved": false,
+                        "resultType": "String",
+                        "dateUpdated": "\/Date(-62135596800000-0000)\/",
+                        "name": "String",
+                        "dateOfBirth": "String",
+                        "country": "String",
+                        "refId": 0
+                    }
+                ],
+                "canadianSemaResults": [
+                    {
+                        "resultStrength": 0,
+                        "resultSimilarity": 0,
+                        "resultResolved": false,
+                        "resultType": "String",
+                        "dateUpdated": "\/Date(-62135596800000-0000)\/",
+                        "name": "String",
+                        "dateOfBirth": "String",
+                        "country": "String",
+                        "schedule": "String",
+                        "item": "String"
+                    }
+                ],
+                "swissSecoResults": [
+                    {
+                        "searchResultId": 0,
+                        "resultStrength": 0,
+                        "resultSimilarity": 0,
+                        "resultResolved": false,
+                        "resultType": "String",
+                        "dateUpdated": "\/Date(-62135596800000-0000)\/",
+                        "sanctionsListId": "String",
+                        "sanctionsListName": "String",
+                        "addresses": [
+                            {
+                                "searchResultAddressId": 0,
+                                "type": "String",
+                                "address1": "String",
+                                "address2": "String",
+                                "address3": "String",
+                                "city": "String",
+                                "county": "String",
+                                "postCode": "String",
+                                "country": "String"
+                            }
+                        ],
+                        "datesOfBirth": [
+                            {
+                                "searchResultDateOfBirthId": 0,
+                                "dateOfBirth": "String",
+                                "year": 0,
+                                "month": 0,
+                                "day": 0,
+                                "type": "String"
+                            }
+                        ],
+                        "names": [
+                            {
+                                "searchResultNameId": 0,
+                                "type": "String",
+                                "title": "String",
+                                "fullName": "String",
+                                "resultSimilarity": 0
+                            }
+                        ],
+                        "nationalities": [
+                            {
+                                "searchResultNationalityId": 0,
+                                "nationality": "String"
+                            }
+                        ],
+                        "placesOfBirth": [
+                            {
+                                "searchResultPlaceOfBirthId": 0,
+                                "placeOfBirth": "String",
+                                "countryOfBirth": "String"
+                            }
+                        ],
+                        "remarks": [
+                            {
+                                "searchResultRemarkId": 0,
+                                "name": "String",
+                                "description": "String"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "listSearchResults": [
+                {
+                    "searchResultId": 0,
+                    "resultStrength": 0,
+                    "resultSimilarity": 0,
+                    "resultResolved": false,
+                    "resultType": "String",
+                    "dateUpdated": "\/Date(-62135596800000-0000)\/",
+                    "sanctionsListId": "String",
+                    "sanctionsListName": "String",
+                    "addresses": [
+                        {
+                            "searchResultAddressId": 0,
+                            "type": "String",
+                            "address1": "String",
+                            "address2": "String",
+                            "address3": "String",
+                            "city": "String",
+                            "county": "String",
+                            "postCode": "String",
+                            "country": "String"
+                        }
+                    ],
+                    "datesOfBirth": [
+                        {
+                            "searchResultDateOfBirthId": 0,
+                            "dateOfBirth": "String",
+                            "year": 0,
+                            "month": 0,
+                            "day": 0,
+                            "type": "String"
+                        }
+                    ],
+                    "names": [
+                        {
+                            "searchResultNameId": 0,
+                            "type": "String",
+                            "title": "String",
+                            "fullName": "String",
+                            "resultSimilarity": 0
+                        }
+                    ],
+                    "nationalities": [
+                        {
+                            "searchResultNationalityId": 0,
+                            "nationality": "String"
+                        }
+                    ],
+                    "placesOfBirth": [
+                        {
+                            "searchResultPlaceOfBirthId": 0,
+                            "placeOfBirth": "String",
+                            "countryOfBirth": "String"
+                        }
+                    ],
+                    "remarks": [
+                        {
+                            "searchResultRemarkId": 0,
+                            "name": "String",
+                            "description": "String"
+                        }
+                    ]
+                }
+            ]
+        },
+        "includesPepSearchRecord": false,
+        "pepSearchRecord": {
+            "id": 0,
+            "searchType": "String",
+            "dateSearched": "\/Date(-62135596800000-0000)\/",
+            "dateUpdated": "\/Date(-62135596800000-0000)\/",
+            "dateRenewal": "\/Date(-62135596800000-0000)\/",
+            "dateArchived": "\/Date(-62135596800000-0000)\/",
+            "isArchived": false,
+            "numOfResults": 0,
+            "clientInResults": false,
+            "clientNotInResults": false,
+            "affectedByUpdate": false,
+            "isDayOneSearch": false,
+            "searchCriteria": {
+                "name": "String",
+                "address": "String",
+                "country": "String",
+                "dateOfBirth": "String",
+                "nationality": "String",
+                "reference": "String"
+            },
+            "searchResults": {
+                "results": [
+                    {
+                        "resultSimilarity": 0,
+                        "resultResolved": false,
+                        "dateLastUpdated": "\/Date(-62135596800000-0000)\/",
+                        "resultIsClient": false,
+                        "id": 0,
+                        "type": "String",
+                        "title": "String",
+                        "forename": "String",
+                        "middlename": "String",
+                        "surname": "String",
+                        "softDelete": false,
+                        "dateOfSoftDelete": "\/Date(-62135596800000-0000)\/",
+                        "dateOfCapture": "\/Date(-62135596800000-0000)\/",
+                        "dateOfBirth": "\/Date(-62135596800000-0000)\/",
+                        "dateOfDeath": "\/Date(-62135596800000-0000)\/",
+                        "yearOfBirth": 0,
+                        "yearOfDeath": 0,
+                        "gender": "String",
+                        "homeTelephone": "String",
+                        "businessTelephone": "String",
+                        "mobileTelephone": "String",
+                        "fax": "String",
+                        "email": "String",
+                        "nationality": "String",
+                        "source": "String",
+                        "category": "String",
+                        "picture": "String",
+                        "alternateTitle": "String",
+                        "businessName": "String",
+                        "description": "String",
+                        "telephone": "String",
+                        "website": "String",
+                        "pepTier": 0,
+                        "addresses": [
+                            {
+                                "addressLine1": "String",
+                                "addressLine2": "String",
+                                "addressLine3": "String",
+                                "addressLine4": "String",
+                                "town": "String",
+                                "county": "String",
+                                "postCode": "String",
+                                "country": "String",
+                                "isoCountry": "String",
+                                "softDelete": false,
+                                "dateLastUpdated": "\/Date(-62135596800000-0000)\/"
+                            }
+                        ],
+                        "aliases": [
+                            {
+                                "forename": "String",
+                                "middleName": "String",
+                                "surname": "String",
+                                "softDelete": false,
+                                "dateOfSoftDelete": "\/Date(-62135596800000-0000)\/",
+                                "dateLastUpdated": "\/Date(-62135596800000-0000)\/",
+                                "title": "String",
+                                "alternateTitle": "String",
+                                "businessName": "String"
+                            }
+                        ],
+                        "articles": [
+                            {
+                                "url": "String",
+                                "originalUrl": "String",
+                                "source": "String",
+                                "dateOfCapture": "\/Date(-62135596800000-0000)\/",
+                                "dateLastUpdated": "\/Date(-62135596800000-0000)\/",
+                                "snippets": [
+                                    {
+                                        "title": "String",
+                                        "text": "String",
+                                        "adverseTerms": "String"
+                                    }
+                                ]
+                            }
+                        ],
+                        "associations": [
+                            {
+                                "linkDescription": "String",
+                                "softDelete": false,
+                                "dateLastUpdated": "\/Date(-62135596800000-0000)\/",
+                                "fullName": "String"
+                            }
+                        ],
+                        "businessAssociations": [
+                            {
+                                "linkDescription": "String",
+                                "softDelete": false,
+                                "dateLastUpdated": "\/Date(-62135596800000-0000)\/",
+                                "businessName": "String"
+                            }
+                        ],
+                        "notes": [
+                            {
+                                "source": "String",
+                                "notes": "String",
+                                "softDelete": false,
+                                "dateLastUpdated": "\/Date(-62135596800000-0000)\/"
+                            }
+                        ],
+                        "politicalPositions": [
+                            {
+                                "description": "String",
+                                "from": "String",
+                                "to": "String",
+                                "country": "String",
+                                "softDelete": false,
+                                "dateLastUpdated": "\/Date(-62135596800000-0000)\/"
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "responseStatus": {
+            "errorCode": "String",
+            "message": "String",
+            "stackTrace": "String",
+            "errors": [
+                {
+                    "errorCode": "String",
+                    "fieldName": "String",
+                    "message": "String",
+                    "meta": {
+                        "String": "String"
+                    }
+                }
+            ],
+            "meta": {
+                "String": "String"
+            }
+        }
+    }
+}';
+        $result = json_decode($data);
+        dd($result);
+    }
+
+    public function getSanctionResult($id){
+        self::curlRequest('Union');
+        try {
+            $sanction_request = DB::table('req_for_sanc_status')
+                ->where('req_for_sanc_status.id','=',decrypt($id))
+                ->join('company_detail','req_for_sanc_status.company_id','=','company_detail.id')
+                ->select(
+                    'req_for_sanc_status.*',
+                    'company_detail.company_name as company_name')
+                ->orderBy('req_for_sanc_status.id','desc')
+                ->first();
+
+            dd($sanction_request);
+            $sanc_save_attachment=SancImages::where('sanc_req_id',decrypt($id))->get();
+            return view('sanction_request.show',compact('sanction_request','sanc_save_attachment'));
+
+        }catch (\Exception $exception){
+            toastr()->error('Something went wrong, try again');
+            return back();
+        }
+    }
+
 
     //save sacnctum images
     public function sanc_save_attachment(Request $request)
@@ -665,7 +1283,7 @@ class HomeController extends Controller
             if($files=$request->file('images'))
             {
                 foreach($files as $file){
-                    $name=$file->getClientOriginalName();
+                    $name=time().'_'.$file->getClientOriginalName();
                     $file->move('images',$name);
                     $images[]=$name;
                     /*Insert your data*/
@@ -693,7 +1311,6 @@ class HomeController extends Controller
                 return back();
       }
       catch (\Exception $exception){
-          dd($exception->getMessage());
             toastr()->error('Something went wrong, try again');
             return back();
         }
@@ -708,7 +1325,7 @@ class HomeController extends Controller
             if($files=$request->file('images'))
             {
                 foreach($files as $file){
-                    $name=$file->getClientOriginalName();
+                    $name=time() .'_'.$file->getClientOriginalName();
                     $file->move('images',$name);
                     $images[]=$name;
                     /*Insert your data*/
