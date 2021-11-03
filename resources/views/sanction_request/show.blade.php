@@ -68,19 +68,25 @@
 
                             @if($sanction_request->status == \App\Utils\SanctionRequestStatus::Completed)
                                 <p><strong>Status: </strong><span class="badge badge-success">{{$sanction_request->status ?: '-'}}</span> <br></p>
+                            @elseif($sanction_request->status == \App\Utils\SanctionRequestStatus::AllResultAttached)
+                                <p><strong>Status: </strong><span class="badge badge-success">{{$sanction_request->status ?: '-'}}</span> <br></p>
                             @else
                                 <p><strong>Status: </strong><span class="badge badge-danger">{{$sanction_request->status ?: '-'}}</span> <br></p>
                             @endif
+
                             <p><strong>Request Date: </strong>{{$sanction_request->created_at ?: '-'}} <br></p>
                             @isset($sanction_request->result_date)
                                 <p><strong>Released Date: </strong>{{$sanction_request->result_date ?: '-'}} <br></p>
                             @endisset
+
                             @isset($sanction_request->cancel_date)
                                 <p><strong>Cancelled Date: </strong>{{$sanction_request->cancel_date ?: '-'}} <br></p>
                             @endisset
+
                             <p><strong>Credits Consumed: </strong>{{$sanction_request->sanctions ?: '-'}} <br></p>
                             <div class="panel-heading">Comments</div>
                             <p><strong>{{$sanction_request->user_name}} </strong><br>{{$sanction_request->comments ?: 'No Comments'}}<br></p>
+
                             @if($sanction_request->status=="Pending")
                             <form style="float:right" id="cancel-request-form" action="{{route('cancel-request')}}" method="post">
                                 @csrf
@@ -94,7 +100,6 @@
                                  <button type="submit" value="cancel-request-form" class="btn btn-danger deleterequest">Cancel Request</button>
                              </form>
                             @endif
-                            <a style="float:right" href="{{ route('sanction_result',encrypt($sanction_request->id)) }}" type="submit" class="me-2 btn btn-info ">Fetch Result</a>
 
                         </div>
                     </div>

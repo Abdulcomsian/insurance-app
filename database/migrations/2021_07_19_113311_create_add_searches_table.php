@@ -22,6 +22,7 @@ class CreateAddSearchesTable extends Migration
 
             $table->string("name")->nullable();
             $table->string("searchType")->nullable();
+            $table->string("searchTypeId")->nullable();
             $table->string("isArchived")->nullable();
             $table->string("numOfResults")->nullable();
             $table->string("clientInResults")->nullable();
@@ -39,7 +40,7 @@ class CreateAddSearchesTable extends Migration
 
             //Using this for DeleteSearch api method
             $table->string('deleteSearchSuccess')->nullable();
-            $table->string('djson_eleteSearchResponseStatusMessage')->nullable();
+            $table->string('deleteSearchResponseStatusMessage')->nullable();
             $table->timestamp('deleteSearchDate')->nullable();
 
 

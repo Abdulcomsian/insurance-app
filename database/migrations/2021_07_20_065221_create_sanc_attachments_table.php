@@ -17,14 +17,20 @@ class CreateSancAttachmentsTable extends Migration
             $table->id();
             $table->string("name")->nullable();
             $table->string("type")->nullable();
+            $table->string("typeId")->nullable();
             $table->boolean("isReady")->nullable();
             $table->string('file',250)->nullable();
             $table->timestamp("dateCreated")->nullable();
             $table->timestamp("dateExpires")->nullable();
-            $table->string("pdfResponseStatusMessage")->nullable();
+            $table->string("getPdfResponseStatusMessage")->nullable();
 
-            $table->bigInteger('sanctionsSearchId')->nullable();
-            $table->foreign('sanctionsSearchId')->references('id')->on('add_searches');
+            $table->bigInteger('documentId')->unsigned()->nullable();
+
+            $table->bigInteger('sanctionsSearchId')->unsigned()->nullable();
+            $table->foreign('sanctionsSearchId')->references('addSearchId')->on('add_searches');
+
+            $table->bigInteger('add_search_id')->unsigned()->nullable();
+            $table->foreign('add_search_id')->references('id')->on('add_searches');
 
             $table->bigInteger('sanc_req_id')->unsigned();
             $table->foreign('sanc_req_id')->references('id')->on('req_for_sanc_status');
