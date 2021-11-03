@@ -44,6 +44,6 @@ class GetPdfsCron extends Command
 
         //Running curl job for getting all pdfs from sanction api
         //Trait method
-//        self::GetPdfs();
+        self::GetPdfs();
     }
 }

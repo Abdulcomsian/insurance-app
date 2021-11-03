@@ -4,6 +4,10 @@ namespace App\Traits;
 
 
 use App\Models\AddSearch;
+use App\Models\ReqForSancStatus;
+use App\Models\SancImages;
+use App\Utils\SanctionRequestStatus;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Response;
 use phpDocumentor\Reflection\Types\Self_;
@@ -45,7 +49,7 @@ trait SanctionMethods {
             $result = json_decode($response);
             return $result;
         }catch (\Exception $exception){
-            Log::error('Error From Trait curlRequest()',$exception->getMessage());
+            Log::error('Error From Trait curlRequest()'.$exception->getMessage().'');
         }
     }
 
@@ -65,8 +69,9 @@ trait SanctionMethods {
                 $addSearch = AddSearch::create([
                     'addSearchId' => $searchRecord->searchRecord->id,
                     'sanc_req_id' => $data['sanctionRequestId'],
-                    'name' => $searchRecord->searchRecord->searchCriteria->name ?: null,
-                    'searchType' => $searchRecord->searchRecord->searchType ?: null,
+                    'name' => $searchRecord->searchRecord->searchCriteria->name,
+                    'searchType' => $searchRecord->searchRecord->searchType,
+                    'searchTypeId' => $data['searchTypeId'],
                     'isArchived' => $searchRecord->searchRecord->isArchived,
                     'numOfResults' => $searchRecord->searchRecord->numOfResults,
                     'clientInResults' => $searchRecord->searchRecord->clientInResults,
@@ -78,7 +83,7 @@ trait SanctionMethods {
                 self::SaveSearch($searchRecord->searchRecord->id);
             }
         }catch (\Exception $exception){
-            Log::error('Error From Trait AddSearch()',$exception->getMessage());
+            Log::error('Error From Trait AddSearch() '.$exception->getMessage().'');
         }
     }
 
@@ -99,7 +104,7 @@ trait SanctionMethods {
                     ]);
             }
         }catch (\Exception $exception){
-            Log::error('Error From Trait SaveSearch()',$exception->getMessage());
+            Log::error('Error From Trait SaveSearch()'.$exception->getMessage().'');
         }
     }
 
@@ -109,36 +114,88 @@ trait SanctionMethods {
                 "Id": '. $id .'
             }';
             $result = self::curlRequest('DeleteSearch',$request);
+            if ($result->data){
+                $deleteRecord = $result->data;
+                AddSearch::where('addSearchId',$id)
+                    ->update([
+                        'deleteSearchSuccess' => $deleteRecord->success ?: null,
+                        'deleteSearchResponseStatusMessage' => $deleteRecord->responseStatus->message ?: null,
+                        'deleteSearchDate' => now(),
+                    ]);
+                dump('Delete Updated');
+            }
+            return $result;
         }catch (\Exception $exception){
-            Log::error('Error From Trait DeleteSearch()',$exception->getMessage());
+            Log::error('Error From Trait DeleteSearch()'.$exception->getMessage().'');
         }
     }
 
     public function GetPdfs(){
+        dump('Here in getpdfs trait');
         try {
             $request = '{}';
             $result = self::curlRequest('GetPdfs',$request);
             if (count($result->data->documents) > 0 ){
                 foreach ($result->data->documents as $document){
-
                     if ($document->isReady == true){
 
                         $sanction = self::GetPdf($document->id);
                         if (!empty($sanction->data->document->documentBytes)) {
-                            $base64data = base64_decode($sanction->data->document->documentBytes, true);
-                            $result = file_put_contents(public_path('data/'.$sanction->data->document->fileName), $base64data);
+                            dump('Here in if document byte not empty');
+                            $pdfResult =  $sanction->data;
+
+                            $addSearch = AddSearch::where('addSearchId',$pdfResult->document->sanctionsSearchId)->first();
+                            $base64data = base64_decode($pdfResult->document->documentBytes, true);
+                            $filename = $addSearch->name.' - '.$pdfResult->document->fileName;
+                            $filePath = 'images/'. $filename;
+                            $publicPath = public_path($filePath);
+
+                            file_put_contents("{$publicPath}", $base64data);
+                            dump('File Saved');
+                            SancImages::create([
+                                'name' => $addSearch->name,
+                                'type' => $pdfResult->document->type,
+                                'typeId' => $addSearch->searchTypeId,
+                                'isReady' => $pdfResult->document->isReady,
+                                'file' => $filename,
+                                'getPdfResponseStatusMessage' => $pdfResult->responseStatus->message,
+                                'documentId' => $pdfResult->document->id,
+                                'sanctionsSearchId' => $pdfResult->document->sanctionsSearchId,
+                                'sanc_req_id' => $addSearch->sanc_req_id,
+                                'add_search_id' => $addSearch->id,
+                            ]);
+                            dump('SancImages Saved');
+                            $deleteResult = self::DeleteSearch( $pdfResult->document->sanctionsSearchId);
+                            self::updateRequestSanctionStaus($addSearch->sanc_req_id);
+                            dump('Stauts checked');
                         }
 
-                        dd('done pdf');
                     }
                 }
             }
+            dump('No document found');
 
         }catch (\Exception $exception){
-            Log::error('Error From Trait GetPdfs()',$exception->getMessage());
+            dd($exception->getMessage());
+            Log::error('Error From Trait GetPdfs()'.$exception->getMessage().'');
         }
     }
 
+    private function updateRequestSanctionStaus($id){
+        try {
+            $addSearches = AddSearch::where('sanc_req_id',$id)
+                ->where('deleteSearchSuccess',true)
+                ->count();
+            $requestSanction = ReqForSancStatus::where('id',$id)
+                ->first();
+            if ($addSearches == $requestSanction->sanctions){
+                $requestSanction->status = SanctionRequestStatus::AllResultAttached;
+                $requestSanction->save();
+            }
+        }catch (\Exception $exception){
+            dd($exception->getMessage());
+        }
+    }
     public function GetPdf($id){
         try {
             $request = '{
@@ -146,7 +203,7 @@ trait SanctionMethods {
             }';
             return self::curlRequest('GetPdf',$request);
         }catch (\Exception $exception){
-            Log::error('Error From Trait GetPdf()',$exception->getMessage());
+            Log::error('Error From Trait GetPdf() '.$exception->getMessage().'');
         }
     }
 }

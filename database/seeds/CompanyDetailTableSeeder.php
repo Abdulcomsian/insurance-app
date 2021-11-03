@@ -47,6 +47,7 @@ class CompanyDetailTableSeeder extends Seeder
                     'trade_name' => '',
                     'alternative_names' => NULL,
                     'status' => Status::Active,
+
                 ),
             1 =>
                 array (
@@ -74,6 +75,7 @@ class CompanyDetailTableSeeder extends Seeder
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             2 =>
                 array (
@@ -101,6 +103,7 @@ class CompanyDetailTableSeeder extends Seeder
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             3 =>
                 array (
@@ -128,6 +131,7 @@ class CompanyDetailTableSeeder extends Seeder
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             4 =>
                 array (
@@ -155,6 +159,7 @@ class CompanyDetailTableSeeder extends Seeder
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             5 =>
                 array (
@@ -184,6 +189,7 @@ Republic of Yemen',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             6 =>
                 array (
@@ -211,6 +217,7 @@ Republic of Yemen',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             7 =>
                 array (
@@ -239,6 +246,7 @@ Correspondent to Talal Abu Ghazaleh',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             8 =>
                 array (
@@ -266,6 +274,7 @@ Correspondent to Talal Abu Ghazaleh',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             9 =>
                 array (
@@ -293,6 +302,7 @@ Correspondent to Talal Abu Ghazaleh',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             10 =>
                 array (
@@ -321,6 +331,7 @@ Algeria St, Sana\'a - Yemen',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             11 =>
                 array (
@@ -350,6 +361,7 @@ Sana’a . Al-Zubairi St. CAC Bank Building - 7th Floor',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             12 =>
                 array (
@@ -377,6 +389,7 @@ Sana’a . Al-Zubairi St. CAC Bank Building - 7th Floor',
                     'toll_free_number' => '4442727',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             13 =>
                 array (
@@ -404,6 +417,7 @@ Sana’a . Al-Zubairi St. CAC Bank Building - 7th Floor',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             14 =>
                 array (
@@ -431,6 +445,7 @@ Sana’a . Al-Zubairi St. CAC Bank Building - 7th Floor',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             15 =>
                 array (
@@ -458,6 +473,7 @@ Sana’a . Al-Zubairi St. CAC Bank Building - 7th Floor',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             16 =>
                 array (
@@ -485,6 +501,7 @@ Sana’a . Al-Zubairi St. CAC Bank Building - 7th Floor',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             17 =>
                 array (
@@ -512,6 +529,7 @@ Sana’a . Al-Zubairi St. CAC Bank Building - 7th Floor',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             18 =>
                 array (
@@ -539,6 +557,7 @@ Sana’a . Al-Zubairi St. CAC Bank Building - 7th Floor',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             19 =>
                 array (
@@ -566,6 +585,7 @@ Sana’a . Al-Zubairi St. CAC Bank Building - 7th Floor',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             20 =>
                 array (
@@ -593,6 +613,7 @@ Sana’a . Al-Zubairi St. CAC Bank Building - 7th Floor',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             21 =>
                 array (
@@ -622,6 +643,7 @@ Maya Akar Center Block B Floor: 5
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             22 =>
                 array (
@@ -651,6 +673,7 @@ Levent 34330 Istanbul',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             23 =>
                 array (
@@ -678,6 +701,7 @@ Levent 34330 Istanbul',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             24 =>
                 array (
@@ -705,6 +729,7 @@ Levent 34330 Istanbul',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             25 =>
                 array (
@@ -732,6 +757,7 @@ Levent 34330 Istanbul',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             26 =>
                 array (
@@ -761,6 +787,7 @@ Levent 34330 Istanbul',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             27 =>
                 array (
@@ -788,6 +815,7 @@ Levent 34330 Istanbul',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             28 =>
                 array (
@@ -815,6 +843,7 @@ Levent 34330 Istanbul',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             29 =>
                 array (
@@ -842,6 +871,7 @@ Levent 34330 Istanbul',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             30 =>
                 array (
@@ -869,6 +899,7 @@ Levent 34330 Istanbul',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             31 =>
                 array (
@@ -896,6 +927,7 @@ Levent 34330 Istanbul',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             32 =>
                 array (
@@ -923,6 +955,7 @@ Levent 34330 Istanbul',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             33 =>
                 array (
@@ -950,6 +983,7 @@ Levent 34330 Istanbul',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             34 =>
                 array (
@@ -979,6 +1013,7 @@ TURKEY',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             35 =>
                 array (
@@ -1006,6 +1041,7 @@ TURKEY',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             36 =>
                 array (
@@ -1033,6 +1069,7 @@ TURKEY',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             37 =>
                 array (
@@ -1060,6 +1097,7 @@ TURKEY',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             38 =>
                 array (
@@ -1088,6 +1126,7 @@ TURKEY',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             39 =>
                 array (
@@ -1115,6 +1154,7 @@ TURKEY',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             40 =>
                 array (
@@ -1142,6 +1182,7 @@ TURKEY',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             41 =>
                 array (
@@ -1171,6 +1212,7 @@ Sarıyer / İstanbul',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             42 =>
                 array (
@@ -1199,6 +1241,7 @@ Tarabya 34457 Sarıyer/ İstanbul',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             43 =>
                 array (
@@ -1226,6 +1269,7 @@ Tarabya 34457 Sarıyer/ İstanbul',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             44 =>
                 array (
@@ -1253,6 +1297,7 @@ Tarabya 34457 Sarıyer/ İstanbul',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             45 =>
                 array (
@@ -1281,6 +1326,7 @@ Kadıköy / İSTANBUL',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             46 =>
                 array (
@@ -1308,6 +1354,7 @@ Kadıköy / İSTANBUL',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             47 =>
                 array (
@@ -1335,6 +1382,7 @@ Kadıköy / İSTANBUL',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             48 =>
                 array (
@@ -1362,6 +1410,7 @@ Kadıköy / İSTANBUL',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             49 =>
                 array (
@@ -1389,6 +1438,7 @@ Kadıköy / İSTANBUL',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             50 =>
                 array (
@@ -1416,6 +1466,7 @@ Kadıköy / İSTANBUL',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             51 =>
                 array (
@@ -1445,6 +1496,7 @@ Kanarya Sokak K2 Plaza No: 14 Kat: 2-3-4-5-6
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             52 =>
                 array (
@@ -1476,6 +1528,7 @@ Turkey',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             53 =>
                 array (
@@ -1503,6 +1556,7 @@ Turkey',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             54 =>
                 array (
@@ -1530,6 +1584,7 @@ Turkey',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             55 =>
                 array (
@@ -1557,6 +1612,7 @@ Turkey',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             56 =>
                 array (
@@ -1584,6 +1640,7 @@ Turkey',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             57 =>
                 array (
@@ -1611,6 +1668,7 @@ Turkey',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             58 =>
                 array (
@@ -1638,6 +1696,7 @@ Turkey',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             59 =>
                 array (
@@ -1670,6 +1729,7 @@ No: 2 Kat 28-29
                     'toll_free_number' => '',
                     'trade_name' => 'Cigna Finans Emeklilik Ve Hayat A.S',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             60 =>
                 array (
@@ -1697,6 +1757,7 @@ No: 2 Kat 28-29
                     'toll_free_number' => '',
                     'trade_name' => 'Demir Saglik ve Hayat Sigorta A.S',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             61 =>
                 array (
@@ -1725,6 +1786,7 @@ fibaemeklilik@hs03.kep.tr',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             62 =>
                 array (
@@ -1752,6 +1814,7 @@ fibaemeklilik@hs03.kep.tr',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             63 =>
                 array (
@@ -1779,6 +1842,7 @@ fibaemeklilik@hs03.kep.tr',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             64 =>
                 array (
@@ -1806,6 +1870,7 @@ fibaemeklilik@hs03.kep.tr',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             65 =>
                 array (
@@ -1833,6 +1898,7 @@ fibaemeklilik@hs03.kep.tr',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             66 =>
                 array (
@@ -1861,6 +1927,7 @@ fibaemeklilik@hs03.kep.tr',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             67 =>
                 array (
@@ -1888,6 +1955,7 @@ fibaemeklilik@hs03.kep.tr',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             68 =>
                 array (
@@ -1916,6 +1984,7 @@ fibaemeklilik@hs03.kep.tr',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             69 =>
                 array (
@@ -1943,6 +2012,7 @@ fibaemeklilik@hs03.kep.tr',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             70 =>
                 array (
@@ -1970,6 +2040,7 @@ fibaemeklilik@hs03.kep.tr',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             71 =>
                 array (
@@ -1997,6 +2068,7 @@ fibaemeklilik@hs03.kep.tr',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             72 =>
                 array (
@@ -2024,6 +2096,7 @@ fibaemeklilik@hs03.kep.tr',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             73 =>
                 array (
@@ -2051,6 +2124,7 @@ fibaemeklilik@hs03.kep.tr',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             74 =>
                 array (
@@ -2078,6 +2152,7 @@ fibaemeklilik@hs03.kep.tr',
                     'toll_free_number' => '8004414442',
                     'trade_name' => 'MEDGULF',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             75 =>
                 array (
@@ -2105,6 +2180,7 @@ fibaemeklilik@hs03.kep.tr',
                     'toll_free_number' => '',
                     'trade_name' => 'MALATH',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             76 =>
                 array (
@@ -2132,6 +2208,7 @@ fibaemeklilik@hs03.kep.tr',
                     'toll_free_number' => '',
                     'trade_name' => 'Tawuniya',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             77 =>
                 array (
@@ -2159,6 +2236,7 @@ fibaemeklilik@hs03.kep.tr',
                     'toll_free_number' => '8001260006',
                     'trade_name' => 'SABB TAKAFUL',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             78 =>
                 array (
@@ -2186,6 +2264,7 @@ fibaemeklilik@hs03.kep.tr',
                     'toll_free_number' => '920011282',
                     'trade_name' => 'ATC',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             79 =>
                 array (
@@ -2213,6 +2292,7 @@ fibaemeklilik@hs03.kep.tr',
                     'toll_free_number' => '',
                     'trade_name' => 'SALAMA',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             80 =>
                 array (
@@ -2240,6 +2320,7 @@ fibaemeklilik@hs03.kep.tr',
                     'toll_free_number' => '',
                     'trade_name' => 'ARABIAN SHIELD',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             81 =>
                 array (
@@ -2267,6 +2348,7 @@ fibaemeklilik@hs03.kep.tr',
                     'toll_free_number' => '8003010001',
                     'trade_name' => 'ALLIANZ SF',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             82 =>
                 array (
@@ -2294,6 +2376,7 @@ fibaemeklilik@hs03.kep.tr',
                     'toll_free_number' => '',
                     'trade_name' => 'GULF UNION',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             83 =>
                 array (
@@ -2321,6 +2404,7 @@ fibaemeklilik@hs03.kep.tr',
                     'toll_free_number' => '800-304-0110',
                     'trade_name' => 'ALETIHAD',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             84 =>
                 array (
@@ -2348,6 +2432,7 @@ fibaemeklilik@hs03.kep.tr',
                     'toll_free_number' => '920005444',
                     'trade_name' => 'WAFA INSURANCE',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             85 =>
                 array (
@@ -2375,6 +2460,7 @@ fibaemeklilik@hs03.kep.tr',
                     'toll_free_number' => '920001043',
                     'trade_name' => 'ALSAGR INSURANCE',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             86 =>
                 array (
@@ -2402,6 +2488,7 @@ fibaemeklilik@hs03.kep.tr',
                     'toll_free_number' => '',
                     'trade_name' => 'WALAA',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             87 =>
                 array (
@@ -2429,6 +2516,7 @@ fibaemeklilik@hs03.kep.tr',
                     'toll_free_number' => '',
                     'trade_name' => 'AICC',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             88 =>
                 array (
@@ -2456,6 +2544,7 @@ fibaemeklilik@hs03.kep.tr',
                     'toll_free_number' => '',
                     'trade_name' => 'SAUDI RE',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             89 =>
                 array (
@@ -2483,6 +2572,7 @@ fibaemeklilik@hs03.kep.tr',
                     'toll_free_number' => '920033337',
                     'trade_name' => 'ALAHLIA',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             90 =>
                 array (
@@ -2510,6 +2600,7 @@ fibaemeklilik@hs03.kep.tr',
                     'toll_free_number' => '8002444442',
                     'trade_name' => 'UCA',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             91 =>
                 array (
@@ -2537,6 +2628,7 @@ fibaemeklilik@hs03.kep.tr',
                     'toll_free_number' => '0114409666-1117',
                     'trade_name' => 'ALRAJHI TAKAFUL',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             92 =>
                 array (
@@ -2564,6 +2656,7 @@ fibaemeklilik@hs03.kep.tr',
                     'toll_free_number' => '8001246999',
                     'trade_name' => 'ACIG',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             93 =>
                 array (
@@ -2591,6 +2684,7 @@ fibaemeklilik@hs03.kep.tr',
                     'toll_free_number' => '8002444481',
                     'trade_name' => 'ALALAMIYA',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             94 =>
                 array (
@@ -2618,6 +2712,7 @@ fibaemeklilik@hs03.kep.tr',
                     'toll_free_number' => '',
                     'trade_name' => 'GULF GENERAL',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             95 =>
                 array (
@@ -2645,6 +2740,7 @@ fibaemeklilik@hs03.kep.tr',
                     'toll_free_number' => '8001240201',
                     'trade_name' => 'BURUJ',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             96 =>
                 array (
@@ -2672,6 +2768,7 @@ fibaemeklilik@hs03.kep.tr',
                     'toll_free_number' => '920003655/8001188855',
                     'trade_name' => 'WATANIYA',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             97 =>
                 array (
@@ -2699,6 +2796,7 @@ fibaemeklilik@hs03.kep.tr',
                     'toll_free_number' => '920006088',
                     'trade_name' => 'AMANA INSURANCE',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             98 =>
                 array (
@@ -2726,6 +2824,7 @@ fibaemeklilik@hs03.kep.tr',
                     'toll_free_number' => '',
                     'trade_name' => 'ALINMA TOKIO M',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             99 =>
                 array (
@@ -2753,6 +2852,7 @@ fibaemeklilik@hs03.kep.tr',
                     'toll_free_number' => '8003010030',
                     'trade_name' => 'ENAYA',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             100 =>
                 array (
@@ -2780,6 +2880,7 @@ fibaemeklilik@hs03.kep.tr',
                     'toll_free_number' => '8002440959',
                     'trade_name' => 'JAZIRA TAKAFUL',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             101 =>
                 array (
@@ -2807,6 +2908,7 @@ fibaemeklilik@hs03.kep.tr',
                     'toll_free_number' => '',
                     'trade_name' => 'SOLIDARITY',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             102 =>
                 array (
@@ -2834,6 +2936,7 @@ fibaemeklilik@hs03.kep.tr',
                     'toll_free_number' => '',
                     'trade_name' => 'SAICO',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             103 =>
                 array (
@@ -2861,6 +2964,7 @@ fibaemeklilik@hs03.kep.tr',
                     'toll_free_number' => '',
                     'trade_name' => 'BUPA ARABIA',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             104 =>
                 array (
@@ -2888,6 +2992,7 @@ fibaemeklilik@hs03.kep.tr',
                     'toll_free_number' => '',
                     'trade_name' => 'CHUBB',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             105 =>
                 array (
@@ -2915,6 +3020,7 @@ fibaemeklilik@hs03.kep.tr',
                     'toll_free_number' => '',
                     'trade_name' => 'AXA COOPERATIVE',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             106 =>
                 array (
@@ -2942,6 +3048,7 @@ fibaemeklilik@hs03.kep.tr',
                     'toll_free_number' => '',
                     'trade_name' => 'ATI',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             107 =>
                 array (
@@ -2969,6 +3076,7 @@ fibaemeklilik@hs03.kep.tr',
                     'toll_free_number' => '',
                     'trade_name' => 'AICS',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             108 =>
                 array (
@@ -2996,6 +3104,7 @@ fibaemeklilik@hs03.kep.tr',
                     'toll_free_number' => '',
                     'trade_name' => 'NIC',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             109 =>
                 array (
@@ -3023,6 +3132,7 @@ fibaemeklilik@hs03.kep.tr',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             110 =>
                 array (
@@ -3050,6 +3160,7 @@ fibaemeklilik@hs03.kep.tr',
                     'toll_free_number' => '9279',
                     'trade_name' => 'AROPE',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             111 =>
                 array (
@@ -3078,6 +3189,7 @@ Abd Elmalek Bin Marwan Street',
                     'toll_free_number' => '',
                     'trade_name' => 'SIIC',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             112 =>
                 array (
@@ -3105,6 +3217,7 @@ Abd Elmalek Bin Marwan Street',
                     'toll_free_number' => '',
                     'trade_name' => 'SKIC',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             113 =>
                 array (
@@ -3132,6 +3245,7 @@ Abd Elmalek Bin Marwan Street',
                     'toll_free_number' => '',
                     'trade_name' => 'UIC',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             114 =>
                 array (
@@ -3159,6 +3273,7 @@ Abd Elmalek Bin Marwan Street',
                     'toll_free_number' => '',
                     'trade_name' => 'ADIR',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             115 =>
                 array (
@@ -3187,6 +3302,7 @@ Al bezm St.',
                     'toll_free_number' => '',
                     'trade_name' => 'SAIC',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             116 =>
                 array (
@@ -3214,6 +3330,7 @@ Al bezm St.',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             117 =>
                 array (
@@ -3241,6 +3358,7 @@ Al bezm St.',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             118 =>
                 array (
@@ -3269,6 +3387,7 @@ Al bezm St.',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             119 =>
                 array (
@@ -3299,6 +3418,7 @@ P.O Box: 5178 Damascus, SYRIA',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             120 =>
                 array (
@@ -3326,6 +3446,7 @@ P.O Box: 5178 Damascus, SYRIA',
                     'toll_free_number' => '800 29 21',
                     'trade_name' => 'AXA',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             121 =>
                 array (
@@ -3353,6 +3474,7 @@ P.O Box: 5178 Damascus, SYRIA',
                     'toll_free_number' => '',
                     'trade_name' => 'AIG',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             122 =>
                 array (
@@ -3380,6 +3502,7 @@ P.O Box: 5178 Damascus, SYRIA',
                     'toll_free_number' => '800 97 11',
                     'trade_name' => 'ALICO',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             123 =>
                 array (
@@ -3407,6 +3530,7 @@ P.O Box: 5178 Damascus, SYRIA',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             124 =>
                 array (
@@ -3438,6 +3562,7 @@ Qatar',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             125 =>
                 array (
@@ -3465,6 +3590,7 @@ Qatar',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             126 =>
                 array (
@@ -3492,6 +3618,7 @@ Qatar',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             127 =>
                 array (
@@ -3521,6 +3648,7 @@ Doha – Qatar.',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             128 =>
                 array (
@@ -3548,6 +3676,7 @@ Doha – Qatar.',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             129 =>
                 array (
@@ -3578,6 +3707,7 @@ Doha, Qatar',
                     'toll_free_number' => '8000 880',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             130 =>
                 array (
@@ -3609,6 +3739,7 @@ Qatar',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             131 =>
                 array (
@@ -3636,6 +3767,7 @@ Qatar',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             132 =>
                 array (
@@ -3663,6 +3795,7 @@ Qatar',
                     'toll_free_number' => '8000 742',
                     'trade_name' => 'QATI',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             133 =>
                 array (
@@ -3690,6 +3823,7 @@ Qatar',
                     'toll_free_number' => '',
                     'trade_name' => 'DOHI',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             134 =>
                 array (
@@ -3717,6 +3851,7 @@ Qatar',
                     'toll_free_number' => '',
                     'trade_name' => 'QGRI',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             135 =>
                 array (
@@ -3744,6 +3879,7 @@ Qatar',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             136 =>
                 array (
@@ -3771,6 +3907,7 @@ Qatar',
                     'toll_free_number' => '8000 880',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             137 =>
                 array (
@@ -3798,6 +3935,7 @@ Qatar',
                     'toll_free_number' => '8005007',
                     'trade_name' => 'AKHI',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             138 =>
                 array (
@@ -3825,6 +3963,7 @@ Qatar',
                     'toll_free_number' => '',
                     'trade_name' => 'QISI',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             139 =>
                 array (
@@ -3852,6 +3991,7 @@ Qatar',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             140 =>
                 array (
@@ -3879,6 +4019,7 @@ Qatar',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             141 =>
                 array (
@@ -3906,6 +4047,7 @@ Qatar',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             142 =>
                 array (
@@ -3933,6 +4075,7 @@ Qatar',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             143 =>
                 array (
@@ -3960,6 +4103,7 @@ Qatar',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             144 =>
                 array (
@@ -3987,6 +4131,7 @@ Qatar',
                     'toll_free_number' => '800 97 11',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             145 =>
                 array (
@@ -4014,6 +4159,7 @@ Qatar',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             146 =>
                 array (
@@ -4042,6 +4188,7 @@ P. O. Box 80, Muscat Grand Mall, PC 136',
                     'toll_free_number' => '968 80080808',
                     'trade_name' => 'AMAT',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             147 =>
                 array (
@@ -4078,6 +4225,7 @@ Sultanate of Oman.',
                     'toll_free_number' => '',
                     'trade_name' => 'NLIF',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             148 =>
                 array (
@@ -4105,6 +4253,7 @@ Sultanate of Oman.',
                     'toll_free_number' => '',
                     'trade_name' => 'MCTI',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             149 =>
                 array (
@@ -4132,6 +4281,7 @@ Sultanate of Oman.',
                     'toll_free_number' => '24935050',
                     'trade_name' => 'AINS',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             150 =>
                 array (
@@ -4165,6 +4315,7 @@ Email: dhofar@dhofarinsurance.com',
                     'toll_free_number' => '80007777',
                     'trade_name' => 'DICS',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             151 =>
                 array (
@@ -4192,6 +4343,7 @@ Email: dhofar@dhofarinsurance.com',
                     'toll_free_number' => '',
                     'trade_name' => 'OQIC',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             152 =>
                 array (
@@ -4221,6 +4373,7 @@ Sultanate of Oman',
                     'toll_free_number' => '',
                     'trade_name' => 'OUIC',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             153 =>
                 array (
@@ -4253,6 +4406,7 @@ marketing@insurevic.com',
                     'toll_free_number' => '',
                     'trade_name' => 'VISN',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             154 =>
                 array (
@@ -4280,6 +4434,7 @@ marketing@insurevic.com',
                     'toll_free_number' => '',
                     'trade_name' => 'AFIC',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             155 =>
                 array (
@@ -4311,6 +4466,7 @@ CR No:1052000',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             156 =>
                 array (
@@ -4345,6 +4501,7 @@ Email: info@takafuloman.om',
                     'toll_free_number' => '',
                     'trade_name' => 'TAOI',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             157 =>
                 array (
@@ -4372,6 +4529,7 @@ Email: info@takafuloman.om',
                     'toll_free_number' => ' 1800-209-1415',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             158 =>
                 array (
@@ -4399,6 +4557,7 @@ Email: info@takafuloman.om',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             159 =>
                 array (
@@ -4426,6 +4585,7 @@ Email: info@takafuloman.om',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             160 =>
                 array (
@@ -4453,6 +4613,7 @@ Email: info@takafuloman.om',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             161 =>
                 array (
@@ -4480,6 +4641,7 @@ Email: info@takafuloman.om',
                     'toll_free_number' => '80070708',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             162 =>
                 array (
@@ -4509,6 +4671,7 @@ New Delhi - 110002',
                     'toll_free_number' => '1800118485',
                     'trade_name' => 'ORIENT',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             163 =>
                 array (
@@ -4538,6 +4701,7 @@ PO Box 417, Postal Code 100, Muscat, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             164 =>
                 array (
@@ -4565,6 +4729,7 @@ PO Box 417, Postal Code 100, Muscat, Oman',
                     'toll_free_number' => '800754256',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             165 =>
                 array (
@@ -4596,6 +4761,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             166 =>
                 array (
@@ -4623,6 +4789,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             167 =>
                 array (
@@ -4650,6 +4817,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             168 =>
                 array (
@@ -4677,6 +4845,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             169 =>
                 array (
@@ -4704,6 +4873,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             170 =>
                 array (
@@ -4731,6 +4901,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             171 =>
                 array (
@@ -4758,6 +4929,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => 'FTIC',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             172 =>
                 array (
@@ -4785,6 +4957,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             173 =>
                 array (
@@ -4812,6 +4985,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => 'GIRI transformed their brand name to Gulf Insurance Group-Kuwait (gig-Kuwait)',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             174 =>
                 array (
@@ -4839,6 +5013,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             175 =>
                 array (
@@ -4866,6 +5041,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             176 =>
                 array (
@@ -4893,6 +5069,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             177 =>
                 array (
@@ -4920,6 +5097,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             178 =>
                 array (
@@ -4947,6 +5125,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             179 =>
                 array (
@@ -4974,6 +5153,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => 'KQIC',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             180 =>
                 array (
@@ -5001,6 +5181,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             181 =>
                 array (
@@ -5028,6 +5209,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => 'KIB Takaful Insurance Company (KSCC)',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             182 =>
                 array (
@@ -5055,6 +5237,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             183 =>
                 array (
@@ -5082,6 +5265,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             184 =>
                 array (
@@ -5109,6 +5293,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             185 =>
                 array (
@@ -5136,6 +5321,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             186 =>
                 array (
@@ -5163,6 +5349,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => 'AIIC',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             187 =>
                 array (
@@ -5190,6 +5377,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => 'DATIC',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             188 =>
                 array (
@@ -5217,6 +5405,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             189 =>
                 array (
@@ -5244,6 +5433,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             190 =>
                 array (
@@ -5271,6 +5461,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             191 =>
                 array (
@@ -5298,6 +5489,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             192 =>
                 array (
@@ -5325,6 +5517,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             193 =>
                 array (
@@ -5352,6 +5545,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             194 =>
                 array (
@@ -5379,6 +5573,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             195 =>
                 array (
@@ -5406,6 +5601,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             196 =>
                 array (
@@ -5433,6 +5629,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             197 =>
                 array (
@@ -5460,6 +5657,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             198 =>
                 array (
@@ -5487,6 +5685,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             199 =>
                 array (
@@ -5514,6 +5713,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             200 =>
                 array (
@@ -5541,6 +5741,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             201 =>
                 array (
@@ -5568,6 +5769,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             202 =>
                 array (
@@ -5595,6 +5797,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => 'AIG',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             203 =>
                 array (
@@ -5622,6 +5825,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => 'IDIN',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             204 =>
                 array (
@@ -5649,6 +5853,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => 'AYAL',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             205 =>
                 array (
@@ -5676,6 +5881,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => 'ASHRA',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             206 =>
                 array (
@@ -5703,6 +5909,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => 'ICIC',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             207 =>
                 array (
@@ -5730,6 +5937,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             208 =>
                 array (
@@ -5757,6 +5965,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             209 =>
                 array (
@@ -5784,6 +5993,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => 'ILD INSUR B3',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             210 =>
                 array (
@@ -5811,6 +6021,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => 'PNCP',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             211 =>
                 array (
@@ -5838,6 +6049,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => 'HAREL',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             212 =>
                 array (
@@ -5865,6 +6077,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => 'WE SURE',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             213 =>
                 array (
@@ -5892,6 +6105,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => 'CLIS',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             214 =>
                 array (
@@ -5919,6 +6133,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => 'CLIS',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             215 =>
                 array (
@@ -5946,6 +6161,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             216 =>
                 array (
@@ -5973,6 +6189,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => 'MGDL',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             217 =>
                 array (
@@ -6000,6 +6217,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => 'MMHD',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             218 =>
                 array (
@@ -6027,6 +6245,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             219 =>
                 array (
@@ -6054,6 +6273,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             220 =>
                 array (
@@ -6081,6 +6301,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             221 =>
                 array (
@@ -6108,6 +6329,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             222 =>
                 array (
@@ -6135,6 +6357,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             223 =>
                 array (
@@ -6162,6 +6385,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             224 =>
                 array (
@@ -6189,6 +6413,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             225 =>
                 array (
@@ -6216,6 +6441,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             226 =>
                 array (
@@ -6243,6 +6469,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             227 =>
                 array (
@@ -6270,6 +6497,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             228 =>
                 array (
@@ -6297,6 +6525,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             229 =>
                 array (
@@ -6324,6 +6553,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             230 =>
                 array (
@@ -6351,6 +6581,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => 'NDSA',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             231 =>
                 array (
@@ -6378,6 +6609,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => 'Al Ameen',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             232 =>
                 array (
@@ -6405,6 +6637,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             233 =>
                 array (
@@ -6432,6 +6665,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => 'NHAM / Al Hamraa for Insurance',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             234 =>
                 array (
@@ -6459,6 +6693,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => 'Gulf Insurance / NGIR',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             235 =>
                 array (
@@ -6486,6 +6721,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             236 =>
                 array (
@@ -6513,6 +6749,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             237 =>
                 array (
@@ -6540,6 +6777,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => 'UIIC',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             238 =>
                 array (
@@ -6567,6 +6805,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             239 =>
                 array (
@@ -6594,6 +6833,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => 'Moallem Insurance/Moallem Insurance Co./M.I.C./Export and Investment Insurance Co.',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             240 =>
                 array (
@@ -6621,6 +6861,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => 'Trust House Insurance Company',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             241 =>
                 array (
@@ -6648,6 +6889,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             242 =>
                 array (
@@ -6675,6 +6917,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             243 =>
                 array (
@@ -6702,6 +6945,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             244 =>
                 array (
@@ -6729,6 +6973,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             245 =>
                 array (
@@ -6756,6 +7001,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             246 =>
                 array (
@@ -6783,6 +7029,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             247 =>
                 array (
@@ -6810,6 +7057,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             248 =>
                 array (
@@ -6837,6 +7085,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             249 =>
                 array (
@@ -6864,6 +7113,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => 'NAHF / Al Ahlia Co',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             250 =>
                 array (
@@ -6891,6 +7141,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             251 =>
                 array (
@@ -6918,6 +7169,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             252 =>
                 array (
@@ -6945,6 +7197,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             253 =>
                 array (
@@ -6972,6 +7225,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             254 =>
                 array (
@@ -6999,6 +7253,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             255 =>
                 array (
@@ -7026,6 +7281,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             256 =>
                 array (
@@ -7053,6 +7309,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             257 =>
                 array (
@@ -7080,6 +7337,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             258 =>
                 array (
@@ -7107,6 +7365,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             259 =>
                 array (
@@ -7134,6 +7393,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             260 =>
                 array (
@@ -7161,6 +7421,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             261 =>
                 array (
@@ -7188,6 +7449,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             262 =>
                 array (
@@ -7215,6 +7477,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             263 =>
                 array (
@@ -7242,6 +7505,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => 'Alborz 2 / BALB1',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             264 =>
                 array (
@@ -7269,6 +7533,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             265 =>
                 array (
@@ -7296,6 +7561,7 @@ Ruwi, Oman',
                     'toll_free_number' => '021-8707',
                     'trade_name' => 'AIC/ ASIA1',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             266 =>
                 array (
@@ -7323,6 +7589,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             267 =>
                 array (
@@ -7350,6 +7617,7 @@ Ruwi, Oman',
                     'toll_free_number' => '1671',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             268 =>
                 array (
@@ -7377,6 +7645,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             269 =>
                 array (
@@ -7404,6 +7673,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             270 =>
                 array (
@@ -7431,6 +7701,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             271 =>
                 array (
@@ -7458,6 +7729,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             272 =>
                 array (
@@ -7485,6 +7757,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             273 =>
                 array (
@@ -7512,6 +7785,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             274 =>
                 array (
@@ -7539,6 +7813,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             275 =>
                 array (
@@ -7566,6 +7841,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             276 =>
                 array (
@@ -7593,6 +7869,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             277 =>
                 array (
@@ -7620,6 +7897,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             278 =>
                 array (
@@ -7647,6 +7925,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             279 =>
                 array (
@@ -7674,6 +7953,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             280 =>
                 array (
@@ -7701,6 +7981,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             281 =>
                 array (
@@ -7728,6 +8009,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             282 =>
                 array (
@@ -7755,6 +8037,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             283 =>
                 array (
@@ -7782,6 +8065,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             284 =>
                 array (
@@ -7809,6 +8093,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             285 =>
                 array (
@@ -7836,6 +8121,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             286 =>
                 array (
@@ -7863,6 +8149,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             287 =>
                 array (
@@ -7890,6 +8177,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             288 =>
                 array (
@@ -7917,6 +8205,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             289 =>
                 array (
@@ -7944,6 +8233,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             290 =>
                 array (
@@ -7971,6 +8261,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             291 =>
                 array (
@@ -7998,6 +8289,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => 'KPI',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             292 =>
                 array (
@@ -8025,6 +8317,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => 'MIC',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             293 =>
                 array (
@@ -8052,6 +8345,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => 'MLIC',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             294 =>
                 array (
@@ -8079,6 +8373,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             295 =>
                 array (
@@ -8106,6 +8401,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             296 =>
                 array (
@@ -8133,6 +8429,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => 'DIC',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             297 =>
                 array (
@@ -8160,6 +8457,7 @@ Ruwi, Oman',
                     'toll_free_number' => '(202)19659',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             298 =>
                 array (
@@ -8187,6 +8485,7 @@ Ruwi, Oman',
                     'toll_free_number' => '19792',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             299 =>
                 array (
@@ -8214,6 +8513,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             300 =>
                 array (
@@ -8241,6 +8541,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             301 =>
                 array (
@@ -8268,6 +8569,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => 'Previously, Pharaonic American Life Insurance Company- MetLife Alico',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             302 =>
                 array (
@@ -8295,6 +8597,7 @@ Ruwi, Oman',
                     'toll_free_number' => '(202)16363',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             303 =>
                 array (
@@ -8322,6 +8625,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             304 =>
                 array (
@@ -8349,6 +8653,7 @@ Ruwi, Oman',
                     'toll_free_number' => '16902',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             305 =>
                 array (
@@ -8376,6 +8681,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             306 =>
                 array (
@@ -8403,6 +8709,7 @@ Ruwi, Oman',
                     'toll_free_number' => '19273',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             307 =>
                 array (
@@ -8430,6 +8737,7 @@ Ruwi, Oman',
                     'toll_free_number' => '19753',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             308 =>
                 array (
@@ -8457,6 +8765,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             309 =>
                 array (
@@ -8484,6 +8793,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => 'EGTAK',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             310 =>
                 array (
@@ -8511,6 +8821,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             311 =>
                 array (
@@ -8538,6 +8849,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             312 =>
                 array (
@@ -8565,6 +8877,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             313 =>
                 array (
@@ -8592,6 +8905,7 @@ Ruwi, Oman',
                     'toll_free_number' => '(202) 19243',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             314 =>
                 array (
@@ -8619,6 +8933,7 @@ Ruwi, Oman',
                     'toll_free_number' => '(202) 19243',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             315 =>
                 array (
@@ -8646,6 +8961,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => 'libano-suisse Takaful',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             316 =>
                 array (
@@ -8673,6 +8989,7 @@ Ruwi, Oman',
                     'toll_free_number' => '16654',
                     'trade_name' => 'TMGT',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             317 =>
                 array (
@@ -8700,6 +9017,7 @@ Ruwi, Oman',
                     'toll_free_number' => '16654',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             318 =>
                 array (
@@ -8727,6 +9045,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => 'OTIC',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             319 =>
                 array (
@@ -8754,6 +9073,7 @@ Ruwi, Oman',
                     'toll_free_number' => '19965',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             320 =>
                 array (
@@ -8781,6 +9101,7 @@ Ruwi, Oman',
                     'toll_free_number' => '16154',
                     'trade_name' => 'DLAC',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             321 =>
                 array (
@@ -8808,6 +9129,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             322 =>
                 array (
@@ -8835,6 +9157,7 @@ Ruwi, Oman',
                     'toll_free_number' => '(202) 16363',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             323 =>
                 array (
@@ -8862,6 +9185,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             324 =>
                 array (
@@ -8889,6 +9213,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             325 =>
                 array (
@@ -8916,6 +9241,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             326 =>
                 array (
@@ -8943,6 +9269,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             327 =>
                 array (
@@ -8970,6 +9297,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             328 =>
                 array (
@@ -8997,6 +9325,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => 'NIC',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             329 =>
                 array (
@@ -9024,6 +9353,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             330 =>
                 array (
@@ -9051,6 +9381,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => 'BHSI',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             331 =>
                 array (
@@ -9078,6 +9409,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             332 =>
                 array (
@@ -9105,6 +9437,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             333 =>
                 array (
@@ -9132,6 +9465,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => 'RSA',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             334 =>
                 array (
@@ -9159,6 +9493,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             335 =>
                 array (
@@ -9186,6 +9521,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             336 =>
                 array (
@@ -9213,6 +9549,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => 'QBE Insurance, Middle East',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             337 =>
                 array (
@@ -9240,6 +9577,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => 'Gulf Re',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             338 =>
                 array (
@@ -9267,6 +9605,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             339 =>
                 array (
@@ -9294,6 +9633,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => 'EMIRATES RE',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             340 =>
                 array (
@@ -9321,6 +9661,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             341 =>
                 array (
@@ -9348,6 +9689,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             342 =>
                 array (
@@ -9375,6 +9717,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             343 =>
                 array (
@@ -9402,6 +9745,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             344 =>
                 array (
@@ -9429,6 +9773,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             345 =>
                 array (
@@ -9456,6 +9801,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             346 =>
                 array (
@@ -9483,6 +9829,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             347 =>
                 array (
@@ -9510,6 +9857,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             348 =>
                 array (
@@ -9537,6 +9885,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => 'ARIG',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             349 =>
                 array (
@@ -9564,6 +9913,7 @@ Ruwi, Oman',
                     'toll_free_number' => '80001060',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             350 =>
                 array (
@@ -9591,6 +9941,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => 'BKIC',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             351 =>
                 array (
@@ -9618,6 +9969,7 @@ Ruwi, Oman',
                     'toll_free_number' => '80008288',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             352 =>
                 array (
@@ -9645,6 +9997,7 @@ Ruwi, Oman',
                     'toll_free_number' => '80018288',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             353 =>
                 array (
@@ -9672,6 +10025,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             354 =>
                 array (
@@ -9699,6 +10053,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             355 =>
                 array (
@@ -9726,6 +10081,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             356 =>
                 array (
@@ -9753,6 +10109,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             357 =>
                 array (
@@ -9780,6 +10137,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             358 =>
                 array (
@@ -9807,6 +10165,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             359 =>
                 array (
@@ -9834,6 +10193,7 @@ Ruwi, Oman',
                     'toll_free_number' => '80001RSA(772)',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             360 =>
                 array (
@@ -9861,6 +10221,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             361 =>
                 array (
@@ -9888,6 +10249,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             362 =>
                 array (
@@ -9915,6 +10277,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             363 =>
                 array (
@@ -9942,6 +10305,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             364 =>
                 array (
@@ -9969,6 +10333,7 @@ Ruwi, Oman',
                     'toll_free_number' => '80008050',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             365 =>
                 array (
@@ -9996,6 +10361,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             366 =>
                 array (
@@ -10023,6 +10389,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             367 =>
                 array (
@@ -10050,6 +10417,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             368 =>
                 array (
@@ -10077,6 +10445,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             369 =>
                 array (
@@ -10104,6 +10473,7 @@ Ruwi, Oman',
                     'toll_free_number' => '80008033',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             370 =>
                 array (
@@ -10131,6 +10501,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => 'AIC',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             371 =>
                 array (
@@ -10158,6 +10529,7 @@ Ruwi, Oman',
                     'toll_free_number' => '80011309',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             372 =>
                 array (
@@ -10185,6 +10557,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             373 =>
                 array (
@@ -10212,6 +10585,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             374 =>
                 array (
@@ -10239,6 +10613,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             375 =>
                 array (
@@ -10266,6 +10641,7 @@ Ruwi, Oman',
                     'toll_free_number' => '800674368(ORIENT)',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             376 =>
                 array (
@@ -10293,6 +10669,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             377 =>
                 array (
@@ -10320,6 +10697,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             378 =>
                 array (
@@ -10347,6 +10725,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             379 =>
                 array (
@@ -10374,6 +10753,7 @@ Ruwi, Oman',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             380 =>
                 array (
@@ -10403,6 +10783,7 @@ Building No. 403',
                     'toll_free_number' => '8008040',
                     'trade_name' => 'ADNIC',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             381 =>
                 array (
@@ -10430,6 +10811,7 @@ Building No. 403',
                     'toll_free_number' => '',
                     'trade_name' => 'TKFL',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             382 =>
                 array (
@@ -10457,6 +10839,7 @@ Building No. 403',
                     'toll_free_number' => '',
                     'trade_name' => 'ALAIN',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             383 =>
                 array (
@@ -10484,6 +10867,7 @@ Building No. 403',
                     'toll_free_number' => '',
                     'trade_name' => 'ABNIC',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             384 =>
                 array (
@@ -10511,6 +10895,7 @@ Building No. 403',
                     'toll_free_number' => '',
                     'trade_name' => 'DHAFRA',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             385 =>
                 array (
@@ -10538,6 +10923,7 @@ Building No. 403',
                     'toll_free_number' => '',
                     'trade_name' => 'AFNIC',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             386 =>
                 array (
@@ -10565,6 +10951,7 @@ Building No. 403',
                     'toll_free_number' => '800220022',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             387 =>
                 array (
@@ -10592,6 +10979,7 @@ Building No. 403',
                     'toll_free_number' => '8002542',
                     'trade_name' => 'AKIC',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             388 =>
                 array (
@@ -10619,6 +11007,7 @@ Building No. 403',
                     'toll_free_number' => '04-702-8500',
                     'trade_name' => 'AWNIC',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             389 =>
                 array (
@@ -10646,6 +11035,7 @@ Building No. 403',
                     'toll_free_number' => '',
                     'trade_name' => 'AXAGCIC',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             390 =>
                 array (
@@ -10673,6 +11063,7 @@ Building No. 403',
                     'toll_free_number' => '',
                     'trade_name' => 'ALLIANCE',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             391 =>
                 array (
@@ -10700,6 +11091,7 @@ Building No. 403',
                     'toll_free_number' => '800-ASCANA (272262)',
                     'trade_name' => 'ASCANA',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             392 =>
                 array (
@@ -10727,6 +11119,7 @@ Building No. 403',
                     'toll_free_number' => '',
                     'trade_name' => 'AXAGCIC',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             393 =>
                 array (
@@ -10754,6 +11147,7 @@ Building No. 403',
                     'toll_free_number' => '800-Takaful (8252385)',
                     'trade_name' => 'DARTAKAFUL',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             394 =>
                 array (
@@ -10781,6 +11175,7 @@ Building No. 403',
                     'toll_free_number' => '',
                     'trade_name' => 'AMAN',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             395 =>
                 array (
@@ -10808,6 +11203,7 @@ Building No. 403',
                     'toll_free_number' => '',
                     'trade_name' => 'DNIR',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             396 =>
                 array (
@@ -10835,6 +11231,7 @@ Building No. 403',
                     'toll_free_number' => '',
                     'trade_name' => 'EIC',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             397 =>
                 array (
@@ -10862,6 +11259,7 @@ Building No. 403',
                     'toll_free_number' => '',
                     'trade_name' => 'IH',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             398 =>
                 array (
@@ -10889,6 +11287,7 @@ Building No. 403',
                     'toll_free_number' => '',
                     'trade_name' => 'METHAQ',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             399 =>
                 array (
@@ -10916,6 +11315,7 @@ Building No. 403',
                     'toll_free_number' => '600 50 50 57',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             400 =>
                 array (
@@ -10944,6 +11344,7 @@ complaints@tameen.ae',
                     'toll_free_number' => '800 4746',
                     'trade_name' => 'OIC',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             401 =>
                 array (
@@ -10971,6 +11372,7 @@ complaints@tameen.ae',
                     'toll_free_number' => 'CC: 800 674368',
                     'trade_name' => 'ORIENT',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             402 =>
                 array (
@@ -10998,6 +11400,7 @@ complaints@tameen.ae',
                     'toll_free_number' => '',
                     'trade_name' => 'RAKNIC',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             403 =>
                 array (
@@ -11025,6 +11428,7 @@ complaints@tameen.ae',
                     'toll_free_number' => '800-725262',
                     'trade_name' => 'SALAMA',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             404 =>
                 array (
@@ -11052,6 +11456,7 @@ complaints@tameen.ae',
                     'toll_free_number' => '',
                     'trade_name' => 'SICO',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             405 =>
                 array (
@@ -11080,6 +11485,7 @@ complaints@takafulemarat.com',
                     'toll_free_number' => '600522550',
                     'trade_name' => 'TAKAFUL-EM',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             406 =>
                 array (
@@ -11107,6 +11513,7 @@ complaints@takafulemarat.com',
                     'toll_free_number' => '800432626',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             407 =>
                 array (
@@ -11135,6 +11542,7 @@ P.O Box 119227 Dubai, United Arab Emirates',
                     'toll_free_number' => '',
                     'trade_name' => 'UNION',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             408 =>
                 array (
@@ -11162,6 +11570,7 @@ P.O Box 119227 Dubai, United Arab Emirates',
                     'toll_free_number' => '',
                     'trade_name' => 'NGI',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             409 =>
                 array (
@@ -11189,6 +11598,7 @@ P.O Box 119227 Dubai, United Arab Emirates',
                     'toll_free_number' => '',
                     'trade_name' => 'OUTFL',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             410 =>
                 array (
@@ -11216,6 +11626,7 @@ P.O Box 119227 Dubai, United Arab Emirates',
                     'toll_free_number' => '',
                     'trade_name' => 'WATANIA',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             411 =>
                 array (
@@ -11243,6 +11654,7 @@ P.O Box 119227 Dubai, United Arab Emirates',
                     'toll_free_number' => '800 842',
                     'trade_name' => 'FIDELITYUNITED',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             412 =>
                 array (
@@ -11270,6 +11682,7 @@ P.O Box 119227 Dubai, United Arab Emirates',
                     'toll_free_number' => '',
                     'trade_name' => 'AMAN',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             413 =>
                 array (
@@ -11297,6 +11710,7 @@ P.O Box 119227 Dubai, United Arab Emirates',
                     'toll_free_number' => '',
                     'trade_name' => 'ECI',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             414 =>
                 array (
@@ -11324,6 +11738,7 @@ P.O Box 119227 Dubai, United Arab Emirates',
                     'toll_free_number' => '',
                     'trade_name' => 'AICL',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             415 =>
                 array (
@@ -11351,6 +11766,7 @@ P.O Box 119227 Dubai, United Arab Emirates',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             416 =>
                 array (
@@ -11378,6 +11794,7 @@ P.O Box 119227 Dubai, United Arab Emirates',
                     'toll_free_number' => '1 (800) 997-1654',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             417 =>
                 array (
@@ -11405,6 +11822,7 @@ P.O Box 119227 Dubai, United Arab Emirates',
                     'toll_free_number' => '',
                     'trade_name' => 'AICL',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             418 =>
                 array (
@@ -11436,6 +11854,7 @@ Dubai, United Arab Emirates.',
                     'toll_free_number' => '',
                     'trade_name' => 'Generali UAE',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             419 =>
                 array (
@@ -11463,6 +11882,7 @@ Dubai, United Arab Emirates.',
                     'toll_free_number' => '',
                     'trade_name' => 'AXA',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             420 =>
                 array (
@@ -11490,6 +11910,7 @@ Dubai, United Arab Emirates.',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             421 =>
                 array (
@@ -11517,6 +11938,7 @@ Dubai, United Arab Emirates.',
                     'toll_free_number' => '',
                     'trade_name' => 'GIC',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             422 =>
                 array (
@@ -11544,6 +11966,7 @@ Dubai, United Arab Emirates.',
                     'toll_free_number' => '',
                     'trade_name' => 'IIC',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             423 =>
                 array (
@@ -11571,6 +11994,7 @@ Dubai, United Arab Emirates.',
                     'toll_free_number' => '',
                     'trade_name' => 'JIC',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             424 =>
                 array (
@@ -11598,6 +12022,7 @@ Dubai, United Arab Emirates.',
                     'toll_free_number' => '',
                     'trade_name' => 'LIC',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             425 =>
                 array (
@@ -11625,6 +12050,7 @@ Dubai, United Arab Emirates.',
                     'toll_free_number' => '',
                     'trade_name' => 'MSI',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             426 =>
                 array (
@@ -11652,6 +12078,7 @@ Dubai, United Arab Emirates.',
                     'toll_free_number' => '',
                     'trade_name' => 'NLG',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             427 =>
                 array (
@@ -11679,6 +12106,7 @@ Dubai, United Arab Emirates.',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             428 =>
                 array (
@@ -11706,6 +12134,7 @@ Dubai, United Arab Emirates.',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             429 =>
                 array (
@@ -11733,6 +12162,7 @@ Dubai, United Arab Emirates.',
                     'toll_free_number' => '',
                     'trade_name' => 'QIC',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             430 =>
                 array (
@@ -11760,6 +12190,7 @@ Dubai, United Arab Emirates.',
                     'toll_free_number' => '800 772 (RSA)',
                     'trade_name' => 'RSA',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             431 =>
                 array (
@@ -11787,6 +12218,7 @@ Dubai, United Arab Emirates.',
                     'toll_free_number' => '',
                     'trade_name' => 'SLIC',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             432 =>
                 array (
@@ -11814,6 +12246,7 @@ Dubai, United Arab Emirates.',
                     'toll_free_number' => '800 8663',
                     'trade_name' => 'TMNCH',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             433 =>
                 array (
@@ -11841,6 +12274,7 @@ Dubai, United Arab Emirates.',
                     'toll_free_number' => '800 MetLife (800 638 5433)',
                     'trade_name' => 'METLIFE ALICO',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             434 =>
                 array (
@@ -11868,6 +12302,7 @@ Dubai, United Arab Emirates.',
                     'toll_free_number' => '',
                     'trade_name' => 'ZURICH INTERNATIONAL LIFE',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             435 =>
                 array (
@@ -11895,6 +12330,7 @@ Dubai, United Arab Emirates.',
                     'toll_free_number' => '',
                     'trade_name' => 'ZURICH LIFE',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             436 =>
                 array (
@@ -11922,6 +12358,7 @@ Dubai, United Arab Emirates.',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             437 =>
                 array (
@@ -11949,6 +12386,7 @@ Dubai, United Arab Emirates.',
                     'toll_free_number' => 'T: +971 (4) 509 6111Call: +971 (4) 214 3000',
                     'trade_name' => 'AIG',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             438 =>
                 array (
@@ -11976,6 +12414,7 @@ Dubai, United Arab Emirates.',
                     'toll_free_number' => '',
                     'trade_name' => 'DAMANA',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             439 =>
                 array (
@@ -12003,6 +12442,7 @@ Dubai, United Arab Emirates.',
                     'toll_free_number' => '',
                     'trade_name' => 'MEDGULF',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             440 =>
                 array (
@@ -12030,6 +12470,7 @@ Dubai, United Arab Emirates.',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             441 =>
                 array (
@@ -12057,6 +12498,7 @@ Dubai, United Arab Emirates.',
                     'toll_free_number' => '',
                     'trade_name' => 'QGIRC',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             442 =>
                 array (
@@ -12084,6 +12526,7 @@ Dubai, United Arab Emirates.',
                     'toll_free_number' => '',
                     'trade_name' => 'JOIN',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             443 =>
                 array (
@@ -12111,6 +12554,7 @@ Dubai, United Arab Emirates.',
                     'toll_free_number' => '',
                     'trade_name' => 'MEIN',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             444 =>
                 array (
@@ -12138,6 +12582,7 @@ Dubai, United Arab Emirates.',
                     'toll_free_number' => '',
                     'trade_name' => 'NAAI',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             445 =>
                 array (
@@ -12165,6 +12610,7 @@ Dubai, United Arab Emirates.',
                     'toll_free_number' => '',
                     'trade_name' => 'UNIN',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             446 =>
                 array (
@@ -12192,6 +12638,7 @@ Dubai, United Arab Emirates.',
                     'toll_free_number' => '',
                     'trade_name' => 'ARSI',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             447 =>
                 array (
@@ -12219,6 +12666,7 @@ Dubai, United Arab Emirates.',
                     'toll_free_number' => '',
                     'trade_name' => 'AICJ',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             448 =>
                 array (
@@ -12246,6 +12694,7 @@ Dubai, United Arab Emirates.',
                     'toll_free_number' => '',
                     'trade_name' => 'JERY',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             449 =>
                 array (
@@ -12273,6 +12722,7 @@ Dubai, United Arab Emirates.',
                     'toll_free_number' => '',
                     'trade_name' => 'AAIN',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             450 =>
                 array (
@@ -12300,6 +12750,7 @@ Dubai, United Arab Emirates.',
                     'toll_free_number' => '',
                     'trade_name' => 'JOFR',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             451 =>
                 array (
@@ -12327,6 +12778,7 @@ Dubai, United Arab Emirates.',
                     'toll_free_number' => '',
                     'trade_name' => 'DICL',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             452 =>
                 array (
@@ -12354,6 +12806,7 @@ Dubai, United Arab Emirates.',
                     'toll_free_number' => '',
                     'trade_name' => 'JEIC',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             453 =>
                 array (
@@ -12381,6 +12834,7 @@ Dubai, United Arab Emirates.',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             454 =>
                 array (
@@ -12408,6 +12862,7 @@ Dubai, United Arab Emirates.',
                     'toll_free_number' => '',
                     'trade_name' => 'PHIN',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             455 =>
                 array (
@@ -12435,6 +12890,7 @@ Dubai, United Arab Emirates.',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             456 =>
                 array (
@@ -12462,6 +12918,7 @@ Dubai, United Arab Emirates.',
                     'toll_free_number' => '',
                     'trade_name' => 'AIUI',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             457 =>
                 array (
@@ -12489,6 +12946,7 @@ Dubai, United Arab Emirates.',
                     'toll_free_number' => '06 5100081',
                     'trade_name' => 'ARAS',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             458 =>
                 array (
@@ -12516,6 +12974,7 @@ Dubai, United Arab Emirates.',
                     'toll_free_number' => '',
                     'trade_name' => 'TIIC',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             459 =>
                 array (
@@ -12543,6 +13002,7 @@ Dubai, United Arab Emirates.',
                     'toll_free_number' => '',
                     'trade_name' => 'JIJC',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             460 =>
                 array (
@@ -12570,6 +13030,7 @@ Dubai, United Arab Emirates.',
                     'toll_free_number' => '',
                     'trade_name' => 'AMMI',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             461 =>
                 array (
@@ -12597,6 +13058,7 @@ Dubai, United Arab Emirates.',
                     'toll_free_number' => '',
                     'trade_name' => 'ARGR',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             462 =>
                 array (
@@ -12624,6 +13086,7 @@ Dubai, United Arab Emirates.',
                     'toll_free_number' => '',
                     'trade_name' => 'AOIC',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             463 =>
                 array (
@@ -12651,6 +13114,7 @@ Dubai, United Arab Emirates.',
                     'toll_free_number' => '',
                     'trade_name' => 'MDGF',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             464 =>
                 array (
@@ -12678,6 +13142,7 @@ Dubai, United Arab Emirates.',
                     'toll_free_number' => '',
                     'trade_name' => 'FINS',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             465 =>
                 array (
@@ -12705,6 +13170,7 @@ Dubai, United Arab Emirates.',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             466 =>
                 array (
@@ -12732,6 +13198,7 @@ Dubai, United Arab Emirates.',
                     'toll_free_number' => '1700888999 / 970 2 2986636',
                     'trade_name' => 'AIG',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             467 =>
                 array (
@@ -12759,6 +13226,7 @@ Dubai, United Arab Emirates.',
                     'toll_free_number' => '1800 220 220',
                     'trade_name' => 'TIC',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             468 =>
                 array (
@@ -12786,6 +13254,7 @@ Dubai, United Arab Emirates.',
                     'toll_free_number' => '02 2958 090',
                     'trade_name' => 'MIC',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             469 =>
                 array (
@@ -12813,6 +13282,7 @@ Dubai, United Arab Emirates.',
                     'toll_free_number' => '',
                     'trade_name' => 'GUI',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             470 =>
                 array (
@@ -12840,6 +13310,7 @@ Dubai, United Arab Emirates.',
                     'toll_free_number' => '1800666222',
                     'trade_name' => 'PIC',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             471 =>
                 array (
@@ -12867,6 +13338,7 @@ Dubai, United Arab Emirates.',
                     'toll_free_number' => '',
                     'trade_name' => 'TRUST',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             472 =>
                 array (
@@ -12900,6 +13372,7 @@ Palestine',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             473 =>
                 array (
@@ -12929,6 +13402,7 @@ Fax: +970-2-2956748',
                     'toll_free_number' => '',
                     'trade_name' => 'MET',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             474 =>
                 array (
@@ -12956,6 +13430,7 @@ Fax: +970-2-2956748',
                     'toll_free_number' => '1700 25 25 25',
                     'trade_name' => 'NIC',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             475 =>
                 array (
@@ -12983,6 +13458,7 @@ Fax: +970-2-2956748',
                     'toll_free_number' => '1800 240 240',
                     'trade_name' => 'PMIF',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             476 =>
                 array (
@@ -13010,6 +13486,7 @@ Fax: +970-2-2956748',
                     'toll_free_number' => '',
                     'trade_name' => 'ARAB INSURANCE',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             477 =>
                 array (
@@ -13039,6 +13516,7 @@ P.O.Box 26516
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             478 =>
                 array (
@@ -13068,6 +13546,7 @@ CY – 3086 Limassol',
                     'toll_free_number' => '357 25 584545',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             479 =>
                 array (
@@ -13096,6 +13575,7 @@ P.O. Box 23415, 1683 Nicosia, Cyprus',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             480 =>
                 array (
@@ -13126,6 +13606,7 @@ P.O.Box: 25131,
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             481 =>
                 array (
@@ -13153,6 +13634,7 @@ P.O.Box: 25131,
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             482 =>
                 array (
@@ -13183,6 +13665,7 @@ Cyprus',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             483 =>
                 array (
@@ -13213,6 +13696,7 @@ Cyprus',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             484 =>
                 array (
@@ -13242,6 +13726,7 @@ Cyprus',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             485 =>
                 array (
@@ -13270,6 +13755,7 @@ Cyprus',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             486 =>
                 array (
@@ -13299,6 +13785,7 @@ Strovolos Nicosia T.Th. 16272,
                     'toll_free_number' => '22841000',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             487 =>
                 array (
@@ -13328,6 +13815,7 @@ Strovolos Nicosia T.Th. 16272,
                     'toll_free_number' => '22841001',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             488 =>
                 array (
@@ -13358,6 +13846,7 @@ Nicosia, Cyprus',
                     'toll_free_number' => '8000 8880 /22124000',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             489 =>
                 array (
@@ -13391,6 +13880,7 @@ Cyprus',
                     'toll_free_number' => '8000 2800',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             490 =>
                 array (
@@ -13418,6 +13908,7 @@ Cyprus',
                     'toll_free_number' => '25 885 885',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             491 =>
                 array (
@@ -13446,6 +13937,7 @@ Cyprus',
                     'toll_free_number' => '80008787',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             492 =>
                 array (
@@ -13475,6 +13967,7 @@ City Forum 5th floor,
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             493 =>
                 array (
@@ -13503,6 +13996,7 @@ EN',
                     'toll_free_number' => '357-22 376 169',
                     'trade_name' => 'Hellas Direct',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             494 =>
                 array (
@@ -13530,6 +14024,7 @@ EN',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             495 =>
                 array (
@@ -13557,6 +14052,7 @@ EN',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             496 =>
                 array (
@@ -13586,6 +14082,7 @@ Nicosia, Cyprus',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             497 =>
                 array (
@@ -13613,6 +14110,7 @@ Nicosia, Cyprus',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             498 =>
                 array (
@@ -13640,6 +14138,7 @@ Nicosia, Cyprus',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             499 =>
                 array (
@@ -13667,6 +14166,7 @@ Nicosia, Cyprus',
                     'toll_free_number' => '77771414',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
         ));
         \DB::table('company_detail')->insert(array (
@@ -13697,6 +14197,7 @@ Nicosia, Cyprus',
                     'toll_free_number' => '357 22743743',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             1 =>
                 array (
@@ -13725,6 +14226,7 @@ Nicosia, Cyprus',
                     'toll_free_number' => '8000-50-50',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             2 =>
                 array (
@@ -13753,6 +14255,7 @@ P.O. Box 22111, Nicosia 1517, Cyprus',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             3 =>
                 array (
@@ -13780,6 +14283,7 @@ P.O. Box 22111, Nicosia 1517, Cyprus',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             4 =>
                 array (
@@ -13810,6 +14314,7 @@ Cyprus',
                     'toll_free_number' => '44 (0) 7831 784051',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             5 =>
                 array (
@@ -13841,6 +14346,7 @@ Cyprus',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             6 =>
                 array (
@@ -13871,6 +14377,7 @@ Building 359 P.O. Box: 58024
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             7 =>
                 array (
@@ -13898,6 +14405,7 @@ Building 359 P.O. Box: 58024
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             8 =>
                 array (
@@ -13928,6 +14436,7 @@ PO Box 21270, 1505 Nicosia',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             9 =>
                 array (
@@ -13957,6 +14466,7 @@ T.Th. 40378, 6303 - Larnaca',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             10 =>
                 array (
@@ -13984,6 +14494,7 @@ T.Th. 40378, 6303 - Larnaca',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             11 =>
                 array (
@@ -14011,6 +14522,7 @@ T.Th. 40378, 6303 - Larnaca',
                     'toll_free_number' => '',
                     'trade_name' => 'CAAR',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             12 =>
                 array (
@@ -14038,6 +14550,7 @@ T.Th. 40378, 6303 - Larnaca',
                     'toll_free_number' => '',
                     'trade_name' => 'SAA',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             13 =>
                 array (
@@ -14065,6 +14578,7 @@ T.Th. 40378, 6303 - Larnaca',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             14 =>
                 array (
@@ -14092,6 +14606,7 @@ T.Th. 40378, 6303 - Larnaca',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             15 =>
                 array (
@@ -14119,6 +14634,7 @@ T.Th. 40378, 6303 - Larnaca',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             16 =>
                 array (
@@ -14146,6 +14662,7 @@ T.Th. 40378, 6303 - Larnaca',
                     'toll_free_number' => '',
                     'trade_name' => 'CAAT',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             17 =>
                 array (
@@ -14173,6 +14690,7 @@ T.Th. 40378, 6303 - Larnaca',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             18 =>
                 array (
@@ -14200,6 +14718,7 @@ T.Th. 40378, 6303 - Larnaca',
                     'toll_free_number' => '',
                     'trade_name' => 'CIAR',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             19 =>
                 array (
@@ -14227,6 +14746,7 @@ T.Th. 40378, 6303 - Larnaca',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             20 =>
                 array (
@@ -14254,6 +14774,7 @@ T.Th. 40378, 6303 - Larnaca',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             21 =>
                 array (
@@ -14281,6 +14802,7 @@ T.Th. 40378, 6303 - Larnaca',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             22 =>
                 array (
@@ -14308,6 +14830,7 @@ T.Th. 40378, 6303 - Larnaca',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             23 =>
                 array (
@@ -14335,6 +14858,7 @@ T.Th. 40378, 6303 - Larnaca',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             24 =>
                 array (
@@ -14362,6 +14886,7 @@ T.Th. 40378, 6303 - Larnaca',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             25 =>
                 array (
@@ -14389,6 +14914,7 @@ T.Th. 40378, 6303 - Larnaca',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             26 =>
                 array (
@@ -14416,6 +14942,7 @@ T.Th. 40378, 6303 - Larnaca',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             27 =>
                 array (
@@ -14443,6 +14970,7 @@ T.Th. 40378, 6303 - Larnaca',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             28 =>
                 array (
@@ -14470,6 +14998,7 @@ T.Th. 40378, 6303 - Larnaca',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             29 =>
                 array (
@@ -14497,6 +15026,7 @@ T.Th. 40378, 6303 - Larnaca',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             30 =>
                 array (
@@ -14524,6 +15054,7 @@ T.Th. 40378, 6303 - Larnaca',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             31 =>
                 array (
@@ -14551,6 +15082,7 @@ T.Th. 40378, 6303 - Larnaca',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             32 =>
                 array (
@@ -14578,6 +15110,7 @@ T.Th. 40378, 6303 - Larnaca',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             33 =>
                 array (
@@ -14605,6 +15138,7 @@ T.Th. 40378, 6303 - Larnaca',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             34 =>
                 array (
@@ -14632,6 +15166,7 @@ T.Th. 40378, 6303 - Larnaca',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             35 =>
                 array (
@@ -14659,6 +15194,7 @@ T.Th. 40378, 6303 - Larnaca',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             36 =>
                 array (
@@ -14686,6 +15222,7 @@ T.Th. 40378, 6303 - Larnaca',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             37 =>
                 array (
@@ -14713,6 +15250,7 @@ T.Th. 40378, 6303 - Larnaca',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             38 =>
                 array (
@@ -14740,6 +15278,7 @@ T.Th. 40378, 6303 - Larnaca',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             39 =>
                 array (
@@ -14767,6 +15306,7 @@ T.Th. 40378, 6303 - Larnaca',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             40 =>
                 array (
@@ -14794,6 +15334,7 @@ T.Th. 40378, 6303 - Larnaca',
                     'toll_free_number' => '',
                     'trade_name' => 'AMIC',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             41 =>
                 array (
@@ -14821,6 +15362,7 @@ T.Th. 40378, 6303 - Larnaca',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             42 =>
                 array (
@@ -14848,6 +15390,7 @@ T.Th. 40378, 6303 - Larnaca',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             43 =>
                 array (
@@ -14875,6 +15418,7 @@ T.Th. 40378, 6303 - Larnaca',
                     'toll_free_number' => '00218217131117 - 00218217131115',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             44 =>
                 array (
@@ -14902,6 +15446,7 @@ T.Th. 40378, 6303 - Larnaca',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             45 =>
                 array (
@@ -14929,6 +15474,7 @@ T.Th. 40378, 6303 - Larnaca',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             46 =>
                 array (
@@ -14956,6 +15502,7 @@ T.Th. 40378, 6303 - Larnaca',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             47 =>
                 array (
@@ -14983,6 +15530,7 @@ T.Th. 40378, 6303 - Larnaca',
                     'toll_free_number' => '',
                     'trade_name' => 'AGM',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             48 =>
                 array (
@@ -15010,6 +15558,7 @@ T.Th. 40378, 6303 - Larnaca',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             49 =>
                 array (
@@ -15037,6 +15586,7 @@ T.Th. 40378, 6303 - Larnaca',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             50 =>
                 array (
@@ -15064,6 +15614,7 @@ T.Th. 40378, 6303 - Larnaca',
                     'toll_free_number' => '',
                     'trade_name' => 'MAR',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             51 =>
                 array (
@@ -15091,6 +15642,7 @@ T.Th. 40378, 6303 - Larnaca',
                     'toll_free_number' => '',
                     'trade_name' => 'NASR',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             52 =>
                 array (
@@ -15118,6 +15670,7 @@ T.Th. 40378, 6303 - Larnaca',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             53 =>
                 array (
@@ -15145,6 +15698,7 @@ T.Th. 40378, 6303 - Larnaca',
                     'toll_free_number' => '',
                     'trade_name' => 'SAR',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             54 =>
                 array (
@@ -15172,6 +15726,7 @@ T.Th. 40378, 6303 - Larnaca',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             55 =>
                 array (
@@ -15199,6 +15754,7 @@ T.Th. 40378, 6303 - Larnaca',
                     'toll_free_number' => '0801 00 18 18 - 0522 43 62 00',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             56 =>
                 array (
@@ -15226,6 +15782,7 @@ T.Th. 40378, 6303 - Larnaca',
                     'toll_free_number' => '',
                     'trade_name' => 'Cie D\'Assurances Et De Réassurance Atlanta (Atlanta Assurances)',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             57 =>
                 array (
@@ -15253,6 +15810,7 @@ T.Th. 40378, 6303 - Larnaca',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             58 =>
                 array (
@@ -15280,6 +15838,7 @@ T.Th. 40378, 6303 - Larnaca',
                     'toll_free_number' => '',
                     'trade_name' => 'MCMA',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             59 =>
                 array (
@@ -15307,6 +15866,7 @@ T.Th. 40378, 6303 - Larnaca',
                     'toll_free_number' => '',
                     'trade_name' => 'RMA',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             60 =>
                 array (
@@ -15334,6 +15894,7 @@ T.Th. 40378, 6303 - Larnaca',
                     'toll_free_number' => '',
                     'trade_name' => 'Saham Assurance',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             61 =>
                 array (
@@ -15361,6 +15922,7 @@ T.Th. 40378, 6303 - Larnaca',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             62 =>
                 array (
@@ -15388,6 +15950,7 @@ T.Th. 40378, 6303 - Larnaca',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             63 =>
                 array (
@@ -15415,6 +15978,7 @@ T.Th. 40378, 6303 - Larnaca',
                     'toll_free_number' => '',
                     'trade_name' => 'MAMDA',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             64 =>
                 array (
@@ -15442,6 +16006,7 @@ T.Th. 40378, 6303 - Larnaca',
                     'toll_free_number' => '',
                     'trade_name' => 'CAT',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             65 =>
                 array (
@@ -15469,6 +16034,7 @@ T.Th. 40378, 6303 - Larnaca',
                     'toll_free_number' => '',
                     'trade_name' => 'MATU',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             66 =>
                 array (
@@ -15496,6 +16062,7 @@ T.Th. 40378, 6303 - Larnaca',
                     'toll_free_number' => '',
                     'trade_name' => 'La Marocaine Vie',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             67 =>
                 array (
@@ -15523,6 +16090,7 @@ T.Th. 40378, 6303 - Larnaca',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             68 =>
                 array (
@@ -15550,6 +16118,7 @@ T.Th. 40378, 6303 - Larnaca',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             69 =>
                 array (
@@ -15577,6 +16146,7 @@ T.Th. 40378, 6303 - Larnaca',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             70 =>
                 array (
@@ -15604,6 +16174,7 @@ T.Th. 40378, 6303 - Larnaca',
                     'toll_free_number' => '',
                     'trade_name' => 'Maroc Assistance Internationale (MAI)',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             71 =>
                 array (
@@ -15631,6 +16202,7 @@ T.Th. 40378, 6303 - Larnaca',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             72 =>
                 array (
@@ -15658,6 +16230,7 @@ T.Th. 40378, 6303 - Larnaca',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             73 =>
                 array (
@@ -15685,6 +16258,7 @@ T.Th. 40378, 6303 - Larnaca',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             74 =>
                 array (
@@ -15712,6 +16286,7 @@ T.Th. 40378, 6303 - Larnaca',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             75 =>
                 array (
@@ -15739,6 +16314,7 @@ T.Th. 40378, 6303 - Larnaca',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             76 =>
                 array (
@@ -15766,6 +16342,7 @@ T.Th. 40378, 6303 - Larnaca',
                     'toll_free_number' => '',
                     'trade_name' => 'SMAEX',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             77 =>
                 array (
@@ -15793,6 +16370,7 @@ T.Th. 40378, 6303 - Larnaca',
                     'toll_free_number' => '',
                     'trade_name' => 'SCR',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             78 =>
                 array (
@@ -15820,6 +16398,7 @@ T.Th. 40378, 6303 - Larnaca',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             79 =>
                 array (
@@ -15847,6 +16426,7 @@ T.Th. 40378, 6303 - Larnaca',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             80 =>
                 array (
@@ -15874,6 +16454,7 @@ T.Th. 40378, 6303 - Larnaca',
                     'toll_free_number' => '',
                     'trade_name' => 'NICL',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             81 =>
                 array (
@@ -15901,6 +16482,7 @@ T.Th. 40378, 6303 - Larnaca',
                     'toll_free_number' => '',
                     'trade_name' => 'NESICO',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             82 =>
                 array (
@@ -15928,6 +16510,7 @@ T.Th. 40378, 6303 - Larnaca',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             83 =>
                 array (
@@ -15955,6 +16538,7 @@ T.Th. 40378, 6303 - Larnaca',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             84 =>
                 array (
@@ -15982,6 +16566,7 @@ T.Th. 40378, 6303 - Larnaca',
                     'toll_free_number' => '',
                     'trade_name' => 'SS',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             85 =>
                 array (
@@ -16009,6 +16594,7 @@ T.Th. 40378, 6303 - Larnaca',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             86 =>
                 array (
@@ -16036,6 +16622,7 @@ T.Th. 40378, 6303 - Larnaca',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             87 =>
                 array (
@@ -16063,6 +16650,7 @@ T.Th. 40378, 6303 - Larnaca',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             88 =>
                 array (
@@ -16090,6 +16678,7 @@ T.Th. 40378, 6303 - Larnaca',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             89 =>
                 array (
@@ -16117,6 +16706,7 @@ T.Th. 40378, 6303 - Larnaca',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             90 =>
                 array (
@@ -16144,6 +16734,7 @@ T.Th. 40378, 6303 - Larnaca',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             91 =>
                 array (
@@ -16171,6 +16762,7 @@ T.Th. 40378, 6303 - Larnaca',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             92 =>
                 array (
@@ -16198,6 +16790,7 @@ T.Th. 40378, 6303 - Larnaca',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             93 =>
                 array (
@@ -16225,6 +16818,7 @@ T.Th. 40378, 6303 - Larnaca',
                     'toll_free_number' => '2770',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             94 =>
                 array (
@@ -16252,6 +16846,7 @@ T.Th. 40378, 6303 - Larnaca',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             95 =>
                 array (
@@ -16279,6 +16874,7 @@ T.Th. 40378, 6303 - Larnaca',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             96 =>
                 array (
@@ -16306,6 +16902,7 @@ T.Th. 40378, 6303 - Larnaca',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             97 =>
                 array (
@@ -16333,6 +16930,7 @@ T.Th. 40378, 6303 - Larnaca',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             98 =>
                 array (
@@ -16360,6 +16958,7 @@ T.Th. 40378, 6303 - Larnaca',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             99 =>
                 array (
@@ -16387,6 +16986,7 @@ T.Th. 40378, 6303 - Larnaca',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             100 =>
                 array (
@@ -16414,6 +17014,7 @@ T.Th. 40378, 6303 - Larnaca',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             101 =>
                 array (
@@ -16441,6 +17042,7 @@ T.Th. 40378, 6303 - Larnaca',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             102 =>
                 array (
@@ -16468,6 +17070,7 @@ T.Th. 40378, 6303 - Larnaca',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             103 =>
                 array (
@@ -16495,6 +17098,7 @@ T.Th. 40378, 6303 - Larnaca',
                     'toll_free_number' => '',
                     'trade_name' => 'STAR/ Société Tunisienne d\'Assurances et de Réassurances (STAR)',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             104 =>
                 array (
@@ -16522,6 +17126,7 @@ T.Th. 40378, 6303 - Larnaca',
                     'toll_free_number' => '',
                     'trade_name' => 'Lloyd Tunisien Societe d\'Assurances et de Reassurances',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             105 =>
                 array (
@@ -16549,6 +17154,7 @@ T.Th. 40378, 6303 - Larnaca',
                     'toll_free_number' => '',
                     'trade_name' => 'CARTE/ Company d\'Assurances et de Reassurances Tuniso-Europenne (CARTE)',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             106 =>
                 array (
@@ -16576,6 +17182,7 @@ T.Th. 40378, 6303 - Larnaca',
                     'toll_free_number' => '',
                     'trade_name' => 'Groupe des Assurances de Tunisie',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             107 =>
                 array (
@@ -16603,6 +17210,7 @@ T.Th. 40378, 6303 - Larnaca',
                     'toll_free_number' => '',
                     'trade_name' => 'Societe d\'Assurances SALIM/ BH Assurance',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             108 =>
                 array (
@@ -16630,6 +17238,7 @@ T.Th. 40378, 6303 - Larnaca',
                     'toll_free_number' => '',
                     'trade_name' => 'COMAR/Compagnie Méditérranéenne d\' Assurances et de Réassurances (Assurances COMAR)',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             109 =>
                 array (
@@ -16657,6 +17266,7 @@ T.Th. 40378, 6303 - Larnaca',
                     'toll_free_number' => '',
                     'trade_name' => 'ASTREE/ASTREE Compagnie d\'Assurances et de Reassurances',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             110 =>
                 array (
@@ -16684,6 +17294,7 @@ T.Th. 40378, 6303 - Larnaca',
                     'toll_free_number' => '',
                     'trade_name' => 'Assurances BIAT',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             111 =>
                 array (
@@ -16711,6 +17322,7 @@ T.Th. 40378, 6303 - Larnaca',
                     'toll_free_number' => '',
                     'trade_name' => 'Assurances Maghrebia',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             112 =>
                 array (
@@ -16738,6 +17350,7 @@ T.Th. 40378, 6303 - Larnaca',
                     'toll_free_number' => '',
                     'trade_name' => 'Zitouna Takaful',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             113 =>
                 array (
@@ -16765,6 +17378,7 @@ T.Th. 40378, 6303 - Larnaca',
                     'toll_free_number' => '',
                     'trade_name' => 'El Amana Takaful',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             114 =>
                 array (
@@ -16792,6 +17406,7 @@ T.Th. 40378, 6303 - Larnaca',
                     'toll_free_number' => '',
                     'trade_name' => 'At-Takafulia Insurance Company',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             115 =>
                 array (
@@ -16819,6 +17434,7 @@ T.Th. 40378, 6303 - Larnaca',
                     'toll_free_number' => '',
                     'trade_name' => 'AMI/Assurances Mutuelles Ittihad',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             116 =>
                 array (
@@ -16846,6 +17462,7 @@ T.Th. 40378, 6303 - Larnaca',
                     'toll_free_number' => '',
                     'trade_name' => 'Mutuelle Assurance de l\'Enseignement',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             117 =>
                 array (
@@ -16873,6 +17490,7 @@ T.Th. 40378, 6303 - Larnaca',
                     'toll_free_number' => '',
                     'trade_name' => 'Caisse Tunisienne de Assurances Mutuelles Agricoles (CTAMA',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             118 =>
                 array (
@@ -16900,6 +17518,7 @@ T.Th. 40378, 6303 - Larnaca',
                     'toll_free_number' => '',
                     'trade_name' => 'HAYETT/Compagnie d’Assurance Vie et de Capitalisation (HAYETT)',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             119 =>
                 array (
@@ -16927,6 +17546,7 @@ T.Th. 40378, 6303 - Larnaca',
                     'toll_free_number' => '',
                     'trade_name' => 'GAT VIE',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             120 =>
                 array (
@@ -16954,6 +17574,7 @@ T.Th. 40378, 6303 - Larnaca',
                     'toll_free_number' => '',
                     'trade_name' => 'Magherbia Vie insurance company',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             121 =>
                 array (
@@ -16981,6 +17602,7 @@ T.Th. 40378, 6303 - Larnaca',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             122 =>
                 array (
@@ -17010,6 +17632,7 @@ CARTE building - Lot BC4 - North Urban Center 1082 - TUNIS',
                     'toll_free_number' => '',
                     'trade_name' => 'CARTE VIE',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             123 =>
                 array (
@@ -17037,6 +17660,7 @@ CARTE building - Lot BC4 - North Urban Center 1082 - TUNIS',
                     'toll_free_number' => '',
                     'trade_name' => 'Compagnie Tunisienne pour l\' Assurance du Commerce Exterieur (COTUNACE)',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             124 =>
                 array (
@@ -17064,6 +17688,7 @@ CARTE building - Lot BC4 - North Urban Center 1082 - TUNIS',
                     'toll_free_number' => '',
                     'trade_name' => 'Tunisia  RE',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             125 =>
                 array (
@@ -17091,6 +17716,7 @@ CARTE building - Lot BC4 - North Urban Center 1082 - TUNIS',
                     'toll_free_number' => '',
                     'trade_name' => 'Afrique Assistance',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             126 =>
                 array (
@@ -17118,6 +17744,7 @@ CARTE building - Lot BC4 - North Urban Center 1082 - TUNIS',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             127 =>
                 array (
@@ -17145,6 +17772,7 @@ CARTE building - Lot BC4 - North Urban Center 1082 - TUNIS',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             128 =>
                 array (
@@ -17172,6 +17800,7 @@ CARTE building - Lot BC4 - North Urban Center 1082 - TUNIS',
                     'toll_free_number' => '',
                     'trade_name' => 'ADIR',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             129 =>
                 array (
@@ -17199,6 +17828,7 @@ CARTE building - Lot BC4 - North Urban Center 1082 - TUNIS',
                     'toll_free_number' => '',
                     'trade_name' => 'American International Group, Inc. (AIG)',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             130 =>
                 array (
@@ -17226,6 +17856,7 @@ CARTE building - Lot BC4 - North Urban Center 1082 - TUNIS',
                     'toll_free_number' => '',
                     'trade_name' => 'Formerly known as Main Insurance Company S.A.L.',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             131 =>
                 array (
@@ -17253,6 +17884,7 @@ CARTE building - Lot BC4 - North Urban Center 1082 - TUNIS',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             132 =>
                 array (
@@ -17280,6 +17912,7 @@ CARTE building - Lot BC4 - North Urban Center 1082 - TUNIS',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             133 =>
                 array (
@@ -17307,6 +17940,7 @@ CARTE building - Lot BC4 - North Urban Center 1082 - TUNIS',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             134 =>
                 array (
@@ -17334,6 +17968,7 @@ CARTE building - Lot BC4 - North Urban Center 1082 - TUNIS',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             135 =>
                 array (
@@ -17361,6 +17996,7 @@ CARTE building - Lot BC4 - North Urban Center 1082 - TUNIS',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             136 =>
                 array (
@@ -17388,6 +18024,7 @@ CARTE building - Lot BC4 - North Urban Center 1082 - TUNIS',
                     'toll_free_number' => '',
                     'trade_name' => 'ALICO (Metlife)',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             137 =>
                 array (
@@ -17415,6 +18052,7 @@ CARTE building - Lot BC4 - North Urban Center 1082 - TUNIS',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             138 =>
                 array (
@@ -17442,6 +18080,7 @@ CARTE building - Lot BC4 - North Urban Center 1082 - TUNIS',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             139 =>
                 array (
@@ -17469,6 +18108,7 @@ CARTE building - Lot BC4 - North Urban Center 1082 - TUNIS',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             140 =>
                 array (
@@ -17496,6 +18136,7 @@ CARTE building - Lot BC4 - North Urban Center 1082 - TUNIS',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             141 =>
                 array (
@@ -17523,6 +18164,7 @@ CARTE building - Lot BC4 - North Urban Center 1082 - TUNIS',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             142 =>
                 array (
@@ -17550,6 +18192,7 @@ CARTE building - Lot BC4 - North Urban Center 1082 - TUNIS',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             143 =>
                 array (
@@ -17577,6 +18220,7 @@ CARTE building - Lot BC4 - North Urban Center 1082 - TUNIS',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             144 =>
                 array (
@@ -17604,6 +18248,7 @@ CARTE building - Lot BC4 - North Urban Center 1082 - TUNIS',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             145 =>
                 array (
@@ -17632,6 +18277,7 @@ Ashrafieh, Beirut, Lebanon',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             146 =>
                 array (
@@ -17659,6 +18305,7 @@ Ashrafieh, Beirut, Lebanon',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             147 =>
                 array (
@@ -17687,6 +18334,7 @@ Achrafieh, Beirut P.O.Box: 16-6720 - Beirut - Lebanon',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             148 =>
                 array (
@@ -17714,6 +18362,7 @@ Achrafieh, Beirut P.O.Box: 16-6720 - Beirut - Lebanon',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             149 =>
                 array (
@@ -17741,6 +18390,7 @@ Achrafieh, Beirut P.O.Box: 16-6720 - Beirut - Lebanon',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             150 =>
                 array (
@@ -17768,6 +18418,7 @@ Achrafieh, Beirut P.O.Box: 16-6720 - Beirut - Lebanon',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             151 =>
                 array (
@@ -17796,6 +18447,7 @@ P. O. Box: 16-6729 Ashrafieh 1100 2811 Beirut, Lebanon',
                     'toll_free_number' => '',
                     'trade_name' => 'CLA',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             152 =>
                 array (
@@ -17823,6 +18475,7 @@ P. O. Box: 16-6729 Ashrafieh 1100 2811 Beirut, Lebanon',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             153 =>
                 array (
@@ -17850,6 +18503,7 @@ P. O. Box: 16-6729 Ashrafieh 1100 2811 Beirut, Lebanon',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             154 =>
                 array (
@@ -17878,6 +18532,7 @@ P.O.Box: 116349 Riad Solh, Beirut 1107 2210 Lebanon',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             155 =>
                 array (
@@ -17907,6 +18562,7 @@ P.O. Box 11-7695 Riad El Solh, Beirut, Lebanon',
                     'trade_name' => '(formerly Continental Trust Insurance and
 Reinsurance S.A.L.',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             156 =>
                 array (
@@ -17934,6 +18590,7 @@ Reinsurance S.A.L.',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             157 =>
                 array (
@@ -17961,6 +18618,7 @@ Reinsurance S.A.L.',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             158 =>
                 array (
@@ -17988,6 +18646,7 @@ Reinsurance S.A.L.',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             159 =>
                 array (
@@ -18015,6 +18674,7 @@ Reinsurance S.A.L.',
                     'toll_free_number' => '',
                     'trade_name' => 'MEARCO',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             160 =>
                 array (
@@ -18042,6 +18702,7 @@ Reinsurance S.A.L.',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             161 =>
                 array (
@@ -18069,6 +18730,7 @@ Reinsurance S.A.L.',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             162 =>
                 array (
@@ -18096,6 +18758,7 @@ Reinsurance S.A.L.',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             163 =>
                 array (
@@ -18123,6 +18786,7 @@ Reinsurance S.A.L.',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             164 =>
                 array (
@@ -18150,6 +18814,7 @@ Reinsurance S.A.L.',
                     'toll_free_number' => '',
                     'trade_name' => 'Sogécap Liban SAL',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             165 =>
                 array (
@@ -18177,6 +18842,7 @@ Reinsurance S.A.L.',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             166 =>
                 array (
@@ -18204,6 +18870,7 @@ Reinsurance S.A.L.',
                     'toll_free_number' => '',
                     'trade_name' => 'L.C.I',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             167 =>
                 array (
@@ -18231,6 +18898,7 @@ Reinsurance S.A.L.',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             168 =>
                 array (
@@ -18258,6 +18926,7 @@ Reinsurance S.A.L.',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             169 =>
                 array (
@@ -18285,6 +18954,7 @@ Reinsurance S.A.L.',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             170 =>
                 array (
@@ -18312,6 +18982,7 @@ Reinsurance S.A.L.',
                     'toll_free_number' => '',
                     'trade_name' => 'Union Franco Arabe d’Assurance et de Réassurances SAL (UFA)',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             171 =>
                 array (
@@ -18339,6 +19010,7 @@ Reinsurance S.A.L.',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             172 =>
                 array (
@@ -18366,6 +19038,7 @@ Reinsurance S.A.L.',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
             173 =>
                 array (
@@ -18393,6 +19066,7 @@ Reinsurance S.A.L.',
                     'toll_free_number' => '',
                     'trade_name' => '',
                     'alternative_names' => NULL,'status' => Status::Active,
+
                 ),
         ));
 

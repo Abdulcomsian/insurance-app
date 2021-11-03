@@ -612,6 +612,8 @@ class HomeController extends Controller
                     ->editColumn('status',function ($data){
                         if ($data->status == SanctionRequestStatus::Completed){
                             return '<div class="badge badge-success" fw-bolder">'.$data->status.'</div>';
+                        }elseif ($data->status == SanctionRequestStatus::AllResultAttached){
+                            return '<div class="badge badge-success" fw-bolder">'.$data->status.'</div>';
                         }else{
                             return '<div class="badge badge-danger" fw-bolder">'.$data->status.'</div>';
                         }
