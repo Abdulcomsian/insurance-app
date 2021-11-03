@@ -35,7 +35,7 @@
             </div>
             <hr>
             <div class="row">
-                <<!-- div class="col-xs-12 col-md-6 col-lg-6">
+                <!-- div class="col-xs-12 col-md-6 col-lg-6">
                     <div class="card panel panel-default height">
                         <div class="panel-heading">Comments</div>
                         <div class="panel-body">
@@ -94,6 +94,8 @@
                                  <button type="submit" value="cancel-request-form" class="btn btn-danger deleterequest">Cancel Request</button>
                              </form>
                             @endif
+                            <a style="float:right" href="{{ route('sanction_result',encrypt($sanction_request->id)) }}" type="submit" class="me-2 btn btn-info ">Fetch Result</a>
+
                         </div>
                     </div>
                 </div>

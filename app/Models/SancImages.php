@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class SancImages extends Model
 {
-   protected $table="sanc_attachments";
+    protected $guarded = [];
+    protected $table="sanc_attachments";
 
 }
