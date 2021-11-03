@@ -122,7 +122,6 @@ trait SanctionMethods {
                         'deleteSearchResponseStatusMessage' => $deleteRecord->responseStatus->message ?: null,
                         'deleteSearchDate' => now(),
                     ]);
-                dump('Delete Updated');
             }
             return $result;
         }catch (\Exception $exception){
@@ -131,7 +130,6 @@ trait SanctionMethods {
     }
 
     public function GetPdfs(){
-        dump('Here in getpdfs trait');
         try {
             $request = '{}';
             $result = self::curlRequest('GetPdfs',$request);
@@ -141,7 +139,6 @@ trait SanctionMethods {
 
                         $sanction = self::GetPdf($document->id);
                         if (!empty($sanction->data->document->documentBytes)) {
-                            dump('Here in if document byte not empty');
                             $pdfResult =  $sanction->data;
 
                             $addSearch = AddSearch::where('addSearchId',$pdfResult->document->sanctionsSearchId)->first();
@@ -151,7 +148,6 @@ trait SanctionMethods {
                             $publicPath = public_path($filePath);
 
                             file_put_contents("{$publicPath}", $base64data);
-                            dump('File Saved');
                             SancImages::create([
                                 'name' => $addSearch->name,
                                 'type' => $pdfResult->document->type,
@@ -164,16 +160,13 @@ trait SanctionMethods {
                                 'sanc_req_id' => $addSearch->sanc_req_id,
                                 'add_search_id' => $addSearch->id,
                             ]);
-                            dump('SancImages Saved');
                             $deleteResult = self::DeleteSearch( $pdfResult->document->sanctionsSearchId);
                             self::updateRequestSanctionStaus($addSearch->sanc_req_id);
-                            dump('Stauts checked');
                         }
 
                     }
                 }
             }
-            dump('No document found');
 
         }catch (\Exception $exception){
             dd($exception->getMessage());
