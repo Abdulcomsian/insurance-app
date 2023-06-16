@@ -1,4 +1,4 @@
-@extends('layouts.master', ["page_title"=>"Packages"])
+@extends('layouts.master', ["page_title"=>"Repairers"])
 @section('css')
     @include('layouts.datatables_css')
 @endsection
@@ -26,7 +26,7 @@
 														<rect fill="#000000" opacity="0.5" transform="translate(12.000000, 12.000000) rotate(-270.000000) translate(-12.000000, -12.000000)" x="4" y="11" width="16" height="2" rx="1" />
 													</svg>
 												</span>
-                                    <!--end::Svg Icon-->Add New Package</button>
+                                    <!--end::Svg Icon-->Add New Repairer</button>
                             <!--end::Add user-->
                         </div>
                         <!--end::Toolbar-->
@@ -67,60 +67,92 @@
                                                 <!--begin::Scroll-->
                                                 <div class="d-flex flex-column scroll-y me-n7 pe-7" id="kt_modal_add_user_scroll" data-kt-scroll="true" data-kt-scroll-activate="{default: false, lg: true}" data-kt-scroll-max-height="auto" data-kt-scroll-dependencies="#kt_modal_add_user_header" data-kt-scroll-wrappers="#kt_modal_add_user_scroll" data-kt-scroll-offset="300px">
                                                     <div class="fv-row mb-7">
-                                                        <!--begin::Label-->
-                                                        <label class="required fw-bold fs-6 mb-2">Package Name</label>
-                                                        <!--end::Label-->
-                                                        <!--begin::Input-->
-                                                        <input type="text" required name="name" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Package Name" />
-                                                        <!--end::Input-->
+                                                        
+                                                        <label class="required fw-bold fs-6 mb-2">Repairer Name</label>
+                                                       
+                                                        <input type="text" required name="name" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Repairer Name" />
+                                                        
                                                     </div>
 
-                                                    <!--begin::Input group-->
                                                     <div class="fv-row mb-7">
-                                                        <!--begin::Label-->
-                                                        <label class="required fw-bold fs-6 mb-2">Amount(AED)</label>
-                                                        <!--end::Label-->
-                                                        <!--begin::Input-->
-                                                        <input type="number" required name="price" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Amount" />
-                                                        <!--end::Input-->
+                                                        
+                                                        <label class="required fw-bold fs-6 mb-2">Email</label>
+                                                       
+                                                        <input type="email" required name="email" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Email" />
+                                                        
                                                     </div>
+
+                                                    <div class="fv-row mb-7">
+                                                        
+                                                        <label class="required fw-bold fs-6 mb-2">Contact</label>
+                                                       
+                                                        <input type="text" required name="contact" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Contact" />
+                                                        
+                                                    </div>
+                                                    <div class="fv-row mb-7">
+                                                        
+                                                        <label class="required fw-bold fs-6 mb-2">Phone</label>
+                                                       
+                                                        <input type="number" required name="phone" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="phone" />
+                                                        
+                                                    </div>
+                                                    <div class="fv-row mb-7">
+                                                        
+                                                        <label class="required fw-bold fs-6 mb-2">Mobile</label>
+                                                       
+                                                        <input type="number" required name="mobile" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Mobile" />
+                                                        
+                                                    </div>
+                                                    <div class="fv-row mb-7">
+                                                        
+                                                        <label class="required fw-bold fs-6 mb-2">Repairer Address</label>
+                                                       
+                                                        <input type="text" required name="address" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Address" />
+                                                        
+                                                    </div>
+
+
+                                                    <!--begin::Input group-->
+                                                    <!-- <div class="fv-row mb-7">
+                                                 
+                                                        <label class="required fw-bold fs-6 mb-2">Amount(AED)</label>
+                                               
+                                                        <input type="number" required name="price" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Amount" />
+                                                   
+                                                    </div> -->
                                                     <!--end::Input group-->
                                                     <!--begin::Input group-->
-                                                    <div class="fv-row mb-7">
-                                                        <!--begin::Label-->
+                                                    <!-- <div class="fv-row mb-7">
+                                                        
                                                         <label class="required fw-bold fs-6 mb-2">Count Sanctions</label>
-                                                        <!--end::Label-->
-                                                        <!--begin::Input-->
+                                                      
                                                         <input type="number" required name="sanctions" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Count Sanctions" />
-                                                        <!--end::Input-->
-                                                    </div>
-                                                    <div class="fv-row mb-7">
-                                                        <!--begin::Label-->
+                                                       
+                                                    </div> -->
+                                                    <!-- <div class="fv-row mb-7">
+                                                     
                                                         <label class="required fw-bold fs-6 mb-2">Status </label>
-                                                        <!--end::Label-->
-                                                        <!--begin::Input-->
+                                                        
                                                         <select type="number" required name="status" class="status form-control form-control-solid mb-3 mb-lg-0" placeholder="Count Sanctions" >
                                                             <option value="{{\App\Utils\Status::Active}}">{{\App\Utils\Status::Active}}</option>
                                                             <option value="{{\App\Utils\Status::Inactive}}">{{\App\Utils\Status::Inactive}}</option>
                                                         </select>
-                                                        <!--end::Input-->
-                                                    </div>
-                                                    <div class="fv-row mb-7">
-                                                        <!--begin::Label-->
+                                                   
+                                                    </div> -->
+                                                    <!-- <div class="fv-row mb-7">
+                                                   
                                                         <label class="required fw-bold fs-6 mb-2">Start Date</label>
-                                                        <!--end::Label-->
-                                                        <!--begin::Input-->
+                                                      
                                                         <input type="date" required name="start_date" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Count Sanctions" />
-                                                        <!--end::Input-->
-                                                    </div>
-                                                    <div class="fv-row mb-7">
-                                                        <!--begin::Label-->
+                                                       
+                                                    </div> -->
+                                                    <!-- <div class="fv-row mb-7">
+                                                      
                                                         <label class="required fw-bold fs-6 mb-2">End Date</label>
-                                                        <!--end::Label-->
-                                                        <!--begin::Input-->
+                                                    
                                                         <input type="date" required name="end_date" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Count Sanctions" />
-                                                        <!--end::Input-->
-                                                    </div>
+                                                     
+                                                    </div> -->
                                                 </div>
                                                 <!--end::Scroll-->
                                                 <!--begin::Actions-->

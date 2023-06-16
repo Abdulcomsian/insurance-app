@@ -16,10 +16,14 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::group(['middleware' => ['web', 'activity']], function () {
-    Route::get('/', 'HomeController@index')->name('home');
+    Route::get('/', 'HomeController@index')->name('home');               
 
     Route::get('sign-in', function () {return view('sign-in');})->name('sign-in');
     Route::get('sanction_request', function () {return view('sanction_request.sanction_request');})->name('sanction_request');
+
+    // Route::get('form_request', function () {return view('form_request.form_request');})->name('form_request');
+    Route::get('form-request', 'HomeController@formRequest')->name('form_request');
+
 
     Auth::routes([
         'register' => false, // Registration Routes...
