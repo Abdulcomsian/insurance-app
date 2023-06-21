@@ -1,4 +1,4 @@
-@extends('layouts.master', ["page_title"=>"Assessors"])
+{{-- @extends('layouts.master', ["page_title"=>"Assessors"])
 @section('css')
     @include('layouts.datatables_css')
     <style>
@@ -166,4 +166,4 @@
         });
     </script>
 
-@endsection
+@endsection --}}

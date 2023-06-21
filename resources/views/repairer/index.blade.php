@@ -1,4 +1,4 @@
-{{-- @extends('layouts.master', ["page_title"=>"Repairers"])
+@extends('layouts.master', ["page_title"=>"Repairers"])
 @section('css')
     @include('layouts.datatables_css')
 @endsection
@@ -62,7 +62,7 @@
                                         <!--begin::Modal body-->
                                         <div class="modal-body scroll-y mx-5 mx-xl-15 my-7">
                                             <!--begin::Form-->
-                                            <form id="kt_modal_add_user_form" class="form" action="{{route('rates.update')}}" method="post">
+                                            <form id="kt_modal_add_user_form" class="form" action="{{route('repairer.store')}}" method="post">
                                                 @csrf
                                                 <!--begin::Scroll-->
                                                 <div class="d-flex flex-column scroll-y me-n7 pe-7" id="kt_modal_add_user_scroll" data-kt-scroll="true" data-kt-scroll-activate="{default: false, lg: true}" data-kt-scroll-max-height="auto" data-kt-scroll-dependencies="#kt_modal_add_user_header" data-kt-scroll-wrappers="#kt_modal_add_user_scroll" data-kt-scroll-offset="300px">
@@ -111,48 +111,6 @@
 
                                                     </div>
 
-
-                                                    <!--begin::Input group-->
-                                                    <!-- <div class="fv-row mb-7">
-
-                                                        <label class="required fw-bold fs-6 mb-2">Amount(AED)</label>
-
-                                                        <input type="number" required name="price" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Amount" />
-
-                                                    </div> -->
-                                                    <!--end::Input group-->
-                                                    <!--begin::Input group-->
-                                                    <!-- <div class="fv-row mb-7">
-
-                                                        <label class="required fw-bold fs-6 mb-2">Count Sanctions</label>
-
-                                                        <input type="number" required name="sanctions" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Count Sanctions" />
-
-                                                    </div> -->
-                                                    <!-- <div class="fv-row mb-7">
-
-                                                        <label class="required fw-bold fs-6 mb-2">Status </label>
-
-                                                        <select type="number" required name="status" class="status form-control form-control-solid mb-3 mb-lg-0" placeholder="Count Sanctions" >
-                                                            <option value="{{\App\Utils\Status::Active}}">{{\App\Utils\Status::Active}}</option>
-                                                            <option value="{{\App\Utils\Status::Inactive}}">{{\App\Utils\Status::Inactive}}</option>
-                                                        </select>
-
-                                                    </div> -->
-                                                    <!-- <div class="fv-row mb-7">
-
-                                                        <label class="required fw-bold fs-6 mb-2">Start Date</label>
-
-                                                        <input type="date" required name="start_date" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Count Sanctions" />
-
-                                                    </div> -->
-                                                    <!-- <div class="fv-row mb-7">
-
-                                                        <label class="required fw-bold fs-6 mb-2">End Date</label>
-
-                                                        <input type="date" required name="end_date" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Count Sanctions" />
-
-                                                    </div> -->
                                                 </div>
                                                 <!--end::Scroll-->
                                                 <!--begin::Actions-->
@@ -189,14 +147,13 @@
                             <!--begin::Table row-->
                             <tr class="text-start text-gray-400 fw-bolder fs-7 text-uppercase gs-0">
                                 <th>S.No</th>
-                                <th>Package Name</th>
-                                <th>Amount(AED)</th>
-                                <th>Count Sanctions</th>
-                                <th>Start Date</th>
-                                <th>End Date</th>
-                                <th>Last Updated</th>
-                                <th>Status</th>
-                                <th>Actions</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Contact</th>
+                                <th>Phone</th>
+                                <th>Mobile</th>
+                                <th>Address</th>
+                                <th>Action</th>
                             </tr>
                             <!--end::Table row-->
                             </thead>
@@ -218,97 +175,88 @@
         <!--end::Post-->
     </div>
     <!--end::Content-->
-{{-- @endsection
+@endsection
 @section('script')
     @include('layouts.datatables_js')
 
-        <script>
-            $(function () {
-                var table = $('.data-table').DataTable({
-                    processing: true,
-                    serverSide: true,
-                    dom: 'lBfrtip',
-                    buttons: [
-                        {
-                            extend: 'copyHtml5',
-                            exportOptions: {
-                                columns: [  0,1,2,3,4,5,6  ]
-                            },
+    <script>
+        $(document).ready(function() {
+            var table = $('.data-table').DataTable({
+                processing: true,
+                serverSide: true,
+                dom: 'lBfrtip',
+                buttons: [
+                    {
+                        extend: 'copyHtml5',
+                        exportOptions: {
+                            columns: [0, 1, 2, 3, 4, 5, 6]
+                        }
+                    },
+                    {
+                        extend: 'excelHtml5',
+                        exportOptions: {
+                            columns: [0, 1, 2, 3, 4, 5, 6]
+                        }
+                    },
+                    {
+                        extend: 'csvHtml5',
+                        exportOptions: {
+                            columns: [0, 1, 2, 3, 4, 5, 6]
+                        }
+                    },
+                    {
+                        extend: 'pdfHtml5',
+                        exportOptions: {
+                            columns: [0, 1, 2, 3, 4, 5, 6]
+                        }
+                    }
+                ],
+                ajax: "{{ route('repairer.index') }}",
+                columns: [
+                    { data: 'id', name: 'id', defaultContent: '-' },
+                    { data: 'name', name: 'name', defaultContent: '-', class: 'name' },
+                    { data: 'email', name: 'email', defaultContent: '-', class: 'email' },
+                    { data: 'contact', name: 'contact', defaultContent: '-', class: 'contact' },
+                    { data: 'phone', name: 'phone', defaultContent: '-', class: 'phone' },
+                    { data: 'mobile', name: 'mobile', defaultContent: '-', class: 'mobile' },
+                    { data: 'address', name: 'address', defaultContent: '-', class: 'address' },
+                    { data: 'action', name: 'action', orderable: false, searchable: false }
+                ],
+                language: {
+                    searchPlaceholder: "Search Package",
+                    search: ""
+                },
+                lengthMenu: [[10, 25, 50, -1], [10, 25, 50, "All"]]
+            });
 
-                        },
-                        {
-                            extend: 'excelHtml5',
-                            exportOptions: {
-                                columns: [  0,1,2,3,4,5,6  ]
-                            },
+            $(document).on('click', '.edit-btn', function() {
+                var id = $(this).data('id');
+                window.location.href = "{{ route('repairer.edit', ':id') }}".replace(':id', id);
+            });
 
+            $(document).on('click', '.delete-btn', function() {
+                var id = $(this).data('id');
+                if (confirm("Are you sure you want to delete this repairer?")) {
+                    $.ajax({
+                        url: "{{ route('repairer.destroy', ':id') }}".replace(':id', id),
+                        type: 'DELETE',
+                        data: {
+                            "_token": "{{ csrf_token() }}"
                         },
-                        {
-                            extend: 'csvHtml5',
-                            exportOptions: {
-                                columns: [  0,1,2,3,4,5,6  ]
-                            },
-
-                        },
-                        {
-                            extend: 'pdfHtml5',
-                            exportOptions: {
-                                columns: [  0,1,2,3,4,5,6  ]
+                        success: function(response) {
+                            if (response.success) {
+                                table.ajax.reload();
+                                alert('Repairer deleted successfully.');
+                            } else {
+                                alert('Failed to delete the repairer.');
                             }
                         },
-                    ],
-
-                    ajax: "{{ route('rates.index') }}",
-                    columns: [
-                        {data: 'id', name: 'id',defaultContent: '-'},
-                        {data: 'name', name: 'name',defaultContent: '-',class:'name'},
-                        {data: 'price', name: 'price',defaultContent: '-',class:'price'},
-                        {data: 'sanctions', name: 'sanctions',defaultContent: '-',class:'sanctions'},
-                        {data: 'start_date', name: 'start_date',defaultContent: '-',class:'start_date'},
-                        {data: 'end_date', name: 'end_date',defaultContent: '-',class:'end_date'},
-                        {data: 'updated_at', name: 'updated_at',defaultContent: '-',class:'updated_at'},
-                        {data: 'status', name: 'status',defaultContent: '-',class:'status'},
-                        {data: 'action', name: 'action', orderable: false, searchable: false},
-                    ],
-                    language: {
-                        searchPlaceholder: "Search Package",
-                        search: ""
-                    },
-                    lengthMenu: [ [10, 25, 50, -1], [10, 25, 50, "All"] ]
-                });
-
-            });
-
-            $( document ).ready(function() {
-                $('div.dataTables_filter input').addClass('form-control form-control-solid w-250px ps-15');
-
-            //For add and edit package
-                $(document).on('click', '.action', function(){
-                console.log('Here in function');
-                console.log($(this).val());
-                let btn_value = $(this).val();
-                if (btn_value == 'Add'){
-                    $('.form')[0].reset();
-                    $('input[name="id"]').remove();
-                    $('#title').text('Add Package');
-                }else {
-                    console.log('Here in else edit');
-
-                    console.log($(this).parent().parent().find($('.price')).text());
-
-                    $('input[name="id"]').remove();
-                    $('#title').text('Edit Package');
-                    let id = $(this).attr('id')
-                    $('.form').append(`<input type="hidden" name="id" value="${id}">`);
-                    $('input[name="name"]').val($(this).parent().parent().find($('.name')).text());
-                    $('input[name="price"]').val($(this).parent().parent().find($('.price')).text());
-                    $('input[name="sanctions"]').val($(this).parent().parent().find($('.sanctions')).text());
-                    $('input[name="start_date"]').val($(this).parent().parent().find($('.start_date')).text());
-                    $('input[name="end_date"]').val($(this).parent().parent().find($('.end_date')).text());
-                    $('select[name="status"]').val($(this).parent().parent().find($('.status')).text());
+                        error: function(xhr) {
+                            alert('An error occurred. Please try again later.');
+                        }
+                    });
                 }
             });
-            });
-
-        </script>
-@endsection --}} --}}
+        });
+    </script>
+@endsection

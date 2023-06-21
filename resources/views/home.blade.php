@@ -56,7 +56,8 @@
                                                                                 </svg>
                                                                             </span>
                                                     <!--end::Svg Icon-->
-                                                    <div class="text-inverse-dark fw-bolder fs-2 mb-2 mt-5">{{$users_today}}
+                                                    <div class="text-inverse-dark fw-bolder fs-2 mb-2 mt-5">
+                                                        {{-- {{$users_today}} --}}
                                                     </div>
                                                     <div class="text-inverse-success fw-bolder fs-3 mb-2 mt-5">Today Customers</div>
                                                 </div>
@@ -84,7 +85,9 @@
                                                                             </svg>
                                                                         </span>
                                                     <!--end::Svg Icon-->
-                                                   <div class="text-inverse-dark fw-bolder fs-2 mb-2 mt-5">{{$users_weekly}}</div>
+                                                   <div class="text-inverse-dark fw-bolder fs-2 mb-2 mt-5">
+                                                    {{-- {{$users_weekly}} --}}
+                                                </div>
                                                     <div class="text-inverse-success fw-bolder fs-3 mb-2 mt-5">Weekly Customers</div>
                                                 </div>
                                                 <!--end::Body-->
@@ -111,7 +114,9 @@
                                                                                 </svg>
                                                                             </span>
                                                     <!--end::Svg Icon-->
-                                                    <div class="text-inverse-dark fw-bolder fs-2 mb-2 mt-5">{{$users_monthly}}</div>
+                                                    <div class="text-inverse-dark fw-bolder fs-2 mb-2 mt-5">
+                                                        {{-- {{$users_monthly}} --}}
+                                                    </div>
                                                     <div class="text-inverse-success fw-bolder fs-3 mb-2 mt-5">Monthly Customers</div>
                                                 </div>
                                                 <!--end::Body-->
@@ -138,7 +143,9 @@
                                                                             </svg>
                                                                         </span>
                                                     <!--end::Svg Icon-->
-                                                    <div class="text-inverse-dark fw-bolder fs-2 mb-2 mt-5">{{$users_yearly}}</div>
+                                                    <div class="text-inverse-dark fw-bolder fs-2 mb-2 mt-5">
+                                                        {{-- {{$users_yearly}} --}}
+                                                    </div>
                                                     <div class="text-inverse-success fw-bolder fs-3 mb-2 mt-5">Yearly Customers</div>
                                                 </div>
                                                 <!--end::Body-->
@@ -182,7 +189,8 @@
                                                                                 </svg>
                                                                             </span>
                                                     <!--end::Svg Icon-->
-                                                    <div class="text-inverse-dark fw-bolder fs-2 mb-2 mt-5">{{$transactions_today}}
+                                                    <div class="text-inverse-dark fw-bolder fs-2 mb-2 mt-5">
+                                                        {{-- {{$transactions_today}} --}}
                                                     </div>
                                                     <div class="text-inverse-success fw-bolder fs-3 mb-2 mt-5">Today Transactions</div>
                                                 </div>
@@ -210,7 +218,9 @@
                                                                             </svg>
                                                                         </span>
                                                     <!--end::Svg Icon-->
-                                                   <div class="text-inverse-dark fw-bolder fs-2 mb-2 mt-5">{{$transactions_weekly}}</div>
+                                                   <div class="text-inverse-dark fw-bolder fs-2 mb-2 mt-5">
+                                                    {{-- {{$transactions_weekly}} --}}
+                                                </div>
                                                     <div class="text-inverse-success fw-bolder fs-3 mb-2 mt-5">Weekly Transactions</div>
                                                 </div>
                                                 <!--end::Body-->
@@ -237,7 +247,9 @@
                                                                                 </svg>
                                                                             </span>
                                                     <!--end::Svg Icon-->
-                                                    <div class="text-inverse-dark fw-bolder fs-2 mb-2 mt-5">{{$transactions_monthly}}</div>
+                                                    <div class="text-inverse-dark fw-bolder fs-2 mb-2 mt-5">
+                                                        {{-- {{$transactions_monthly}} --}}
+                                                    </div>
                                                     <div class="text-inverse-success fw-bolder fs-3 mb-2 mt-5">Monthly Transactions</div>
                                                 </div>
                                                 <!--end::Body-->
@@ -264,7 +276,9 @@
                                                                             </svg>
                                                                         </span>
                                                     <!--end::Svg Icon-->
-                                                    <div class="text-inverse-dark fw-bolder fs-2 mb-2 mt-5">{{$transactions_yearly}}</div>
+                                                    <div class="text-inverse-dark fw-bolder fs-2 mb-2 mt-5">
+                                                        {{-- {{$transactions_yearly}} --}}
+                                                    </div>
                                                     <div class="text-inverse-success fw-bolder fs-3 mb-2 mt-5">Yearly Transactions</div>
                                                 </div>
                                                 <!--end::Body-->
@@ -308,7 +322,8 @@
                                                                                 </svg>
                                                                             </span>
                                                     <!--end::Svg Icon-->
-                                                    <div class="text-inverse-dark fw-bolder fs-2 mb-2 mt-5">{{$total_users}}
+                                                    <div class="text-inverse-dark fw-bolder fs-2 mb-2 mt-5">
+                                                        {{-- {{$total_users}} --}}
                                                     </div>
                                                     <div class="text-inverse-success fw-bolder fs-3 mb-2 mt-5">Total Customers</div>
                                                 </div>
@@ -336,7 +351,9 @@
                                                                             </svg>
                                                                         </span>
                                                     <!--end::Svg Icon-->
-                                                    <div class="text-inverse-dark fw-bolder fs-2 mb-2 mt-5">{{$total_companies}}</div>
+                                                    <div class="text-inverse-dark fw-bolder fs-2 mb-2 mt-5">
+                                                        {{-- {{$total_companies}} --}}
+                                                    </div>
                                                     <div class="text-inverse-success fw-bolder fs-3 mb-2 mt-5">Total Companies</div>
                                                 </div>
                                                 <!--end::Body-->
@@ -363,7 +380,9 @@
                                                                                 </svg>
                                                                             </span>
                                                     <!--end::Svg Icon-->
-                                                    <div class="text-inverse-dark fw-bolder fs-2 mb-2 mt-5">{{$total_packages}}</div>
+                                                    <div class="text-inverse-dark fw-bolder fs-2 mb-2 mt-5">
+                                                        {{-- {{$total_packages}} --}}
+                                                    </div>
                                                     <div class="text-inverse-success fw-bolder fs-3 mb-2 mt-5">Total Packages</div>
                                                 </div>
                                                 <!--end::Body-->
@@ -390,7 +409,9 @@
                                                                             </svg>
                                                                         </span>
                                                     <!--end::Svg Icon-->
-                                                    <div class="text-inverse-dark fw-bolder fs-2 mb-2 mt-5">{{$total_transactions}}</div>
+                                                    <div class="text-inverse-dark fw-bolder fs-2 mb-2 mt-5">
+                                                        {{-- {{$total_transactions}} --}}
+                                                    </div>
                                                     <div class="text-inverse-success fw-bolder fs-3 mb-2 mt-5">Total Transactions</div>
                                                 </div>
                                                 <!--end::Body-->
