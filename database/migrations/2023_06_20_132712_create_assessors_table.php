@@ -13,7 +13,7 @@ class CreateAssessorsTable extends Migration
      */
     public function up()
     {
-        Schema::create('add_assessors', function (Blueprint $table) {
+        Schema::create('assessors', function (Blueprint $table) {
             $table->id();
             $table->string('assessor')->nullable();
             $table->string('email')->nullable();

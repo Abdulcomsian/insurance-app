@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AccidentServiceReportController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -72,7 +73,7 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('user-edit', 'HomeController@usersEdit')->name('users.edit');
 
     //Payment Transactions
-    Route::match(['get','post'],'payment-transactions', 'HomeController@paymentTransactionsIndex')->name('payment_transactions.index');
+    Route::match(['get','post'],'payment-transactions', [HomeController::class,'formRequest'])->name('payment_transactions.index');
     Route::get('payment-transaction-show/{id}', 'HomeController@paymentTransactionsShow')->name('payment_transactions.show');
     Route::post('payment-cancel', 'HomeController@paymentTransactionsCancel')->name('payment_transactions.cancel');
     Route::get('payment-transaction-resend-email/{id}', 'HomeController@paymentTransactionsResendEmail')->name('payment_transactions.resend_email');
@@ -100,3 +101,8 @@ Route::post('import', 'CompanyDetailsController@import')->name('import');
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::controller(AccidentServiceReportController::class)->prefix('accident-accessing-service')->group( function () {
+    Route::get('create', 'create')->name('accident-accessing-service.create');
+    Route::post('store', 'store')->name('accident-accessing-service.store');
+} );

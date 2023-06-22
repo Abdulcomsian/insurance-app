@@ -841,9 +841,9 @@ class HomeController extends Controller
 
     }
 
-    public function formRequest()
-    {
-        return view('form_request');
-    }
+    // public function formRequest()
+    // {
+    //     return view('accident-service.create');
+    // }
 }
 
