@@ -2,19 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Imports\CompaniesImport;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
-use Illuminate\Support\Facades\DB;
-use App\Models\CompanyDetail;
-use App\Models\BoardOfDirector;
-use App\Models\CompanyAccounting;
-use App\Models\IncomeStatement;
 use App\Models\Investment;
 use App\Models\Subsidiary;
 use App\Models\MarketShare;
 use App\Models\Shareholder;
+use Illuminate\Http\Request;
+use App\Models\CompanyDetail;
+use App\Models\BoardOfDirector;
+use App\Models\IncomeStatement;
+use App\Imports\CompaniesImport;
+use App\Models\CompanyAccounting;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 use Maatwebsite\Excel\Facades\Excel;
 
 class CompanyDetailsController extends Controller

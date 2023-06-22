@@ -1,5 +1,7 @@
 <?php
 
+namespace Database\Seeders;
+
 use App\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
@@ -20,7 +22,7 @@ class UserTableSeeder extends Seeder
             'email_verified_at' => now(),
             'type' => 'System User',
             'status' => 'Active',
-            'country_id' => 237,
+            'country_id' => null,
             'mobile_number' => '0123456789',
             'office_number' => '0123456789',
             'company_name' => 'XYZ',
@@ -36,7 +38,7 @@ class UserTableSeeder extends Seeder
             'email_verified_at' => now(),
             'type' => 'System User',
             'status' => 'Active',
-            'country_id' => 237,
+            'country_id' => null,
             'mobile_number' => '0123456789',
             'office_number' => '0123456789',
             'company_name' => 'XYZ',
@@ -51,7 +53,7 @@ class UserTableSeeder extends Seeder
             'email_verified_at' => now(),
             'type' => 'System User',
             'status' => 'Active',
-            'country_id' => 237,
+            'country_id' => null,
             'mobile_number' => '0123456789',
             'office_number' => '0123456789',
             'company_name' => 'XYZ',
@@ -66,7 +68,7 @@ class UserTableSeeder extends Seeder
             'email_verified_at' => now(),
             'type' => 'System User',
             'status' => 'Active',
-            'country_id' => 237,
+            'country_id' => null,
             'mobile_number' => '0123456789',
             'office_number' => '0123456789',
             'company_name' => 'XYZ',
@@ -81,7 +83,7 @@ class UserTableSeeder extends Seeder
             'email_verified_at' => now(),
             'type' => 'Admin',
             'status' => 'Active',
-            'country_id' => 237,
+            'country_id' => null,
             'mobile_number' => '0123456789',
             'office_number' => '0123456789',
             'company_name' => 'XYZ',
