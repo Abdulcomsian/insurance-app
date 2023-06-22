@@ -15,7 +15,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/', 'HomeController@home')->name('home');
 
+// Route::group(['middleware' => ['web']], function () {
 
 Route::group(['middleware' => ['web']], function () {
     Route::get('/', 'HomeController@index')->name('home');
@@ -36,9 +38,31 @@ Route::group(['middleware' => ['web']], function () {
     //By Assad Yaqoob
     //Home
     //Customer History
-    Route::match(['get', 'post'], 'customers-history', 'HomeController@customerHistory')->name('customers.history');
-    Route::get('customer-edit/{id}', 'HomeController@customerEdit')->name('customers.edit');
-    Route::view('customer-create', 'customers.create')->name('customers.create');
+    // Route::match(['get', 'post'], 'customers-history', 'HomeController@customerHistory')->name('customers.history');
+    // Route::get('customer-edit/{id}', 'HomeController@customerEdit')->name('customers.edit');
+    // Route::view('customer-create', 'customers.create')->name('customers.create');
+
+
+
+
+    // add Assessor routes
+    Route::get('/assessors/create', 'AssessorController@create')->name('assessors.create');
+    Route::post('/assessors', 'AssessorController@store')->name('assessors.store');
+    Route::get('/assessors', 'AssessorController@index')->name('assessors.index');
+    Route::get('/assessors/data', 'AssessorController@data')->name('assessors.data');
+
+    // Repairer Controller
+
+    Route::get('repairers', 'RepairerController@index')->name('repairer.index');
+    Route::post('repairers', 'RepairerController@store')->name('repairer.store');
+    Route::get('repairers/{id}/edit', 'RepairerController@edit')->name('repairer.edit');
+    Route::put('repairers/{id}', 'RepairerController@update')->name('repairer.update');
+    Route::delete('repairers/{id}', 'RepairerController@destroy')->name('repairer.destroy');
+
+
+
+
+
     Route::post('customer-update/{id}', 'HomeController@customerUpdate')->name('customers.update');
     Route::delete('customer-delete/{id}', 'HomeController@customerDelete')->name('customers.delete');
     Route::post('customer-save', 'HomeController@customerSave')->name('customers.save');
@@ -46,12 +70,6 @@ Route::group(['middleware' => ['web']], function () {
     //Users
     Route::get('users', 'HomeController@usersIndex')->name('users.index');
     Route::get('user-edit', 'HomeController@usersEdit')->name('users.edit');
-
-    //Insurance Companies Management
-    Route::match(['get','post'],'insurance-companies', 'HomeController@indexWithDatatable')->name('insurance_companies.index');
-    Route::get('insurance-companies-edit/{id}', 'HomeController@insuranceCompaniesEdit')->name('insurance_companies.edit');
-    Route::get('insurance-company-create', 'HomeController@insuranceCompaniesCreate')->name('insurance_companies.create');
-    Route::post('insurance-company-save', 'HomeController@insuranceCompaniesSave')->name('insurance_companies.save');
 
     //Payment Transactions
     Route::match(['get','post'],'payment-transactions', 'HomeController@paymentTransactionsIndex')->name('payment_transactions.index');
@@ -63,18 +81,9 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('packages', 'HomeController@ratesIndex')->name('rates.index');
     Route::post('package-update', 'HomeController@ratesEdit')->name('rates.update');
 
-    //Countries Management
-    Route::get('countries', 'HomeController@countriesIndex')->name('countries.index');
-    Route::get('countries-edit', 'HomeController@countriesEdit')->name('countries.edit');
-    Route::post('countries-update/{id}', 'HomeController@countriesUpdate')->name('countries.update');
+
 
     //Payment Transactions
-    Route::match(['get','post'],'sanction-request', 'HomeController@sanctionRequestIndex')->name('sanction_request.index');
-    Route::get('sanction-result/{id}', 'HomeController@getSanctionResult')->name('sanction_result');
-    Route::get('sanction-request-show/{id}', 'HomeController@sanctionRequestShow')->name('sanction_request.show');
-    Route::post('sanc-save-attachment','HomeController@sanc_save_attachment')->name('sanc-save-attachment');
-    Route::post('sanc-send-attachment','HomeController@sanc_send_attachment')->name('sanc-send-attachment');
-    Route::get('delete-attachements/{id}','HomeController@delete_attachements')->name('delete-attachements');
     Route::post('cancel-request','HomeController@cancel_request')->name('cancel-request');
     Route::post('company-details-save','CompanyDetailsController@store')->name('company-details.store');
     Route::post('company-details-update','CompanyDetailsController@update')->name('company-details.update');

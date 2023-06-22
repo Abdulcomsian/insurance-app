@@ -1,4 +1,4 @@
-{{-- @extends('layouts.master', ["page_title" => "Assessors"])
+@extends('layouts.master', ["page_title" => "Assessors"])
 
 @section('content')
     <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
@@ -40,8 +40,19 @@
                                                     @enderror
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="row gx-10 mb-5">
+
+                                            <div class="col-lg-6">
+                                                <label class="form-label fs-6 fw-bolder text-gray-700 mb-3">Phone Number</label>
+                                                <div class="mb-5">
+                                                    <input required type="phone_number" name="phone_number" class="form-control @error('phone_number') is-invalid @enderror" value="{{ old('phone_number') }}" placeholder="Phone Number" />
+                                                    @error('phone_number')
+                                                        <span class="invalid-feedback" role="alert">
+                                                            <strong>{{ $message }}</strong>
+                                                        </span>
+                                                    @enderror
+                                                </div>
+                                            </div>
+
                                             <div class="col-lg-6">
                                                 <label class="form-label fs-6 fw-bolder text-gray-700 mb-3">Mobile Number</label>
                                                 <div class="mb-5">
@@ -53,6 +64,7 @@
                                                     @enderror
                                                 </div>
                                             </div>
+
                                             <div class="col-lg-6">
                                                 <label class="form-label fs-6 fw-bolder text-gray-700 mb-3">Inspection Date</label>
                                                 <div class="mb-5">
@@ -64,8 +76,8 @@
                                                     @enderror
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="row gx-10 mb-5">
+
+
                                             <div class="col-lg-6">
                                                 <label class="form-label fs-6 fw-bolder text-gray-700 mb-3">Assessment Date</label>
                                                 <div class="mb-5">
@@ -76,7 +88,8 @@
                                                         </span>
                                                     @enderror
                                                 </div>
-                                            </div>
+                                        </div>
+
                                             <div class="col-lg-6">
                                                 <label class="form-label fs-6 fw-bolder text-gray-700 mb-3">Address</label>
                                                 <div class="mb-5">
@@ -91,6 +104,7 @@
                                         </div>
                                     </div>
                                 </div>
+
                                 <div class="card-footer py-6">
                                     <div class="text-center">
                                         <button type="submit" class="btn btn-primary px-6">Save</button>
@@ -103,4 +117,4 @@
             </div>
         </div>
     </div>
-@endsection --}}
+@endsection

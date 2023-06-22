@@ -26,7 +26,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    protected $redirectTo = '/login';
 
     /**
      * Create a new controller instance.
@@ -37,4 +37,16 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+
+    protected function authenticated(Request $request, $user)
+    {
+        // if ($user->type == 'Admin') {
+        //     // User is an admin, proceed with the default behavior
+        //     // ...
+        // } else {
+        //     Auth::logout();
+        //     return redirect()->back()->with('error', 'These credentials do not match our records.');
+        // }
+    }
+
 }

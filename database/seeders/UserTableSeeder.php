@@ -78,8 +78,8 @@ class UserTableSeeder extends Seeder
         ]);
         User::create([
             'name' => 'Admin',
-            'email' => 'admin@menainsurance.com',
-            'password' => Hash::make('password'),
+            'email' => 'admin@domain.com',
+            'password' => bcrypt('password'),
             'email_verified_at' => now(),
             'type' => 'Admin',
             'status' => 'Active',

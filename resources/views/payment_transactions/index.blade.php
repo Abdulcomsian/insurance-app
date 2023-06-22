@@ -2,7 +2,7 @@
 @section('css')
     @include('layouts.datatables_css')
     <style>
-        .fa{
+        .fa {
             font-family: "Font Awesome 5 Free" !important;
         }
     </style>
@@ -65,7 +65,7 @@
 @section('script')
     @include('layouts.datatables_js')
     <script>
-        $(document).on("click",".resend_email",function(event) {
+        $(document).on("click", ".resend_email", function (event) {
             event.preventDefault();
             let url = $(this).attr('href');
 
@@ -80,7 +80,7 @@
                     //closeOnCancel: false
                 },
 
-                function(){
+                function () {
                     window.location = url;
                     swal("Submitted!", "Email has been sent!", "success");
                 });
@@ -96,71 +96,83 @@
                     {
                         extend: 'copyHtml5',
                         exportOptions: {
-                            columns: [  0,1,2,3,4,5,6,7,8,9,10  ]
+                            columns: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
                         },
-
                     },
                     {
                         extend: 'excelHtml5',
                         exportOptions: {
-                            columns: [  0,1,2,3,4,5,6,7,8,9,10  ]
+                            columns: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
                         },
-
                     },
                     {
                         extend: 'csvHtml5',
                         exportOptions: {
-                            columns: [  0,1,2,3,4,5,6,7,8,9,10  ]
+                            columns: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
                         },
-
                     },
                     {
                         extend: 'pdfHtml5',
                         exportOptions: {
-                            columns: [  0,1,2,3,4,5,6,7,8,9,10  ]
+                            columns: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
                         }
                     },
-                ],
+                    {
+                        text: 'Add',
+                        action: function () {
+                    // Redirect to the specified URL
+                    window.location.href = "{{ route('form_request') }}";
+                }
+                    }
 
+
+                ],
                 ajax: "{{ route('payment_transactions.index') }}",
                 columns: [
-                    {data: 'id', name: 'id',defaultContent: ''},
-                    {data: 'invoice_id', name: 'invoice_id',defaultContent: '-'},
-                    {data: 'user_name', name: 'user_name',defaultContent: '-'},
-                    {data: 'package_name', name: 'package_name',defaultContent: '-'},
-                    {data: 'billing_name', name: 'billing_name',defaultContent: '-'},
-                    {data: 'billing_email', name: 'billing_email',defaultContent: '-'},
-                    {data: 'vat_amount', name: 'vat_amount',defaultContent: '-',
-                        render: function (data, type, row, meta) {
-                        return data + ' AED';
-                        }
-                    },
-                    {data: 'package_amount', name: 'package_amount',defaultContent: '-',
+                    { data: 'id', name: 'id', defaultContent: '' },
+                    { data: 'invoice_id', name: 'invoice_id', defaultContent: '-' },
+                    { data: 'user_name', name: 'user_name', defaultContent: '-' },
+                    { data: 'package_name', name: 'package_name', defaultContent: '-' },
+                    { data: 'billing_name', name: 'billing_name', defaultContent: '-' },
+                    { data: 'billing_email', name: 'billing_email', defaultContent: '-' },
+                    {
+                        data: 'vat_amount',
+                        name: 'vat_amount',
+                        defaultContent: '-',
                         render: function (data, type, row, meta) {
                             return data + ' AED';
-                        }},
-                    {data: 'total_amount', name: 'total_amount',defaultContent: '-',
+                        }
+                    },
+                    {
+                        data: 'package_amount',
+                        name: 'package_amount',
+                        defaultContent: '-',
+                        render: function (data, type, row, meta) {
+                            return data + ' AED';
+                        }
+                    },
+                    {
+                        data: 'total_amount',
+                        name: 'total_amount',
+                        defaultContent: '-',
                         render: function (data, type, row, meta) {
                             return parseFloat(data) + ' AED';
-                        }},
-                    // {data: 'card_first6', name: 'card_first6',defaultContent: '-'},
-                    // {data: 'card_last4', name: 'card_last4',defaultContent: '-'},
-                    // {data: 'card_type', name: 'card_type',defaultContent: '-'},
-                    {data: 'created_at', name: 'created_at',defaultContent: '-'},
-                    {data: 'status', name: 'status',defaultContent: '-'},
-                    {data: 'action', name: 'action',defaultContent: '-', orderable: false, searchable: false},
-
+                        }
+                    },
+                    { data: 'created_at', name: 'created_at', defaultContent: '-' },
+                    { data: 'status', name: 'status', defaultContent: '-' },
+                    { data: 'action', name: 'action', defaultContent: '-', orderable: false, searchable: false },
                 ],
                 language: {
                     searchPlaceholder: "Search Transaction",
                     search: ""
                 },
-                lengthMenu: [ [10, 25, 50, -1], [10, 25, 50, "All"] ]
+                lengthMenu: [[10, 25, 50, -1], [10, 25, 50, "All"]]
             });
 
-        });
-        $( document ).ready(function() {
-            $('div.dataTables_filter input').addClass('form-control form-control-solid w-250px ps-15');
+            $(document).ready(function () {
+                $('div.dataTables_filter input').addClass('form-control form-control-solid w-250px ps-15');
+            });
         });
     </script>
 @endsection

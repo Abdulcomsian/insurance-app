@@ -67,7 +67,7 @@
                     </a>
                 </div>
                 <div class="menu-item">
-                    <a class="menu-link  {{Request::is('customer*') ? 'active' : ''}}" href="{{route('customers.history')}}">
+                    <a class="menu-link  {{Request::is('add_assessors*') ? 'active' : ''}}" href="{{route('assessors.data')}}">
 										<span class="menu-icon">
 											<!--begin::Svg Icon | path: icons/duotone/Design/Sketch.svg-->
 											<span class="svg-icon svg-icon-2">
@@ -82,22 +82,7 @@
                         <span class="menu-title">Assessors </span>
                     </a>
                 </div>
-                <div class="menu-item">
-                    <a class="menu-link {{Request::is('countries*') ? 'active' : ''}}" href="{{route('countries.index')}}">
-										<span class="menu-icon">
-											<!--begin::Svg Icon | path: icons/duotone/Design/Sketch.svg-->
-											<span class="svg-icon svg-icon-2">
-												<svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px"
-                                                     viewBox="0 0 24 24" version="1.1">
-													<polygon fill="#000000" opacity="0.3" points="5 3 19 3 23 8 1 8"/>
-													<polygon fill="#000000" points="23 8 12 20 1 8"/>
-												</svg>
-											</span>
-                                            <!--end::Svg Icon-->
-										</span>
-                        <span class="menu-title">Countries & Exchange Rates</span>
-                    </a>
-                </div>
+
                 <div class="menu-item">
                     <a class="menu-link  {{Request::is('payment*') ? 'active' : ''}}" href="{{route('payment_transactions.index')}}">
 										<span class="menu-icon">
@@ -111,27 +96,12 @@
 											</span>
                                             <!--end::Svg Icon-->
 										</span>
-                        <span class="menu-title">Payment Transactions</span>
+                        <span class="menu-title">Accident Assessing Services</span>
                     </a>
                 </div>
+
                 <div class="menu-item">
-                    <a class="menu-link  {{Request::is('insurance*') ? 'active' : ''}}" href="{{route('insurance_companies.index')}}">
-										<span class="menu-icon">
-											<!--begin::Svg Icon | path: icons/duotone/Design/Sketch.svg-->
-											<span class="svg-icon svg-icon-2">
-												<svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px"
-                                                     viewBox="0 0 24 24" version="1.1">
-													<polygon fill="#000000" opacity="0.3" points="5 3 19 3 23 8 1 8"/>
-													<polygon fill="#000000" points="23 8 12 20 1 8"/>
-												</svg>
-											</span>
-                                            <!--end::Svg Icon-->
-										</span>
-                        <span class="menu-title">Insurance Companies</span>
-                    </a>
-                </div>
-                <div class="menu-item">
-                    <a class="menu-link {{Request::is('packages*') ? 'active' : ''}}" href="{{route('rates.index')}}">
+                    <a class="menu-link {{Request::is('Repairers*') ? 'active' : ''}}" href="{{route('repairer.index')}}">
 										<span class="menu-icon">
 											<!--begin::Svg Icon | path: icons/duotone/Design/Sketch.svg-->
 											<span class="svg-icon svg-icon-2">
@@ -146,24 +116,9 @@
                         <span class="menu-title">Repairers</span>
                     </a>
                 </div>
-                <div class="menu-item">
-                    <a class="menu-link {{Request::is('sanction*') ? 'active' : ''}}" href="{{route('sanction_request.index')}}">
-										<span class="menu-icon">
-											<!--begin::Svg Icon | path: icons/duotone/Design/Sketch.svg-->
-											<span class="svg-icon svg-icon-2">
-												<svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px"
-                                                     viewBox="0 0 24 24" version="1.1">
-													<polygon fill="#000000" opacity="0.3" points="5 3 19 3 23 8 1 8"/>
-													<polygon fill="#000000" points="23 8 12 20 1 8"/>
-												</svg>
-											</span>
-                                            <!--end::Svg Icon-->
-										</span>
-                        <span class="menu-title">Sanction Request</span>
-                    </a>
-                </div>
 
-                <div class="menu-item">
+
+                {{-- <div class="menu-item">
                     <a class="menu-link {{Request::is('form_request*') ? 'active' : ''}}" href="{{route('form_request')}}">
                     <span class="menu-icon">
 											<!--begin::Svg Icon | path: icons/duotone/Design/Sketch.svg-->
@@ -178,7 +133,7 @@
 										</span>
                         <span class="menu-title">Accident Assessing Services</span>
                     </a>
-                </div>
+                </div> --}}
 
 
 
