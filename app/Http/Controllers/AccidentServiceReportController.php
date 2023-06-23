@@ -28,6 +28,7 @@ class AccidentServiceReportController extends Controller
 
     public function store (Request $request)
     {
+        dd($request->all());
         $response = $this->accident_assessing_report->store($request->all());
     }
 }

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AccidentServiceReportController;
+use App\Http\Controllers\AssessorController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -21,7 +22,7 @@ Route::get('/', 'HomeController@home')->name('home');
 // Route::group(['middleware' => ['web']], function () {
 
 Route::group(['middleware' => ['web']], function () {
-    Route::get('/', 'HomeController@index')->name('home');
+    Route::get('/', [HomeController::class, 'index'])->name('home');
 
     Route::get('sign-in', function () {return view('sign-in');})->name('sign-in');
     Route::get('sanction_request', function () {return view('sanction_request.sanction_request');})->name('sanction_request');
@@ -47,7 +48,7 @@ Route::group(['middleware' => ['web']], function () {
 
 
     // add Assessor routes
-    Route::get('/assessors/create', 'AssessorController@create')->name('assessors.create');
+    Route::get('/assessors/create', [AssessorController::class, 'create'])->name('assessors.create');
     Route::post('/assessors', 'AssessorController@store')->name('assessors.store');
     Route::get('/assessors', 'AssessorController@index')->name('assessors.index');
     Route::get('/assessors/data', 'AssessorController@data')->name('assessors.data');
