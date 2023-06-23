@@ -13,7 +13,6 @@ return new class extends Migration
     {
         Schema::create('accident_service_reports', function (Blueprint $table) {
             $table->id();
-            // Step 1
             $table->integer('invoice_no')->nullable();
             $table->timestamps('invoice_date');
             $table->string('to')->nullable();
@@ -23,8 +22,28 @@ return new class extends Migration
             $table->integer('sub_total')->nullable();
             $table->integer('gst')->nullable();
             $table->integer('grand_total')->nullable();
-
-            // Step 2
+            $table->string('overall')->nullable();
+            $table->string('interior')->nullable();
+            $table->string('exterior')->nullable();
+            $table->string('steering')->nullable();
+            $table->string('brakes')->nullable();
+            $table->string('tyre_depth_unit_front')->nullable();
+            $table->string('tyre_depth_unit_rear')->nullable();
+            $table->string('rh_front');
+            $table->string('lh_front');
+            $table->string('rh_rear');
+            $table->string('lh_rear');
+            $table->string('overall')->nullable();
+            $table->string('interior')->nullable();
+            $table->string('exterior')->nullable();
+            $table->string('steering')->nullable();
+            $table->string('brakes')->nullable();
+            $table->string('tyre_depth_unit_front')->nullable();
+            $table->string('tyre_depth_unit_rear')->nullable();
+            $table->string('rh_front')->nullable();
+            $table->string('lh_front')->nullable();
+            $table->string('rh_rear')->nullable();
+            $table->string('lh_rear')->nullable();
             $table->string('owner_name')->nullable();
             $table->string('assessment_type')->nullable();
             $table->string('make')->nullable();
@@ -42,8 +61,6 @@ return new class extends Migration
             $table->string('body_type')->nullable();
             $table->string('axles')->nullable();
             $table->string('vin')->nullable();
-
-            //step 3 yes loss
             $table->timestamps('assessement_date');
             $table->string('cover_type')->nullable();
             $table->string('sum_insured')->nullable();
@@ -57,10 +74,7 @@ return new class extends Migration
             $table->string('certified_compliance')->nullable();
             $table->string('salvage_condition')->nullable();
             $table->longText('comments')->nullable();
-
-            //Step 4
             $table->string('file')->nullable();
-
             $table->softDeletes();
             $table->timestamps();
         });
