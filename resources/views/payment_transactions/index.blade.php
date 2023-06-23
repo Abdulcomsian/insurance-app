@@ -121,7 +121,7 @@
                         text: 'Add',
                         action: function () {
                     // Redirect to the specified URL
-                    window.location.href = "{{ route('form_request') }}";
+                    window.location.href = "{{ route('accident-accessing-service.create') }}";
                 }
                     }
 

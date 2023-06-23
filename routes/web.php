@@ -28,7 +28,6 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('sanction_request', function () {return view('sanction_request.sanction_request');})->name('sanction_request');
 
     // Route::get('form_request', function () {return view('form_request.form_request');})->name('form_request');
-    Route::get('form-request', [HomeController::class,'formRequest'])->name('form_request');
 
 
     Auth::routes([
@@ -104,6 +103,8 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::controller(AccidentServiceReportController::class)->prefix('accident-accessing-service')->group( function () {
+    Route::get('/', 'index')->name('accident-accessing-service.index');
     Route::get('create', 'create')->name('accident-accessing-service.create');
     Route::post('store', 'store')->name('accident-accessing-service.store');
 } );
+

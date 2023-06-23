@@ -437,52 +437,6 @@ class HomeController extends Controller
         }
     }
 
-    public function paymentTransactionsIndex(Request $request)
-    {
-        try {
-            if ($request->ajax()) {
-                $data = DB::table('transaction')
-                    ->join('users','transaction.user_id','=','users.id')
-                    ->orderBy('transaction.id','desc')
-                    ->select(
-                        'transaction.*',
-                        'users.name as user_name')
-                    ->get();
-                return Datatables::of($data)
-                    ->addColumn('billing_name',function ($data){
-                        return $data->billing_fname. ' ' . $data->billing_sname;
-                    })
-                    ->editColumn('status',function ($data){
-                        if ($data->status == "Paid"){
-                            return '<div class="badge badge-success" fw-bolder">'.$data->status.'</div>';
-                        }else{
-                            return '<div class="badge badge-danger" fw-bolder">'.$data->status.'</div>';
-                        }
-                    })
-                    ->addColumn('action',function ($data){
-                        $action = '<a href="'.route('payment_transactions.show',encrypt($data->id)).'" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
-                            <i class="fa fa-eye" title="View" aria-hidden="true"></i>
-                            </a>
-                            <a href="'.route('payment_transactions.resend_email',encrypt($data->id)).'" class="resend_email btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
-                                <i class="fa fa-envelope" title="Resend Email" aria-hidden="true"></i>
-                            </a>';
-                            if (isset($data->pdf)){
-                                $action .= '<a href="'.env('CUSTOMER_DOMAIN'). $data->pdf.'" download="" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
-                                    <i class="fa fa-file-pdf" aria-hidden="true"></i>
-                                </a>';
-                            }
-                            return $action;
-                    })
-                    ->rawColumns(['status','billing_name','action'])
-                    ->make(true);
-            }
-            return view('payment_transactions.index');
-        } catch (\Exception $exception){
-            toastr()->error('Something went wrong, try again');
-            return back();
-        }
-    }
-
     public function paymentTransactionsResendEmail($id){
         try {
             $transaction = DB::table('transaction')
@@ -840,10 +794,5 @@ class HomeController extends Controller
         }
 
     }
-
-    // public function formRequest()
-    // {
-    //     return view('accident-service.create');
-    // }
 }
 
