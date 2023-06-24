@@ -3,10 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\addAssessor;
+use App\Http\Requests\AccidentServiceReportRequest;
 use App\Repairer;
 use App\Repo\AccidentService\AccidentServiceInterface;
+use Illuminate\Auth\Events\Validated;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Validator;
 use Yajra\DataTables\Facades\DataTables;
 
 class AccidentServiceReportController extends Controller
@@ -75,7 +78,61 @@ class AccidentServiceReportController extends Controller
 
     public function store (Request $request)
     {
-        dd($request->all());
-        $response = $this->accident_assessing_report->store($request->all());
+        $validator = Validator::make($request->all(), [
+            'invoice_no'                    => 'required',
+            'invoice_date'                  => 'required',
+            'to'                            => 'required',
+            'tax_invoice'                   => 'required',
+            'vehicle'                       => 'required',
+            'rego'                          => 'required',
+            'assessment_fee'                => 'required',
+            'sub_total'                     => 'required',
+            'gst'                           => 'required',
+            'grand_total'                   => 'required',
+            'owner_name'                    => 'required',
+            'assessment_type'               => 'required',
+            'make'                          => 'required',
+            'engine_type'                   => 'required',
+            'odometer'                      => 'required',
+            'model'                         => 'required',
+            'engine_size'                   => 'required',
+            'paint_group'                   => 'required',
+            'series'                        => 'required',
+            'engine_no'                     => 'required',
+            'paint_code'                    => 'required',
+            'month_year'                    => 'required',
+            'transmission'                  => 'required',
+            'colour'                        => 'required',
+            'body_type'                     => 'required',
+            'axles'                         => 'required',
+            'vin'                           => 'required',
+            // 'series'                    => 'required',
+            // 'series'                    => 'required',
+            // 'series'                    => 'required',
+            // 'series'                    => 'required',
+            // 'series'                    => 'required',
+            // 'series'                    => 'required',
+        ]);
+        if($validator->fails())
+        {
+            dd($request->all());
+            toastr()->error('Validation Error');
+            return redirect()->route('accident-accessing-service.create');
+        }
+        else
+        {
+            $report = $this->accident_assessing_report->store($request->all());
+            if(!is_null($report))
+            {
+                toastr()->success("Accident Report Added Successfully");
+                return redirect()->route('accident-accessing-service.index');
+            }
+            else
+            {
+                toastr()->error('Validation Error');
+                return redirect()->route('accident-accessing-service.create');
+            }
+            // dd("report", $report);
+        }
     }
 }

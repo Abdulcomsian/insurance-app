@@ -465,13 +465,13 @@ margin-top:1rem;
                                             <div class="col-6 d-flex">
                                                 <div class="row">
                                                     <div class="col-sm-5 mt-2"> <label class="fw-bold fs-6 mb-2" style="color: black ;" > Tax Invoice </label></div>
-                                                    <div class="col-sm-7"> <input type="number" required  class="form-control form-control-solid mb-3 mb-lg-0" name="invoice" placeholder=" Enter Invoice No"/> </div>
+                                                    <div class="col-sm-7"> <input type="number" required  class="form-control form-control-solid mb-3 mb-lg-0" name="invoice_no" placeholder=" Enter Invoice No"/> </div>
                                                 </div>
                                             </div>
                                             <div class="col-sm-6 d-flex">
                                                 <div class="row">
                                                     <div class="col-sm-4 mt-2"> <label class="fw-bold fs-6 mb-2" style="color: black ;" > Date </label></div>
-                                                    <div class="col-sm-8"> <input type="date" required  class="form-control form-control-solid mb-3 mb-lg-0" name="date" placeholder=" Enter Invoice No"/> </div>
+                                                    <div class="col-sm-8"> <input type="date" required  class="form-control form-control-solid mb-3 mb-lg-0" name="invoice_date" placeholder=" Enter Invoice No"/> </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -480,7 +480,7 @@ margin-top:1rem;
                                       <div class="row mt-5">
                                         <div class="col-md-6">
                                         <label class="fw-bold fs-6 mb-2" style="color: black ;" >To </label>
-                                        <input type="text" required  class="form-control form-control-solid mb-3 mb-lg-0" name="owner" placeholder=" Owner Name"/>
+                                        <input type="text" required  class="form-control form-control-solid mb-3 mb-lg-0" name="to" placeholder=" Owner Name"/>
                                         </div>
                                         <div class="col-md-6">
                                         <label class="fw-bold fs-6 mb-2" style="color: black ;" >Tax Invoice </label>
@@ -595,7 +595,7 @@ margin-top:1rem;
                                         <div class="row mt-4">
                                         <div class="col-md-6">
                                         <label style="color: black ;" class="fw-bold fs-6 mb-2"  >Owner </label>
-                                        <input type="text"  required  class="form-control form-control-solid mb-3 mb-lg-0" name="owner" placeholder=" Enter Owner Name"/>
+                                        <input type="text"  required  class="form-control form-control-solid mb-3 mb-lg-0" name="owner_name" placeholder=" Enter Owner Name"/>
                                         </div>
                                         <div class="col-md-6">
                                         <label style="color: black ; " class="fw-bold fs-6 mb-2"  >Assessment Type</label>
@@ -633,13 +633,13 @@ margin-top:1rem;
 
                                           <div class="col-md-4">
                                         <label style="color: black ; " class="fw-bold fs-6 mb-2"  >Paint Group</label>
-                                        <input type="text"  required  class="form-control form-control-solid mb-3 mb-lg-0" name="paint" placeholder="Enter Paint Group "/>
+                                        <input type="text"  required  class="form-control form-control-solid mb-3 mb-lg-0" name="paint_group" placeholder="Enter Paint Group "/>
                                           </div>
                                       </div>
                                       <div class="row mt-4">
                                         <div class="col-md-4">
                                         <label style="color: black ; " class="fw-bold fs-6 mb-2"  >Series</label>
-                                        <input type="text"  required  class="form-control form-control-solid mb-3 mb-lg-0" name="model" placeholder="Enter Series"/>
+                                        <input type="text"  required  class="form-control form-control-solid mb-3 mb-lg-0" name="series" placeholder="Enter Series"/>
                                           </div>
                                           <div class="col-md-4">
                                         <label style="color: black ; " class="fw-bold fs-6 mb-2"  >Engine No</label>
@@ -656,7 +656,7 @@ margin-top:1rem;
                                       <div class="row mt-4">
                                         <div class="col-md-4">
                                         <label style="color: black ; " class="fw-bold fs-6 mb-2"  >Month / Year</label>
-                                        <input type="text"  required  class="form-control form-control-solid mb-3 mb-lg-0" name="month" placeholder="Enter Month / Year"/>
+                                        <input type="text"  required  class="form-control form-control-solid mb-3 mb-lg-0" name="month_year" placeholder="Enter Month / Year"/>
                                           </div>
                                           <div class="col-md-4">
                                         <label style="color: black ; " class="fw-bold fs-6 mb-2"  >Transmission</label>
@@ -682,7 +682,7 @@ margin-top:1rem;
 
                                           <div class="col-md-4">
                                         <label style="color: black ; " class="fw-bold fs-6 mb-2"  >VIN</label>
-                                        <input type="text"  required  class="form-control form-control-solid mb-3 mb-lg-0" name="vins" placeholder="Enter  VIN "/>
+                                        <input type="text"  required  class="form-control form-control-solid mb-3 mb-lg-0" name="vin" placeholder="Enter  VIN "/>
                                           </div>
                                       </div>
 

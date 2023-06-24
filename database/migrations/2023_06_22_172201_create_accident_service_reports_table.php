@@ -13,37 +13,18 @@ return new class extends Migration
     {
         Schema::create('accident_service_reports', function (Blueprint $table) {
             $table->id();
+            //First Step
             $table->integer('invoice_no')->nullable();
-            $table->timestamps('invoice_date');
+            $table->date('invoice_date');
             $table->string('to')->nullable();
+            $table->string('tax_invoice')->nullable();
             $table->string('vehicle')->nullable();
             $table->string('rego')->nullable();
             $table->integer('assessment_fee')->nullable();
             $table->integer('sub_total')->nullable();
             $table->integer('gst')->nullable();
-            $table->integer('grand_total')->nullable();
-            $table->string('overall')->nullable();
-            $table->string('interior')->nullable();
-            $table->string('exterior')->nullable();
-            $table->string('steering')->nullable();
-            $table->string('brakes')->nullable();
-            $table->string('tyre_depth_unit_front')->nullable();
-            $table->string('tyre_depth_unit_rear')->nullable();
-            $table->string('rh_front');
-            $table->string('lh_front');
-            $table->string('rh_rear');
-            $table->string('lh_rear');
-            $table->string('overall')->nullable();
-            $table->string('interior')->nullable();
-            $table->string('exterior')->nullable();
-            $table->string('steering')->nullable();
-            $table->string('brakes')->nullable();
-            $table->string('tyre_depth_unit_front')->nullable();
-            $table->string('tyre_depth_unit_rear')->nullable();
-            $table->string('rh_front')->nullable();
-            $table->string('lh_front')->nullable();
-            $table->string('rh_rear')->nullable();
-            $table->string('lh_rear')->nullable();
+
+            //Second Step
             $table->string('owner_name')->nullable();
             $table->string('assessment_type')->nullable();
             $table->string('make')->nullable();
@@ -57,11 +38,13 @@ return new class extends Migration
             $table->string('paint_code')->nullable();
             $table->string('month_year')->nullable();
             $table->string('transmission')->nullable();
-            $table->string('color')->nullable();
+            $table->string('colour')->nullable();
             $table->string('body_type')->nullable();
             $table->string('axles')->nullable();
             $table->string('vin')->nullable();
-            $table->timestamps('assessement_date');
+
+            //Third Step
+            $table->date('assessement_date');
             $table->string('cover_type')->nullable();
             $table->string('sum_insured')->nullable();
             $table->string('market_value')->nullable();
@@ -74,7 +57,21 @@ return new class extends Migration
             $table->string('certified_compliance')->nullable();
             $table->string('salvage_condition')->nullable();
             $table->longText('comments')->nullable();
+            $table->integer('grand_total')->nullable();
+            //Fourth Step
             $table->string('file')->nullable();
+            $table->string('overall')->nullable();
+            $table->string('interior')->nullable();
+            $table->string('exterior')->nullable();
+            $table->string('steering')->nullable();
+            $table->string('brakes')->nullable();
+            $table->string('tyre_depth_unit_front')->nullable();
+            $table->string('tyre_depth_unit_rear')->nullable();
+            $table->string('rh_front')->nullable();
+            $table->string('lh_front')->nullable();
+            $table->string('rh_rear')->nullable();
+            $table->string('lh_rear')->nullable();
+
             $table->softDeletes();
             $table->timestamps();
         });
