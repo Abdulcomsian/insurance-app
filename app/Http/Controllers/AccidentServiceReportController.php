@@ -106,16 +106,22 @@ class AccidentServiceReportController extends Controller
             'body_type'                     => 'required',
             'axles'                         => 'required',
             'vin'                           => 'required',
-            // 'series'                    => 'required',
-            // 'series'                    => 'required',
-            // 'series'                    => 'required',
-            // 'series'                    => 'required',
-            // 'series'                    => 'required',
-            // 'series'                    => 'required',
+            'assessment_date'               => 'required',
+            'cover_type'                    => 'required',
+            'sum_insured'                   => 'required',
+            'market_value'                  => 'required',
+            'salvage_value'                 => 'required',
+            'settlement'                    => 'required',
+            'less_excess'                   => 'required',
+            'settlement_sub_total'          => 'required',
+            'settlement_gst'                => 'required',
+            'settlement_total'              => 'required',
+            'cash_settled'                  => 'required',
+            'certificate_compliance'        => 'required',
+            'salvage_condition'             => 'required',
         ]);
         if($validator->fails())
         {
-            dd($request->all());
             toastr()->error('Validation Error');
             return redirect()->route('accident-accessing-service.create');
         }
@@ -132,7 +138,6 @@ class AccidentServiceReportController extends Controller
                 toastr()->error('Validation Error');
                 return redirect()->route('accident-accessing-service.create');
             }
-            // dd("report", $report);
         }
     }
 }

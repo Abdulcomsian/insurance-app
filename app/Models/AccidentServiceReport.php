@@ -45,15 +45,15 @@ class AccidentServiceReport extends Model
         'sum_insured',
         'market_value',
         'salvage_value',
+        'settlement',
+        'less_excess',
+        'settlement_sub_total',
+        'settlement_gst',
+        'settlement_total',
+        'cash_settled',
+        'certified_compliance',
+        'salvage_condition',
+        'comments',
+        'total_supps'
     ];
-
-    public function accidentServiceAssessors () :HasMany
-    {
-        return $this->hasMany(AccidentServiceAssessor::class);
-    }
-
-    public function accidentServiceRepairers () :HasMany
-    {
-        return $this->hasMany(AccidentServiceRepairer::class);
-    }
 }

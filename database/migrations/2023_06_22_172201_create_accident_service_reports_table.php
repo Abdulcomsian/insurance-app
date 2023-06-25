@@ -44,20 +44,21 @@ return new class extends Migration
             $table->string('vin')->nullable();
 
             //Third Step
-            $table->date('assessement_date');
+            $table->date('assessment_date');
             $table->string('cover_type')->nullable();
             $table->string('sum_insured')->nullable();
             $table->string('market_value')->nullable();
             $table->string('salvage_value')->nullable();
             $table->string('settlement')->nullable();
-            $table->string('less_access')->nullable();
+            $table->string('less_excess')->nullable();
             $table->string('settlement_sub_total')->nullable();
             $table->string('settlement_gst')->nullable();
+            $table->string('settlement_total')->nullable();
             $table->string('cash_settled')->nullable();
-            $table->string('certified_compliance')->nullable();
+            $table->string('certificate_compliance')->nullable();
             $table->string('salvage_condition')->nullable();
             $table->longText('comments')->nullable();
-            $table->integer('grand_total')->nullable();
+            $table->string('total_supps')->nullable();
             //Fourth Step
             $table->string('file')->nullable();
             $table->string('overall')->nullable();

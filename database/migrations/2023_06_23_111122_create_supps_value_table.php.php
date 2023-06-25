@@ -16,7 +16,6 @@ return new class extends Migration
             $table->string('quoted')->nullable();
             $table->string('assessed')->nullable();
             $table->string('variance')->nullable();
-            $table->string('total')->nullable();
             $table->foreignId('supp_id')->constrained();
             $table->foreignId('accident_service_report_id')->constrained();
             $table->timestamps();
