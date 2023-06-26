@@ -21,8 +21,9 @@ return new class extends Migration
             $table->string('vehicle')->nullable();
             $table->string('rego')->nullable();
             $table->integer('assessment_fee')->nullable();
-            $table->integer('sub_total')->nullable();
-            $table->integer('gst')->nullable();
+            $table->string('sub_total')->nullable();
+            $table->string('gst')->nullable();
+            $table->string('grand_total')->nullable();
 
             //Second Step
             $table->string('owner_name')->nullable();

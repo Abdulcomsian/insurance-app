@@ -5,6 +5,7 @@ namespace App\Repo\AccidentService;
 use App\Models\AccidentServiceAssessor;
 use App\Models\AccidentServiceRepairer;
 use App\Models\AccidentServiceReport;
+use App\Models\DetailAssessmentReport;
 use App\Models\SuppsValue;
 use Exception;
 use Illuminate\Support\Facades\DB;
@@ -13,66 +14,6 @@ class AccidentService implements AccidentServiceInterface
 {
     public function store($data)
     {
-        $RR_quoted                      = array_key_exists('R&R_quoted', $data);
-        $RR_assessed                    = array_key_exists('R&R_assessed', $data);
-        $RR_variance                    = array_key_exists('R&R_variance', $data);
-        $Repair_quoted                  = array_key_exists('Repair_quoted', $data);
-        $Repair_assessed                = array_key_exists('Repair_assessed', $data);
-        $Repair_variance                = array_key_exists('Repair_variance', $data);
-        $Paint_quoted                   = array_key_exists('Paint_quoted', $data);
-        $Paint_assessed                 = array_key_exists('Paint_assessed', $data);
-        $Paint_variance                 = array_key_exists('Paint_variance', $data);
-        $Mechanical_quoted              = array_key_exists('Mechanical_quoted', $data);
-        $Mechanical_assessed            = array_key_exists('Mechanical_assessed', $data);
-        $Mechanical_variance            = array_key_exists('Mechanical_variance', $data);
-        $Misc_quoted                    = array_key_exists('Misc_quoted', $data);
-        $Misc_assessed                  = array_key_exists('Misc_assessed', $data);
-        $Misc_variance                  = array_key_exists('Misc_variance', $data);
-        $Labour_quoted                  = array_key_exists('Labour_quoted', $data);
-        $Labour_assessed                = array_key_exists('Labour_assessed', $data);
-        $Labour_variance                = array_key_exists('Labour_variance', $data);
-        $Parts_quoted                   = array_key_exists('Parts_quoted', $data);
-        $Parts_assessed                 = array_key_exists('Parts_assessed', $data);
-        $Parts_variance                 = array_key_exists('Parts_variance', $data);
-        $Sublet_quoted                  = array_key_exists('Sublet_quoted', $data);
-        $Sublet_assessed                = array_key_exists('Sublet_assessed', $data);
-        $Sublet_variance                = array_key_exists('Sublet_variance', $data);
-        $Supplementary_quoted           = array_key_exists('Supplementary_quoted', $data);
-        $Supplementary_assessed         = array_key_exists('Supplementary_assessed', $data);
-        $Supplementary_variance         = array_key_exists('Supplementary_variance', $data);
-        $SubTotal_quoted                = array_key_exists('SubTotal_quoted', $data);
-        $SubTotal_assessed              = array_key_exists('SubTotal_assessed', $data);
-        $SubTotal_variance              = array_key_exists('SubTotal_variance', $data);
-        $gst_quoted                     = array_key_exists('gst_quoted', $data);
-        $gst_assessed                   = array_key_exists('gst_assessed', $data);
-        $gst_variance                   = array_key_exists('gst_variance', $data);
-        $TotalEstimate_quoted           = array_key_exists('TotalEstimate_quoted', $data);
-        $TotalEstimate_assessed         = array_key_exists('TotalEstimate_assessed', $data);
-        $TotalEstimate_variance         = array_key_exists('TotalEstimate_variance', $data);
-        $ReportedItems_quoted           = array_key_exists('ReportedItems_quoted', $data);
-        $ReportedItems_assessed         = array_key_exists('ReportedItems_assessed', $data);
-        $ReportedItems_variance         = array_key_exists('ReportedItems_variance', $data);
-        $Towing_quoted                  = array_key_exists('Towing_quoted', $data);
-        $Towing_assessed                = array_key_exists('Towing_assessed', $data);
-        $Towing_variance                = array_key_exists('Towing_variance', $data);
-        $ExternalSublet_quoted          = array_key_exists('ExternalSublet_quoted', $data);
-        $ExternalSublet_assessed        = array_key_exists('ExternalSublet_assessed', $data);
-        $ExternalSublet_variance        = array_key_exists('ExternalSublet_variance', $data);
-        $Additional_quoted              = array_key_exists('Additional_quoted', $data);
-        $Additional_assessed            = array_key_exists('Additional_assessed', $data);
-        $Additional_variance            = array_key_exists('Additional_variance', $data);
-        $Discounts_quoted               = array_key_exists('Discounts_quoted', $data);
-        $Discounts_assessed             = array_key_exists('Discounts_assessed', $data);
-        $Discounts_variance             = array_key_exists('Discounts_variance', $data);
-        $LessITC_quoted                 = array_key_exists('LessITC_quoted', $data);
-        $LessITC_assessed               = array_key_exists('LessITC_assessed', $data);
-        $LessITC_variance               = array_key_exists('LessITC_variance', $data);
-        $LessContribution_quoted        = array_key_exists('LessContribution_quoted', $data);
-        $LessContribution_assessed      = array_key_exists('LessContribution_assessed', $data);
-        $LessContribution_variance      = array_key_exists('LessContribution_variance', $data);
-        $PAV_quoted                     = array_key_exists('PAV_quoted', $data);
-        $PAV_assessed                   = array_key_exists('PAV_assessed', $data);
-        $PAV_variance                   = array_key_exists('PAV_variance', $data);
         try
         {
             $report = new AccidentServiceReport();
@@ -123,6 +64,246 @@ class AccidentService implements AccidentServiceInterface
                 self::storeAssessors($data['assessors'],$report->id);
                 self::storeRepairers($data['repairers'],$report->id);
                 self::storeSupps($data['Sup1_quoted'], $data['Sup1_assessed'], $data['Sup1_variance'],$data['Sup2_quoted'],$data['Sup2_assessed'],$data['Sup2_variance'],$data['Sup3_quoted'],$data['Sup3_assessed'],$data['Sup3_variance'],$report->id);
+
+                //RR
+                if(isset($data['R&R_quoted']))
+                {
+                    $detail_assessment                                  =  new DetailAssessmentReport();
+                    $detail_assessment->quoted                          = $data['R&R_quoted'] ? $data['R&R_quoted'] : null;
+                    $detail_assessment->assessed                        = $data['R&R_quoted'] ? $data['R&R_assessed'] : null;
+                    $detail_assessment->variance                        = $data['R&R_quoted'] ? $data['R&R_variance'] : null;
+                    $detail_assessment->accident_service_report_id      = (int)$report->id ;
+                    $detail_assessment->assessment_report_product_id    = 1;
+                    $detail_assessment->save();
+                }
+
+                //Repair
+                if(isset($data['Repair_quoted']))
+                {
+                    $detail_assessment                                  = new DetailAssessmentReport();
+                    $detail_assessment->quoted                          = $data['Repair_quoted'] ? $data['Repair_quoted'] : null;
+                    $detail_assessment->assessed                        = $data['Repair_assessed'] ? $data['Repair_assessed'] : null;
+                    $detail_assessment->variance                        = $data['Repair_variance'] ? $data['Repair_variance'] : null;
+                    $detail_assessment->accident_service_report_id      = (int)$report->id ;
+                    $detail_assessment->assessment_report_product_id    = 2;
+                    $detail_assessment->save();
+                }
+
+                //Paint
+                if(isset($data['Paint_quoted']))
+                {
+                    $detail_assessment                                  = new DetailAssessmentReport();
+                    $detail_assessment->quoted                          = $data['Paint_quoted'] ? $data['Paint_quoted'] : null;
+                    $detail_assessment->assessed                        = $data['Paint_quoted'] ? $data['Paint_assessed'] : null;
+                    $detail_assessment->variance                        = $data['Paint_quoted'] ? $data['Paint_variance'] : null;
+                    $detail_assessment->accident_service_report_id      = (int)$report->id ;
+                    $detail_assessment->assessment_report_product_id    = 3;
+                    $detail_assessment->save();
+                }
+
+                //Mechanical
+                if(isset($data['Mechanical_quoted']))
+                {
+                    $detail_assessment                                  = new DetailAssessmentReport();
+                    $detail_assessment->quoted                          = $data['Mechanical_quoted'] ? $data['Mechanical_quoted'] : null;
+                    $detail_assessment->assessed                        = $data['Mechanical_assessed'] ? $data['Mechanical_assessed'] : null;
+                    $detail_assessment->variance                        = $data['Mechanical_variance'] ? $data['Mechanical_variance'] : null;
+                    $detail_assessment->accident_service_report_id      = (int)$report->id ;
+                    $detail_assessment->assessment_report_product_id    = 4;
+                    $detail_assessment->save();
+                }
+
+                //Misc Labour
+                if(isset($data['Misc_quoted']))
+                {
+                    $detail_assessment                                  = new DetailAssessmentReport();
+                    $detail_assessment->quoted                          = $data['Misc_quoted'] ? $data['Misc_quoted'] : null;
+                    $detail_assessment->assessed                        = $data['Misc_assessed'] ? $data['Misc_assessed'] : null;
+                    $detail_assessment->variance                        = $data['Misc_variance'] ? $data['Misc_variance'] : null;
+                    $detail_assessment->accident_service_report_id      = (int)$report->id ;
+                    $detail_assessment->assessment_report_product_id    = 5;
+                    $detail_assessment->save();
+                }
+
+                //Labour
+                if(isset($data['Labour_quoted']))
+                {
+                    $detail_assessment                                  = new DetailAssessmentReport();
+                    $detail_assessment->quoted                          = $data['Labour_quoted'] ? $data['Labour_quoted'] : null;
+                    $detail_assessment->assessed                        = $data['Labour_assessed'] ? $data['Labour_assessed'] : null;
+                    $detail_assessment->variance                        = $data['Labour_variance'] ? $data['Labour_variance'] : null;
+                    $detail_assessment->accident_service_report_id      = (int)$report->id ;
+                    $detail_assessment->assessment_report_product_id    = 6;
+                    $detail_assessment->save();
+                }
+
+                //Parts
+                if(isset($data['Parts_quoted']))
+                {
+                    $detail_assessment                                  = new DetailAssessmentReport();
+                    $detail_assessment->quoted                          = $data['Parts_quoted'] ? $data['Parts_quoted'] : null;
+                    $detail_assessment->assessed                        = $data['Parts_assessed'] ? $data['Parts_assessed'] : null;
+                    $detail_assessment->variance                        = $data['Parts_variance'] ? $data['Parts_variance'] : null;
+                    $detail_assessment->accident_service_report_id      = (int)$report->id ;
+                    $detail_assessment->assessment_report_product_id    = 7;
+                    $detail_assessment->save();
+                }
+
+                //Sublet
+                if(isset($data['Sublet_quoted']))
+                {
+                    $detail_assessment                                  = new DetailAssessmentReport();
+                    $detail_assessment->quoted                          = $data['Sublet_quoted'] ? $data['Sublet_quoted'] : null;
+                    $detail_assessment->assessed                        = $data['Sublet_assessed'] ? $data['Sublet_assessed'] : null;
+                    $detail_assessment->variance                        = $data['Sublet_variance'] ? $data['Sublet_variance'] : null;
+                    $detail_assessment->accident_service_report_id      = (int)$report->id ;
+                    $detail_assessment->assessment_report_product_id    = 8;
+                    $detail_assessment->save();
+                }
+
+                //Supplementary
+                if(isset($data['Supplementary_quoted']))
+                {
+                    $detail_assessment                                  = new DetailAssessmentReport();
+                    $detail_assessment->quoted                          = $data['Supplementary_quoted'] ? $data['Supplementary_quoted'] : null;
+                    $detail_assessment->assessed                        = $data['Supplementary_assessed'] ? $data['Supplementary_assessed'] : null;
+                    $detail_assessment->variance                        = $data['Supplementary_variance'] ? $data['Supplementary_variance'] : null;
+                    $detail_assessment->accident_service_report_id      = (int)$report->id ;
+                    $detail_assessment->assessment_report_product_id    = 9;
+                    $detail_assessment->save();
+                }
+
+                //Sub Total
+                if(isset($data['SubTotal_quoted']))
+                {
+                    $detail_assessment                                  = new DetailAssessmentReport();
+                    $detail_assessment->quoted                          = $data['SubTotal_quoted'] ? $data['SubTotal_quoted'] : null;
+                    $detail_assessment->assessed                        = $data['SubTotal_assessed'] ? $data['SubTotal_assessed'] : null;
+                    $detail_assessment->variance                        = $data['SubTotal_variance'] ? $data['SubTotal_variance'] : null;
+                    $detail_assessment->accident_service_report_id      = (int)$report->id ;
+                    $detail_assessment->assessment_report_product_id    = 10;
+                    $detail_assessment->save();
+                }
+
+                //gst
+                if(isset($data['gst_quoted']))
+                {
+                    $detail_assessment                                  = new DetailAssessmentReport();
+                    $detail_assessment->quoted                          = $data['gst_quoted'] ? $data['gst_quoted'] : null;
+                    $detail_assessment->assessed                        = $data['gst_assessed'] ? $data['gst_assessed'] : null;
+                    $detail_assessment->variance                        = $data['gst_variance'] ? $data['gst_variance'] : null;
+                    $detail_assessment->accident_service_report_id      = (int)$report->id ;
+                    $detail_assessment->assessment_report_product_id    = 11;
+                    $detail_assessment->save();
+                }
+
+                //Total Estimate
+                if(isset($data['TotalEstimate_quoted']))
+                {
+                    $detail_assessment                                  = new DetailAssessmentReport();
+                    $detail_assessment->quoted                          = $data['TotalEstimate_quoted'] ? $data['TotalEstimate_quoted'] : null;
+                    $detail_assessment->assessed                        = $data['TotalEstimate_assessed'] ? $data['TotalEstimate_assessed'] : null;
+                    $detail_assessment->variance                        = $data['TotalEstimate_variance'] ? $data['TotalEstimate_variance'] : null;
+                    $detail_assessment->accident_service_report_id      = (int)$report->id ;
+                    $detail_assessment->assessment_report_product_id    = 12;
+                    $detail_assessment->save();
+                }
+
+                //Reported Items
+                if(isset($data['ReportedItems_quoted']))
+                {
+                    $detail_assessment                                  = new DetailAssessmentReport();
+                    $detail_assessment->quoted                          = $data['ReportedItems_quoted'] ? $data['ReportedItems_quoted'] : null;
+                    $detail_assessment->assessed                        = $data['ReportedItems_assessed'] ? $data['ReportedItems_assessed'] : null;
+                    $detail_assessment->variance                        = $data['ReportedItems_variance'] ? $data['ReportedItems_variance'] : null;
+                    $detail_assessment->accident_service_report_id      = (int)$report->id ;
+                    $detail_assessment->assessment_report_product_id    = 13;
+                    $detail_assessment->save();
+                }
+
+                //Towing
+                if(isset($data['Towing_quoted']))
+                {
+                    $detail_assessment                                  = new DetailAssessmentReport();
+                    $detail_assessment->quoted                          = $data['Towing_quoted'] ? $data['Towing_quoted'] : null;
+                    $detail_assessment->assessed                        = $data['Towing_assessed'] ? $data['Towing_assessed'] : null;
+                    $detail_assessment->variance                        = $data['Towing_variance'] ? $data['Towing_variance'] : null;
+                    $detail_assessment->accident_service_report_id      = (int)$report->id ;
+                    $detail_assessment->assessment_report_product_id    = 14;
+                    $detail_assessment->save();
+                }
+
+                //External Sublet
+                if(isset($data['ExternalSublet_quoted']))
+                {
+                    $detail_assessment                                  = new DetailAssessmentReport();
+                    $detail_assessment->quoted                          = $data['ExternalSublet_quoted'] ? $data['ExternalSublet_quoted'] : null;
+                    $detail_assessment->assessed                        = $data['ExternalSublet_assessed'] ? $data['ExternalSublet_assessed'] : null;
+                    $detail_assessment->variance                        = $data['ExternalSublet_variance'] ? $data['ExternalSublet_variance'] : null;
+                    $detail_assessment->accident_service_report_id      = (int)$report->id ;
+                    $detail_assessment->assessment_report_product_id    = 15;
+                    $detail_assessment->save();
+                }
+
+                //Additional
+                if(isset($data['Additional_quoted']))
+                {
+                    $detail_assessment                                  = new DetailAssessmentReport();
+                    $detail_assessment->quoted                          = $data['Additional_quoted'] ? $data['Additional_quoted'] : null;
+                    $detail_assessment->assessed                        = $data['Additional_assessed'] ? $data['Additional_assessed'] : null;
+                    $detail_assessment->variance                        = $data['Additional_variance'] ? $data['Additional_variance'] : null;
+                    $detail_assessment->accident_service_report_id      = (int)$report->id ;
+                    $detail_assessment->assessment_report_product_id    = 16;
+                    $detail_assessment->save();
+                }
+
+                //Discount
+                if(isset($data['Discounts_quoted']))
+                {
+                    $detail_assessment                                  = new DetailAssessmentReport();
+                    $detail_assessment->quoted                          = $data['Discounts_quoted'] ? $data['Discounts_quoted'] : null;
+                    $detail_assessment->assessed                        = $data['Discounts_assessed'] ? $data['Discounts_assessed'] : null;
+                    $detail_assessment->variance                        = $data['Discounts_variance'] ? $data['Discounts_variance'] : null;
+                    $detail_assessment->accident_service_report_id      = (int)$report->id ;
+                    $detail_assessment->assessment_report_product_id    = 17;
+                    $detail_assessment->save();
+                }
+
+                //Less ITC
+                if(isset($data['LessITC_quoted']))
+                {
+                    $detail_assessment                                  = new DetailAssessmentReport();
+                    $detail_assessment->quoted                          = $data['LessITC_quoted'] ? $data['LessITC_quoted'] : null;
+                    $detail_assessment->assessed                        = $data['LessITC_assessed'] ? $data['LessITC_assessed'] : null;
+                    $detail_assessment->variance                        = $data['LessITC_variance'] ? $data['LessITC_variance'] : null;
+                    $detail_assessment->accident_service_report_id      = (int)$report->id ;
+                    $detail_assessment->assessment_report_product_id    = 18;
+                    $detail_assessment->save();
+                }
+
+                //Less Contribution
+                if(isset($data['LessContribution_quoted']))
+                {
+                    $detail_assessment                                  = new DetailAssessmentReport();
+                    $detail_assessment->quoted                          = $data['LessContribution_quoted'] ? $data['LessContribution_quoted'] : null;
+                    $detail_assessment->assessed                        = $data['LessContribution_assessed'] ? $data['LessContribution_assessed'] : null;
+                    $detail_assessment->variance                        = $data['LessContribution_variance'] ? $data['LessContribution_variance'] : null;
+                    $detail_assessment->accident_service_report_id      = (int)$report->id ;
+                    $detail_assessment->assessment_report_product_id    = 19;
+                    $detail_assessment->save();
+                }
+
+                //PAV
+                if(isset($data['PAV_quoted']))
+                {
+                    $detail_assessment                                  = new DetailAssessmentReport();
+                    $detail_assessment->quoted                          = $data['PAV_quoted'] ? $data['PAV_quoted'] : null;
+                    $detail_assessment->assessed                        = $data['PAV_assessed'] ? $data['PAV_assessed'] : null;
+                    $detail_assessment->variance                        = $data['PAV_variance'] ? $data['PAV_variance'] : null;
+                    $detail_assessment->accident_service_report_id      = (int)$report->id ;
+                    $detail_assessment->assessment_report_product_id    = 20;
+                    $detail_assessment->save();
+                }
             } );
             return $report;
 
@@ -157,7 +338,6 @@ class AccidentService implements AccidentServiceInterface
 
     public static function storeSupps ($Sup1_quoted, $Sup1_assessed, $Sup1_variance, $Sup2_quoted, $Sup2_assessed, $Sup2_variance, $Sup3_quoted, $Sup3_assessed, $Sup3_variance, $report_id)
     {
-        // dd($report_id);
         self::storeSupp1($Sup1_quoted, $Sup1_assessed, $Sup1_variance, $report_id);
         self::storeSupp2($Sup2_quoted, $Sup2_assessed, $Sup2_variance, $report_id);
         self::storeSupp3($Sup3_quoted, $Sup3_assessed, $Sup3_variance, $report_id);
