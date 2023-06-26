@@ -17,17 +17,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'HomeController@home')->name('home');
-
-// Route::group(['middleware' => ['web']], function () {
-
 Route::group(['middleware' => ['web']], function () {
     Route::get('/', [HomeController::class, 'index'])->name('home');
 
     Route::get('sign-in', function () {return view('sign-in');})->name('sign-in');
     Route::get('sanction_request', function () {return view('sanction_request.sanction_request');})->name('sanction_request');
 
-    // Route::get('form_request', function () {return view('form_request.form_request');})->name('form_request');
+    Route::post('/logout', 'Auth\LoginController@logout')->name('logout');
+
 
 
     Auth::routes([
@@ -35,6 +32,7 @@ Route::group(['middleware' => ['web']], function () {
         'reset' => false, // Password Reset Routes...
         'verify' => false, // Email Verification Routes...
     ]);
+
 
     //By Assad Yaqoob
     //Home
@@ -47,13 +45,12 @@ Route::group(['middleware' => ['web']], function () {
 
 
     // add Assessor routes
-    Route::get('/assessors/create', [AssessorController::class, 'create'])->name('assessors.create');
+    Route::get('/assessors/create', 'AssessorController@create')->name('assessors.create');
     Route::post('/assessors', 'AssessorController@store')->name('assessors.store');
     Route::get('/assessors', 'AssessorController@index')->name('assessors.index');
     Route::get('/assessors/data', 'AssessorController@data')->name('assessors.data');
 
     // Repairer Controller
-
     Route::get('repairers', 'RepairerController@index')->name('repairer.index');
     Route::post('repairers', 'RepairerController@store')->name('repairer.store');
     Route::get('repairers/{id}/edit', 'RepairerController@edit')->name('repairer.edit');
@@ -73,7 +70,7 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('user-edit', 'HomeController@usersEdit')->name('users.edit');
 
     //Payment Transactions
-    Route::match(['get','post'],'payment-transactions', [HomeController::class,'formRequest'])->name('payment_transactions.index');
+    Route::match(['get','post'],'payment-transactions', 'HomeController@formRequest')->name('payment_transactions.index');
     Route::get('payment-transaction-show/{id}', 'HomeController@paymentTransactionsShow')->name('payment_transactions.show');
     Route::post('payment-cancel', 'HomeController@paymentTransactionsCancel')->name('payment_transactions.cancel');
     Route::get('payment-transaction-resend-email/{id}', 'HomeController@paymentTransactionsResendEmail')->name('payment_transactions.resend_email');
@@ -102,9 +99,12 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::controller(AccidentServiceReportController::class)->prefix('accident-accessing-service')->group( function () {
+
+Route::controller(AccidentServiceReportController::class)->prefix('accident-accessing-service')->group( function ()
+{
     Route::get('/', 'index')->name('accident-accessing-service.index');
     Route::get('create', 'create')->name('accident-accessing-service.create');
     Route::post('store', 'store')->name('accident-accessing-service.store');
 } );
+
 

@@ -11,6 +11,9 @@ use App\Notifications\TransactionEmail;
 use App\Notifications\SendAttachment;
 use App\Models\SancImages;
 use App\User;
+use App\addAssessor;
+use App\Repairer;
+use App\Models\AccidentServiceReport;
 use App\Utils\EmailStatus;
 use App\Utils\SanctionRequestStatus;
 use App\Utils\UserStatus;
@@ -66,7 +69,11 @@ class HomeController extends Controller
             // $total_packages = DB::table('packages')->count();
             // $total_transactions = DB::table('transaction')->count();
 
-            return view('home');
+        $assessorsCount = addAssessor::count();
+        $repairersCount = Repairer::count();
+        $assessingServicesCount = AccidentServiceReport::count();
+
+        return view('home', compact('assessorsCount','assessingServicesCount','repairersCount'));
 
         }catch (\Exception $exception){
             toastr()->error('Something went wrong, try again');
@@ -151,11 +158,6 @@ class HomeController extends Controller
         $user = User::where('id',decrypt($id))->first();
         return view('customers.edit', compact('user'));
     }
-
-
-
-
-
 
 
     public function customerDelete($id){
@@ -611,7 +613,7 @@ class HomeController extends Controller
         }
     }
 
-    public function getSanctionResult($id){
+    // public function getSanctionResult($id){
 //        self::curlRequest('Union');
 //        try {
 //            $sanction_request = DB::table('req_for_sanc_status')
@@ -630,7 +632,7 @@ class HomeController extends Controller
 //            toastr()->error('Something went wrong, try again');
 //            return back();
 //        }
-    }
+    // }
 
 
     //save sacnctum images
@@ -793,6 +795,11 @@ class HomeController extends Controller
             return back();
         }
 
+    }
+
+    public function formRequest()
+    {
+        return view('form_request');
     }
 }
 

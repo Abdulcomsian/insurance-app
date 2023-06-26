@@ -4,6 +4,9 @@ use Database\Seeders\AssessmentReportProductSeeder;
 use Database\Seeders\DemageSectionSeeder;
 use Database\Seeders\SuppSeeder;
 use Illuminate\Database\Seeder;
+use Database\Seeders\UserTableSeeder;
+
+
 
 class DatabaseSeeder extends Seeder
 {
@@ -22,7 +25,7 @@ class DatabaseSeeder extends Seeder
         // $this->call(\Database\Seeders\CountriesTableSeeder::class);
         // $this->call(\Database\Seeders\CountryInformationTableSeeder::class);
         // $this->call(PackageTableSeeder::class);
-        $this->call(UserTableSeeder::class);
+        $this->call(\Database\Seeders\UserTableSeeder::class);
         $this->call(AssessmentReportProductSeeder::class);
         $this->call(DemageSectionSeeder::class);
         $this->call(SuppSeeder::class);

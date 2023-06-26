@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Auth;
 
+
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
@@ -38,15 +40,22 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 
-    protected function authenticated(Request $request, $user)
+    public function logout()
     {
-        // if ($user->type == 'Admin') {
-        //     // User is an admin, proceed with the default behavior
-        //     // ...
-        // } else {
-        //     Auth::logout();
-        //     return redirect()->back()->with('error', 'These credentials do not match our records.');
-        // }
+        Auth::logout();
+
+        // You can redirect the user to the desired page after logout
+        return redirect('/login');
     }
+    // protected function authenticated(Request $request, $user)
+    // {
+    //     if ($user->type == 'Admin') {
+    //         // User is an admin, proceed with the default behavior
+    //         // ...
+    //     } else {
+    //         Auth::logout();
+    //         return redirect()->back()->with('error', 'These credentials do not match our records.');
+    //     }
+    // }
 
 }

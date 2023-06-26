@@ -92,15 +92,16 @@
                             <!--end::Menu separator-->
                             <!--begin::Menu item-->
                             <div class="menu-item px-5">
-{{--                                <a href="authentication/flows/basic/sign-in.html" class="menu-link px-5">Sign Out</a>--}}
-                                <a class="menu-link px-5" href="{{ route('logout') }}"
+                               {{-- <a href="authentication/flows/basic/sign-in.html" class="menu-link px-5">Sign Out</a> --}}
+                                {{-- <button class="menu-link px-5"
                                    onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                     {{ __('Logout') }}
-                                </a>
+                                </button> --}}
 
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-inline">
                                     @csrf
+                                    <button type="submit" class="menu-link px-5">Logout</button>
                                 </form>
                             </div>
                             <!--end::Menu item-->
@@ -135,3 +136,8 @@
     </div>
     <!--end::Container-->
 </div>
+{{-- @php
+use Illuminate\Support\Facades\Auth;
+$user = Auth::user();
+@dd($user)
+@endphp --}}
