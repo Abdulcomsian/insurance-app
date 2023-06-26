@@ -73,7 +73,7 @@ return new class extends Migration
             $table->string('lh_front')->nullable();
             $table->string('rh_rear')->nullable();
             $table->string('lh_rear')->nullable();
-
+            $table->string('repair_duration_days')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

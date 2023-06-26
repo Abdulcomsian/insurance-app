@@ -11,6 +11,7 @@ class AccidentServiceReport extends Model
 {
     use HasFactory, SoftDeletes;
     protected $table = 'accident_service_reports';
+    const PATH = 'accident-report-files/';
     protected $fillable =
     [
         'invoice_no',
@@ -54,6 +55,18 @@ class AccidentServiceReport extends Model
         'certified_compliance',
         'salvage_condition',
         'comments',
-        'total_supps'
+        'total_supps',
+        'file',
+        'overall',
+        'interior',
+        'exterior',
+        'steering',
+        'brakes',
+        'tyre_depth_unit_front',
+        'tyre_depth_unit_rear',
+        'rh_front',
+        'lh_front',
+        'rh_rear',
+        'lh_rear'
     ];
 }

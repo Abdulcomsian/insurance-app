@@ -15,7 +15,6 @@ return new class extends Migration
             $table->id();
             $table->string('demage_level')->nullable();
             $table->string('comment')->nullable();
-            $table->string('repair_duration_days')->nullable();
             $table->foreignId('demage_section_id')->constrained();
             $table->foreignId('accident_service_report_id')->constrained();
             $table->softDeletes();

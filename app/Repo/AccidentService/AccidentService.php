@@ -5,13 +5,16 @@ namespace App\Repo\AccidentService;
 use App\Models\AccidentServiceAssessor;
 use App\Models\AccidentServiceRepairer;
 use App\Models\AccidentServiceReport;
+use App\Models\DemageSectionValue;
 use App\Models\DetailAssessmentReport;
 use App\Models\SuppsValue;
+use App\Traits\Image;
 use Exception;
 use Illuminate\Support\Facades\DB;
 
 class AccidentService implements AccidentServiceInterface
 {
+    use Image;
     public function store($data)
     {
         try
@@ -60,11 +63,26 @@ class AccidentService implements AccidentServiceInterface
                 $report->salvage_condition  =       $data['salvage_condition'];
                 $report->comments           =       $data['comments'];
                 $report->total_supps        =       $data['total_supps'];
+                $report->overall            =       $data['overall'];
+                $report->interior           =       $data['interior'];
+                $report->exterior           =       $data['exterior'];
+                $report->steering           =       $data['steering'];
+                $report->brakes             =       $data['brakes'];
+                $report->tyre_depth_unit_front=       $data['tyre_depth_unit_front'];
+                $report->tyre_depth_unit_rear =       $data['tyre_depth_unit_rear'];
+                $report->rh_front           =       $data['rh_front'];
+                $report->lh_front           =       $data['lh_front'];
+                $report->rh_rear            =       $data['rh_rear'];
+                $report->lh_rear            =       $data['lh_rear'];
+                $report->repair_duration_days= $data['repair_duration_days'];
+
+                if(array_key_exists('image', $data))
+                    $report->file             =       $this->storeImage(AccidentServiceReport::PATH, $data['image']);
                 $report->save();
                 self::storeAssessors($data['assessors'],$report->id);
                 self::storeRepairers($data['repairers'],$report->id);
                 self::storeSupps($data['Sup1_quoted'], $data['Sup1_assessed'], $data['Sup1_variance'],$data['Sup2_quoted'],$data['Sup2_assessed'],$data['Sup2_variance'],$data['Sup3_quoted'],$data['Sup3_assessed'],$data['Sup3_variance'],$report->id);
-
+                // self::storeDemageSectionValues();
                 //RR
                 if(isset($data['R&R_quoted']))
                 {
@@ -303,6 +321,36 @@ class AccidentService implements AccidentServiceInterface
                     $detail_assessment->accident_service_report_id      = (int)$report->id ;
                     $detail_assessment->assessment_report_product_id    = 20;
                     $detail_assessment->save();
+                }
+
+                if(isset($data['FrontBumperBar_demage_level']))
+                {
+                    $demage_values                              = new DemageSectionValue();
+                    $demage_values->demage_level                = $data['FrontBumperBar_demage_level'];
+                    $demage_values->comment                     = $data['FrontBumperBar_comments'];
+                    $demage_values->demage_section_id           = 1;
+                    $demage_values->accident_service_report_id  = $report->id;
+                    $demage_values->save();
+                }
+
+                if(isset($data['LeftFrontGuard_demage_level']))
+                {
+                    $demage_values                              = new DemageSectionValue();
+                    $demage_values->demage_level                = $data['LeftFrontGuard_demage_level'];
+                    $demage_values->comment                     = $data['LeftFrontGuard_comments'];
+                    $demage_values->demage_section_id           = 2;
+                    $demage_values->accident_service_report_id  = $report->id;
+                    $demage_values->save();
+                }
+
+                if(isset($data['LeftFrontDoor_demage_level']))
+                {
+                    $demage_values                              = new DemageSectionValue();
+                    $demage_values->demage_level                = $data['LeftFrontDoor_demage_level'];
+                    $demage_values->comment                     = $data['LeftFrontDoor_comments'];
+                    $demage_values->demage_section_id           = 3;
+                    $demage_values->accident_service_report_id  = $report->id;
+                    $demage_values->save();
                 }
             } );
             return $report;
