@@ -25,7 +25,7 @@ class AccidentServiceReportController extends Controller
                 $data = AccidentServiceReport::select('id', 'invoice_no', 'invoice_date', 'to', 'vehicle', 'rego', 'assessment_fee', 'owner_name', 'engine_type', 'created_at')->orderBy('id', 'desc')->get();
                 return Datatables::of($data)
                     ->addColumn('action', function ($row) {
-                        $btn = '<a href="' . route("accident-report.index", $row->id) . '" class="btn btn-sm btn-clean btn-icon" title="View details"><i class="bi bi-file-earmark-pdf"></i></a>';
+                        $btn = '<a href="' . route("accident-report.index", $row->id) . '" class="btn btn-sm btn-clean btn-icon" title="View details"><i class="bi bi-file-earmark-pdf-fill"></i></a>';
                         return $btn;
                     })
                     ->rawColumns(['action'])
