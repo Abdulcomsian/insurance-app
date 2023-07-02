@@ -105,6 +105,6 @@ Route::controller(AccidentServiceReportController::class)->prefix('accident-acce
     Route::get('/', 'index')->name('accident-accessing-service.index');
     Route::get('create', 'create')->name('accident-accessing-service.create');
     Route::post('store', 'store')->name('accident-accessing-service.store');
+    Route::get('accident-report/{id}', 'accidentReport')->name('accident-report.index');
 } );
-
 

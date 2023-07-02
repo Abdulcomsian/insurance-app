@@ -3,13 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\addAssessor;
-use App\Http\Requests\AccidentServiceReportRequest;
 use App\Models\AccidentServiceReport;
 use App\Repairer;
 use App\Repo\AccidentService\AccidentServiceInterface;
-use Illuminate\Auth\Events\Validated;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 use Yajra\DataTables\Facades\DataTables;
 
@@ -25,10 +22,10 @@ class AccidentServiceReportController extends Controller
     {
         try {
             if ($request->ajax()) {
-                $data = AccidentServiceReport::select('invoice_no', 'invoice_date', 'to', 'vehicle', 'rego', 'assessment_fee', 'owner_name', 'engine_type', 'created_at')->orderBy('id', 'desc')->get();
+                $data = AccidentServiceReport::select('id', 'invoice_no', 'invoice_date', 'to', 'vehicle', 'rego', 'assessment_fee', 'owner_name', 'engine_type', 'created_at')->orderBy('id', 'desc')->get();
                 return Datatables::of($data)
                     ->addColumn('action', function ($row) {
-                        $btn = '<a href="' . route("assessors.index", $row->id) . '" class="btn btn-sm btn-clean btn-icon" title="View details"><i class="la la-eye"></i></a>';
+                        $btn = '<a href="' . route("accident-report.index", $row->id) . '" class="btn btn-sm btn-clean btn-icon" title="View details"><i class="bi bi-file-earmark-pdf"></i></a>';
                         return $btn;
                     })
                     ->rawColumns(['action'])
@@ -114,5 +111,13 @@ class AccidentServiceReportController extends Controller
                 return redirect()->route('accident-accessing-service.create');
             }
         }
+    }
+
+    public function accidentReport ($id)
+    {
+        $id = (int)$id;
+        $accident_service_report = AccidentServiceReport::find($id); //return object
+        return $accident_service_report;
+        return view('accident-report.report');
     }
 }
