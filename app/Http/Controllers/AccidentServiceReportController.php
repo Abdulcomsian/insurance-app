@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\addAssessor;
 use App\Http\Requests\AccidentServiceReportRequest;
+use App\Models\AccidentServiceReport;
 use App\Repairer;
 use App\Repo\AccidentService\AccidentServiceInterface;
 use Illuminate\Auth\Events\Validated;
@@ -24,39 +25,13 @@ class AccidentServiceReportController extends Controller
     {
         try {
             if ($request->ajax()) {
-                $data = DB::table('transaction')
-                    ->join('users','transaction.user_id','=','users.id')
-                    ->orderBy('transaction.id','desc')
-                    ->select(
-                        'transaction.*',
-                        'users.name as user_name')
-                    ->get();
+                $data = AccidentServiceReport::select('invoice_no', 'invoice_date', 'to', 'vehicle', 'rego', 'assessment_fee', 'owner_name', 'engine_type', 'created_at')->orderBy('id', 'desc')->get();
                 return Datatables::of($data)
-                    ->addColumn('billing_name',function ($data){
-                        return $data->billing_fname. ' ' . $data->billing_sname;
+                    ->addColumn('action', function ($row) {
+                        $btn = '<a href="' . route("assessors.index", $row->id) . '" class="btn btn-sm btn-clean btn-icon" title="View details"><i class="la la-eye"></i></a>';
+                        return $btn;
                     })
-                    ->editColumn('status',function ($data){
-                        if ($data->status == "Paid"){
-                            return '<div class="badge badge-success" fw-bolder">'.$data->status.'</div>';
-                        }else{
-                            return '<div class="badge badge-danger" fw-bolder">'.$data->status.'</div>';
-                        }
-                    })
-                    ->addColumn('action',function ($data){
-                        $action = '<a href="'.route('payment_transactions.show',encrypt($data->id)).'" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
-                            <i class="fa fa-eye" title="View" aria-hidden="true"></i>
-                            </a>
-                            <a href="'.route('payment_transactions.resend_email',encrypt($data->id)).'" class="resend_email btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
-                                <i class="fa fa-envelope" title="Resend Email" aria-hidden="true"></i>
-                            </a>';
-                            if (isset($data->pdf)){
-                                $action .= '<a href="'.env('CUSTOMER_DOMAIN'). $data->pdf.'" download="" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
-                                    <i class="fa fa-file-pdf" aria-hidden="true"></i>
-                                </a>';
-                            }
-                            return $action;
-                    })
-                    ->rawColumns(['status','billing_name','action'])
+                    ->rawColumns(['action'])
                     ->make(true);
             }
             return view('payment_transactions.index');
