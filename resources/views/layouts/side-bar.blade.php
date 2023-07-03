@@ -85,7 +85,7 @@
 
                 <div class="menu-item">
                     {{-- <a class="menu-link  {{Request::is('payment*') ? 'active' : ''}}" href="{{route('payment_transactions.index')}}"> --}}
-                    <a class="menu-link  {{Request::is('payment*') ? 'active' : ''}}" href="{{route('accident-accessing-service.index')}}">
+                    <a class="menu-link  {{Request::is('accident-accessing-service*') ? 'active' : ''}}" href="{{route('accident-accessing-service.index')}}">
 										<span class="menu-icon">
 											<!--begin::Svg Icon | path: icons/duotone/Design/Sketch.svg-->
 											<span class="svg-icon svg-icon-2">

@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 use function PHPSTORM_META\map;
 
@@ -19,4 +20,9 @@ class SuppsValue extends Model
         'supp_id',
         'accident_service_report_id'
     ];
+
+    public function supps () :BelongsTo
+    {
+        return $this->belongsTo(Supp::class, 'supp_id', 'id');
+    }
 }

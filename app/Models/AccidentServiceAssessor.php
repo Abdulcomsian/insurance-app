@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\addAssessor;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -14,4 +15,9 @@ class AccidentServiceAssessor extends Model
         'assessor_id',
         'accident_service_report_id'
     ];
+
+    public function assessor ()
+    {
+        return $this->belongsTo(addAssessor::class, 'assessor_id', 'id');
+    }
 }
