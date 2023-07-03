@@ -69,4 +69,29 @@ class AccidentServiceReport extends Model
         'rh_rear',
         'lh_rear'
     ];
+
+    public function serviceAssessors () :HasMany
+    {
+        return $this->hasMany(AccidentServiceAssessor::class);
+    }
+
+    public function serviceRepairers () :HasMany
+    {
+        return $this->hasMany(AccidentServiceRepairer::class);
+    }
+
+    public function demageValues () :HasMany
+    {
+        return $this->hasMany(DemageSectionValue::class);
+    }
+
+    public function suppValues () :HasMany
+    {
+        return $this->hasMany(SuppsValue::class);
+    }
+
+    public function assessmentReports ():HasMany
+    {
+        return $this->hasMany(DetailAssessmentReport::class);
+    }
 }

@@ -116,7 +116,8 @@ class AccidentServiceReportController extends Controller
     public function accidentReport ($id)
     {
         $id = (int)$id;
-        $accident_service_report = AccidentServiceReport::find($id); //return object
+        $accident_service_report = AccidentServiceReport::with('serviceAssessors:id,assessor_id,accident_service_report_id', 'serviceAssessors.assessor:id,assessor', 'serviceRepairers:id,repairer_id,accident_service_report_id', 'serviceRepairers.repairers:id,name', 'demageValues:id,demage_level,comment,demage_section_id,accident_service_report_id', 'demageValues.demage:id,name', 'suppValues:id,quoted,assessed,variance,supp_id,accident_service_report_id', 'suppValues.supps:id,name', 'assessmentReports:id,quoted,assessed,variance,book_values,live_market_values,trade_low,market_one,trade,market_twp,retail,market_three,value_avg_kms,market_avg,assessment_report_product_id,accident_service_report_id', 'assessmentReports.reportProduct:id,name')
+        ->find($id);
         return $accident_service_report;
         return view('accident-report.report');
     }

@@ -96,30 +96,30 @@
                             columns: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
                         },
                     },
-                    {
-                        extend: 'excelHtml5',
-                        exportOptions: {
-                            columns: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-                        },
-                    },
-                    {
-                        extend: 'csvHtml5',
-                        exportOptions: {
-                            columns: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-                        },
-                    },
-                    {
-                        extend: 'pdfHtml5',
-                        exportOptions: {
-                            columns: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-                        }
-                    },
+                    // {
+                    //     extend: 'excelHtml5',
+                    //     exportOptions: {
+                    //         columns: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+                    //     },
+                    // },
+                    // {
+                    //     extend: 'csvHtml5',
+                    //     exportOptions: {
+                    //         columns: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+                    //     },
+                    // },
+                    // {
+                    //     extend: 'pdfHtml5',
+                    //     exportOptions: {
+                    //         columns: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+                    //     }
+                    // },
                     {
                         text: 'Add',
                         action: function () {
-                    // Redirect to the specified URL
-                    window.location.href = "{{ route('accident-accessing-service.create') }}";
-                }
+                            // Redirect to the specified URL
+                            window.location.href = "{{ route('accident-accessing-service.create') }}";
+                        }
                     }
 
 
