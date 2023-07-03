@@ -460,7 +460,7 @@ margin-top:1rem;
                                 <!-- fieldsets -->
                                 <fieldset>
                                     <div class="form-card ">
-                                        <div class="upper">
+                                        <!-- <div class="upper">
                                         <div class="row">
                                             <div class="col-6 d-flex">
                                                 <div class="row">
@@ -475,7 +475,7 @@ margin-top:1rem;
                                                 </div>
                                             </div>
                                         </div>
-                                        </div>
+                                        </div> -->
 
                                       <div class="row mt-5">
                                         <div class="col-md-6">
@@ -484,23 +484,33 @@ margin-top:1rem;
                                         </div>
                                         <div class="col-md-6">
                                         <label class="fw-bold fs-6 mb-2" style="color: black ;" >Tax Invoice </label>
-                                        <input type="text" required  class="form-control form-control-solid mb-3 mb-lg-0"   name="tax_invoice" placeholder=" Enter Invoice"/>
+                                        <input type="number" required  class="form-control form-control-solid mb-3 mb-lg-0"   name="tax_invoice" placeholder=" Enter Invoice Number"/>
                                         </div>
                                       </div>
 
                                       <div class="row mt-4">
+                                         <div class="col-md-6">
+                                         <label class="fw-bold fs-6 mb-2" style="color: black ;" > Date </label>
+                                         <input type="date" required  class="form-control form-control-solid mb-3 mb-lg-0" name="invoice_date"/>   
+                                    </div>
                                         <div class="col-md-6">
                                         <label style="color: black ;" class="fw-bold fs-6 mb-2"  >Vechile </label>
                                         <input type="text"  required  class="form-control form-control-solid mb-3 mb-lg-0" name="vehicle" placeholder=" Enter Vechile Name"/>
                                         </div>
+                                          </div>
+
+                                      <div class="row mt-4">
                                         <div class="col-md-6">
                                         <label style="color: black ; " class="fw-bold fs-6 mb-2"  >Rego</label>
                                         <input type="number" id="myText" required  class="form-control form-control-solid mb-3 mb-lg-0" name="rego" placeholder="Enter Rego"/>
                                         </div>
+                                        <div class="col-md-6">
+                                            <label style="color: black ; " class="fw-bold fs-6 mb-2"  >Assessment Fee</label>
+                                            <input  type="number" id="Text3" required class=" form-control form-control-solid mb-3 mb-lg-0" name="assessment_fee"   placeholder="$00.00" name="TextBox_3" oninput="syncInputs()" >
+                                        </div>
                                       </div>
 
-
-                                      <div class="row">
+                                      <!-- <div class="row">
                                         <div class="col-sm-7">
                                         <label style="color: black ; font-weight: 600;" class="mt-4"> Invoice Description </label>
                                         <p>
@@ -512,18 +522,10 @@ margin-top:1rem;
                                             Administration charges
                                          </p>
                                         </div>
-                                        <div class="col-sm-3 me-5 fee">
-                                        <!-- <div class="two d-flex justify-content-between ">
-                                                    <div class="price font-weight-bold" style="color:black;"><p>Assessment Fee</p></div>
-                                                    <div class="amount font-weight-bold" style="color:black;" > <span >$450.00 </span>  </div>
+                                      </div> -->
 
-                                                </div> -->
-
-                                        </div>
-                                      </div>
-
-                                         <div class="row ">
-                                            <div class="col-sm-7">
+                                         <div class="row">
+                                            <!-- <div class="col-sm-7">
                                             <label style="color: black ; font-weight: 600;"> Bank Details </label>
                                          <p>
                                             Commonwealth Bank <br>
@@ -533,40 +535,30 @@ margin-top:1rem;
                                             Direct Debit Please include your name and AAS Reference number <br>
                                              Cheque Payable to Gbs Corporation and reference number on the back of cheque
                                          </p>
-                                            </div>
-                                            <!-- <div class="col-sm-3 me-5">
-                                            <label style="color: black ; font-weight: 600;"> Invoice Total </label>
-                                                <div class="two d-flex justify-content-between">
-                                                    <div class="price"><p>Sub Total</p></div>
-                                                    <div class="amount font-weight-bold" > <span >$450.00 </span>  </div>
-                                                </div>
-                                                <div class="two d-flex justify-content-between">
-                                                    <div class="price"><p>GST</p></div>
-                                                    <div class="amount font-weight-bold" > <span >$45.00</span>  </div>
-                                                </div>
-                                                <div class="two d-flex justify-content-between">
-                                                    <div class="price font-weight-bold"><p>Grand Total</p></div>
-                                                    <div class="amount font-weight-bold" > <span >$495.00</span>  </div>
-                                                </div>
                                             </div> -->
-
-
-                                            <div class="col-sm-3" me-3>
-                                            <div class="row mb-2">
+                                    <div class="row mt-4">
+                                        <!-- <div class="col-md-6">
+                                            <label style="color: black ; " class="fw-bold fs-6 mb-2"  >Assessment Fee</label>
+                                            <input  type="number" id="Text3" required class=" form-control form-control-solid mb-3 mb-lg-0" name="assessment_fee"   placeholder="$00.00" name="TextBox_3" oninput="syncInputs()" >
+                                        </div> -->
+                                    </div>
+                                    <label style="color: black ; font-weight: 600;"> Invoice Total </label>
+                                            <div class="col-sm-3 " >
+                                            <!-- <div class="row mb-2">
                                                 <div class="col-7 font-weight-bold mt-2" style="color:black;" >Assessment Fee</div>
                                                 <div class="col-3"><input  class="adds" name="assessment_fee"  type="number" id="Text3" placeholder="$00.00" name="TextBox_3" oninput="syncInputs()" ></div>
-                                                </div>
-                                            <label style="color: black ; font-weight: 600;"> Invoice Total </label>
-                                                    <div class="row">
-                                                        <div class="col-7 mt-2"> Sub Total</div>
+                                                </div> -->
+                                            <!-- <label style="color: black ; font-weight: 600;"> Invoice Total </label> -->
+                                                    <div class="row ">
+                                                        <div class="col-6 mt-2"> Sub Total</div>
                                                         <div class="col-3"> <input readonly class="adds" name="sub_total" type="number" id="Text1" placeholder="$00.00" name="TextBox1"  ></div>
                                                     </div>
-                                                    <div class="row mt-2">
-                                                        <div class="col-7 mt-2">GST</div>
+                                                    <div class="row mt-2 ">
+                                                        <div class="col-6 mt-2">GST</div>
                                                         <div class="col-3"><input readonly class="adds" name="gst" type="number" id="Text2" placeholder="$00.00" name="TextBox2" ></div>
                                                     </div>
                                                     <div class="row mt-2">
-                                                        <div class="col-7 mt-2 font-weight-bold"> Grand Total </div>
+                                                        <div class="col-6 mt-2 font-weight-bold"> Grand Total </div>
                                                         <div class="col-3"><input readonly class="adds" name="grand_total" type="number" id="txtresult" placeholder="$00.00" name="TextBox3"></div>
                                                     </div>
                                             </div>
@@ -685,99 +677,72 @@ margin-top:1rem;
                                         <input type="text"  required  class="form-control form-control-solid mb-3 mb-lg-0" name="vin" placeholder="Enter  VIN "/>
                                           </div>
                                       </div>
-
-                                        <div class="div">
-                                            <div class="panel panel-default">
-                                                <div class="panel-body">
-                                                    <div id="repairer_fields"></div>
-                                                    <div class="col-sm-3  nopadding">
-                                                        <div class="form-group">
-                                                            <div class="input-group">
-                                                                <select class="form-control" id="repairers" name="repairers[]">
-                                                                    @foreach ($data['repairers'] as $repairer)
-                                                                        <option value="{{ $repairer->id }}">{{ $repairer->name }}</option>
-                                                                    @endforeach
-                                                                </select>
-                                                                <div class="input-group-btn">
-                                                                <button class="btn btn-success" type="button"  onclick="repairer_fields();"> <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> </button>
+                                        <div class="row">
+                                        <h4 class="fw-bolder mt-5 d-flex" style="color:black;">
+                                            <p> Add Repairer </p>
+                                            <p class="ms-2" id="demos"></p>
+                                        </h4>
+                                        <div class="panel panel-default">
+                                            <div class="panel-body">
+                                                <div id="plus_div_repairer">
+                                                    <div class="row">
+                                                        <div class="col-sm-4  nopadding">
+                                                            <div class="form-group">
+                                                                <div class="input-group">
+                                                                    <select class="form-control" id="repairers" name="repairers[]">
+                                                                        @foreach ($data['repairers'] as $repairer)
+                                                                            <option value="{{ $repairer->id }}">{{ $repairer->name }}</option>
+                                                                        @endforeach
+                                                                    </select>
+                                                                    <div class="input-group-btn">
+                                                                        <button class="btn btn-success" type="button" onclick="repairer_fields();">
+                                                                            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                                                                        </button>
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>
+                                                        <div class="clear"></div>
                                                     </div>
-                                                    <div class="clear"></div>
-
                                                 </div>
-
+                                                <div id="repairer_fields"></div>
                                             </div>
                                         </div>
+                                    </div>
 
-                                        <div class="div">
-                                            <div class="panel panel-default">
-                                                <div class="panel-body">
-                                                    <div id="assessor_fields"></div>
-                                                    <div class="col-sm-3  nopadding">
-                                                        <div class="form-group">
-                                                            <div class="input-group">
-                                                                <select class="form-control" id="assessors" name="assessors[]">
-                                                                    @foreach ($data['assessors'] as $assessor)
-                                                                        <option value="{{ $assessor->id }}">{{ $assessor->assessor }}</option>
-                                                                    @endforeach
-                                                                </select>
-                                                                <div class="input-group-btn">
-                                                                <button class="btn btn-success" type="button"  onclick="assessor_fields();"> <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> </button>
+
+                                     <div class="row d-block">
+                                        <h4 class="fw-bolder mt-2 d-flex" style="color:black;">
+                                            <p> Add Assessor </p>
+                                            <p class="ms-2" id="demo"></p>
+                                        </h4>
+                                        <div class="panel panel-default">
+                                            <div class="panel-body">
+                                                <div id="plus_div">
+                                                    <div class="row">
+                                                        <div class="col-sm-4  nopadding">
+                                                            <div class="form-group">
+                                                                <div class="input-group">
+                                                                    <select class="form-control" id="assessors" name="assessors[]">
+                                                                        @foreach ($data['assessors'] as $assessor)
+                                                                            <option value="{{ $assessor->id }}">{{ $assessor->assessor }}</option>
+                                                                        @endforeach
+                                                                    </select>
+                                                                    <div class="input-group-btn">
+                                                                        <button class="btn btn-success" type="button" onclick="assessor_fields();">
+                                                                            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                                                                        </button>
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>
+                                                        <div class="clear"></div>
                                                     </div>
-                                                    <div class="clear"></div>
-
                                                 </div>
-
+                                                <div id="assessor_fields"></div>
                                             </div>
                                         </div>
-
-<!--
-
-  <button class="mt-5 btn btn-primary" onclick="duplicateDiv()"> Add More Repairer </button>
-
-
-  <h4 class="fw-bolder " style="color:black;">  Repairer Details </h4>
-
-<div class="repair" id="original-div">
-
-<div class="row mt-5"  >
-   <div class="col-md-4">
-     <label style="color: black ; " class="fw-bold fs-6 mb-2"  >Repairer</label>
-    <input type="text"  required  class="form-control form-control-solid mb-3 mb-lg-0" name="repairer" placeholder="Enter Repairer"/>
-   </div>
-    <div class="col-md-4">
-            <label style="color: black ; " class="fw-bold fs-6 mb-2"  >Email</label>
-            <input type="email"  required  class="form-control form-control-solid mb-3 mb-lg-0" name="repairer_email" placeholder="Enter Email"/>
-     </div>
-
-    <div class="col-md-4">
-             <label style="color: black ; " class="fw-bold fs-6 mb-2"  >Contact</label>
-             <input type="text"  required  class="form-control form-control-solid mb-3 mb-lg-0" name="vins" placeholder="Enter  Contact  "/>
-         </div>
-</div> -->
-<!-- <div class="row mt-4 ">
-         <div class="col-md-4">
-             <label style="color: black ; " class="fw-bold fs-6 mb-2"  >Phone:</label>
-             <input type="number"  required  class="form-control form-control-solid mb-3 mb-lg-0"  placeholder="Enter  Phone Number  "/>
-         </div>
-         <div class="col-md-4">
-             <label style="color: black ; " class="fw-bold fs-6 mb-2"  >Mobile</label>
-             <input type="number"  required  class="form-control form-control-solid mb-3 mb-lg-0"  placeholder="Enter  Mobile Number  "/>
-         </div>
-         <div class="col-md-4">
-             <label style="color: black ; " class="fw-bold fs-6 mb-2"  >Repairer Address</label>
-             <input type="number"  required  class="form-control form-control-solid mb-3 mb-lg-0"  placeholder="Enter Repairer Address  "/>
-         </div>
-</div>
-
-</div> -->
-
-
+                                    </div>
                                     </div>
                                     <input type="button" name="previous" class="previous action-button-previous"
                                         value="Previous" />
@@ -1036,8 +1001,8 @@ margin-top:1rem;
                                             <div class="col-6"> <input type="text" id="settle3" placeholder="$00.00" required name="settlement_gst" class="aa form-control form-control-solid mb-3 mb-lg-0"/> </div>
                                            </div>
 
-                                                <div class="row mt-2 rounded " style="color:black; background:#c7efb6;">
-                                            <div class="col-6 font-weight-bold mt-1 py-2"  > Settlement Total </div>
+                                                <div class="row mt-2 rounded ">
+                                            <div class="col-6 font-weight-bolder mt-1 py-2"  style="color:green;" > Settlement Total </div>
                                             <div class="col-6 mt-1 "> <input type="text" id="settle4" placeholder="$00.00" required name="settlement_total"  class="aa form-control form-control-solid mb-3 mb-lg-0 "  /> </div>
                                            </div>
 
@@ -1145,8 +1110,8 @@ margin-top:1rem;
 
                                                 <div class="col-md-5 wd">
                                                 <h4 class="fw-bolder " style="color:black;">  Suspension  Condition </h4>
-                                                <div class="row mt-4">
-                                            <div class="col-4 font-weight-bold mt-2 " style="color:black;"> RH Front</div>
+                                                <div class="row mt-4 ">
+                                             <div class="col-4 font-weight-bold mt-2 " style="color:black;"> RH Front</div>
                                              <div class="col-8"> <input type="text"  required  class=" form-control form-control-solid mb-3 mb-lg-0" name="rh_front"/> </div>
                                                </div>
                                                <div class="row mt-2">
@@ -1166,7 +1131,7 @@ margin-top:1rem;
 
 
                                        </div>
-                                       <div class="row mt-5">
+                                       <div class="row mt-5 ">
                                        <h4 class="fw-bolder mt-4" style="color:black;">  Damage Details </h4>
                                        <div class="col-md-6">
 
@@ -1180,14 +1145,14 @@ margin-top:1rem;
                                             {{-- </form> --}}
 
                                        </div>
-                                       <div class="col-md-6 wd">
+                                       <div class="col-md-6 wd mt-5">
                                                 <div class="row">
 
                                                     <div class="col-4  font-weight-bold mt-2 " style="color:black;"> Damage Section</div>
                                                     <div class="col-4  font-weight-bold mt-2 " style="color:black;"> Damage Level</div>
                                                     <div class="col-4  font-weight-bold mt-2 " style="color:black;"> Comments</div>
                                                 </div>
-                                                <div class="row mt-4">
+                                                <div class="row mt-4 ">
                                                 <div class="col-4  mt-2 " style="color:black;">Front Bumper Bar</div>
                                              <div class="col-4"> <input type="text"  required  class=" form-control form-control-solid mb-3 mb-lg-0" name="FrontBumperBar_demage_level"/> </div>
                                              <div class="col-4"> <input type="text"  required  class=" form-control form-control-solid mb-3 mb-lg-0" name="FrontBumperBar_comments"/> </div>
@@ -1217,7 +1182,7 @@ margin-top:1rem;
                                     </div>
                                     <input type="button" name="previous" class="previous action-button-previous"
                                         value="Previous" />
-                                    <input type="submit" class=""
+                                    <input type="submit" class="action-button"
                                         value="Confirm" />
                                 </fieldset>
                             </form>
@@ -1522,102 +1487,103 @@ function syncInputs2() {
       var percentage = inputNumber * 0.1;
 
       outputFieldset.value = Math.round(percentage);
-      add_number_three()
+      settle()
     }
+    function settle() {
+            // Get the input field values
+            var setl2 = parseFloat(document.getElementById("settle2").value);
+            var setl3 = parseFloat(document.getElementById("settle3").value);
+
+            // Perform the addition
+            var resultsetl = setl2 + setl3;
+
+            // Display the result in the third input field
+            document.getElementById("settle4").value = resultsetl;
+        }
 
 
-
-
-    // var duplicationCount = 0;
-    // function add_number_three() {
-    //     if (duplicationCount >= 10) {
-    //     return; // Stop duplication if the limit is reached
-    //   }
-
-
-    //   var originalDiv = document.getElementById('original-div');
-    //   var clone = originalDiv.cloneNode(true); // Create a deep clone of the original div
-    //   clone.id = ""; // Clear the ID of the clone to prevent duplicate IDs
-    //   originalDiv.parentNode.appendChild(clone); // Append the clone to the parent of the original div
-
-    //   duplicationCount++;
-    //     }
-
-
-    //     /////// funtion to double a div 100 time
-    //     function duplicateDiv() {
-    //   var originalDiv = document.getElementById('original-div');
-    //   var clone = originalDiv.cloneNode(true); // Create a deep clone of the original div
-    //   clone.id = ""; // Clear the ID of the clone to prevent duplicate IDs
-    //   originalDiv.parentNode.appendChild(clone); // Append the clone to the parent of the original div
-    // }
 
     // Repairer Start
+
     var room = 1;
-    function repairer_fields() {
-        room++;
-        var objTo = document.getElementById('repairer_fields')
-        var divtest = document.createElement("div");
-        divtest.setAttribute("class", "form-group removeclass"+room);
-        var rdiv = 'removeclass'+room;
-        divtest.innerHTML = `
-            <div class="col-sm-3 nopadding">
+
+function repairer_fields() {
+    room++;
+    var objTo = document.getElementById('repairer_fields');
+    var divtest = document.createElement("div");
+    var rdiv = 'removeclass' + room;
+    divtest.innerHTML = `
+        <div class="row d-block ${rdiv}">
+            <div class="col-sm-4 nopadding">
                 <div class="form-group">
                     <div class="input-group">
-                        <select class="form-control" id="repairers" name="repairers[]">
-                            @foreach ($data['repairers'] as $repairer)
-                                <option value="{{ $repairer->id }}">{{ $repairer->name }}</option>
-                            @endforeach
+                        <select class="form-control" id="repairers_${room}" name="repairers[]">
+                            <!-- Options will be added dynamically -->
                         </select>
                         <div class="input-group-btn">
-                            <button class="btn btn-danger" type="button"onclick="remove_repairer_fields(`+ room +`);">
-                                <span class="glyphicon glyphicon-minus"aria-hidden="true"></span>
+                            <button class="btn btn-danger" type="button" onclick="remove_repairer_fields('${rdiv}');">
+                                <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
                             </button>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="clear"></div>`;
+            <div class="clear"></div>
+        </div>`;
 
-        objTo.appendChild(divtest)
-    }
-   function remove_repairer_fields(rid) {
-	   $('.removeclass'+rid).remove();
-   }
-// Repairer End
+    objTo.appendChild(divtest);
 
-    // Assessor Start
-    var ass = 1;
-    function assessor_fields() {
-        ass++;
-        var objTo = document.getElementById('assessor_fields')
-        var divtest = document.createElement("div");
-        divtest.setAttribute("class", "form-group removeclass"+ass);
-        var rdiv = 'removeclass'+ass;
-        divtest.innerHTML = `
-            <div class="col-sm-3 nopadding">
+    // Populate the select element with options
+    var repairersSelect = document.getElementById(`repairers_${room}`);
+    populateOptions(repairersSelect, repairersData);
+}
+
+function remove_repairer_fields(rdiv) {
+    var elem = document.getElementsByClassName(rdiv)[0];
+    elem.parentNode.removeChild(elem);
+}
+
+var ass = 1;
+
+function assessor_fields() {
+    ass++;
+    var objTo = document.getElementById('assessor_fields');
+    var divtest = document.createElement("div");
+    var rdiv = 'removeclasss' + ass;
+    divtest.innerHTML = `
+        <div class="row d-block ${rdiv}">
+            <div class="col-sm-4 nopadding">
                 <div class="form-group">
                     <div class="input-group">
-                        <select class="form-control" id="assessors" name="assessors[]">
-                            @foreach ($data['assessors'] as $assessor)
-                                <option value="{{ $assessor->id }}">{{ $assessor->assessor }}</option>
-                            @endforeach
+                        <select class="form-control" id="assessors_${ass}" name="assessors[]">
+                            <!-- Options will be added dynamically -->
                         </select>
                         <div class="input-group-btn">
-                            <button class="btn btn-danger" type="button"onclick="remove_assessor_fields(`+ ass +`);">
-                                <span class="glyphicon glyphicon-minus"aria-hidden="true"></span>
+                            <button class="btn btn-danger" type="button" onclick="remove_assessor_fields('${rdiv}');">
+                                <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
                             </button>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="clear"></div>`;
+            <div class="cleared"></div>
+        </div>`;
 
-        objTo.appendChild(divtest)
-    }
-   function remove_assessor_fields(aid) {
-	   $('.removeclass'+aid).remove();
-   }
+    objTo.appendChild(divtest);
+
+    // Populate the select element with options
+    var assessorsSelect = document.getElementById(`assessors_${ass}`);
+    populateOptions(assessorsSelect, assessorsData);
+}
+
+function remove_assessor_fields(rdiv) {
+    var elem = document.getElementsByClassName(rdiv)[0];
+    elem.parentNode.removeChild(elem);
+}
+
+
+
+
 // Assessor End
 
     ///multistep form
