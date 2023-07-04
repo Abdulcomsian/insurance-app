@@ -9,6 +9,7 @@ use App\Repo\AccidentService\AccidentServiceInterface;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Yajra\DataTables\Facades\DataTables;
+use PDF;
 
 class AccidentServiceReportController extends Controller
 {
@@ -25,7 +26,7 @@ class AccidentServiceReportController extends Controller
                 $data = AccidentServiceReport::select('id', 'invoice_no', 'invoice_date', 'to', 'vehicle', 'rego', 'assessment_fee', 'owner_name', 'engine_type', 'created_at')->orderBy('id', 'desc')->get();
                 return Datatables::of($data)
                     ->addColumn('action', function ($row) {
-                        $btn = '<a href="' . route("accident-report.index", $row->id) . '" class="btn btn-sm btn-clean btn-icon" title="View details"><i class="bi bi-file-earmark-pdf-fill"></i></a>';
+                        $btn = '<a href="' . route("accident-report.index", $row->id) . '" class="btn btn-sm btn-clean btn-icon" title="Download PDF"><i class="bi bi-file-earmark-pdf-fill"></i></a>';
                         return $btn;
                     })
                     ->rawColumns(['action'])
@@ -116,9 +117,14 @@ class AccidentServiceReportController extends Controller
     public function accidentReport ($id)
     {
         $id = (int)$id;
-        $accident_service_report = AccidentServiceReport::with('serviceAssessors:id,assessor_id,accident_service_report_id', 'serviceAssessors.assessor:id,assessor', 'serviceRepairers:id,repairer_id,accident_service_report_id', 'serviceRepairers.repairers:id,name', 'demageValues:id,demage_level,comment,demage_section_id,accident_service_report_id', 'demageValues.demage:id,name', 'suppValues:id,quoted,assessed,variance,supp_id,accident_service_report_id', 'suppValues.supps:id,name', 'assessmentReports:id,quoted,assessed,variance,book_values,live_market_values,trade_low,market_one,trade,market_twp,retail,market_three,value_avg_kms,market_avg,assessment_report_product_id,accident_service_report_id', 'assessmentReports.reportProduct:id,name')
+        $accident_service_report = AccidentServiceReport::with('serviceAssessors:id,assessor_id,accident_service_report_id', 'serviceAssessors.assessor', 'serviceRepairers:id,repairer_id,accident_service_report_id', 'serviceRepairers.repairers', 'demageValues:id,demage_level,comment,demage_section_id,accident_service_report_id', 'demageValues.demage:id,name', 'suppValues:id,quoted,assessed,variance,supp_id,accident_service_report_id', 'suppValues.supps:id,name', 'assessmentReports:id,quoted,assessed,variance,book_values,live_market_values,trade_low,market_one,trade,market_twp,retail,market_three,value_avg_kms,market_avg,assessment_report_product_id,accident_service_report_id', 'assessmentReports.reportProduct:id,name')
         ->find($id);
-        return $accident_service_report;
-        return view('accident-report.report');
+        $data = [
+            'accident_service_report'=>$accident_service_report
+        ];
+        $pdf = PDF::loadView('accident-report.report', $data);
+    
+        return $pdf->download('assessment-report.pdf');
+        // return view('accident-report.report', compact('accident_service_report'));
     }
 }

@@ -87,16 +87,17 @@
                 <tbody>
                     <tr class="bg-gray-clr">
                         <td width="150px">
-                            <p style="font-size: 15px; color:#2587be;;font-weight:bold">Tax Invoice: 2498</p>
+                            <p style="font-size: 15px; color:#2587be;;font-weight:bold">Tax Invoice:
+                                {{$accident_service_report['tax_invoice'] ?? '--' }}</p>
                         </td>
                         <td></td>
-                        <td colspan="3" style="font-size: 15px; color:#2587be;font-weight:bold;text-align:right ">
-                            Date: 15/05/2023
+                        <td colspan="5" style="font-size: 15px; color:#2587be;font-weight:bold;text-align:right ">
+                            Date: {{$accident_service_report['invoice_date'] ?? '--' }}
                         </td>
                     </tr>
                     <tr style="margin-top: 40px !important;">
                         <td>To :</td>
-                        <td>Mara Cota</td>
+                        <td>{{ $accident_service_report['to'] ?? '--' }}</td>
                         <td colspan="3"></td>
                         <td></td>
                     </tr>
@@ -125,15 +126,13 @@
                     </tr>
                     <tr>
                         <td><b>Vehicle:</b></td>
-                        <td>Hyundia Tucson 05/2007 City - Elite -
-                            2.0L
-                        </td>
+                        <td>{{ $accident_service_report['vehicle'] ?? '--'}}</td>
                         <td><b>Claim No:</b></td>
                         <td>TR2032</td>
                     </tr>
                     <tr>
                         <td><b>Rego:</b></td>
-                        <td>VIC | UVU166</td>
+                        <td>{{ $accident_service_report['rego'] ?? '--' }}</td>
                         <td><b>Policy No:</b></td>
                         <td>P-23</td>
                     </tr>
@@ -149,7 +148,7 @@
                         <td></td>
                     </tr>
                     <tr>
-                        <td width="300px">
+                        <td width="300px" style="border-bottom-style: hidden;">
                             Assessed the damage to vehicle Rego - make, model series body
                             Adjusted to repair quotation
                             Supplied images of the vehi cle
@@ -161,7 +160,7 @@
                     <tr>
                         <td></td>
                         <td><b>Assessment Fee</b></td>
-                        <td><b>$450.00</b></td>
+                        <td><b>${{ $accident_service_report['assessment_fee'] ?? '--' }}</b></td>
                         <td></td>
                     </tr>
 
@@ -177,7 +176,7 @@
                         <td></td>
                     </tr>
                     <tr>
-                        <td>
+                        <td style="border-bottom-style: hidden;">
                             Commonwealth Bank
                             GBS CORPORATION Sidiros family trust
                             BSB 063-157
@@ -187,24 +186,24 @@
                             Cheque Payable to Gbs Corporation and reference number on the
                             back of cheque
                         </td>
-                        <td></td>
-                        <td>Sub Total</td>
-
-                        <td>$450.00</td>
-                        <td></td>
+                        <td style="border-bottom-style: hidden;"></td>
+                        <td style="border-bottom-style: hidden;">Sub Total</td>
+                        
+                        <td style="border-bottom-style: hidden;">${{ $accident_service_report['sub_total'] ?? '--' }}</td>
+                        <td style="border-bottom-style: hidden;"></td>
                     </tr>
                     <tr>
-                        <td></td>
-                        <td></td>
-                        <td>GST</td>
-                        <td>$45.00</td>
-                        <td></td>
+                        <td style="border-bottom-style: hidden;"></td>
+                        <td style="border-bottom-style: hidden;"></td>
+                        <td style="border-bottom-style: hidden;">GST</td>
+                        <td style="border-bottom-style: hidden;">${{ $accident_service_report['gst'] ?? '--' }}</td>
+                        <td style="border-bottom-style: hidden;"></td>
                     </tr>
                     <tr>
-                        <td></td>
-                        <td></td>
-                        <td><b>Grand Total</b></td>
-                        <td><b>$495.00</b></td>
+                        <td style="border-bottom-style: hidden;"></td>
+                        <td style="border-bottom-style: hidden;"></td>
+                        <td style="border-bottom-style: hidden;"><b>Grand Total</b></td>
+                        <td style="border-bottom-style: hidden;"><b>${{ $accident_service_report['grand_total'] ?? '--' }}</b></td>
                     </tr>
                 </tbody>
             </table>
@@ -250,7 +249,7 @@
                                 class="text-right">Detailed Assessment Report Ref No: 2483</p>
                         </td>
                         <td style="font-size: 13px; color:white; text-align:left;font-weight:bold; text-align:right">
-                            Date: 15/05/2023</td>
+                            Date: {{ $accident_service_report['invoice_date'] }}</td>
                     </tr>
                 </tbody>
             </table>
@@ -264,7 +263,7 @@
                         <td colspan="2" class="bg-gray-clr">
                             <p style="font-size: 13px; color:black; text-align:left;font-weight:bold">Owner: </p>
                         </td>
-                        <td style="font-size: 13px; color:black; text-align:left;">Mara Cota</td>
+                        <td style="font-size: 13px; color:black; text-align:left;">{{ $accident_service_report['owner_name'] ?? '--' }}</td>
                         <td colspan="2" class="bg-gray-clr">
                             <p style="font-size: 13px; color:black; text-align:left;font-weight:bold">Claim No:</p>
                         </td>
@@ -281,7 +280,7 @@
                             <p style="font-size: 13px; color:black; text-align:left;font-weight:bold">Assessment Type:
                             </p>
                         </td>
-                        <td style="font-size: 13px; color:black; text-align:left;">Physical on site Assessment</td>
+                        <td style="font-size: 13px; color:black; text-align:left;">{{ $accident_service_report['assessment_type'] ?? '--' }}</td>
                         <td colspan="2" class="bg-gray-clr">
                             <p style="font-size: 13px; color:black; text-align:left;font-weight:bold">Estimate No:</p>
                         </td>
@@ -293,52 +292,94 @@
     </div>
     <br>
     {{-- Vehicle Details Start --}}
-    <div class="row mb-5">
+    <div class="row">
         <div class="col-md-12">
             <table class="table" border="0" id="detail-assessment-2" width="100%">
                 <tbody>
                     <tr class="table-header-bg-clr" style="margin-top: 5px">
                         <td colspan="9">
                             <p style="font-size: 13px; color:white; text-align:left;font-weight:bold"
-                                class="text-right">Vehicle Details - Rego: VIC | UVU166</p>
+                                class="text-right">Vehicle Details - Rego: {{ $accident_service_report['rego'] ?? '--'}}</p>
                         </td>
                     </tr>
                     <tr class="bg-gray-clr">
                         <td colspan="2" class="bg-gray-clr">
                             <p style="font-size: 13px; color:black; text-align:left;font-weight:bold">Make: </p>
                         </td>
-                        <td style="font-size: 13px; color:black; text-align:left;">Hyundia</td>
+                        <td style="font-size: 13px; color:black; text-align:left;">{{ $accident_service_report['make'] ?? '--'}}</td>
                         <td colspan="2" class="bg-gray-clr">
                             <p style="font-size: 13px; color:black; text-align:left;font-weight:bold">Engine Type:</p>
                         </td>
-                        <td style="font-size: 13px; color:black; text-align:left;">Petrol</td>
+                        <td style="font-size: 13px; color:black; text-align:left;">{{ $accident_service_report['engine_type'] ?? '--' }}</td>
                         <td colspan="2">
                             <p style="font-size: 13px; color:black; text-align:left;font-weight:bold">Odometer: </p>
                         </td>
-                        <td style="font-size: 13px; color:black; text-align:left;">62342</td>
+                        <td style="font-size: 13px; color:black; text-align:left;">{{ $accident_service_report['odometer'] ?? '--' }}</td>
                     </tr>
                     <tr class="bg-gray-clr">
                         <td colspan="2" class="bg-gray-clr">
-                            <p style="font-size: 13px; color:black; text-align:left;font-weight:bold">Make: </p>
+                            <p style="font-size: 13px; color:black; text-align:left;font-weight:bold">Model: </p>
                         </td>
-                        <td style="font-size: 13px; color:black; text-align:left;">Hyundia</td>
+                        <td style="font-size: 13px; color:black; text-align:left;">{{ $accident_service_report['model'] ?? '--' }}</td>
                         <td colspan="2" class="bg-gray-clr">
-                            <p style="font-size: 13px; color:black; text-align:left;font-weight:bold">Engine Type:</p>
+                            <p style="font-size: 13px; color:black; text-align:left;font-weight:bold">Engine Size:</p>
                         </td>
-                        <td style="font-size: 13px; color:black; text-align:left;">Petrol</td>
+                        <td style="font-size: 13px; color:black; text-align:left;">{{ $accident_service_report['engine_size'] ?? '--' }}</td>
                         <td colspan="2">
-                            <p style="font-size: 13px; color:black; text-align:left;font-weight:bold">Odometer: </p>
+                            <p style="font-size: 13px; color:black; text-align:left;font-weight:bold">Paint Group: </p>
                         </td>
-                        <td style="font-size: 13px; color:black; text-align:left;">62342</td>
+                        <td style="font-size: 13px; color:black; text-align:left;">{{ $accident_service_report['paint_group'] ?? '--' }}</td>
+                    </tr>
+                    <tr class="bg-gray-clr">
+                        <td colspan="2" class="bg-gray-clr">
+                            <p style="font-size: 13px; color:black; text-align:left;font-weight:bold">Series: </p>
+                        </td>
+                        <td style="font-size: 13px; color:black; text-align:left;">{{ $accident_service_report['series'] ?? '--' }}</td>
+                        <td colspan="2" class="bg-gray-clr">
+                            <p style="font-size: 13px; color:black; text-align:left;font-weight:bold">Engine No:</p>
+                        </td>
+                        <td style="font-size: 13px; color:black; text-align:left;">{{ $accident_service_report['engine_no'] ?? '--' }}</td>
+                        <td colspan="2">
+                            <p style="font-size: 13px; color:black; text-align:left;font-weight:bold">Paint Code: </p>
+                        </td>
+                        <td style="font-size: 13px; color:black; text-align:left;">{{ $accident_service_report['paint_code'] ?? '--' }}</td>
+                    </tr>
+                    <tr class="bg-gray-clr">
+                        <td colspan="2" class="bg-gray-clr">
+                            <p style="font-size: 13px; color:black; text-align:left;font-weight:bold">Month/Year: </p>
+                        </td>
+                        <td style="font-size: 13px; color:black; text-align:left;">{{ $accident_service_report['month_year'] ?? '--' }}</td>
+                        <td colspan="2" class="bg-gray-clr">
+                            <p style="font-size: 13px; color:black; text-align:left;font-weight:bold">Transmission:</p>
+                        </td>
+                        <td style="font-size: 13px; color:black; text-align:left;">{{ $accident_service_report['transmission'] ?? '--' }}</td>
+                        <td colspan="2">
+                            <p style="font-size: 13px; color:black; text-align:left;font-weight:bold">Colour: </p>
+                        </td>
+                        <td style="font-size: 13px; color:black; text-align:left;">{{ $accident_service_report['colour'] ?? '--' }}</td>
+                    </tr>
+                    <tr class="bg-gray-clr">
+                        <td colspan="2" class="bg-gray-clr">
+                            <p style="font-size: 13px; color:black; text-align:left;font-weight:bold">Body Type: </p>
+                        </td>
+                        <td style="font-size: 13px; color:black; text-align:left;">{{ $accident_service_report['body_type'] ?? '--' }}</td>
+                        <td colspan="2" class="bg-gray-clr">
+                            <p style="font-size: 13px; color:black; text-align:left;font-weight:bold">Axles:</p>
+                        </td>
+                        <td style="font-size: 13px; color:black; text-align:left;">{{ $accident_service_report['axles'] ?? '--' }}</td>
+                        <td colspan="2">
+                            <p style="font-size: 13px; color:black; text-align:left;font-weight:bold">Vin: </p>
+                        </td>
+                        <td style="font-size: 13px; color:black; text-align:left;">{{ $accident_service_report['vin'] ?? '--' }}</td>
                     </tr>
                 </tbody>
             </table>
         </div>
     </div>
     {{-- Vehicle Details End --}}
-    <br>
+    <br />
     {{-- Repairer Details Start --}}
-    <div class="row mb-5">
+    <div class="row">
         <div class="col-md-12">
             <table class="table" border="0" id="detail-assessment-3" width="100%">
                 <tbody>
@@ -348,44 +389,46 @@
                                 class="text-right">Repairer Details</p>
                         </td>
                     </tr>
-                    <tr>
-                        <td colspan="2" class="bg-gray-clr">
-                            <p style="font-size: 13px; color:black; text-align:left;font-weight:bold">Repairer: </p>
-                        </td>
-                        <td style="font-size: 13px; color:black; text-align:left;" class="bg-gray-clr">PNT Panels Pty
-                            Ltd</td>
-                        <td colspan="2" class="bg-gray-clr">
-                            <p style="font-size: 13px; color:black; text-align:left;font-weight:bold">Email:</p>
-                        </td>
-                        <td class="bg-gray-clr" style="font-size: 13px; color:black; text-align:left;">
-                            pntpanels@optusnet.com.au</td>
-                        <td colspan="2">
-                            {{-- <p style="font-size: 13px; color:black; text-align:left;font-weight:bold">Email:</p> --}}
-                        </td>
-                        <td style="font-size: 13px; color:black; text-align:left;"></td>
-                    </tr>
-                    <tr>
-                        <td colspan=" 2">
-                            <p style="font-size: 13px; color:black; text-align:left;font-weight:bold">Contact: </p>
-                        </td>
-                        <td style="font-size: 13px; color:black; text-align:left;">PNT Panels Pty Ltd</td>
-                        <td colspan="2">
-                            <p style="font-size: 13px; color:black; text-align:left;font-weight:bold">Phone:</p>
-                        </td>
-                        <td style="font-size: 13px; color:black; text-align:left;">03 9359 2225</td>
-                        <td colspan="2">
-                            <p style="font-size: 13px; color:black; text-align:left;font-weight:bold">Mobile:</p>
-                        </td>
-                        <td style="font-size: 13px; color:black; text-align:left;">0412 481 456</td>
-                    </tr>
-                    <tr class="bg-gray-clr">>
-                        <td colspan="2">
-                            <p style="font-size: 13px; color:black; text-align:left;font-weight:bold">Repairer Address:
-                            </p>
-                        </td>
-                        <td style="font-size: 13px; color:black; text-align:left;">5 Bancell St Campbellfield Victoria
-                            3061</td>
-                    </tr>
+                    {{-- @dd($accident_service_report->serviceRepairers) --}}
+                    @forelse ($accident_service_report->serviceRepairers as $service_repairer)
+                    {{-- @dd($service_repairer) --}}
+                        <tr>
+                            <td colspan="2" class="bg-gray-clr">
+                                <p style="font-size: 13px; color:black; text-align:left;font-weight:bold">Repairer: </p>
+                            </td>
+                            <td style="font-size: 13px; color:black; text-align:left;" class="bg-gray-clr">{{$service_repairer['repairers']['name'] ?? '--'}}</td>
+                            <td colspan="2" class="bg-gray-clr">
+                                <p style="font-size: 13px; color:black; text-align:left;font-weight:bold">Email:</p>
+                            </td>
+                            <td class="bg-gray-clr" style="font-size: 13px; color:black; text-align:left;">
+                                {{$service_repairer['repairers']['email'] ?? '--'}}</td>
+                            <td colspan="2">
+                            </td>
+                            <td style="font-size: 13px; color:black; text-align:left;"></td>
+                        </tr>
+                        <tr>
+                            <td colspan=" 2">
+                                <p style="font-size: 13px; color:black; text-align:left;font-weight:bold">Contact: </p>
+                            </td>
+                            <td style="font-size: 13px; color:black; text-align:left;">{{$service_repairer['repairers']['contact'] ?? '--'}}</td>
+                            <td colspan="2">
+                                <p style="font-size: 13px; color:black; text-align:left;font-weight:bold">Phone:</p>
+                            </td>
+                            <td style="font-size: 13px; color:black; text-align:left;">{{$service_repairer['repairers']['phone'] ?? '--'}}</td>
+                            <td colspan="2">
+                                <p style="font-size: 13px; color:black; text-align:left;font-weight:bold">Mobile:</p>
+                            </td>
+                            <td style="font-size: 13px; color:black; text-align:left;">{{$service_repairer['repairers']['mobile'] ?? '--'}}</td>
+                        </tr>
+                        <tr class="bg-gray-clr">>
+                            <td colspan="2">
+                                <p style="font-size: 13px; color:black; text-align:left;font-weight:bold">Repairer Address:
+                                </p>
+                            </td>
+                            <td style="font-size: 13px; color:black; text-align:left;">{{$service_repairer['repairers']['address'] ?? '--'}}</td>
+                        </tr>
+                    @empty
+                    @endforelse
                 </tbody>
             </table>
         </div>
@@ -421,116 +464,116 @@
                     </tr>
                     <tr>
                         <td colspan="2" class="bg-gray-clr" style="font-weight: bold">R & R</td>
-                        <td colspan="2" class="bg-gray-clr">$1,048.00</td>
-                        <td colspan="2" class="bg-gray-clr">$983.00</td>
-                        <td class="bg-gray-clr">$-65.00</td>
+                        <td colspan="2" class="bg-gray-clr">{{ $accident_service_report->assessmentReports[0]->quoted ?? '--' }}</td>
+                        <td colspan="2" class="bg-gray-clr">{{ $accident_service_report->assessmentReports[0]->assessed ?? '--' }}</td>
+                        <td class="bg-gray-clr">{{ $accident_service_report->assessmentReports[0]->variance ?? '--' }}</td>
                         <td></td>
                         <td colspan="3" style="font-weight: bold" class="bg-gray-clr">Assessment
                             <br /> Date</tdc>
-                        <td class="bg-gray-clr"> 15/05/2023</td>
+                        <td class="bg-gray-clr"> {{ $accident_service_report['assessment_date'] ?? '--' }}</td>
                     </tr>
                     <tr>
                         <td colspan="2" style="font-weight: bold">Repair</td>
-                        <td colspan="2">$700.00</td>
-                        <td colspan="2">$983.00</td>
-                        <td colspan="2">$-65.00</td>
+                        <td colspan="2">{{ $accident_service_report->assessmentReports[1]->quoted ?? '--' }}</td>
+                        <td colspan="2">{{ $accident_service_report->assessmentReports[1]->assessed ?? '--' }}</td>
+                        <td colspan="2">{{ $accident_service_report->assessmentReports[1]->variance ?? '--' }}</td>
                         <td colspan="3" style="font-weight: bold">Cover Type</td>
-                        <td>Market Value</td>
+                        <td>{{ $accident_service_report['cover_type'] ?? '--' }}</td>
                     </tr>
                     <tr>
                         <td class="bg-gray-clr" colspan="2" style="font-weight: bold">Paint</td>
-                        <td class="bg-gray-clr" colspan="2">234</td>
-                        <td class="bg-gray-clr" colspan="2">453</td>
-                        <td class="bg-gray-clr">453</td>
+                        <td colspan="2">{{ $accident_service_report->assessmentReports[2]->quoted ?? '--' }}</td>
+                        <td colspan="2">{{ $accident_service_report->assessmentReports[2]->assessed ?? '--' }}</td>
+                        <td>{{ $accident_service_report->assessmentReports[2]->variance ?? '--' }}</td>
                         <td></td>
                         <td colspan="3" class="bg-gray-clr" style="font-weight: bold">Sum Insured</td>
-                        <td class="bg-gray-clr">345</td>
+                        <td class="bg-gray-clr">{{ $accident_service_report['sum_insured'] ?? '--' }}</td>
                     </tr>
                     <tr>
                         <td colspan="2" style="font-weight: bold">Mechanical</td>
-                        <td colspan="2">$145</td>
-                        <td colspan="2">$123</td>
-                        <td>$123</td>
+                        <td colspan="2">{{ $accident_service_report->assessmentReports[3]->quoted ?? '--' }}</td>
+                        <td colspan="2">{{ $accident_service_report->assessmentReports[3]->assessed ?? '--' }}</td>
+                        <td colspan="">{{ $accident_service_report->assessmentReports[3]->variance ?? '--' }}</td>
                         <td></td>
                         <td colspan="3" style="font-weight: bold">Market Value</td>
-                        <td>12</td>
+                        <td>{{ $accident_service_report['market_value'] ?? '--' }}</td>
                     </tr>
                     <tr>
                         <td class="bg-gray-clr" colspan="2" style="font-weight: bold">Misc Labour</td>
-                        <td class="bg-gray-clr" colspan="2">123</td>
-                        <td class="bg-gray-clr" colspan="2">234</td>
-                        <td class="bg-gray-clr">345</td>
+                        <td colspan="2">{{ $accident_service_report->assessmentReports[4]->quoted ?? '--' }}</td>
+                        <td colspan="2">{{ $accident_service_report->assessmentReports[4]->assessed ?? '--' }}</td>
+                        <td colspan="">{{ $accident_service_report->assessmentReports[4]->variance ?? '--' }}</td>
                         <td></td>
                         <td class="bg-gray-clr" colspan="3" style="font-weight: bold">Salvage Value</td>
-                        <td class="bg-gray-clr">123</td>
+                        <td class="bg-gray-clr">{{ $accident_service_report['salvage_value'] ?? '--' }}</td>
                     </tr>
                     <tr>
                         <td colspan="2" style="font-weight: bold">Total Labour</td>
-                        <td colspan="2">12</td>
-                        <td colspan="2">34</td>
-                        <td>23</td>
+                        <td colspan="2">{{ $accident_service_report->assessmentReports[5]->quoted ?? '--' }}</td>
+                        <td colspan="2">{{ $accident_service_report->assessmentReports[5]->assessed ?? '--' }}</td>
+                        <td colspan="">{{ $accident_service_report->assessmentReports[5]->variance ?? '--' }}</td>
                         <td></td>
                         <td colspan="3" style="font-weight: bold">Settlement</td>
-                        <td>$4,213.25</td>
+                        <td>${{ $accident_service_report['settlement'] ?? '--' }}</td>
                     </tr>
                     <tr>
                         <td class="bg-gray-clr" colspan="2" style="font-weight: bold">Parts</td>
-                        <td colspan="2" class="bg-gray-clr"> 234</td>
-                        <td colspan="2" class="bg-gray-clr">787</td>
-                        <td class="bg-gray-clr">34</td>
+                        <td colspan="2">{{ $accident_service_report->assessmentReports[6]->quoted ?? '--' }}</td>
+                        <td colspan="2">{{ $accident_service_report->assessmentReports[6]->assessed ?? '--' }}</td>
+                        <td colspan="">{{ $accident_service_report->assessmentReports[6]->variance ?? '--' }}</td>
                         <td></td>
                         <td class="bg-gray-clr" style="font-weight: bold" colspan="3">Less Excess</td>
-                        <td class="bg-gray-clr">3333</td>
+                        <td class="bg-gray-clr">${{ $accident_service_report['less_excess'] ?? '--' }}</td>
                     </tr>
                     <tr>
                         <td colspan="2" style="font-weight: bold">Sublet</td>
-                        <td colspan="2">454</td>
-                        <td colspan="2">674</td>
-                        <td>45</td>
+                        <td colspan="2">{{ $accident_service_report->assessmentReports[7]->quoted ?? '--' }}</td>
+                        <td colspan="2">{{ $accident_service_report->assessmentReports[7]->assessed ?? '--' }}</td>
+                        <td colspan="">{{ $accident_service_report->assessmentReports[7]->variance ?? '--' }}</td>
                         <td></td>
                         <td style="font-weight: bold" colspan="3">Settlement
                             <br />Sub Total
                         </td>
-                        <td>$4,213.25</td>
+                        <td>${{ $accident_service_report['settlement_sub_total'] ?? '--' }}</td>
                     </tr>
                     <tr>
                         <td class="bg-gray-clr" colspan="2" style="font-weight: bold">Supplementary</td>
-                        <td class="bg-gray-clr" colspan="2">345</td>
-                        <td class="bg-gray-clr" colspan="2">343</td>
-                        <td class="bg-gray-clr">45</td>
+                        <td class="bg-gray-clr" colspan="2">{{ $accident_service_report->assessmentReports[8]->quoted ?? '--' }}</td>
+                        <td class="bg-gray-clr" colspan="2">{{ $accident_service_report->assessmentReports[8]->assessed ?? '--' }}</td>
+                        <td class="bg-gray-clr" colspan="">{{ $accident_service_report->assessmentReports[8]->variance ?? '--' }}</td>
                         <td></td>
                         <td style="font-weight: bold" colspan="3">Settlement
                             <br /> GST
                         </td>
-                        <td>$421.33</td>
+                        <td>${{ $accident_service_report['settlement_gst'] ?? '--' }}</td>
                     </tr>
                     <tr>
                         <td colspan="2" style="font-weight: bold">Sub Total</td>
-                        <td colspan="2">123</td>
-                        <td colspan="2">345</td>
-                        <td>123</td>
+                        <td colspan="2">{{ $accident_service_report->assessmentReports[9]->quoted ?? '--' }}</td>
+                        <td colspan="2">{{ $accident_service_report->assessmentReports[9]->assessed ?? '--' }}</td>
+                        <td colspan="">{{ $accident_service_report->assessmentReports[9]->variance ?? '--' }}</td>
                         <td></td>
                         <td colspan="3" style="font-weight: bold; background: rgb(98, 221, 98)">Settlement
                             <br /> Total
                         </td>
-                        <td style="background: rgb(98, 221, 98)">$4,634.58</td>
+                        <td style="background: rgb(98, 221, 98)">${{ $accident_service_report['settlement_total'] ?? '--' }}</td>
                     </tr>
                     <tr>
                         <td class="bg-gray-clr" colspan="2" style="font-weight: bold">GST</td>
-                        <td colspan="2" class="bg-gray-clr">345</td>
-                        <td colspan="2" class="bg-gray-clr">984</td>
-                        <td class="bg-gray-clr">345</td>
-                        <td></td>
+                        <td colspan="2" class="bg-gray-clr">{{ $accident_service_report->assessmentReports[10]->quoted ?? '--' }}</td>
+                        <td colspan="2" class="bg-gray-clr">{{ $accident_service_report->assessmentReports[10]->assessed ?? '--' }}</td>
+                        <td class="bg-gray-clr">{{ $accident_service_report->assessmentReports[10]->variance ?? '--' }}</td>
+                        <td colspan="2"></td>
                         <td class="bg-gray-clr" colspan="4" style="font-weight: bold; height: 3%"></td>
                     </tr>
                     <tr>
                         <td colspan="2" style="font-weight: bold">Total Estimate</td>
-                        <td colspan="2">234</td>
-                        <td colspan="2">452</td>
-                        <td>345</td>
-                        <td></td>
+                        <td colspan="2">{{ $accident_service_report->assessmentReports[11]->quoted ?? '--' }}</td>
+                        <td colspan="2">{{ $accident_service_report->assessmentReports[11]->assessed ?? '--' }}</td>
+                        <td>{{ $accident_service_report->assessmentReports[11]->variance ?? '--' }}</td>
+                        <td colspan=""></td>
                         <td colspan="3" style="font-weight: bold">Cash Settled</td>
-                        <td>987</td>
+                        <td>${{ $accident_service_report['cash_settled'] ?? '--' }}</td>
                     </tr>
                     <tr>
                         <td class="bg-gray-clr" colspan="7" style="font-weight: bold; height: 3%"></td>
@@ -538,33 +581,33 @@
                         <td class="bg-gray-clr" colspan="3" style="font-weight: bold">Certificate
                             <br /> Compliance
                         </td>
-                        <td class="bg-gray-clr">234</td>
+                        <td class="bg-gray-clr">{{ $accident_service_report['certificate_compliance'] ?? '--' }}</td>
                     </tr>
                     <tr>
                         <td colspan="2" style="font-weight: bold">Reported Items</td>
-                        <td colspan="2">341</td>
-                        <td colspan="2">452</td>
-                        <td>425</td>
+                        <td colspan="2">{{ $accident_service_report->assessmentReports[12]->quoted ?? '--' }}</td>
+                        <td colspan="2">{{ $accident_service_report->assessmentReports[12]->assessed ?? '--' }}</td>
+                        <td>{{ $accident_service_report->assessmentReports[12]->variance ?? '--' }}</td>
                         <td></td>
                         <td colspan="3" style="font-weight: bold">Salvage
                             <br /> Condition
                         </td>
-                        <td>331</td>
+                        <td>{{ $accident_service_report['salvage_condition'] ?? '--' }}</td>
                     </tr>
                     <tr>
                         <td class="bg-gray-clr" colspan="2" style="font-weight: bold; height: 3%">Towing</td>
-                        <td class="bg-gray-clr" colspan="2">983</td>
-                        <td class="bg-gray-clr" colspan="2">345</td>
-                        <td class="bg-gray-clr"> 364</td>
+                        <td class="bg-gray-clr" colspan="2">{{ $accident_service_report->assessmentReports[13]->quoted ?? '--' }}</td>
+                        <td class="bg-gray-clr" colspan="2">{{ $accident_service_report->assessmentReports[13]->assessed ?? '--' }}</td>
+                        <td class="bg-gray-clr"> {{ $accident_service_report->assessmentReports[13]->variance ?? '--' }}</td>
                         <td></td>
                         <td style="font-weight: bold" colspan="3"></td>
                         <td></td>
                     </tr>
                     <tr>
                         <td style="font-weight: bold" colspan="2">External Sublet</td>
-                        <td colspan="2">637</td>
-                        <td colspan="2" style="font-weight: bold">356</td>
-                        <td>4521</td>
+                        <td colspan="2">{{ $accident_service_report->assessmentReports[14]->quoted ?? '--' }}</td>
+                        <td colspan="2" style="">{{ $accident_service_report->assessmentReports[14]->assessed ?? '--' }}</td>
+                        <td>{{ $accident_service_report->assessmentReports[14]->variance ?? '--' }}</td>
                         <td></td>
                         <td class="selected-bg-gray" style="font-weight: bold">Supps</td>
                         <td class="selected-bg-gray" style="font-weight: bold">Quoted</td>
@@ -573,45 +616,45 @@
                     </tr>
                     <tr>
                         <td class="bg-gray-clr" colspan="2" style="font-weight: bold; height: 3%">Additional</td>
-                        <td class="bg-gray-clr" colspan="2">452</td>
-                        <td class="bg-gray-clr" colspan="2">341</td>
-                        <td class="bg-gray-clr">736</td>
+                        <td class="bg-gray-clr" colspan="2">{{ $accident_service_report->assessmentReports[15]->quoted ?? '--' }}</td>
+                        <td class="bg-gray-clr" colspan="2">{{ $accident_service_report->assessmentReports[15]->assessed ?? '--' }}</td>
+                        <td class="bg-gray-clr">{{ $accident_service_report->assessmentReports[15]->variance ?? '--' }}</td>
                         <td></td>
                         <td class="bg-gray-clr">Supp 1</td>
-                        <td class="bg-gray-clr"></td>
-                        <td class="bg-gray-clr"></td>
-                        <td class="bg-gray-clr"></td>
+                        <td class="bg-gray-clr">{{ $accident_service_report->suppValues[0]->quoted ?? '--' }}</td>
+                        <td class="bg-gray-clr">{{ $accident_service_report->suppValues[0]->assessed ?? '--' }}</td>
+                        <td class="bg-gray-clr">{{ $accident_service_report->suppValues[0]->variance ?? '--' }}</td>
                     </tr>
                     <tr>
                         <td colspan="2" style="font-weight: bold">Discounts</td>
-                        <td colspan="2">643</td>
-                        <td colspan="2">357</td>
-                        <td>563</td>
+                        <td colspan="2">{{ $accident_service_report->assessmentReports[16]->quoted ?? '--' }}</td>
+                        <td colspan="2">{{ $accident_service_report->assessmentReports[16]->assessed ?? '--' }}</td>
+                        <td>{{ $accident_service_report->assessmentReports[16]->variance ?? '--' }}</td>
                         <td></td>
                         <td>Supp 2</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td>{{ $accident_service_report->suppValues[1]->quoted ?? '--' }}</td>
+                        <td>{{ $accident_service_report->suppValues[1]->assessed ?? '--' }}</td>
+                        <td>{{ $accident_service_report->suppValues[1]->variance ?? '--' }}</td>
                     </tr>
                     <tr>
                         <td class="bg-gray-clr" colspan="2" style="font-weight: bold; height: 3%">Less ITC</td>
-                        <td class="bg-gray-clr" colspan="2">647</td>
-                        <td class="bg-gray-clr" colspan="2">369</td>
-                        <td class="bg-gray-clr">462</td>
+                        <td class="bg-gray-clr" colspan="2">{{ $accident_service_report->assessmentReports[17]->quoted ?? '--' }}</td>
+                        <td class="bg-gray-clr" colspan="2">{{ $accident_service_report->assessmentReports[17]->assessed ?? '--' }}</td>
+                        <td class="bg-gray-clr">{{ $accident_service_report->assessmentReports[17]->variance ?? '--' }}</td>
                         <td></td>
                         <td class="bg-gray-clr">Supp 3</td>
-                        <td class="bg-gray-clr"></td>
-                        <td class="bg-gray-clr"></td>
-                        <td class="bg-gray-clr"></td>
+                        <td class="bg-gray-clr">{{ $accident_service_report->suppValues[2]->quoted ?? '--' }}</td>
+                        <td class="bg-gray-clr">{{ $accident_service_report->suppValues[2]->assessed ?? '--' }}</td>
+                        <td class="bg-gray-clr">{{ $accident_service_report->suppValues[2]->variance ?? '--' }}</td>
                     </tr>
                     <tr>
                         <td colspan="2" style="font-weight: bold; height: 3%">Less Contribution</td>
-                        <td colspan="2">334</td>
-                        <td colspan="2">452</td>
-                        <td>341</td>
+                        <td colspan="2">{{ $accident_service_report->assessmentReports[18]->quoted ?? '--' }}</td>
+                        <td colspan="2">{{ $accident_service_report->assessmentReports[18]->assessed ?? '--' }}</td>
+                        <td>{{ $accident_service_report->assessmentReports[18]->variance ?? '--' }}</td>
                         <td></td>
                         <td>Total</td>
-                        <td></td>
+                        <td>{{ $accident_service_report->total_supps ?? '--' }}</td>
                         <td></td>
                         <td></td>
                     </tr>
@@ -628,9 +671,9 @@
                     </tr>
                     <tr class="bg-gray-clr">
                         <td colspan="2" style="font-weight: bold; height: 3%">PAV</td>
-                        <td colspan="2">124</td>
-                        <td colspan="2">453</td>
-                        <td>563</td>
+                        <td colspan="2">{{ $accident_service_report->assessmentReports[19]->quoted ?? '--' }}</td>
+                        <td colspan="2">{{ $accident_service_report->assessmentReports[19]->assessed ?? '--' }}</td>
+                        <td>{{ $accident_service_report->assessmentReports[19]->variance ?? '--' }}</td>
                     </tr>
                     <tr style="background: rgb(179, 173, 173)">
                         <td colspan="3">
@@ -686,6 +729,11 @@
                                 class="text-right">Comments / Notes</p>
                         </td>
                     </tr>
+                    <tr>
+                        <td width="100%">
+                            <p>{{ $accident_service_report['comments'] ?? '--' }}</p>
+                        </td>
+                    </tr>
                 </tbody>
             </table>
         </div>
@@ -712,25 +760,25 @@
                         </td>
                     </tr>
                     <tr>
-                        <td class="bg-gray-clr"><span style="font-weight:bold">Overall:</span> Above Average</td>
-                        <td class="bg-gray-clr"><span style="font-weight:bold">Brakes: </span>Operative</td>
-                        <td class="bg-gray-clr"><span style="font-weight:bold">RH Front: </span>Operative</td>
+                        <td class="bg-gray-clr"><span style="font-weight:bold">Overall:</span> {{ $accident_service_report['overall'] ?? '--' }}</td>
+                        <td class="bg-gray-clr"><span style="font-weight:bold">Brakes: </span>{{ $accident_service_report['brakes'] ?? '--'}}</td>
+                        <td class="bg-gray-clr"><span style="font-weight:bold">RH Front: </span>{{ $accident_service_report['rh_front'] ?? '--' }}</td>
                     </tr>
                     <tr>
-                        <td><span style="font-weight:bold">Interior:</span> Above Average</td>
-                        <td><span style="font-weight:bold">Tyre Depth Unit Front: </span>RH 0.00 LH 0.00</td>
-                        <td class="bg-gray-clr"><span style="font-weight:bold">LH Front: </span>Report</td>
+                        <td><span style="font-weight:bold">Interior:</span> {{ $accident_service_report['interior'] ?? '--' }}</td>
+                        <td><span style="font-weight:bold">Tyre Depth Unit Front: </span>{{ $accident_service_report['tyre_depth_unit_front'] ??'--' }}</td>
+                        <td class="bg-gray-clr"><span style="font-weight:bold">LH Front: </span>{{ $accident_service_report['lh_front'] ?? '--' }}</td>
                     </tr>
                     <tr>
-                        <td><span style="font-weight:bold">Exterior:</span> Above Average</td>
-                        <td><span style="font-weight:bold">Tyre Depth Unit Rear: </span>RH 0.00 LH 0.00</td>
-                        <td class="bg-gray-clr"><span style="font-weight:bold">RH Rear: </span>Operative</td>
+                        <td><span style="font-weight:bold">Exterior:</span> {{ $accident_service_report['exterior'] ?? '--' }}</td>
+                        <td><span style="font-weight:bold">Tyre Depth Unit Rear: </span>{{ $accident_service_report['tyre_depth_unit_rear'] ?? '--' }}</td>
+                        <td class="bg-gray-clr"><span style="font-weight:bold">RH Rear: </span>{{ $accident_service_report['rh_rear'] ?? '--' }}</td>
                     </tr>
                     <tr>
-                        <td><span style="font-weight:bold">Steering:</span> Operative</td>
+                        <td><span style="font-weight:bold">Steering:</span> {{ $accident_service_report['steering'] ?? '--' }}</td>
                         <td></td>
                         {{-- <td><span style="font-weight:bold">Tyre Depth Unit Rear: </span>RH 0.00 LH 0.00</td> --}}
-                        <td class="bg-gray-clr"><span style="font-weight:bold">LH Rear: </span>Operative</td>
+                        <td class="bg-gray-clr"><span style="font-weight:bold">LH Rear: </span>{{ $accident_service_report['lh_rear'] ?? '--' }}</td>
                     </tr>
 
                 </tbody>
@@ -770,18 +818,18 @@
                     </tr>
                     <tr class="bg-gray-clr">
                         <td>Front Bumper Bar</td>
-                        <td></td>
-                        <td></td>
+                        <td>{{ $accident_service_report->demageValues[0]->demage_level ?? '--'}}</td>
+                        <td>{{ $accident_service_report->demageValues[0]->comment ?? '--'}}</td>
                     </tr>
                     <tr>
                         <td>Left Front Guard</td>
-                        <td></td>
-                        <td></td>
+                        <td>{{ $accident_service_report->demageValues[1]->demage_level ?? '--'}}</td>
+                        <td>{{ $accident_service_report->demageValues[1]->comment ?? '--'}}</td>
                     </tr>
                     <tr class="bg-gray-clr">
                         <td>Left Front Door</td>
-                        <td></td>
-                        <td></td>
+                        <td>{{ $accident_service_report->demageValues[2]->demage_level ?? '--'}}</td>
+                        <td>{{ $accident_service_report->demageValues[2]->comment ?? '--'}}</td>
                     </tr>
                     <tr>
                         <td></td>
@@ -790,7 +838,7 @@
                     </tr>
                     <tr class="bg-gray-clr">
                         <td><span style="font-weight: bold">Repair Duration Days:</span> </td>
-                        <td>0</td>
+                        <td>{{ $accident_service_report->repair_duration_days }}</td>
                         <td></td>
                     </tr>
                 </tbody>
@@ -810,23 +858,26 @@
                                 class="text-right">Assessor Details</p>
                         </td>
                     </tr>
-                    <tr>
-                        <td class="bg-gray-clr"><span style="font-weight:bold">Assessor:</span> George Sidiros</td>
-                        <td class="bg-gray-clr"><span style="font-weight:bold">Email:
-                            </span>info@accidentassessingservices.com.au</td>
-                        <td class="bg-gray-clr"><span style="font-weight:bold">Inspection Date: </span>2/05/2023</td>
-                    </tr>
-                    <tr>
-                        <td><span style="font-weight:bold">Phone:</span> 00000000</td>
-                        <td><span style="font-weight:bold">Mobile: </span>0411 493 593</td>
-                        <td><span style="font-weight:bold">Assessment Date: </span>15/05/2023</td>
-                    </tr>
-                    <tr>
-                        <td class="bg-gray-clr"><span style="font-weight:bold">Inspection Address:</span> Third Party
-                        </td>
-                        {{-- <td  class="bg-gray-clr"><span style="font-weight:bold">Email: </span>info@accidentassessingservices.com.au</td>
-                        <td  class="bg-gray-clr"><span style="font-weight:bold">Inspection Date: </span>2/05/2023</td> --}}
-                    </tr>
+                    @forelse ($accident_service_report->serviceAssessors as $service_assessor)
+                        {{-- @dd($service_assessor->assessor) --}}
+                        <tr>
+                            <td class="bg-gray-clr"><span style="font-weight:bold">Assessor:</span> {{ $service_assessor->assessor->assessor ?? '--' }}</td>
+                            <td class="bg-gray-clr"><span style="font-weight:bold">Email:
+                                </span>{{ $service_assessor->assessor->email ?? '--' }}</td>
+                            <td class="bg-gray-clr"><span style="font-weight:bold">Inspection Date: </span>{{ $service_assessor->assessor->inspection_date ?? '--' }}</td>
+                        </tr>
+                        <tr>
+                            <td><span style="font-weight:bold">Phone:</span> {{ $service_assessor->assessor->phone_number ?? '--' }}</td>
+                            <td><span style="font-weight:bold">Mobile: </span>{{ $service_assessor->assessor->mobile_number ?? '--' }}</td>
+                            <td><span style="font-weight:bold">Assessment Date: </span>{{ $service_assessor->assessor->assessment_date ?? '--' }}</td>
+                        </tr>
+                        <tr>
+                            <td class="bg-gray-clr"><span style="font-weight:bold">Inspection Address:</span> {{ $service_assessor->assessor->address ?? '--' }}
+                            </td>
+                        </tr>
+                    @empty
+
+                    @endforelse
                 </tbody>
             </table>
         </div>
