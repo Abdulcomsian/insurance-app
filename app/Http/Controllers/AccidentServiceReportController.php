@@ -53,7 +53,7 @@ class AccidentServiceReportController extends Controller
     {
         $validator = Validator::make($request->all(), [
             // 'invoice_no'                    => 'required',
-            // 'invoice_date'                  => 'required',
+            'invoice_date'                  => 'required',
             'to'                            => 'required',
             'tax_invoice'                   => 'required',
             'vehicle'                       => 'required',
