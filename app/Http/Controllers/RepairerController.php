@@ -23,6 +23,29 @@ class RepairerController extends Controller
         return view('repairer.index');
     }
 
+    public function store(Request $request)
+    {
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required|email',
+            'contact' => 'required',
+            'phone' => 'required',
+            'mobile' => 'required',
+            'address' => 'required',
+        ]);
+
+        $repairer = new Repairer();
+        $repairer->name = $request->name;
+        $repairer->email = $request->email;
+        $repairer->contact = $request->contact;
+        $repairer->phone = $request->phone;
+        $repairer->mobile = $request->mobile;
+        $repairer->address = $request->address;
+        $repairer->save();
+
+        return redirect()->route('repairer.index')->with('success', 'Repairer created successfully.');
+    }
+
     public function edit($id)
     {
         $repairer = Repairer::find($id);

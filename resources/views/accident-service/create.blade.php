@@ -491,7 +491,7 @@ margin-top:1rem;
                                       <div class="row mt-4">
                                          <div class="col-md-6">
                                          <label class="fw-bold fs-6 mb-2" style="color: black ;" > Date </label>
-                                         <input type="date" required  class="form-control form-control-solid mb-3 mb-lg-0" name="invoice_date"/>   
+                                         <input type="date" required  class="form-control form-control-solid mb-3 mb-lg-0" name="invoice_date"/>
                                     </div>
                                         <div class="col-md-6">
                                         <label style="color: black ;" class="fw-bold fs-6 mb-2"  >Vechile </label>
@@ -1502,6 +1502,20 @@ function syncInputs2() {
         }
 
 
+        var room = 1;
+
+function populateOptions(selectElement, data) {
+  // Clear existing options
+  selectElement.innerHTML = "";
+
+  // Add new options based on the data
+  for (var i = 0; i < data.length; i++) {
+    var option = document.createElement("option");
+    option.value = data[i].value;
+    option.text = data[i].text;
+    selectElement.appendChild(option);
+  }
+}
 
     // Repairer Start
 
