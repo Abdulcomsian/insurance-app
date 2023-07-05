@@ -88,7 +88,7 @@
                     <tr class="bg-gray-clr">
                         <td width="150px">
                             <p style="font-size: 15px; color:#2587be;;font-weight:bold">Tax Invoice:
-                                {{$accident_service_report['tax_invoice'] ?? '--' }}</p>
+                                {{$accident_service_report['tax_invoice'] ?? $accident_service_report['id'] }}</p>
                         </td>
                         <td></td>
                         <td colspan="5" style="font-size: 15px; color:#2587be;font-weight:bold;text-align:right ">
@@ -188,7 +188,7 @@
                         </td>
                         <td style="border-bottom-style: hidden;"></td>
                         <td style="border-bottom-style: hidden;">Sub Total</td>
-                        
+
                         <td style="border-bottom-style: hidden;">${{ $accident_service_report['sub_total'] ?? '--' }}</td>
                         <td style="border-bottom-style: hidden;"></td>
                     </tr>

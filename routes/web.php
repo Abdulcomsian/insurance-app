@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::group(['middleware' => ['web']], function () {
-    Route::get('/', [HomeController::class, 'index'])->name('home');
+    Route::get('/', [HomeController::class, 'index'])->middleware('auth')->name('home');
 
     Route::get('sign-in', function () {return view('sign-in');})->name('sign-in');
     Route::get('sanction_request', function () {return view('sanction_request.sanction_request');})->name('sanction_request');
@@ -45,62 +45,58 @@ Route::group(['middleware' => ['web']], function () {
 
 
     // add Assessor routes
-    Route::get('/assessors/create', 'AssessorController@create')->name('assessors.create');
-    Route::post('/assessors', 'AssessorController@store')->name('assessors.store');
-    Route::get('/assessors', 'AssessorController@index')->name('assessors.index');
-    Route::get('/assessors/data', 'AssessorController@data')->name('assessors.data');
+    Route::get('/assessors/create', 'AssessorController@create')->middleware('auth')->name('assessors.create');
+    Route::post('/assessors', 'AssessorController@store')->middleware('auth')->name('assessors.store');
+    Route::get('/assessors', 'AssessorController@index')->middleware('auth')->name('assessors.index');
+    Route::get('/assessors/data', 'AssessorController@data')->middleware('auth')->name('assessors.data');
 
     // Repairer Controller
-    Route::get('repairers', 'RepairerController@index')->name('repairer.index');
-    Route::post('repairers', 'RepairerController@store')->name('repairer.store');
-    Route::get('repairers/{id}/edit', 'RepairerController@edit')->name('repairer.edit');
-    Route::put('repairers/{id}', 'RepairerController@update')->name('repairer.update');
-    Route::delete('repairers/{id}', 'RepairerController@destroy')->name('repairer.destroy');
+    Route::get('repairers', 'RepairerController@index')->middleware('auth')->name('repairer.index');
+    Route::post('repairers', 'RepairerController@store')->middleware('auth')->name('repairer.store');
+    Route::get('repairers/{id}/edit', 'RepairerController@edit')->middleware('auth')->name('repairer.edit');
+    Route::put('repairers/{id}', 'RepairerController@update')->middleware('auth')->name('repairer.update');
+    Route::delete('repairers/{id}', 'RepairerController@destroy')->middleware('auth')->name('repairer.destroy');
 
-
-
-
-
-    Route::post('customer-update/{id}', 'HomeController@customerUpdate')->name('customers.update');
-    Route::delete('customer-delete/{id}', 'HomeController@customerDelete')->name('customers.delete');
-    Route::post('customer-save', 'HomeController@customerSave')->name('customers.save');
+    Route::post('customer-update/{id}', 'HomeController@customerUpdate')->middleware('auth')->name('customers.update');
+    Route::delete('customer-delete/{id}', 'HomeController@customerDelete')->middleware('auth')->name('customers.delete');
+    Route::post('customer-save', 'HomeController@customerSave')->middleware('auth')->name('customers.save');
 
     //Users
-    Route::get('users', 'HomeController@usersIndex')->name('users.index');
-    Route::get('user-edit', 'HomeController@usersEdit')->name('users.edit');
+    // Route::get('users', 'HomeController@usersIndex')->middleware('auth')->name('users.index');
+    // Route::get('user-edit', 'HomeController@usersEdit')->middleware('auth')->name('users.edit');
 
     //Payment Transactions
-    Route::match(['get','post'],'payment-transactions', 'HomeController@formRequest')->name('payment_transactions.index');
-    Route::get('payment-transaction-show/{id}', 'HomeController@paymentTransactionsShow')->name('payment_transactions.show');
-    Route::post('payment-cancel', 'HomeController@paymentTransactionsCancel')->name('payment_transactions.cancel');
-    Route::get('payment-transaction-resend-email/{id}', 'HomeController@paymentTransactionsResendEmail')->name('payment_transactions.resend_email');
+    Route::match(['get','post'],'payment-transactions', 'HomeController@formRequest')->middleware('auth')->name('payment_transactions.index');
+    Route::get('payment-transaction-show/{id}', 'HomeController@paymentTransactionsShow')->middleware('auth')->name('payment_transactions.show');
+    Route::post('payment-cancel', 'HomeController@paymentTransactionsCancel')->middleware('auth')->name('payment_transactions.cancel');
+    Route::get('payment-transaction-resend-email/{id}', 'HomeController@paymentTransactionsResendEmail')->middleware('auth')->name('payment_transactions.resend_email');
 
     //Rate Management
-    Route::get('packages', 'HomeController@ratesIndex')->name('rates.index');
-    Route::post('package-update', 'HomeController@ratesEdit')->name('rates.update');
+    Route::get('packages', 'HomeController@ratesIndex')->middleware('auth')->name('rates.index');
+    Route::post('package-update', 'HomeController@ratesEdit')->middleware('auth')->name('rates.update');
 
 
 
     //Payment Transactions
-    Route::post('cancel-request','HomeController@cancel_request')->name('cancel-request');
-    Route::post('company-details-save','CompanyDetailsController@store')->name('company-details.store');
-    Route::post('company-details-update','CompanyDetailsController@update')->name('company-details.update');
-    Route::get('company-details/{id}','CompanyDetailsController@edit')->name('company-details.edit');
-    Route::get('director-delete','CompanyDetailsController@dir_delete')->name('director-delete');
+    Route::post('cancel-request','HomeController@cancel_request')->middleware('auth')->name('cancel-request');
+    Route::post('company-details-save','CompanyDetailsController@store')->middleware('auth')->name('company-details.store');
+    Route::post('company-details-update','CompanyDetailsController@update')->middleware('auth')->name('company-details.update');
+    Route::get('company-details/{id}','CompanyDetailsController@edit')->middleware('auth')->name('company-details.edit');
+    Route::get('director-delete','CompanyDetailsController@dir_delete')->middleware('auth')->name('director-delete');
 });
 
 
 /*Excel import export*/
-Route::get('export', 'CompanyDetailsController@export')->name('export');
-Route::get('import-from-excel', 'CompanyDetailsController@importView');
-Route::post('import', 'CompanyDetailsController@import')->name('import');
+Route::get('export', 'CompanyDetailsController@export')->middleware('auth')->name('export');
+Route::get('import-from-excel', 'CompanyDetailsController@importView')->middleware('auth');
+Route::post('import', 'CompanyDetailsController@import')->middleware('auth')->name('import');
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->middleware('auth')->name('home');
 
 
-Route::controller(AccidentServiceReportController::class)->prefix('accident-accessing-service')->group( function ()
+Route::controller(AccidentServiceReportController::class)->middleware('auth')->prefix('accident-accessing-service')->group( function ()
 {
     Route::get('/', 'index')->name('accident-accessing-service.index');
     Route::get('create', 'create')->name('accident-accessing-service.create');

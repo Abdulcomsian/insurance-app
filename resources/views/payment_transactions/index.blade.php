@@ -1,4 +1,4 @@
-@extends('layouts.master', ["page_title"=>"Payment Transactions"])
+@extends('layouts.master', ["page_title"=>"Accident Report"])
 @section('css')
     @include('layouts.datatables_css')
     <style>
@@ -127,7 +127,7 @@
                 ajax: "{{ route('accident-accessing-service.index') }}",
                 columns: [
                     // { data: 'id', name: 'id', defaultContent: '' },
-                    { data: 'invoice_no', name: 'invoice_no', defaultContent: '--' },
+                    { data: 'id', name: 'id', defaultContent: '--' },
                     { data: 'invoice_date', name: 'invoice_date', defaultContent: '--' },
                     { data: 'to', name: 'to', defaultContent: '--' },
                     { data: 'vehicle', name: 'vehicle', defaultContent: '--' },
