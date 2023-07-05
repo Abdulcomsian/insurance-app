@@ -1,6 +1,6 @@
 @extends('layouts.master_loggedout' ,['page_title' => 'Sign in'])
 @section('content')
-    <div class="d-flex flex-column flex-lg-row-auto w-xl-600px positon-xl-relative" style="background-image:url('http://beta.menainsurancekyc.com/assets/img/mt-1421-slider-img01.jpg') ">
+    {{-- <div class="d-flex flex-column flex-lg-row-auto w-xl-600px positon-xl-relative" style="background-image:url('http://beta.menainsurancekyc.com/assets/img/mt-1421-slider-img01.jpg') ">
         <!--begin::Wrapper-->
         <div class="d-flex flex-column position-xl-fixed top-0 bottom-0 w-xl-600px scroll-y">
             <!--begin::Content-->
@@ -24,12 +24,12 @@
             <!--end::Illustration-->
         </div>
         <!--end::Wrapper-->
-    </div>
+    </div> --}}
     <!--end::Aside-->
     <!--begin::Body-->
-    <div class="d-flex flex-column flex-lg-row-fluid py-10">
+    {{-- <div class="d-flex flex-column flex-lg-row-fluid py-10"> --}}
         <!--begin::Content-->
-        <div class="d-flex flex-center flex-column flex-column-fluid">
+        <div class="d-flex flex-center flex-column flex-column-fluid" style="background-image: url({{ asset('images/pexels-s-von-hoerst-2920064.jpg') }}); background-size: cover; background-position: center;">
             <!--begin::Wrapper-->
             <div class="w-lg-500px p-10 p-lg-15 mx-auto">
                 <!--begin::Form-->
@@ -39,7 +39,7 @@
                 <!--begin::Heading-->
                     <div class="text-center mb-10">
                         <!--begin::Title-->
-                        <h1 class="text-dark mb-3">Mena Insurance Admin Panel</h1>
+                        <h1 class="text-dark mb-3">Admin Panel</h1>
                         <!--end::Title-->
                         <!--begin::Link-->
                         <!-- <div class="text-gray-400 fw-bold fs-4">New Here?
@@ -94,7 +94,7 @@
                     <div class="text-center">
                         <!--begin::Submit button-->
                         <button type="submit" id="kt_sign_in_submit" class="btn btn-lg btn-primary w-100 mb-5">
-                            <span class="indicator-label">Continue</span>
+                            <span class="indicator-label">Login</span>
                             <span class="indicator-progress">Please wait...
 										<span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
                         </button>
@@ -124,6 +124,9 @@
             <!--end::Links-->
         </div>
         <!--end::Footer-->
-    </div>
+    {{-- </div> --}}
     <!--end::Body-->
 @endsection
+
+
+
