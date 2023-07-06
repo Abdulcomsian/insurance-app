@@ -138,7 +138,7 @@
                     { data: 'action', name: 'action', defaultContent: '--', orderable: false, searchable: false },
                 ],
                 language: {
-                    searchPlaceholder: "Search Transaction",
+                    searchPlaceholder: "Search Accident Report",
                     search: ""
                 },
                 lengthMenu: [[10, 25, 50, -1], [10, 25, 50, "All"]]
