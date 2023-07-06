@@ -128,7 +128,13 @@ class AccidentServiceReportController extends Controller
         ];
         $pdf = PDF::loadView('accident-report.report', $data);
         $content = $pdf->download()->getOriginalContent();
-        Storage::put('accident-reports/report-'.$id.'.pdf', $content);
+        $file_name = 'report-'.$id.'.pdf';
+        Storage::put('accident-reports/'.$file_name, $content);
+        //Update PDF File Name
+        $accident_report = AccidentServiceReport::find($id);
+        $accident_report->pdf_file = $file_name;
+        $accident_report->save();
+
         return redirect()->route('accident-accessing-service.index');
     }
 
