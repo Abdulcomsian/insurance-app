@@ -51,6 +51,7 @@ class AccidentServiceReportController extends Controller
 
     public function store (Request $request)
     {
+
         $validator = Validator::make($request->all(), [
             // 'invoice_no'                    => 'required',
             'invoice_date'                  => 'required',
@@ -100,6 +101,7 @@ class AccidentServiceReportController extends Controller
         }
         else
         {
+            $all_input = $request->except('model');
             $report = $this->accident_assessing_report->store($request->all());
             if(!is_null($report))
             {
