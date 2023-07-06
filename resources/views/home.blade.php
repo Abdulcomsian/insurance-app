@@ -91,7 +91,7 @@
                                                     <div class="text-inverse-dark fw-bolder fs-2 mb-2 mt-5">
                                                         {{ $assessingServicesCount }}
                                                     </div>
-                                                    <div class="text-inverse-success fw-bolder fs-3 mb-2 mt-5">Accident Assessing Services</div>
+                                                    <div class="text-inverse-success fw-bolder fs-3 mb-2 mt-5">Accident Accessing </div>
                                                 </div>
                                                 <!--end::Body-->
                                             </a>

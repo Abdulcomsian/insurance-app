@@ -623,7 +623,7 @@ margin-top:1rem;
                                       <div class="row mt-4">
                                         <div class="col-md-4">
                                         <label style="color: black ; " class="fw-bold fs-6 mb-2"  >Model</label>
-                                        <input type="text"  required  class="form-control form-control-solid mb-3 mb-lg-0" name="model" placeholder="Enter Model"/>
+                                        <input type="text"  required  class="form-control form-control-solid mb-3 mb-lg-0" name="modal" placeholder="Enter Model"/>
                                           </div>
                                           <div class="col-md-4">
                                         <label style="color: black ; " class="fw-bold fs-6 mb-2"  >Engine Size</label>
@@ -638,7 +638,7 @@ margin-top:1rem;
                                       <div class="row mt-4">
                                         <div class="col-md-4">
                                         <label style="color: black ; " class="fw-bold fs-6 mb-2"  >Series</label>
-                                        <input type="text"  required  class="form-control form-control-solid mb-3 mb-lg-0" name="model" placeholder="Enter Series"/>
+                                        <input type="text"  required  class="form-control form-control-solid mb-3 mb-lg-0" name="modal" placeholder="Enter Series"/>
                                           </div>
                                           <div class="col-md-4">
                                         <label style="color: black ; " class="fw-bold fs-6 mb-2"  >Engine No</label>
