@@ -31,7 +31,7 @@ return new class extends Migration
             $table->string('make')->nullable();
             $table->string('engine_type')->nullable();
             $table->string('odometer')->nullable();
-            $table->string('modal')->nullable();
+            $table->string('model')->nullable();
             $table->string('engine_size')->nullable();
             $table->string('paint_group')->nullable();
             $table->string('series')->nullable();
