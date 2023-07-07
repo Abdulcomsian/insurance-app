@@ -21,25 +21,56 @@ class AccidentServiceReportController extends Controller
     {
         $this->accident_assessing_report = $accidentServiceInterface;
     }
+    // public function index(Request $request)
+    // {
+    //     try {
+    //         if ($request->ajax()) {
+    //             $data = AccidentServiceReport::select('id', 'invoice_no', 'invoice_date', 'to', 'vehicle', 'rego', 'assessment_fee', 'owner_name', 'engine_type', 'created_at')->orderBy('id', 'DESC')->get();
+    //             return Datatables::of($data)
+    //                 ->addColumn('action', function ($row) {
+    //                     $btn = '<a href="' . route("view-accident-report.index", $row->id) . '" class="btn btn-sm btn-clean btn-icon" target="_blank" title="View Report"><i class="fa fa-eye"></i></a>';
+    //                     return $btn;
+    //                 })
+    //                 ->rawColumns(['action'])
+    //                 ->make(true);
+    //         }
+    //         return view('payment_transactions.index');
+    //     } catch (\Exception $exception){
+    //         toastr()->error('Something went wrong, try again');
+    //         return back();
+    //     }
+    // }
+
+    // Update Code with PDF download
+
     public function index(Request $request)
-    {
-        try {
-            if ($request->ajax()) {
-                $data = AccidentServiceReport::select('id', 'invoice_no', 'invoice_date', 'to', 'vehicle', 'rego', 'assessment_fee', 'owner_name', 'engine_type', 'created_at')->orderBy('id', 'DESC')->get();
-                return Datatables::of($data)
-                    ->addColumn('action', function ($row) {
-                        $btn = '<a href="' . route("view-accident-report.index", $row->id) . '" class="btn btn-sm btn-clean btn-icon" target="_blank" title="View Report"><i class="fa fa-eye"></i></a>';
-                        return $btn;
-                    })
-                    ->rawColumns(['action'])
-                    ->make(true);
+        {
+            try {
+                if ($request->ajax()) {
+                    $data = AccidentServiceReport::select('id', 'invoice_no', 'invoice_date', 'to', 'vehicle', 'rego', 'assessment_fee', 'owner_name', 'engine_type', 'created_at', 'pdf_file')->orderBy('id', 'DESC')->get();
+                    return Datatables::of($data)
+                        ->addColumn('action', function ($row) {
+                            $btn = '<a href="' . route("view-accident-report.index", $row->id) . '" class="btn btn-sm btn-clean btn-icon" target="_blank" title="View Report"><i class="fa fa-eye"></i></a>';
+                            return $btn;
+                        })
+                        ->addColumn('pdf_file', function ($row)
+                        {
+                            if ($row->pdf_file) {
+                                $downloadLink = '<a href="' . route("download-pdf", $row->id) . '" class="btn btn-sm" title="Download PDF"><i class="bi bi-file-pdf"></i></a>';
+                                return $downloadLink;
+                            } else {
+                                return '--';
+                            }
+                        })
+                        ->rawColumns(['action', 'pdf_file'])
+                        ->make(true);
+                }
+                return view('payment_transactions.index');
+            } catch (\Exception $exception){
+                toastr()->error('Something went wrong, try again');
+                return back();
             }
-            return view('payment_transactions.index');
-        } catch (\Exception $exception){
-            toastr()->error('Something went wrong, try again');
-            return back();
         }
-    }
 
     public function create()
     {
@@ -107,6 +138,7 @@ class AccidentServiceReportController extends Controller
             $report = $this->accident_assessing_report->store($request->all());
             if(!is_null($report))
             {
+
                 toastr()->success("Accident Report Added Successfully");
                 return redirect()->route('accident-report.index', ['id'=>$report->id]);
             }
@@ -148,4 +180,20 @@ class AccidentServiceReportController extends Controller
         ];
         return view('accident-report.report', compact('accident_service_report'));
     }
+
+    // ADD PDF code
+
+    public function downloadPDF($id)
+    {
+        $accident_service_report = AccidentServiceReport::find($id);
+        if ($accident_service_report && $accident_service_report->pdf_file) {
+            $file = 'accident-reports/' . $accident_service_report->pdf_file;
+            return response()->download(storage_path('app/' . $file));
+        } else
+        {
+            toastr()->error('PDF file not found.');
+            return redirect()->route('accident-accessing-service.index');
+        }
+    }
+
 }

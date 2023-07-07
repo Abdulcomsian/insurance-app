@@ -103,5 +103,8 @@ Route::controller(AccidentServiceReportController::class)->middleware('auth')->p
     Route::post('store', 'store')->name('accident-accessing-service.store');
     Route::get('accident-report/{id}', 'accidentReport')->name('accident-report.index');
     Route::get('view-accident-report/{id}', 'viewReport')->name('view-accident-report.index');
-} );
+
+    Route::get('download-pdf/{id}', 'downloadPDF')->name('download-pdf');
+
+});
 

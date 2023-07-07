@@ -37,6 +37,7 @@
                                 <th>Owner Name</th>
                                 <th>Engine Type</th>
                                 <th>Action</th>
+                                <th>PDF</th>
                             </tr>
                             <!--end::Table row-->
                             </thead>
@@ -136,6 +137,7 @@
                     { data: 'owner_name', name: 'owner_name', defaultContent: '--' },
                     { data: 'engine_type', name: 'engine_type', defaultContent: '--' },
                     { data: 'action', name: 'action', defaultContent: '--', orderable: false, searchable: false },
+                    { data: 'pdf_file', name: 'pdf_file', defaultContent: '--' },
                 ],
                 language: {
                     searchPlaceholder: "Search Accident Report",
@@ -146,8 +148,12 @@
 
             $(document).ready(function () {
                 $('div.dataTables_filter input').addClass('form-control form-control-solid w-250px ps-15');
+
             });
         });
 
     </script>
 @endsection
+
+
+
