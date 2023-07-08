@@ -771,143 +771,143 @@ margin-top:1rem;
 
                                             <div class="row mt-4">
                                             <div class="col-3 font-weight-bold mt-2 " style="color:black;"  >R & R</div>
-                                             <div class="col-3 "> <input type="text" name="R&R_quoted" id="one" placeholder="$00.00" required  class=" aa form-control form-control-solid mb-3 mb-lg-0" oninput="sub_number.bind(null, 'one', 'two', 'three')()" ; /> </div>
-                                            <div class="col-3"> <input type="text"  name="R&R_assessed" id="two" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0"  oninput="sub_number.bind(null, 'one', 'two', 'three')()" /> </div>
-                                            <div class="col-3"> <input type="text" readonly name="R&R_variance" id="three" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0"  /> </div>
+                                             <div class="col-3 "> <input type="number" name="R&R_quoted" id="one" placeholder="$00.00" required  class=" aa form-control form-control-solid mb-3 mb-lg-0" oninput="sub_number.bind(null, 'one', 'two', 'three')()" ; /> </div>
+                                            <div class="col-3"> <input type="number"  name="R&R_assessed" id="two" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0"  oninput="sub_number.bind(null, 'one', 'two', 'three')()" /> </div>
+                                            <div class="col-3"> <input type="number" readonly name="R&R_variance" id="three" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0"  /> </div>
                                            </div>
 
 
                                             <div class="row mt-2">
                                             <div class="col-3 font-weight-bold mt-2 " style="color:black;" >Repair</div>
-                                             <div class="col-3"> <input type="text" id="one1" name="Repair_quoted" placeholder="$00.00" required  class="aa form-control form-control-solid mb-3 mb-lg-0"  oninput="sub_number.bind(null, 'one1', 'two1', 'three1')()" ; /> </div>
-                                            <div class="col-3"> <input type="text" id="two1" name="Repair_assessed" placeholder="$00.00" required  class="aa form-control form-control-solid mb-3 mb-lg-0"  oninput="sub_number.bind(null, 'one1', 'two1', 'three1')()" ;/> </div>
-                                            <div class="col-3"> <input type="text" readonly id="three1" name="Repair_variance" placeholder="$00.00" required  class="aa form-control form-control-solid mb-3 mb-lg-0"  /> </div>
+                                             <div class="col-3"> <input type="number" id="one1" name="Repair_quoted" placeholder="$00.00" required  class="aa form-control form-control-solid mb-3 mb-lg-0"  oninput="sub_number.bind(null, 'one1', 'two1', 'three1')()" ; /> </div>
+                                            <div class="col-3"> <input type="number" id="two1" name="Repair_assessed" placeholder="$00.00" required  class="aa form-control form-control-solid mb-3 mb-lg-0"  oninput="sub_number.bind(null, 'one1', 'two1', 'three1')()" ;/> </div>
+                                            <div class="col-3"> <input type="number" readonly id="three1" name="Repair_variance" placeholder="$00.00" required  class="aa form-control form-control-solid mb-3 mb-lg-0"  /> </div>
                                            </div>
 
                                                 <div class="row mt-2">
                                             <div class="col-3 font-weight-bold mt-2 " style="color:black;">Paint</div>
-                                             <div class="col-3"> <input type="text" id="one2" name="Paint_quoted" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0"  oninput="sub_number.bind(null, 'one2', 'two2', 'three2')()" ; /> </div>
-                                            <div class="col-3"> <input type="text" id="two2" name="Paint_assessed" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0"    oninput="sub_number.bind(null, 'one2', 'two2', 'three2')()" ;/> </div>
-                                            <div class="col-3"> <input type="text" readonly name="Paint_variance" id="three2" placeholder="$00.00"   required  class="aa form-control form-control-solid mb-3 mb-lg-0"   /> </div>
+                                             <div class="col-3"> <input type="number" id="one2" name="Paint_quoted" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0"  oninput="sub_number.bind(null, 'one2', 'two2', 'three2')()" ; /> </div>
+                                            <div class="col-3"> <input type="number" id="two2" name="Paint_assessed" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0"    oninput="sub_number.bind(null, 'one2', 'two2', 'three2')()" ;/> </div>
+                                            <div class="col-3"> <input type="number" readonly name="Paint_variance" id="three2" placeholder="$00.00"   required  class="aa form-control form-control-solid mb-3 mb-lg-0"   /> </div>
                                            </div>
 
                                                 <div class="row mt-2">
                                             <div class="col-3 font-weight-bold mt-2 " style="color:black;">Mechanical</div>
-                                             <div class="col-3"> <input type="text" id="one3" name="Mechanical_quoted" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0" oninput="sub_number.bind(null, 'one3', 'two3', 'three3')()" ; /> </div>
-                                            <div class="col-3"> <input type="text" id="two3" name="Mechanical_assessed" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0" oninput="sub_number.bind(null, 'one3', 'two3', 'three3')()" ; /> </div>
-                                            <div class="col-3"> <input type="text" readonly name="Mechanical_variance" id="three3" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0"  /> </div>
+                                             <div class="col-3"> <input type="number" id="one3" name="Mechanical_quoted" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0" oninput="sub_number.bind(null, 'one3', 'two3', 'three3')()" ; /> </div>
+                                            <div class="col-3"> <input type="number" id="two3" name="Mechanical_assessed" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0" oninput="sub_number.bind(null, 'one3', 'two3', 'three3')()" ; /> </div>
+                                            <div class="col-3"> <input type="number" readonly name="Mechanical_variance" id="three3" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0"  /> </div>
                                            </div>
 
                                               <div class="row mt-2">
                                             <div class="col-3 font-weight-bold mt-2 " style="color:black;">Misc Labour</div>
-                                             <div class="col-3"> <input type="text" id="one4" name="Misc_quoted" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0" oninput="sub_number.bind(null, 'one4', 'two4', 'three4')()" ; /> </div>
-                                            <div class="col-3"> <input type="text" id="two4" name="Misc_assessed" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0" oninput="sub_number.bind(null, 'one4', 'two4', 'three4')()" ;  /> </div>
-                                            <div class="col-3"> <input type="text" readonly name="Misc_variance" id="three4" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0"  /> </div>
+                                             <div class="col-3"> <input type="number" id="one4" name="Misc_quoted" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0" oninput="sub_number.bind(null, 'one4', 'two4', 'three4')()" ; /> </div>
+                                            <div class="col-3"> <input type="number" id="two4" name="Misc_assessed" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0" oninput="sub_number.bind(null, 'one4', 'two4', 'three4')()" ;  /> </div>
+                                            <div class="col-3"> <input type="number" readonly name="Misc_variance" id="three4" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0"  /> </div>
                                            </div>
 
                                            <div class="row mt-2">
                                             <div class="col-3 font-weight-bold mt-2 " style="color:black;">Total Labour</div>
-                                             <div class="col-3"> <input type="text" id="one5" name="Labour_quoted" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0" oninput="sub_number.bind(null, 'one5', 'two5', 'three5')()" ; /> </div>
-                                            <div class="col-3"> <input type="text" id="two5" name="Labour_assessed" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0" oninput="sub_number.bind(null, 'one5', 'two5', 'three5')()" ;  /> </div>
-                                            <div class="col-3"> <input type="text" readonly name="Labour_variance" id="three5" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0"  /> </div>
+                                             <div class="col-3"> <input type="number" id="one5" name="Labour_quoted" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0" oninput="sub_number.bind(null, 'one5', 'two5', 'three5')()" ; /> </div>
+                                            <div class="col-3"> <input type="number" id="two5" name="Labour_assessed" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0" oninput="sub_number.bind(null, 'one5', 'two5', 'three5')()" ;  /> </div>
+                                            <div class="col-3"> <input type="number" readonly name="Labour_variance" id="three5" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0"  /> </div>
                                            </div>
 
 
                                            <div class="row mt-2">
                                             <div class="col-3 font-weight-bold mt-2 " style="color:black;">Parts</div>
-                                             <div class="col-3"> <input type="text" id="one6" name="Parts_quoted" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0" oninput="sub_number.bind(null, 'one6', 'two6', 'three6')()" ; /> </div>
-                                            <div class="col-3"> <input type="text" id="two6" name="Parts_assessed" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0" oninput="sub_number.bind(null, 'one6', 'two6', 'three6')()" ;  /> </div>
-                                            <div class="col-3"> <input type="text" readonly name="Parts_variance" id="three6" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0"  /> </div>
+                                             <div class="col-3"> <input type="number" id="one6" name="Parts_quoted" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0" oninput="sub_number.bind(null, 'one6', 'two6', 'three6')()" ; /> </div>
+                                            <div class="col-3"> <input type="number" id="two6" name="Parts_assessed" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0" oninput="sub_number.bind(null, 'one6', 'two6', 'three6')()" ;  /> </div>
+                                            <div class="col-3"> <input type="number" readonly name="Parts_variance" id="three6" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0"  /> </div>
                                            </div>
 
                                            <div class="row mt-2">
                                             <div class="col-3 font-weight-bold mt-2 " style="color:black;">sublet</div>
-                                             <div class="col-3"> <input type="text" id="one7" name="Sublet_quoted" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0" oninput="sub_number.bind(null, 'one7', 'two7', 'three7')()" ; /> </div>
-                                            <div class="col-3"> <input type="text" id="two7" name="Sublet_assessed" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0" oninput="sub_number.bind(null, 'one7', 'two7', 'three7')()" ;  /> </div>
-                                            <div class="col-3"> <input type="text" readonly name="Sublet_variance" id="three7" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0"  /> </div>
+                                             <div class="col-3"> <input type="number" id="one7" name="Sublet_quoted" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0" oninput="sub_number.bind(null, 'one7', 'two7', 'three7')()" ; /> </div>
+                                            <div class="col-3"> <input type="number" id="two7" name="Sublet_assessed" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0" oninput="sub_number.bind(null, 'one7', 'two7', 'three7')()" ;  /> </div>
+                                            <div class="col-3"> <input type="number" readonly name="Sublet_variance" id="three7" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0"  /> </div>
                                            </div>
 
                                            <div class="row mt-2">
                                             <div class="col-3 font-weight-bold mt-2 " style="color:black;">Supplementary</div>
-                                             <div class="col-3"> <input type="text" id="one8" name="Supplementary_quoted" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0" oninput="sub_number.bind(null, 'one8', 'two8', 'three8')()" ; /> </div>
-                                            <div class="col-3"> <input type="text" id="two8" name="Supplementary_assessed" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0" oninput="sub_number.bind(null, 'one8', 'two8', 'three8')()" ;  /> </div>
-                                            <div class="col-3"> <input type="text" readonly name="Supplementary_variance" id="three8" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0"  /> </div>
+                                             <div class="col-3"> <input type="number" id="one8" name="Supplementary_quoted" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0" oninput="sub_number.bind(null, 'one8', 'two8', 'three8')()" ; /> </div>
+                                            <div class="col-3"> <input type="number" id="two8" name="Supplementary_assessed" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0" oninput="sub_number.bind(null, 'one8', 'two8', 'three8')()" ;  /> </div>
+                                            <div class="col-3"> <input type="number" readonly name="Supplementary_variance" id="three8" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0"  /> </div>
                                            </div>
 
                                            <div class="row mt-2">
                                             <div class="col-3 font-weight-bold mt-2 " style="color:black;">Sub Total</div>
-                                             <div class="col-3"> <input type="text" id="one9" name="SubTotal_quoted" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0" /> </div>
-                                            <div class="col-3"> <input type="text" id="two9" name="SubTotal_assessed" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0"    /> </div>
-                                            <div class="col-3"> <input type="text" readonly name="SubTotal_variance" id="three9" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0"  /> </div>
+                                             <div class="col-3"> <input type="number" id="one9" name="SubTotal_quoted" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0" /> </div>
+                                            <div class="col-3"> <input type="number" id="two9" name="SubTotal_assessed" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0"    /> </div>
+                                            <div class="col-3"> <input type="number" readonly name="SubTotal_variance" id="three9" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0"  /> </div>
                                            </div>
 
                                            <div class="row mt-2">
                                             <div class="col-3 font-weight-bold mt-2 " style="color:black;">GST</div>
-                                             <div class="col-3"> <input type="text" id="one10" name="gst_quoted" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0" oninput="sub_number.bind(null, 'one10', 'two10', 'three10')()" ; /> </div>
-                                            <div class="col-3"> <input type="text" id="two10" name="gst_assessed" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0"  oninput="sub_number.bind(null, 'one10', 'two10', 'three10')()" ; /> </div>
-                                            <div class="col-3"> <input type="text" readonly name="gst_variance" id="three10" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0"  /> </div>
+                                             <div class="col-3"> <input type="number" id="one10" name="gst_quoted" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0" oninput="sub_number.bind(null, 'one10', 'two10', 'three10')()" ; /> </div>
+                                            <div class="col-3"> <input type="number" id="two10" name="gst_assessed" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0"  oninput="sub_number.bind(null, 'one10', 'two10', 'three10')()" ; /> </div>
+                                            <div class="col-3"> <input type="number" readonly name="gst_variance" id="three10" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0"  /> </div>
                                            </div>
 
                                            <div class="row mt-2">
                                             <div class="col-3 font-weight-bold mt-2 " style="color:black;">Total Estimate</div>
-                                             <div class="col-3"> <input type="text" name="TotalEstimate_quoted" id="one11" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0" oninput="sub_number.bind(null, 'one11', 'two11', 'three11')()" ; /> </div>
-                                            <div class="col-3"> <input type="text" name="TotalEstimate_assessed" id="two11" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0" oninput="sub_number.bind(null, 'one11', 'two11', 'three11')()" ; /> </div>
-                                            <div class="col-3"> <input type="text" name="TotalEstimate_variance" readonly id="three11" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0"  /> </div>
+                                             <div class="col-3"> <input type="number" name="TotalEstimate_quoted" id="one11" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0" oninput="sub_number.bind(null, 'one11', 'two11', 'three11')()" ; /> </div>
+                                            <div class="col-3"> <input type="number" name="TotalEstimate_assessed" id="two11" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0" oninput="sub_number.bind(null, 'one11', 'two11', 'three11')()" ; /> </div>
+                                            <div class="col-3"> <input type="number" name="TotalEstimate_variance" readonly id="three11" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0"  /> </div>
                                            </div>
 <br> <br>
                                            <div class="row mt-2">
                                             <div class="col-3 font-weight-bold mt-2 " style="color:black;">Reported Items</div>
-                                             <div class="col-3"> <input type="text" name="ReportedItems_quoted" id="one12" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0" oninput="sub_number.bind(null, 'one12', 'two12', 'three12')()" ; /> </div>
-                                            <div class="col-3"> <input type="text" name="ReportedItems_assessed" id="two12" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0" oninput="sub_number.bind(null, 'one12', 'two12', 'three12')()" ;  /> </div>
-                                            <div class="col-3"> <input type="text" name="ReportedItems_variance" readonly id="three12" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0"  /> </div>
+                                             <div class="col-3"> <input type="number" name="ReportedItems_quoted" id="one12" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0" oninput="sub_number.bind(null, 'one12', 'two12', 'three12')()" ; /> </div>
+                                            <div class="col-3"> <input type="number" name="ReportedItems_assessed" id="two12" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0" oninput="sub_number.bind(null, 'one12', 'two12', 'three12')()" ;  /> </div>
+                                            <div class="col-3"> <input type="number" name="ReportedItems_variance" readonly id="three12" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0"  /> </div>
                                            </div>
                                            <div class="row mt-2">
                                             <div class="col-3 font-weight-bold mt-2 " style="color:black;">Towing</div>
-                                             <div class="col-3"> <input type="text" name="Towing_quoted" id="one13" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0" oninput="sub_number.bind(null, 'one13', 'two13', 'three13')()" ; /> </div>
-                                            <div class="col-3"> <input type="text" name="Towing_assessed" id="two13" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0" oninput="sub_number.bind(null, 'one13', 'two13', 'three13')()" ;  /> </div>
-                                            <div class="col-3"> <input type="text" name="Towing_variance" readonly id="three13" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0"  /> </div>
+                                             <div class="col-3"> <input type="number" name="Towing_quoted" id="one13" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0" oninput="sub_number.bind(null, 'one13', 'two13', 'three13')()" ; /> </div>
+                                            <div class="col-3"> <input type="number" name="Towing_assessed" id="two13" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0" oninput="sub_number.bind(null, 'one13', 'two13', 'three13')()" ;  /> </div>
+                                            <div class="col-3"> <input type="number" name="Towing_variance" readonly id="three13" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0"  /> </div>
                                            </div>
 
                                            <div class="row mt-2">
                                             <div class="col-3 font-weight-bold mt-2 " style="color:black;">External Sublet</div>
-                                             <div class="col-3"> <input type="text" name="ExternalSublet_quoted" id="one14" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0" oninput="sub_number.bind(null, 'one14', 'two14', 'three14')()" ; /> </div>
-                                            <div class="col-3"> <input type="text" name="ExternalSublet_assessed" id="two14" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0" oninput="sub_number.bind(null, 'one14', 'two14', 'three14')()" ;  /> </div>
-                                            <div class="col-3"> <input type="text" name="ExternalSublet_variance" readonly id="three14" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0"  /> </div>
+                                             <div class="col-3"> <input type="number" name="ExternalSublet_quoted" id="one14" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0" oninput="sub_number.bind(null, 'one14', 'two14', 'three14')()" ; /> </div>
+                                            <div class="col-3"> <input type="number" name="ExternalSublet_assessed" id="two14" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0" oninput="sub_number.bind(null, 'one14', 'two14', 'three14')()" ;  /> </div>
+                                            <div class="col-3"> <input type="number" name="ExternalSublet_variance" readonly id="three14" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0"  /> </div>
                                            </div>
 
                                            <div class="row mt-2">
                                             <div class="col-3 font-weight-bold mt-2 " style="color:black;">Additional</div>
-                                             <div class="col-3"> <input type="text" name="Additional_quoted" id="one15" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0" oninput="sub_number.bind(null, 'one15', 'two15', 'three15')()" ; /> </div>
-                                            <div class="col-3"> <input type="text" name="Additional_assessed" id="two15" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0" oninput="sub_number.bind(null, 'one15', 'two15', 'three15')()" ;  /> </div>
-                                            <div class="col-3"> <input type="text" name="Additional_variance" readonly id="three15" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0"  /> </div>
+                                             <div class="col-3"> <input type="number" name="Additional_quoted" id="one15" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0" oninput="sub_number.bind(null, 'one15', 'two15', 'three15')()" ; /> </div>
+                                            <div class="col-3"> <input type="number" name="Additional_assessed" id="two15" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0" oninput="sub_number.bind(null, 'one15', 'two15', 'three15')()" ;  /> </div>
+                                            <div class="col-3"> <input type="number" name="Additional_variance" readonly id="three15" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0"  /> </div>
                                            </div>
 
                                            <div class="row mt-2">
                                             <div class="col-3 font-weight-bold mt-2 " style="color:black;">Discounts</div>
-                                             <div class="col-3"> <input type="text" name="Discounts_quoted" id="one16" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0" oninput="sub_number.bind(null, 'one16', 'two16', 'three16')()" ; /> </div>
-                                            <div class="col-3"> <input type="text" name="Discounts_assessed" id="two16" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0" oninput="sub_number.bind(null, 'one16', 'two16', 'three16')()" ;  /> </div>
-                                            <div class="col-3"> <input type="text" name="Discounts_variance" readonly id="three16" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0"  /> </div>
+                                             <div class="col-3"> <input type="number" name="Discounts_quoted" id="one16" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0" oninput="sub_number.bind(null, 'one16', 'two16', 'three16')()" ; /> </div>
+                                            <div class="col-3"> <input type="number" name="Discounts_assessed" id="two16" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0" oninput="sub_number.bind(null, 'one16', 'two16', 'three16')()" ;  /> </div>
+                                            <div class="col-3"> <input type="number" name="Discounts_variance" readonly id="three16" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0"  /> </div>
                                            </div>
 
                                            <div class="row mt-2">
                                             <div class="col-3 font-weight-bold mt-2 " style="color:black;">Less ITC</div>
-                                             <div class="col-3"> <input type="text" name="LessITC_quoted"  id="one17" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0" oninput="sub_number.bind(null, 'one17', 'two17', 'three17')()" ; /> </div>
-                                            <div class="col-3"> <input type="text" name="LessITC_assessed"  id="two17" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0" oninput="sub_number.bind(null, 'one17', 'two17', 'three17')()" ;  /> </div>
-                                            <div class="col-3"> <input type="text" name="LessITC_variance"  readonly id="three17" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0"  /> </div>
+                                             <div class="col-3"> <input type="number" name="LessITC_quoted"  id="one17" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0" oninput="sub_number.bind(null, 'one17', 'two17', 'three17')()" ; /> </div>
+                                            <div class="col-3"> <input type="number" name="LessITC_assessed"  id="two17" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0" oninput="sub_number.bind(null, 'one17', 'two17', 'three17')()" ;  /> </div>
+                                            <div class="col-3"> <input type="number" name="LessITC_variance"  readonly id="three17" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0"  /> </div>
                                            </div>
 
                                            <div class="row mt-2">
                                             <div class="col-3 font-weight-bold mt-2 " style="color:black;">Less Contribution</div>
-                                             <div class="col-3"> <input type="text" name="LessContribution_quoted" id="one18" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0" oninput="sub_number.bind(null, 'one18', 'two18', 'three18')()" ; /> </div>
-                                            <div class="col-3"> <input type="text" name="LessContribution_assessed" id="two18" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0" oninput="sub_number.bind(null, 'one18', 'two18', 'three18')()" ;  /> </div>
-                                            <div class="col-3"> <input type="text" name="LessContribution_variance" readonly id="three18" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0"  /> </div>
+                                             <div class="col-3"> <input type="number" name="LessContribution_quoted" id="one18" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0" oninput="sub_number.bind(null, 'one18', 'two18', 'three18')()" ; /> </div>
+                                            <div class="col-3"> <input type="number" name="LessContribution_assessed" id="two18" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0" oninput="sub_number.bind(null, 'one18', 'two18', 'three18')()" ;  /> </div>
+                                            <div class="col-3"> <input type="number" name="LessContribution_variance" readonly id="three18" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0"  /> </div>
                                            </div>
 
                                            <div class="row mt-2">
                                             <div class="col-3 font-weight-bold mt-2 " style="color:black;">PAV</div>
-                                             <div class="col-3"> <input type="text" name="PAV_quoted" id="one19" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0" oninput="sub_number.bind(null, 'one19', 'two19', 'three19')()" ; /> </div>
-                                            <div class="col-3"> <input type="text" name="PAV_assessed" id="two19" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0" oninput="sub_number.bind(null, 'one19', 'two19', 'three19')()" ;  /> </div>
-                                            <div class="col-3"> <input type="text" name="PAV_variance" readonly id="three19" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0"  /> </div>
+                                             <div class="col-3"> <input type="number" name="PAV_quoted" id="one19" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0" oninput="sub_number.bind(null, 'one19', 'two19', 'three19')()" ; /> </div>
+                                            <div class="col-3"> <input type="number" name="PAV_assessed" id="two19" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0" oninput="sub_number.bind(null, 'one19', 'two19', 'three19')()" ;  /> </div>
+                                            <div class="col-3"> <input type="number" name="PAV_variance" readonly id="three19" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0"  /> </div>
                                            </div>
 
                                           <br> <br>
@@ -967,43 +967,43 @@ margin-top:1rem;
                                            </div>
                                                     <div class="row mt-2">
                                             <div class="col-6 font-weight-bold mt-2 " style="color:black;"> Sum Insured </div>
-                                            <div class="col-6"> <input type="text"  required  class="aa form-control form-control-solid mb-3 mb-lg-0" name="sum_insured" /> </div>
+                                            <div class="col-6"> <input type="number"  required  class="aa form-control form-control-solid mb-3 mb-lg-0" name="sum_insured" /> </div>
                                            </div>
 
                                            <div class="row mt-2">
                                             <div class="col-6 font-weight-bold mt-2 " style="color:black;"> Market Value </div>
-                                            <div class="col-6"> <input type="text"  required  class="aa form-control form-control-solid mb-3 mb-lg-0" name="market_value" /> </div>
+                                            <div class="col-6"> <input type="number"  required  class="aa form-control form-control-solid mb-3 mb-lg-0" name="market_value" /> </div>
                                            </div>
 
                                            <div class="row mt-2">
                                             <div class="col-6 font-weight-bold mt-2 " style="color:black;"> Salvage Value </div>
-                                            <div class="col-6"> <input type="text"  required  class="aa form-control form-control-solid mb-3 mb-lg-0" name="salvage_value" /> </div>
+                                            <div class="col-6"> <input type="number"  required  class="aa form-control form-control-solid mb-3 mb-lg-0" name="salvage_value" /> </div>
                                            </div>
 
                                              <div class="row mt-2">
                                             <div class="col-6 font-weight-bold mt-2 " style="color:black;"> Settlement</div>
-                                            <div class="col-6"> <input type="text" id="settle1" name="settlement" placeholder="$00.00" required  class="aa form-control form-control-solid mb-3 mb-lg-0" oninput=" syncInputs2()" /> </div>
+                                            <div class="col-6"> <input type="number" id="settle1" name="settlement" placeholder="$00.00" required  class="aa form-control form-control-solid mb-3 mb-lg-0" oninput=" syncInputs2()" /> </div>
                                            </div>
 
                                            <div class="row mt-2">
                                             <div class="col-6 font-weight-bold mt-2 " style="color:black;"> Less Excess </div>
-                                            <div class="col-6"> <input type="text"  required  class="aa form-control form-control-solid mb-3 mb-lg-0" name="less_excess" /> </div>
+                                            <div class="col-6"> <input type="number"  required  class="aa form-control form-control-solid mb-3 mb-lg-0" name="less_excess" /> </div>
                                            </div>
 
 
                                                <div class="row mt-2">
                                             <div class="col-6 font-weight-bold mt-2 " style="color:black;"> Settlement Sub Total </div>
-                                            <div class="col-6"> <input type="text" id="settle2" placeholder="$00.00" required name="settlement_sub_total" class="aa form-control form-control-solid mb-3 mb-lg-0" /> </div>
+                                            <div class="col-6"> <input type="number" id="settle2" placeholder="$00.00" required name="settlement_sub_total" class="aa form-control form-control-solid mb-3 mb-lg-0" /> </div>
                                            </div>
 
                                                 <div class="row mt-2">
                                             <div class="col-6 font-weight-bold mt-2 " style="color:black;"> Settlement GST </div>
-                                            <div class="col-6"> <input type="text" id="settle3" placeholder="$00.00" required name="settlement_gst" class="aa form-control form-control-solid mb-3 mb-lg-0"/> </div>
+                                            <div class="col-6"> <input type="number" id="settle3" placeholder="$00.00" required name="settlement_gst" class="aa form-control form-control-solid mb-3 mb-lg-0"/> </div>
                                            </div>
 
                                                 <div class="row mt-2 rounded ">
                                             <div class="col-6 font-weight-bolder mt-1 py-2"  style="color:green;" > Settlement Total </div>
-                                            <div class="col-6 mt-1 "> <input type="text" id="settle4" placeholder="$00.00" required name="settlement_total"  class="aa form-control form-control-solid mb-3 mb-lg-0 "  /> </div>
+                                            <div class="col-6 mt-1 "> <input type="number" id="settle4" placeholder="$00.00" required name="settlement_total"  class="aa form-control form-control-solid mb-3 mb-lg-0 "  /> </div>
                                            </div>
 
                                            <br>
@@ -1032,25 +1032,25 @@ margin-top:1rem;
 
                                                 <div class="row mt-2">
                                             <div class="col-3  mt-2 " style="color:black;"> Supp 1</div>
-                                            <div class="col-3"> <input type="text"  required  class=" form-control form-control-solid mb-3 mb-lg-0" name="Sup1_quoted"/> </div>
-                                            <div class="col-3"> <input type="text"  required  class=" form-control form-control-solid mb-3 mb-lg-0" name="Sup1_assessed"/> </div>
-                                            <div class="col-3"> <input type="text"  required  class=" form-control form-control-solid mb-3 mb-lg-0" name="Sup1_variance"/> </div>
+                                            <div class="col-3"> <input type="number"  required  class=" form-control form-control-solid mb-3 mb-lg-0" name="Sup1_quoted"/> </div>
+                                            <div class="col-3"> <input type="number"  required  class=" form-control form-control-solid mb-3 mb-lg-0" name="Sup1_assessed"/> </div>
+                                            <div class="col-3"> <input type="number"  required  class=" form-control form-control-solid mb-3 mb-lg-0" name="Sup1_variance"/> </div>
                                            </div>
                                                 <div class="row mt-2">
                                             <div class="col-3  mt-2 " style="color:black;">Supp 2</div>
-                                            <div class="col-3"> <input type="text"  required  class=" form-control form-control-solid mb-3 mb-lg-0" name="Sup2_quoted"/> </div>
-                                            <div class="col-3"> <input type="text"  required  class=" form-control form-control-solid mb-3 mb-lg-0" name="Sup2_assessed"/> </div>
-                                            <div class="col-3"> <input type="text"  required  class=" form-control form-control-solid mb-3 mb-lg-0" name="Sup2_variance"/> </div>
+                                            <div class="col-3"> <input type="number"  required  class=" form-control form-control-solid mb-3 mb-lg-0" name="Sup2_quoted"/> </div>
+                                            <div class="col-3"> <input type="number"  required  class=" form-control form-control-solid mb-3 mb-lg-0" name="Sup2_assessed"/> </div>
+                                            <div class="col-3"> <input type="number"  required  class=" form-control form-control-solid mb-3 mb-lg-0" name="Sup2_variance"/> </div>
                                            </div>
                                                 <div class="row mt-2">
                                             <div class="col-3  mt-2 " style="color:black;">Supp 3</div>
-                                            <div class="col-3"> <input type="text"  required  class=" form-control form-control-solid mb-3 mb-lg-0" name="Sup3_quoted"/> </div>
-                                            <div class="col-3"> <input type="text"  required  class=" form-control form-control-solid mb-3 mb-lg-0" name="Sup3_assessed"/> </div>
-                                            <div class="col-3"> <input type="text"  required  class=" form-control form-control-solid mb-3 mb-lg-0" name="Sup3_variance"/> </div>
+                                            <div class="col-3"> <input type="number"  required  class=" form-control form-control-solid mb-3 mb-lg-0" name="Sup3_quoted"/> </div>
+                                            <div class="col-3"> <input type="number"  required  class=" form-control form-control-solid mb-3 mb-lg-0" name="Sup3_assessed"/> </div>
+                                            <div class="col-3"> <input type="number"  required  class=" form-control form-control-solid mb-3 mb-lg-0" name="Sup3_variance"/> </div>
                                            </div>
                                                 <div class="row mt-2">
                                             <div class="col-3  mt-2 " style="color:black;"> Total</div>
-                                            <div class="col-9"> <input type="text"  required  class=" form-control form-control-solid mb-3 mb-lg-0" name="total_supps"/> </div>
+                                            <div class="col-9"> <input type="number"  required  class=" form-control form-control-solid mb-3 mb-lg-0" name="total_supps"/> </div>
 
                                            </div>
 
