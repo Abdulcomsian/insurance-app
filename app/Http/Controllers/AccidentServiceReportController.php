@@ -130,7 +130,6 @@ class AccidentServiceReportController extends Controller
         $content = $pdf->download()->getOriginalContent();
         $file_name = 'report-'.$id.'.pdf';
         Storage::put('accident-reports/'.$file_name, $content);
-        //Update PDF File Name
         $accident_report = AccidentServiceReport::find($id);
         $accident_report->pdf_file = $file_name;
         $accident_report->save();
@@ -141,11 +140,25 @@ class AccidentServiceReportController extends Controller
     public function viewReport ($id)
     {
         $id = (int)$id;
-        $accident_service_report = AccidentServiceReport::with('serviceAssessors:id,assessor_id,accident_service_report_id', 'serviceAssessors.assessor', 'serviceRepairers:id,repairer_id,accident_service_report_id', 'serviceRepairers.repairers', 'demageValues:id,demage_level,comment,demage_section_id,accident_service_report_id', 'demageValues.demage:id,name', 'suppValues:id,quoted,assessed,variance,supp_id,accident_service_report_id', 'suppValues.supps:id,name', 'assessmentReports:id,quoted,assessed,variance,book_values,live_market_values,trade_low,market_one,trade,market_twp,retail,market_three,value_avg_kms,market_avg,assessment_report_product_id,accident_service_report_id', 'assessmentReports.reportProduct:id,name')
-        ->find($id);
-        $data = [
-            'accident_service_report'=>$accident_service_report
-        ];
-        return view('accident-report.report', compact('accident_service_report'));
+        $accident_report = (new AccidentServiceReport())->find($id);
+        $file_name = $accident_report->pdf_file;
+        $path = Storage::path('accident-reports/'.$file_name);
+        if($file_name == '')
+        {
+            return redirect()->route('accident-accessing-service.index')->with('danger', "No File Found");
+        }
+        else
+        {
+            if(file_exists($path))
+            {
+                return Response::make(file_get_contents($path), 200, [
+                    'content-type'=>'application/pdf',
+                ]);
+            }
+            else
+            {
+                return redirect()->route('accident-accessing-service.index')->with('danger', "No File Found");
+            }
+        }
     }
 }

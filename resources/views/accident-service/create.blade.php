@@ -1010,15 +1010,15 @@ margin-top:1rem;
 
                                            <div class="row mt-2">
                                             <div class="col-6 font-weight-bold mt-2 " style="color:black;"> Cash Settled </div>
-                                            <div class="col-6"> <input type="text"  required  class="aa form-control form-control-solid mb-3 mb-lg-0" name="cash_settled" /> </div>
+                                            <div class="col-6"> <input type="number"  required  class="aa form-control form-control-solid mb-3 mb-lg-0" name="cash_settled" /> </div>
                                            </div>
                                            <div class="row mt-2">
                                             <div class="col-6 font-weight-bold mt-2 " style="color:black;"> Certificate Compliance </div>
-                                            <div class="col-6"> <input type="text"  required  class="aa form-control form-control-solid mb-3 mb-lg-0" name="certificate_compliance" /> </div>
+                                            <div class="col-6"> <input type="number"  required  class="aa form-control form-control-solid mb-3 mb-lg-0" name="certificate_compliance" /> </div>
                                            </div>
                                            <div class="row mt-2">
                                             <div class="col-6 font-weight-bold mt-2 " style="color:black;"> Salvage Condition </div>
-                                            <div class="col-6"> <input type="text"  required  class="aa form-control form-control-solid mb-3 mb-lg-0" name="salvage_condition" /> </div>
+                                            <div class="col-6"> <input type="number"  required  class="aa form-control form-control-solid mb-3 mb-lg-0" name="salvage_condition" /> </div>
                                            </div>
 
 
