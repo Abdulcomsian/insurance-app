@@ -12,8 +12,38 @@
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>
 
+
+
     <style>
-        #detail-assessment-1 {
+                @font-face {
+        font-family: "Helvetica";
+        src: url("Helvetica.ttf");
+        }
+
+
+        .font-0{
+            font-family: "Helvetica", sans-serif;
+            font-size:12px;
+        }
+        .font{
+            font-family: "Helvetica", sans-serif;
+            font-size:12px;
+            font-weight:bold;
+        }
+        .font-1{
+            font-family: "Helvetica", sans-serif;
+            font-size:10px
+        }
+
+        .font-2{
+            font-family: "Helvetica", sans-serif;
+            font-size:19px;
+            font-weight:bold;
+        }
+
+
+
+            #detail-assessment-1 {
             border-collapse: collapse;
         }
 
@@ -31,7 +61,8 @@
 
         .bg-gray-clr {
             /* background: #dfe7f5; */
-            background: #edf7f7
+            background: #edf7f7;
+            height:20px !important;
         }
 
         .table-header-bg-clr {
@@ -46,33 +77,38 @@
 </head>
 
 <body>
-    <div class="row">
+<div class="row">
         <div class="col-md-12">
             <table class="table" border="0" id="detail-assessment-1" width="100%">
                 <tbody>
                     <tr>
-                        <td width="20%">
-                            <center>
+                        <td width="33.33%">
+                            <!-- <center>
                                 <img
                                     src="data:image/png;base64,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" />
-                            </center>
+                            </center> -->
+                            <img class="img " style="width:85%; height: 80px;" src="images/logo.png" alt="" >
                         </td>
-                        <td width="40%" ; style="margin-top: 100px !important">
-                            <center>
-                                <h2> Accident Assessing <br> Services</h2>
-                                <h5>
+                        <td width="33.33%" ; style="margin-top: 100px !important">
+                            <!-- <center>
+                                <h2 class="font-2" > Accident Assessing <br> Services</h2>
+                                <h5 class="font-2">
                                     ABN: 20982234703
                                 </h5>
 
-                            </center>
+                            </center> -->
                         </td>
-                        <td width="40%">
-                            <p class="text-right">
-                                Po Box 2177 <br>
+                        <td width="33.33%">
+                            <p class="text-right font-1" style="margin-top:5px;">
+                                ABN: 78 668 644 246 <br>
+                                Mob: 040 9971 411 <br>
+                                Email: asvla@bigpond.net.au <br>
+                                Po Box: 6 Baxter CT Thomastown VIC 3074 
+                                <!-- Po Box 2177 <br>
                                 Templestowe Lower Vic 3107 <br>
                                 0411 493 593 <br>
                                 info@accidentassessingservices.com.au<br>
-                                https://www.accidentassessingservices.com
+                                https://www.accidentassessingservices.com -->
                             </p>
                         </td>
                     </tr>
@@ -81,28 +117,44 @@
             </table>
         </div>
     </div>
+
     <div class="row">
         <div class="col-md-12">
             <table class="table" border="0" id="detail-assessment-1" width="100%">
                 <tbody>
-                    <tr class="bg-gray-clr">
+
+                    <!-- <tr class="bg-gray-clr font  ">
                         <td width="150px">
-                            <p style="font-size: 15px; color:#2587be;;font-weight:bold">Tax Invoice:
+                            <p style=" color:#2587be;" class=" ps-2">Tax Invoice:
                                 {{$accident_service_report['tax_invoice'] ?? $accident_service_report['id'] }}</p>
                         </td>
-                        <td></td>
-                        <td colspan="5" style="font-size: 15px; color:#2587be;font-weight:bold;text-align:right ">
+                    
+                        <td colspan="5" class="font pe-2" style=" color:#2587be;text-align:right ">
                             Date: {{$accident_service_report['invoice_date'] ?? '--' }}
                         </td>
-                    </tr>
-                    <tr style="margin-top: 40px !important;">
-                        <td>To :</td>
+                    </tr> -->
+
+                    <tr class="bg-gray-clr font">
+    <td class="align-middle ps-2 " style="color: #2587be;" >
+        Tax Invoice:
+            {{$accident_service_report['tax_invoice'] ?? $accident_service_report['id'] }}
+     
+    </td>
+    <!-- <td></td> -->
+    <td colspan="5" class="font pe-2 align-middle" style="color: #2587be; text-align: right;">
+        Date: {{$accident_service_report['invoice_date'] ?? '--' }}
+    </td>
+</tr>
+
+
+                    <tr class="font-0" style="margin-top: 40px !important;">
+                        <td class="ps-2">To :</td>
                         <td>{{ $accident_service_report['to'] ?? '--' }}</td>
                         <td colspan="3"></td>
                         <td></td>
                     </tr>
-                    <tr>
-                        <td>On behalf of:</td>
+                    <tr  class="font-0">
+                        <td class="ps-2">On behalf of:</td>
                         <td width="200px">National Motor Claims
                             PO Box 2000
                             Greenvale Vic 3059
@@ -111,44 +163,51 @@
                         <td></td>
                     </tr>
 
-                    <tr class="bg-gray-clr">
-                        <td>
+                    <tr class="bg-gray-clr mt-2">
+                        <!-- <td>
                             <h4 style="color:black; text-align:left;font-weight:bold"
-                                class="text-right">
+                                class="text-right font align-middle">
                                 Invoice Details:
                             </h4>
+                        </td> -->
+                        <td style="color:black; text-align:left;"
+                                class="text-right font align-middle ps-2">
+                                Invoice Details:                         
                         </td>
                         <td></td>
                         <td colspan="3"
-                            style="font-size: 13px; color:#2587be; text-align:left;font-weight:bold; text-align:right">
+                            style=" color:#2587be; text-align:left;font-weight:bold; text-align:right">
                         </td>
                         <td></td>
                     </tr>
                     <tr>
-                        <td><b>Vehicle:</b></td>
-                        <td>{{ $accident_service_report['vehicle'] ?? '--'}}</td>
-                        <td><b>Claim No:</b></td>
-                        <td>TR2032</td>
+                        <td><b class="font ps-2">Vehicle:</b></td>
+                        <td class="font-0">{{ $accident_service_report['vehicle'] ?? '--'}}</td>
+                        <td><b class="font">Claim No:</b></td>
+                        <td class="font-0">TR2032</td>
                     </tr>
                     <tr>
-                        <td><b>Rego:</b></td>
-                        <td>{{ $accident_service_report['rego'] ?? '--' }}</td>
-                        <td><b>Policy No:</b></td>
-                        <td>P-23</td>
+                        <td><b class="font ps-2">Rego:</b></td>
+                        <td class="font-0">{{ $accident_service_report['rego'] ?? '--' }}</td>
+                        <td><b class="font">Policy No:</b></td>
+                        <td class="font-0">P-23</td>
                     </tr>
-                    <tr class="bg-gray-clr">
-                        <td>
-                            <h4 style=" color:black; text-align:left;font-weight:bold"
-                                class="text-right">Invoice Description:</h4>
+                    <tr class="bg-gray-clr mt-2">
+                        <!-- <td>
+                            <h4 style=" color:black; text-align:left;"
+                                class="font align-middle ps-2">Invoice Description:</h4>
+                        </td> -->
+                        <td class="font align-middle ps-2" style=" color:black; text-align:left;">
+                                Invoice Description
                         </td>
                         <td></td>
                         <td colspan="3"
-                            style="font-size: 13px; color:#2587be; text-align:left;font-weight:bold; text-align:right">
+                            style=" color:#2587be; text-align:left;font-weight:bold; text-align:right">
                         </td>
                         <td></td>
                     </tr>
                     <tr>
-                        <td width="300px" style="border-bottom-style: hidden;">
+                        <td class="font-0 ps-2" width="300px" style="border-bottom-style: hidden;">
                             Assessed the damage to vehicle Rego - make, model series body
                             Adjusted to repair quotation
                             Supplied images of the vehi cle
@@ -159,24 +218,24 @@
                     </tr>
                     <tr>
                         <td></td>
-                        <td><b>Assessment Fee</b></td>
-                        <td><b>${{ $accident_service_report['assessment_fee'] ?? '--' }}</b></td>
                         <td></td>
+                        <td><b class="font">Assessment Fee</b></td>
+                        <td><b class="font">${{ $accident_service_report['assessment_fee'] ?? '--' }}</b></td>
+                      
                     </tr>
 
-                    <tr class="bg-gray-clr">
-                        <td>
-                            <h4 style=" color:black; text-align:left;font-weight:bold">Banking Details
-                            </h4>
+                    <tr class="bg-gray-clr mt-2">
+                        <td  class="font ps-2 align-middle" style=" color:black; text-align:left;" >
+                            Banking Details 
                         </td>
                         <td></td>
-                        <td colspan="3" style=" color:black; text-align:left;font-weight:bold;">
+                        <td colspan="3" class="font" style="  color:black; text-align:left;font-weight:bold;">
                             Invoice Total
                         </td>
                         <td></td>
                     </tr>
                     <tr>
-                        <td style="border-bottom-style: hidden;">
+                        <td class="font-0 ps-2" style="border-bottom-style: hidden;">
                             Commonwealth Bank
                             GBS CORPORATION Sidiros family trust
                             BSB 063-157
@@ -186,69 +245,80 @@
                             Cheque Payable to Gbs Corporation and reference number on the
                             back of cheque
                         </td>
-                        <td style="border-bottom-style: hidden;"></td>
-                        <td style="border-bottom-style: hidden;">Sub Total</td>
+                        <td class="font-0"  style="border-bottom-style: hidden;"></td>
+                        <td  class="font-0" style="border-bottom-style: hidden;">Sub Total</td>
 
-                        <td style="border-bottom-style: hidden;">${{ $accident_service_report['sub_total'] ?? '--' }}</td>
+                        <td class="font-0 " style="border-bottom-style: hidden;">${{ $accident_service_report['sub_total'] ?? '--' }}</td>
                         <td style="border-bottom-style: hidden;"></td>
                     </tr>
                     <tr>
                         <td style="border-bottom-style: hidden;"></td>
                         <td style="border-bottom-style: hidden;"></td>
-                        <td style="border-bottom-style: hidden;">GST</td>
-                        <td style="border-bottom-style: hidden;">${{ $accident_service_report['gst'] ?? '--' }}</td>
+                        <td class="font-0" style="border-bottom-style: hidden;">GST</td>
+                        <td class="font-0" style="border-bottom-style: hidden;">${{ $accident_service_report['gst'] ?? '--' }}</td>
                         <td style="border-bottom-style: hidden;"></td>
                     </tr>
                     <tr>
                         <td style="border-bottom-style: hidden;"></td>
                         <td style="border-bottom-style: hidden;"></td>
-                        <td style="border-bottom-style: hidden;"><b>Grand Total</b></td>
-                        <td style="border-bottom-style: hidden;"><b>${{ $accident_service_report['grand_total'] ?? '--' }}</b></td>
+                        <td class="font" style="border-bottom-style: hidden;"><b>Grand Total</b></td>
+                        <td class="font" style="border-bottom-style: hidden;"><b>${{ $accident_service_report['grand_total'] ?? '--' }}</b></td>
                     </tr>
                 </tbody>
             </table>
         </div>
     </div>
+
     <div class="row">
-        <img
-            src="data:image/png;base64,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" />
+        <!-- <img
+            src="" /> -->
+            <!-- <img src="{{ asset('image/cover.jpg') }}" alt="Image"> -->
+            <img src="images/cover.jpg" alt="">
+
     </div>
+
     <div class="row">
         <div class="col-md-12">
             <table class="table" border="0" id="detail-assessment-1" width="100%">
                 <tbody>
                     <tr>
-                        <td width="20%">
-                            <center>
+                        <td width="33.33%">
+                            <!-- <center>
                                 <img
                                     src="data:image/png;base64,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" />
-                            </center>
+                            </center> -->
+                            <img class="img " style="width:85%; height: 80px; margin-top:2px;" src="images/logo.png" alt="" >
+
                         </td>
-                        <td width="40%" ; style="margin-top: 100px !important">
-                            <center>
-                                <h2> Accident Assessing <br> Services</h2>
-                                <h5>
+                        <td width="33.33%" ; style="margin-top: 100px !important">
+                            <!-- <center>
+                                <h2 class="font-2" > Accident Assessing <br> Services</h2>
+                                <h5 class="font-2">
                                     ABN: 20982234703
                                 </h5>
 
-                            </center>
+                            </center> -->
                         </td>
-                        <td width="40%">
-                            <p class="text-right">
-                                Po Box 2177 <br>
+                        <td width="33.33%">
+                            <p class="text-right font-1" style="margin-top:5px;">
+                                ABN: 78 668 644 246 <br>
+                                Mob: 040 9971 411 <br>
+                                Email: asvla@bigpond.net.au <br>
+                                Po Box: 6 Baxter CT Thomastown VIC 3074 
+                                <!-- Po Box 2177 <br>
                                 Templestowe Lower Vic 3107 <br>
                                 0411 493 593 <br>
                                 info@accidentassessingservices.com.au<br>
-                                https://www.accidentassessingservices.com
+                                https://www.accidentassessingservices.com -->
                             </p>
                         </td>
                     </tr>
                     <tr class="table-header-bg-clr">
-                        <td colspan="2">
-                            <p style="font-size: 13px; color:white; text-align:left;font-weight:bold"
-                                class="text-right">Detailed Assessment Report Ref No: 2483</p>
+                        <td style=" color:white; text-align:left;"
+                                class="text-right font ps-2 align-middle" colspan="2">
+                            Detailed Assessment Report Ref No: 2483
                         </td>
-                        <td style="font-size: 13px; color:white; text-align:left;font-weight:bold; text-align:right">
+                        <td class="font pe-2" style="color:white; text-align:right">
                             Date: {{ $accident_service_report['invoice_date'] }}</td>
                     </tr>
                 </tbody>
@@ -260,31 +330,30 @@
             <table class="table" border="0" id="detail-assessment-2" width="100%">
                 <tbody>
                     <tr class="bg-gray-clr">
-                        <td colspan="2" class="bg-gray-clr">
-                            <p style="font-size: 13px; color:black; text-align:left;font-weight:bold">Owner: </p>
+                        <td colspan="2" class="bg-gray-clr font ps-2"  style=" color:black; text-align:left;">
+                            Owner: 
                         </td>
-                        <td style="font-size: 13px; color:black; text-align:left;">{{ $accident_service_report['owner_name'] ?? '--' }}</td>
-                        <td colspan="2" class="bg-gray-clr">
-                            <p style="font-size: 13px; color:black; text-align:left;font-weight:bold">Claim No:</p>
+                        <td class="font-0" style=" color:black; text-align:left;">{{ $accident_service_report['owner_name'] ?? '--' }}</td>
+                        <td colspan="2" class="bg-gray-clr font" style=" color:black; text-align:left;">
+                            Claim No:
                         </td>
-                        <td style="font-size: 13px; color:black; text-align:left;">TR2032</td>
+                        <td class="font-0" style=" color:black; text-align:left;">TR2032</td>
                     </tr>
-                    <tr>
-                        <td colspan="2">
-                            <p style="font-size: 13px; color:black; text-align:left;font-weight:bold">On Behalf Of: </p>
+                    <tr class="mt-2">
+                        <td colspan="2" class="font ps-2" style=" color:black; text-align:left;">
+                            On Behalf Of: 
                         </td>
-                        <td style="font-size: 13px; color:black; text-align:left;">National Motor Claims</td>
+                        <td class="font-0" style=" color:black; text-align:left;">National Motor Claims</td>
                     </tr>
-                    <tr class="bg-gray-clr">
-                        <td colspan="2" class="bg-gray-clr">
-                            <p style="font-size: 13px; color:black; text-align:left;font-weight:bold">Assessment Type:
-                            </p>
+                    <tr class="bg-gray-clr mt-2">
+                        <td colspan="2" class="bg-gray-clr font ps-2" style=" color:black; text-align:left;">
+                            Assessment Type:    
                         </td>
-                        <td style="font-size: 13px; color:black; text-align:left;">{{ $accident_service_report['assessment_type'] ?? '--' }}</td>
-                        <td colspan="2" class="bg-gray-clr">
-                            <p style="font-size: 13px; color:black; text-align:left;font-weight:bold">Estimate No:</p>
+                        <td class="font-0" style=" color:black; text-align:left;">{{ $accident_service_report['assessment_type'] ?? '--' }}</td>
+                        <td colspan="2" class="bg-gray-clr font" style=" color:black; text-align:left;">
+                            Estimate No:
                         </td>
-                        <td style="font-size: 13px; color:black; text-align:left;">3668</td>
+                        <td class="font-0" style=" color:black; text-align:left;">3668</td>
                     </tr>
                 </tbody>
             </table>
@@ -297,80 +366,79 @@
             <table class="table" border="0" id="detail-assessment-2" width="100%">
                 <tbody>
                     <tr class="table-header-bg-clr" style="margin-top: 5px">
-                        <td colspan="9">
-                            <p style="font-size: 13px; color:white; text-align:left;font-weight:bold"
-                                class="text-right">Vehicle Details - Rego: {{ $accident_service_report['rego'] ?? '--'}}</p>
+                        <td class="font ps-2" style=" color:white; text-align:left;" colspan="9">
+                                Vehicle Details - Rego: {{ $accident_service_report['rego'] ?? '--'}}
                         </td>
                     </tr>
                     <tr class="bg-gray-clr">
-                        <td colspan="2" class="bg-gray-clr">
-                            <p style="font-size: 13px; color:black; text-align:left;font-weight:bold">Make: </p>
+                        <td colspan="2" class="bg-gray-clr font ps-2" style=" color:black; text-align:left;">
+                            Make: 
                         </td>
-                        <td style="font-size: 13px; color:black; text-align:left;">{{ $accident_service_report['make'] ?? '--'}}</td>
-                        <td colspan="2" class="bg-gray-clr">
-                            <p style="font-size: 13px; color:black; text-align:left;font-weight:bold">Engine Type:</p>
+                        <td class="font-0"  style=" color:black; text-align:left;">{{ $accident_service_report['make'] ?? '--'}}</td>
+                        <td colspan="2" class="bg-gray-clr font" style=" color:black; text-align:left;" >
+                            Engine Type:
                         </td>
-                        <td style="font-size: 13px; color:black; text-align:left;">{{ $accident_service_report['engine_type'] ?? '--' }}</td>
-                        <td colspan="2">
-                            <p style="font-size: 13px; color:black; text-align:left;font-weight:bold">Odometer: </p>
+                        <td class="font-0" style=" color:black; text-align:left;">{{ $accident_service_report['engine_type'] ?? '--' }}</td>
+                        <td colspan="2" class="font" style="color:black; text-align:left;">
+                            Odometer: 
                         </td>
-                        <td style="font-size: 13px; color:black; text-align:left;">{{ $accident_service_report['odometer'] ?? '--' }}</td>
+                        <td class="font-0" style=" color:black; text-align:left;">{{ $accident_service_report['odometer'] ?? '--' }}</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" class=" font ps-2" style=" color:black; text-align:left;">
+                            Model: 
+                        </td>
+                        <td class="font-0" style=" color:black; text-align:left;">{{ $accident_service_report['model'] ?? '--' }}</td>
+                        <td colspan="2" class=" font " style=" color:black; text-align:left;">
+                            Engine Size:
+                        </td>
+                        <td class="font-0" style=" color:black; text-align:left;">{{ $accident_service_report['engine_size'] ?? '--' }}</td>
+                        <td colspan="2" class="font" style=" color:black; text-align:left;">
+                            Paint Group:
+                        </td>
+                        <td class="font-0" style=" color:black; text-align:left;">{{ $accident_service_report['paint_group'] ?? '--' }}</td>
                     </tr>
                     <tr class="bg-gray-clr">
-                        <td colspan="2" class="bg-gray-clr">
-                            <p style="font-size: 13px; color:black; text-align:left;font-weight:bold">Model: </p>
+                        <td colspan="2" class="bg-gray-clr font ps-2" style=" color:black; text-align:left;">
+                            Series: 
                         </td>
-                        <td style="font-size: 13px; color:black; text-align:left;">{{ $accident_service_report['model'] ?? '--' }}</td>
-                        <td colspan="2" class="bg-gray-clr">
-                            <p style="font-size: 13px; color:black; text-align:left;font-weight:bold">Engine Size:</p>
+                        <td class="font-0" style=" color:black; text-align:left;">{{ $accident_service_report['series'] ?? '--' }}</td>
+                        <td colspan="2" class="bg-gray-clr font" style=" color:black; text-align:left;">
+                            Engine No:
                         </td>
-                        <td style="font-size: 13px; color:black; text-align:left;">{{ $accident_service_report['engine_size'] ?? '--' }}</td>
-                        <td colspan="2">
-                            <p style="font-size: 13px; color:black; text-align:left;font-weight:bold">Paint Group: </p>
+                        <td class="font-0" style="color:black; text-align:left;">{{ $accident_service_report['engine_no'] ?? '--' }}</td>
+                        <td colspan="2" class="font" style="color:black; text-align:left">
+                            Paint Code: 
                         </td>
-                        <td style="font-size: 13px; color:black; text-align:left;">{{ $accident_service_report['paint_group'] ?? '--' }}</td>
+                        <td class="font-0" style=" color:black; text-align:left;">{{ $accident_service_report['paint_code'] ?? '--' }}</td>
+                    </tr>
+                    <tr >
+                        <td colspan="2" class=" font ps-2" style=" color:black; text-align:left;">
+                            Month/Year: 
+                        </td>
+                        <td class="font-0" style=" color:black; text-align:left;">{{ $accident_service_report['month_year'] ?? '--' }}</td>
+                        <td colspan="2" class=" font" style=" color:black; text-align:left;">
+                            Transmission:
+                        </td>
+                        <td class="font-0" style=" color:black; text-align:left;">{{ $accident_service_report['transmission'] ?? '--' }}</td>
+                        <td colspan="2" class="font" style=" color:black; text-align:left;">
+                            Colour:
+                        </td>
+                        <td class="font-0" style="color:black; text-align:left;">{{ $accident_service_report['colour'] ?? '--' }}</td>
                     </tr>
                     <tr class="bg-gray-clr">
-                        <td colspan="2" class="bg-gray-clr">
-                            <p style="font-size: 13px; color:black; text-align:left;font-weight:bold">Series: </p>
+                        <td colspan="2" class="bg-gray-clr font ps-2"  style=" color:black; text-align:left;">
+                            Body Type: 
                         </td>
-                        <td style="font-size: 13px; color:black; text-align:left;">{{ $accident_service_report['series'] ?? '--' }}</td>
-                        <td colspan="2" class="bg-gray-clr">
-                            <p style="font-size: 13px; color:black; text-align:left;font-weight:bold">Engine No:</p>
+                        <td class="font-0" style=" color:black; text-align:left;">{{ $accident_service_report['body_type'] ?? '--' }}</td>
+                        <td colspan="2" class="bg-gray-clr font" style=" color:black; text-align:left;">
+                            Axles:
                         </td>
-                        <td style="font-size: 13px; color:black; text-align:left;">{{ $accident_service_report['engine_no'] ?? '--' }}</td>
-                        <td colspan="2">
-                            <p style="font-size: 13px; color:black; text-align:left;font-weight:bold">Paint Code: </p>
+                        <td class="font-0" style=" color:black; text-align:left;">{{ $accident_service_report['axles'] ?? '--' }}</td>
+                        <td colspan="2" class="font" style=" color:black; text-align:left;">
+                            Vin: 
                         </td>
-                        <td style="font-size: 13px; color:black; text-align:left;">{{ $accident_service_report['paint_code'] ?? '--' }}</td>
-                    </tr>
-                    <tr class="bg-gray-clr">
-                        <td colspan="2" class="bg-gray-clr">
-                            <p style="font-size: 13px; color:black; text-align:left;font-weight:bold">Month/Year: </p>
-                        </td>
-                        <td style="font-size: 13px; color:black; text-align:left;">{{ $accident_service_report['month_year'] ?? '--' }}</td>
-                        <td colspan="2" class="bg-gray-clr">
-                            <p style="font-size: 13px; color:black; text-align:left;font-weight:bold">Transmission:</p>
-                        </td>
-                        <td style="font-size: 13px; color:black; text-align:left;">{{ $accident_service_report['transmission'] ?? '--' }}</td>
-                        <td colspan="2">
-                            <p style="font-size: 13px; color:black; text-align:left;font-weight:bold">Colour: </p>
-                        </td>
-                        <td style="font-size: 13px; color:black; text-align:left;">{{ $accident_service_report['colour'] ?? '--' }}</td>
-                    </tr>
-                    <tr class="bg-gray-clr">
-                        <td colspan="2" class="bg-gray-clr">
-                            <p style="font-size: 13px; color:black; text-align:left;font-weight:bold">Body Type: </p>
-                        </td>
-                        <td style="font-size: 13px; color:black; text-align:left;">{{ $accident_service_report['body_type'] ?? '--' }}</td>
-                        <td colspan="2" class="bg-gray-clr">
-                            <p style="font-size: 13px; color:black; text-align:left;font-weight:bold">Axles:</p>
-                        </td>
-                        <td style="font-size: 13px; color:black; text-align:left;">{{ $accident_service_report['axles'] ?? '--' }}</td>
-                        <td colspan="2">
-                            <p style="font-size: 13px; color:black; text-align:left;font-weight:bold">Vin: </p>
-                        </td>
-                        <td style="font-size: 13px; color:black; text-align:left;">{{ $accident_service_report['vin'] ?? '--' }}</td>
+                        <td class="font-0" style=" color:black; text-align:left;">{{ $accident_service_report['vin'] ?? '--' }}</td>
                     </tr>
                 </tbody>
             </table>
@@ -384,48 +452,47 @@
             <table class="table" border="0" id="detail-assessment-3" width="100%">
                 <tbody>
                     <tr class="table-header-bg-clr" style="margin-top: 5px">
-                        <td colspan="9">
-                            <p style="font-size: 13px; color:white; text-align:left;font-weight:bold"
-                                class="text-right">Repairer Details</p>
+                        <td colspan="9" style=" color:white; text-align:left;font-weight:bold"
+                                class="text-right font ps-2">
+                            Repairer Details
                         </td>
                     </tr>
                     {{-- @dd($accident_service_report->serviceRepairers) --}}
                     @forelse ($accident_service_report->serviceRepairers as $service_repairer)
                     {{-- @dd($service_repairer) --}}
                         <tr>
-                            <td colspan="2" class="bg-gray-clr">
-                                <p style="font-size: 13px; color:black; text-align:left;font-weight:bold">Repairer: </p>
+                            <td colspan="1" class="bg-gray-clr font ps-2" style=" color:black; text-align:left;">
+                                Repairer: 
                             </td>
-                            <td style="font-size: 13px; color:black; text-align:left;" class="bg-gray-clr">{{$service_repairer['repairers']['name'] ?? '--'}}</td>
-                            <td colspan="2" class="bg-gray-clr">
-                                <p style="font-size: 13px; color:black; text-align:left;font-weight:bold">Email:</p>
+                            <td style=" color:black; text-align:left;" class="bg-gray-clr font-0">{{$service_repairer['repairers']['name'] ?? '--'}}</td>
+                            <td colspan="1" class="bg-gray-clr font" style=" color:black; text-align:left;">
+                                Email:
                             </td>
-                            <td class="bg-gray-clr" style="font-size: 13px; color:black; text-align:left;">
+                            <td class="bg-gray-clr font-0" style=" color:black; text-align:left;">
                                 {{$service_repairer['repairers']['email'] ?? '--'}}</td>
-                            <td colspan="2">
+                            <td colspan="1">
                             </td>
-                            <td style="font-size: 13px; color:black; text-align:left;"></td>
+                            <td style=" color:black; text-align:left;"></td>
                         </tr>
                         <tr>
-                            <td colspan=" 2">
-                                <p style="font-size: 13px; color:black; text-align:left;font-weight:bold">Contact: </p>
+                            <td colspan=" 1" class="font ps-2" style=" color:black; text-align:left;">
+                                Contact: 
                             </td>
-                            <td style="font-size: 13px; color:black; text-align:left;">{{$service_repairer['repairers']['contact'] ?? '--'}}</td>
-                            <td colspan="2">
-                                <p style="font-size: 13px; color:black; text-align:left;font-weight:bold">Phone:</p>
+                            <td class="font-0" style=" color:black; text-align:left;">{{$service_repairer['repairers']['contact'] ?? '--'}}</td>
+                            <td colspan="1" class="font" style=" color:black; text-align:left;">
+                                Phone:
                             </td>
-                            <td style="font-size: 13px; color:black; text-align:left;">{{$service_repairer['repairers']['phone'] ?? '--'}}</td>
-                            <td colspan="2">
-                                <p style="font-size: 13px; color:black; text-align:left;font-weight:bold">Mobile:</p>
+                            <td class="font-0" style=" color:black; text-align:left;">{{$service_repairer['repairers']['phone'] ?? '--'}}</td>
+                            <td colspan="1" class="font" style=" color:black; text-align:left;">
+                                Mobile:
                             </td>
-                            <td style="font-size: 13px; color:black; text-align:left;">{{$service_repairer['repairers']['mobile'] ?? '--'}}</td>
+                            <td class="font-0" style=" color:black; text-align:left;">{{$service_repairer['repairers']['mobile'] ?? '--'}}</td>
                         </tr>
                         <tr class="bg-gray-clr">>
-                            <td colspan="2">
-                                <p style="font-size: 13px; color:black; text-align:left;font-weight:bold">Repairer Address:
-                                </p>
+                            <td colspan="1" class="font ps-2" style=" color:black; text-align:left;">
+                                Repairer Address:
                             </td>
-                            <td style="font-size: 13px; color:black; text-align:left;">{{$service_repairer['repairers']['address'] ?? '--'}}</td>
+                            <td class="font-0" style=" color:black; text-align:left;">{{$service_repairer['repairers']['address'] ?? '--'}}</td>
                         </tr>
                     @empty
                     @endforelse
@@ -441,274 +508,274 @@
             <table class="table" border="0" id="detail-assessment-3" width="100%">
                 <tbody>
                     <tr class="table-header-bg-clr" style="margin-top: 5px">
-                        <td colspan="12">
-                            <p style="font-size: 13px; color:white; text-align:left;font-weight:bold"
-                                class="text-right">Assessment Summary</p>
+                        <td colspan="12" style=" color:white; text-align:left;"
+                                class="text-right font ps-2">
+                            Assessment Summary
                         </td>
                     </tr>
                     <tr>
-                        <td colspan="2" class="selected-bg-gray">
-                            <p style="font-size: 13px; color:black; text-align:left;font-weight:bold">Repairer: </p>
+                        <td colspan="2" class="selected-bg-gray font ps-2" style=" color:black; text-align:left;">
+                            Repairer: 
                         </td>
-                        <td colspan="2" class="selected-bg-gray"
-                            style="font-size: 13px; color:black; text-align:left;font-weight:bold">Quoted:</td>
-                        <td colspan="2" class="selected-bg-gray">
-                            <p style="font-size: 13px; color:black; text-align:left;font-weight:bold">Assessed:</p>
+                        <td colspan="2" class="selected-bg-gray font"
+                            style=" color:black; text-align:left;font-weight:bold">Quoted:</td>
+                        <td colspan="2" class="selected-bg-gray font">
+                            <p style=" color:black; text-align:left;font-weight:bold">Assessed:</p>
                         </td>
-                        <td class="selected-bg-gray"
-                            style="font-size: 13px; color:black; text-align:left;font-weight:bold">Variance</td>
+                        <td class="selected-bg-gray font"
+                            style=" color:black; text-align:left;font-weight:bold">Variance</td>
                         <td></td>
-                        <td colspan="4" class="selected-bg-gray"
-                            style="font-size: 13px; color:black; text-align:left;font-weight:bold; color: green">Total
+                        <td colspan="4" class="selected-bg-gray font"
+                            style=" color:black; text-align:left;font-weight:bold; color: green">Total
                             Loss - NO</td>
                     </tr>
                     <tr>
-                        <td colspan="2" class="bg-gray-clr" style="font-weight: bold">R & R</td>
-                        <td colspan="2" class="bg-gray-clr">{{ $accident_service_report->assessmentReports[0]->quoted ?? '--' }}</td>
-                        <td colspan="2" class="bg-gray-clr">{{ $accident_service_report->assessmentReports[0]->assessed ?? '--' }}</td>
-                        <td class="bg-gray-clr">{{ $accident_service_report->assessmentReports[0]->variance ?? '--' }}</td>
+                        <td colspan="2" class="bg-gray-clr font ps-2" style="font-weight: bold">R & R</td>
+                        <td colspan="2" class="bg-gray-clr font-0">{{ $accident_service_report->assessmentReports[0]->quoted ?? '--' }}</td>
+                        <td colspan="2" class="bg-gray-clr font-0">{{ $accident_service_report->assessmentReports[0]->assessed ?? '--' }}</td>
+                        <td class="bg-gray-clr font-0">{{ $accident_service_report->assessmentReports[0]->variance ?? '--' }}</td>
                         <td></td>
-                        <td colspan="3" style="font-weight: bold" class="bg-gray-clr">Assessment
-                            <br /> Date</tdc>
-                        <td class="bg-gray-clr"> {{ $accident_service_report['assessment_date'] ?? '--' }}</td>
+                        <td colspan="3" style="font-weight: bold" class="bg-gray-clr font">Assessment
+                             Date</td>
+                        <td class="bg-gray-clr font-0"> {{ $accident_service_report['assessment_date'] ?? '--' }}</td>
                     </tr>
                     <tr>
-                        <td colspan="2" style="font-weight: bold">Repair</td>
-                        <td colspan="2">{{ $accident_service_report->assessmentReports[1]->quoted ?? '--' }}</td>
-                        <td colspan="2">{{ $accident_service_report->assessmentReports[1]->assessed ?? '--' }}</td>
-                        <td colspan="2">{{ $accident_service_report->assessmentReports[1]->variance ?? '--' }}</td>
-                        <td colspan="3" style="font-weight: bold">Cover Type</td>
-                        <td>{{ $accident_service_report['cover_type'] ?? '--' }}</td>
+                        <td class="font ps-2" colspan="2" style="font-weight: bold">Repair</td>
+                        <td class="font-0"  colspan="2">{{ $accident_service_report->assessmentReports[1]->quoted ?? '--' }}</td>
+                        <td class="font-0"  colspan="2">{{ $accident_service_report->assessmentReports[1]->assessed ?? '--' }}</td>
+                        <td class="font-0"  colspan="2">{{ $accident_service_report->assessmentReports[1]->variance ?? '--' }}</td>
+                        <td class="font"  colspan="3" style="font-weight: bold">Cover Type</td>
+                        <td class="font-0"  >{{ $accident_service_report['cover_type'] ?? '--' }}</td>
                     </tr>
                     <tr>
-                        <td class="bg-gray-clr" colspan="2" style="font-weight: bold">Paint</td>
-                        <td colspan="2">{{ $accident_service_report->assessmentReports[2]->quoted ?? '--' }}</td>
-                        <td colspan="2">{{ $accident_service_report->assessmentReports[2]->assessed ?? '--' }}</td>
-                        <td>{{ $accident_service_report->assessmentReports[2]->variance ?? '--' }}</td>
+                        <td class="bg-gray-clr font ps-2" colspan="2" style="font-weight: bold">Paint</td>
+                        <td class="font-0"  colspan="2">{{ $accident_service_report->assessmentReports[2]->quoted ?? '--' }}</td>
+                        <td class="font-0"  colspan="2">{{ $accident_service_report->assessmentReports[2]->assessed ?? '--' }}</td>
+                        <td class="font-0" >{{ $accident_service_report->assessmentReports[2]->variance ?? '--' }}</td>
                         <td></td>
-                        <td colspan="3" class="bg-gray-clr" style="font-weight: bold">Sum Insured</td>
-                        <td class="bg-gray-clr">{{ $accident_service_report['sum_insured'] ?? '--' }}</td>
+                        <td colspan="3" class="bg-gray-clr font" style="font-weight: bold">Sum Insured</td>
+                        <td class="bg-gray-clr font-0">{{ $accident_service_report['sum_insured'] ?? '--' }}</td>
                     </tr>
                     <tr>
-                        <td colspan="2" style="font-weight: bold">Mechanical</td>
-                        <td colspan="2">{{ $accident_service_report->assessmentReports[3]->quoted ?? '--' }}</td>
-                        <td colspan="2">{{ $accident_service_report->assessmentReports[3]->assessed ?? '--' }}</td>
-                        <td colspan="">{{ $accident_service_report->assessmentReports[3]->variance ?? '--' }}</td>
+                        <td class="font ps-2"  colspan="2" style="font-weight: bold">Mechanical</td>
+                        <td class="font-0"  colspan="2">{{ $accident_service_report->assessmentReports[3]->quoted ?? '--' }}</td>
+                        <td class="font-0"  colspan="2">{{ $accident_service_report->assessmentReports[3]->assessed ?? '--' }}</td>
+                        <td class="font-0"  colspan="">{{ $accident_service_report->assessmentReports[3]->variance ?? '--' }}</td>
                         <td></td>
-                        <td colspan="3" style="font-weight: bold">Market Value</td>
-                        <td>{{ $accident_service_report['market_value'] ?? '--' }}</td>
+                        <td class="font"  colspan="3" style="font-weight: bold">Market Value</td>
+                        <td class="font-0" >{{ $accident_service_report['market_value'] ?? '--' }}</td>
                     </tr>
                     <tr>
-                        <td class="bg-gray-clr" colspan="2" style="font-weight: bold">Misc Labour</td>
-                        <td colspan="2">{{ $accident_service_report->assessmentReports[4]->quoted ?? '--' }}</td>
-                        <td colspan="2">{{ $accident_service_report->assessmentReports[4]->assessed ?? '--' }}</td>
-                        <td colspan="">{{ $accident_service_report->assessmentReports[4]->variance ?? '--' }}</td>
+                        <td class="bg-gray-clr font ps-2" colspan="2" style="font-weight: bold">Misc Labour</td>
+                        <td class="font-0"  colspan="2">{{ $accident_service_report->assessmentReports[4]->quoted ?? '--' }}</td>
+                        <td class="font-0"  colspan="2">{{ $accident_service_report->assessmentReports[4]->assessed ?? '--' }}</td>
+                        <td class="font-0"  colspan="">{{ $accident_service_report->assessmentReports[4]->variance ?? '--' }}</td>
                         <td></td>
-                        <td class="bg-gray-clr" colspan="3" style="font-weight: bold">Salvage Value</td>
-                        <td class="bg-gray-clr">{{ $accident_service_report['salvage_value'] ?? '--' }}</td>
+                        <td class="bg-gray-clr font" colspan="3" style="font-weight: bold">Salvage Value</td>
+                        <td class="bg-gray-clr font-0">{{ $accident_service_report['salvage_value'] ?? '--' }}</td>
                     </tr>
                     <tr>
-                        <td colspan="2" style="font-weight: bold">Total Labour</td>
-                        <td colspan="2">{{ $accident_service_report->assessmentReports[5]->quoted ?? '--' }}</td>
-                        <td colspan="2">{{ $accident_service_report->assessmentReports[5]->assessed ?? '--' }}</td>
-                        <td colspan="">{{ $accident_service_report->assessmentReports[5]->variance ?? '--' }}</td>
+                        <td class="font ps-2"  colspan="2" style="font-weight: bold">Total Labour</td>
+                        <td class="font-0"  colspan="2">{{ $accident_service_report->assessmentReports[5]->quoted ?? '--' }}</td>
+                        <td class="font-0"  colspan="2">{{ $accident_service_report->assessmentReports[5]->assessed ?? '--' }}</td>
+                        <td class="font-0"  colspan="">{{ $accident_service_report->assessmentReports[5]->variance ?? '--' }}</td>
                         <td></td>
-                        <td colspan="3" style="font-weight: bold">Settlement</td>
-                        <td>${{ $accident_service_report['settlement'] ?? '--' }}</td>
+                        <td class="font"  colspan="3" style="font-weight: bold">Settlement</td>
+                        <td class="font-0" >${{ $accident_service_report['settlement'] ?? '--' }}</td>
                     </tr>
                     <tr>
-                        <td class="bg-gray-clr" colspan="2" style="font-weight: bold">Parts</td>
-                        <td colspan="2">{{ $accident_service_report->assessmentReports[6]->quoted ?? '--' }}</td>
-                        <td colspan="2">{{ $accident_service_report->assessmentReports[6]->assessed ?? '--' }}</td>
-                        <td colspan="">{{ $accident_service_report->assessmentReports[6]->variance ?? '--' }}</td>
+                        <td class="bg-gray-clr font ps-2" colspan="2" style="font-weight: bold">Parts</td>
+                        <td class="font-0"  colspan="2">{{ $accident_service_report->assessmentReports[6]->quoted ?? '--' }}</td>
+                        <td class="font-0"  colspan="2">{{ $accident_service_report->assessmentReports[6]->assessed ?? '--' }}</td>
+                        <td class="font-0"  colspan="">{{ $accident_service_report->assessmentReports[6]->variance ?? '--' }}</td>
                         <td></td>
-                        <td class="bg-gray-clr" style="font-weight: bold" colspan="3">Less Excess</td>
-                        <td class="bg-gray-clr">${{ $accident_service_report['less_excess'] ?? '--' }}</td>
+                        <td class="bg-gray-clr font" style="font-weight: bold" colspan="3">Less Excess</td>
+                        <td class="bg-gray-clr font-0">${{ $accident_service_report['less_excess'] ?? '--' }}</td>
                     </tr>
                     <tr>
-                        <td colspan="2" style="font-weight: bold">Sublet</td>
-                        <td colspan="2">{{ $accident_service_report->assessmentReports[7]->quoted ?? '--' }}</td>
-                        <td colspan="2">{{ $accident_service_report->assessmentReports[7]->assessed ?? '--' }}</td>
-                        <td colspan="">{{ $accident_service_report->assessmentReports[7]->variance ?? '--' }}</td>
+                        <td class="font ps-2"  colspan="2" style="font-weight: bold">Sublet</td>
+                        <td class="font-0"  colspan="2">{{ $accident_service_report->assessmentReports[7]->quoted ?? '--' }}</td>
+                        <td class="font-0"  colspan="2">{{ $accident_service_report->assessmentReports[7]->assessed ?? '--' }}</td>
+                        <td class="font-0"  colspan="">{{ $accident_service_report->assessmentReports[7]->variance ?? '--' }}</td>
                         <td></td>
-                        <td style="font-weight: bold" colspan="3">Settlement
-                            <br />Sub Total
+                        <td class="font"  style="font-weight: bold" colspan="3">Settlement
+                            Sub Total
                         </td>
-                        <td>${{ $accident_service_report['settlement_sub_total'] ?? '--' }}</td>
+                        <td class="font-0" >${{ $accident_service_report['settlement_sub_total'] ?? '--' }}</td>
                     </tr>
                     <tr>
-                        <td class="bg-gray-clr" colspan="2" style="font-weight: bold">Supplementary</td>
-                        <td class="bg-gray-clr" colspan="2">{{ $accident_service_report->assessmentReports[8]->quoted ?? '--' }}</td>
-                        <td class="bg-gray-clr" colspan="2">{{ $accident_service_report->assessmentReports[8]->assessed ?? '--' }}</td>
-                        <td class="bg-gray-clr" colspan="">{{ $accident_service_report->assessmentReports[8]->variance ?? '--' }}</td>
+                        <td class="bg-gray-clr font ps-2" colspan="2" style="font-weight: bold">Supplementary</td>
+                        <td class="bg-gray-clr font-0" colspan="2">{{ $accident_service_report->assessmentReports[8]->quoted ?? '--' }}</td>
+                        <td class="bg-gray-clr font-0" colspan="2">{{ $accident_service_report->assessmentReports[8]->assessed ?? '--' }}</td>
+                        <td class="bg-gray-clr font-0" colspan="">{{ $accident_service_report->assessmentReports[8]->variance ?? '--' }}</td>
                         <td></td>
-                        <td style="font-weight: bold" colspan="3">Settlement
-                            <br /> GST
+                        <td class="font"  style="font-weight: bold" colspan="3">Settlement
+                             GST
                         </td>
-                        <td>${{ $accident_service_report['settlement_gst'] ?? '--' }}</td>
+                        <td class="font-0" >${{ $accident_service_report['settlement_gst'] ?? '--' }}</td>
                     </tr>
                     <tr>
-                        <td colspan="2" style="font-weight: bold">Sub Total</td>
-                        <td colspan="2">{{ $accident_service_report->assessmentReports[9]->quoted ?? '--' }}</td>
-                        <td colspan="2">{{ $accident_service_report->assessmentReports[9]->assessed ?? '--' }}</td>
-                        <td colspan="">{{ $accident_service_report->assessmentReports[9]->variance ?? '--' }}</td>
+                        <td class="font ps-2"  colspan="2" style="font-weight: bold">Sub Total</td>
+                        <td class="font-0"  colspan="2">{{ $accident_service_report->assessmentReports[9]->quoted ?? '--' }}</td>
+                        <td class="font-0"  colspan="2">{{ $accident_service_report->assessmentReports[9]->assessed ?? '--' }}</td>
+                        <td class="font-0"  colspan="">{{ $accident_service_report->assessmentReports[9]->variance ?? '--' }}</td>
                         <td></td>
-                        <td colspan="3" style="font-weight: bold; background: rgb(98, 221, 98)">Settlement
-                            <br /> Total
+                        <td class="font bg-gray-clr"  colspan="3" style="font-weight: bold; background: rgb(98, 221, 98)">Settlement
+                             Total
                         </td>
-                        <td style="background: rgb(98, 221, 98)">${{ $accident_service_report['settlement_total'] ?? '--' }}</td>
+                        <td class="font-0 bg-gray-clr"  style="background: rgb(98, 221, 98)">${{ $accident_service_report['settlement_total'] ?? '--' }}</td>
                     </tr>
                     <tr>
-                        <td class="bg-gray-clr" colspan="2" style="font-weight: bold">GST</td>
-                        <td colspan="2" class="bg-gray-clr">{{ $accident_service_report->assessmentReports[10]->quoted ?? '--' }}</td>
-                        <td colspan="2" class="bg-gray-clr">{{ $accident_service_report->assessmentReports[10]->assessed ?? '--' }}</td>
-                        <td class="bg-gray-clr">{{ $accident_service_report->assessmentReports[10]->variance ?? '--' }}</td>
+                        <td class="bg-gray-clr font ps-2" colspan="2" style="font-weight: bold">GST</td>
+                        <td colspan="2" class="bg-gray-clr font-0">{{ $accident_service_report->assessmentReports[10]->quoted ?? '--' }}</td>
+                        <td colspan="2" class="bg-gray-clr font-0">{{ $accident_service_report->assessmentReports[10]->assessed ?? '--' }}</td>
+                        <td class="bg-gray-clr font-0">{{ $accident_service_report->assessmentReports[10]->variance ?? '--' }}</td>
                         <td colspan="2"></td>
-                        <td class="bg-gray-clr" colspan="4" style="font-weight: bold; height: 3%"></td>
+                        <td colspan="4" style="font-weight: bold; height: 3%"></td>
                     </tr>
                     <tr>
-                        <td colspan="2" style="font-weight: bold">Total Estimate</td>
-                        <td colspan="2">{{ $accident_service_report->assessmentReports[11]->quoted ?? '--' }}</td>
-                        <td colspan="2">{{ $accident_service_report->assessmentReports[11]->assessed ?? '--' }}</td>
-                        <td>{{ $accident_service_report->assessmentReports[11]->variance ?? '--' }}</td>
+                        <td class="font ps-2"  colspan="2" style="font-weight: bold">Total Estimate</td>
+                        <td class="font-0"  colspan="2">{{ $accident_service_report->assessmentReports[11]->quoted ?? '--' }}</td>
+                        <td class="font-0"  colspan="2">{{ $accident_service_report->assessmentReports[11]->assessed ?? '--' }}</td>
+                        <td class="font-0" >{{ $accident_service_report->assessmentReports[11]->variance ?? '--' }}</td>
                         <td colspan=""></td>
-                        <td colspan="3" style="font-weight: bold">Cash Settled</td>
-                        <td>${{ $accident_service_report['cash_settled'] ?? '--' }}</td>
+                        <td class="font"  colspan="3" style="font-weight: bold">Cash Settled</td>
+                        <td class="font-0" >${{ $accident_service_report['cash_settled'] ?? '--' }}</td>
                     </tr>
                     <tr>
                         <td class="bg-gray-clr" colspan="7" style="font-weight: bold; height: 3%"></td>
                         <td></td>
-                        <td class="bg-gray-clr" colspan="3" style="font-weight: bold">Certificate
-                            <br /> Compliance
+                        <td class="bg-gray-clr font" colspan="3" style="font-weight: bold">Certificate
+                             Compliance
                         </td>
-                        <td class="bg-gray-clr">{{ $accident_service_report['certificate_compliance'] ?? '--' }}</td>
+                        <td class="bg-gray-clr font-0">{{ $accident_service_report['certificate_compliance'] ?? '--' }}</td>
                     </tr>
                     <tr>
-                        <td colspan="2" style="font-weight: bold">Reported Items</td>
-                        <td colspan="2">{{ $accident_service_report->assessmentReports[12]->quoted ?? '--' }}</td>
-                        <td colspan="2">{{ $accident_service_report->assessmentReports[12]->assessed ?? '--' }}</td>
-                        <td>{{ $accident_service_report->assessmentReports[12]->variance ?? '--' }}</td>
+                        <td class="font ps-2"  colspan="2" style="font-weight: bold">Reported Items</td>
+                        <td class="font-0"  colspan="2">{{ $accident_service_report->assessmentReports[12]->quoted ?? '--' }}</td>
+                        <td class="font-0"  colspan="2">{{ $accident_service_report->assessmentReports[12]->assessed ?? '--' }}</td>
+                        <td class="font-0" >{{ $accident_service_report->assessmentReports[12]->variance ?? '--' }}</td>
                         <td></td>
-                        <td colspan="3" style="font-weight: bold">Salvage
-                            <br /> Condition
+                        <td class="font"  colspan="3" style="font-weight: bold">Salvage
+                             Condition
                         </td>
-                        <td>{{ $accident_service_report['salvage_condition'] ?? '--' }}</td>
+                        <td class="font-0" >{{ $accident_service_report['salvage_condition'] ?? '--' }}</td>
                     </tr>
                     <tr>
-                        <td class="bg-gray-clr" colspan="2" style="font-weight: bold; height: 3%">Towing</td>
-                        <td class="bg-gray-clr" colspan="2">{{ $accident_service_report->assessmentReports[13]->quoted ?? '--' }}</td>
-                        <td class="bg-gray-clr" colspan="2">{{ $accident_service_report->assessmentReports[13]->assessed ?? '--' }}</td>
-                        <td class="bg-gray-clr"> {{ $accident_service_report->assessmentReports[13]->variance ?? '--' }}</td>
+                        <td class="bg-gray-clr font ps-2" colspan="2" style="font-weight: bold; height: 3%">Towing</td>
+                        <td class="bg-gray-clr font-0" colspan="2">{{ $accident_service_report->assessmentReports[13]->quoted ?? '--' }}</td>
+                        <td class="bg-gray-clr font-0" colspan="2">{{ $accident_service_report->assessmentReports[13]->assessed ?? '--' }}</td>
+                        <td class="bg-gray-clr font-0"> {{ $accident_service_report->assessmentReports[13]->variance ?? '--' }}</td>
                         <td></td>
                         <td style="font-weight: bold" colspan="3"></td>
                         <td></td>
                     </tr>
                     <tr>
-                        <td style="font-weight: bold" colspan="2">External Sublet</td>
-                        <td colspan="2">{{ $accident_service_report->assessmentReports[14]->quoted ?? '--' }}</td>
-                        <td colspan="2" style="">{{ $accident_service_report->assessmentReports[14]->assessed ?? '--' }}</td>
-                        <td>{{ $accident_service_report->assessmentReports[14]->variance ?? '--' }}</td>
+                        <td class="font ps-2"  style="font-weight: bold" colspan="2">External Sublet</td>
+                        <td class="font-0"  colspan="2">{{ $accident_service_report->assessmentReports[14]->quoted ?? '--' }}</td>
+                        <td class="font-0"  colspan="2" style="">{{ $accident_service_report->assessmentReports[14]->assessed ?? '--' }}</td>
+                        <td class="font-0" >{{ $accident_service_report->assessmentReports[14]->variance ?? '--' }}</td>
                         <td></td>
-                        <td class="selected-bg-gray" style="font-weight: bold">Supps</td>
-                        <td class="selected-bg-gray" style="font-weight: bold">Quoted</td>
-                        <td class="selected-bg-gray" style="font-weight: bold">Assessed</td>
-                        <td class="selected-bg-gray" style="font-weight: bold">Variance</td>
+                        <td class="selected-bg-gray font" style="font-weight: bold">Supps</td>
+                        <td class="selected-bg-gray font" style="font-weight: bold">Quoted</td>
+                        <td class="selected-bg-gray font" style="font-weight: bold">Assessed</td>
+                        <td class="selected-bg-gray font" style="font-weight: bold">Variance</td>
                     </tr>
                     <tr>
-                        <td class="bg-gray-clr" colspan="2" style="font-weight: bold; height: 3%">Additional</td>
-                        <td class="bg-gray-clr" colspan="2">{{ $accident_service_report->assessmentReports[15]->quoted ?? '--' }}</td>
-                        <td class="bg-gray-clr" colspan="2">{{ $accident_service_report->assessmentReports[15]->assessed ?? '--' }}</td>
-                        <td class="bg-gray-clr">{{ $accident_service_report->assessmentReports[15]->variance ?? '--' }}</td>
+                        <td class="bg-gray-clr font ps-2" colspan="2" style="font-weight: bold; height: 3%">Additional</td>
+                        <td class="bg-gray-clr font-0" colspan="2">{{ $accident_service_report->assessmentReports[15]->quoted ?? '--' }}</td>
+                        <td class="bg-gray-clr font-0" colspan="2">{{ $accident_service_report->assessmentReports[15]->assessed ?? '--' }}</td>
+                        <td class="bg-gray-clr font-0">{{ $accident_service_report->assessmentReports[15]->variance ?? '--' }}</td>
                         <td></td>
-                        <td class="bg-gray-clr">Supp 1</td>
-                        <td class="bg-gray-clr">{{ $accident_service_report->suppValues[0]->quoted ?? '--' }}</td>
-                        <td class="bg-gray-clr">{{ $accident_service_report->suppValues[0]->assessed ?? '--' }}</td>
-                        <td class="bg-gray-clr">{{ $accident_service_report->suppValues[0]->variance ?? '--' }}</td>
+                        <td class="bg-gray-clr font-0">Supp 1</td>
+                        <td class="bg-gray-clr font-0">{{ $accident_service_report->suppValues[0]->quoted ?? '--' }}</td>
+                        <td class="bg-gray-clr font-0">{{ $accident_service_report->suppValues[0]->assessed ?? '--' }}</td>
+                        <td class="bg-gray-clr font-0">{{ $accident_service_report->suppValues[0]->variance ?? '--' }}</td>
                     </tr>
                     <tr>
-                        <td colspan="2" style="font-weight: bold">Discounts</td>
-                        <td colspan="2">{{ $accident_service_report->assessmentReports[16]->quoted ?? '--' }}</td>
-                        <td colspan="2">{{ $accident_service_report->assessmentReports[16]->assessed ?? '--' }}</td>
-                        <td>{{ $accident_service_report->assessmentReports[16]->variance ?? '--' }}</td>
+                        <td class="font ps-2"  colspan="2" style="font-weight: bold">Discounts</td>
+                        <td class="font-0"  colspan="2">{{ $accident_service_report->assessmentReports[16]->quoted ?? '--' }}</td>
+                        <td class="font-0"  colspan="2">{{ $accident_service_report->assessmentReports[16]->assessed ?? '--' }}</td>
+                        <td class="font-0" >{{ $accident_service_report->assessmentReports[16]->variance ?? '--' }}</td>
                         <td></td>
-                        <td>Supp 2</td>
-                        <td>{{ $accident_service_report->suppValues[1]->quoted ?? '--' }}</td>
-                        <td>{{ $accident_service_report->suppValues[1]->assessed ?? '--' }}</td>
-                        <td>{{ $accident_service_report->suppValues[1]->variance ?? '--' }}</td>
+                        <td class="font-0" >Supp 2</td>
+                        <td class="font-0" >{{ $accident_service_report->suppValues[1]->quoted ?? '--' }}</td>
+                        <td class="font-0" >{{ $accident_service_report->suppValues[1]->assessed ?? '--' }}</td>
+                        <td class="font-0" >{{ $accident_service_report->suppValues[1]->variance ?? '--' }}</td>
                     </tr>
                     <tr>
-                        <td class="bg-gray-clr" colspan="2" style="font-weight: bold; height: 3%">Less ITC</td>
-                        <td class="bg-gray-clr" colspan="2">{{ $accident_service_report->assessmentReports[17]->quoted ?? '--' }}</td>
-                        <td class="bg-gray-clr" colspan="2">{{ $accident_service_report->assessmentReports[17]->assessed ?? '--' }}</td>
-                        <td class="bg-gray-clr">{{ $accident_service_report->assessmentReports[17]->variance ?? '--' }}</td>
+                        <td class="bg-gray-clr font ps-2" colspan="2" style="font-weight: bold; height: 3%">Less ITC</td>
+                        <td class="bg-gray-clr font-0" colspan="2">{{ $accident_service_report->assessmentReports[17]->quoted ?? '--' }}</td>
+                        <td class="bg-gray-clr font-0" colspan="2">{{ $accident_service_report->assessmentReports[17]->assessed ?? '--' }}</td>
+                        <td class="bg-gray-clr font-0">{{ $accident_service_report->assessmentReports[17]->variance ?? '--' }}</td>
                         <td></td>
-                        <td class="bg-gray-clr">Supp 3</td>
-                        <td class="bg-gray-clr">{{ $accident_service_report->suppValues[2]->quoted ?? '--' }}</td>
-                        <td class="bg-gray-clr">{{ $accident_service_report->suppValues[2]->assessed ?? '--' }}</td>
-                        <td class="bg-gray-clr">{{ $accident_service_report->suppValues[2]->variance ?? '--' }}</td>
+                        <td class="bg-gray-clr font-0">Supp 3</td>
+                        <td class="bg-gray-clr font-0">{{ $accident_service_report->suppValues[2]->quoted ?? '--' }}</td>
+                        <td class="bg-gray-clr font-0">{{ $accident_service_report->suppValues[2]->assessed ?? '--' }}</td>
+                        <td class="bg-gray-clr font-0">{{ $accident_service_report->suppValues[2]->variance ?? '--' }}</td>
                     </tr>
                     <tr>
-                        <td colspan="2" style="font-weight: bold; height: 3%">Less Contribution</td>
-                        <td colspan="2">{{ $accident_service_report->assessmentReports[18]->quoted ?? '--' }}</td>
-                        <td colspan="2">{{ $accident_service_report->assessmentReports[18]->assessed ?? '--' }}</td>
-                        <td>{{ $accident_service_report->assessmentReports[18]->variance ?? '--' }}</td>
+                        <td class="font ps-2" colspan="2" style="font-weight: bold; height: 3%">Less Contribution</td>
+                        <td class="font-0" colspan="2">{{ $accident_service_report->assessmentReports[18]->quoted ?? '--' }}</td>
+                        <td class="font-0" colspan="2">{{ $accident_service_report->assessmentReports[18]->assessed ?? '--' }}</td>
+                        <td class="font-0" >{{ $accident_service_report->assessmentReports[18]->variance ?? '--' }}</td>
                         <td></td>
-                        <td>Total</td>
-                        <td>{{ $accident_service_report->total_supps ?? '--' }}</td>
+                        <td class="font-0" >Total</td>
+                        <td class="font-0">{{ $accident_service_report->total_supps ?? '--' }}</td>
                         <td></td>
                         <td></td>
                     </tr>
                     <tr style="background: rgb(179, 173, 173);">
-                        <td colspan="2">
-                            <p style="font-size: 13px; color:black; text-align:left;font-weight:bold">Repairer: </p>
+                        <td colspan="2" class="font ps-2" style=" color:black; text-align:left;">
+                            Repairer: 
                         </td>
-                        <td colspan="2" style="font-size: 13px; color:black; text-align:left;font-weight:bold">
+                        <td class="font" colspan="2" style=" color:black; text-align:left;font-weight:bold">
                             Quoted:</td>
-                        <td colspan="2">
-                            <p style="font-size: 13px; color:black; text-align:left;font-weight:bold">Assessed:</p>
+                        <td class="font" colspan="2" style=" color:black; text-align:left;">
+                            Assessed:
                         </td>
-                        <td style="font-size: 13px; color:black; text-align:left;font-weight:bold">Variance</td>
+                        <td class="font" style=" color:black; text-align:left;font-weight:bold">Variance</td>
                     </tr>
                     <tr class="bg-gray-clr">
-                        <td colspan="2" style="font-weight: bold; height: 3%">PAV</td>
-                        <td colspan="2">{{ $accident_service_report->assessmentReports[19]->quoted ?? '--' }}</td>
-                        <td colspan="2">{{ $accident_service_report->assessmentReports[19]->assessed ?? '--' }}</td>
-                        <td>{{ $accident_service_report->assessmentReports[19]->variance ?? '--' }}</td>
+                        <td class="font ps-2" colspan="2" style="font-weight: bold; height: 3%">PAV</td>
+                        <td class="font-0" colspan="2">{{ $accident_service_report->assessmentReports[19]->quoted ?? '--' }}</td>
+                        <td class="font-0" colspan="2">{{ $accident_service_report->assessmentReports[19]->assessed ?? '--' }}</td>
+                        <td class="font-0">{{ $accident_service_report->assessmentReports[19]->variance ?? '--' }}</td>
                     </tr>
                     <tr style="background: rgb(179, 173, 173)">
-                        <td colspan="3">
-                            <p style="font-size: 13px; color:black; text-align:left;font-weight:bold">Book Values </p>
+                        <td colspan="3" class="font ps-2 " style=" color:black; text-align:left;">
+                            Book Values 
                         </td>
-                        <td colspan="4" style="font-size: 13px; color:black; text-align:left;font-weight:bold">Live
+                        <td class="font" colspan="4" style=" color:black; text-align:left;font-weight:bold">Live
                             Market Values</td>
                     </tr>
-                    <tr class="bg-gray-clr">
-                        <td colspan="3">
-                            <p style="font-size: 13px; color:black; text-align:left;font-weight:bold">Trade Low</p>
+                    <tr class="bg-gray-clr font">
+                        <td colspan="3" class="ps-2" style=" color:black; text-align:left;">
+                            Trade Low
                         </td>
-                        <td colspan="4" style="font-size: 13px; color:black; text-align:left;font-weight:bold">
+                        <td colspan="4" style=" color:black; text-align:left;font-weight:bold">
                             Market One</td>
                     </tr>
-                    <tr>
-                        <td colspan="3">
-                            <p style="font-size: 13px; color:black; text-align:left;font-weight:bold">Trade</p>
+                    <tr class="font">
+                        <td colspan="3" class="ps-2" style=" color:black; text-align:left;">
+                            Trade
                         </td>
-                        <td colspan="4" style="font-size: 13px; color:black; text-align:left;font-weight:bold">
+                        <td colspan="4" style=" color:black; text-align:left;font-weight:bold">
                             Market Two</td>
                     </tr>
-                    <tr class="bg-gray-clr">
-                        <td colspan="3">
-                            <p style="font-size: 13px; color:black; text-align:left;font-weight:bold">Retail</p>
+                    <tr class="bg-gray-clr font">
+                        <td colspan="3" class="ps-2" style=" color:black; text-align:left;">
+                            Retail
                         </td>
-                        <td colspan="4" style="font-size: 13px; color:black; text-align:left;font-weight:bold">
+                        <td colspan="4" style=" color:black; text-align:left;font-weight:bold">
                             Market Three</td>
                     </tr>
                     <tr>
-                        <td colspan="3">
-                            <p style="font-size: 13px; color:black; text-align:left;font-weight:bold">Value Avg KM's
-                            </p>
+                        <td class="font ps-2" colspan="3" style=" color:black; text-align:left;">
+                            Value Avg KM's
+                            
                         </td>
-                        <td colspan="4" style="font-size: 13px; color:black; text-align:left;font-weight:bold">
+                        <td class="font" colspan="4" style=" color:black; text-align:left;font-weight:bold">
                             Market Avg</td>
                     </tr>
 
@@ -724,13 +791,13 @@
             <table class="table" border="0" id="detail-assessment-4" width="100%">
                 <tbody>
                     <tr class="table-header-bg-clr" style="margin-top: 5px">
-                        <td width="100%">
-                            <p style="font-size: 13px; color:white; text-align:left;font-weight:bold"
-                                class="text-right">Comments / Notes</p>
+                        <td width="100%"  style=" color:white; text-align:left;"
+                                class="text-right font ps-2">
+                            Comments / Notes
                         </td>
                     </tr>
                     <tr>
-                        <td width="100%">
+                        <td class="font-0 ps-2" width="100%">
                             <p>{{ $accident_service_report['comments'] ?? '--' }}</p>
                         </td>
                     </tr>
@@ -746,39 +813,41 @@
             <table class="table" border="0" id="detail-assessment-4" width="100%">
                 <tbody width="100%">
                     <tr class="table-header-bg-clr" style="margin-top: 5px">
-                        <td width="30%">
-                            <p style="font-size: 13px; color:white; text-align:left;font-weight:bold"
-                                class="text-right">Vehicle Condition</p>
+                        <td width="30%" style=" color:white; text-align:left;"
+                                class="text-right font ps-2">
+                            Vehicle Condition
                         </td>
                         <td width="30%">
-                            <p style="font-size: 13px; color:white; text-align:left;font-weight:bold"
+                            <p style=" color:white; text-align:left;font-weight:bold"
                                 class="text-right"></p>
                         </td>
-                        <td width="30%">
-                            <p style="font-size: 13px; color:white; text-align:left;font-weight:bold"
-                                class="text-right">Suspension Condition</p>
+                        <td width="30%"  style=" color:white; text-align:left;"
+                                class="text-right font">
+                            Suspension Condition
                         </td>
                     </tr>
                     <tr>
-                        <td class="bg-gray-clr"><span style="font-weight:bold">Overall:</span> {{ $accident_service_report['overall'] ?? '--' }}</td>
-                        <td class="bg-gray-clr"><span style="font-weight:bold">Brakes: </span>{{ $accident_service_report['brakes'] ?? '--'}}</td>
-                        <td class="bg-gray-clr"><span style="font-weight:bold">RH Front: </span>{{ $accident_service_report['rh_front'] ?? '--' }}</td>
+                        <td class="bg-gray-clr "><span class="font ps-2" style="font-weight:bold">Overall:</span > <span class="font-0"> {{ $accident_service_report['overall'] ?? '--' }}</span> </td>
+                        <td class="bg-gray-clr "><span class="font" style="font-weight:bold">Brakes: </span> <span class="font-0"> {{ $accident_service_report['brakes'] ?? '--'}} </span></td>
+                        <td class="bg-gray-clr "><span class="font" style="font-weight:bold">RH Front: </span> <span class="font-0"> {{ $accident_service_report['rh_front'] ?? '--' }} </span></td>
                     </tr>
                     <tr>
-                        <td><span style="font-weight:bold">Interior:</span> {{ $accident_service_report['interior'] ?? '--' }}</td>
-                        <td><span style="font-weight:bold">Tyre Depth Unit Front: </span>{{ $accident_service_report['tyre_depth_unit_front'] ??'--' }}</td>
-                        <td class="bg-gray-clr"><span style="font-weight:bold">LH Front: </span>{{ $accident_service_report['lh_front'] ?? '--' }}</td>
+                        <td ><span class="font ps-2" style="font-weight:bold">Interior:</span> <span class="font-0"> {{ $accident_service_report['interior'] ?? '--' }} </span></td>
+                        <td ><span class="font" style="font-weight:bold">Tyre Depth Unit Front: </span> <span class="font-0">
+                        {{ $accident_service_report['tyre_depth_unit_front'] ??'--' }}</td>
+                        </span>
+                        <td ><span class="font" style="font-weight:bold">LH Front: </span> <span class="font-0">{{ $accident_service_report['lh_front'] ?? '--' }}  </span></td>
                     </tr>
                     <tr>
-                        <td><span style="font-weight:bold">Exterior:</span> {{ $accident_service_report['exterior'] ?? '--' }}</td>
-                        <td><span style="font-weight:bold">Tyre Depth Unit Rear: </span>{{ $accident_service_report['tyre_depth_unit_rear'] ?? '--' }}</td>
-                        <td class="bg-gray-clr"><span style="font-weight:bold">RH Rear: </span>{{ $accident_service_report['rh_rear'] ?? '--' }}</td>
+                        <td class="bg-gray-clr" ><span class="font ps-2" style="font-weight:bold">Exterior:</span> <span class="font-0">  {{ $accident_service_report['exterior'] ?? '--' }} </span></td>
+                        <td class="bg-gray-clr" ><span class="font" style="font-weight:bold">Tyre Depth Unit Rear: </span> <span class="font-0">{{ $accident_service_report['tyre_depth_unit_rear'] ?? '--' }}</span></td>
+                        <td class="bg-gray-clr "><span class="font" style="font-weight:bold">RH Rear: </span> <span class="font-0"> {{ $accident_service_report['rh_rear'] ?? '--' }} </span></td>
                     </tr>
                     <tr>
-                        <td><span style="font-weight:bold">Steering:</span> {{ $accident_service_report['steering'] ?? '--' }}</td>
+                        <td><span  class="font ps-2" style="font-weight:bold">Steering:</span>  <span  class="font-0">{{ $accident_service_report['steering'] ?? '--' }}</span> </td>
                         <td></td>
-                        {{-- <td><span style="font-weight:bold">Tyre Depth Unit Rear: </span>RH 0.00 LH 0.00</td> --}}
-                        <td class="bg-gray-clr"><span style="font-weight:bold">LH Rear: </span>{{ $accident_service_report['lh_rear'] ?? '--' }}</td>
+                        {{-- <td><span  class="font" style="font-weight:bold">Tyre Depth Unit Rear: </span> <span  class="font-0">  RH 0.00 LH 0.00 </span></td> --}}
+                        <td><span class="font" style="font-weight:bold">LH Rear: </span> <span class="font-0" > {{ $accident_service_report['lh_rear'] ?? '--' }} </span></td>
                     </tr>
 
                 </tbody>
@@ -793,9 +862,9 @@
             <table class="table" border="0" id="detail-assessment-4" width="100%">
                 <tbody>
                     <tr class="table-header-bg-clr" style="margin-top: 5px">
-                        <td width="100%">
-                            <p style="font-size: 13px; color:white; text-align:left;font-weight:bold"
-                                class="text-right">Damage Details</p>
+                        <td width="100%" style=" color:white; text-align:left;"
+                                class="text-right font ps-2">
+                            Damage Details
                         </td>
                     </tr>
                 </tbody>
@@ -811,23 +880,23 @@
         <div class="col-md-8">
             <table>
                 <tbody>
-                    <tr style="background: rgb(179, 173, 173); font-weight: bold">
-                        <td>Damage Section</td>
+                    <tr class="font" style="background: rgb(179, 173, 173); font-weight: bold">
+                        <td class="ps-2">Damage Section</td>
                         <td>Damage Level</td>
                         <td>Comments</td>
                     </tr>
-                    <tr class="bg-gray-clr">
-                        <td>Front Bumper Bar</td>
+                    <tr class="bg-gray-clr font-0">
+                        <td class="ps-2">Front Bumper Bar</td>
                         <td>{{ $accident_service_report->demageValues[0]->demage_level ?? '--'}}</td>
                         <td>{{ $accident_service_report->demageValues[0]->comment ?? '--'}}</td>
                     </tr>
-                    <tr>
-                        <td>Left Front Guard</td>
+                    <tr class="font-0">
+                        <td class="ps-2">Left Front Guard</td>
                         <td>{{ $accident_service_report->demageValues[1]->demage_level ?? '--'}}</td>
                         <td>{{ $accident_service_report->demageValues[1]->comment ?? '--'}}</td>
                     </tr>
-                    <tr class="bg-gray-clr">
-                        <td>Left Front Door</td>
+                    <tr class="bg-gray-clr font-0">
+                        <td class="ps-2">Left Front Door</td>
                         <td>{{ $accident_service_report->demageValues[2]->demage_level ?? '--'}}</td>
                         <td>{{ $accident_service_report->demageValues[2]->comment ?? '--'}}</td>
                     </tr>
@@ -836,8 +905,8 @@
                         <td></td>
                         <td></td>
                     </tr>
-                    <tr class="bg-gray-clr">
-                        <td><span style="font-weight: bold">Repair Duration Days:</span> </td>
+                    <tr class="font">
+                        <td><span style="font-weight: bold " class="ps-2">Repair Duration Days:</span> </td>
                         <td>{{ $accident_service_report->repair_duration_days }}</td>
                         <td></td>
                     </tr>
@@ -847,32 +916,38 @@
     </div>
     {{-- Demage Details End --}}
     <br>
+
+
+
+
     {{-- Assessor Details Start --}}
     <div class="row mb-5">
         <div class="col-md-12">
             <table class="table" border="0" id="detail-assessment-4" width="100%">
                 <tbody>
                     <tr class="table-header-bg-clr" style="margin-top: 5px">
-                        <td colspan="12" width="100%">
-                            <p style="font-size: 13px; color:white; text-align:left;font-weight:bold"
-                                class="text-right">Assessor Details</p>
+                        <td colspan="12" width="100%"  style=" color:white; text-align:left;"
+                                class="text-right font ps-2">
+                            Assessor Details
                         </td>
                     </tr>
                     @forelse ($accident_service_report->serviceAssessors as $service_assessor)
                         {{-- @dd($service_assessor->assessor) --}}
                         <tr>
-                            <td class="bg-gray-clr"><span style="font-weight:bold">Assessor:</span> {{ $service_assessor->assessor->assessor ?? '--' }}</td>
-                            <td class="bg-gray-clr"><span style="font-weight:bold">Email:
-                                </span>{{ $service_assessor->assessor->email ?? '--' }}</td>
-                            <td class="bg-gray-clr"><span style="font-weight:bold">Inspection Date: </span>{{ $service_assessor->assessor->inspection_date ?? '--' }}</td>
+                            <td class="bg-gray-clr"><span class="font ps-2" style="font-weight:bold">Assessor:
+                                </span> <span class="font-0"> {{ $service_assessor->assessor->assessor ?? '--' }} </span></td>
+                            <td class="bg-gray-clr "><span class="font" style="font-weight:bold">Email:
+                                </span> <span class="font-0"> {{ $service_assessor->assessor->email ?? '--' }} </span></td>
+                            <td class="bg-gray-clr "><span class="font" style="font-weight:bold">Inspection Date: </span>
+                                 <span class="font-0">  {{ $service_assessor->assessor->inspection_date ?? '--' }} </span></td>
                         </tr>
                         <tr>
-                            <td><span style="font-weight:bold">Phone:</span> {{ $service_assessor->assessor->phone_number ?? '--' }}</td>
-                            <td><span style="font-weight:bold">Mobile: </span>{{ $service_assessor->assessor->mobile_number ?? '--' }}</td>
-                            <td><span style="font-weight:bold">Assessment Date: </span>{{ $service_assessor->assessor->assessment_date ?? '--' }}</td>
+                            <td ><span class="font ps-2" style="font-weight:bold">Phone:</span> <span class="font-0"> {{ $service_assessor->assessor->phone_number ?? '--' }} </span></td>
+                            <td><span class="font" style="font-weight:bold">Mobile: </span>  <span class="font-0">  {{ $service_assessor->assessor->mobile_number ?? '--' }} </span> </td>
+                            <td ><span class="font" style="font-weight:bold">Assessment Date: </span> <span class="font-0"> {{ $service_assessor->assessor->assessment_date ?? '--' }} </span></td>
                         </tr>
                         <tr>
-                            <td class="bg-gray-clr"><span style="font-weight:bold">Inspection Address:</span> {{ $service_assessor->assessor->address ?? '--' }}
+                            <td class="bg-gray-clr"><span class="font ps-2" style="font-weight:bold">Inspection Address:</span> <span class="font-0">  {{ $service_assessor->assessor->address ?? '--' }} </span>
                             </td>
                         </tr>
                     @empty
