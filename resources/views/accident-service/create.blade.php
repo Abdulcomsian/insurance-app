@@ -460,12 +460,12 @@ margin-top:1rem;
                                 <!-- fieldsets -->
                                 <fieldset>
                                     <div class="form-card ">
-                                        <!-- <div class="upper">
+                                        {{-- <div class="upper">
                                         <div class="row">
                                             <div class="col-6 d-flex">
                                                 <div class="row">
                                                     <div class="col-sm-5 mt-2"> <label class="fw-bold fs-6 mb-2" style="color: black ;" > Tax Invoice </label></div>
-                                                    <div class="col-sm-7"> <input type="number" required  class="form-control form-control-solid mb-3 mb-lg-0" name="invoice_no" placeholder=" Enter Invoice No"/> </div>
+                                                    <div class="col-sm-7"> <input type="number" value="0723" required  class="form-control form-control-solid mb-3 mb-lg-0" name="invoice_no" placeholder=" Enter Invoice No"/> </div>
                                                 </div>
                                             </div>
                                             <div class="col-sm-6 d-flex">
@@ -475,7 +475,7 @@ margin-top:1rem;
                                                 </div>
                                             </div>
                                         </div>
-                                        </div> -->
+                                        </div> --}}
 
                                       <div class="row mt-5">
                                         <div class="col-md-6">
@@ -484,7 +484,7 @@ margin-top:1rem;
                                         </div>
                                         <div class="col-md-6">
                                         <label class="fw-bold fs-6 mb-2" style="color: black ;" >Tax Invoice </label>
-                                        <input type="number" required  class="form-control form-control-solid mb-3 mb-lg-0"   name="tax_invoice" placeholder=" Enter Invoice Number"/>
+                                        <input type="number" value="0723" required  class="form-control form-control-solid mb-3 mb-lg-0"   name="tax_invoice" placeholder=" Enter Invoice Number"/>
                                         </div>
                                       </div>
 
@@ -502,7 +502,7 @@ margin-top:1rem;
                                       <div class="row mt-4">
                                         <div class="col-md-6">
                                         <label style="color: black ; " class="fw-bold fs-6 mb-2"  >Rego</label>
-                                        <input type="number" id="myText" required  class="form-control form-control-solid mb-3 mb-lg-0" name="rego" placeholder="Enter Rego"/>
+                                        <input type="text" id="myText" required  class="form-control form-control-solid mb-3 mb-lg-0" name="rego" placeholder="Enter Rego"/>
                                         </div>
                                         <div class="col-md-6">
                                             <label style="color: black ; " class="fw-bold fs-6 mb-2"  >Assessment Fee</label>

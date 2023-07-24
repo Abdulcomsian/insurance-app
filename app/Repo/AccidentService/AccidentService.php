@@ -17,11 +17,13 @@ class AccidentService implements AccidentServiceInterface
     use Image;
     public function store($data)
     {
+        $previous_invoice_no = AccidentServiceReport::latest()->pluck('invoice_no')->first();
+        $invoice_no = sprintf("%04d", ++$previous_invoice_no);
         try
         {
             $report = new AccidentServiceReport();
-            DB::transaction( function () use ($data, $report) {
-                $report->invoice_no         =       $data['invoice_no'] ?? null;
+            DB::transaction( function () use ($data, $report, $invoice_no) {
+                $report->invoice_no         =       $invoice_no ?? $data['invoice_no'];
                 $report->invoice_date       =       $data['invoice_date'] ?? null;
                 $report->to                 =       $data['to'] ?? null;
                 $report->tax_invoice        =       $data['tax_invoice'] ?? null;
