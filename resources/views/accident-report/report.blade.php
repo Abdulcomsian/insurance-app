@@ -845,7 +845,7 @@
                     </tr>
                     <tr>
                         <td><span  class="font ps-2" style="font-weight:bold">Steering:</span>  <span  class="font-0">{{ $accident_service_report['steering'] ?? '--' }}</span> </td>
-                        <td></td>
+                        <td><span  class="font ps-2" style="font-weight:bold">Vehicle & Suspension Condition:</span>  <span  class="font-0">{{ $accident_service_report['vehicle_and_suspension_condition'] ?? '--' }}</span> </td>
                         {{-- <td><span  class="font" style="font-weight:bold">Tyre Depth Unit Rear: </span> <span  class="font-0">  RH 0.00 LH 0.00 </span></td> --}}
                         <td><span class="font" style="font-weight:bold">LH Rear: </span> <span class="font-0" > {{ $accident_service_report['lh_rear'] ?? '--' }} </span></td>
                     </tr>

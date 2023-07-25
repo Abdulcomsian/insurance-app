@@ -12,11 +12,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css">
 
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
-    <script src=" https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
@@ -440,7 +441,14 @@ margin-top:1rem;
 
 <body>
     <!-- MultiStep Form -->
-
+@php
+    $vehicle_suspension_conditions = array(
+        "Excellent" => "Excellent",
+        "Very Bad"  => "Very Bad",
+        "Good"      => "Good",
+        "Average"   => "Averge",
+    );
+@endphp
     <div class=" container-fluid bb" >
 
         <div class="row justify-content-center mt-0">
@@ -484,7 +492,7 @@ margin-top:1rem;
                                         </div>
                                         <div class="col-md-6">
                                         <label class="fw-bold fs-6 mb-2" style="color: black ;" >Tax Invoice </label>
-                                        <input type="number" value="0723" required  class="form-control form-control-solid mb-3 mb-lg-0"   name="tax_invoice" placeholder=" Enter Invoice Number"/>
+                                        <input type="number" value="{{ $data['invoice_no'] }}" readonly required  class="form-control form-control-solid mb-3 mb-lg-0"   name="tax_invoice" placeholder=" Enter Invoice Number"/>
                                         </div>
                                       </div>
 
@@ -1105,6 +1113,16 @@ margin-top:1rem;
                                             <div class="col-4 font-weight-bold mt-2 " style="color:black;"> Tyre Depth Unit Rear</div>
                                              <div class="col-8"> <input type="text"  required  class=" form-control form-control-solid mb-3 mb-lg-0" name="tyre_depth_unit_rear"/> </div>
                                                </div>
+                                               <div class="row mt-2">
+                                                <div class="col-4 font-weight-bold mt-2 " style="color:black;"> Vehicle and Suspension Condition</div>
+                                                <div class="col-8">
+                                                    <select name="vehicle_and_suspension_condition" class="form-select">
+                                                        @foreach ($vehicle_suspension_conditions as $key=>$vehicle_suspension_condition)
+                                                            <option value="{{ $key }}">{{ $vehicle_suspension_condition }}</option>
+                                                        @endforeach
+                                                    </select>
+                                                </div>
+                                               </div>
                                             </div>
 
 
@@ -1137,10 +1155,10 @@ margin-top:1rem;
 
 
                                        <p>Click on the "Choose File" button to upload  Images:</p>
-
+                                        {{ view('accident-service.modal') }}
                                             {{-- <form action="/action_page.php"> --}}
-
-                                            <input class="image" type="file" name="image" multiple accept="image/*">
+                                        <input class="form-control" onkeypress="showImagesModal()" />
+                                            {{-- <input class="image" type="file" name="image" multiple accept="image/*"> --}}
                                             {{-- <input class="images" type="submit"> --}}
                                             {{-- </form> --}}
 
@@ -1192,20 +1210,46 @@ margin-top:1rem;
             </div>
         </div>
     </div>
-    <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 
+    <!-- Button trigger modal -->
+{{-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Launch demo modal
+  </button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div> --}}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    {{-- <script src="//code.jquery.com/jquery-1.10.2.min.js"></script> --}}
     <script type="text/javascript">
+
         window.alert = function(){};
         var defaultCSS = document.getElementById('bootstrap-css');
         function changeCSS(css){
             if(css) $('head > link').filter(':first').replaceWith('<link rel="stylesheet" href="'+ css +'" type="text/css" />');
             else $('head > link').filter(':first').replaceWith(defaultCSS);
         }
-        $( document ).ready(function() {
-          var iframe_height = parseInt($('html').height());
-          window.parent.postMessage( iframe_height, 'https://bootsnipp.com');
-        });
+        // $( document ).ready(function() {
+        //   var iframe_height = parseInt($('html').height());
+        //   window.parent.postMessage( iframe_height, 'https://bootsnipp.com');
+        // });
     </script>
 
 
@@ -1669,6 +1713,14 @@ function remove_assessor_fields(rdiv) {
     })
 
     });
+
+    function showImagesModal()
+    {
+        // console.log('ee');
+        // return;
+        // e.preventDefault();
+        $('#exampleModal').modal('show');
+    }
 
     </script>
 </body>

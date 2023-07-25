@@ -17,13 +17,12 @@ class AccidentService implements AccidentServiceInterface
     use Image;
     public function store($data)
     {
-        $previous_invoice_no = AccidentServiceReport::latest()->pluck('invoice_no')->first();
-        $invoice_no = sprintf("%04d", ++$previous_invoice_no);
         try
         {
+            // dd($data['vehicle_and_suspension_condition']);
             $report = new AccidentServiceReport();
-            DB::transaction( function () use ($data, $report, $invoice_no) {
-                $report->invoice_no         =       $invoice_no ?? $data['invoice_no'];
+            DB::transaction( function () use ($data, $report) {
+                $report->invoice_no         =       $data['invoice_no'] ?? null;
                 $report->invoice_date       =       $data['invoice_date'] ?? null;
                 $report->to                 =       $data['to'] ?? null;
                 $report->tax_invoice        =       $data['tax_invoice'] ?? null;
@@ -77,6 +76,7 @@ class AccidentService implements AccidentServiceInterface
                 $report->rh_rear            =       $data['rh_rear'] ?? null;
                 $report->lh_rear            =       $data['lh_rear'] ?? null;
                 $report->repair_duration_days= $data['repair_duration_days'] ?? null;
+                $report->vehicle_and_suspension_condition = $data['vehicle_and_suspension_condition'] ?? "No Vehicle";
 
                 if(array_key_exists('image', $data))
                     $report->file             =       $this->storeImage(AccidentServiceReport::PATH, $data['image']);

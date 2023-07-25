@@ -25,7 +25,7 @@ class AccidentServiceReportController extends Controller
     {
         try {
             if ($request->ajax()) {
-                $data = AccidentServiceReport::select('id', 'invoice_no', 'invoice_date', 'to', 'vehicle', 'rego', 'assessment_fee', 'owner_name', 'engine_type', 'created_at')->orderBy('id', 'DESC')->get();
+                $data = AccidentServiceReport::select('id', 'invoice_no', 'invoice_date', 'to', 'vehicle', 'rego', 'assessment_fee', 'owner_name', 'engine_type', 'created_at')->orderBy('id', 'desc')->get();
                 return Datatables::of($data)
                     ->addColumn('action', function ($row) {
                         $btn = '<a href="' . route("view-accident-report.index", $row->id) . '" class="btn btn-sm btn-clean btn-icon" target="_blank" title="View Report"><i class="fa fa-eye"></i></a>';
@@ -36,24 +36,26 @@ class AccidentServiceReportController extends Controller
             }
             return view('payment_transactions.index');
         } catch (\Exception $exception){
-            toastr()->error('Something went wrong, try again');
+            toastr()->error('Something went wrong, try again'. $exception->getMessage());
             return back();
         }
     }
 
     public function create()
     {
+        $previous_invoice_no = AccidentServiceReport::latest()->pluck('tax_invoice')->first();
+        $invoice_no = ++$previous_invoice_no;
         $data =
         [
             'repairers' => Repairer::all(['id', 'name']),
-            'assessors' => addAssessor::all(['id', 'assessor'])
+            'assessors' => addAssessor::all(['id', 'assessor']),
+            'invoice_no'=> sprintf("%04s",$invoice_no)
         ];
         return view('accident-service.create', compact('data'));
     }
 
     public function store (Request $request)
     {
-
         $validator = Validator::make($request->all(), [
             // 'invoice_no'                    => 'required',
             'invoice_date'                  => 'required',
@@ -95,6 +97,7 @@ class AccidentServiceReportController extends Controller
             'cash_settled'                  => 'required',
             'certificate_compliance'        => 'required',
             'salvage_condition'             => 'required',
+            'vehicle_and_suspension_condition'=> 'required',
         ]);
         if($validator->fails())
         {
