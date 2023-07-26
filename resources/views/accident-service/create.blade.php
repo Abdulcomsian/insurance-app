@@ -510,7 +510,7 @@ margin-top:1rem;
                                       <div class="row mt-4">
                                         <div class="col-md-6">
                                         <label style="color: black ; " class="fw-bold fs-6 mb-2"  >Rego</label>
-                                        <input type="text" id="myText" required  class="form-control form-control-solid mb-3 mb-lg-0" name="rego" placeholder="Enter Rego"/>
+                                        <input type="text" id="rego" required  class="form-control form-control-solid mb-3 mb-lg-0" name="rego" placeholder="Enter Rego"/>
                                         </div>
                                         <div class="col-md-6">
                                             <label style="color: black ; " class="fw-bold fs-6 mb-2"  >Assessment Fee</label>
@@ -603,7 +603,7 @@ margin-top:1rem;
                                           </div>
                                       </div>
 
-                                      <h4 class="fw-bolder mt-5 d-flex" style="color:black;"> <p> Vehicle Details - Rego:VIC | UVU </p >  <p class="ms-2" id="demo"></p>   </h4>
+                                      <h4 class="fw-bolder mt-5 d-flex" style="color:black;"> <p> Vehicle Details - Rego:<span id="rego_value"></span> </p >  <p class="ms-2" id="demo"></p>   </h4>
                                       <div class="row mt-4">
                                         <div class="col-md-4">
                                         <label style="color: black ; " class="fw-bold fs-6 mb-2"  >Make</label>
@@ -1714,13 +1714,12 @@ function remove_assessor_fields(rdiv) {
 
     });
 
-    function showImagesModal()
-    {
-        // console.log('ee');
-        // return;
-        // e.preventDefault();
-        $('#exampleModal').modal('show');
-    }
+    let rego = document.getElementById('rego');
+    rego.addEventListener('keyup', function(event) {
+        let value = event.target.value;
+        let rego_value = document.getElementById('rego_value');
+        rego_value.innerHTML = value;
+    })
 
     </script>
 </body>

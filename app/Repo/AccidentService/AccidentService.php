@@ -10,6 +10,7 @@ use App\Models\DetailAssessmentReport;
 use App\Models\SuppsValue;
 use App\Traits\Image;
 use Exception;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class AccidentService implements AccidentServiceInterface
@@ -19,7 +20,6 @@ class AccidentService implements AccidentServiceInterface
     {
         try
         {
-            // dd($data['vehicle_and_suspension_condition']);
             $report = new AccidentServiceReport();
             DB::transaction( function () use ($data, $report) {
                 $report->invoice_no         =       $data['invoice_no'] ?? null;
@@ -76,8 +76,8 @@ class AccidentService implements AccidentServiceInterface
                 $report->rh_rear            =       $data['rh_rear'] ?? null;
                 $report->lh_rear            =       $data['lh_rear'] ?? null;
                 $report->repair_duration_days= $data['repair_duration_days'] ?? null;
-                $report->vehicle_and_suspension_condition = $data['vehicle_and_suspension_condition'] ?? "No Vehicle";
-
+                $report->vehicle_and_suspension_condition = $data['vehicle_and_suspension_condition'] ?? null;
+                $report->user_id           =        Auth::user()->id;
                 if(array_key_exists('image', $data))
                     $report->file             =       $this->storeImage(AccidentServiceReport::PATH, $data['image']);
                 $report->save();
