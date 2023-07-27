@@ -433,6 +433,48 @@ margin-top:1rem;
     }
 }
 
+.damage-button{
+    width: 140px !important;
+}
+
+
+
+
+
+
+/* Styles for the modal */
+/* Styles for the modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal-content {
+    background-color: white;
+    width: 50%;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.close-btn {
+    font-size: 25px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#check{
+    width:15px;
+height:15px;
+}
+
+
+
    </style>
 
 
@@ -1144,6 +1186,13 @@ margin-top:1rem;
                                             {{-- <input class="images" type="submit"> --}}
                                             {{-- </form> --}}
 
+                                        <div class="damage-section">
+                                            <input type="button" id="openModalBtn" class="action-button damage-button" data-toggle="modal" data-target="#exampleModal" value="Damage Button">
+                                            
+    
+
+                                        </div>
+
                                        </div>
                                        <div class="col-md-6 wd mt-5">
                                                 <div class="row">
@@ -1179,6 +1228,7 @@ margin-top:1rem;
                                        </div>
 
 
+
                                     </div>
                                     <input type="button" name="previous" class="previous action-button-previous"
                                         value="Previous" />
@@ -1192,6 +1242,44 @@ margin-top:1rem;
             </div>
         </div>
     </div>
+
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <div class="d-flex justify-content-end">
+                 <span class="close-btn" id="closeModalBtn">&times;</span>
+            </div>
+           
+            <div class="row justify-content-between mt-5">
+                <div class="col-5">
+                <img src="{{ asset('images/door.jpg') }}" alt="Door Image" style="width:85px;"> <br>
+                    <input type="checkbox" id="check"> <br>
+                    <input type="text" required="" class=" form-control form-control-solid  mb-lg-0">
+                </div>
+                <div class="col-5">
+                <img src="{{ asset('images/door.jpg') }}" alt="Door Image" style="width:85px;"> <br>
+                    <input type="checkbox" id="check"> <br>
+                    <input type="text" required="" class=" form-control form-control-solid  mb-lg-0">
+                </div>
+            </div>
+
+            <div class="row justify-content-between mt-5 mb-5">
+                <div class="col-5">
+                <img src="{{ asset('images/door.jpg') }}" alt="Door Image" style="width:85px;"> <br>
+                    <input type="checkbox" id="check"> <br>
+                    <input type="text" required="" class=" form-control form-control-solid  mb-lg-0">
+                </div>
+                <div class="col-5">
+                <img src="{{ asset('images/door.jpg') }}" alt="Door Image" style="width:85px;"> <br>
+                    <input type="checkbox" id="check"> <br>
+                    <input type="text" required="" class=" form-control form-control-solid  mb-lg-0">
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
     <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 
@@ -1671,6 +1759,31 @@ function remove_assessor_fields(rdiv) {
     });
 
     </script>
+
+
+
+
+<script>
+    // Get references to the modal and the buttons
+const modal = document.getElementById('modal');
+const openModalBtn = document.getElementById('openModalBtn');
+const closeModalBtn = document.getElementById('closeModalBtn');
+
+// Function to open the modal
+function openModal() {
+    modal.style.display = 'block';
+}
+
+// Function to close the modal
+function closeModal() {
+    modal.style.display = 'none';
+}
+
+// Event listeners to open and close the modal
+openModalBtn.addEventListener('click', openModal);
+closeModalBtn.addEventListener('click', closeModal);
+
+</script>
 </body>
 
 </html>
