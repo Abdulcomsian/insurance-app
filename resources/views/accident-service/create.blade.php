@@ -13,12 +13,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css">
-
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
     <script src=" https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script> -->
+   
+
 
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="style.css"> -->
     <title>Document</title>
 <style>
 
@@ -473,8 +474,20 @@ margin-top:1rem;
 height:15px;
 }
 
-
-
+.sides{
+    font-size:20px;
+    margin-left:20px;
+}
+#modal-button{
+    margin:auto;
+    /* width:80px !important; */
+    padding:10px 20px;
+    border:none;
+    color:white;
+    border-radius:5px;
+    background:skyblue;
+    font-weight:bold;
+}
    </style>
 
 
@@ -1187,9 +1200,7 @@ height:15px;
                                             {{-- </form> --}}
 
                                         <div class="damage-section">
-                                            <input type="button" id="openModalBtn" class="action-button damage-button" data-toggle="modal" data-target="#exampleModal" value="Damage Button">
-                                            
-    
+                                            <input type="button" id="openModalBtn" class="action-button damage-button" data-toggle="modal" data-target="#exampleModal" value="Damage Button">               
 
                                         </div>
 
@@ -1252,36 +1263,38 @@ height:15px;
            
             <div class="row justify-content-between mt-5">
                 <div class="col-5">
-                <img src="{{ asset('images/door.jpg') }}" alt="Door Image" style="width:85px;"> <br>
-                    <input type="checkbox" id="check"> <br>
-                    <input type="text" required="" class=" form-control form-control-solid  mb-lg-0">
+                    <input type="checkbox" > <span class="sides font-weight-bold">Front</span>  <br>
+                    <input type="text" required="" class=" form-control form-control-solid  mb-lg-0" name="front">
+                    <img class="mt-3" src="{{ asset('images/front.png') }}" alt="Door Image" style="width:200px;"> <br>
                 </div>
                 <div class="col-5">
-                <img src="{{ asset('images/door.jpg') }}" alt="Door Image" style="width:85px;"> <br>
-                    <input type="checkbox" id="check"> <br>
-                    <input type="text" required="" class=" form-control form-control-solid  mb-lg-0">
+                    <input type="checkbox" > <span class="sides font-weight-bold">Back</span> <br>
+                    <input type="text" required="" class=" form-control form-control-solid  mb-lg-0" name="back">
+                    <img class="mt-3" src="{{ asset('images/back.png') }}" alt="Door Image" style="width:200px;"> <br>
                 </div>
             </div>
 
             <div class="row justify-content-between mt-5 mb-5">
                 <div class="col-5">
-                <img src="{{ asset('images/door.jpg') }}" alt="Door Image" style="width:85px;"> <br>
-                    <input type="checkbox" id="check"> <br>
-                    <input type="text" required="" class=" form-control form-control-solid  mb-lg-0">
+                    <input type="checkbox" > <span class="sides font-weight-bold">Left</span> <br>
+                    <input type="text" required="" class=" form-control form-control-solid  mb-lg-0" name="left">
+                    <img class="mt-3" src="{{ asset('images/left.png') }}" alt="Door Image" style="width:200px;">
                 </div>
-                <div class="col-5">
-                <img src="{{ asset('images/door.jpg') }}" alt="Door Image" style="width:85px;"> <br>
-                    <input type="checkbox" id="check"> <br>
-                    <input type="text" required="" class=" form-control form-control-solid  mb-lg-0">
+                <div class="col-5">             
+                    <input type="checkbox"> <span class="sides font-weight-bold">Right</span> <br>
+                    <input type="text" required="" class=" form-control form-control-solid mt-2" name="right">
+                    <img class="mt-3" src="{{ asset('images/right.png') }}" alt="Door Image" style="width:200px; ">
                 </div>
             </div>
-
+            <button id="modal-button" class="active-button" onclick="imageSave()">Save</button>
         </div>
     </div>
 
 
-    <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+</script>
+
+    <!-- <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script> -->
 
     <script type="text/javascript">
         window.alert = function(){};
@@ -1764,26 +1777,31 @@ function remove_assessor_fields(rdiv) {
 
 
 <script>
-    // Get references to the modal and the buttons
 const modal = document.getElementById('modal');
 const openModalBtn = document.getElementById('openModalBtn');
 const closeModalBtn = document.getElementById('closeModalBtn');
 
-// Function to open the modal
 function openModal() {
     modal.style.display = 'block';
 }
 
-// Function to close the modal
 function closeModal() {
     modal.style.display = 'none';
 }
 
-// Event listeners to open and close the modal
 openModalBtn.addEventListener('click', openModal);
 closeModalBtn.addEventListener('click', closeModal);
 
+
+
+// modal-button 
+function imageSave() {
+    console.log("image saved")
+}
 </script>
+
+
+
 </body>
 
 </html>
