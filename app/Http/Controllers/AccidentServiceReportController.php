@@ -56,56 +56,56 @@ class AccidentServiceReportController extends Controller
 
     public function store (Request $request)
     {
-        $validator = Validator::make($request->all(), [
-            // 'invoice_no'                    => 'required',
-            'invoice_date'                  => 'required',
-            'to'                            => 'required',
-            'tax_invoice'                   => 'required',
-            'vehicle'                       => 'required',
-            'rego'                          => 'required',
-            'assessment_fee'                => 'required',
-            'sub_total'                     => 'required',
-            'gst'                           => 'required',
-            'grand_total'                   => 'required',
-            'owner_name'                    => 'required',
-            'assessment_type'               => 'required',
-            'make'                          => 'required',
-            'engine_type'                   => 'required',
-            'odometer'                      => 'required',
-            'model'                         => 'required',
-            'engine_size'                   => 'required',
-            'paint_group'                   => 'required',
-            'series'                        => 'required',
-            'engine_no'                     => 'required',
-            'paint_code'                    => 'required',
-            'month_year'                    => 'required',
-            'transmission'                  => 'required',
-            'colour'                        => 'required',
-            'body_type'                     => 'required',
-            'axles'                         => 'required',
-            'vin'                           => 'required',
-            'assessment_date'               => 'required',
-            'cover_type'                    => 'required',
-            'sum_insured'                   => 'required',
-            'market_value'                  => 'required',
-            'salvage_value'                 => 'required',
-            'settlement'                    => 'required',
-            'less_excess'                   => 'required',
-            'settlement_sub_total'          => 'required',
-            'settlement_gst'                => 'required',
-            'settlement_total'              => 'required',
-            'cash_settled'                  => 'required',
-            'certificate_compliance'        => 'required',
-            'salvage_condition'             => 'required',
-            'vehicle_and_suspension_condition'=> 'required',
-        ]);
-        if($validator->fails())
-        {
-            toastr()->error('Validation Error');
-            return redirect()->route('accident-accessing-service.create');
-        }
-        else
-        {
+        // $validator = Validator::make($request->all(), [
+        //     // 'invoice_no'                    => 'required',
+        //     'invoice_date'                  => 'required',
+        //     'to'                            => 'required',
+        //     'tax_invoice'                   => 'required',
+        //     'vehicle'                       => 'required',
+        //     'rego'                          => 'required',
+        //     'assessment_fee'                => 'required',
+        //     'sub_total'                     => 'required',
+        //     'gst'                           => 'required',
+        //     'grand_total'                   => 'required',
+        //     'owner_name'                    => 'required',
+        //     'assessment_type'               => 'required',
+        //     'make'                          => 'required',
+        //     'engine_type'                   => 'required',
+        //     'odometer'                      => 'required',
+        //     'model'                         => 'required',
+        //     'engine_size'                   => 'required',
+        //     'paint_group'                   => 'required',
+        //     'series'                        => 'required',
+        //     'engine_no'                     => 'required',
+        //     'paint_code'                    => 'required',
+        //     'month_year'                    => 'required',
+        //     'transmission'                  => 'required',
+        //     'colour'                        => 'required',
+        //     'body_type'                     => 'required',
+        //     'axles'                         => 'required',
+        //     'vin'                           => 'required',
+        //     'assessment_date'               => 'required',
+        //     'cover_type'                    => 'required',
+        //     'sum_insured'                   => 'required',
+        //     'market_value'                  => 'required',
+        //     'salvage_value'                 => 'required',
+        //     'settlement'                    => 'required',
+        //     'less_excess'                   => 'required',
+        //     'settlement_sub_total'          => 'required',
+        //     'settlement_gst'                => 'required',
+        //     'settlement_total'              => 'required',
+        //     'cash_settled'                  => 'required',
+        //     'certificate_compliance'        => 'required',
+        //     'salvage_condition'             => 'required',
+        //     'vehicle_and_suspension_condition'=> 'required',
+        // ]);
+        // if($validator->fails())
+        // {
+        //     toastr()->error('Validation Error');
+        //     return redirect()->route('accident-accessing-service.create');
+        // }
+        // else
+        // {
             $all_input = $request->except('model');
             $report = $this->accident_assessing_report->store($request->all());
             if(!is_null($report))
@@ -118,7 +118,7 @@ class AccidentServiceReportController extends Controller
                 toastr()->error('Validation Error');
                 return redirect()->route('accident-accessing-service.create');
             }
-        }
+        // }
     }
 
     public function accidentReport ($id)

@@ -182,13 +182,23 @@
                     </tr>
                     <tr>
                         <td><b class="font ps-2">Vehicle:</b></td>
-                        <td class="font-0">{{ $accident_service_report['vehicle'] ?? '--'}}</td>
+                        @if(isset($accident_service_report['vehicle']))
+                        <td class="font-0">{{ $accident_service_report['vehicle'] ?? '--'}}
+                            @else
+                        abc
+                        @endif
+                        </td>
                         <td><b class="font">Claim No:</b></td>
                         <td class="font-0">TR2032</td>
                     </tr>
                     <tr>
                         <td><b class="font ps-2">Rego:</b></td>
-                        <td class="font-0">{{ $accident_service_report['rego'] ?? '--' }}</td>
+                        @if(isset($accident_service_report['rego']))
+                        <td class="font-0">{{ $accident_service_report['rego'] ?? '--' }}
+                            @else
+                            abc
+                            @endif
+                        </td>
                         <td><b class="font">Policy No:</b></td>
                         <td class="font-0">P-23</td>
                     </tr>
@@ -531,9 +541,27 @@
                     </tr>
                     <tr>
                         <td colspan="2" class="bg-gray-clr font ps-2" style="font-weight: bold">R & R</td>
-                        <td colspan="2" class="bg-gray-clr font-0">{{ (int)$accident_service_report->assessmentReports[0]->quoted ?? '--' }}</td>
-                        <td colspan="2" class="bg-gray-clr font-0">{{ (int)$accident_service_report->assessmentReports[0]->assessed ?? '--' }}</td>
-                        <td class="bg-gray-clr font-0">{{ (int)$accident_service_report->assessmentReports[0]->variance ?? '--' }}</td>
+                        <td colspan="2" class="bg-gray-clr font-0">
+                            @if(isset($accident_service_report->assessmentReports[0]))
+                            {{ (int)$accident_service_report->assessmentReports[0]->quoted ?? '--' }}
+                            @else
+                            abc
+                            @endif
+                        </td>
+                        <td colspan="2" class="bg-gray-clr font-0">
+                            @if(isset($accident_service_report->assessmentReports[0]))
+                            {{ (int)$accident_service_report->assessmentReports[0]->assessed ?? '--' }}
+                            @else
+                            abc
+                            @endif
+                        </td>
+                        <td class="bg-gray-clr font-0">
+                            @if(isset($accident_service_report->assessmentReports[0]))
+                            {{ (int)$accident_service_report->assessmentReports[0]->variance ?? '--' }}
+                            @else
+                            abc
+                            @endif
+                        </td>
                         <td></td>
                         <td colspan="3" style="font-weight: bold" class="bg-gray-clr font">Assessment
                              Date</td>
