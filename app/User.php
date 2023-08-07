@@ -2,9 +2,11 @@
 
 namespace App;
 
+use App\Models\AccidentServiceReport;
 use App\Models\Country;
 use App\Models\Subscription;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -56,5 +58,10 @@ class User extends Authenticatable implements MustVerifyEmail
 
     public function subscription(){
         return $this->hasOne(Subscription::class);
+    }
+
+    public function reports () :HasMany
+    {
+        return $this->hasMany(AccidentServiceReport::class, 'user_id', 'id');
     }
 }

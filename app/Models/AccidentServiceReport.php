@@ -2,8 +2,10 @@
 
 namespace App\Models;
 
+use App\User;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
@@ -67,7 +69,9 @@ class AccidentServiceReport extends Model
         'rh_front',
         'lh_front',
         'rh_rear',
-        'lh_rear'
+        'lh_rear',
+        'vehicle_and_suspension_condition',
+        'user_id'
     ];
 
     public function serviceAssessors () :HasMany
@@ -93,5 +97,10 @@ class AccidentServiceReport extends Model
     public function assessmentReports ():HasMany
     {
         return $this->hasMany(DetailAssessmentReport::class);
+    }
+
+    public function user () :BelongsTo
+    {
+        return $this->belongsTo(User::class);
     }
 }

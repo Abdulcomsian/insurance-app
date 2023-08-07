@@ -103,7 +103,7 @@
                                 ABN: 78 668 644 246 <br>
                                 Mob: 040 9971 411 <br>
                                 Email: asvla@bigpond.net.au <br>
-                                Po Box: 6 Baxter CT Thomastown VIC 3074 
+                                Po Box: 6 Baxter CT Thomastown VIC 3074
                                 <!-- Po Box 2177 <br>
                                 Templestowe Lower Vic 3107 <br>
                                 0411 493 593 <br>
@@ -128,7 +128,7 @@
                             <p style=" color:#2587be;" class=" ps-2">Tax Invoice:
                                 {{$accident_service_report['tax_invoice'] ?? $accident_service_report['id'] }}</p>
                         </td>
-                    
+
                         <td colspan="5" class="font pe-2" style=" color:#2587be;text-align:right ">
                             Date: {{$accident_service_report['invoice_date'] ?? '--' }}
                         </td>
@@ -138,7 +138,7 @@
     <td class="align-middle ps-2 " style="color: #2587be;" >
         Tax Invoice:
             {{$accident_service_report['tax_invoice'] ?? $accident_service_report['id'] }}
-     
+
     </td>
     <!-- <td></td> -->
     <td colspan="5" class="font pe-2 align-middle" style="color: #2587be; text-align: right;">
@@ -172,7 +172,7 @@
                         </td> -->
                         <td style="color:black; text-align:left;"
                                 class="text-right font align-middle ps-2">
-                                Invoice Details:                         
+                                Invoice Details:
                         </td>
                         <td></td>
                         <td colspan="3"
@@ -221,12 +221,12 @@
                         <td></td>
                         <td><b class="font">Assessment Fee</b></td>
                         <td><b class="font">${{ $accident_service_report['assessment_fee'] ?? '--' }}</b></td>
-                      
+
                     </tr>
 
                     <tr class="bg-gray-clr mt-2">
                         <td  class="font ps-2 align-middle" style=" color:black; text-align:left;" >
-                            Banking Details 
+                            Banking Details
                         </td>
                         <td></td>
                         <td colspan="3" class="font" style="  color:black; text-align:left;font-weight:bold;">
@@ -304,7 +304,7 @@
                                 ABN: 78 668 644 246 <br>
                                 Mob: 040 9971 411 <br>
                                 Email: asvla@bigpond.net.au <br>
-                                Po Box: 6 Baxter CT Thomastown VIC 3074 
+                                Po Box: 6 Baxter CT Thomastown VIC 3074
                                 <!-- Po Box 2177 <br>
                                 Templestowe Lower Vic 3107 <br>
                                 0411 493 593 <br>
@@ -331,7 +331,7 @@
                 <tbody>
                     <tr class="bg-gray-clr">
                         <td colspan="2" class="bg-gray-clr font ps-2"  style=" color:black; text-align:left;">
-                            Owner: 
+                            Owner:
                         </td>
                         <td class="font-0" style=" color:black; text-align:left;">{{ $accident_service_report['owner_name'] ?? '--' }}</td>
                         <td colspan="2" class="bg-gray-clr font" style=" color:black; text-align:left;">
@@ -341,13 +341,13 @@
                     </tr>
                     <tr class="mt-2">
                         <td colspan="2" class="font ps-2" style=" color:black; text-align:left;">
-                            On Behalf Of: 
+                            On Behalf Of:
                         </td>
                         <td class="font-0" style=" color:black; text-align:left;">National Motor Claims</td>
                     </tr>
                     <tr class="bg-gray-clr mt-2">
                         <td colspan="2" class="bg-gray-clr font ps-2" style=" color:black; text-align:left;">
-                            Assessment Type:    
+                            Assessment Type:
                         </td>
                         <td class="font-0" style=" color:black; text-align:left;">{{ $accident_service_report['assessment_type'] ?? '--' }}</td>
                         <td colspan="2" class="bg-gray-clr font" style=" color:black; text-align:left;">
@@ -372,7 +372,7 @@
                     </tr>
                     <tr class="bg-gray-clr">
                         <td colspan="2" class="bg-gray-clr font ps-2" style=" color:black; text-align:left;">
-                            Make: 
+                            Make:
                         </td>
                         <td class="font-0"  style=" color:black; text-align:left;">{{ $accident_service_report['make'] ?? '--'}}</td>
                         <td colspan="2" class="bg-gray-clr font" style=" color:black; text-align:left;" >
@@ -380,13 +380,13 @@
                         </td>
                         <td class="font-0" style=" color:black; text-align:left;">{{ $accident_service_report['engine_type'] ?? '--' }}</td>
                         <td colspan="2" class="font" style="color:black; text-align:left;">
-                            Odometer: 
+                            Odometer:
                         </td>
                         <td class="font-0" style=" color:black; text-align:left;">{{ $accident_service_report['odometer'] ?? '--' }}</td>
                     </tr>
                     <tr>
                         <td colspan="2" class=" font ps-2" style=" color:black; text-align:left;">
-                            Model: 
+                            Model:
                         </td>
                         <td class="font-0" style=" color:black; text-align:left;">{{ $accident_service_report['model'] ?? '--' }}</td>
                         <td colspan="2" class=" font " style=" color:black; text-align:left;">
@@ -400,7 +400,7 @@
                     </tr>
                     <tr class="bg-gray-clr">
                         <td colspan="2" class="bg-gray-clr font ps-2" style=" color:black; text-align:left;">
-                            Series: 
+                            Series:
                         </td>
                         <td class="font-0" style=" color:black; text-align:left;">{{ $accident_service_report['series'] ?? '--' }}</td>
                         <td colspan="2" class="bg-gray-clr font" style=" color:black; text-align:left;">
@@ -408,13 +408,13 @@
                         </td>
                         <td class="font-0" style="color:black; text-align:left;">{{ $accident_service_report['engine_no'] ?? '--' }}</td>
                         <td colspan="2" class="font" style="color:black; text-align:left">
-                            Paint Code: 
+                            Paint Code:
                         </td>
                         <td class="font-0" style=" color:black; text-align:left;">{{ $accident_service_report['paint_code'] ?? '--' }}</td>
                     </tr>
                     <tr >
                         <td colspan="2" class=" font ps-2" style=" color:black; text-align:left;">
-                            Month/Year: 
+                            Month/Year:
                         </td>
                         <td class="font-0" style=" color:black; text-align:left;">{{ $accident_service_report['month_year'] ?? '--' }}</td>
                         <td colspan="2" class=" font" style=" color:black; text-align:left;">
@@ -428,7 +428,7 @@
                     </tr>
                     <tr class="bg-gray-clr">
                         <td colspan="2" class="bg-gray-clr font ps-2"  style=" color:black; text-align:left;">
-                            Body Type: 
+                            Body Type:
                         </td>
                         <td class="font-0" style=" color:black; text-align:left;">{{ $accident_service_report['body_type'] ?? '--' }}</td>
                         <td colspan="2" class="bg-gray-clr font" style=" color:black; text-align:left;">
@@ -436,7 +436,7 @@
                         </td>
                         <td class="font-0" style=" color:black; text-align:left;">{{ $accident_service_report['axles'] ?? '--' }}</td>
                         <td colspan="2" class="font" style=" color:black; text-align:left;">
-                            Vin: 
+                            Vin:
                         </td>
                         <td class="font-0" style=" color:black; text-align:left;">{{ $accident_service_report['vin'] ?? '--' }}</td>
                     </tr>
@@ -462,7 +462,7 @@
                     {{-- @dd($service_repairer) --}}
                         <tr>
                             <td colspan="1" class="bg-gray-clr font ps-2" style=" color:black; text-align:left;">
-                                Repairer: 
+                                Repairer:
                             </td>
                             <td style=" color:black; text-align:left;" class="bg-gray-clr font-0">{{$service_repairer['repairers']['name'] ?? '--'}}</td>
                             <td colspan="1" class="bg-gray-clr font" style=" color:black; text-align:left;">
@@ -476,7 +476,7 @@
                         </tr>
                         <tr>
                             <td colspan=" 1" class="font ps-2" style=" color:black; text-align:left;">
-                                Contact: 
+                                Contact:
                             </td>
                             <td class="font-0" style=" color:black; text-align:left;">{{$service_repairer['repairers']['contact'] ?? '--'}}</td>
                             <td colspan="1" class="font" style=" color:black; text-align:left;">
@@ -515,7 +515,7 @@
                     </tr>
                     <tr>
                         <td colspan="2" class="selected-bg-gray font ps-2" style=" color:black; text-align:left;">
-                            Repairer: 
+                            Repairer:
                         </td>
                         <td colspan="2" class="selected-bg-gray font"
                             style=" color:black; text-align:left;font-weight:bold">Quoted:</td>
@@ -531,9 +531,9 @@
                     </tr>
                     <tr>
                         <td colspan="2" class="bg-gray-clr font ps-2" style="font-weight: bold">R & R</td>
-                        <td colspan="2" class="bg-gray-clr font-0">{{ $accident_service_report->assessmentReports[0]->quoted ?? '--' }}</td>
-                        <td colspan="2" class="bg-gray-clr font-0">{{ $accident_service_report->assessmentReports[0]->assessed ?? '--' }}</td>
-                        <td class="bg-gray-clr font-0">{{ $accident_service_report->assessmentReports[0]->variance ?? '--' }}</td>
+                        <td colspan="2" class="bg-gray-clr font-0">{{ (int)$accident_service_report->assessmentReports[0]->quoted ?? '--' }}</td>
+                        <td colspan="2" class="bg-gray-clr font-0">{{ (int)$accident_service_report->assessmentReports[0]->assessed ?? '--' }}</td>
+                        <td class="bg-gray-clr font-0">{{ (int)$accident_service_report->assessmentReports[0]->variance ?? '--' }}</td>
                         <td></td>
                         <td colspan="3" style="font-weight: bold" class="bg-gray-clr font">Assessment
                              Date</td>
@@ -727,7 +727,7 @@
                     </tr>
                     <tr style="background: rgb(179, 173, 173);">
                         <td colspan="2" class="font ps-2" style=" color:black; text-align:left;">
-                            Repairer: 
+                            Repairer:
                         </td>
                         <td class="font" colspan="2" style=" color:black; text-align:left;font-weight:bold">
                             Quoted:</td>
@@ -744,7 +744,7 @@
                     </tr>
                     <tr style="background: rgb(179, 173, 173)">
                         <td colspan="3" class="font ps-2 " style=" color:black; text-align:left;">
-                            Book Values 
+                            Book Values
                         </td>
                         <td class="font" colspan="4" style=" color:black; text-align:left;font-weight:bold">Live
                             Market Values</td>
@@ -773,7 +773,7 @@
                     <tr>
                         <td class="font ps-2" colspan="3" style=" color:black; text-align:left;">
                             Value Avg KM's
-                            
+
                         </td>
                         <td class="font" colspan="4" style=" color:black; text-align:left;font-weight:bold">
                             Market Avg</td>
@@ -845,7 +845,7 @@
                     </tr>
                     <tr>
                         <td><span  class="font ps-2" style="font-weight:bold">Steering:</span>  <span  class="font-0">{{ $accident_service_report['steering'] ?? '--' }}</span> </td>
-                        <td></td>
+                        <td><span  class="font ps-2" style="font-weight:bold">Vehicle & Suspension Condition:</span>  <span  class="font-0">{{ $accident_service_report['vehicle_and_suspension_condition'] ?? '--' }}</span> </td>
                         {{-- <td><span  class="font" style="font-weight:bold">Tyre Depth Unit Rear: </span> <span  class="font-0">  RH 0.00 LH 0.00 </span></td> --}}
                         <td><span class="font" style="font-weight:bold">LH Rear: </span> <span class="font-0" > {{ $accident_service_report['lh_rear'] ?? '--' }} </span></td>
                     </tr>
