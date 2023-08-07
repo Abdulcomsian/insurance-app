@@ -132,13 +132,16 @@ License: For each use you must have a valid license purchased only from above li
     {{--    } );--}}
     {{--} );--}}
 
+
+    // @toastr_js
+// @toastr_render
 </script>
 
-@toastr_js
-@toastr_render
+
 <!--end::Page Custom Javascript-->
 @yield('script')
 <!--end::Javascript-->
 </body>
 <!--end::Body-->
 </html>
+
