@@ -76,9 +76,9 @@
 
                                                     <div class="fv-row mb-7">
 
-                                                        <label class="required fw-bold fs-6 mb-2">Email</label>
+                                                        <label class="required fw-bold fs-6 mb-2">Address</label>
 
-                                                        <input type="email" required name="email" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Email" />
+                                                        <input type="text" required name="address" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Address" />
 
                                                     </div>
 
@@ -89,27 +89,40 @@
                                                         <input type="text" required name="contact" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Contact" />
 
                                                     </div>
+
                                                     <div class="fv-row mb-7">
+
+                                                        <label class="required fw-bold fs-6 mb-2">Email</label>
+
+                                                        <input type="email" required name="email" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Email" />
+
+                                                    </div>
+
+
+
+
+                                                    {{-- <div class="fv-row mb-7">
 
                                                         <label class="required fw-bold fs-6 mb-2">Phone</label>
 
                                                         <input type="number" required name="phone" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="phone" />
 
-                                                    </div>
+                                                    </div> --}}
+
                                                     <div class="fv-row mb-7">
 
-                                                        <label class="required fw-bold fs-6 mb-2">Mobile</label>
+                                                        <label class="required fw-bold fs-6 mb-2">ABN</label>
 
-                                                        <input type="number" required name="mobile" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Mobile" />
+                                                        <input type="number" required name="mobile" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="ABN" />
 
                                                     </div>
-                                                    <div class="fv-row mb-7">
+                                                    {{-- <div class="fv-row mb-7">
 
                                                         <label class="required fw-bold fs-6 mb-2">Repairer Address</label>
 
                                                         <input type="text" required name="address" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Address" />
 
-                                                    </div>
+                                                    </div> --}}
 
                                                 </div>
                                                 <!--end::Scroll-->

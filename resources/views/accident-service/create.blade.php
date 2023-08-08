@@ -15,7 +15,7 @@
     <link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css">
     <script src=" https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script> -->
-   
+
 
 
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -543,27 +543,39 @@ height:15px;
                                         </div>
                                       </div>
 
-                                      <div class="row mt-4">
+                                    <div class="row mt-4">
                                          <div class="col-md-6">
                                          <label class="fw-bold fs-6 mb-2" style="color: black ;" > Date </label>
                                          <input type="date" required  class="form-control form-control-solid mb-3 mb-lg-0" name="invoice_date"/>
                                     </div>
                                         <div class="col-md-6">
-                                        <label style="color: black ;" class="fw-bold fs-6 mb-2"  >Vechile </label>
+                                        <label style="color: black ;" class="fw-bold fs-6 mb-2">Vechile </label>
                                         <input type="text"  required  class="form-control form-control-solid mb-3 mb-lg-0" name="vehicle" placeholder=" Enter Vechile Name"/>
                                         </div>
-                                          </div>
+                                    </div>
 
                                       <div class="row mt-4">
                                         <div class="col-md-6">
-                                        <label style="color: black ; " class="fw-bold fs-6 mb-2"  >Rego</label>
-                                        <input type="number" id="myText" required  class="form-control form-control-solid mb-3 mb-lg-0" name="rego" placeholder="Enter Rego"/>
+                                        <label style="color: black ; " class="fw-bold fs-6 mb-2">Rego</label>
+                                        <input type="text" id="myText" required  class="form-control form-control-solid mb-3 mb-lg-0" name="rego" placeholder="Enter Rego"/>
                                         </div>
                                         <div class="col-md-6">
-                                            <label style="color: black ; " class="fw-bold fs-6 mb-2"  >Assessment Fee</label>
+                                            <label style="color: black ; " class="fw-bold fs-6 mb-2">Assessment Fee</label>
                                             <input  type="number" id="Text3" required class=" form-control form-control-solid mb-3 mb-lg-0" name="assessment_fee"   placeholder="$00.00" name="TextBox_3" oninput="syncInputs()" >
                                         </div>
                                       </div>
+
+
+                                    <div class="row mt-4">
+                                        <div class="col-md-6">
+                                            <label style="color: black ;" class="fw-bold fs-6 mb-2">Claim No</label>
+                                            <input type="text"  required  class="form-control form-control-solid mb-3 mb-lg-0" name="claim_no" placeholder=" Enter Claim No"/>
+                                        </div>
+                                      <div class="col-md-6">
+                                       <label style="color: black ;" class="fw-bold fs-6 mb-2">Policy No</label>
+                                       <input type="text"  required  class="form-control form-control-solid mb-3 mb-lg-0" name="policy_no" placeholder=" Enter Policy No"/>
+                                      </div>
+                                   </div>
 
                                       <!-- <div class="row">
                                         <div class="col-sm-7">
@@ -1200,7 +1212,7 @@ height:15px;
                                             {{-- </form> --}}
 
                                         <div class="damage-section">
-                                            <input type="button" id="openModalBtn" class="action-button damage-button" data-toggle="modal" data-target="#exampleModal" value="Damage Button">               
+                                            <input type="button" id="openModalBtn" class="action-button damage-button" data-toggle="modal" data-target="#exampleModal" value="Damage Button">
 
                                         </div>
 
@@ -1260,7 +1272,7 @@ height:15px;
             <div class="d-flex justify-content-end">
                  <span class="close-btn" id="closeModalBtn">&times;</span>
             </div>
-           
+
             <div class="row justify-content-between mt-5">
                 <div class="col-5">
                     <input type="checkbox" > <span class="sides font-weight-bold">Front</span>  <br>
@@ -1280,7 +1292,7 @@ height:15px;
                     <input type="text" required="" class=" form-control form-control-solid  mb-lg-0" name="left">
                     <img class="mt-3" src="{{ asset('images/left.png') }}" alt="Door Image" style="width:200px;">
                 </div>
-                <div class="col-5">             
+                <div class="col-5">
                     <input type="checkbox"> <span class="sides font-weight-bold">Right</span> <br>
                     <input type="text" required="" class=" form-control form-control-solid mt-2" name="right">
                     <img class="mt-3" src="{{ asset('images/right.png') }}" alt="Door Image" style="width:200px; ">
@@ -1794,7 +1806,7 @@ closeModalBtn.addEventListener('click', closeModal);
 
 
 
-// modal-button 
+// modal-button
 function imageSave() {
     console.log("image saved")
 }

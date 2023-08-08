@@ -100,10 +100,10 @@
                         </td>
                         <td width="33.33%">
                             <p class="text-right font-1" style="margin-top:5px;">
-                                ABN: 78 668 644 246 <br>
-                                Mob: 040 9971 411 <br>
-                                Email: asvla@bigpond.net.au <br>
-                                Po Box: 6 Baxter CT Thomastown VIC 3074
+                                ABN: 76 668 644 246 <br>
+                                Mob: 0422 383 314 <br>
+                                Email: Allstatesvla@gmail.com <br>
+                                6 Baxter Count Thomastown VIC 3074
                                 <!-- Po Box 2177 <br>
                                 Templestowe Lower Vic 3107 <br>
                                 0411 493 593 <br>
@@ -155,10 +155,10 @@
                     </tr>
                     <tr  class="font-0">
                         <td class="ps-2">On behalf of:</td>
-                        <td width="200px">National Motor Claims
+                        {{-- <td width="200px">National Motor Claims
                             PO Box 2000
                             Greenvale Vic 3059
-                        </td>
+                        </td> --}}
                         <td colspan="3"></td>
                         <td></td>
                     </tr>
@@ -189,7 +189,12 @@
                         @endif
                         </td>
                         <td><b class="font">Claim No:</b></td>
-                        <td class="font-0">TR2032</td>
+                        @if(isset($accident_service_report['claim_no']))
+                        <td class="font-0">{{ $accident_service_report['claim_no'] ?? '--' }}
+                            @else
+                            abc
+                            @endif
+                        </td>
                     </tr>
                     <tr>
                         <td><b class="font ps-2">Rego:</b></td>
@@ -200,7 +205,12 @@
                             @endif
                         </td>
                         <td><b class="font">Policy No:</b></td>
-                        <td class="font-0">P-23</td>
+                        @if(isset($accident_service_report['policy_no']))
+                        <td class="font-0">{{ $accident_service_report['policy_no'] ?? '--'  }}
+                            @else
+                            abc
+                            @endif
+                        </td>
                     </tr>
                     <tr class="bg-gray-clr mt-2">
                         <!-- <td>
@@ -235,17 +245,25 @@
                     </tr>
 
                     <tr class="bg-gray-clr mt-2">
-                        <td  class="font ps-2 align-middle" style=" color:black; text-align:left;" >
+                        <td  class="font ps-2 align-middle" style=" color:black; text-align:left;">
                             Banking Details
                         </td>
+
+                        @if(isset($accident_service_report['banking_details']))
+                        <td class="font-0">{{ $accident_service_report['banking_details'] ?? '--'  }}
+                            @else
+                            abc
+                            @endif
+                        </td>
                         <td></td>
-                        <td colspan="3" class="font" style="  color:black; text-align:left;font-weight:bold;">
+                        <td colspan="3" class="font" style="color:black; text-align:left;font-weight:bold;">
                             Invoice Total
                         </td>
                         <td></td>
                     </tr>
                     <tr>
                         <td class="font-0 ps-2" style="border-bottom-style: hidden;">
+                            {{-- ${{ $accident_service_report['banking_details'] ?? '--' }} --}}
                             Commonwealth Bank
                             GBS CORPORATION Sidiros family trust
                             BSB 063-157
@@ -311,10 +329,10 @@
                         </td>
                         <td width="33.33%">
                             <p class="text-right font-1" style="margin-top:5px;">
-                                ABN: 78 668 644 246 <br>
-                                Mob: 040 9971 411 <br>
-                                Email: asvla@bigpond.net.au <br>
-                                Po Box: 6 Baxter CT Thomastown VIC 3074
+                                ABN: 76 668 644 246 <br>
+                                Mob: 0422 383 314 <br>
+                                Email: Allstatesvla@gmail.com <br>
+                                6 Baxter Count Thomastown VIC 3074
                                 <!-- Po Box 2177 <br>
                                 Templestowe Lower Vic 3107 <br>
                                 0411 493 593 <br>
@@ -347,13 +365,13 @@
                         <td colspan="2" class="bg-gray-clr font" style=" color:black; text-align:left;">
                             Claim No:
                         </td>
-                        <td class="font-0" style=" color:black; text-align:left;">TR2032</td>
+                        <td class="font-0" style=" color:black; text-align:left;">{{ $accident_service_report['claim_no'] ?? '--' }}</td>
                     </tr>
                     <tr class="mt-2">
                         <td colspan="2" class="font ps-2" style=" color:black; text-align:left;">
                             On Behalf Of:
                         </td>
-                        <td class="font-0" style=" color:black; text-align:left;">National Motor Claims</td>
+                        <td class="font-0" style=" color:black; text-align:left;">{{ $accident_service_report['on_behalf_of'] ?? '--' }}</td>
                     </tr>
                     <tr class="bg-gray-clr mt-2">
                         <td colspan="2" class="bg-gray-clr font ps-2" style=" color:black; text-align:left;">
@@ -376,7 +394,7 @@
             <table class="table" border="0" id="detail-assessment-2" width="100%">
                 <tbody>
                     <tr class="table-header-bg-clr" style="margin-top: 5px">
-                        <td class="font ps-2" style=" color:white; text-align:left;" colspan="9">
+                        <td class="font ps-2" type="text" style=" color:white; text-align:left;" colspan="9">
                                 Vehicle Details - Rego: {{ $accident_service_report['rego'] ?? '--'}}
                         </td>
                     </tr>

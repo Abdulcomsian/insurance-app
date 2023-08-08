@@ -107,14 +107,18 @@ class AccidentServiceReportController extends Controller
         // else
         // {
             $all_input = $request->except('model');
+
             $report = $this->accident_assessing_report->store($request->all());
+
             if(!is_null($report))
             {
+              //  dd("succ", $request->all());
                 toastr()->success("Accident Report Added Successfully");
                 return redirect()->route('accident-report.index', ['id'=>$report->id]);
             }
             else
             {
+                //dd("errror", $request->all());
                 toastr()->error('Validation Error');
                 return redirect()->route('accident-accessing-service.create');
             }
