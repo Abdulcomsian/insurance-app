@@ -28,6 +28,8 @@ class AccidentService implements AccidentServiceInterface
                 $report->tax_invoice        =       $data['tax_invoice'] ?? null;
                 $report->vehicle            =       $data['vehicle'] ?? null;
                 $report->rego               =       $data['rego'] ?? null;
+                $report->claim_no           =       $data['claim_no'] ?? null;
+                $report->policy_no          =       $data['policy_no'] ?? null;
                 $report->assessment_fee     =       $data['assessment_fee'] ?? null;
                 $report->sub_total          =       $data['sub_total'] ?? null;
                 $report->gst                =       $data['gst'] ?? null;
