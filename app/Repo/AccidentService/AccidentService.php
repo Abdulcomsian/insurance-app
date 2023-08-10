@@ -21,7 +21,8 @@ class AccidentService implements AccidentServiceInterface
         try
         {
             $report = new AccidentServiceReport();
-            DB::transaction( function () use ($data, $report) {
+            DB::transaction( function () use ($data, $report)
+            {
                 $report->invoice_no         =       $data['invoice_no'] ?? null;
                 $report->invoice_date       =       $data['invoice_date'] ?? null;
                 $report->to                 =       $data['to'] ?? null;
@@ -77,6 +78,7 @@ class AccidentService implements AccidentServiceInterface
                 $report->lh_front           =       $data['lh_front'] ?? null;
                 $report->rh_rear            =       $data['rh_rear'] ?? null;
                 $report->lh_rear            =       $data['lh_rear'] ?? null;
+                $report->comment_damange_details=       $data['comment_damange_details'] ?? null;
                 $report->repair_duration_days= $data['repair_duration_days'] ?? null;
                 $report->vehicle_and_suspension_condition = $data['vehicle_and_suspension_condition'] ?? null;
                 $report->user_id           =        Auth::user()->id;

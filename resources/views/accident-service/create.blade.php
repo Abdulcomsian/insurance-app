@@ -1143,48 +1143,148 @@ height:15px;
                                                 <h4 class="fw-bolder " style="color:black;">  Vehicle Condition </h4>
 
 
-                                                <div class="row mt-4">
-                                            <div class="col-4 font-weight-bold mt-2 " style="color:black;"> Overall</div>
+                                        {{-- <div class="row mt-4">
+                                             <div class="col-4 font-weight-bold mt-2 " style="color:black;"> Overall</div>
                                              <div class="col-8"> <input type="text"  required  class=" form-control form-control-solid mb-3 mb-lg-0" name="overall"/> </div>
-                                               </div>
-                                               <div class="row mt-2">
-                                            <div class="col-4 font-weight-bold mt-2 " style="color:black;"> Interior</div>
-                                             <div class="col-8"> <input type="text"  required  class=" form-control form-control-solid mb-3 mb-lg-0" name="interior"/> </div>
-                                               </div>
-
-                                               <div class="row mt-2">
-                                            <div class="col-4 font-weight-bold mt-2 " style="color:black;"> Exterior</div>
-                                             <div class="col-8"> <input type="text"  required  class=" form-control form-control-solid mb-3 mb-lg-0" name="exterior"/> </div>
-                                               </div>
-                                               <div class="row mt-2">
-                                            <div class="col-4 font-weight-bold mt-2 " style="color:black;"> Steering</div>
-                                             <div class="col-8"> <input type="text"  required  class=" form-control form-control-solid mb-3 mb-lg-0" name="steering"/> </div>
-                                               </div>
-                                               <div class="row mt-2">
-                                            <div class="col-4 font-weight-bold mt-2 " style="color:black;"> Brakes</div>
-                                             <div class="col-8"> <input type="text"  required  class=" form-control form-control-solid mb-3 mb-lg-0" name="brakes"/> </div>
-                                               </div>
-                                               <div class="row mt-2">
-                                            <div class="col-4 font-weight-bold mt-2 " style="color:black;"> Tyre Depth Unit Front</div>
-                                             <div class="col-8"> <input type="text"  required  class=" form-control form-control-solid mb-3 mb-lg-0" name="tyre_depth_unit_front"/> </div>
-                                               </div>
-                                               <div class="row mt-2">
-                                            <div class="col-4 font-weight-bold mt-2 " style="color:black;"> Tyre Depth Unit Rear</div>
-                                             <div class="col-8"> <input type="text"  required  class=" form-control form-control-solid mb-3 mb-lg-0" name="tyre_depth_unit_rear"/> </div>
-                                               </div>
+                                        </div> --}}
+                                        <div class="row mt-4">
+                                            <div class="col-4 font-weight-bold mt-2" style="color: black;">Overall</div>
+                                            <div class="col-8">
+                                                <select required class="form-control form-control-solid mb-3 mb-lg-0" name="overall">
+                                                    <option value="">Select an option</option>
+                                                    <option value="Fair">Fair</option>
+                                                    <option value="Average">Average</option>
+                                                    <option value="Above Average">Above Average</option>
+                                                    <option value="As New">As New</option>
+                                                </select>
                                             </div>
+                                        </div>
 
 
-                                                <div class="col-md-5 wd">
-                                                <h4 class="fw-bolder " style="color:black;">  Suspension  Condition </h4>
-                                                <div class="row mt-4 ">
+                                        {{-- <div class="row mt-2">
+                                             <div class="col-4 font-weight-bold mt-2 " style="color:black;"> Interior</div>
+                                             <div class="col-8"> <input type="text"  required  class=" form-control form-control-solid mb-3 mb-lg-0" name="interior"/> </div>
+                                        </div> --}}
+                                        <div class="row mt-4">
+                                            <div class="col-4 font-weight-bold mt-2" style="color: black;">Interior</div>
+                                            <div class="col-8">
+                                                <select required class="form-control form-control-solid mb-3 mb-lg-0" name="interior">
+                                                    <option value="">Select an option</option>
+                                                    <option value="Fair">Fair</option>
+                                                    <option value="Average">Average</option>
+                                                    <option value="Above Average">Above Average</option>
+                                                    <option value="As New">As New</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+
+                                        {{-- <div class="row mt-2">
+                                             <div class="col-4 font-weight-bold mt-2 " style="color:black;"> Exterior</div>
+                                             <div class="col-8"> <input type="text"  required  class=" form-control form-control-solid mb-3 mb-lg-0" name="exterior"/> </div>
+                                        </div> --}}
+                                        <div class="row mt-4">
+                                            <div class="col-4 font-weight-bold mt-2" style="color: black;">Exterior</div>
+                                            <div class="col-8">
+                                                <select required class="form-control form-control-solid mb-3 mb-lg-0" name="exterior">
+                                                    <option value="">Select an option</option>
+                                                    <option value="Fair">Fair</option>
+                                                    <option value="Average">Average</option>
+                                                    <option value="Above Average">Above Average</option>
+                                                    <option value="As New">As New</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        {{-- <div class="row mt-2">
+                                             <div class="col-4 font-weight-bold mt-2 " style="color:black;"> Steering</div>
+                                             <div class="col-8"> <input type="text"  required  class=" form-control form-control-solid mb-3 mb-lg-0" name="steering"/> </div>
+                                        </div> --}}
+                                        <div class="row mt-4">
+                                            <div class="col-4 font-weight-bold mt-2" style="color: black;">Steering</div>
+                                            <div class="col-8">
+                                                <select required class="form-control form-control-solid mb-3 mb-lg-0" name="steering">
+                                                    <option value="">Select an option</option>
+                                                    <option value="Fair">Fair</option>
+                                                    <option value="Average">Average</option>
+                                                    <option value="Above Average">Above Average</option>
+                                                    <option value="As New">As New</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        {{-- <div class="row mt-2">
+                                             <div class="col-4 font-weight-bold mt-2 " style="color:black;"> Brakes</div>
+                                             <div class="col-8"> <input type="text"  required  class=" form-control form-control-solid mb-3 mb-lg-0" name="brakes"/> </div>
+                                        </div> --}}
+                                        <div class="row mt-4">
+                                            <div class="col-4 font-weight-bold mt-2" style="color: black;">Brakes</div>
+                                            <div class="col-8">
+                                                <select required class="form-control form-control-solid mb-3 mb-lg-0" name="brakes">
+                                                    <option value="">Select an option</option>
+                                                    <option value="Fair">Fair</option>
+                                                    <option value="Average">Average</option>
+                                                    <option value="Above Average">Above Average</option>
+                                                    <option value="As New">As New</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+
+
+                                        {{-- <div class="row mt-2">
+                                             <div class="col-4 font-weight-bold mt-2 " style="color:black;"> Tyre Depth Unit Front</div>
+                                             <div class="col-8"> <input type="text"  required  class=" form-control form-control-solid mb-3 mb-lg-0" name="tyre_depth_unit_front"/> </div>
+                                        </div> --}}
+                                        <div class="row mt-4">
+                                            <div class="col-4 font-weight-bold mt-2" style="color: black;">Tyre Depth Unit Front</div>
+                                            <div class="col-8">
+                                                <select required class="form-control form-control-solid mb-3 mb-lg-0" name="tyre_depth_unit_front">
+                                                    <option value="">Select an option</option>
+                                                    <option value="0">0</option>
+                                                    <option value="50">50</option>
+                                                    <option value="60">60</option>
+                                                    <option value="70">70</option>
+                                                    <option value="80">80</option>
+                                                    <option value="90">90</option>
+                                                    <option value="100">100</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        {{-- <div class="row mt-2">
+                                             <div class="col-4 font-weight-bold mt-2 " style="color:black;"> Tyre Depth Unit Rear</div>
+                                             <div class="col-8"> <input type="text"  required  class=" form-control form-control-solid mb-3 mb-lg-0" name="tyre_depth_unit_rear"/> </div>
+                                        </div> --}}
+                                        <div class="row mt-4">
+                                            <div class="col-4 font-weight-bold mt-2" style="color: black;">Tyre Depth Unit Rear</div>
+                                            <div class="col-8">
+                                                <select required class="form-control form-control-solid mb-3 mb-lg-0" name="tyre_depth_unit_rear">
+                                                    <option value="">Select an option</option>
+                                                    <option value="0">0</option>
+                                                    <option value="50">50</option>
+                                                    <option value="60">60</option>
+                                                    <option value="70">70</option>
+                                                    <option value="80">80</option>
+                                                    <option value="90">90</option>
+                                                    <option value="100">100</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                </div>
+
+
+                                <div class="col-md-5 wd">
+                                        <h4 class="fw-bolder " style="color:black;">  Suspension  Condition </h4>
+                                             <div class="row mt-4 ">
                                              <div class="col-4 font-weight-bold mt-2 " style="color:black;"> RH Front</div>
                                              <div class="col-8"> <input type="text"  required  class=" form-control form-control-solid mb-3 mb-lg-0" name="rh_front"/> </div>
-                                               </div>
-                                               <div class="row mt-2">
-                                            <div class="col-4 font-weight-bold mt-2 " style="color:black;"> LH Front</div>
+                                        </div>
+
+                                        <div class="row mt-2">
+                                             <div class="col-4 font-weight-bold mt-2 " style="color:black;"> LH Front</div>
                                              <div class="col-8"> <input type="text"  required  class=" form-control form-control-solid mb-3 mb-lg-0" name="lh_front"/> </div>
-                                               </div>
+                                        </div>
 
                                                <div class="row mt-2">
                                             <div class="col-4 font-weight-bold mt-2 " style="color:black;"> RH Rear</div>
@@ -1194,7 +1294,7 @@ height:15px;
                                             <div class="col-4 font-weight-bold mt-2 " style="color:black;"> LH Rear</div>
                                              <div class="col-8"> <input type="text"  required  class=" form-control form-control-solid mb-3 mb-lg-0" name="lh_rear"/> </div>
                                                </div>
-                                                </div>
+                                </div>
 
 
                                        </div>
@@ -1220,31 +1320,42 @@ height:15px;
                                        <div class="col-md-6 wd mt-5">
                                                 <div class="row">
 
-                                                    <div class="col-4  font-weight-bold mt-2 " style="color:black;"> Damage Section</div>
-                                                    <div class="col-4  font-weight-bold mt-2 " style="color:black;"> Damage Level</div>
-                                                    <div class="col-4  font-weight-bold mt-2 " style="color:black;"> Comments</div>
+                                                    {{-- <div class="col-4  font-weight-bold mt-2 " style="color:black;"> Damage Section</div>
+                                                    <div class="col-4  font-weight-bold mt-2 " style="color:black;"> Damage Level</div> --}}
+                                                    <div class="col-4  font-weight-bold mt-2 " style="color:black;">Comment</div>
                                                 </div>
+
+
                                                 <div class="row mt-4 ">
+                                                    <div class="col-4  mt-2 " style="color:black;">Comment</div>
+                                                    {{-- <div class="col-4"> <input type="text"  required  class=" form-control form-control-solid mb-3 mb-lg-0" name="FrontBumperBar_demage_level"/> </div> --}}
+                                                    <div class="col-4"> <input type="text"  required  class=" form-control form-control-solid mb-3 mb-lg-0" name="comment_damange_details"/> </div>
+                                                </div>
+
+
+
+                                            {{-- <div class="row mt-4 ">
                                                 <div class="col-4  mt-2 " style="color:black;">Front Bumper Bar</div>
-                                             <div class="col-4"> <input type="text"  required  class=" form-control form-control-solid mb-3 mb-lg-0" name="FrontBumperBar_demage_level"/> </div>
-                                             <div class="col-4"> <input type="text"  required  class=" form-control form-control-solid mb-3 mb-lg-0" name="FrontBumperBar_comments"/> </div>
-                                                </div>
+                                                <div class="col-4"> <input type="text"  required  class=" form-control form-control-solid mb-3 mb-lg-0" name="FrontBumperBar_demage_level"/> </div>
+                                                <div class="col-4"> <input type="text"  required  class=" form-control form-control-solid mb-3 mb-lg-0" name="FrontBumperBar_comments"/> </div>
+                                            </div>
 
-                                                <div class="row mt-2">
+                                            <div class="row mt-2">
                                                 <div class="col-4  mt-2 " style="color:black;">Left Front Guard</div>
-                                             <div class="col-4"> <input type="text"  required  class=" form-control form-control-solid mb-3 mb-lg-0" name="LeftFrontGuard_demage_level"/> </div>
-                                             <div class="col-4"> <input type="text"  required  class=" form-control form-control-solid mb-3 mb-lg-0" name="LeftFrontGuard_comments"/> </div>
-                                                </div>
-                                                <div class="row mt-2">
-                                                <div class="col-4  mt-2 " style="color:black;">Left Front Door</div>
-                                             <div class="col-4"> <input type="text"  required  class=" form-control form-control-solid mb-3 mb-lg-0" name="LeftFrontDoor_demage_level"/> </div>
-                                             <div class="col-4"> <input type="text"  required  class=" form-control form-control-solid mb-3 mb-lg-0" name="LeftFrontDoor_comments"/> </div>
-                                                </div>
+                                                <div class="col-4"> <input type="text"  required  class=" form-control form-control-solid mb-3 mb-lg-0" name="LeftFrontGuard_demage_level"/> </div>
+                                                <div class="col-4"> <input type="text"  required  class=" form-control form-control-solid mb-3 mb-lg-0" name="LeftFrontGuard_comments"/> </div>
+                                            </div>
 
-                                                <div class="row mt-4">
-                                            <div class="col-5 font-weight-bold mt-2 " style="color:black;"> Repair Duration Days</div>
-                                             <div class="col-7"> <input type="number"  required  class=" form-control form-control-solid mb-3 mb-lg-0" name="repair_duration_days"/> </div>
-                                               </div>
+                                            <div class="row mt-2">
+                                                <div class="col-4  mt-2 " style="color:black;">Left Front Door</div>
+                                                <div class="col-4"> <input type="text"  required  class=" form-control form-control-solid mb-3 mb-lg-0" name="LeftFrontDoor_demage_level"/> </div>
+                                                <div class="col-4"> <input type="text"  required  class=" form-control form-control-solid mb-3 mb-lg-0" name="LeftFrontDoor_comments"/> </div>
+                                            </div> --}}
+
+                                            <div class="row mt-4">
+                                              <div class="col-5 font-weight-bold mt-2 " style="color:black;"> Repair Duration Days</div>
+                                              <div class="col-7"> <input type="number"  required  class=" form-control form-control-solid mb-3 mb-lg-0" name="repair_duration_days"/> </div>
+                                            </div>
 
 
                                     </div>

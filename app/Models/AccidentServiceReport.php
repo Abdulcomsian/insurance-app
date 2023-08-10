@@ -73,7 +73,8 @@ class AccidentServiceReport extends Model
         'vehicle_and_suspension_condition',
         'user_id',
         'claim_no',
-        'policy_no'
+        'policy_no',
+        'comment_damange_details'
     ];
 
     public function serviceAssessors () :HasMany

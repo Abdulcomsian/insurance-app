@@ -1092,40 +1092,45 @@ margin-top:1rem;
                                     <div class="form-card">
 
                                     <div class="row d-flex justify-content-between mt-5" style="font-size:11px;">
-                                                <div class="col-md-5">
-                                                <h4 class="fw-bolder " style="color:black;">  Vehicle Condition </h4>
+                                        <div class="col-md-5">
+                                            <h4 class="fw-bolder " style="color:black;">  Vehicle Condition </h4>
 
 
-                                                <div class="row mt-4">
-                                            <div class="col-4 font-weight-bold mt-2 " style="color:black;"> Overall</div>
-                                             <div class="col-8"> <input type="text"  required  class=" form-control form-control-solid mb-3 mb-lg-0" name="vin"/> </div>
-                                               </div>
-                                               <div class="row mt-2">
-                                            <div class="col-4 font-weight-bold mt-2 " style="color:black;"> Interior</div>
-                                             <div class="col-8"> <input type="text"  required  class=" form-control form-control-solid mb-3 mb-lg-0" name="vin"/> </div>
-                                               </div>
-
-                                               <div class="row mt-2">
-                                            <div class="col-4 font-weight-bold mt-2 " style="color:black;"> Exterior</div>
-                                             <div class="col-8"> <input type="text"  required  class=" form-control form-control-solid mb-3 mb-lg-0" name="vin"/> </div>
-                                               </div>
-                                               <div class="row mt-2">
-                                            <div class="col-4 font-weight-bold mt-2 " style="color:black;"> Steering</div>
-                                             <div class="col-8"> <input type="text"  required  class=" form-control form-control-solid mb-3 mb-lg-0" name="vin"/> </div>
-                                               </div>
-                                               <div class="row mt-2">
-                                            <div class="col-4 font-weight-bold mt-2 " style="color:black;"> Brakes</div>
-                                             <div class="col-8"> <input type="text"  required  class=" form-control form-control-solid mb-3 mb-lg-0" name="vin"/> </div>
-                                               </div>
-                                               <div class="row mt-2">
-                                            <div class="col-4 font-weight-bold mt-2 " style="color:black;"> Tyre Depth Unit Front</div>
-                                             <div class="col-8"> <input type="text"  required  class=" form-control form-control-solid mb-3 mb-lg-0" name="vin"/> </div>
-                                               </div>
-                                               <div class="row mt-2">
-                                            <div class="col-4 font-weight-bold mt-2 " style="color:black;"> Tyre Depth Unit Rear</div>
-                                             <div class="col-8"> <input type="text"  required  class=" form-control form-control-solid mb-3 mb-lg-0" name="vin"/> </div>
-                                               </div>
+                                            <div class="row mt-4">
+                                              <div class="col-4 font-weight-bold mt-2 " style="color:black;"> Overall</div>
+                                              <div class="col-8"> <input type="text"  required  class=" form-control form-control-solid mb-3 mb-lg-0" name="vin"/> </div>
                                             </div>
+
+                                            <div class="row mt-2">
+                                              <div class="col-4 font-weight-bold mt-2 " style="color:black;"> Interior</div>
+                                              <div class="col-8"> <input type="text"  required  class=" form-control form-control-solid mb-3 mb-lg-0" name="vin"/> </div>
+                                            </div>
+
+                                            <div class="row mt-2">
+                                              <div class="col-4 font-weight-bold mt-2 " style="color:black;"> Exterior</div>
+                                              <div class="col-8"> <input type="text"  required  class=" form-control form-control-solid mb-3 mb-lg-0" name="vin"/> </div>
+                                            </div>
+
+                                            <div class="row mt-2">
+                                              <div class="col-4 font-weight-bold mt-2 " style="color:black;"> Steering</div>
+                                              <div class="col-8"> <input type="text"  required  class=" form-control form-control-solid mb-3 mb-lg-0" name="vin"/> </div>
+                                            </div>
+
+                                            <div class="row mt-2">
+                                              <div class="col-4 font-weight-bold mt-2 " style="color:black;"> Brakes</div>
+                                              <div class="col-8"> <input type="text"  required  class=" form-control form-control-solid mb-3 mb-lg-0" name="vin"/> </div>
+                                            </div>
+
+                                            <div class="row mt-2">
+                                               <div class="col-4 font-weight-bold mt-2 " style="color:black;"> Tyre Depth Unit Front</div>
+                                               <div class="col-8"> <input type="text"  required  class=" form-control form-control-solid mb-3 mb-lg-0" name="vin"/> </div>
+                                            </div>
+
+                                            <div class="row mt-2">
+                                               <div class="col-4 font-weight-bold mt-2 " style="color:black;"> Tyre Depth Unit Rear</div>
+                                               <div class="col-8"> <input type="text"  required  class=" form-control form-control-solid mb-3 mb-lg-0" name="vin"/> </div>
+                                            </div>
+                                        </div>
 
 
                                                 <div class="col-md-5 wd">
@@ -1168,33 +1173,39 @@ margin-top:1rem;
                                        <div class="col-md-6 wd">
                                                 <div class="row">
 
-                                                    <div class="col-4  font-weight-bold mt-2 " style="color:black;"> Damage Section</div>
-                                                    <div class="col-4  font-weight-bold mt-2 " style="color:black;"> Damage Level</div>
-                                                    <div class="col-4  font-weight-bold mt-2 " style="color:black;"> Comments</div>
-                                                </div>
+                                                    {{-- <div class="col-4  font-weight-bold mt-2 " style="color:black;"> Damage Section</div>
+                                                    <div class="col-4  font-weight-bold mt-2 " style="color:black;"> Damage Level</div> --}}
+                                                    <div class="col-4  font-weight-bold mt-2 " style="color:black;">Comment</div>
+
+                                            </div>
+                                                <div class="row mt-4">
+                                                <div class="col-4  mt-2 " style="color:black;">Comment</div>
+                                                <div class="col-4"> <input type="text"  required  class=" form-control form-control-solid mb-3 mb-lg-0" name="vin"/> </div>
+                                            </div>
+
+
+                                            {{-- </div>
                                                 <div class="row mt-4">
                                                 <div class="col-4  mt-2 " style="color:black;">Front Bumper Bar</div>
-                                             <div class="col-4"> <input type="text"  required  class=" form-control form-control-solid mb-3 mb-lg-0" name="vin"/> </div>
-                                             <div class="col-4"> <input type="text"  required  class=" form-control form-control-solid mb-3 mb-lg-0" name="vin"/> </div>
-                                                </div>
+                                                <div class="col-4"> <input type="text"  required  class=" form-control form-control-solid mb-3 mb-lg-0" name="vin"/> </div>
+                                                <div class="col-4"> <input type="text"  required  class=" form-control form-control-solid mb-3 mb-lg-0" name="vin"/> </div>
+                                            </div>
 
-                                                <div class="row mt-2">
+                                            <div class="row mt-2">
                                                 <div class="col-4  mt-2 " style="color:black;">Left Front Guard</div>
-                                             <div class="col-4"> <input type="text"  required  class=" form-control form-control-solid mb-3 mb-lg-0" name="vin"/> </div>
-                                             <div class="col-4"> <input type="text"  required  class=" form-control form-control-solid mb-3 mb-lg-0" name="vin"/> </div>
-                                                </div>
-                                                <div class="row mt-2">
+                                                <div class="col-4"> <input type="text"  required  class=" form-control form-control-solid mb-3 mb-lg-0" name="vin"/> </div>
+                                                <div class="col-4"> <input type="text"  required  class=" form-control form-control-solid mb-3 mb-lg-0" name="vin"/> </div>
+                                            </div>
+                                            <div class="row mt-2">
                                                 <div class="col-4  mt-2 " style="color:black;">Left Front Door</div>
-                                             <div class="col-4"> <input type="text"  required  class=" form-control form-control-solid mb-3 mb-lg-0" name="vin"/> </div>
-                                             <div class="col-4"> <input type="text"  required  class=" form-control form-control-solid mb-3 mb-lg-0" name="vin"/> </div>
-                                                </div>
+                                                <div class="col-4"> <input type="text"  required  class=" form-control form-control-solid mb-3 mb-lg-0" name="vin"/> </div>
+                                                <div class="col-4"> <input type="text"  required  class=" form-control form-control-solid mb-3 mb-lg-0" name="vin"/> </div>
+                                            </div> --}}
 
-                                                <div class="row mt-4">
-                                            <div class="col-5 font-weight-bold mt-2 " style="color:black;"> Repair Duration Days</div>
-                                             <div class="col-7"> <input type="number"  required  class=" form-control form-control-solid mb-3 mb-lg-0" name="vin"/> </div>
-                                               </div>
-
-
+                                            <div class="row mt-4">
+                                               <div class="col-5 font-weight-bold mt-2 " style="color:black;"> Repair Duration Days</div>
+                                               <div class="col-7"> <input type="number"  required  class=" form-control form-control-solid mb-3 mb-lg-0" name="vin"/> </div>
+                                            </div>
                                     </div>
                                        </div>
 
