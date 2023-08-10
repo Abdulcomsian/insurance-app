@@ -1355,12 +1355,24 @@ height:15px;
                                                 <div class="col-4"> <input type="text"  required  class=" form-control form-control-solid mb-3 mb-lg-0" name="LeftFrontDoor_comments"/> </div>
                                             </div> --}}
 
-                                            <div class="row mt-4">
-                                              <div class="col-5 font-weight-bold mt-2 " style="color:black;"> Repair Duration Days</div>
-                                              <div class="col-7"> <input type="number"  required  class=" form-control form-control-solid mb-3 mb-lg-0" name="repair_duration_days"/> </div>
+                                            <div class="row">
+
+                                                {{-- <div class="col-4  font-weight-bold mt-2 " style="color:black;"> Damage Section</div>
+                                                <div class="col-4  font-weight-bold mt-2 " style="color:black;"> Damage Level</div> --}}
+                                                <div class="col-4  font-weight-bold mt-2 " style="color:black;">Repair Duration Days</div>
                                             </div>
 
+                                            {{-- <div class="row mt-4">
+                                              <div class="col-5 font-weight-bold mt-2 " style="color:black;"> Repair Duration Days</div>
+                                              <div class="col-7"> <input type="number"  required  class=" form-control form-control-solid mb-3 mb-lg-0" name="repair_duration_days"/> </div>
+                                            </div> --}}
 
+                                            <div class="row mt-4">
+                                                <div class="col-5">
+                                                    {{-- <textarea required class="form-control form-control-solid mb-3 mb-lg-0" name="comment_damange_details"></textarea> --}}
+                                                    <div> <input type="number"  required  class=" form-control form-control-solid mb-3 mb-lg-0" name="repair_duration_days"/> </div>
+                                                </div>
+                                            </div>
                                     </div>
                                        </div>
 
