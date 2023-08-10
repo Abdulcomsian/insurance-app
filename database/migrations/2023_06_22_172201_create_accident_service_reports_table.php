@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             //First Step
             $table->integer('invoice_no')->nullable();
-            $table->date('invoice_date');
+            // $table->date('invoice_date');
             $table->string('to')->nullable();
             $table->string('tax_invoice')->nullable();
             $table->string('vehicle')->nullable();
@@ -45,7 +45,7 @@ return new class extends Migration
             $table->string('vin')->nullable();
 
             //Third Step
-            $table->date('assessment_date');
+            // $table->date('assessment_date');
             $table->string('cover_type')->nullable();
             $table->string('sum_insured')->nullable();
             $table->string('market_value')->nullable();
@@ -60,6 +60,7 @@ return new class extends Migration
             $table->string('salvage_condition')->nullable();
             $table->longText('comments')->nullable();
             $table->string('total_supps')->nullable();
+
             //Fourth Step
             $table->string('file')->nullable();
             $table->string('overall')->nullable();
