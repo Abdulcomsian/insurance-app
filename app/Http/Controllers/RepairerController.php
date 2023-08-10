@@ -27,20 +27,23 @@ class RepairerController extends Controller
     {
         $request->validate([
             'name' => 'required',
-            'email' => 'required|email',
-            'contact' => 'required',
-            'phone' => 'required',
-            'mobile' => 'required',
             'address' => 'required',
+            'contact' => 'required',
+            'email' => 'required|email',
+            'mobile' => 'required',
+            // 'phone' => 'required',
+
         ]);
 
         $repairer = new Repairer();
         $repairer->name = $request->name;
-        $repairer->email = $request->email;
-        $repairer->contact = $request->contact;
-        $repairer->phone = $request->phone;
-        $repairer->mobile = $request->mobile;
         $repairer->address = $request->address;
+        $repairer->contact = $request->contact;
+        $repairer->email = $request->email;
+        $repairer->mobile = $request->mobile;
+        // $repairer->phone = $request->phone;
+
+
         $repairer->save();
 
         return redirect()->route('repairer.index')->with('success', 'Repairer created successfully.');
@@ -56,20 +59,22 @@ class RepairerController extends Controller
     {
         $request->validate([
             'name' => 'required',
-            'email' => 'required|email',
-            'contact' => 'required',
-            'phone' => 'required',
-            'mobile' => 'required',
             'address' => 'required',
+            'contact' => 'required',
+            'email' => 'required|email',
+            'mobile' => 'required',
+            // 'phone' => 'required',
+
         ]);
 
         $repairer = Repairer::find($id);
         $repairer->name = $request->name;
-        $repairer->email = $request->email;
-        $repairer->contact = $request->contact;
-        $repairer->phone = $request->phone;
-        $repairer->mobile = $request->mobile;
         $repairer->address = $request->address;
+        $repairer->contact = $request->contact;
+        $repairer->email = $request->email;
+        $repairer->mobile = $request->mobile;
+        // $repairer->phone = $request->phone;
+
         $repairer->save();
 
         return redirect()->route('repairer.index')->with('success', 'Repairer updated successfully.');

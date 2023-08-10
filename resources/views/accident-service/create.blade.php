@@ -1274,7 +1274,7 @@ height:15px;
                                 </div>
 
 
-                                <div class="col-md-5 wd">
+                                   <div class="col-md-5 wd">
                                         <h4 class="fw-bolder " style="color:black;">  Suspension  Condition </h4>
                                              <div class="row mt-4 ">
                                              <div class="col-4 font-weight-bold mt-2 " style="color:black;"> RH Front</div>
@@ -1286,37 +1286,36 @@ height:15px;
                                              <div class="col-8"> <input type="text"  required  class=" form-control form-control-solid mb-3 mb-lg-0" name="lh_front"/> </div>
                                         </div>
 
-                                               <div class="row mt-2">
-                                            <div class="col-4 font-weight-bold mt-2 " style="color:black;"> RH Rear</div>
+                                        <div class="row mt-2">
+                                             <div class="col-4 font-weight-bold mt-2 " style="color:black;"> RH Rear</div>
                                              <div class="col-8"> <input type="text"  required  class=" form-control form-control-solid mb-3 mb-lg-0" name="rh_rear"/> </div>
-                                               </div>
-                                               <div class="row mt-2">
-                                            <div class="col-4 font-weight-bold mt-2 " style="color:black;"> LH Rear</div>
+                                        </div>
+                                        <div class="row mt-2">
+                                             <div class="col-4 font-weight-bold mt-2 " style="color:black;"> LH Rear</div>
                                              <div class="col-8"> <input type="text"  required  class=" form-control form-control-solid mb-3 mb-lg-0" name="lh_rear"/> </div>
-                                               </div>
-                                </div>
+                                        </div>
+                                   </div>
+                              </div>
+
+                            <div class="row mt-5 ">
+                                       {{-- <h4 class="fw-bolder mt-4" style="color:black;">  Damage Details </h4> --}}
+                                       {{-- <div class="col-md-6"> --}}
 
 
-                                       </div>
-                                       <div class="row mt-5 ">
-                                       <h4 class="fw-bolder mt-4" style="color:black;">  Damage Details </h4>
-                                       <div class="col-md-6">
-
-
-                                       <p>Click on the "Choose File" button to upload  Images:</p>
+                                       {{-- <p>Click on the "Choose File" button to upload  Images:</p> --}}
 
                                             {{-- <form action="/action_page.php"> --}}
 
-                                            <input class="image" type="file" name="image" multiple accept="image/*">
+                                            {{-- <input class="image" type="file" name="image" multiple accept="image/*"> --}}
                                             {{-- <input class="images" type="submit"> --}}
                                             {{-- </form> --}}
 
-                                        <div class="damage-section">
+                                        {{-- <div class="damage-section">
                                             <input type="button" id="openModalBtn" class="action-button damage-button" data-toggle="modal" data-target="#exampleModal" value="Damage Button">
 
-                                        </div>
+                                        </div> --}}
 
-                                       </div>
+                                       {{-- </div> --}}
                                        <div class="col-md-6 wd mt-5">
                                                 <div class="row">
 
@@ -1327,9 +1326,13 @@ height:15px;
 
 
                                                 <div class="row mt-4 ">
-                                                    <div class="col-4  mt-2 " style="color:black;">Comment</div>
+                                                    {{-- <div class="col-4  mt-2 " style="color:black;">Comment</div> --}}
                                                     {{-- <div class="col-4"> <input type="text"  required  class=" form-control form-control-solid mb-3 mb-lg-0" name="FrontBumperBar_demage_level"/> </div> --}}
-                                                    <div class="col-4"> <input type="text"  required  class=" form-control form-control-solid mb-3 mb-lg-0" name="comment_damange_details"/> </div>
+
+                                                    {{-- <div class="col-4"> <input type="text"  required  class=" form-control form-control-solid mb-3 mb-lg-0" name="comment_damange_details"/> </div> --}}
+                                                    <div class="col-10">
+                                                        <textarea required class="form-control form-control-solid mb-3 mb-lg-0" name="comment_damange_details"></textarea>
+                                                    </div>
                                                 </div>
 
 

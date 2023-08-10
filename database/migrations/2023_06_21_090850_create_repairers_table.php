@@ -16,11 +16,11 @@ class CreateRepairersTable extends Migration
         Schema::create('repairers', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('email');
-            $table->string('contact');
-            $table->string('phone');
-            $table->string('mobile');
             $table->string('address');
+            $table->string('contact');
+            $table->string('email');
+            // $table->string('phone')->nullable();
+            $table->string('mobile');
             $table->timestamps();
         });
     }
