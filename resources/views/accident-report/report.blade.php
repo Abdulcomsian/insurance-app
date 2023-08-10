@@ -928,7 +928,7 @@
     <div class="row" style="display:flex">
         <div class="col-md-4">
             {{-- <img src="{{ public_path('asset/image/damag_pic2.jpg') }}" alt=""> --}}
-            <img class="img " style="width:30%; height: 130px;" src="images/damag_pic2.jpg" alt="">
+            <img class="img " style="width:30%; height: 130px;" src="{{ public_path('images/damag_pic2.jpg') }}" alt="">
         </div>
         <div class="col-md-8">
             <table>
