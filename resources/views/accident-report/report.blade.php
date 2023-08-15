@@ -135,14 +135,14 @@
                     </tr> -->
 
                     <tr class="bg-gray-clr font">
-    <td class="align-middle ps-2 " style="color: #2587be;" >
+    <td class="align-middle ps-2 " style="color: #2587be;">
         Tax Invoice:
             {{$accident_service_report['tax_invoice'] ?? $accident_service_report['id'] }}
 
     </td>
     <!-- <td></td> -->
     <td colspan="5" class="font pe-2 align-middle" style="color: #2587be; text-align: right;">
-        Date: {{$accident_service_report['invoice_date'] ?? '--' }}
+        Date:{{ date('d-m-Y', strtotime($accident_service_report['invoice_date'] ?? '--' )) }}
     </td>
 </tr>
 
@@ -354,7 +354,7 @@
                             Detailed Assessment Report Ref No: 2483
                         </td>
                         <td class="font pe-2" style="color:white; text-align:right">
-                            Date: {{ $accident_service_report['invoice_date'] }}</td>
+                            Date: {{ date('d-m-Y', strtotime($accident_service_report['invoice_date'])) }}</td>
                     </tr>
                 </tbody>
             </table>
@@ -388,7 +388,7 @@
                         <td colspan="2" class="bg-gray-clr font" style=" color:black; text-align:left;">
                             Estimate No:
                         </td>
-                        <td class="font-0" style=" color:black; text-align:left;">3668</td>
+                        <td class="font-0" style=" color:black; text-align:left;">{{ $accident_service_report['estimate_no'] ?? '--' }}</td>
                     </tr>
                 </tbody>
             </table>

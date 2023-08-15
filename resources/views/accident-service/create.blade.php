@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css">
     <script src=" https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script> -->
 
 
@@ -544,10 +545,12 @@ height:15px;
                                       </div>
 
                                     <div class="row mt-4">
-                                         <div class="col-md-6">
-                                         <label class="fw-bold fs-6 mb-2" style="color: black ;" > Date </label>
+                                    <div class="col-md-6">
+                                         <label class="fw-bold fs-6 mb-2" style="color: black ;"> Date </label>
                                          <input type="date" required  class="form-control form-control-solid mb-3 mb-lg-0" name="invoice_date"/>
+                                         {{-- <input type="text" required class="form-control form-control-solid mb-3 mb-lg-0" id="display_date" name="invoice_date" placeholder="dd-mm-yyyy"/> --}}
                                     </div>
+
                                         <div class="col-md-6">
                                         <label style="color: black ;" class="fw-bold fs-6 mb-2">Vechile </label>
                                         <input type="text"  required  class="form-control form-control-solid mb-3 mb-lg-0" name="vehicle" placeholder=" Enter Vechile Name"/>
@@ -609,13 +612,19 @@ height:15px;
                                             <input  type="number" id="Text3" required class=" form-control form-control-solid mb-3 mb-lg-0" name="assessment_fee"   placeholder="$00.00" name="TextBox_3" oninput="syncInputs()" >
                                         </div> -->
                                     </div>
+
+
                                     <label style="color: black ; font-weight: 600;"> Invoice Total </label>
                                             <div class="col-sm-3 " >
+
+
                                             <!-- <div class="row mb-2">
                                                 <div class="col-7 font-weight-bold mt-2" style="color:black;" >Assessment Fee</div>
                                                 <div class="col-3"><input  class="adds" name="assessment_fee"  type="number" id="Text3" placeholder="$00.00" name="TextBox_3" oninput="syncInputs()" ></div>
                                                 </div> -->
                                             <!-- <label style="color: black ; font-weight: 600;"> Invoice Total </label> -->
+
+
                                                     <div class="row ">
                                                         <div class="col-6 mt-2"> Sub Total</div>
                                                         <div class="col-3"> <input readonly class="adds" name="sub_total" type="number" id="Text1" placeholder="$00.00" name="TextBox1"  ></div>
@@ -629,9 +638,6 @@ height:15px;
                                                         <div class="col-3"><input readonly class="adds" name="grand_total" type="number" id="txtresult" placeholder="$00.00" name="TextBox3"></div>
                                                     </div>
                                             </div>
-
-
-
 
                                          </div>
 
@@ -651,16 +657,25 @@ height:15px;
                                 <fieldset>
                                     <div class="form-card">
                                         <h4 class="fw-bolder " style="color:black;">  Detailed Assessment Report</h4>
-                                        <div class="row mt-4">
-                                        <div class="col-md-6">
+                                <div class="row mt-4">
+
+                                    <div class="col-md-6">
                                         <label style="color: black ;" class="fw-bold fs-6 mb-2"  >Owner </label>
                                         <input type="text"  required  class="form-control form-control-solid mb-3 mb-lg-0" name="owner_name" placeholder=" Enter Owner Name"/>
-                                        </div>
-                                        <div class="col-md-6">
+                                    </div>
+
+                                    <div class="col-md-6">
                                         <label style="color: black ; " class="fw-bold fs-6 mb-2"  >Assessment Type</label>
-                                                <input type="text"  required  class="form-control form-control-solid mb-3 mb-lg-0" name="assessment_type" placeholder=" Enter Assessment Type"/>
-                                          </div>
-                                      </div>
+                                            <input type="text"  required  class="form-control form-control-solid mb-3 mb-lg-0" name="assessment_type" placeholder=" Enter Assessment Type"/>
+                                    </div>
+
+                                <div class="row mt-4">
+                                    <div class="col-md-6">
+                                        <label style="color: black ; " class="fw-bold fs-6 mb-2"  >Estimate No</label>
+                                            <input type="text"  required  class="form-control form-control-solid mb-3 mb-lg-0" name="estimate_no" placeholder=" Enter Estimate No"/>
+                                    </div>
+                               </div>
+                               </div>
 
                                       <h4 class="fw-bolder mt-5 d-flex" style="color:black;"> <p> Vehicle Details - Rego:VIC | UVU </p >  <p class="ms-2" id="demo"></p>   </h4>
                                       <div class="row mt-4">
@@ -1448,8 +1463,7 @@ height:15px;
     </script>
 
 
-
-    <script>
+<script>
 
 //show and hide div
     function myFunction() {
@@ -1472,6 +1486,32 @@ function myFunctiontwo() {
         document.getElementById("demo").innerHTML = x;
     }
 
+
+    // 2 digit decimal point
+    // function formatDecimal(value) {
+    //     return value.toFixed(2).replace('.', ',');
+    // }
+
+    // function syncInputs() {
+    //     var subTotalInput = document.getElementById("Text1");
+    //     var gstInput = document.getElementById("Text2");
+    //     var grandTotalInput = document.getElementById("txtresult");
+
+    //     var subTotal = parseFloat(subTotalInput.value.replace(',', '.'));
+    //     var gst = parseFloat(gstInput.value.replace(',', '.'));
+
+    //     // Calculate the grand total
+    //     var grandTotal = subTotal + gst;
+
+    //     // Update the input fields with formatted values
+    //     subTotalInput.value = '$' + formatDecimal(subTotal);
+    //     gstInput.value = '$' + formatDecimal(gst);
+    //     grandTotalInput.value = '$' + formatDecimal(grandTotal);
+    // }
+
+
+
+
 // adding two numbers automatically
 function add_number() {
             // Get the input field values
@@ -1482,7 +1522,7 @@ function add_number() {
             var result = num1 + num2;
 
             // Display the result in the third input field
-            document.getElementById("txtresult").value = result;
+            document.getElementById("txtresult").value = parseFloat(result).toFixed(2);
         }
 
 /// 10 percentage of given number  thanks to GPT
@@ -1494,7 +1534,7 @@ function calculatePercentage() {
     var inputNumber = parseFloat(inputField.value.replace(",", "."));
       var percentage = inputNumber * 0.1;
 
-      outputField.value = Math.round(percentage);
+      outputField.value =parseFloat(Math.round(percentage)).toFixed(2);
         add_number();
     }
 
@@ -1520,7 +1560,7 @@ function calculatePercentage() {
       var input1 = document.getElementById("Text3");
       var input2 = document.getElementById("Text1");
 
-      input2.value = input1.value;
+      input2.value =parseFloat(input1.value).toFixed(2);
       calculatePercentage()
     }
 
@@ -1936,6 +1976,7 @@ closeModalBtn.addEventListener('click', closeModal);
 function imageSave() {
     console.log("image saved")
 }
+
 </script>
 
 

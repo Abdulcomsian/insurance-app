@@ -106,6 +106,7 @@ class AccidentServiceReportController extends Controller
         // }
         // else
         // {
+
             $all_input = $request->except('model');
 
             $report = $this->accident_assessing_report->store($request->all());

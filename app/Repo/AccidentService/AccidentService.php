@@ -37,6 +37,7 @@ class AccidentService implements AccidentServiceInterface
                 $report->grand_total        =       $data['grand_total'] ?? null;
                 $report->owner_name         =       $data['owner_name'] ?? null;
                 $report->assessment_type    =       $data['assessment_type'] ?? null;
+                $report->estimate_no        =       $data['estimate_no'] ?? null;
                 $report->make               =       $data['make'] ?? null;
                 $report->engine_type        =       $data['engine_type'] ?? null;
                 $report->odometer           =       $data['odometer'] ?? null;

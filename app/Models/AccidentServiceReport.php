@@ -28,6 +28,7 @@ class AccidentServiceReport extends Model
         'grand_total',
         'owner_name',
         'assessment_type',
+        'estimate_no',
         'make',
         'engine_type',
         'odometer',
