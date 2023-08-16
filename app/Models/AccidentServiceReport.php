@@ -59,6 +59,15 @@ class AccidentServiceReport extends Model
         'salvage_condition',
         'comments',
         'total_supps',
+
+        'tradone',
+        'market_one',
+        'tradetwo',
+        'retail_value',
+        'market_three',
+        'avg_kms',
+        'market_avg',
+
         'file',
         'overall',
         'interior',

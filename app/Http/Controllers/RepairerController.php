@@ -83,7 +83,8 @@ class RepairerController extends Controller
     public function destroy(Request $request, $id)
     {
         $repairer = Repairer::find($id);
-        if ($repairer) {
+        if ($repairer)
+        {
             $repairer->delete();
             return response()->json(['success' => true]);
         } else {

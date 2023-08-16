@@ -161,11 +161,10 @@
                             <tr class="text-start text-gray-400 fw-bolder fs-7 text-uppercase gs-0">
                                 <th>S.No</th>
                                 <th>Name</th>
-                                <th>Email</th>
-                                <th>Contact</th>
-                                <th>Phone</th>
-                                <th>Mobile</th>
                                 <th>Address</th>
+                                <th>Contact</th>
+                                <th>Email</th>
+                                <th>ABN</th>
                                 <th>Action</th>
                             </tr>
                             <!--end::Table row-->
@@ -228,11 +227,13 @@
                 columns: [
                     { data: 'id', name: 'id', defaultContent: '-' },
                     { data: 'name', name: 'name', defaultContent: '-', class: 'name' },
-                    { data: 'email', name: 'email', defaultContent: '-', class: 'email' },
-                    { data: 'contact', name: 'contact', defaultContent: '-', class: 'contact' },
-                    { data: 'phone', name: 'phone', defaultContent: '-', class: 'phone' },
-                    { data: 'mobile', name: 'mobile', defaultContent: '-', class: 'mobile' },
                     { data: 'address', name: 'address', defaultContent: '-', class: 'address' },
+                    { data: 'contact', name: 'contact', defaultContent: '-', class: 'contact' },
+                    { data: 'email', name: 'email', defaultContent: '-', class: 'email' },
+                    // { data: 'contact', name: 'contact', defaultContent: '-', class: 'contact' },
+                    // { data: 'phone', name: 'phone', defaultContent: '-', class: 'phone' },
+                    { data: 'mobile', name: 'mobile', defaultContent: '-', class: 'mobile' },
+                    // { data: 'address', name: 'address', defaultContent: '-', class: 'address' },
                     { data: 'action', name: 'action', orderable: false, searchable: false }
                 ],
                 language: {
@@ -242,7 +243,8 @@
                 lengthMenu: [[10, 25, 50, -1], [10, 25, 50, "All"]]
             });
 
-            $(document).on('click', '.edit-btn', function() {
+            $(document).on('click', '.edit-btn', function()
+            {
                 var id = $(this).data('id');
                 window.location.href = "{{ route('repairer.edit', ':id') }}".replace(':id', id);
             });
@@ -270,6 +272,7 @@
                     });
                 }
             });
+
         });
     </script>
 @endsection

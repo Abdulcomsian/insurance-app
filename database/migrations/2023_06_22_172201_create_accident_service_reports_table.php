@@ -28,6 +28,7 @@ return new class extends Migration
             //Second Step
             $table->string('owner_name')->nullable();
             $table->string('assessment_type')->nullable();
+            // $table->string('estimate_no')->nullable();
             $table->string('make')->nullable();
             $table->string('engine_type')->nullable();
             $table->string('odometer')->nullable();

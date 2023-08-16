@@ -59,6 +59,16 @@ class AccidentService implements AccidentServiceInterface
                 $report->market_value       =       $data['market_value'] ?? null;
                 $report->salvage_value      =       $data['salvage_value'] ?? null;
                 $report->settlement         =       $data['settlement'] ?? null;
+
+                $report->tradone            =       $data['tradone'] ?? null;
+                $report->market_one         =       $data['market_one'] ?? null;
+                $report->tradetwo           =       $data['tradetwo'] ?? null;
+                $report->market_two         =       $data['market_two'] ?? null;
+                $report->retail_value       =       $data['retail_value'] ?? null;
+                $report->market_three       =       $data['market_three'] ?? null;
+                $report->avg_kms            =       $data['avg_kms'] ?? null;
+                $report->market_avg         =       $data['market_avg'] ?? null;
+
                 $report->less_excess        =       $data['less_excess'] ?? null;
                 $report->settlement_sub_total =       $data['settlement_sub_total'] ?? null;
                 $report->settlement_gst     =       $data['settlement_gst'] ?? null;

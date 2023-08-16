@@ -678,21 +678,22 @@ height:15px;
                                </div>
 
                                       <h4 class="fw-bolder mt-5 d-flex" style="color:black;"> <p> Vehicle Details - Rego:VIC | UVU </p >  <p class="ms-2" id="demo"></p>   </h4>
-                                      <div class="row mt-4">
-                                        <div class="col-md-4">
+                                 <div class="row mt-4">
+                                    <div class="col-md-4">
                                         <label style="color: black ; " class="fw-bold fs-6 mb-2"  >Make</label>
                                         <input type="text"  required  class="form-control form-control-solid mb-3 mb-lg-0" name="make" placeholder="Enter Make"/>
-                                          </div>
-                                          <div class="col-md-4">
+                                    </div>
+
+                                    <div class="col-md-4">
                                         <label style="color: black ; " class="fw-bold fs-6 mb-2"  >Engine Type</label>
                                         <input type="text"  required  class="form-control form-control-solid mb-3 mb-lg-0" name="engine_type" placeholder="Enter Engine Type"/>
-                                          </div>
+                                    </div>
 
-                                          <div class="col-md-4">
+                                    <div class="col-md-4">
                                         <label style="color: black ; " class="fw-bold fs-6 mb-2"  >Odometer</label>
                                         <input type="text"  required  class="form-control form-control-solid mb-3 mb-lg-0" name="odometer" placeholder="Enter Odometer "/>
-                                          </div>
-                                      </div>
+                                    </div>
+                                 </div>
 
 
                                       <div class="row mt-4">
@@ -999,27 +1000,57 @@ height:15px;
                                             <div class="col-6 font-weight-bold mt-2 " style="color:black;"> Live Market Values</div>
                                            </div>
 
-                                             <div class="row mt-2">
+                                        {{-- <div class="row mt-2">
                                             <div class="col-6 font-weight-bold mt-2 " style="color:black;"> Trade Low</div>
                                             <div class="col-6 font-weight-bold mt-2 " style="color:black;">Market One</div>
-                                           </div>
+                                        </div> --}}
 
-                                              <div class="row mt-2">
+                                        <div class="row mt-2">
+                                            <div class="col-3 font-weight-bold mt-2 " style="color:black;">Trade Low</div>
+                                             <div class="col-3"> <input type="text" name="tradone" placeholder="Trade Low"  required  class="aa form-control form-control-solid mb-3 mb-lg-0" /> </div>
+
+                                            <div class="col-3 font-weight-bold mt-2 " style="color:black;">Market One</div>
+                                            <div class="col-3"> <input type="text" name="market_one" placeholder="Market One"  required  class="aa form-control form-control-solid mb-3 mb-lg-0"/> </div>
+                                        </div>
+
+
+                                        <div class="row mt-2">
+                                            <div class="col-3 font-weight-bold mt-2 " style="color:black;">Trade</div>
+                                             <div class="col-3"> <input type="text" name="tradetwo" placeholder="Trade"  required  class="aa form-control form-control-solid mb-3 mb-lg-0" /> </div>
+
+                                            <div class="col-3 font-weight-bold mt-2 " style="color:black;">Market Two</div>
+                                            <div class="col-3"> <input type="text" name="market_two" placeholder="Market Two"  required  class="aa form-control form-control-solid mb-3 mb-lg-0"/> </div>
+                                        </div>
+                                    {{-- <div class="row mt-2">
                                             <div class="col-6 font-weight-bold mt-2 " style="color:black;"> Trade </div>
                                             <div class="col-6 font-weight-bold mt-2 " style="color:black;">Market Two</div>
-                                           </div>
+                                        </div> --}}
 
-                                              <div class="row mt-2">
-                                            <div class="col-6 font-weight-bold mt-2 " style="color:black;"> Retail</div>
-                                            <div class="col-6 font-weight-bold mt-2 " style="color:black;">Market Three</div>
-                                           </div>
+                                        <div class="row mt-2">
+                                            <div class="col-3 font-weight-bold mt-2 " style="color:black;">Retail Value</div>
+                                             <div class="col-3"> <input type="text" name="retail_value" placeholder="Retail Value"  required  class="aa form-control form-control-solid mb-3 mb-lg-0" /> </div>
 
-                                              <div class="row mt-2">
-                                            <div class="col-6 font-weight-bold mt-2 " style="color:black;"> Value Avg KM's </div>
-                                            <div class="col-6 font-weight-bold mt-2 " style="color:black;">Market Avg</div>
-                                           </div>
-
+                                            <div class="col-3 font-weight-bold mt-2 " style="color:black;">Market Three</div>
+                                            <div class="col-3"> <input type="text" name="market_three" placeholder="Market Three"  required  class="aa form-control form-control-solid mb-3 mb-lg-0"/> </div>
                                         </div>
+                                    {{-- <div class="row mt-2">
+                                            <div class="col-6 font-weight-bold mt-2 " style="color:black;"> Retail Value </div>
+                                            <div class="col-6 font-weight-bold mt-2 " style="color:black;"> Market Three </div>
+                                        </div> --}}
+
+                                        <div class="row mt-2">
+                                            <div class="col-3 font-weight-bold mt-2 " style="color:black;"> Avg KM's </div>
+                                             <div class="col-3"> <input type="text" name="avg_kms" placeholder="Avg KM's"  required  class="aa form-control form-control-solid mb-3 mb-lg-0" /> </div>
+
+                                            <div class="col-3 font-weight-bold mt-2 " style="color:black;"> Market Avg </div>
+                                            <div class="col-3"> <input type="text" name="market_avg" placeholder="Market Avg"  required  class="aa form-control form-control-solid mb-3 mb-lg-0"/> </div>
+                                        </div>
+                                    {{-- <div class="row mt-2">
+                                            <div class="col-6 font-weight-bold mt-2 " style="color:black;"> Avg KM's </div>
+                                            <div class="col-6 font-weight-bold mt-2 " style="color:black;">Market Avg</div>
+                                        </div> --}}
+
+                                </div>
 
 
 
@@ -1068,8 +1099,8 @@ height:15px;
                                            </div>
 
                                            <div class="row mt-2">
-                                            <div class="col-6 font-weight-bold mt-2 " style="color:black;"> Less Excess </div>
-                                            <div class="col-6"> <input type="number"  required  class="aa form-control form-control-solid mb-3 mb-lg-0" name="less_excess" /> </div>
+                                            <div class="col-6 font-weight-bold mt-2 " style="color:black;"> Stamp Duty & Transfer Fee </div>
+                                            <div class="col-6"> <input type="number"  required  class="aa form-control form-control-solid mb-3 mb-lg-0" placeholder="$00.00" name="less_excess"/> </div>
                                            </div>
 
 

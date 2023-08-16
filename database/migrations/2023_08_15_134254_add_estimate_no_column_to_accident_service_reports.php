@@ -13,7 +13,8 @@ return new class extends Migration
     {
         Schema::table('accident_service_reports', function (Blueprint $table)
         {
-            $table->string('estimate_no');
+            // $table->string('estimate_no');
+            $table->string('estimate_no')->nullable();
         });
     }
 
