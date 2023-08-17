@@ -502,35 +502,51 @@
                                 Repairer:
                             </td>
                             <td style=" color:black; text-align:left;" class="bg-gray-clr font-0">{{$service_repairer['repairers']['name'] ?? '--'}}</td>
-                            <td colspan="1" class="bg-gray-clr font" style=" color:black; text-align:left;">
-                                Email:
-                            </td>
-                            <td class="bg-gray-clr font-0" style=" color:black; text-align:left;">
-                                {{$service_repairer['repairers']['email'] ?? '--'}}</td>
-                            <td colspan="1">
-                            </td>
-                            <td style=" color:black; text-align:left;"></td>
-                        </tr>
-                        <tr>
-                            <td colspan=" 1" class="font ps-2" style=" color:black; text-align:left;">
-                                Contact:
-                            </td>
-                            <td class="font-0" style=" color:black; text-align:left;">{{$service_repairer['repairers']['contact'] ?? '--'}}</td>
-                            <td colspan="1" class="font" style=" color:black; text-align:left;">
-                                Phone:
-                            </td>
-                            <td class="font-0" style=" color:black; text-align:left;">{{$service_repairer['repairers']['phone'] ?? '--'}}</td>
-                            <td colspan="1" class="font" style=" color:black; text-align:left;">
-                                Mobile:
-                            </td>
-                            <td class="font-0" style=" color:black; text-align:left;">{{$service_repairer['repairers']['mobile'] ?? '--'}}</td>
-                        </tr>
-                        <tr class="bg-gray-clr">>
+
                             <td colspan="1" class="font ps-2" style=" color:black; text-align:left;">
                                 Repairer Address:
                             </td>
                             <td class="font-0" style=" color:black; text-align:left;">{{$service_repairer['repairers']['address'] ?? '--'}}</td>
+
+                            <td colspan="1"></td>
+                            <td style=" color:black; text-align:left;"></td>
                         </tr>
+                        <tr>
+                            <td colspan="1" class="font ps-2" style=" color:black; text-align:left;">
+                                Contact:
+                            </td>
+                            <td class="font-0" style=" color:black; text-align:left;">{{$service_repairer['repairers']['contact'] ?? '--'}}</td>
+
+
+                            <td colspan="1" class="font ps-2" style=" color:black; text-align:left;">
+                                Email:
+                            </td>
+                            <td class="font" style=" color:black; text-align:left;">{{$service_repairer['repairers']['email'] ?? '--'}}</td>
+
+                            <td colspan="1" class="font ps-2" style=" color:black; text-align:left;">
+                                ABN:
+                            </td>
+                            <td class="font-0" style=" color:black; text-align:left;">{{$service_repairer['repairers']['mobile'] ?? '--'}}</td>
+
+                            {{-- <td colspan="1" class="font" style=" color:black; text-align:left;">
+                                Phone:
+                            </td>
+                            <td class="font-0" style=" color:black; text-align:left;">{{$service_repairer['repairers']['phone'] ?? '--'}}</td> --}}
+
+                            {{-- <td colspan="1" class="font" style=" color:black; text-align:left;">
+                                Mobile:
+                            </td>
+                            <td class="font-0" style=" color:black; text-align:left;">{{$service_repairer['repairers']['mobile'] ?? '--'}}</td> --}}
+                        </tr>
+
+                        {{-- <tr class="bg-gray-clr">>
+
+                            <td colspan="1" class="font" style=" color:black; text-align:left;">
+                                ABN:
+                            </td>
+                            <td class="font-0" style=" color:black; text-align:left;">{{$service_repairer['repairers']['mobile'] ?? '--'}}</td>
+
+                        </tr> --}}
                     @empty
                     @endforelse
                 </tbody>
@@ -1056,7 +1072,8 @@
         </div>
     </div>
     {{-- Vehicle Conditions end --}}
-    <br>
+    <br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br>
     {{-- Demage Details Start --}}
     <div class="row mb-5">
         <div class="col-md-12">
@@ -1075,7 +1092,7 @@
     <div class="row" style="display:flex">
         <div class="col-md-4">
             {{-- <img src="{{ public_path('asset/image/damag_pic2.jpg') }}" alt=""> --}}
-            <img class="img " style="width:30%; height: 130px;" src="{{ public_path('images/damag_pic3.jpeg') }}" alt="">
+            <img class="img" style="width:30%; height: 130px;" src="{{  public_path('images/damag_pic3.jpeg') }}" alt=" ">
         </div>
         <div class="col-md-8">
             <table>
