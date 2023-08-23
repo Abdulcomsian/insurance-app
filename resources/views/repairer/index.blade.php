@@ -86,7 +86,7 @@
 
                                                         <label class="required fw-bold fs-6 mb-2">Contact</label>
 
-                                                        <input type="text" required name="contact" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Contact" />
+                                                        <input type="number" required name="contact" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Contact" />
 
                                                     </div>
 
@@ -109,6 +109,7 @@
 
                                                     </div> --}}
 
+
                                                     <div class="fv-row mb-7">
 
                                                         <label class="required fw-bold fs-6 mb-2">ABN</label>
@@ -116,6 +117,8 @@
                                                         <input type="number" required name="mobile" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="ABN" />
 
                                                     </div>
+
+
                                                     {{-- <div class="fv-row mb-7">
 
                                                         <label class="required fw-bold fs-6 mb-2">Repairer Address</label>
@@ -249,7 +252,8 @@
                 window.location.href = "{{ route('repairer.edit', ':id') }}".replace(':id', id);
             });
 
-            $(document).on('click', '.delete-btn', function() {
+            $(document).on('click', '.delete-btn', function()
+            {
                 var id = $(this).data('id');
                 if (confirm("Are you sure you want to delete this repairer?")) {
                     $.ajax({
