@@ -649,9 +649,6 @@ height:15px;
                                     <input type="button" name="next" class="next action-button next-step" value="Next Step"/>
                                 </fieldset>
 
-
-
-
 <!-- detail assessment  -->
 
                                 <fieldset>
@@ -853,90 +850,170 @@ height:15px;
                                            </div>
 
                                             <div class="row mt-4">
-                                            <div class="col-3 font-weight-bold mt-2 " style="color:black;"  >R & R</div>
-                                             <div class="col-3 "> <input type="number" name="R&R_quoted" id="one" placeholder="$00.00" required  class=" aa form-control form-control-solid mb-3 mb-lg-0" oninput="sub_number.bind(null, 'one', 'two', 'three')()" ; /> </div>
-                                            <div class="col-3"> <input type="number"  name="R&R_assessed" id="two" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0"  oninput="sub_number.bind(null, 'one', 'two', 'three')()" /> </div>
-                                            <div class="col-3"> <input type="number" readonly name="R&R_variance" id="three" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0"  /> </div>
+                                              <div class="col-3 font-weight-bold mt-2 " style="color:black;" >R & R</div>
+                                              <div class="col-3 "> <input type="number" name="R&R_quoted" id="one" placeholder="$00.00" required  class=" aa form-control form-control-solid mb-3 mb-lg-0" oninput="sub_number.bind(null, 'one', 'two', 'three')()" ; /> </div>
+                                              <div class="col-3"> <input type="number"  name="R&R_assessed" id="two" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0"  oninput="sub_number.bind(null, 'one', 'two', 'three')()" /> </div>
+                                              <div class="col-3"> <input type="number" readonly name="R&R_variance" id="three" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0"  /> </div>
                                            </div>
 
 
                                             <div class="row mt-2">
-                                            <div class="col-3 font-weight-bold mt-2 " style="color:black;" >Repair</div>
-                                             <div class="col-3"> <input type="number" id="one1" name="Repair_quoted" placeholder="$00.00" required  class="aa form-control form-control-solid mb-3 mb-lg-0"  oninput="sub_number.bind(null, 'one1', 'two1', 'three1')()" ; /> </div>
-                                            <div class="col-3"> <input type="number" id="two1" name="Repair_assessed" placeholder="$00.00" required  class="aa form-control form-control-solid mb-3 mb-lg-0"  oninput="sub_number.bind(null, 'one1', 'two1', 'three1')()" ;/> </div>
-                                            <div class="col-3"> <input type="number" readonly id="three1" name="Repair_variance" placeholder="$00.00" required  class="aa form-control form-control-solid mb-3 mb-lg-0"  /> </div>
+                                              <div class="col-3 font-weight-bold mt-2 " style="color:black;" >Repair</div>
+                                              <div class="col-3"> <input type="number" id="one1" name="Repair_quoted" placeholder="$00.00" required  class="aa form-control form-control-solid mb-3 mb-lg-0"  oninput="sub_number.bind(null, 'one1', 'two1', 'three1')()" ; /> </div>
+                                              <div class="col-3"> <input type="number" id="two1" name="Repair_assessed" placeholder="$00.00" required  class="aa form-control form-control-solid mb-3 mb-lg-0"  oninput="sub_number.bind(null, 'one1', 'two1', 'three1')()" ;/> </div>
+                                              <div class="col-3"> <input type="number" readonly id="three1" name="Repair_variance" placeholder="$00.00" required  class="aa form-control form-control-solid mb-3 mb-lg-0"  /> </div>
                                            </div>
 
-                                                <div class="row mt-2">
-                                            <div class="col-3 font-weight-bold mt-2 " style="color:black;">Paint</div>
-                                             <div class="col-3"> <input type="number" id="one2" name="Paint_quoted" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0"  oninput="sub_number.bind(null, 'one2', 'two2', 'three2')()" ; /> </div>
-                                            <div class="col-3"> <input type="number" id="two2" name="Paint_assessed" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0"    oninput="sub_number.bind(null, 'one2', 'two2', 'three2')()" ;/> </div>
-                                            <div class="col-3"> <input type="number" readonly name="Paint_variance" id="three2" placeholder="$00.00"   required  class="aa form-control form-control-solid mb-3 mb-lg-0"   /> </div>
+                                            <div class="row mt-2">
+                                               <div class="col-3 font-weight-bold mt-2 " style="color:black;">Paint</div>
+                                               <div class="col-3"> <input type="number" id="one2" name="Paint_quoted" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0"  oninput="sub_number.bind(null, 'one2', 'two2', 'three2')()" ; /> </div>
+                                               <div class="col-3"> <input type="number" id="two2" name="Paint_assessed" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0"    oninput="sub_number.bind(null, 'one2', 'two2', 'three2')()" ;/> </div>
+                                               <div class="col-3"> <input type="number" readonly name="Paint_variance" id="three2" placeholder="$00.00"   required  class="aa form-control form-control-solid mb-3 mb-lg-0"   /> </div>
                                            </div>
 
-                                                <div class="row mt-2">
+                                                {{-- <div class="row mt-2">
                                             <div class="col-3 font-weight-bold mt-2 " style="color:black;">Mechanical</div>
                                              <div class="col-3"> <input type="number" id="one3" name="Mechanical_quoted" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0" oninput="sub_number.bind(null, 'one3', 'two3', 'three3')()" ; /> </div>
                                             <div class="col-3"> <input type="number" id="two3" name="Mechanical_assessed" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0" oninput="sub_number.bind(null, 'one3', 'two3', 'three3')()" ; /> </div>
                                             <div class="col-3"> <input type="number" readonly name="Mechanical_variance" id="three3" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0"  /> </div>
-                                           </div>
+                                           </div> --}}
 
-                                              <div class="row mt-2">
-                                            <div class="col-3 font-weight-bold mt-2 " style="color:black;">Misc Labour</div>
-                                             <div class="col-3"> <input type="number" id="one4" name="Misc_quoted" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0" oninput="sub_number.bind(null, 'one4', 'two4', 'three4')()" ; /> </div>
-                                            <div class="col-3"> <input type="number" id="two4" name="Misc_assessed" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0" oninput="sub_number.bind(null, 'one4', 'two4', 'three4')()" ;  /> </div>
-                                            <div class="col-3"> <input type="number" readonly name="Misc_variance" id="three4" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0"  /> </div>
+                                            <div class="row mt-2">
+                                              <div class="col-3 font-weight-bold mt-2 " style="color:black;">Misc Labour</div>
+                                              <div class="col-3"> <input type="number" id="one4" name="Misc_quoted" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0" oninput="sub_number.bind(null, 'one4', 'two4', 'three4')()" ; /> </div>
+                                              <div class="col-3"> <input type="number" id="two4" name="Misc_assessed" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0" oninput="sub_number.bind(null, 'one4', 'two4', 'three4')()" ;  /> </div>
+                                              <div class="col-3"> <input type="number" readonly name="Misc_variance" id="three4" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0"  /> </div>
                                            </div>
 
                                            <div class="row mt-2">
+                                             <div class="col-3 font-weight-bold mt-2 " style="color:black;">Parts</div>
+                                             <div class="col-3"> <input type="number" id="one6" name="Parts_quoted" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0" oninput="sub_number.bind(null, 'one6', 'two6', 'three6')()" ; /> </div>
+                                             <div class="col-3"> <input type="number" id="two6" name="Parts_assessed" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0" oninput="sub_number.bind(null, 'one6', 'two6', 'three6')()" ;  /> </div>
+                                             <div class="col-3"> <input type="number" readonly name="Parts_variance" id="three6" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0"  /> </div>
+                                           </div>
+
+                                           {{-- <div class="row mt-2">
                                             <div class="col-3 font-weight-bold mt-2 " style="color:black;">Total Labour</div>
                                              <div class="col-3"> <input type="number" id="one5" name="Labour_quoted" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0" oninput="sub_number.bind(null, 'one5', 'two5', 'three5')()" ; /> </div>
                                             <div class="col-3"> <input type="number" id="two5" name="Labour_assessed" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0" oninput="sub_number.bind(null, 'one5', 'two5', 'three5')()" ;  /> </div>
                                             <div class="col-3"> <input type="number" readonly name="Labour_variance" id="three5" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0"  /> </div>
-                                           </div>
-
+                                           </div> --}}
 
                                            <div class="row mt-2">
+                                             <div class="col-3 font-weight-bold mt-2" style="color:black;">Total Labour</div>
+                                             <div class="col-3">
+                                                <input type="number" id="one5" name="Labour_quoted" placeholder="$00.00" required
+                                                    class="aa form-control form-control-solid mb-3 mb-lg-0" oninput="updateTotalLabour()" ; />
+                                             </div>
+                                             <div class="col-3">
+                                                <input type="number" id="two5" name="Labour_assessed" placeholder="$00.00" required
+                                                    class="aa form-control form-control-solid mb-3 mb-lg-0" oninput="updateTotalLabour()" ; />
+                                             </div>
+                                             <div class="col-3">
+                                                <input type="number" readonly name="Labour_variance" id="three5" placeholder="$00.00" required
+                                                    class="aa form-control form-control-solid mb-3 mb-lg-0" />
+                                             </div>
+                                        </div>
+
+                                           {{-- <div class="row mt-2">
                                             <div class="col-3 font-weight-bold mt-2 " style="color:black;">Parts</div>
                                              <div class="col-3"> <input type="number" id="one6" name="Parts_quoted" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0" oninput="sub_number.bind(null, 'one6', 'two6', 'three6')()" ; /> </div>
                                             <div class="col-3"> <input type="number" id="two6" name="Parts_assessed" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0" oninput="sub_number.bind(null, 'one6', 'two6', 'three6')()" ;  /> </div>
                                             <div class="col-3"> <input type="number" readonly name="Parts_variance" id="three6" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0"  /> </div>
-                                           </div>
+                                           </div> --}}
 
-                                           <div class="row mt-2">
+                                           {{-- <div class="row mt-2">
                                             <div class="col-3 font-weight-bold mt-2 " style="color:black;">sublet</div>
                                              <div class="col-3"> <input type="number" id="one7" name="Sublet_quoted" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0" oninput="sub_number.bind(null, 'one7', 'two7', 'three7')()" ; /> </div>
                                             <div class="col-3"> <input type="number" id="two7" name="Sublet_assessed" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0" oninput="sub_number.bind(null, 'one7', 'two7', 'three7')()" ;  /> </div>
                                             <div class="col-3"> <input type="number" readonly name="Sublet_variance" id="three7" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0"  /> </div>
-                                           </div>
+                                           </div> --}}
+
+
+
+                                           {{-- <div class="row mt-2">
+                                              <div class="col-3 font-weight-bold mt-2 " style="color:black;">GST</div>
+                                              <div class="col-3"> <input type="number" id="one10" name="gst_quoted" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0" oninput="sub_number.bind(null, 'one10', 'two10', 'three10')()" ; /> </div>
+                                              <div class="col-3"> <input type="number" id="two10" name="gst_assessed" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0"  oninput="sub_number.bind(null, 'one10', 'two10', 'three10')()" ; /> </div>
+                                              <div class="col-3"> <input type="number" readonly name="gst_variance" id="three10" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0"  /> </div>
+                                           </div> --}}
+                                           <div class="row mt-2">
+                                            <div class="col-3 font-weight-bold mt-2" style="color:black;">GST</div>
+                                            <div class="col-3">
+                                                <input type="number" id="gst_quoted" name="gst_quoted" placeholder="$00.00" required class="aa form-control form-control-solid mb-3 mb-lg-0" />
+                                            </div>
+                                            <div class="col-3">
+                                                <input type="number" id="gst_assessed" name="gst_assessed" placeholder="$00.00" required class="aa form-control form-control-solid mb-3 mb-lg-0" />
+                                            </div>
+                                            <div class="col-3">
+                                                <input type="number" readonly name="gst_variance" id="gst_variance" placeholder="$00.00" required class="aa form-control form-control-solid mb-3 mb-lg-0" />
+                                            </div>
+                                        </div>
+
 
                                            <div class="row mt-2">
-                                            <div class="col-3 font-weight-bold mt-2 " style="color:black;">Supplementary</div>
-                                             <div class="col-3"> <input type="number" id="one8" name="Supplementary_quoted" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0" oninput="sub_number.bind(null, 'one8', 'two8', 'three8')()" ; /> </div>
-                                            <div class="col-3"> <input type="number" id="two8" name="Supplementary_assessed" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0" oninput="sub_number.bind(null, 'one8', 'two8', 'three8')()" ;  /> </div>
-                                            <div class="col-3"> <input type="number" readonly name="Supplementary_variance" id="three8" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0"  /> </div>
+                                              <div class="col-3 font-weight-bold mt-2 " style="color:black;">Supplementary</div>
+                                              <div class="col-3"> <input type="number" id="one8" name="Supplementary_quoted" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0" oninput="sub_number.bind(null, 'one8', 'two8', 'three8')()" ; /> </div>
+                                              <div class="col-3"> <input type="number" id="two8" name="Supplementary_assessed" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0" oninput="sub_number.bind(null, 'one8', 'two8', 'three8')()" ;  /> </div>
+                                              <div class="col-3"> <input type="number" readonly name="Supplementary_variance" id="three8" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0"  /> </div>
                                            </div>
 
-                                           <div class="row mt-2">
-                                            <div class="col-3 font-weight-bold mt-2 " style="color:black;">Sub Total</div>
-                                             <div class="col-3"> <input type="number" id="one9" name="SubTotal_quoted" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0" /> </div>
-                                            <div class="col-3"> <input type="number" id="two9" name="SubTotal_assessed" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0"    /> </div>
-                                            <div class="col-3"> <input type="number" readonly name="SubTotal_variance" id="three9" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0"  /> </div>
-                                           </div>
-
-                                           <div class="row mt-2">
-                                            <div class="col-3 font-weight-bold mt-2 " style="color:black;">GST</div>
-                                             <div class="col-3"> <input type="number" id="one10" name="gst_quoted" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0" oninput="sub_number.bind(null, 'one10', 'two10', 'three10')()" ; /> </div>
-                                            <div class="col-3"> <input type="number" id="two10" name="gst_assessed" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0"  oninput="sub_number.bind(null, 'one10', 'two10', 'three10')()" ; /> </div>
-                                            <div class="col-3"> <input type="number" readonly name="gst_variance" id="three10" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0"  /> </div>
-                                           </div>
-
-                                           <div class="row mt-2">
+                                           {{-- <div class="row mt-2">
                                             <div class="col-3 font-weight-bold mt-2 " style="color:black;">Total Estimate</div>
                                              <div class="col-3"> <input type="number" name="TotalEstimate_quoted" id="one11" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0" oninput="sub_number.bind(null, 'one11', 'two11', 'three11')()" ; /> </div>
                                             <div class="col-3"> <input type="number" name="TotalEstimate_assessed" id="two11" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0" oninput="sub_number.bind(null, 'one11', 'two11', 'three11')()" ; /> </div>
                                             <div class="col-3"> <input type="number" name="TotalEstimate_variance" readonly id="three11" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0"  /> </div>
-                                           </div>
+                                           </div> --}}
+
+                                        <div class="row mt-2">
+                                            <div class="col-3 font-weight-bold mt-2" style="color:black;">Total Estimate</div>
+                                            <div class="col-3">
+                                                <input type="number" name="TotalEstimate_quoted" id="one11" placeholder="$00.00" required class="aa form-control form-control-solid mb-3 mb-lg-0" oninput="updateTotalEstimate()" ; />
+                                            </div>
+                                            <div class="col-3">
+                                                <input type="number" name="TotalEstimate_assessed" id="two11" placeholder="$00.00" required class="aa form-control form-control-solid mb-3 mb-lg-0" oninput="updateTotalEstimate()" ; />
+                                            </div>
+                                            <div class="col-3">
+                                                <input type="number" readonly name="TotalEstimate_variance" id="three11" placeholder="$00.00" required class="aa form-control form-control-solid mb-3 mb-lg-0" />
+                                            </div>
+                                        </div>
+
+
+                                           {{-- <div class="row mt-2">
+                                            <div class="col-3 font-weight-bold mt-2 " style="color:black;">Sub Total</div>
+                                             <div class="col-3"> <input type="number" id="one9" name="SubTotal_quoted" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0" /> </div>
+                                            <div class="col-3"> <input type="number" id="two9" name="SubTotal_assessed" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0"    /> </div>
+                                            <div class="col-3"> <input type="number" readonly name="SubTotal_variance" id="three9" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0"  /> </div>
+                                           </div> --}}
+                                           <div class="row mt-2">
+                                            <div class="col-3 font-weight-bold mt-2" style="color:black;">Sub Total</div>
+                                            <div class="col-3">
+                                                <input type="number" id="one9" name="SubTotal_quoted" placeholder="$00.00" required
+                                                    class="aa form-control form-control-solid mb-3 mb-lg-0" oninput="updateSubTotal()" ; />
+                                            </div>
+                                            <div class="col-3">
+                                                <input type="number" id="two9" name="SubTotal_assessed" placeholder="$00.00" required
+                                                    class="aa form-control form-control-solid mb-3 mb-lg-0" oninput="updateSubTotal()" ; />
+                                            </div>
+                                            <div class="col-3">
+                                                <input type="number" readonly name="SubTotal_variance" id="three9" placeholder="$00.00" required
+                                                    class="aa form-control form-control-solid mb-3 mb-lg-0" />
+                                            </div>
+                                        </div>
+
+                                           {{-- <div class="row mt-2">
+                                            <div class="col-3 font-weight-bold mt-2 " style="color:black;">GST</div>
+                                             <div class="col-3"> <input type="number" id="one10" name="gst_quoted" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0" oninput="sub_number.bind(null, 'one10', 'two10', 'three10')()" ; /> </div>
+                                            <div class="col-3"> <input type="number" id="two10" name="gst_assessed" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0"  oninput="sub_number.bind(null, 'one10', 'two10', 'three10')()" ; /> </div>
+                                            <div class="col-3"> <input type="number" readonly name="gst_variance" id="three10" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0"  /> </div>
+                                           </div> --}}
+
+                                           {{-- <div class="row mt-2">
+                                            <div class="col-3 font-weight-bold mt-2 " style="color:black;">Total Estimate</div>
+                                             <div class="col-3"> <input type="number" name="TotalEstimate_quoted" id="one11" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0" oninput="sub_number.bind(null, 'one11', 'two11', 'three11')()" ; /> </div>
+                                            <div class="col-3"> <input type="number" name="TotalEstimate_assessed" id="two11" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0" oninput="sub_number.bind(null, 'one11', 'two11', 'three11')()" ; /> </div>
+                                            <div class="col-3"> <input type="number" name="TotalEstimate_variance" readonly id="three11" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0"  /> </div>
+                                           </div> --}}
 <br> <br>
                                            <div class="row mt-2">
                                             <div class="col-3 font-weight-bold mt-2 " style="color:black;">Reported Items</div>
@@ -1493,20 +1570,22 @@ height:15px;
         });
     </script>
 
-
 <script>
 
 //show and hide div
-    function myFunction() {
+    function myFunction()
+    {
   var x = document.getElementById("myDIV");
-  if (x.style.display === "none") {
+  if (x.style.display === "none")
+  {
     x.style.display = "block";
   } else {
     x.style.display = "none";
   }
 }
 
-$(document).on('click', '.next-step', function () {
+$(document).on('click', '.next-step', function ()
+{
     var x = document.getElementById("myText").value;
     document.getElementById("demo").innerHTML = x;
 });
@@ -1518,33 +1597,10 @@ function myFunctiontwo() {
     }
 
 
-    // 2 digit decimal point
-    // function formatDecimal(value) {
-    //     return value.toFixed(2).replace('.', ',');
-    // }
-
-    // function syncInputs() {
-    //     var subTotalInput = document.getElementById("Text1");
-    //     var gstInput = document.getElementById("Text2");
-    //     var grandTotalInput = document.getElementById("txtresult");
-
-    //     var subTotal = parseFloat(subTotalInput.value.replace(',', '.'));
-    //     var gst = parseFloat(gstInput.value.replace(',', '.'));
-
-    //     // Calculate the grand total
-    //     var grandTotal = subTotal + gst;
-
-    //     // Update the input fields with formatted values
-    //     subTotalInput.value = '$' + formatDecimal(subTotal);
-    //     gstInput.value = '$' + formatDecimal(gst);
-    //     grandTotalInput.value = '$' + formatDecimal(grandTotal);
-    // }
-
-
-
 
 // adding two numbers automatically
-function add_number() {
+function add_number()
+{
             // Get the input field values
             var num1 = parseFloat(document.getElementById("Text1").value);
             var num2 = parseFloat(document.getElementById("Text2").value);
@@ -1570,22 +1626,23 @@ function calculatePercentage() {
     }
 
     // subtract two numbers automatically
-    function sub_number(one, two, three) {
+    function sub_number(one, two, three)
+    {
   var num1 = parseFloat(document.getElementById(one).value);
   var num2 = parseFloat(document.getElementById(two).value);
   var result = num2 - num1;
   document.getElementById(three).value = result;
 
+  updateTotalLabour();
+  updateSubTotal();
+  updateTotalEstimate();
   updateResult()
   calculatePercentagetwo()
   updateResulttwo()
   calculatePercentagethree()
 
 
-
 }
-
-
     /// type in one input field and shows in seocnd input field
     function syncInputs() {
       var input1 = document.getElementById("Text3");
@@ -1594,9 +1651,6 @@ function calculatePercentage() {
       input2.value =parseFloat(input1.value).toFixed(2);
       calculatePercentage()
     }
-
-
-
     //////// add in multiple inputs and display result in one input field automatically
     // for Quoted in assessment summary
 
@@ -1644,13 +1698,155 @@ function calculatePercentage() {
 
     }
 
+    // R&R AND Repairs add
+    function updateSubTotal()
+    {
+        const rrQuoted = parseFloat(document.getElementById("one").value) || 0;
+        const rrAssessed = parseFloat(document.getElementById("two").value) || 0;
+        const repairQuoted = parseFloat(document.getElementById("one1").value) || 0;
+        const repairAssessed = parseFloat(document.getElementById("two1").value) || 0;
+
+        // Calculate the Sub Total
+        const subTotalQuoted = rrQuoted + repairQuoted;
+        const subTotalAssessed = rrAssessed + repairAssessed;
+
+        // Update the Sub Total fields
+        document.getElementById("one9").value = subTotalQuoted.toFixed(2);
+        document.getElementById("two9").value = subTotalAssessed.toFixed(2);
+
+        // Calculate and update the variance (if needed)
+        const variance = subTotalAssessed - subTotalQuoted;
+        document.getElementById("three9").value = variance.toFixed(2);
+
+        // You can also update the Total Labour values here if needed
+        updateTotalLabour();
+    }
+
+
+    // R&R AND Repairs add
+    function updateTotalLabour()
+    {
+        const subTotalQuoted = parseFloat(document.getElementById("one9").value) || 0;
+        const subTotalAssessed = parseFloat(document.getElementById("two9").value) || 0;
+
+        // Calculate the Total Labour
+        const totalLabourQuoted = subTotalQuoted;
+        const totalLabourAssessed = subTotalAssessed;
+
+        // Update the Total Labour fields
+        document.getElementById("one5").value = totalLabourQuoted.toFixed(2);
+        document.getElementById("two5").value = totalLabourAssessed.toFixed(2);
+
+        // Calculate and update the variance (if needed)
+        const variance = totalLabourAssessed - totalLabourQuoted;
+        document.getElementById("three5").value = variance.toFixed(2);
+    }
+
+
+    // Total Estimate
+    // function updateTotalEstimate()
+    // {
+    //     // Get the values of R & R, Repair, Paint, Misc Labour, Parts, and Supplementary
+    //     const rrQuoted = parseFloat(document.getElementById("one").value) || 0;
+    //     const rrAssessed = parseFloat(document.getElementById("two").value) || 0;
+    //     const repairQuoted = parseFloat(document.getElementById("one1").value) || 0;
+    //     const repairAssessed = parseFloat(document.getElementById("two1").value) || 0;
+    //     const paintQuoted = parseFloat(document.getElementById("one2").value) || 0;
+    //     const paintAssessed = parseFloat(document.getElementById("two2").value) || 0;
+    //     const miscQuoted = parseFloat(document.getElementById("one4").value) || 0;
+    //     const miscAssessed = parseFloat(document.getElementById("two4").value) || 0;
+    //     const partsQuoted = parseFloat(document.getElementById("one6").value) || 0;
+    //     const partsAssessed = parseFloat(document.getElementById("two6").value) || 0;
+    //     const supplementaryQuoted = parseFloat(document.getElementById("one8").value) || 0;
+    //     const supplementaryAssessed = parseFloat(document.getElementById("two8").value) || 0;
+
+    //     // Calculate the Total Estimate
+    //     const totalEstimateQuoted = rrQuoted + repairQuoted + paintQuoted + miscQuoted + partsQuoted + supplementaryQuoted;
+    //     const totalEstimateAssessed = rrAssessed + repairAssessed + paintAssessed + miscAssessed + partsAssessed + supplementaryAssessed;
+
+    //     // Update the Total Estimate fields
+    //     document.getElementById("one11").value = totalEstimateQuoted.toFixed(2);
+    //     document.getElementById("two11").value = totalEstimateAssessed.toFixed(2);
+
+    //     // Calculate and update the variance (if needed)
+    //     const variance = totalEstimateAssessed - totalEstimateQuoted;
+    //     document.getElementById("three11").value = variance.toFixed(2);
+    // }
+
+
+    function updateTotalEstimate()
+    {
+    // Get the values of R & R, Repair, Paint, Misc Labour, Parts, and Supplementary
+    const rrQuoted = parseFloat(document.getElementById("one").value) || 0;
+    const rrAssessed = parseFloat(document.getElementById("two").value) || 0;
+    const rrvariance = parseFloat(document.getElementById("three").value) || 0;
+
+    const repairQuoted = parseFloat(document.getElementById("one1").value) || 0;
+    const repairAssessed = parseFloat(document.getElementById("two1").value) || 0;
+    const repairvariance = parseFloat(document.getElementById("three1").value) || 0;
+
+    const paintQuoted = parseFloat(document.getElementById("one2").value) || 0;
+    const paintAssessed = parseFloat(document.getElementById("two2").value) || 0;
+    const paintvariance = parseFloat(document.getElementById("three2").value) || 0;
+
+
+    const miscQuoted = parseFloat(document.getElementById("one4").value) || 0;
+    const miscAssessed = parseFloat(document.getElementById("two4").value) || 0;
+    const miscvariance = parseFloat(document.getElementById("three4").value) || 0;
+
+    const partsQuoted = parseFloat(document.getElementById("one6").value) || 0;
+    const partsAssessed = parseFloat(document.getElementById("two6").value) || 0;
+    const partsvariance = parseFloat(document.getElementById("three6").value) || 0;
+
+
+    const supplementaryQuoted = parseFloat(document.getElementById("one8").value) || 0;
+    const supplementaryAssessed = parseFloat(document.getElementById("two8").value) || 0;
+    const supplementaryvariance  = parseFloat(document.getElementById("three8").value) || 0;
+
+    // Calculate the Total Estimate
+    const totalEstimateQuoted = rrQuoted + repairQuoted + paintQuoted + miscQuoted + partsQuoted + supplementaryQuoted;
+    const totalEstimateAssessed = rrAssessed + repairAssessed + paintAssessed + miscAssessed + partsAssessed + supplementaryAssessed;
+    const totalEstimateVariance = rrvariance + repairvariance + paintvariance + miscvariance + partsvariance + supplementaryvariance;
+
+    // Calculate the GST for the Total Estimate (10% of the total)
+    const gstQuoted = totalEstimateQuoted * 0.1;
+    const gstAssessed = totalEstimateAssessed * 0.1;
+    const gstvariance = totalEstimateVariance * 0.1;
+
+    // Update the Total Estimate and GST fields
+    document.getElementById("one11").value = totalEstimateQuoted.toFixed(2);
+    document.getElementById("two11").value = totalEstimateAssessed.toFixed(2);
+    document.getElementById("three11").value = totalEstimateVariance.toFixed(2);
+    document.getElementById("gst_quoted").value = gstQuoted.toFixed(2);
+    document.getElementById("gst_assessed").value = gstAssessed.toFixed(2);
+    document.getElementById("gst_variance").value = gstvariance.toFixed(2);
+
+    // Calculate and update the variance (if needed)
+    const variance = totalEstimateAssessed - totalEstimateQuoted;
+    document.getElementById("three11").value = variance.toFixed(2);
+}
 
 
 
 
-//// 10 % of given number    second funtion that use in assessment summary
 
-    function calculatePercentagetwo() {
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //// 10 % of given number    second funtion that use in assessment summary
+
+    function calculatePercentagetwo()
+    {
       var inputField = document.getElementById("one9");
       var outputField = document.getElementById("one10");
 
@@ -1676,10 +1872,6 @@ function add_numbertwo() {
             document.getElementById("one11").value = result22;
         }
 
-
-
-
-
   //////// add in multiple inputs and display result in one input field automatically
     // for Assessed in assessment summary
 
@@ -1698,7 +1890,8 @@ function add_numbertwo() {
 
 
     // Function to update the result field
-    function updateResulttwo() {
+    function updateResulttwo()
+    {
       const value1 = Number(a1.value) || 0;
       const value2 = Number(b1.value) || 0;
       const value3 = Number(c1.value) || 0;
@@ -1728,15 +1921,13 @@ function add_numbertwo() {
       const newVal = document.getElementById("one9")
 
       const newVal1 = document.getElementById("three9")
-newVal1.value = sum - Number(newVal.value)
-
-
+       newVal1.value = sum - Number(newVal.value)
     }
-
 
 //// 10 % of given number    third funtion that used in assess portion in assessment summary
 
-function calculatePercentagethree() {
+function calculatePercentagethree()
+{
       var inputField = document.getElementById("two9");
       var outputField = document.getElementById("two10");
 
@@ -1758,7 +1949,8 @@ newVal2.value = outputField.value - Number(newVall.value)
 
     }
 
-    function add_numberthree() {
+    function add_numberthree()
+    {
             // Get the input field values
             var num1 = parseFloat(document.getElementById("two9").value);
             var num2 = parseFloat(document.getElementById("two10").value);
@@ -1772,14 +1964,15 @@ newVal2.value = outputField.value - Number(newVall.value)
 
             const newValll = document.getElementById("one11")
 
-const newVal3 = document.getElementById("three11")
-newVal3.value = result222 - Number(newValll.value)
+            const newVal3 = document.getElementById("three11")
+            newVal3.value = result222 - Number(newValll.value)
 
         }
 
 
 ///// function for settlement
-function syncInputs2() {
+function syncInputs2()
+{
     var setl1 = document.getElementById("settle1");
       var setl2 = document.getElementById("settle2");
 
@@ -1788,7 +1981,8 @@ function syncInputs2() {
     }
 
 
-    function calculatePercentagesetl() {
+    function calculatePercentagesetl()
+    {
       var inputFieldset = document.getElementById("settle2");
       var outputFieldset = document.getElementById("settle3");
 
@@ -1799,7 +1993,8 @@ function syncInputs2() {
       outputFieldset.value = Math.round(percentage);
       settle()
     }
-    function settle() {
+    function settle()
+        {
             // Get the input field values
             var setl2 = parseFloat(document.getElementById("settle2").value);
             var setl3 = parseFloat(document.getElementById("settle3").value);
@@ -1814,18 +2009,30 @@ function syncInputs2() {
 
         var room = 1;
 
-function populateOptions(selectElement, data) {
-  // Clear existing options
-  selectElement.innerHTML = "";
+    function populateOptions(selectElement, data)
+    {
+    // Clear existing options
+    selectElement.innerHTML = "";
 
-  // Add new options based on the data
-  for (var i = 0; i < data.length; i++) {
-    var option = document.createElement("option");
-    option.value = data[i].value;
-    option.text = data[i].text;
-    selectElement.appendChild(option);
-  }
-}
+    // Add new options based on the data
+    for (var i = 0; i < data.length; i++) {
+        var option = document.createElement("option");
+        option.value = data[i].value;
+        option.text = data[i].text;
+        selectElement.appendChild(option);
+    }
+    }
+
+
+
+
+
+
+
+
+
+
+
 
     // Repairer Start
 
@@ -1904,9 +2111,6 @@ function remove_assessor_fields(rdiv) {
     var elem = document.getElementsByClassName(rdiv)[0];
     elem.parentNode.removeChild(elem);
 }
-
-
-
 
 // Assessor End
 
