@@ -929,62 +929,6 @@ height:15px;
                                             <div class="col-3"> <input type="number" readonly name="Sublet_variance" id="three7" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0"  /> </div>
                                            </div> --}}
 
-
-
-                                           {{-- <div class="row mt-2">
-                                              <div class="col-3 font-weight-bold mt-2 " style="color:black;">GST</div>
-                                              <div class="col-3"> <input type="number" id="one10" name="gst_quoted" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0" oninput="sub_number.bind(null, 'one10', 'two10', 'three10')()" ; /> </div>
-                                              <div class="col-3"> <input type="number" id="two10" name="gst_assessed" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0"  oninput="sub_number.bind(null, 'one10', 'two10', 'three10')()" ; /> </div>
-                                              <div class="col-3"> <input type="number" readonly name="gst_variance" id="three10" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0"  /> </div>
-                                           </div> --}}
-                                           <div class="row mt-2">
-                                            <div class="col-3 font-weight-bold mt-2" style="color:black;">GST</div>
-                                            <div class="col-3">
-                                                <input type="number" id="gst_quoted" name="gst_quoted" placeholder="$00.00" required class="aa form-control form-control-solid mb-3 mb-lg-0" />
-                                            </div>
-                                            <div class="col-3">
-                                                <input type="number" id="gst_assessed" name="gst_assessed" placeholder="$00.00" required class="aa form-control form-control-solid mb-3 mb-lg-0" />
-                                            </div>
-                                            <div class="col-3">
-                                                <input type="number" readonly name="gst_variance" id="gst_variance" placeholder="$00.00" required class="aa form-control form-control-solid mb-3 mb-lg-0" />
-                                            </div>
-                                        </div>
-
-
-                                           <div class="row mt-2">
-                                              <div class="col-3 font-weight-bold mt-2 " style="color:black;">Supplementary</div>
-                                              <div class="col-3"> <input type="number" id="one8" name="Supplementary_quoted" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0" oninput="sub_number.bind(null, 'one8', 'two8', 'three8')()" ; /> </div>
-                                              <div class="col-3"> <input type="number" id="two8" name="Supplementary_assessed" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0" oninput="sub_number.bind(null, 'one8', 'two8', 'three8')()" ;  /> </div>
-                                              <div class="col-3"> <input type="number" readonly name="Supplementary_variance" id="three8" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0"  /> </div>
-                                           </div>
-
-                                           {{-- <div class="row mt-2">
-                                            <div class="col-3 font-weight-bold mt-2 " style="color:black;">Total Estimate</div>
-                                             <div class="col-3"> <input type="number" name="TotalEstimate_quoted" id="one11" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0" oninput="sub_number.bind(null, 'one11', 'two11', 'three11')()" ; /> </div>
-                                            <div class="col-3"> <input type="number" name="TotalEstimate_assessed" id="two11" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0" oninput="sub_number.bind(null, 'one11', 'two11', 'three11')()" ; /> </div>
-                                            <div class="col-3"> <input type="number" name="TotalEstimate_variance" readonly id="three11" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0"  /> </div>
-                                           </div> --}}
-
-                                        <div class="row mt-2">
-                                            <div class="col-3 font-weight-bold mt-2" style="color:black;">Total Estimate</div>
-                                            <div class="col-3">
-                                                <input type="number" name="TotalEstimate_quoted" id="one11" placeholder="$00.00" required class="aa form-control form-control-solid mb-3 mb-lg-0" oninput="updateTotalEstimate()" ; />
-                                            </div>
-                                            <div class="col-3">
-                                                <input type="number" name="TotalEstimate_assessed" id="two11" placeholder="$00.00" required class="aa form-control form-control-solid mb-3 mb-lg-0" oninput="updateTotalEstimate()" ; />
-                                            </div>
-                                            <div class="col-3">
-                                                <input type="number" readonly name="TotalEstimate_variance" id="three11" placeholder="$00.00" required class="aa form-control form-control-solid mb-3 mb-lg-0" />
-                                            </div>
-                                        </div>
-
-
-                                           {{-- <div class="row mt-2">
-                                            <div class="col-3 font-weight-bold mt-2 " style="color:black;">Sub Total</div>
-                                             <div class="col-3"> <input type="number" id="one9" name="SubTotal_quoted" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0" /> </div>
-                                            <div class="col-3"> <input type="number" id="two9" name="SubTotal_assessed" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0"    /> </div>
-                                            <div class="col-3"> <input type="number" readonly name="SubTotal_variance" id="three9" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0"  /> </div>
-                                           </div> --}}
                                            <div class="row mt-2">
                                             <div class="col-3 font-weight-bold mt-2" style="color:black;">Sub Total</div>
                                             <div class="col-3">
@@ -998,6 +942,48 @@ height:15px;
                                             <div class="col-3">
                                                 <input type="number" readonly name="SubTotal_variance" id="three9" placeholder="$00.00" required
                                                     class="aa form-control form-control-solid mb-3 mb-lg-0" />
+                                            </div>
+                                        </div>
+
+
+
+                                           {{-- <div class="row mt-2">
+                                              <div class="col-3 font-weight-bold mt-2 " style="color:black;">GST</div>
+                                              <div class="col-3"> <input type="number" id="one10" name="gst_quoted" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0" oninput="sub_number.bind(null, 'one10', 'two10', 'three10')()" ; /> </div>
+                                              <div class="col-3"> <input type="number" id="two10" name="gst_assessed" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0"  oninput="sub_number.bind(null, 'one10', 'two10', 'three10')()" ; /> </div>
+                                              <div class="col-3"> <input type="number" readonly name="gst_variance" id="three10" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0"  /> </div>
+                                           </div> --}}
+                                           <div class="row mt-2">
+                                            <div class="col-3 font-weight-bold mt-2" style="color:black;">GST</div>
+                                            <div class="col-3">
+                                                <input type="number" id="gst_quoted" readonly name="gst_quoted" placeholder="$00.00" required class="aa form-control form-control-solid mb-3 mb-lg-0" />
+                                            </div>
+                                            <div class="col-3">
+                                                <input type="number" id="gst_assessed" readonly name="gst_assessed" placeholder="$00.00" required class="aa form-control form-control-solid mb-3 mb-lg-0" />
+                                            </div>
+                                            <div class="col-3">
+                                                <input type="number" readonly name="gst_variance" id="gst_variance" placeholder="$00.00" required class="aa form-control form-control-solid mb-3 mb-lg-0" />
+                                            </div>
+                                        </div>
+
+
+                                           {{-- <div class="row mt-2">
+                                              <div class="col-3 font-weight-bold mt-2 " style="color:black;">Supplementary</div>
+                                              <div class="col-3"> <input type="number" id="one8" name="Supplementary_quoted" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0" oninput="sub_number.bind(null, 'one8', 'two8', 'three8')()" ; /> </div>
+                                              <div class="col-3"> <input type="number" id="two8" name="Supplementary_assessed" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0" oninput="sub_number.bind(null, 'one8', 'two8', 'three8')()" ;  /> </div>
+                                              <div class="col-3"> <input type="number" readonly name="Supplementary_variance" id="three8" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0"  /> </div>
+                                           </div> --}}
+
+                                        <div class="row mt-2">
+                                            <div class="col-3 font-weight-bold mt-2" style="color:black;">Total Estimate</div>
+                                            <div class="col-3">
+                                                <input type="number" readonly name="TotalEstimate_quoted" id="one11" placeholder="$00.00" required class="aa form-control form-control-solid mb-3 mb-lg-0" oninput="updateTotalEstimate()" ; />
+                                            </div>
+                                            <div class="col-3">
+                                                <input type="number" readonly name="TotalEstimate_assessed" id="two11" placeholder="$00.00" required class="aa form-control form-control-solid mb-3 mb-lg-0" oninput="updateTotalEstimate()" ; />
+                                            </div>
+                                            <div class="col-3">
+                                                <input type="number" readonly name="TotalEstimate_variance" id="three11" placeholder="$00.00" required class="aa form-control form-control-solid mb-3 mb-lg-0" />
                                             </div>
                                         </div>
 
@@ -1135,16 +1121,15 @@ height:15px;
 
 
                                         <div class="col-md-5  right">
-                                                    <div class="row font-weight-bold d-flex justify-content-around">
-                                                    <h4 class="text-center d-flex" style="color:green;"> Total Loss - No
-                                                        <div class="tog mx-2">
+                                            <div class="row font-weight-bold d-flex justify-content-around">
+                                                <h4 class="text-center d-flex" style="color:green;"> Total Loss - No
+                                                    <div class="tog mx-2">
                                                         <label class="switch" >
                                                         <input type="checkbox" onclick="myFunction()" style=" border: none; background:none; ">
                                                         <span class="slider round"></span>
                                                         </label>
-                                                        </div>
-                                                                                    Yes</h4>
-                                                    </div>
+                                                        </div> Yes</h4>
+                                            </div>
 
                                                     <div class="row mt-4">
                                                         <div class="col-6 font-weight-bold mt-2 " style="color:black;"> Assessment Date</div>
@@ -1631,10 +1616,8 @@ function calculatePercentage() {
     {
   var num1 = parseFloat(document.getElementById(one).value);
   var num2 = parseFloat(document.getElementById(two).value);
-  var result = num1;
-  var result2 = num2;
-
-  document.getElementById(three).value = result2;
+  var result = num2 - num1;
+  document.getElementById(three).value = result;
 
   updateTotalLabour();
   updateSubTotal();
@@ -1707,12 +1690,24 @@ function calculatePercentage() {
     {
         const rrQuoted = parseFloat(document.getElementById("one").value) || 0;
         const rrAssessed = parseFloat(document.getElementById("two").value) || 0;
+
         const repairQuoted = parseFloat(document.getElementById("one1").value) || 0;
         const repairAssessed = parseFloat(document.getElementById("two1").value) || 0;
 
+        const PaintQuoted = parseFloat(document.getElementById("one2").value) || 0;
+        const PaintAssessed = parseFloat(document.getElementById("two2").value) || 0;
+
+        const MiscLabourQuoted = parseFloat(document.getElementById("one4").value) || 0;
+        const MiscLabourAssessed = parseFloat(document.getElementById("two4").value) || 0;
+
+        const PartsQuoted = parseFloat(document.getElementById("one6").value) || 0;
+        const PartsAssessed = parseFloat(document.getElementById("two6").value) || 0;
+
+
+
         // Calculate the Sub Total
-        const subTotalQuoted = rrQuoted + repairQuoted;
-        const subTotalAssessed = rrAssessed + repairAssessed;
+        const subTotalQuoted = rrQuoted + repairQuoted + PaintQuoted + MiscLabourQuoted + PartsQuoted;
+        const subTotalAssessed = rrAssessed + repairAssessed + PaintAssessed + MiscLabourAssessed + PartsAssessed;
 
         // Update the Sub Total fields
         document.getElementById("one9").value = subTotalQuoted.toFixed(2);
@@ -1720,7 +1715,7 @@ function calculatePercentage() {
 
         // Calculate and update the variance (if needed)
         const variance = subTotalAssessed - subTotalQuoted;
-        document.getElementById("three9").value = subTotalAssessed.toFixed(2);
+        document.getElementById("three9").value = variance.toFixed(2);
 
         // You can also update the Total Labour values here if needed
         updateTotalLabour();
@@ -1730,56 +1725,82 @@ function calculatePercentage() {
     // R&R AND Repairs add
     function updateTotalLabour()
     {
-        const subTotalQuoted = parseFloat(document.getElementById("one9").value) || 0;
-        const subTotalAssessed = parseFloat(document.getElementById("two9").value) || 0;
 
-        // Calculate the Total Labour
-        const totalLabourQuoted = subTotalQuoted;
-        const totalLabourAssessed = subTotalAssessed;
+        const rrQuoted = parseFloat(document.getElementById("one").value) || 0;
+        const rrAssessed = parseFloat(document.getElementById("two").value) || 0;
+
+        const repairQuoted = parseFloat(document.getElementById("one1").value) || 0;
+        const repairAssessed = parseFloat(document.getElementById("two1").value) || 0;
+        // const subTotalQuoted = parseFloat(document.getElementById("one9").value) || 0;
+        // const subTotalAssessed = parseFloat(document.getElementById("two9").value) || 0;
+
+        // // Calculate the Total Labour
+        const totalLabourQuoted = rrQuoted + repairQuoted;
+        const totalLabourAssessed = rrAssessed + repairAssessed;
 
         // Update the Total Labour fields
         document.getElementById("one5").value = totalLabourQuoted.toFixed(2);
         document.getElementById("two5").value = totalLabourAssessed.toFixed(2);
 
         // Calculate and update the variance (if needed)
-        // const variance = totalLabourAssessed - totalLabourQuoted;
-        document.getElementById("three5").value = subTotalAssessed.toFixed(2);
+        const variance = totalLabourAssessed - totalLabourQuoted;
+        document.getElementById("three5").value = variance.toFixed(2);
     }
 
 
-    // Total Estimate
-    // function updateTotalEstimate()
-    // {
-    //     // Get the values of R & R, Repair, Paint, Misc Labour, Parts, and Supplementary
-    //     const rrQuoted = parseFloat(document.getElementById("one").value) || 0;
-    //     const rrAssessed = parseFloat(document.getElementById("two").value) || 0;
-    //     const repairQuoted = parseFloat(document.getElementById("one1").value) || 0;
-    //     const repairAssessed = parseFloat(document.getElementById("two1").value) || 0;
-    //     const paintQuoted = parseFloat(document.getElementById("one2").value) || 0;
-    //     const paintAssessed = parseFloat(document.getElementById("two2").value) || 0;
-    //     const miscQuoted = parseFloat(document.getElementById("one4").value) || 0;
-    //     const miscAssessed = parseFloat(document.getElementById("two4").value) || 0;
-    //     const partsQuoted = parseFloat(document.getElementById("one6").value) || 0;
-    //     const partsAssessed = parseFloat(document.getElementById("two6").value) || 0;
-    //     const supplementaryQuoted = parseFloat(document.getElementById("one8").value) || 0;
-    //     const supplementaryAssessed = parseFloat(document.getElementById("two8").value) || 0;
+//     function updateTotalEstimate()
+//     {
+//     // Get the values of R & R, Repair, Paint, Misc Labour, Parts, and Supplementary
+//     const rrQuoted = parseFloat(document.getElementById("one").value) || 0;
+//     const rrAssessed = parseFloat(document.getElementById("two").value) || 0;
+//     const rrvariance = parseFloat(document.getElementById("three").value) || 0;
 
-    //     // Calculate the Total Estimate
-    //     const totalEstimateQuoted = rrQuoted + repairQuoted + paintQuoted + miscQuoted + partsQuoted + supplementaryQuoted;
-    //     const totalEstimateAssessed = rrAssessed + repairAssessed + paintAssessed + miscAssessed + partsAssessed + supplementaryAssessed;
+//     const repairQuoted = parseFloat(document.getElementById("one1").value) || 0;
+//     const repairAssessed = parseFloat(document.getElementById("two1").value) || 0;
+//     const repairvariance = parseFloat(document.getElementById("three1").value) || 0;
 
-    //     // Update the Total Estimate fields
-    //     document.getElementById("one11").value = totalEstimateQuoted.toFixed(2);
-    //     document.getElementById("two11").value = totalEstimateAssessed.toFixed(2);
-
-    //     // Calculate and update the variance (if needed)
-    //     const variance = totalEstimateAssessed - totalEstimateQuoted;
-    //     document.getElementById("three11").value = variance.toFixed(2);
-    // }
+//     const paintQuoted = parseFloat(document.getElementById("one2").value) || 0;
+//     const paintAssessed = parseFloat(document.getElementById("two2").value) || 0;
+//     const paintvariance = parseFloat(document.getElementById("three2").value) || 0;
 
 
-    function updateTotalEstimate()
-    {
+//     const miscQuoted = parseFloat(document.getElementById("one4").value) || 0;
+//     const miscAssessed = parseFloat(document.getElementById("two4").value) || 0;
+//     const miscvariance = parseFloat(document.getElementById("three4").value) || 0;
+
+//     const partsQuoted = parseFloat(document.getElementById("one6").value) || 0;
+//     const partsAssessed = parseFloat(document.getElementById("two6").value) || 0;
+//     const partsvariance = parseFloat(document.getElementById("three6").value) || 0;
+
+
+//     // const supplementaryQuoted = parseFloat(document.getElementById("one8").value) || 0;
+//     // const supplementaryAssessed = parseFloat(document.getElementById("two8").value) || 0;
+//     // const supplementaryvariance  = parseFloat(document.getElementById("three8").value) || 0;
+
+//     // Calculate the Total Estimate
+//     const totalEstimateQuoted = rrQuoted + repairQuoted + paintQuoted + miscQuoted + partsQuoted;
+//     const totalEstimateAssessed = rrAssessed + repairAssessed + paintAssessed + miscAssessed + partsAssessed;
+//     const totalEstimateVariance = rrvariance + repairvariance + paintvariance + miscvariance + partsvariance;
+
+//     // Calculate the GST for the Total Estimate (10% of the total)
+//     const gstQuoted = totalEstimateQuoted * 0.1;
+//     const gstAssessed = totalEstimateAssessed * 0.1;
+//     const gstvariance = totalEstimateVariance * 0.1;
+
+//     // Update the Total Estimate and GST fields
+//     document.getElementById("one11").value = totalEstimateQuoted.toFixed(2);
+//     document.getElementById("two11").value = totalEstimateAssessed.toFixed(2);
+//     document.getElementById("three11").value = totalEstimateVariance.toFixed(2);
+//     document.getElementById("gst_quoted").value = gstQuoted.toFixed(2);
+//     document.getElementById("gst_assessed").value = gstAssessed.toFixed(2);
+//     document.getElementById("gst_variance").value = gstvariance.toFixed(2);
+
+//     // Calculate and update the variance (if needed)
+//     const variance = totalEstimateAssessed - totalEstimateQuoted;
+//     document.getElementById("three11").value = variance.toFixed(2);
+// }
+
+function updateTotalEstimate() {
     // Get the values of R & R, Repair, Paint, Misc Labour, Parts, and Supplementary
     const rrQuoted = parseFloat(document.getElementById("one").value) || 0;
     const rrAssessed = parseFloat(document.getElementById("two").value) || 0;
@@ -1793,7 +1814,6 @@ function calculatePercentage() {
     const paintAssessed = parseFloat(document.getElementById("two2").value) || 0;
     const paintvariance = parseFloat(document.getElementById("three2").value) || 0;
 
-
     const miscQuoted = parseFloat(document.getElementById("one4").value) || 0;
     const miscAssessed = parseFloat(document.getElementById("two4").value) || 0;
     const miscvariance = parseFloat(document.getElementById("three4").value) || 0;
@@ -1802,33 +1822,34 @@ function calculatePercentage() {
     const partsAssessed = parseFloat(document.getElementById("two6").value) || 0;
     const partsvariance = parseFloat(document.getElementById("three6").value) || 0;
 
-
-    const supplementaryQuoted = parseFloat(document.getElementById("one8").value) || 0;
-    const supplementaryAssessed = parseFloat(document.getElementById("two8").value) || 0;
-    const supplementaryvariance  = parseFloat(document.getElementById("three8").value) || 0;
-
     // Calculate the Total Estimate
-    const totalEstimateQuoted = rrQuoted + repairQuoted + paintQuoted + miscQuoted + partsQuoted + supplementaryQuoted;
-    const totalEstimateAssessed = rrAssessed + repairAssessed + paintAssessed + miscAssessed + partsAssessed + supplementaryAssessed;
-    const totalEstimateVariance = rrvariance + repairvariance + paintvariance + miscvariance + partsvariance + supplementaryvariance;
+    const totalEstimateQuoted = rrQuoted + repairQuoted + paintQuoted + miscQuoted + partsQuoted;
+    const totalEstimateAssessed = rrAssessed + repairAssessed + paintAssessed + miscAssessed + partsAssessed;
+    const totalEstimateVariance = rrvariance + repairvariance + paintvariance + miscvariance + partsvariance;
 
     // Calculate the GST for the Total Estimate (10% of the total)
     const gstQuoted = totalEstimateQuoted * 0.1;
     const gstAssessed = totalEstimateAssessed * 0.1;
     const gstvariance = totalEstimateVariance * 0.1;
 
+    // Add GST to the Total Estimate
+    const totalEstimateQuotedWithGST = totalEstimateQuoted + gstQuoted;
+    const totalEstimateAssessedWithGST = totalEstimateAssessed + gstAssessed;
+    const totalEstimateVarianceWithGST = totalEstimateVariance + gstvariance;
+
     // Update the Total Estimate and GST fields
-    document.getElementById("one11").value = totalEstimateQuoted.toFixed(2);
-    document.getElementById("two11").value = totalEstimateAssessed.toFixed(2);
-    document.getElementById("three11").value = totalEstimateVariance.toFixed(2);
+    document.getElementById("one11").value = totalEstimateQuotedWithGST.toFixed(2);
+    document.getElementById("two11").value = totalEstimateAssessedWithGST.toFixed(2);
+    document.getElementById("three11").value = totalEstimateVarianceWithGST.toFixed(2);
     document.getElementById("gst_quoted").value = gstQuoted.toFixed(2);
     document.getElementById("gst_assessed").value = gstAssessed.toFixed(2);
     document.getElementById("gst_variance").value = gstvariance.toFixed(2);
 
     // Calculate and update the variance (if needed)
-    // const variance = totalEstimateAssessed - totalEstimateQuoted;
-    document.getElementById("three11").value = totalEstimateVariance.toFixed(2);
+    const variance = totalEstimateAssessedWithGST - totalEstimateQuotedWithGST;
+    document.getElementById("three11").value = variance.toFixed(2);
 }
+
 
 
 
