@@ -648,24 +648,16 @@
 
                     <tr>
                         <td class="bg-gray-clr font ps-2" colspan="2" style="font-weight: bold">Misc Labour</td>
-                        <td class="font-0"  colspan="2">{{ $accident_service_report->assessmentReports[4]->quoted ?? '--' }}</td>
-                        <td class="font-0"  colspan="2">{{ $accident_service_report->assessmentReports[4]->assessed ?? '--' }}</td>
-                        <td class="font-0"  colspan="">{{ $accident_service_report->assessmentReports[4]->variance ?? '--' }}</td>
+                        <td class="font-0"  colspan="2">{{ $accident_service_report->assessmentReports[5]->quoted ?? '--' }}</td>
+                        <td class="font-0"  colspan="2">{{ $accident_service_report->assessmentReports[5]->assessed ?? '--' }}</td>
+                        <td class="font-0"  colspan="">{{ $accident_service_report->assessmentReports[5]->variance ?? '--' }}</td>
                         <td></td>
                         <td class="bg-gray-clr font" colspan="3" style="font-weight: bold">Salvage Value</td>
                         <td class="bg-gray-clr font-0">{{ $accident_service_report['salvage_value'] ?? '--' }}</td>
                     </tr>
 
                     <tr>
-                        {{-- <td class="bg-gray-clr font ps-2" colspan="2" style="font-weight: bold">Parts</td>
-                        <td class="font-0"  colspan="2">{{ $accident_service_report->assessmentReports[6]->quoted ?? '--' }}</td>
-                        <td class="font-0"  colspan="2">{{ $accident_service_report->assessmentReports[6]->assessed ?? '--' }}</td>
-                        <td class="font-0"  colspan="">{{ $accident_service_report->assessmentReports[6]->variance ?? '--' }}</td> --}}
                         <td class="bg-gray-clr font ps-2" colspan="2" style="font-weight: bold">Parts</td>
-                        {{-- <td class="font-0"  colspan="2">{{ number_format($accident_service_report->assessmentReports[6]->quoted ?? 0, 2) }}</td>
-                        <td class="font-0"  colspan="2">{{ number_format($accident_service_report->assessmentReports[6]->assessed ?? 0, 2) }}</td>
-                        <td class="font-0"  colspan="">{{ number_format($accident_service_report->assessmentReports[6]->variance ?? 0, 2) }}</td> --}}
-
                         <td class="font-0" colspan="2">
                             @if(isset($accident_service_report->assessmentReports[6]->quoted))
                                 {{ number_format($accident_service_report->assessmentReports[6]->quoted, 2) }}
@@ -697,7 +689,7 @@
                         <td class="font ps-2"  colspan="2" style="font-weight: bold">Total Labour</td>
                         <td class="font-0" colspan="2">
                             @if(isset($accident_service_report->assessmentReports[5]->quoted))
-                                {{ number_format($accident_service_report->assessmentReports[5]->quoted, 2) }}
+                                {{ number_format($accident_service_report->assessmentReports[4]->quoted, 2) }}
                             @else
                                 --
                             @endif
@@ -705,7 +697,7 @@
 
                         <td class="font-0" colspan="2">
                             @if(isset($accident_service_report->assessmentReports[5]->quoted))
-                                {{ number_format($accident_service_report->assessmentReports[5]->assessed, 2) }}
+                                {{ number_format($accident_service_report->assessmentReports[4]->assessed, 2) }}
                             @else
                                 --
                             @endif
@@ -713,7 +705,7 @@
 
                         <td class="font-0" colspan="2">
                             @if(isset($accident_service_report->assessmentReports[5]->quoted))
-                                {{ number_format($accident_service_report->assessmentReports[5]->variance, 2) }}
+                                {{ number_format($accident_service_report->assessmentReports[4]->variance, 2) }}
                             @else
                                 --
                             @endif
@@ -724,9 +716,9 @@
 
                     <tr>
                         <td class="bg-gray-clr font ps-2" colspan="2" style="font-weight: bold">GST</td>
-                        <td colspan="2" class="bg-gray-clr font-0">{{ $accident_service_report->assessmentReports[10]->quoted ?? '--' }}</td>
-                        <td colspan="2" class="bg-gray-clr font-0">{{ $accident_service_report->assessmentReports[10]->assessed ?? '--' }}</td>
-                        <td class="bg-gray-clr font-0">{{ $accident_service_report->assessmentReports[10]->variance ?? '--' }}</td>
+                        <td colspan="2" class="bg-gray-clr font-0">{{ $accident_service_report->assessmentReports[8]->quoted ?? '--' }}</td>
+                        <td colspan="2" class="bg-gray-clr font-0">{{ $accident_service_report->assessmentReports[8]->assessed ?? '--' }}</td>
+                        <td class="bg-gray-clr font-0">{{ $accident_service_report->assessmentReports[8]->variance ?? '--' }}</td>
                         <td colspan="2"></td>
                         <td colspan="4" style="font-weight: bold; height: 3%"></td>
                     </tr>
@@ -766,9 +758,9 @@
 
                     <tr>
                         <td class="font ps-2"  colspan="2" style="font-weight: bold">Total Estimate</td>
-                        <td class="font-0"  colspan="2">{{ $accident_service_report->assessmentReports[11]->quoted ?? '--' }}</td>
-                        <td class="font-0"  colspan="2">{{ $accident_service_report->assessmentReports[11]->assessed ?? '--' }}</td>
-                        <td class="font-0" >{{ $accident_service_report->assessmentReports[11]->variance ?? '--' }}</td>
+                        <td class="font-0"  colspan="2">{{ $accident_service_report->assessmentReports[9]->quoted ?? '--' }}</td>
+                        <td class="font-0"  colspan="2">{{ $accident_service_report->assessmentReports[9]->assessed ?? '--' }}</td>
+                        <td class="font-0" >{{ $accident_service_report->assessmentReports[9]->variance ?? '--' }}</td>
                         <td colspan=""></td>
                         <td class="font"  colspan="3" style="font-weight: bold">Cash Settled</td>
                         <td class="font-0" >${{ $accident_service_report['cash_settled'] ?? '--' }}</td>
@@ -776,9 +768,9 @@
 
                     <tr>
                         <td class="bg-gray-clr font ps-2" colspan="2" style="font-weight: bold">Supplementary</td>
-                        <td class="bg-gray-clr font-0" colspan="2">{{ $accident_service_report->assessmentReports[8]->quoted ?? '--' }}</td>
-                        <td class="bg-gray-clr font-0" colspan="2">{{ $accident_service_report->assessmentReports[8]->assessed ?? '--' }}</td>
-                        <td class="bg-gray-clr font-0" colspan="">{{ $accident_service_report->assessmentReports[8]->variance ?? '--' }}</td>
+                        <td class="bg-gray-clr font-0" colspan="2">{{ $accident_service_report->assessmentReports[3]->quoted ?? '--' }}</td>
+                        <td class="bg-gray-clr font-0" colspan="2">{{ $accident_service_report->assessmentReports[3]->assessed ?? '--' }}</td>
+                        <td class="bg-gray-clr font-0" colspan="">{{ $accident_service_report->assessmentReports[3]->variance ?? '--' }}</td>
                         <td></td>
                         <td class="font"  style="font-weight: bold" colspan="3">Settlement
                              GST
@@ -787,9 +779,9 @@
                     </tr>
                     <tr>
                         <td class="font ps-2"  colspan="2" style="font-weight: bold">Sub Total</td>
-                        <td class="font-0"  colspan="2">{{ $accident_service_report->assessmentReports[9]->quoted ?? '--' }}</td>
-                        <td class="font-0"  colspan="2">{{ $accident_service_report->assessmentReports[9]->assessed ?? '--' }}</td>
-                        <td class="font-0"  colspan="">{{ $accident_service_report->assessmentReports[9]->variance ?? '--' }}</td>
+                        <td class="font-0"  colspan="2">{{ $accident_service_report->assessmentReports[4]->quoted ?? '--' }}</td>
+                        <td class="font-0"  colspan="2">{{ $accident_service_report->assessmentReports[4]->assessed ?? '--' }}</td>
+                        <td class="font-0"  colspan="">{{ $accident_service_report->assessmentReports[4]->variance ?? '--' }}</td>
                         <td></td>
                         <td class="font bg-gray-clr"  colspan="3" style="font-weight: bold; background: rgb(98, 221, 98)">Settlement
                              Total

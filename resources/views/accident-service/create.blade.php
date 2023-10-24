@@ -1591,7 +1591,8 @@ $(document).on('click', '.next-step', function ()
 });
 
 //get text from input field
-function myFunctiontwo() {
+function myFunctiontwo()
+    {
         var x = document.getElementById("myText").value;
         document.getElementById("demo").innerHTML = x;
     }
@@ -1630,8 +1631,10 @@ function calculatePercentage() {
     {
   var num1 = parseFloat(document.getElementById(one).value);
   var num2 = parseFloat(document.getElementById(two).value);
-  var result = num2 - num1;
-  document.getElementById(three).value = result;
+  var result = num1;
+  var result2 = num2;
+
+  document.getElementById(three).value = result2;
 
   updateTotalLabour();
   updateSubTotal();
@@ -1644,7 +1647,8 @@ function calculatePercentage() {
 
 }
     /// type in one input field and shows in seocnd input field
-    function syncInputs() {
+    function syncInputs()
+    {
       var input1 = document.getElementById("Text3");
       var input2 = document.getElementById("Text1");
 
@@ -1716,7 +1720,7 @@ function calculatePercentage() {
 
         // Calculate and update the variance (if needed)
         const variance = subTotalAssessed - subTotalQuoted;
-        document.getElementById("three9").value = variance.toFixed(2);
+        document.getElementById("three9").value = subTotalAssessed.toFixed(2);
 
         // You can also update the Total Labour values here if needed
         updateTotalLabour();
@@ -1738,8 +1742,8 @@ function calculatePercentage() {
         document.getElementById("two5").value = totalLabourAssessed.toFixed(2);
 
         // Calculate and update the variance (if needed)
-        const variance = totalLabourAssessed - totalLabourQuoted;
-        document.getElementById("three5").value = variance.toFixed(2);
+        // const variance = totalLabourAssessed - totalLabourQuoted;
+        document.getElementById("three5").value = subTotalAssessed.toFixed(2);
     }
 
 
@@ -1822,8 +1826,8 @@ function calculatePercentage() {
     document.getElementById("gst_variance").value = gstvariance.toFixed(2);
 
     // Calculate and update the variance (if needed)
-    const variance = totalEstimateAssessed - totalEstimateQuoted;
-    document.getElementById("three11").value = variance.toFixed(2);
+    // const variance = totalEstimateAssessed - totalEstimateQuoted;
+    document.getElementById("three11").value = totalEstimateVariance.toFixed(2);
 }
 
 
@@ -1860,7 +1864,8 @@ function calculatePercentage() {
 
 
  // adding two numbers automatically and display result in third input field in assessment summary
-function add_numbertwo() {
+function add_numbertwo()
+        {
             // Get the input field values
             var num1 = parseFloat(document.getElementById("one9").value);
             var num2 = parseFloat(document.getElementById("one10").value);
