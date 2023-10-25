@@ -1114,22 +1114,32 @@ height:15px;
                                         </div> --}}
 
                                 </div>
-
-
-
-
-
-
                                         <div class="col-md-5  right">
+
+                                            {{-- <div class="row font-weight-bold d-flex justify-content-around">
+                                                <h4 class="text-center d-flex" style="color:green;">Total Loss - No
+                                                    <div class="tog mx-2">
+                                                        <label class="switch">
+                                                            <input type="checkbox" id="totalLossToggle" name="total_loss" style="border: none; background: none;" onclick="myFunction()">
+                                                            <span class="slider round"></span>
+                                                        </label>
+                                                    </div>
+                                                    <span id="totalLossLabel">Yes</span>
+                                                </h4>
+                                            </div> --}}
+
+
+
                                             <div class="row font-weight-bold d-flex justify-content-around">
                                                 <h4 class="text-center d-flex" style="color:green;"> Total Loss - No
                                                     <div class="tog mx-2">
-                                                        <label class="switch" >
-                                                        <input type="checkbox" onclick="myFunction()" style=" border: none; background:none; ">
+                                                        <label class="switch">
+                                                        <input type="checkbox" id="totalLossToggle" name="total_loss" style=" border: none; background:none; " onclick="myFunction()">
                                                         <span class="slider round"></span>
                                                         </label>
                                                         </div> Yes</h4>
                                             </div>
+
 
                                                     <div class="row mt-4">
                                                         <div class="col-6 font-weight-bold mt-2 " style="color:black;"> Assessment Date</div>
@@ -1557,17 +1567,19 @@ height:15px;
 
 <script>
 
-//show and hide div
+// show and hide div
     function myFunction()
     {
-  var x = document.getElementById("myDIV");
-  if (x.style.display === "none")
-  {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
-  }
-}
+        var x = document.getElementById("myDIV");
+        if (x.style.display === "none")
+        {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }
+    }
+
+
 
 $(document).on('click', '.next-step', function ()
 {

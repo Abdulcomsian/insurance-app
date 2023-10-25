@@ -583,9 +583,11 @@
                         <td class="selected-bg-gray font"
                             style=" color:black; text-align:left;font-weight:bold">Variance</td>
                         <td></td>
+
                         <td colspan="4" class="selected-bg-gray font"
-                            style=" color:black; text-align:left;font-weight:bold; color: green">Total Loss - NO</td>
-                       </tr>
+                            style=" color:black; text-align:left;font-weight:bold; color: green">Total Loss {{ $accident_service_report['total_loss'] ?? '--' }}</td>
+                    </tr>
+
                     <tr>
                         <td colspan="2" class="bg-gray-clr font ps-2" style="font-weight: bold">R & R</td>
                         <td colspan="2" class="bg-gray-clr font-0">

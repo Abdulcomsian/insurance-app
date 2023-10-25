@@ -60,7 +60,6 @@ class AccidentService implements AccidentServiceInterface
                 $report->market_value       =       $data['market_value'] ?? null;
                 $report->salvage_value      =       $data['salvage_value'] ?? null;
                 $report->settlement         =       $data['settlement'] ?? null;
-
                 $report->tradone            =       $data['tradone'] ?? null;
                 $report->market_one         =       $data['market_one'] ?? null;
                 $report->tradetwo           =       $data['tradetwo'] ?? null;
@@ -69,7 +68,6 @@ class AccidentService implements AccidentServiceInterface
                 $report->market_three       =       $data['market_three'] ?? null;
                 $report->avg_kms            =       $data['avg_kms'] ?? null;
                 $report->market_avg         =       $data['market_avg'] ?? null;
-
                 $report->less_excess        =       $data['less_excess'] ?? null;
                 $report->settlement_sub_total =       $data['settlement_sub_total'] ?? null;
                 $report->settlement_gst     =       $data['settlement_gst'] ?? null;
@@ -93,6 +91,15 @@ class AccidentService implements AccidentServiceInterface
                 $report->comment_damange_details=       $data['comment_damange_details'] ?? null;
                 $report->repair_duration_days= $data['repair_duration_days'] ?? null;
                 $report->vehicle_and_suspension_condition = $data['vehicle_and_suspension_condition'] ?? null;
+
+                $status                     =       $data['total_loss'] ?? 'off';
+                if($status === 'on')
+                {
+                    $report->total_loss = 'Yes';
+                }else{
+                    $report->total_loss = 'No';
+                }
+
                 $report->user_id           =        Auth::user()->id;
                 if(array_key_exists('image', $data))
                     $report->file             =       $this->storeImage(AccidentServiceReport::PATH, $data['image']);
