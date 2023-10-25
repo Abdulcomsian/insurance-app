@@ -775,9 +775,9 @@ height:15px;
                                                                         @endforeach
                                                                     </select>
                                                                     <div class="input-group-btn">
-                                                                        <button class="btn btn-success" type="button" onclick="repairer_fields();">
+                                                                        {{-- <button class="btn btn-success" type="button" onclick="repairer_fields();">
                                                                             <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-                                                                        </button>
+                                                                        </button> --}}
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -809,9 +809,9 @@ height:15px;
                                                                         @endforeach
                                                                     </select>
                                                                     <div class="input-group-btn">
-                                                                        <button class="btn btn-success" type="button" onclick="assessor_fields();">
+                                                                        {{-- <button class="btn btn-success" type="button" onclick="assessor_fields();">
                                                                             <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-                                                                        </button>
+                                                                        </button> --}}
                                                                     </div>
                                                                 </div>
                                                             </div>
