@@ -25,7 +25,7 @@ class AccidentService implements AccidentServiceInterface
             {
                 $report->invoice_no         =       $data['invoice_no'] ?? null;
                 $report->invoice_date       =       $data['invoice_date'] ?? null;
-                $report->assessment_report_ref_no       =       $data['assessment_report_ref_no'] ?? null;
+                // $report->assessment_report_ref_no       =       $data['assessment_report_ref_no'] ?? null;
                 $report->to                 =       $data['to'] ?? null;
                 $report->tax_invoice        =       $data['tax_invoice'] ?? null;
                 $report->vehicle            =       $data['vehicle'] ?? null;

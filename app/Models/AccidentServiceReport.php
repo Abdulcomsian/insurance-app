@@ -85,7 +85,7 @@ class AccidentServiceReport extends Model
         'claim_no',
         'policy_no',
         'comment_damange_details',
-        'assessment_report_ref_no',
+        // 'assessment_report_ref_no',
         'total_loss'
     ];
 
