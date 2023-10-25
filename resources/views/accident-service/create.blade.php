@@ -851,8 +851,8 @@ height:15px;
 
                                             <div class="row mt-4">
                                               <div class="col-3 font-weight-bold mt-2 " style="color:black;" >R & R</div>
-                                              <div class="col-3 "> <input type="number" name="R&R_quoted" id="one" placeholder="$00.00" required  class=" aa form-control form-control-solid mb-3 mb-lg-0" oninput="sub_number.bind(null, 'one', 'two', 'three')()" ; /> </div>
-                                              <div class="col-3"> <input type="number"  name="R&R_assessed" id="two" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0"  oninput="sub_number.bind(null, 'one', 'two', 'three')()" /> </div>
+                                              <div class="col-3 "> <input type="number" name="R&R_quoted" id="one" placeholder="$00.00" required  class=" aa form-control form-control-solid mb-3 mb-lg-0" oninput="sub_number.bind(null, 'one', 'two', 'three')()" ; value=" " /> </div>
+                                              <div class="col-3"> <input type="number"  name="R&R_assessed" id="two" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0"  oninput="sub_number.bind(null, 'one', 'two', 'three')()" value=" " /> </div>
                                               <div class="col-3"> <input type="number" readonly name="R&R_variance" id="three" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0"  /> </div>
                                            </div>
 
@@ -1626,21 +1626,24 @@ function calculatePercentage() {
     // subtract two numbers automatically
     function sub_number(one, two, three)
     {
-  var num1 = parseFloat(document.getElementById(one).value);
-  var num2 = parseFloat(document.getElementById(two).value);
-  var result = num2 - num1;
-  document.getElementById(three).value = result;
 
-  updateTotalLabour();
-  updateSubTotal();
-  updateTotalEstimate();
-  updateResult()
-  calculatePercentagetwo()
-  updateResulttwo()
-  calculatePercentagethree()
+        var num2 = parseFloat(document.getElementById(two).value) || 0;
+        var num1 = parseFloat(document.getElementById(one).value) || 0;
+        var result = num2-num1;
+        if (num1 === 0) {
+            result = 0-num2;
+        }
 
+        document.getElementById(three).value = result;
 
-}
+        updateTotalLabour();
+        updateSubTotal();
+        updateTotalEstimate();
+        updateResult()
+        calculatePercentagetwo()
+        updateResulttwo()
+        calculatePercentagethree()
+    }
     /// type in one input field and shows in seocnd input field
     function syncInputs()
     {
@@ -1702,31 +1705,43 @@ function calculatePercentage() {
     {
         const rrQuoted = parseFloat(document.getElementById("one").value) || 0;
         const rrAssessed = parseFloat(document.getElementById("two").value) || 0;
+        const rrVariance = parseFloat(document.getElementById("three").value) || 0;
+
 
         const repairQuoted = parseFloat(document.getElementById("one1").value) || 0;
         const repairAssessed = parseFloat(document.getElementById("two1").value) || 0;
+        const repairVariance = parseFloat(document.getElementById("three1").value) || 0;
+
 
         const PaintQuoted = parseFloat(document.getElementById("one2").value) || 0;
         const PaintAssessed = parseFloat(document.getElementById("two2").value) || 0;
+        const PaintVariance = parseFloat(document.getElementById("three2").value) || 0;
+
 
         const MiscLabourQuoted = parseFloat(document.getElementById("one4").value) || 0;
         const MiscLabourAssessed = parseFloat(document.getElementById("two4").value) || 0;
+        const MiscLabourVariance = parseFloat(document.getElementById("three4").value) || 0;
+
 
         const PartsQuoted = parseFloat(document.getElementById("one6").value) || 0;
         const PartsAssessed = parseFloat(document.getElementById("two6").value) || 0;
+        const PartsVariance = parseFloat(document.getElementById("three6").value) || 0;
 
 
 
         // Calculate the Sub Total
         const subTotalQuoted = rrQuoted + repairQuoted + PaintQuoted + MiscLabourQuoted + PartsQuoted;
         const subTotalAssessed = rrAssessed + repairAssessed + PaintAssessed + MiscLabourAssessed + PartsAssessed;
+        const subTotalVariance = rrVariance + repairVariance + PaintVariance + MiscLabourVariance + PartsVariance;
 
         // Update the Sub Total fields
         document.getElementById("one9").value = subTotalQuoted.toFixed(2);
         document.getElementById("two9").value = subTotalAssessed.toFixed(2);
+        // document.getElementById("three9").value = subTotalVariance.toFixed(2);
 
         // Calculate and update the variance (if needed)
         const variance = subTotalAssessed - subTotalQuoted;
+
         document.getElementById("three9").value = variance.toFixed(2);
 
         // You can also update the Total Labour values here if needed
@@ -1737,7 +1752,6 @@ function calculatePercentage() {
     // R&R AND Repairs add
     function updateTotalLabour()
     {
-
         const rrQuoted = parseFloat(document.getElementById("one").value) || 0;
         const rrAssessed = parseFloat(document.getElementById("two").value) || 0;
 
@@ -1760,60 +1774,9 @@ function calculatePercentage() {
     }
 
 
-//     function updateTotalEstimate()
-//     {
-//     // Get the values of R & R, Repair, Paint, Misc Labour, Parts, and Supplementary
-//     const rrQuoted = parseFloat(document.getElementById("one").value) || 0;
-//     const rrAssessed = parseFloat(document.getElementById("two").value) || 0;
-//     const rrvariance = parseFloat(document.getElementById("three").value) || 0;
-
-//     const repairQuoted = parseFloat(document.getElementById("one1").value) || 0;
-//     const repairAssessed = parseFloat(document.getElementById("two1").value) || 0;
-//     const repairvariance = parseFloat(document.getElementById("three1").value) || 0;
-
-//     const paintQuoted = parseFloat(document.getElementById("one2").value) || 0;
-//     const paintAssessed = parseFloat(document.getElementById("two2").value) || 0;
-//     const paintvariance = parseFloat(document.getElementById("three2").value) || 0;
-
-
-//     const miscQuoted = parseFloat(document.getElementById("one4").value) || 0;
-//     const miscAssessed = parseFloat(document.getElementById("two4").value) || 0;
-//     const miscvariance = parseFloat(document.getElementById("three4").value) || 0;
-
-//     const partsQuoted = parseFloat(document.getElementById("one6").value) || 0;
-//     const partsAssessed = parseFloat(document.getElementById("two6").value) || 0;
-//     const partsvariance = parseFloat(document.getElementById("three6").value) || 0;
-
-
-//     // const supplementaryQuoted = parseFloat(document.getElementById("one8").value) || 0;
-//     // const supplementaryAssessed = parseFloat(document.getElementById("two8").value) || 0;
-//     // const supplementaryvariance  = parseFloat(document.getElementById("three8").value) || 0;
-
-//     // Calculate the Total Estimate
-//     const totalEstimateQuoted = rrQuoted + repairQuoted + paintQuoted + miscQuoted + partsQuoted;
-//     const totalEstimateAssessed = rrAssessed + repairAssessed + paintAssessed + miscAssessed + partsAssessed;
-//     const totalEstimateVariance = rrvariance + repairvariance + paintvariance + miscvariance + partsvariance;
-
-//     // Calculate the GST for the Total Estimate (10% of the total)
-//     const gstQuoted = totalEstimateQuoted * 0.1;
-//     const gstAssessed = totalEstimateAssessed * 0.1;
-//     const gstvariance = totalEstimateVariance * 0.1;
-
-//     // Update the Total Estimate and GST fields
-//     document.getElementById("one11").value = totalEstimateQuoted.toFixed(2);
-//     document.getElementById("two11").value = totalEstimateAssessed.toFixed(2);
-//     document.getElementById("three11").value = totalEstimateVariance.toFixed(2);
-//     document.getElementById("gst_quoted").value = gstQuoted.toFixed(2);
-//     document.getElementById("gst_assessed").value = gstAssessed.toFixed(2);
-//     document.getElementById("gst_variance").value = gstvariance.toFixed(2);
-
-//     // Calculate and update the variance (if needed)
-//     const variance = totalEstimateAssessed - totalEstimateQuoted;
-//     document.getElementById("three11").value = variance.toFixed(2);
-// }
-
-function updateTotalEstimate() {
-    // Get the values of R & R, Repair, Paint, Misc Labour, Parts, and Supplementary
+function updateTotalEstimate()
+{
+    // Get the values of R & R, Repair, Paint, Misc Labour, Parts, and
     const rrQuoted = parseFloat(document.getElementById("one").value) || 0;
     const rrAssessed = parseFloat(document.getElementById("two").value) || 0;
     const rrvariance = parseFloat(document.getElementById("three").value) || 0;
@@ -1859,6 +1822,7 @@ function updateTotalEstimate() {
 
     // Calculate and update the variance (if needed)
     const variance = totalEstimateAssessedWithGST - totalEstimateQuotedWithGST;
+
     document.getElementById("three11").value = variance.toFixed(2);
 }
 
