@@ -1705,34 +1705,34 @@ function calculatePercentage() {
     {
         const rrQuoted = parseFloat(document.getElementById("one").value) || 0;
         const rrAssessed = parseFloat(document.getElementById("two").value) || 0;
-        const rrVariance = parseFloat(document.getElementById("three").value) || 0;
+        // const rrVariance = parseFloat(document.getElementById("three").value) || 0;
 
 
         const repairQuoted = parseFloat(document.getElementById("one1").value) || 0;
         const repairAssessed = parseFloat(document.getElementById("two1").value) || 0;
-        const repairVariance = parseFloat(document.getElementById("three1").value) || 0;
+        // const repairVariance = parseFloat(document.getElementById("three1").value) || 0;
 
 
         const PaintQuoted = parseFloat(document.getElementById("one2").value) || 0;
         const PaintAssessed = parseFloat(document.getElementById("two2").value) || 0;
-        const PaintVariance = parseFloat(document.getElementById("three2").value) || 0;
+        // const PaintVariance = parseFloat(document.getElementById("three2").value) || 0;
 
 
         const MiscLabourQuoted = parseFloat(document.getElementById("one4").value) || 0;
         const MiscLabourAssessed = parseFloat(document.getElementById("two4").value) || 0;
-        const MiscLabourVariance = parseFloat(document.getElementById("three4").value) || 0;
+        // const MiscLabourVariance = parseFloat(document.getElementById("three4").value) || 0;
 
 
         const PartsQuoted = parseFloat(document.getElementById("one6").value) || 0;
         const PartsAssessed = parseFloat(document.getElementById("two6").value) || 0;
-        const PartsVariance = parseFloat(document.getElementById("three6").value) || 0;
+        // const PartsVariance = parseFloat(document.getElementById("three6").value) || 0;
 
 
 
         // Calculate the Sub Total
         const subTotalQuoted = rrQuoted + repairQuoted + PaintQuoted + MiscLabourQuoted + PartsQuoted;
         const subTotalAssessed = rrAssessed + repairAssessed + PaintAssessed + MiscLabourAssessed + PartsAssessed;
-        const subTotalVariance = rrVariance + repairVariance + PaintVariance + MiscLabourVariance + PartsVariance;
+        // const subTotalVariance = rrVariance + repairVariance + PaintVariance + MiscLabourVariance + PartsVariance;
 
         // Update the Sub Total fields
         document.getElementById("one9").value = subTotalQuoted.toFixed(2);

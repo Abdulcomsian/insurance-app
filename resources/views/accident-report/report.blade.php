@@ -649,9 +649,9 @@
 
                     <tr>
                         <td class="bg-gray-clr font ps-2" colspan="2" style="font-weight: bold">Misc Labour</td>
-                        <td class="font-0"  colspan="2">{{ $accident_service_report->assessmentReports[5]->quoted ?? '--' }}</td>
-                        <td class="font-0"  colspan="2">{{ $accident_service_report->assessmentReports[5]->assessed ?? '--' }}</td>
-                        <td class="font-0"  colspan="">{{ $accident_service_report->assessmentReports[5]->variance ?? '--' }}</td>
+                        <td class="font-0"  colspan="2">{{ $accident_service_report->assessmentReports[3]->quoted ?? '--' }}</td>
+                        <td class="font-0"  colspan="2">{{ $accident_service_report->assessmentReports[3]->assessed ?? '--' }}</td>
+                        <td class="font-0"  colspan="">{{ $accident_service_report->assessmentReports[3]->variance ?? '--' }}</td>
                         <td></td>
                         <td class="bg-gray-clr font" colspan="3" style="font-weight: bold">Salvage Value</td>
                         <td class="bg-gray-clr font-0">{{ $accident_service_report['salvage_value'] ?? '--' }}</td>
@@ -661,7 +661,7 @@
                         <td class="bg-gray-clr font ps-2" colspan="2" style="font-weight: bold">Parts</td>
                         <td class="font-0" colspan="2">
                             @if(isset($accident_service_report->assessmentReports[6]->quoted))
-                                {{ number_format($accident_service_report->assessmentReports[2]->quoted, 2) }}
+                                {{ number_format($accident_service_report->assessmentReports[5]->quoted, 2) }}
                             @else
                                 --
                             @endif
@@ -669,7 +669,7 @@
 
                         <td class="font-0" colspan="2">
                             @if(isset($accident_service_report->assessmentReports[6]->quoted))
-                                {{ number_format($accident_service_report->assessmentReports[2]->assessed, 2) }}
+                                {{ number_format($accident_service_report->assessmentReports[5]->assessed, 2) }}
                             @else
                                 --
                             @endif
@@ -677,7 +677,7 @@
 
                         <td class="font-0" colspan="2">
                             @if(isset($accident_service_report->assessmentReports[6]->quoted))
-                                {{ number_format($accident_service_report->assessmentReports[2]->variance, 2) }}
+                                {{ number_format($accident_service_report->assessmentReports[5]->variance, 2) }}
                             @else
                                 --
                             @endif
