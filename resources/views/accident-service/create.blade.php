@@ -1007,6 +1007,7 @@ height:15px;
                                             <div class="col-3"> <input type="number" name="ReportedItems_assessed" id="two12" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0" oninput="sub_number.bind(null, 'one12', 'two12', 'three12')()" ;  /> </div>
                                             <div class="col-3"> <input type="number" name="ReportedItems_variance" readonly id="three12" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0"  /> </div>
                                            </div>
+
                                            <div class="row mt-2">
                                             <div class="col-3 font-weight-bold mt-2 " style="color:black;">Towing</div>
                                              <div class="col-3"> <input type="number" name="Towing_quoted" id="one13" placeholder="$00.00"  required  class="aa form-control form-control-solid mb-3 mb-lg-0" oninput="sub_number.bind(null, 'one13', 'two13', 'three13')()" ; /> </div>
@@ -1059,8 +1060,8 @@ height:15px;
                                           <br> <br>
 
                                            <div class="row mt-2">
-                                            <div class="col-6 font-weight-bold mt-2 " style="color:black;"> Book Values</div>
-                                            <div class="col-6 font-weight-bold mt-2 " style="color:black;"> Live Market Values</div>
+                                              <div class="col-6 font-weight-bold mt-2 " style="color:black;"> Book Values</div>
+                                              <div class="col-6 font-weight-bold mt-2 " style="color:black;"> Live Market Values</div>
                                            </div>
 
                                         {{-- <div class="row mt-2">
@@ -1642,7 +1643,8 @@ function calculatePercentage() {
         updateResult()
         calculatePercentagetwo()
         updateResulttwo()
-        calculatePercentagethree()
+        calculatePercentagethree();
+        // updatecheck();
     }
     /// type in one input field and shows in seocnd input field
     function syncInputs()
@@ -1653,52 +1655,53 @@ function calculatePercentage() {
       input2.value =parseFloat(input1.value).toFixed(2);
       calculatePercentage()
     }
+
     //////// add in multiple inputs and display result in one input field automatically
     // for Quoted in assessment summary
 
-    const a = document.getElementById('one');
-    const b = document.getElementById('one1');
-    const c = document.getElementById('one2');
-    const d = document.getElementById('one3');
-    const e = document.getElementById('one4');
-    const f = document.getElementById('one5');
-    const g = document.getElementById('one6');
-    const h = document.getElementById('one7');
-    const i = document.getElementById('one8');
-    const result33 = document.getElementById('one9');
+    // const a = document.getElementById('one');
+    // const b = document.getElementById('one1');
+    // const c = document.getElementById('one2');
+    // const d = document.getElementById('one3');
+    // const e = document.getElementById('one4');
+    // const f = document.getElementById('one5');
+    // const g = document.getElementById('one6');
+    // const h = document.getElementById('one7');
+    // const i = document.getElementById('one8');
+    // const result33 = document.getElementById('one9');
 
     // Add event listeners to the input fields
 
 
     // Function to update the result field
-    function updateResult() {
-      const value1 = Number(a.value) || 0;
-      const value2 = Number(b.value) || 0;
-      const value3 = Number(c.value) || 0;
-      const value4 = Number(d.value) || 0;
-      const value5 = Number(e.value) || 0;
-      const value6 = Number(f.value) || 0;
-      const value7 = Number(g.value) || 0;
-      const value8 = Number(h.value) || 0;
-      const value9 = Number(i.value) || 0;
+    // function updateResult() {
+    //   const value1 = Number(a.value) || 0;
+    //   const value2 = Number(b.value) || 0;
+    //   const value3 = Number(c.value) || 0;
+    //   const value4 = Number(d.value) || 0;
+    //   const value5 = Number(e.value) || 0;
+    //   const value6 = Number(f.value) || 0;
+    //   const value7 = Number(g.value) || 0;
+    //   const value8 = Number(h.value) || 0;
+    //   const value9 = Number(i.value) || 0;
 
-          // Add event listeners to the input fields
-    a.addEventListener('input', updateResult);
-    b.addEventListener('input', updateResult);
-    c.addEventListener('input', updateResult);
-    d.addEventListener('input', updateResult);
-    e.addEventListener('input', updateResult);
-    f.addEventListener('input', updateResult);
-    g.addEventListener('input', updateResult);
-    h.addEventListener('input', updateResult);
-    i.addEventListener('input', updateResult);
-      // Perform the addition
-      const sum = value1 + value2 + value3 + value4 + value5 + value6 + value7 + value8 + value9;
+        //   Add event listeners to the input fields
+    // a.addEventListener('input', updateResult);
+    // b.addEventListener('input', updateResult);
+    // c.addEventListener('input', updateResult);
+    // d.addEventListener('input', updateResult);
+    // e.addEventListener('input', updateResult);
+    // f.addEventListener('input', updateResult);
+    // g.addEventListener('input', updateResult);
+    // h.addEventListener('input', updateResult);
+    // i.addEventListener('input', updateResult);
+    //   // Perform the addition
+    //   const sum = value1 + value2 + value3 + value4 + value5 + value6 + value7 + value8 + value9;
 
-      // Update the result field
-      result33.value = sum;
+    //   // Update the result field
+    //   result33.value = sum;
 
-    }
+    // }
 
     // R&R AND Repairs add
     function updateSubTotal()
@@ -1827,52 +1830,35 @@ function updateTotalEstimate()
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     //// 10 % of given number    second funtion that use in assessment summary
 
-    function calculatePercentagetwo()
-    {
-      var inputField = document.getElementById("one9");
-      var outputField = document.getElementById("one10");
+    // function calculatePercentagetwo()
+    // {
+    //   var inputField = document.getElementById("one9");
+    //   var outputField = document.getElementById("one10");
 
-    //   var inputNumber = parseFloat(inputField.value);
-    var inputNumber = parseFloat(inputField.value.replace(",", "."));
-      var percentage = inputNumber * 0.1;
+    // //   var inputNumber = parseFloat(inputField.value);
+    // var inputNumber = parseFloat(inputField.value.replace(",", "."));
+    //   var percentage = inputNumber * 0.1;
 
-      outputField.value = Math.round(percentage);
-        add_numbertwo();
-    }
+    //   outputField.value = Math.round(percentage);
+    //     add_numbertwo();
+    // }
 
 
  // adding two numbers automatically and display result in third input field in assessment summary
-function add_numbertwo()
-        {
-            // Get the input field values
-            var num1 = parseFloat(document.getElementById("one9").value);
-            var num2 = parseFloat(document.getElementById("one10").value);
+// function add_numbertwo()
+//         {
+//             // Get the input field values
+//             var num1 = parseFloat(document.getElementById("one9").value);
+//             var num2 = parseFloat(document.getElementById("one10").value);
 
-            // Perform the addition
-            var result22 = num1 + num2;
+//             // Perform the addition
+//             var result22 = num1 + num2;
 
-            // Display the result in the third input field
-            document.getElementById("one11").value = result22;
-        }
+//             // Display the result in the third input field
+//             document.getElementById("one11").value = result22;
+//         }
 
   //////// add in multiple inputs and display result in one input field automatically
     // for Assessed in assessment summary
@@ -1942,10 +1928,8 @@ function calculatePercentagethree()
 
       const newVall = document.getElementById("one10")
 
-const newVal2 = document.getElementById("three10")
-newVal2.value = outputField.value - Number(newVall.value)
-
-
+        const newVal2 = document.getElementById("three10")
+        newVal2.value = outputField.value - Number(newVall.value)
 
         add_numberthree();
 
@@ -2011,29 +1995,19 @@ function syncInputs2()
 
         var room = 1;
 
-    function populateOptions(selectElement, data)
-    {
-    // Clear existing options
-    selectElement.innerHTML = "";
+        function populateOptions(selectElement, data)
+        {
+        // Clear existing options
+        selectElement.innerHTML = "";
 
-    // Add new options based on the data
-    for (var i = 0; i < data.length; i++) {
-        var option = document.createElement("option");
-        option.value = data[i].value;
-        option.text = data[i].text;
-        selectElement.appendChild(option);
+        // Add new options based on the data
+        for (var i = 0; i < data.length; i++) {
+            var option = document.createElement("option");
+            option.value = data[i].value;
+            option.text = data[i].text;
+            selectElement.appendChild(option);
+        }
     }
-    }
-
-
-
-
-
-
-
-
-
-
 
 
     // Repairer Start

@@ -252,6 +252,7 @@ class AccidentService implements AccidentServiceInterface
                     $detail_assessment->save();
                 }
 
+
                 //Reported Items
                 if(isset($data['ReportedItems_quoted']))
                 {
@@ -312,17 +313,23 @@ class AccidentService implements AccidentServiceInterface
                     $detail_assessment->save();
                 }
 
+
+
+
                 //Less ITC
                 if(isset($data['LessITC_quoted']))
                 {
                     $detail_assessment                                  = new DetailAssessmentReport();
                     $detail_assessment->quoted                          = $data['LessITC_quoted'] ? $data['LessITC_quoted'] : null;
+                    // dd($data['LessITC_quoted']);
                     $detail_assessment->assessed                        = $data['LessITC_assessed'] ? $data['LessITC_assessed'] : null;
                     $detail_assessment->variance                        = $data['LessITC_variance'] ? $data['LessITC_variance'] : null;
                     $detail_assessment->accident_service_report_id      = (int)$report->id ;
                     $detail_assessment->assessment_report_product_id    = 18;
                     $detail_assessment->save();
                 }
+
+
 
                 //Less Contribution
                 if(isset($data['LessContribution_quoted']))
@@ -335,6 +342,7 @@ class AccidentService implements AccidentServiceInterface
                     $detail_assessment->assessment_report_product_id    = 19;
                     $detail_assessment->save();
                 }
+
 
                 //PAV
                 if(isset($data['PAV_quoted']))

@@ -533,25 +533,7 @@
                             </td>
                             <td class="font-0" style=" color:black; text-align:left;">{{$service_repairer['repairers']['mobile'] ?? '--'}}</td>
 
-                            {{-- <td colspan="1" class="font" style=" color:black; text-align:left;">
-                                Phone:
-                            </td>
-                            <td class="font-0" style=" color:black; text-align:left;">{{$service_repairer['repairers']['phone'] ?? '--'}}</td> --}}
 
-                            {{-- <td colspan="1" class="font" style=" color:black; text-align:left;">
-                                Mobile:
-                            </td>
-                            <td class="font-0" style=" color:black; text-align:left;">{{$service_repairer['repairers']['mobile'] ?? '--'}}</td> --}}
-                        </tr>
-
-                        {{-- <tr class="bg-gray-clr">>
-
-                            <td colspan="1" class="font" style=" color:black; text-align:left;">
-                                ABN:
-                            </td>
-                            <td class="font-0" style=" color:black; text-align:left;">{{$service_repairer['repairers']['mobile'] ?? '--'}}</td>
-
-                        </tr> --}}
                     @empty
                     @endforelse
                 </tbody>
@@ -585,32 +567,210 @@
                         <td></td>
 
                         <td colspan="4" class="selected-bg-gray font"
-                            style=" color:black; text-align:left;font-weight:bold; color: green">Total Loss {{ $accident_service_report['total_loss'] ?? '--' }}</td>
+                            style=" color:black; text-align:left;font-weight:bold; color: green;">Total Loss {{ $accident_service_report['total_loss'] ?? '--' }}</td>
                     </tr>
+<?php
+$r_rquoted ="";
+$r_rassessed ="";
+$r_rvariance="";
+$repair_quoted ="";
+        $repair_assessed ="";
+        $repair_variance="";
+            $paint_quoted ="";
+            $paint_assessed ="";
+            $paint_variance="";
+            $misclabour_quoted ="";
+            $misclabour_assessed ="";
+            $misclabour_variance="";
+            $Parts_quoted ="";
+            $Parts_assessed ="";
+            $Parts_variance="";
+            $TotalLabour_quoted ="";
+            $TotalLabour_assessed ="";
+            $TotalLabour_variance="";
+            $SubTotal_quoted ="";
+            $SubTotal_assessed ="";
+            $SubTotal_variance="";
+            $GST_quoted ="";
+            $GST_assessed ="";
+            $GST_variance="";
+            $TotalEstimate_quoted ="";
+            $TotalEstimate_assessed ="";
+            $TotalEstimate_variance="";
+            $ReportedItems_quoted ="";
+            $ReportedItems_assessed ="";
+            $ReportedItems_variance="";
+            $Towing_quoted ="";
+            $Towing_assessed ="";
+            $Towing_variance="";
+            $ExternalSublet_quoted ="";
+            $ExternalSublet_assessed ="";
+            $ExternalSublet_variance="";
+            $Additional_quoted ="";
+            $Additional_assessed ="";
+            $Additional_variance="";
+            $Discounts_quoted ="";
+            $Discounts_assessed ="";
+            $Discounts_variance="";
+            $LessITC_quoted ="";
+            $LessITC_assessed ="";
+            $LessITC_variance="";
+            $LessContribution_quoted ="";
+            $LessContribution_assessed ="";
+            $LessContribution_variance="";
+            $PAV_quoted ="";
+            $PAV_assessed ="";
+            $PAV_variance="";
 
-                    <tr>
+    foreach($accident_service_report->assessmentReports as $assessment)
+        if($assessment->reportProduct['name']=='R&R')
+        {
+            $r_rquoted = $assessment->quoted ?? '--';
+            $r_rassessed = $assessment->assessed ?? '--';
+            $r_rvariance = $assessment->variance ?? '--';
+        }else
+        if($assessment->reportProduct['name']=='Repair')
+        {
+           $repair_quoted =  $assessment->quoted ?? '--';
+           $repair_assessed =  $assessment->assessed ?? '--';
+           $repair_variance =  $assessment->variance ?? '--';
+        }else
+
+        if($assessment->reportProduct['name']=='Paint')
+        {
+             $paint_quoted = $assessment->quoted ?? '--';
+             $paint_assessed = $assessment->assessed ?? '--';
+             $paint_variance = $assessment->variance ?? '--';
+        }else
+
+        if($assessment->reportProduct['name']=='Misc Labour')
+        {
+             $misclabour_quoted = $assessment->quoted ?? '--';
+             $misclabour_assessed = $assessment->assessed ?? '--';
+             $misclabour_variance = $assessment->variance ?? '--';
+        }else
+
+        if($assessment->reportProduct['name']=='Parts')
+        {
+             $Parts_quoted = $assessment->quoted ?? '--';
+             $Parts_assessed = $assessment->assessed ?? '--';
+             $Parts_variance = $assessment->variance ?? '--';
+        }else
+
+        if($assessment->reportProduct['name']=='Total Labour')
+        {
+             $TotalLabour_quoted = $assessment->quoted ?? '--';
+             $TotalLabour_assessed = $assessment->assessed ?? '--';
+             $TotalLabour_variance = $assessment->variance ?? '--';
+        }else
+
+        if($assessment->reportProduct['name']=='Sub Total')
+        {
+             $SubTotal_quoted = $assessment->quoted ?? '--';
+             $SubTotal_assessed = $assessment->assessed ?? '--';
+             $SubTotal_variance = $assessment->variance ?? '--';
+        }else
+
+        if($assessment->reportProduct['name']=='GST')
+        {
+             $GST_quoted = $assessment->quoted ?? '--';
+             $GST_assessed = $assessment->assessed ?? '--';
+             $GST_variance = $assessment->variance ?? '--';
+        }else
+
+        if($assessment->reportProduct['name']=='Total Estimate')
+        {
+             $TotalEstimate_quoted = $assessment->quoted ?? '--';
+             $TotalEstimate_assessed = $assessment->assessed ?? '--';
+             $TotalEstimate_variance = $assessment->variance ?? '--';
+        }else
+
+        if($assessment->reportProduct['name']=='Reported Items')
+        {
+             $ReportedItems_quoted = $assessment->quoted ?? '--';
+             $ReportedItems_assessed = $assessment->assessed ?? '--';
+             $ReportedItems_variance = $assessment->variance ?? '--';
+        }
+        else
+        if($assessment->reportProduct['name']=='Towing')
+        {
+             $Towing_quoted = $assessment->quoted ?? '--';
+             $Towing_assessed = $assessment->assessed ?? '--';
+             $Towing_variance = $assessment->variance ?? '--';
+        }
+        else
+
+        if($assessment->reportProduct['name']=='External Sublet')
+        {
+             $ExternalSublet_quoted = $assessment->quoted ?? '--';
+             $ExternalSublet_assessed = $assessment->assessed ?? '--';
+             $ExternalSublet_variance = $assessment->variance ?? '--';
+        }
+        else
+        if($assessment->reportProduct['name']=='Additional')
+        {
+             $Additional_quoted = $assessment->quoted ?? '--';
+             $Additional_assessed = $assessment->assessed ?? '--';
+             $Additional_variance = $assessment->variance ?? '--';
+        }
+        else
+
+        if($assessment->reportProduct['name']=='Discounts')
+        {
+             $Discounts_quoted = $assessment->quoted ?? '--';
+             $Discounts_assessed = $assessment->assessed ?? '--';
+             $Discounts_variance = $assessment->variance ?? '--';
+        }
+else
+        if($assessment->reportProduct['name']=='Less ITC')
+        {
+             $LessITC_quoted = $assessment->quoted ?? '--';
+             $LessITC_assessed = $assessment->assessed ?? '--';
+             $LessITC_variance = $assessment->variance ?? '--';
+        }
+        else
+
+        if($assessment->reportProduct['name']=='Less Contribution')
+        {
+             $LessContribution_quoted = $assessment->quoted ?? '--';
+             $LessContribution_assessed = $assessment->assessed ?? '--';
+             $LessContribution_variance = $assessment->variance ?? '--';
+        }
+
+        else
+        if($assessment->reportProduct['name']=='PAV')
+        {
+             $PAV_quoted = $assessment->quoted ?? '--';
+             $PAV_assessed = $assessment->assessed ?? '--';
+             $PAV_variance = $assessment->variance ?? '--';
+        }
+
+?>
+
+
+                   <tr>
                         <td colspan="2" class="bg-gray-clr font ps-2" style="font-weight: bold">R & R</td>
                         <td colspan="2" class="bg-gray-clr font-0">
-                            @if(isset($accident_service_report->assessmentReports[0]))
-                            {{ (int)$accident_service_report->assessmentReports[0]->quoted ?? '--' }}
-                            @else
-                            abc
-                            @endif
+                            {{-- @if($assessment->reportProduct['name']=='R&R' && $i==0) --}}
+                            {{ $r_rquoted }}
+                            {{-- @else --}}
+                            {{-- --
+                            @endif --}}
                         </td>
 
                         <td colspan="2" class="bg-gray-clr font-0">
-                            @if(isset($accident_service_report->assessmentReports[0]))
-                            {{ (int)$accident_service_report->assessmentReports[0]->assessed ?? '--' }}
-                            @else
-                            abc
-                            @endif
+                            {{-- @if($assessment->reportProduct['name']=='R&R') --}}
+                            {{ $r_rassessed }}
+                            {{-- @else
+                            --
+                            @endif --}}
                         </td>
                         <td class="bg-gray-clr font-0">
-                            @if(isset($accident_service_report->assessmentReports[0]))
-                            {{ (int)$accident_service_report->assessmentReports[0]->variance ?? '--' }}
-                            @else
-                            abc
-                            @endif
+                            {{-- @if($assessment->reportProduct['name']=='R&R') --}}
+                            {{ $r_rvariance }}
+                            {{-- @else
+                            --
+                            @endif --}}
                         </td>
                         <td></td>
                         <td colspan="3" style="font-weight: bold" class="bg-gray-clr font">Assessment
@@ -620,67 +780,77 @@
 
                     <tr>
                         <td class="font ps-2" colspan="2" style="font-weight: bold">Repair</td>
-                        <td class="font-0"  colspan="2">{{ $accident_service_report->assessmentReports[1]->quoted ?? '--' }}</td>
-                        <td class="font-0"  colspan="2">{{ $accident_service_report->assessmentReports[1]->assessed ?? '--' }}</td>
-                        <td class="font-0"  colspan="2">{{ $accident_service_report->assessmentReports[1]->variance ?? '--' }}</td>
+                        <td class="font-0"  colspan="2">
+                            {{ $repair_quoted }}  </td>
+                        <td class="font-0"  colspan="2">
+
+                            {{ $repair_assessed }}  </td>
+                        <td class="font-0"  colspan="2">
+
+                            {{ $repair_variance }}  </td>
                         <td class="font"  colspan="3" style="font-weight: bold">Cover Type</td>
                         <td class="font-0"  >{{ $accident_service_report['cover_type'] ?? '--' }}</td>
                     </tr>
 
                     <tr>
                         <td class="bg-gray-clr font ps-2" colspan="2" style="font-weight: bold">Paint</td>
-                        <td class="font-0"  colspan="2">{{ $accident_service_report->assessmentReports[2]->quoted ?? '--' }}</td>
-                        <td class="font-0"  colspan="2">{{ $accident_service_report->assessmentReports[2]->assessed ?? '--' }}</td>
-                        <td class="font-0" >{{ $accident_service_report->assessmentReports[2]->variance ?? '--' }}</td>
+                        <td class="font-0"  colspan="2">
+                            {{ $paint_quoted  }} </td>
+                        <td class="font-0"  colspan="2">
+                            {{ $paint_assessed  }} </td>
+                        <td class="font-0" >
+                            {{ $paint_variance  }} </td>
                         <td></td>
                         <td colspan="3" class="bg-gray-clr font" style="font-weight: bold">Sum Insured</td>
                         <td class="bg-gray-clr font-0">{{ $accident_service_report['sum_insured'] ?? '--' }}</td>
                     </tr>
 
-                    {{-- <tr>
-                        <td class="font ps-2"  colspan="2" style="font-weight: bold">Mechanical</td>
-                        <td class="font-0"  colspan="2">{{ $accident_service_report->assessmentReports[3]->quoted ?? '--' }}</td>
-                        <td class="font-0"  colspan="2">{{ $accident_service_report->assessmentReports[3]->assessed ?? '--' }}</td>
-                        <td class="font-0"  colspan="">{{ $accident_service_report->assessmentReports[3]->variance ?? '--' }}</td>
-                        <td></td>
-                        <td class="font"  colspan="3" style="font-weight: bold">Market Value</td>
-                        <td class="font-0" >{{ $accident_service_report['market_value'] ?? '--' }}</td>
-                    </tr> --}}
-
                     <tr>
                         <td class="bg-gray-clr font ps-2" colspan="2" style="font-weight: bold">Misc Labour</td>
-                        <td class="font-0"  colspan="2">{{ $accident_service_report->assessmentReports[3]->quoted ?? '--' }}</td>
-                        <td class="font-0"  colspan="2">{{ $accident_service_report->assessmentReports[3]->assessed ?? '--' }}</td>
-                        <td class="font-0"  colspan="">{{ $accident_service_report->assessmentReports[3]->variance ?? '--' }}</td>
+                        <td class="font-0"  colspan="2">
+                           {{ $misclabour_quoted }}</td>
+                        <td class="font-0"  colspan="2">
+                           {{ $misclabour_assessed }}</td>
+                        <td class="font-0"  colspan="">
+                            {{ $misclabour_variance }}
+                        </td>
                         <td></td>
                         <td class="bg-gray-clr font" colspan="3" style="font-weight: bold">Salvage Value</td>
                         <td class="bg-gray-clr font-0">{{ $accident_service_report['salvage_value'] ?? '--' }}</td>
                     </tr>
 
+
                     <tr>
                         <td class="bg-gray-clr font ps-2" colspan="2" style="font-weight: bold">Parts</td>
                         <td class="font-0" colspan="2">
-                            @if(isset($accident_service_report->assessmentReports[6]->quoted))
-                                {{ number_format($accident_service_report->assessmentReports[5]->quoted, 2) }}
+                            {{-- @if($assessment->reportProduct['name']=='Parts')
+                                {{ number_format($assessment->quoted, 2) }}
                             @else
                                 --
-                            @endif
+                            @endif --}}
+                            {{ $Parts_quoted }}
+                        </td>
+
+
+                        <td class="font-0" colspan="2">
+                            {{-- @if($assessment->reportProduct['name']=='Parts')
+
+                                {{ number_format($assessment->assessed, 2) }}
+                            @else
+                                --
+                            @endif --}}
+                            {{ $Parts_assessed }}
                         </td>
 
                         <td class="font-0" colspan="2">
-                            @if(isset($accident_service_report->assessmentReports[6]->quoted))
-                                {{ number_format($accident_service_report->assessmentReports[5]->assessed, 2) }}
-                            @else
-                                --
-                            @endif
-                        </td>
+                            {{-- @if($assessment->reportProduct['name']=='Parts')
 
-                        <td class="font-0" colspan="2">
-                            @if(isset($accident_service_report->assessmentReports[6]->quoted))
-                                {{ number_format($accident_service_report->assessmentReports[5]->variance, 2) }}
+                                {{ number_format($assessment->variance, 2) }}
                             @else
                                 --
-                            @endif
+                            @endif --}}
+
+                            {{ $Parts_variance }}
                         </td>
                         <td class="bg-gray-clr font" style="font-weight: bold" colspan="3">Stamp Duty & Transfer Fee</td>
                         <td class="bg-gray-clr font-0">${{ $accident_service_report['less_excess'] ?? '--' }}</td>
@@ -689,37 +859,54 @@
                     <tr>
                         <td class="font ps-2"  colspan="2" style="font-weight: bold">Total Labour</td>
                         <td class="font-0" colspan="2">
-                            @if(isset($accident_service_report->assessmentReports[5]->quoted))
-                                {{ number_format($accident_service_report->assessmentReports[4]->quoted, 2) }}
+                            {{-- @if($assessment->reportProduct['name']=='Total Labour')
+                                {{ number_format($assessment->quoted, 2) }}
                             @else
                                 --
-                            @endif
+                            @endif --}}
+                            {{  $TotalLabour_quoted }}
                         </td>
 
                         <td class="font-0" colspan="2">
-                            @if(isset($accident_service_report->assessmentReports[5]->quoted))
-                                {{ number_format($accident_service_report->assessmentReports[4]->assessed, 2) }}
+                            {{-- @if($assessment->reportProduct['name']=='Total Labour')
+                                {{ number_format($assessment->assessed, 2) }}
                             @else
                                 --
-                            @endif
+                            @endif --}}
+
+                            {{ $TotalLabour_assessed }}
                         </td>
 
                         <td class="font-0" colspan="2">
-                            @if(isset($accident_service_report->assessmentReports[5]->quoted))
-                                {{ number_format($accident_service_report->assessmentReports[4]->variance, 2) }}
+                            {{-- @if($assessment->reportProduct['name']=='Total Labour')
+                                {{ number_format($assessment->variance, 2) }}
                             @else
                                 --
-                            @endif
+                            @endif --}}
+                            {{ $TotalLabour_variance }}
                         </td>
                         <td class="font"  colspan="3" style="font-weight: bold">Settlement</td>
                         <td class="font-0" >${{ $accident_service_report['settlement'] ?? '--' }}</td>
                     </tr>
 
+
                     <tr>
                         <td class="font ps-2"  colspan="2" style="font-weight: bold">Sub Total</td>
-                        <td class="font-0"  colspan="2">{{ $accident_service_report->assessmentReports[6]->quoted ?? '--' }}</td>
-                        <td class="font-0"  colspan="2">{{ $accident_service_report->assessmentReports[6]->assessed ?? '--' }}</td>
-                        <td class="font-0"  colspan="">{{ $accident_service_report->assessmentReports[6]->variance ?? '--' }}</td>
+                        <td class="font-0"  colspan="2">
+                            {{-- @if($assessment->reportProduct['name']=='Sub Total')
+                            {{ $assessment->quoted ?? '--' }} @endif --}}
+                            {{ $SubTotal_quoted }}
+                        </td>
+                        <td class="font-0"  colspan="2">
+                            {{-- @if($assessment->reportProduct['name']=='Sub Total')
+                            {{ $assessment->assessed ?? '--' }} @endif --}}
+                            {{  $SubTotal_assessed }}
+                        </td>
+                        <td class="font-0"  colspan="">
+                            {{-- @if($assessment->reportProduct['name']=='Sub Total')
+                            {{ $assessment->variance ?? '--' }} @endif --}}
+                            {{ $SubTotal_variance }}
+                        </td>
                         <td></td>
                         <td class="font bg-gray-clr"  colspan="3" style="font-weight: bold; background: rgb(98, 221, 98)">Settlement
                              Total
@@ -727,69 +914,52 @@
                         <td class="font-0 bg-gray-clr"  style="background: rgb(98, 221, 98)">${{ $accident_service_report['settlement_total'] ?? '--' }}</td>
                     </tr>
 
+
                     <tr>
                         <td class="bg-gray-clr font ps-2" colspan="2" style="font-weight: bold">GST</td>
-                        <td colspan="2" class="bg-gray-clr font-0">{{ $accident_service_report->assessmentReports[7]->quoted ?? '--' }}</td>
-                        <td colspan="2" class="bg-gray-clr font-0">{{ $accident_service_report->assessmentReports[7]->assessed ?? '--' }}</td>
-                        <td class="bg-gray-clr font-0">{{ $accident_service_report->assessmentReports[7]->variance ?? '--' }}</td>
+                        <td colspan="2" class="bg-gray-clr font-0">
+                            {{-- @if($assessment->reportProduct['name']=='GST')
+                            {{ $assessment->quoted ?? '--' }} @endif --}}
+                            {{ $GST_quoted }}
+                        </td>
+                        <td colspan="2" class="bg-gray-clr font-0">
+                            {{-- @if($assessment->reportProduct['name']=='GST')
+                            {{ $assessment->assessed ?? '--' }} @endif --}}
+                            {{ $GST_assessed }}
+                        </td>
+                        <td class="bg-gray-clr font-0">
+                            {{-- @if($assessment->reportProduct['name']=='GST')
+                            {{ $accident_service_report->assessmentReports[7]->variance ?? '--' }} @endif --}}
+                            {{ $GST_variance }}
+                        </td>
                         <td colspan="2"></td>
                         <td colspan="4" style="font-weight: bold; height: 3%"></td>
                     </tr>
 
 
-
-                    {{-- <tr>
-                        <td class="font ps-2"  colspan="2" style="font-weight: bold">Sublet</td>
-                        <td class="font-0" colspan="2">
-                            @if(isset($accident_service_report->assessmentReports[7]->quoted))
-                                {{ number_format($accident_service_report->assessmentReports[7]->quoted, 2) }}
-                            @else
-                                --
-                            @endif
-                        </td>
-
-                        <td class="font-0" colspan="2">
-                            @if(isset($accident_service_report->assessmentReports[7]->quoted))
-                                {{ number_format($accident_service_report->assessmentReports[7]->assessed, 2) }}
-                            @else
-                                --
-                            @endif
-                        </td>
-
-                        <td class="font-0" colspan="2">
-                            @if(isset($accident_service_report->assessmentReports[7]->quoted))
-                                {{ number_format($accident_service_report->assessmentReports[7]->variance, 2) }}
-                            @else
-                                --
-                            @endif
-                        </td>
-                        <td class="font"  style="font-weight: bold" colspan="3">Settlement
-                            Sub Total
-                        </td>
-                        <td class="font-0" >${{ $accident_service_report['settlement_sub_total'] ?? '--' }}</td>
-                    </tr> --}}
-
                     <tr>
                         <td class="font ps-2"  colspan="2" style="font-weight: bold">Total Estimate</td>
-                        <td class="font-0"  colspan="2">{{ $accident_service_report->assessmentReports[8]->quoted ?? '--' }}</td>
-                        <td class="font-0"  colspan="2">{{ $accident_service_report->assessmentReports[8]->assessed ?? '--' }}</td>
-                        <td class="font-0" >{{ $accident_service_report->assessmentReports[8]->variance ?? '--' }}</td>
+                            <td class="font-0"  colspan="2">
+                            {{-- @if($assessment->reportProduct['name']=='Total Estimate')
+                                {{ $assessment->quoted ?? '--' }} @endif --}}
+
+                                {{ $TotalEstimate_quoted }}
+                            </td>
+                            <td class="font-0"  colspan="2">
+                            {{-- @if($assessment->reportProduct['name']=='Total Estimate')
+                                {{ $assessment->assessed ?? '--' }} @endif --}}
+                                {{ $TotalEstimate_assessed  }}
+                            </td>
+                        <td class="font-0" >
+                            {{-- @if($assessment->reportProduct['name']=='Total Estimate')
+                            {{ $assessment->variance ?? '--' }}  @endif --}}
+                            {{ $TotalEstimate_variance }}
+                        </td>
                         <td colspan=""></td>
                         <td class="font"  colspan="3" style="font-weight: bold">Cash Settled</td>
                         <td class="font-0" >${{ $accident_service_report['cash_settled'] ?? '--' }}</td>
                     </tr>
 
-                    {{-- <tr>
-                        <td class="bg-gray-clr font ps-2" colspan="2" style="font-weight: bold">Supplementary</td>
-                        <td class="bg-gray-clr font-0" colspan="2">{{ $accident_service_report->assessmentReports[3]->quoted ?? '--' }}</td>
-                        <td class="bg-gray-clr font-0" colspan="2">{{ $accident_service_report->assessmentReports[3]->assessed ?? '--' }}</td>
-                        <td class="bg-gray-clr font-0" colspan="">{{ $accident_service_report->assessmentReports[3]->variance ?? '--' }}</td>
-                        <td></td>
-                        <td class="font"  style="font-weight: bold" colspan="3">Settlement
-                             GST
-                        </td>
-                        <td class="font-0" >${{ $accident_service_report['settlement_gst'] ?? '--' }}</td>
-                    </tr> --}}
 
                     <tr>
                         <td class="bg-gray-clr" colspan="7" style="font-weight: bold; height: 3%"></td>
@@ -799,42 +969,100 @@
                         </td>
                         <td class="bg-gray-clr font-0">{{ $accident_service_report['certificate_compliance'] ?? '--' }}</td>
                     </tr>
+
+
+
                     <tr>
                         <td class="font ps-2"  colspan="2" style="font-weight: bold">Reported Items</td>
-                        <td class="font-0"  colspan="2">{{ $accident_service_report->assessmentReports[12]->quoted ?? '--' }}</td>
-                        <td class="font-0"  colspan="2">{{ $accident_service_report->assessmentReports[12]->assessed ?? '--' }}</td>
-                        <td class="font-0" >{{ $accident_service_report->assessmentReports[12]->variance ?? '--' }}</td>
+                            <td class="font-0"  colspan="2">
+                            {{-- @if($assessment->reportProduct['name']=='Reported Items')
+                                {{ $assessment->quoted ?? '--' }} @endif --}}
+                                {{ $ReportedItems_quoted }}
+
+                            </td>
+                        <td class="font-0"  colspan="2">
+                            {{-- @if($assessment->reportProduct['name']=='Reported Items')
+                            {{ $assessment->assessed ?? '--' }} @endif --}}
+                            {{ $ReportedItems_assessed }}
+                        </td>
+                        <td class="font-0" >
+                            {{-- @if($assessment->reportProduct['name']=='Reported Items')
+                            {{ $assessment->variance ?? '--' }} @endif --}}
+                            {{ $ReportedItems_variance }}
+                        </td>
                         <td></td>
                         <td class="font"  colspan="3" style="font-weight: bold">Salvage
                              Condition
                         </td>
-                        <td class="font-0" >{{ $accident_service_report['salvage_condition'] ?? '--' }}</td>
+                        <td class="font-0" >{{ $accident_service_report['salvage_condition'] ?? '--' }} </td>
                     </tr>
+
+
                     <tr>
                         <td class="bg-gray-clr font ps-2" colspan="2" style="font-weight: bold; height: 3%">Towing</td>
-                        <td class="bg-gray-clr font-0" colspan="2">{{ $accident_service_report->assessmentReports[13]->quoted ?? '--' }}</td>
-                        <td class="bg-gray-clr font-0" colspan="2">{{ $accident_service_report->assessmentReports[13]->assessed ?? '--' }}</td>
-                        <td class="bg-gray-clr font-0"> {{ $accident_service_report->assessmentReports[13]->variance ?? '--' }}</td>
+                        <td class="bg-gray-clr font-0" colspan="2">
+                            {{-- @if($assessment->reportProduct['name']=='Towing')
+                            {{ $assessment->quoted ?? '--' }} @endif --}}
+                            {{ $Towing_quoted }}
+                        </td>
+                        <td class="bg-gray-clr font-0" colspan="2">
+                            {{-- @if($assessment->reportProduct['name']=='Towing')
+                        {{ $assessment->assessed ?? '--' }} @ --}}
+                        {{ $Towing_assessed }}
+                    </td>
+                        <td class="bg-gray-clr font-0">
+                            {{-- @if($assessment->reportProduct['name']=='Towing') {{ $assessment->variance ?? '--' }} @endif --}}
+                            {{ $Towing_variance }}
+                        </td>
+
                         <td></td>
                         <td style="font-weight: bold" colspan="3"></td>
                         <td></td>
                     </tr>
+
                     <tr>
                         <td class="font ps-2"  style="font-weight: bold" colspan="2">External Sublet</td>
-                        <td class="font-0"  colspan="2">{{ $accident_service_report->assessmentReports[14]->quoted ?? '--' }}</td>
-                        <td class="font-0"  colspan="2" style="">{{ $accident_service_report->assessmentReports[14]->assessed ?? '--' }}</td>
-                        <td class="font-0" >{{ $accident_service_report->assessmentReports[14]->variance ?? '--' }}</td>
+                        <td class="font-0"  colspan="2">
+                            {{-- @if($assessment->reportProduct['name']=='External Sublet')
+                            {{ $assessment->quoted ?? '--' }} @endif --}}
+                            {{ $ExternalSublet_quoted }}
+                        </td>
+                        <td class="font-0"  colspan="2" style="">
+                            {{-- @if($assessment->reportProduct['name']=='External Sublet')
+                            {{ $assessment->assessed ?? '--' }} @endif --}}
+                            {{ $ExternalSublet_assessed }}
+                        </td>
+                        <td class="font-0" >
+                            {{-- @if($assessment->reportProduct['name']=='External Sublet')
+                            {{ $assessment->assessmentReports[11]->variance ?? '--' }} @endif --}}
+                            {{ $ExternalSublet_variance }}
+                        </td>
+
                         <td></td>
                         <td class="selected-bg-gray font" style="font-weight: bold">Supps</td>
                         <td class="selected-bg-gray font" style="font-weight: bold">Quoted</td>
                         <td class="selected-bg-gray font" style="font-weight: bold">Assessed</td>
                         <td class="selected-bg-gray font" style="font-weight: bold">Variance</td>
                     </tr>
+
                     <tr>
                         <td class="bg-gray-clr font ps-2" colspan="2" style="font-weight: bold; height: 3%">Additional</td>
-                        <td class="bg-gray-clr font-0" colspan="2">{{ $accident_service_report->assessmentReports[15]->quoted ?? '--' }}</td>
-                        <td class="bg-gray-clr font-0" colspan="2">{{ $accident_service_report->assessmentReports[15]->assessed ?? '--' }}</td>
-                        <td class="bg-gray-clr font-0">{{ $accident_service_report->assessmentReports[15]->variance ?? '--' }}</td>
+                        <td class="bg-gray-clr font-0" colspan="2">
+                            {{-- @if($assessment->reportProduct['name']=='Additional')
+                            {{ $assessment->quoted ?? '--' }} @endif --}}
+                            {{ $Additional_quoted }}
+                        </td>
+                        <td class="bg-gray-clr font-0" colspan="2">
+                            {{-- @if($assessment->reportProduct['name']=='Additional')
+                            {{ $assessment->assessed ?? '--' }} @endif --}}
+                            {{ $Additional_assessed }}
+                        </td>
+                        <td class="bg-gray-clr font-0">
+                            {{-- @if($assessment->reportProduct['name']=='Additional')
+                            {{ $assessment->variance ?? '--' }} @endif --}}
+                            {{ $Additional_variance }}
+                        </td>
+
                         <td></td>
                         <td class="bg-gray-clr font-0">Supp 1</td>
                         <td class="bg-gray-clr font-0">{{ $accident_service_report->suppValues[0]->quoted ?? '--' }}</td>
@@ -843,115 +1071,101 @@
                     </tr>
                     <tr>
                         <td class="font ps-2"  colspan="2" style="font-weight: bold">Discounts</td>
-                        <td class="font-0"  colspan="2">{{ $accident_service_report->assessmentReports[16]->quoted ?? '--' }}</td>
-                        <td class="font-0"  colspan="2">{{ $accident_service_report->assessmentReports[16]->assessed ?? '--' }}</td>
-                        <td class="font-0" >{{ $accident_service_report->assessmentReports[16]->variance ?? '--' }}</td>
+                        <td class="font-0"  colspan="2">
+                            {{-- @if($assessment->reportProduct['name']=='Discounts')
+                            {{ $assessment->quoted ?? '--' }} @endif --}}
+                            {{ $Discounts_quoted }}
+                        </td>
+                        <td class="font-0"  colspan="2">
+                            {{-- @if($assessment->reportProduct['name']=='Discounts')
+                            {{ $assessment->assessed ?? '--' }} @endif --}}
+                            {{ $Discounts_assessed }}
+                        </td>
+                        <td class="font-0" >
+                            {{-- @if($assessment->reportProduct['name']=='Discounts')
+                            {{ $assessment->variance ?? '--' }} @endif --}}
+                            {{ $Discounts_variance }}
+                        </td>
                         <td></td>
                         <td class="font-0" >Supp 2</td>
                         <td class="font-0" >{{ $accident_service_report->suppValues[1]->quoted ?? '--' }}</td>
                         <td class="font-0" >{{ $accident_service_report->suppValues[1]->assessed ?? '--' }}</td>
                         <td class="font-0" >{{ $accident_service_report->suppValues[1]->variance ?? '--' }}</td>
                     </tr>
+
+
                     <tr>
                         <td class="bg-gray-clr font ps-2" colspan="2" style="font-weight: bold; height: 3%">Less ITC</td>
-                        <td class="bg-gray-clr font-0" colspan="2">{{ $accident_service_report->assessmentReports[17]->quoted ?? '--' }}</td>
-                        <td class="bg-gray-clr font-0" colspan="2">{{ $accident_service_report->assessmentReports[17]->assessed ?? '--' }}</td>
-                        <td class="bg-gray-clr font-0">{{ $accident_service_report->assessmentReports[17]->variance ?? '--' }}</td>
+                        <td class="bg-gray-clr font-0" colspan="2">
+                            {{-- @if($assessment->reportProduct['name']=='Less ITC')
+                            {{  $accident_service_report->assessmentReports[14]->quoted ?? '--' }} --}}
+                            {{ $LessITC_quoted }}
+
+                    </td>
+
+                        <td class="bg-gray-clr font-0" colspan="2">
+                            {{-- @if($assessment->reportProduct['name']=='Less ITC')
+                            {{ $accident_service_report->assessmentReports[14]->assessed ?? '--' }} @endif --}}
+                            {{ $LessITC_assessed }}
+                        </td>
+                        <td class="bg-gray-clr font-0">
+                            {{-- @if($assessment->reportProduct['name']=='Less ITC')
+                            {{ $accident_service_report->assessmentReports[14]->variance ?? '--' }} @endif --}}
+                            {{ $LessITC_variance }}
+
+                        </td>
                         <td></td>
                         <td class="bg-gray-clr font-0">Supp 3</td>
                         <td class="bg-gray-clr font-0">{{ $accident_service_report->suppValues[2]->quoted ?? '--' }}</td>
                         <td class="bg-gray-clr font-0">{{ $accident_service_report->suppValues[2]->assessed ?? '--' }}</td>
                         <td class="bg-gray-clr font-0">{{ $accident_service_report->suppValues[2]->variance ?? '--' }}</td>
                     </tr>
+
                     <tr>
                         <td class="font ps-2" colspan="2" style="font-weight: bold; height: 3%">Less Contribution</td>
-                        <td class="font-0" colspan="2">{{ $accident_service_report->assessmentReports[18]->quoted ?? '--' }}</td>
-                        <td class="font-0" colspan="2">{{ $accident_service_report->assessmentReports[18]->assessed ?? '--' }}</td>
-                        <td class="font-0" >{{ $accident_service_report->assessmentReports[18]->variance ?? '--' }}</td>
+                        <td class="font-0" colspan="2">
+                            {{-- @if($assessment->reportProduct['name']=='Less Contribution')
+                            {{ $assessment->quoted ?? '--' }} @endif --}}
+                            {{ $LessContribution_quoted }}
+                        </td>
+                            {{-- @if($assessment->reportProduct['name']=='Less Contribution') --}}
+                            <td class="font-0" colspan="2">
+                                {{-- {{ $assessment->assessed ?? '--' }} @endif --}}
+                                {{ $LessContribution_assessed }}
+                            </td>
+                            {{-- @if($assessment->reportProduct['name']=='Less Contribution') --}}
+                            <td class="font-0" >
+                                {{-- {{ $assessment->variance ?? '--' }} @endif --}}
+                                {{ $LessContribution_variance }}
+                            </td>
                         <td></td>
                         <td class="font-0" >Total</td>
                         <td class="font-0">{{ $accident_service_report->total_supps ?? '--' }}</td>
                         <td></td>
                         <td></td>
                     </tr>
-                    <tr style="background: rgb(179, 173, 173);">
-                        <td colspan="2" class="font ps-2" style=" color:black; text-align:left;">
-                            Repairer:
-                        </td>
-                        <td class="font" colspan="2" style=" color:black; text-align:left;font-weight:bold">
-                            Quoted:</td>
-                        <td class="font" colspan="2" style=" color:black; text-align:left;">
-                            Assessed:
-                        </td>
-                        <td class="font" style=" color:black; text-align:left;font-weight:bold">Variance</td>
-                    </tr>
-                    <tr class="bg-gray-clr">
+
+                    <tr>
                         <td class="font ps-2" colspan="2" style="font-weight: bold; height: 3%">PAV</td>
-                        <td class="font-0" colspan="2">{{ $accident_service_report->assessmentReports[19]->quoted ?? '--' }}</td>
-                        <td class="font-0" colspan="2">{{ $accident_service_report->assessmentReports[19]->assessed ?? '--' }}</td>
-                        <td class="font-0">{{ $accident_service_report->assessmentReports[19]->variance ?? '--' }}</td>
-                    </tr>
-
-
-                    <tr style="background: rgb(179, 173, 173)">
-                        <td colspan="3" class="font ps-2 " style=" color:black; text-align:left;">Book Values</td>
-                        <td class="font" colspan="4" style=" color:black; text-align:left;font-weight:bold">Live Market Values</td>
-                    </tr>
-
-
-                  <tr class="bg-gray-clr font">
-                        {{-- <td colspan="3" class="ps-2" style=" color:black; text-align:left;">
-                            Trade Low
+                        <td class="font-0" colspan="2">
+                            {{-- @if($assessment->reportProduct['name']=='PAV')
+                                {{ $assessment->quoted ?? '--' }} @endif --}}
+                                {{ $PAV_quoted }}
+                            </td>
+                        <td class="font-0" colspan="2">
+                            {{-- @if($assessment->reportProduct['name']=='PAV')
+                            {{ $assessment->assessed ?? '--' }}  @endif --}}
+                            {{  $PAV_assessed }}
                         </td>
-                        <td colspan="4" style=" color:black; text-align:left;font-weight:bold">
-                            Market One</td> --}}
-
-                            <td colspan="2" class="bg-gray-clr font ps-2" style=" color:black; text-align:left;">
-                                Trade Low:
-                            </td>
-                            <td class="font-0"  style=" color:black; text-align:left;">${{ $accident_service_report['tradone'] ?? '--'}}</td>
-
-                            <td colspan="2" class="bg-gray-clr font" style=" color:black; text-align:left;" >
-                                Market One:
-                            </td>
-                            <td class="font-0" style=" color:black; text-align:left;">${{ $accident_service_report['market_one'] ?? '--' }}</td>
-                    </tr>
-
-
-
-                    {{-- <tr class="font">
-                        <td colspan="3" class="ps-2" style=" color:black; text-align:left;">
-                            Trade
+                        <td class="font-0" >
+                            {{-- @if($assessment->reportProduct['name']=='PAV')
+                            {{ $assessment->variance ?? '--' }}  @endif --}}
+                            {{ $PAV_variance }}
                         </td>
-                        <td colspan="4" style=" color:black; text-align:left;font-weight:bold">
-                            Market Two</td>
-                    </tr> --}}
-
-                    <tr class="bg-gray-clr font">
-
-                            <td colspan="2" class="bg-gray-clr font ps-2" style=" color:black; text-align:left;">
-                                Trade:
-                            </td>
-                            <td class="font-0"  style=" color:black; text-align:left;">${{ $accident_service_report['tradetwo'] ?? '--'}}</td>
-
-                            <td colspan="2" class="bg-gray-clr font" style=" color:black; text-align:left;" >
-                                Market Two:
-                            </td>
-                            <td class="font-0" style=" color:black; text-align:left;">${{ $accident_service_report['market_two'] ?? '--' }}</td>
                     </tr>
+                    <br>
+                    <br>
 
-
-
-
-
-
-                    {{-- <tr class="bg-gray-clr font">
-                        <td colspan="3" class="ps-2" style=" color:black; text-align:left;">
-                            Retail Value
-                        </td>
-                        <td colspan="4" style=" color:black; text-align:left;font-weight:bold">
-                            Market Three</td>
-                    </tr> --}}
 
                     <tr class="bg-gray-clr font">
 
@@ -969,14 +1183,7 @@
 
 
 
-                    {{-- <tr>
-                        <td class="font ps-2" colspan="3" style=" color:black; text-align:left;">
-                            Avg KM's
 
-                        </td>
-                        <td class="font" colspan="4" style=" color:black; text-align:left;font-weight:bold">
-                            Market Avg</td>
-                    </tr> --}}
 
                     <tr class="bg-gray-clr font">
 
@@ -1188,6 +1395,70 @@
         </div>
     </div>
     {{-- Assessor Details End --}}
+
+       {{-- <tr>
+                        <td class="font ps-2"  colspan="2" style="font-weight: bold">Sublet</td>
+                        <td class="font-0" colspan="2">
+                            @if(isset($accident_service_report->assessmentReports[7]->quoted))
+                                {{ number_format($accident_service_report->assessmentReports[7]->quoted, 2) }}
+                            @else
+                                --
+                            @endif
+                        </td>
+
+                        <td class="font-0" colspan="2">
+                            @if(isset($accident_service_report->assessmentReports[7]->quoted))
+                                {{ number_format($accident_service_report->assessmentReports[7]->assessed, 2) }}
+                            @else
+                                --
+                            @endif
+                        </td>
+
+                        <td class="font-0" colspan="2">
+                            @if(isset($accident_service_report->assessmentReports[7]->quoted))
+                                {{ number_format($accident_service_report->assessmentReports[7]->variance, 2) }}
+                            @else
+                                --
+                            @endif
+                        </td>
+                        <td class="font"  style="font-weight: bold" colspan="3">Settlement
+                            Sub Total
+                        </td>
+                        <td class="font-0" >${{ $accident_service_report['settlement_sub_total'] ?? '--' }}</td>
+                    </tr> --}}
+
+
+
+                         {{-- <tr>
+                        <td class="font ps-2"  colspan="2" style="font-weight: bold">Mechanical</td>
+                        <td class="font-0"  colspan="2">{{ $accident_service_report->assessmentReports[3]->quoted ?? '--' }}</td>
+                        <td class="font-0"  colspan="2">{{ $accident_service_report->assessmentReports[3]->assessed ?? '--' }}</td>
+                        <td class="font-0"  colspan="">{{ $accident_service_report->assessmentReports[3]->variance ?? '--' }}</td>
+                        <td></td>
+                        <td class="font"  colspan="3" style="font-weight: bold">Market Value</td>
+                        <td class="font-0" >{{ $accident_service_report['market_value'] ?? '--' }}</td>
+                    </tr> --}}
+
+
+                     {{-- <td colspan="1" class="font" style=" color:black; text-align:left;">
+                                Phone:
+                            </td>
+                            <td class="font-0" style=" color:black; text-align:left;">{{$service_repairer['repairers']['phone'] ?? '--'}}</td> --}}
+
+                            {{-- <td colspan="1" class="font" style=" color:black; text-align:left;">
+                                Mobile:
+                            </td>
+                            <td class="font-0" style=" color:black; text-align:left;">{{$service_repairer['repairers']['mobile'] ?? '--'}}</td> --}}
+
+                        </tr>
+                        {{-- <tr class="bg-gray-clr">>
+
+                            <td colspan="1" class="font" style=" color:black; text-align:left;">
+                                ABN:
+                            </td>
+                            <td class="font-0" style=" color:black; text-align:left;">{{$service_repairer['repairers']['mobile'] ?? '--'}}</td>
+
+                        </tr> --}}
 </body>
 
 </html>
