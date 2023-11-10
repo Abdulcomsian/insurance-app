@@ -815,8 +815,8 @@ else
                             {{ $misclabour_variance }}
                         </td>
                         <td></td>
-                        <td class="bg-gray-clr font" colspan="3" style="font-weight: bold">Salvage Value</td>
-                        <td class="bg-gray-clr font-0">{{ $accident_service_report['salvage_value'] ?? '--' }}</td>
+                        <td class="font"  colspan="3" style="font-weight: bold">Market Value</td>
+                        <td class="font-0" >{{ $accident_service_report['market_value'] ?? '--' }}</td>
                     </tr>
 
 
@@ -852,8 +852,8 @@ else
 
                             {{ $Parts_variance }}
                         </td>
-                        <td class="bg-gray-clr font" style="font-weight: bold" colspan="3">Stamp Duty & Transfer Fee</td>
-                        <td class="bg-gray-clr font-0">${{ $accident_service_report['less_excess'] ?? '--' }}</td>
+                        <td class="bg-gray-clr font" colspan="3" style="font-weight: bold">Salvage Value</td>
+                        <td class="bg-gray-clr font-0">{{ $accident_service_report['salvage_value'] ?? '--' }}</td>
                     </tr>
 
                     <tr>
@@ -908,10 +908,8 @@ else
                             {{ $SubTotal_variance }}
                         </td>
                         <td></td>
-                        <td class="font bg-gray-clr"  colspan="3" style="font-weight: bold; background: rgb(98, 221, 98)">Settlement
-                             Total
-                        </td>
-                        <td class="font-0 bg-gray-clr"  style="background: rgb(98, 221, 98)">${{ $accident_service_report['settlement_total'] ?? '--' }}</td>
+                        <td class="bg-gray-clr font" style="font-weight: bold" colspan="3">Stamp Duty & Transfer Fee</td>
+                        <td class="bg-gray-clr font-0">${{ $accident_service_report['less_excess'] ?? '--' }}</td>
                     </tr>
 
 
@@ -932,10 +930,15 @@ else
                             {{ $accident_service_report->assessmentReports[7]->variance ?? '--' }} @endif --}}
                             {{ $GST_variance }}
                         </td>
-                        <td colspan="2"></td>
-                        <td colspan="4" style="font-weight: bold; height: 3%"></td>
-                    </tr>
+                        {{-- <td colspan="2"></td> --}}
+                        {{-- <td colspan="4" style="font-weight: bold; height: 3%"></td> --}}
+                        <td></td>
 
+                           <td class="font"  style="font-weight: bold" colspan="3">Settlement
+                            Sub Total
+                        </td>
+                        <td class="font-0" >${{ $accident_service_report['settlement_sub_total'] ?? '--' }}</td>
+                    </tr>
 
                     <tr>
                         <td class="font ps-2"  colspan="2" style="font-weight: bold">Total Estimate</td>
@@ -956,21 +959,20 @@ else
                             {{ $TotalEstimate_variance }}
                         </td>
                         <td colspan=""></td>
-                        <td class="font"  colspan="3" style="font-weight: bold">Cash Settled</td>
-                        <td class="font-0" >${{ $accident_service_report['cash_settled'] ?? '--' }}</td>
-                    </tr>
 
+                        <td class="font"  style="font-weight: bold" colspan="3">Settlement
+                            GST
+                       </td>
+                       <td class="font-0" >${{ $accident_service_report['settlement_gst'] ?? '--' }}</td>
+                    </tr>
 
                     <tr>
-                        <td class="bg-gray-clr" colspan="7" style="font-weight: bold; height: 3%"></td>
-                        <td></td>
-                        <td class="bg-gray-clr font" colspan="3" style="font-weight: bold">Certificate
-                             Compliance
+                        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                        <td class="font bg-gray-clr"  colspan="3" style="font-weight: bold; background: rgb(98, 221, 98)">Settlement
+                             Total
                         </td>
-                        <td class="bg-gray-clr font-0">{{ $accident_service_report['certificate_compliance'] ?? '--' }}</td>
+                        <td class="font-0 bg-gray-clr"  style="background: rgb(98, 221, 98)">${{ $accident_service_report['settlement_total'] ?? '--' }}</td>
                     </tr>
-
-
 
                     <tr>
                         <td class="font ps-2"  colspan="2" style="font-weight: bold">Reported Items</td>
@@ -991,10 +993,8 @@ else
                             {{ $ReportedItems_variance }}
                         </td>
                         <td></td>
-                        <td class="font"  colspan="3" style="font-weight: bold">Salvage
-                             Condition
-                        </td>
-                        <td class="font-0" >{{ $accident_service_report['salvage_condition'] ?? '--' }} </td>
+                        <td class="font"  colspan="3" style="font-weight: bold">Cash Settled</td>
+                        <td class="font-0" >${{ $accident_service_report['cash_settled'] ?? '--' }}</td>
                     </tr>
 
 
@@ -1016,10 +1016,21 @@ else
                         </td>
 
                         <td></td>
-                        <td style="font-weight: bold" colspan="3"></td>
-                        <td></td>
+                        {{-- <td style="font-weight: bold" colspan="3"></td>
+                        <td></td> --}}
+                        <td class="bg-gray-clr font" colspan="3" style="font-weight: bold">Certificate
+                            Compliance
+                     </td>
+                     <td class="bg-gray-clr font-0">{{ $accident_service_report['certificate_compliance'] ?? '--' }}</td>
                     </tr>
 
+                    <tr>
+                        <td></td> <td></td> <td></td> <td></td><td></td><td></td><td></td><td></td>
+                        <td class="font"  colspan="3" style="font-weight: bold">Salvage
+                            Condition
+                       </td>
+                       <td class="font-0" >{{ $accident_service_report['salvage_condition'] ?? '--' }}</td>
+                    </tr>
                     <tr>
                         <td class="font ps-2"  style="font-weight: bold" colspan="2">External Sublet</td>
                         <td class="font-0"  colspan="2">
