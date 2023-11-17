@@ -1177,6 +1177,40 @@ else
                     <br>
                     <br>
 
+                <tr>
+                        <td class="selected-bg-gray font" style="font-weight: bold">Book Values</td>
+                        <td class="selected-bg-gray font" style="font-weight: bold"></td>
+                        <td class="selected-bg-gray font" style="font-weight: bold"></td>
+                        <td class="selected-bg-gray font" style="font-weight: bold">Live Market Values</td>
+                        <td class="selected-bg-gray font" style="font-weight: bold"></td>
+                        <td class="selected-bg-gray font" style="font-weight: bold"></td>
+
+                    <tr class="bg-gray-clr font">
+
+                        <td colspan="2" class="bg-gray-clr font ps-2" style=" color:black; text-align:left;">
+                            Trade Low:
+                        </td>
+                        <td class="font-0"  style=" color:black; text-align:left;">${{ $accident_service_report['tradone'] ?? '--'}}</td>
+
+                        <td colspan="2" class="bg-gray-clr font" style=" color:black; text-align:left;" >
+                            Market One:
+                        </td>
+                        <td class="font-0" style=" color:black; text-align:left;">${{ $accident_service_report['market_one'] ?? '--' }}</td>
+                   </tr>
+
+                    <tr class="bg-gray-clr font">
+
+                        <td colspan="2" class="bg-gray-clr font ps-2" style=" color:black; text-align:left;">
+                            Trade:
+                        </td>
+                        <td class="font-0"  style=" color:black; text-align:left;">${{ $accident_service_report['tradetwo'] ?? '--'}}</td>
+
+                        <td colspan="2" class="bg-gray-clr font" style=" color:black; text-align:left;" >
+                            Market Two:
+                        </td>
+                        <td class="font-0" style=" color:black; text-align:left;">${{ $accident_service_report['market_two'] ?? '--' }}</td>
+                   </tr>
+
 
                     <tr class="bg-gray-clr font">
 
@@ -1191,11 +1225,6 @@ else
                             <td class="font-0" style=" color:black; text-align:left;">${{ $accident_service_report['market_three'] ?? '--' }}</td>
                     </tr>
 
-
-
-
-
-
                     <tr class="bg-gray-clr font">
 
                             <td colspan="2" class="bg-gray-clr font ps-2" style=" color:black; text-align:left;">
@@ -1208,6 +1237,8 @@ else
                             </td>
                             <td class="font-0" style=" color:black; text-align:left;">${{ $accident_service_report['market_avg'] ?? '--' }}</td>
                     </tr>
+
+                </tr>
 
                 </tbody>
             </table>

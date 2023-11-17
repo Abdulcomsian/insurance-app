@@ -1166,9 +1166,9 @@ height:15px;
                                             <div class="col-6"> <input type="number"  required  class="aa form-control form-control-solid mb-3 mb-lg-0" name="salvage_value" /> </div>
                                            </div>
 
-                                             <div class="row mt-2">
-                                            <div class="col-6 font-weight-bold mt-2 " style="color:black;"> Settlement</div>
-                                            <div class="col-6"> <input type="number" id="settle1" name="settlement" placeholder="$00.00" required  class="aa form-control form-control-solid mb-3 mb-lg-0" oninput=" syncInputs2()" /> </div>
+                                            <div class="row mt-2">
+                                               <div class="col-6 font-weight-bold mt-2 " style="color:black;"> Settlement</div>
+                                               <div class="col-6"> <input type="number" id="settle1" name="settlement" placeholder="$00.00" required  class="aa form-control form-control-solid mb-3 mb-lg-0" oninput=" syncInputs2()" /> </div>
                                            </div>
 
                                            <div class="row mt-2">
